@@ -15,9 +15,9 @@
   --top:env(safe-area-inset-top,0px); --bot:env(safe-area-inset-bottom,0px);
 }
 *{box-sizing:border-box}
-html,body{margin:0;height:100%;font:16px/1.5 var(--font);background:var(--bg);color:var(--ink)}
+html,body{margin:0;min-height:100%;height:auto;font:16px/1.5 var(--font);background:var(--bg);color:var(--ink)}
 button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
-.lms{display:flex;flex-direction:column;height:100%;min-height:100dvh;max-height:100dvh;overflow:hidden}
+.lms{display:flex;flex-direction:column;min-height:100%;height:auto;overflow:visible}
 header.app{position:sticky;top:0;z-index:20;height:60px;padding:0 16px;display:flex;align-items:center;gap:12px;background:var(--surf);border-bottom:1px solid var(--line)}
 .burger{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:10px;background:var(--elev)}
 .brand{flex:1;min-width:0}
@@ -27,8 +27,8 @@ header.app{position:sticky;top:0;z-index:20;height:60px;padding:0 16px;display:f
 .prog label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}
 .bar{height:7px;background:var(--line);border-radius:99px;overflow:hidden}
 .bar i{display:block;height:100%;width:0;background:var(--brand);border-radius:99px;transition:width .3s}
-.shell{display:flex;flex:1;min-height:0}
-aside.nav{width:var(--side);flex-shrink:0;background:var(--surf);border-right:1px solid var(--line);overflow:auto;padding:14px 10px 28px}
+.shell{display:flex;flex:1;align-items:flex-start}
+aside.nav{width:var(--side);flex-shrink:0;background:var(--surf);border-right:1px solid var(--line);overflow:auto;padding:14px 10px 28px;position:sticky;top:60px;height:calc(100dvh - 60px);max-height:calc(100dvh - 60px)}
 .nav-h{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:4px 10px 10px}
 .unit{margin:0 0 4px}
 .unit b{display:block;padding:8px 10px;font-size:13.5px}
@@ -39,7 +39,7 @@ aside.nav{width:var(--side);flex-shrink:0;background:var(--surf);border-right:1p
 .badge{margin-left:auto;font-size:10px;font-weight:700;padding:2px 6px;border-radius:99px;background:var(--warn-soft);color:var(--warn);white-space:nowrap}
 .badge.ok{background:var(--ok-soft);color:var(--ok)}
 .badge.live{background:var(--brand-soft);color:var(--brand)}
-main{flex:1;min-width:0;overflow:auto;padding:28px 24px 40px}
+main{flex:1;min-width:0;overflow:visible;padding:28px 24px 40px}
 .wrap{max-width:680px;margin:0 auto}
 .banner{background:var(--sample-bg);border:1px dashed var(--sample);border-radius:12px;padding:10px 12px;font-size:13.5px;margin-bottom:18px}
 .banner strong{color:var(--sample)}
@@ -60,7 +60,7 @@ h1{font-size:28px;letter-spacing:-.02em;margin:4px 0 8px}
   .burger{display:grid;place-items:center}
   .prog{width:76px}
   .prog .lab{display:none}
-  aside.nav{position:fixed;z-index:40;top:0;left:0;bottom:0;transform:translateX(-105%);transition:transform .2s;box-shadow:var(--shadow)}
+  aside.nav{position:fixed;z-index:40;top:0;left:0;bottom:0;height:auto;max-height:none;transform:translateX(-105%);transition:transform .2s;box-shadow:var(--shadow)}
   aside.nav.open{transform:none}
   .back.show{display:block}
   main{padding:20px 16px 32px}
@@ -210,6 +210,12 @@ details.solucion summary{cursor:pointer;font-weight:700}
 /* HOME (feed estilo Instagram) */
 .brand{text-align:left;padding:0;cursor:pointer;border-radius:10px;overflow:hidden}
 .brand strong,.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand .brand-short{display:none}
+@media(max-width:640px){
+  .brand .brand-full{display:none}
+  .brand .brand-short{display:block}
+  .brand > span{display:none}
+}
 .brand:hover strong{color:var(--brand)}
 body.dark{background:#0d1116}
 body.dark header.app{background:#11161c;border-bottom-color:#232b35;color:#f3f1ea}
@@ -220,6 +226,32 @@ body.dark .bar{background:#2a323c}
 body.dark .bar i{background:linear-gradient(90deg,#f9ce34,#ee2a7b,#6228d7)}
 body.dark header.app .voice,body.dark .burger{background:#1b222b;color:#f3f1ea;border-color:#2a323c}
 body.dark main{background:#0d1116;color:#f3f1ea}
+body.dark aside.nav{background:#11161c;color:#f3f1ea;border-right-color:#232b35;box-shadow:none}
+body.dark .nav-h,body.dark .unit b small,body.dark .blk-h,body.dark .nav .blk-h{color:#9aa3ad}
+body.dark .lessons a,body.dark .lessons span,body.dark .unit b{color:#f3f1ea}
+body.dark .lessons a:hover,body.dark .unit-link:hover{background:#1b222b}
+body.dark .lessons a.on{background:#1c2a38;color:#9ec3e4;font-weight:700}
+body.dark .unit-link:hover b{color:#fff}
+body.dark .reset{color:#9ec3e4}
+body.dark .badge{background:#2c2618;color:#e8c56a}
+body.dark .badge.ok{background:rgba(61,190,116,.18);color:#5fd08f}
+body.dark .badge.live{background:#1c2a38;color:#9ec3e4}
+body.dark .back{background:rgba(0,0,0,.66)}
+body.dark .voice-menu,body.dark .voice-menu.light{background:rgba(17,22,28,.96);color:#f3f1ea;border-color:rgba(255,255,255,.12);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+body.dark .voice-menu .v small,body.dark .voice-menu.light .v small{color:#9aa3ad}
+body.dark .voice-menu .v.on,body.dark .voice-menu.light .v.on{background:rgba(255,255,255,.12)}
+body.dark .voice-menu .try,body.dark .voice-menu.light .try{background:#f3f1ea;color:#111}
+body.dark .voice-menu .empty,body.dark .voice-menu.light .empty{color:#d5dbe2}
+body.dark .card,body.dark .ejercicio,body.dark .eq-wrap,body.dark .teoria table{background:#161c23;color:#f3f1ea;border-color:#232b35}
+body.dark .teoria th,body.dark .teoria td{border-color:#2a323c;color:#f3f1ea}
+body.dark .teoria th{background:#1c2a38}
+body.dark blockquote.idea{background:#1c2a38;color:#f3f1ea}
+body.dark blockquote.aviso{background:#2c2618;color:#f3f1ea}
+body.dark blockquote.examen{background:#16261c;color:#f3f1ea}
+body.dark .ejemplo-box{background:#241c12;border-color:#4a3a22;color:#f3f1ea}
+body.dark .para-resolver{background:#2c2618}
+body.dark details.solucion{background:#16261c;color:#f3f1ea}
+body.dark .lamina{background:#f4f1ea;color:#1c232a}
 .h-sec{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8cb4d6;margin:22px 0 10px}
 .h-sec small{font-weight:650;letter-spacing:0;text-transform:none;color:#9aa3ad;margin-left:6px}
 .sbar{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -282,7 +314,7 @@ body.dark main{background:#0d1116;color:#f3f1ea}
 <div class="lms" id="lms">
   <header class="app">
     <button class="burger" id="btnMenu" type="button" aria-label="Abrir menú">☰</button>
-    <button class="brand" type="button" id="btnHome" aria-label="Volver al inicio"><strong>Sistemas de Gestión</strong><span>UTN FRRo · Ingeniería en Sistemas</span></button>
+    <button class="brand" type="button" id="btnHome" aria-label="Volver al inicio"><strong class="brand-full">Sistemas de Gestión</strong><strong class="brand-short">SdG</strong><span>UTN FRRo · Ingeniería en Sistemas</span></button>
     <div class="prog"><label><span class="lab">Progreso</span><span id="progTxt">0%</span></label><div class="bar"><i id="progFill"></i></div></div>
     <button class="voice" type="button" id="btnVoiceLms" aria-label="Elegir voz" aria-expanded="false" title="Voz"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M19.4 13.5a7.7 7.7 0 0 0 .1-1.5 7.7 7.7 0 0 0-.1-1.5l2-1.5a.5.5 0 0 0 .1-.6l-1.9-3.3a.5.5 0 0 0-.6-.2l-2.3 1a7.4 7.4 0 0 0-2.6-1.5l-.4-2.5a.5.5 0 0 0-.5-.4h-3.8a.5.5 0 0 0-.5.4l-.4 2.5a7.4 7.4 0 0 0-2.6 1.5l-2.3-1a.5.5 0 0 0-.6.2L.6 8.4a.5.5 0 0 0 .1.6l2 1.5a7.7 7.7 0 0 0-.1 1.5 7.7 7.7 0 0 0 .1 1.5l-2 1.5a.5.5 0 0 0-.1.6l1.9 3.3a.5.5 0 0 0 .6.2l2.3-1a7.4 7.4 0 0 0 2.6 1.5l.4 2.5a.5.5 0 0 0 .5.4h3.8a.5.5 0 0 0 .5-.4l.4-2.5a7.4 7.4 0 0 0 2.6-1.5l2.3 1a.5.5 0 0 0 .6-.2l1.9-3.3a.5.5 0 0 0-.1-.6l-2-1.5zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/></svg></button>
   </header>
@@ -417,7 +449,7 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
     const idx=CONTENT && CONTENT.index;
     if(!idx) return;
     const b=$("#btnHome");
-    if(b) b.innerHTML="<strong>"+esc(idx.title||"Sistemas de Gestión")+"</strong><span>"+esc(idx.subtitle||"")+"</span>";
+    if(b) b.innerHTML='<strong class="brand-full">'+esc(idx.title||"Sistemas de Gestión")+'</strong><strong class="brand-short">SdG</strong><span>'+esc(idx.subtitle||"")+"</span>";
     const n=$("#navH");
     if(n) n.textContent="Programa · "+units().length+" unidades";
   }
@@ -674,15 +706,26 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
     if(p.length>=1 && classMeta(p[0])) return {view:p[0]};
     return {view:"home"};
   }
+  const scrollPos={};
+  let lastHash=location.hash||"#/";
+  let navPush=false;
   function go(v){
     const h=hashFor(v);
-    if(location.hash===h){ view=v; renderMain(); window.scrollTo(0,0); $("main").scrollTop=0; return; }
+    const curH=location.hash||"#/";
+    if(curH===h){ view=v; renderMain(); window.scrollTo(0,0); return; }
+    navPush=true;
     location.hash=h;   /* hashchange hace el render */
   }
   function goHome(){ go("home"); }
   function openUnit(id){ go(id); }
   function openClass(id){ go(id); }
   function onRoute(){
+    const prev=lastHash;
+    const next=location.hash||"#/";
+    if(prev!==next) scrollPos[prev]=window.scrollY;
+    const pushed=navPush;
+    navPush=false;
+    lastHash=next;
     const r=parseHash(location.hash);
     if(r.legacy){ history.replaceState(null,"",hashFor(r.view)); }
     if(r.story){
@@ -690,8 +733,9 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
       return;
     }
     if(st.open) hideStories();
-    if(view!==r.view){ view=r.view; renderMain(); $("main").scrollTop=0; window.scrollTo(0,0); }
+    if(view!==r.view){ view=r.view; renderMain(); }
     else renderMain();
+    window.scrollTo(0, pushed ? 0 : (scrollPos[next]||0));
   }
   window.addEventListener("hashchange", onRoute);
 
