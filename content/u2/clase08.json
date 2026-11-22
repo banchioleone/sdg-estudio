@@ -346,5 +346,118 @@
       "text": "**Próxima clase → Clase 9 · Descomposición y desestacionalización**"
     }
   ],
-  "historias": []
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "El problema",
+      "title": "Los picos vuelven en el calendario.",
+      "text": "En la ferretería, el tercer trimestre es todos los años el más bajo, el primero y el cuarto se turnan arriba, y el conjunto sube en los últimos años. Holt ve la tendencia pero no la estación. Winter suma un tercer estado: el índice estacional.",
+      "svg": "<svg viewBox=\"0 0 280 150\" width=\"100%\" height=\"150\" role=\"img\" aria-label=\"Ferretería / Acme: 24 trimestres\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Ferretería / Acme: 24 trimestres</text><line x1=\"36\" y1=\"102.2\" x2=\"266\" y2=\"102.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"105.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">200</text><line x1=\"36\" y1=\"77.2\" x2=\"266\" y2=\"77.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"80.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">400</text><line x1=\"36\" y1=\"52.2\" x2=\"266\" y2=\"52.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"55.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">600</text><line x1=\"36\" y1=\"27.2\" x2=\"266\" y2=\"27.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"30.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">800</text><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.8\" points=\"36.0,64.8 46.0,83.5 56.0,96.0 66.0,77.2 76.0,71.0 86.0,83.5 96.0,102.2 106.0,89.8 116.0,83.5 126.0,102.2 136.0,108.5 146.0,77.2 156.0,58.5 166.0,83.5 176.0,96.0 186.0,58.5 196.0,58.5 206.0,77.2 216.0,83.5 226.0,52.2 236.0,33.5 246.0,64.8 256.0,77.2 266.0,46.0\"/><circle cx=\"36.0\" cy=\"64.8\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"46.0\" cy=\"83.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"56.0\" cy=\"96.0\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"66.0\" cy=\"77.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"76.0\" cy=\"71.0\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"86.0\" cy=\"83.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"96.0\" cy=\"102.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"106.0\" cy=\"89.8\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"116.0\" cy=\"83.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"126.0\" cy=\"102.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"136.0\" cy=\"108.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"146.0\" cy=\"77.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"156.0\" cy=\"58.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"166.0\" cy=\"83.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"176.0\" cy=\"96.0\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"186.0\" cy=\"58.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"196.0\" cy=\"58.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"206.0\" cy=\"77.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"216.0\" cy=\"83.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"226.0\" cy=\"52.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"236.0\" cy=\"33.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"246.0\" cy=\"64.8\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"256.0\" cy=\"77.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"266.0\" cy=\"46.0\" r=\"2.3\" fill=\"#8cb4d6\"/><text x=\"36.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">I</text><text x=\"76.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">I</text><text x=\"116.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">I</text><text x=\"156.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">I</text><text x=\"196.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">I</text><text x=\"236.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">I</text><text x=\"266.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">IV</text><line x1=\"8\" y1=\"141\" x2=\"20\" y2=\"141\" stroke=\"#8cb4d6\" stroke-width=\"2\"/><text x=\"23.0\" y=\"144.0\" font-size=\"7.5\" fill=\"#8cb4d6\" text-anchor=\"start\">Ventas</text></svg>",
+      "chartLabel": "Cuadro 3 de la práctica = Acme de Hanke"
+    },
+    {
+      "type": "concepto",
+      "k": "Tres estados",
+      "title": "Nivel, pendiente y estación, cada uno con su constante.",
+      "text": "L es el nivel sin estación (alfa). T es el cambio del nivel por período (beta). S es el índice de esta estación (gamma). Y hace falta s, cuántos períodos tiene una vuelta.",
+      "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Winter multiplicativo\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Winter multiplicativo</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Lₜ · α</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">nivel sin estación</text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Tₜ · β</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">pendiente</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Sₜ · γ</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">índice estacional</text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Fₜ₊ₚ</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">(L + pT)·S</text></svg>",
+      "chartLabel": "Hanke, ecuaciones 4.18 a 4.21"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Datos trimestrales con un patrón que se repite cada año. ¿Cuánto vale s?",
+      "options": [
+        "12, porque el año tiene doce meses",
+        "4: cuatro trimestres por vuelta",
+        "1: un año"
+      ],
+      "correct": 1,
+      "feedback": "s es la cantidad de períodos observados por vuelta del patrón. Trimestral con ciclo anual: s = 4. Se justifica con calendario, gráfico y autocorrelación."
+    },
+    {
+      "type": "concepto",
+      "k": "Multiplicativo",
+      "title": "«20% más», no «20 unidades más».",
+      "text": "Winter multiplicativo supone que la estación es una proporción del nivel: si el nivel crece, las oscilaciones se agrandan. Si la amplitud se mantiene constante, el esquema aditivo merece consideración.",
+      "svg": "<svg viewBox=\"0 0 280 120\" width=\"100%\" height=\"120\" role=\"img\" aria-label=\"Aditivo vs multiplicativo\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Misma estación, dos formas</text><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.6\" points=\"14.0,78.0 21.6,65.8 29.2,73.6 36.8,81.4 44.4,69.2 52.0,57.0 59.6,64.8 67.2,72.6 74.8,60.4 82.4,48.2 90.0,56.0 97.6,63.8 105.2,51.6 112.8,39.4 120.4,47.2 128.0,55.0\"/><line x1=\"14\" y1=\"78\" x2=\"128\" y2=\"45\" stroke=\"#b7c0c8\" stroke-width=\".8\" stroke-dasharray=\"3 3\"/><text x=\"71.0\" y=\"108.0\" font-size=\"7.6\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Aditivo: amplitud constante</text><polyline fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.6\" points=\"150.0,78.0 157.6,68.5 165.2,73.6 172.8,81.3 180.4,69.2 188.0,54.5 195.6,64.8 203.2,77.7 210.8,60.4 218.4,40.5 226.0,56.0 233.6,74.1 241.2,51.6 248.8,26.5 256.4,47.2 264.0,70.5\"/><line x1=\"150\" y1=\"78\" x2=\"264\" y2=\"45\" stroke=\"#b7c0c8\" stroke-width=\".8\" stroke-dasharray=\"3 3\"/><text x=\"207.0\" y=\"108.0\" font-size=\"7.6\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Multiplicativo: crece con el nivel</text></svg>",
+      "chartLabel": "Esquema propio"
+    },
+    {
+      "type": "concepto",
+      "k": "La clave",
+      "title": "Sacás la estación para medir el nivel. La devolvés al pronosticar.",
+      "text": "En el nivel dividís el dato por el índice de la misma estación de la vuelta anterior. En la estación dividís el dato por el nivel nuevo. En el pronóstico multiplicás por el último índice conocido de la estación que querés anticipar.",
+      "formula": "L_t=\\alpha\\frac{Y_t}{S_{t-s}}+(1-\\alpha)(L_{t-1}+T_{t-1})"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "En la ecuación del nivel, ¿qué índice dividís?",
+      "options": [
+        "S del período inmediatamente anterior",
+        "S de la misma estación, una vuelta atrás",
+        "El S que vas a calcular ahora"
+      ],
+      "correct": 1,
+      "feedback": "Sₜ₋ₛ: misma estación, vuelta anterior. Para el trimestre 24 (IV), usás S₂₀. El S₂₄ se calcula después y sirve para el IV del año siguiente."
+    },
+    {
+      "type": "concepto",
+      "k": "Hanke 4.10",
+      "title": "Un paso real: el trimestre 24.",
+      "text": "Alfa 0,4, beta 0,1, gamma 0,3. Venía L₂₃ = 501,286 y T₂₃ = 9,1484; S₂₀ = 1,39628 y llega Y₂₄ = 650. Resultado: L₂₄ ≈ 492,469, T₂₄ ≈ 7,352 y S₂₄ ≈ 1,37336.",
+      "formula": "L_{24}=0{,}4\\frac{650}{1{,}39628}+0{,}6(501{,}286+9{,}1484)",
+      "ejemplo": "Antes de ver 650 se había pronosticado 712,712: error −62,712. S₂₄ no se usa para «arreglar» ese pronóstico."
+    },
+    {
+      "type": "concepto",
+      "k": "El próximo año",
+      "title": "Cuatro pronósticos desde el mismo origen.",
+      "text": "Desde t = 24: F₂₅ = 778,2 (índice del I), F₂₆ = 521,9, F₂₇ = 393,4 y F₂₈ = 716,7. Contra lo real de 2006, el error de prueba da MAD ≈ 55,80 y MSE ≈ 3683,81.",
+      "svg": "<svg viewBox=\"0 0 280 150\" width=\"100%\" height=\"150\" role=\"img\" aria-label=\"Prueba 2006 (horizontes 1 a 4)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Prueba 2006 (horizontes 1 a 4)</text><line x1=\"36\" y1=\"107.4\" x2=\"266\" y2=\"107.4\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"110.4\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">400</text><line x1=\"36\" y1=\"74.6\" x2=\"266\" y2=\"74.6\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"77.6\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">600</text><line x1=\"36\" y1=\"41.7\" x2=\"266\" y2=\"41.7\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"44.7\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">800</text><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.8\" points=\"36.0,33.5 112.7,74.6 189.3,99.2 266.0,58.1\"/><circle cx=\"36.0\" cy=\"33.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"112.7\" cy=\"74.6\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"189.3\" cy=\"99.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"266.0\" cy=\"58.1\" r=\"2.3\" fill=\"#8cb4d6\"/><polyline fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.8\" stroke-dasharray=\"4 3\" points=\"36.0,45.3 112.7,87.4 189.3,108.5 266.0,55.4\"/><circle cx=\"36.0\" cy=\"45.3\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"112.7\" cy=\"87.4\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"189.3\" cy=\"108.5\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"266.0\" cy=\"55.4\" r=\"2.3\" fill=\"#e25b16\"/><text x=\"36.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">I · 25</text><text x=\"112.7\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">II · 26</text><text x=\"189.3\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">III · 27</text><text x=\"266.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">IV · 28</text><line x1=\"8\" y1=\"141\" x2=\"20\" y2=\"141\" stroke=\"#8cb4d6\" stroke-width=\"2\"/><text x=\"23.0\" y=\"144.0\" font-size=\"7.5\" fill=\"#8cb4d6\" text-anchor=\"start\">Real 2006</text><line x1=\"71.4\" y1=\"141\" x2=\"83.4\" y2=\"141\" stroke=\"#e25b16\" stroke-width=\"2\" stroke-dasharray=\"3 2\"/><text x=\"86.4\" y=\"144.0\" font-size=\"7.5\" fill=\"#e25b16\" text-anchor=\"start\">Winter desde t=24</text></svg>",
+      "chartLabel": "Pronósticos de Hanke; MAD y MSE de prueba calculados por mí"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "El índice del primer trimestre es 1,55691. Significa que…",
+      "options": [
+        "Se venden 155,691 unidades más",
+        "El trimestre I queda ≈ 55,7% sobre el nivel proyectado",
+        "El nivel sube 1,56 por trimestre"
+      ],
+      "correct": 1,
+      "feedback": "En el modelo multiplicativo el índice es un factor sin unidades: 1 es neutro. 1,55691 = 55,691% por encima del nivel proyectado de ese trimestre."
+    },
+    {
+      "type": "concepto",
+      "k": "¿Valió la pena?",
+      "title": "Para el trimestre I, la estación era lo que faltaba.",
+      "text": "Para el primer trimestre de 2006 (real 850), SES pronosticaba 469,1 o 576,0. Winter dice 778,2. La diferencia es el índice del I, que SES no tiene.",
+      "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"F₂₅ (2006-I) según el método\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">F₂₅ (2006-I) según el método</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"27.0\" y=\"71.6\" width=\"34.0\" height=\"38.4\" rx=\"3\" fill=\"#b7c0c8\" opacity=\".9\"/><text x=\"44.0\" y=\"67.6\" font-size=\"8\" fill=\"#b7c0c8\" text-anchor=\"middle\" font-weight=\"700\">469,1</text><text x=\"44.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">SES</text><text x=\"44.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">α 0,1</text><rect x=\"91.0\" y=\"62.9\" width=\"34.0\" height=\"47.1\" rx=\"3\" fill=\"#b7c0c8\" opacity=\".9\"/><text x=\"108.0\" y=\"58.9\" font-size=\"8\" fill=\"#b7c0c8\" text-anchor=\"middle\" font-weight=\"700\">576,0</text><text x=\"108.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">SES</text><text x=\"108.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">α 0,6</text><rect x=\"155.0\" y=\"46.3\" width=\"34.0\" height=\"63.7\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"172.0\" y=\"42.3\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">778,2</text><text x=\"172.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Winter</text><rect x=\"219.0\" y=\"40.4\" width=\"34.0\" height=\"69.6\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"236.0\" y=\"36.4\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">850,0</text><text x=\"236.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Real</text></svg>",
+      "chartLabel": "Hanke, ejemplos 4.5, 4.6 y 4.10"
+    },
+    {
+      "type": "concepto",
+      "k": "Errata",
+      "title": "Es más p·T, no menos.",
+      "text": "El resumen de 25 páginas escribe la proyección con «A menos pT». Hanke, ecuación 4.21, usa L más p·T. Una pendiente positiva tiene que subir la base, no bajarla.",
+      "formula": "F_{t+p}=(L_t+pT_t)\\,S_{t-s+p}",
+      "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Primero la base, después el calendario\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Primero la base, después el calendario</text><rect x=\"8.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"50.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Lₜ</text><text x=\"50.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">nivel sin estación</text><path d=\"M93.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"98.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"140.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">+ p·Tₜ</text><text x=\"140.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">proyectar pendiente</text><path d=\"M183.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"188.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"230.0\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">× S</text><text x=\"230.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">estación objetivo</text></svg>",
+      "chartLabel": "Hanke 4.21: signo + delante de p·T"
+    },
+    {
+      "type": "concepto",
+      "k": "No mezcles",
+      "title": "Error de ajuste no es error de prueba.",
+      "text": "Hanke informa MSE de ajuste 7636,86 para t = 1 a 24. El 3683,81 sale de cuatro pronósticos de 2006, de horizontes 1 a 4 desde un origen fijo. Son protocolos distintos: no los pongas en la misma columna."
+    },
+    {
+      "type": "cierre",
+      "k": "Para llevar",
+      "title": "Llevate esto de la Clase 8.",
+      "text": "Winter = nivel + pendiente + índice, con alfa, beta y gamma. Dividís por S de la misma estación para el nivel y multiplicás al pronosticar. s = 4 en trimestral. Es L + pT. Próxima: descomposición."
+    }
+  ]
 }

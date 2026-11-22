@@ -338,5 +338,124 @@
       "text": "**Próxima clase → Clase 11 · Regresión lineal simple**"
     }
   ],
-  "historias": []
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "Un pronóstico no es una meta.",
+      "text": "Pronosticar reduce incertidumbre: no crea certeza ni reemplaza la decisión. Antes de la fórmula, preguntá para qué decisión es: inventario semanal por artículo o capacidad a varios años piden horizontes, datos y precisión distintos."
+    },
+    {
+      "type": "concepto",
+      "k": "Salida",
+      "title": "Decir «500» no termina el problema.",
+      "text": "Puntual: un valor central. Por intervalo: un rango con cobertura. De densidad: la distribución completa. Y siempre con unidad y período.",
+      "svg": "<svg viewBox=\"0 0 280 120\" width=\"100%\" height=\"120\" role=\"img\" aria-label=\"Tipos de pronóstico\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Tres formas de decir «la demanda será…»</text><circle cx=\"46\" cy=\"66\" r=\"6\" fill=\"#e25b16\"/><text x=\"46.0\" y=\"100.0\" font-size=\"8.5\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Puntual</text><text x=\"46.0\" y=\"111.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">un valor</text><line x1=\"104\" y1=\"66\" x2=\"176\" y2=\"66\" stroke=\"#8cb4d6\" stroke-width=\"6\" stroke-linecap=\"round\"/><circle cx=\"140\" cy=\"66\" r=\"3.5\" fill=\"#111\" stroke=\"#fff\"/><text x=\"140.0\" y=\"100.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Intervalo</text><text x=\"140.0\" y=\"111.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">rango + cobertura</text><polyline fill=\"#7cc49a33\" stroke=\"#7cc49a\" stroke-width=\"1.6\" points=\"200,84 200.0,84.0 201.5,83.9 203.0,83.9 204.5,83.8 206.0,83.7 207.5,83.5 209.0,83.2 210.5,82.8 212.0,82.1 213.5,81.3 215.0,80.1 216.5,78.5 218.0,76.6 219.5,74.1 221.0,71.2 222.5,67.8 224.0,64.0 225.5,60.0 227.0,55.8 228.5,51.7 230.0,47.9 231.5,44.6 233.0,42.1 234.5,40.5 236.0,40.0 237.5,40.5 239.0,42.1 240.5,44.6 242.0,47.9 243.5,51.7 245.0,55.8 246.5,60.0 248.0,64.0 249.5,67.8 251.0,71.2 252.5,74.1 254.0,76.6 255.5,78.5 257.0,80.1 258.5,81.3 260.0,82.1 261.5,82.8 263.0,83.2 264.5,83.5 266.0,83.7 267.5,83.8 269.0,83.9 270.5,83.9 272.0,84.0 272,84\"/><text x=\"236.0\" y=\"100.0\" font-size=\"8.5\" fill=\"#7cc49a\" text-anchor=\"middle\" font-weight=\"700\">Densidad</text><text x=\"236.0\" y=\"111.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">toda la distribución</text></svg>",
+      "chartLabel": "Esquema propio; clasificación de Hanke y Preguntas Frecuentes"
+    },
+    {
+      "type": "concepto",
+      "k": "Demanda vs. venta",
+      "title": "Pidieron 120, había 90.",
+      "text": "Complemento, no está en el material: la venta observada es lo que se transó; la demanda, lo que se quiso comprar. Si ajustás la serie con 90 como si fuera demanda, perpetuás el faltante.",
+      "svg": "<svg viewBox=\"0 0 280 120\" width=\"100%\" height=\"120\" role=\"img\" aria-label=\"Ejemplo propio (no es dato del material)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Ejemplo propio (no es dato del material)</text><line x1=\"12\" y1=\"90\" x2=\"268\" y2=\"90\" stroke=\"#5a6570\"/><rect x=\"37.7\" y=\"37.8\" width=\"34.0\" height=\"52.2\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"54.7\" y=\"33.8\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">120</text><text x=\"54.7\" y=\"101.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Pedido</text><rect x=\"123.0\" y=\"50.9\" width=\"34.0\" height=\"39.1\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"140.0\" y=\"46.9\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">90</text><text x=\"140.0\" y=\"101.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Vendido</text><rect x=\"208.3\" y=\"77.0\" width=\"34.0\" height=\"13.0\" rx=\"3\" fill=\"#b7c0c8\" opacity=\".9\"/><text x=\"225.3\" y=\"73.0\" font-size=\"8\" fill=\"#b7c0c8\" text-anchor=\"middle\" font-weight=\"700\">30</text><text x=\"225.3\" y=\"101.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">No atendido</text></svg>",
+      "chartLabel": "Ejemplo propio para ilustrar la distinción"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Sólo tenés la facturación: 90 unidades. ¿Podés saber que la demanda fue 120?",
+      "options": [
+        "Sí: se deduce de la facturación",
+        "No, salvo que hayas registrado los pedidos no atendidos",
+        "Sí: demanda y venta son lo mismo"
+      ],
+      "correct": 1,
+      "feedback": "El 120 sólo existe si registraste también lo que no pudiste atender. Mirando la factura sola, ves 90."
+    },
+    {
+      "type": "concepto",
+      "k": "Administrar la demanda",
+      "title": "Atenderla o intentar moverla.",
+      "text": "Chase: coordinar y controlar todas las fuentes de demanda para usar bien el sistema productivo y entregar a tiempo. Papel activo: buscás influir en el momento o el volumen. Pasivo: atendés lo que llega. No es sólo una cuenta estadística."
+    },
+    {
+      "type": "concepto",
+      "k": "Dependiente o independiente",
+      "title": "Las ruedas no se pronostican: se calculan.",
+      "text": "Chase: para 1000 triciclos hacen falta 1000 ruedas delanteras y 2000 traseras. Pronosticás los triciclos (demanda independiente, externa) y calculás las ruedas (demanda dependiente).",
+      "svg": "<svg viewBox=\"0 0 280 130\" width=\"100%\" height=\"130\" role=\"img\" aria-label=\"Triciclos\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Demanda independiente → dependiente</text><rect x=\"90\" y=\"24\" width=\"100\" height=\"32\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\"/><text x=\"140.0\" y=\"39.0\" font-size=\"9\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">1000 triciclos</text><text x=\"140.0\" y=\"50.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">se pronostica</text><rect x=\"20\" y=\"84\" width=\"100\" height=\"32\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\"/><text x=\"70.0\" y=\"99.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">1000 ruedas</text><text x=\"70.0\" y=\"110.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">delanteras · se calcula</text><path d=\"M140 57 L70 83\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"160\" y=\"84\" width=\"100\" height=\"32\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\"/><text x=\"210.0\" y=\"99.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">2000 ruedas</text><text x=\"210.0\" y=\"110.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">traseras · se calcula</text><path d=\"M140 57 L210 83\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><text x=\"140.0\" y=\"74.0\" font-size=\"7.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">× 1 y × 2</text></svg>",
+      "chartLabel": "Ejemplo de Chase"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Las 2000 ruedas traseras de los triciclos son demanda…",
+      "options": [
+        "Independiente: hay que pronosticarlas aparte",
+        "Dependiente: salen de la cantidad de triciclos",
+        "Cualitativa"
+      ],
+      "correct": 1,
+      "feedback": "Se derivan del artículo final y de su estructura. Pronosticar tres series por separado podría darte cantidades incompatibles."
+    },
+    {
+      "type": "concepto",
+      "k": "Clasificar",
+      "title": "Horizonte, alcance, información, familia y salida.",
+      "text": "Chase también pide mirar datos disponibles, precisión requerida, presupuesto y personal capacitado. La técnica más sofisticada puede ser peor elección si no tenés las variables a tiempo o nadie la puede mantener.",
+      "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Horizonte\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Horizonte según Chase</text><rect x=\"10\" y=\"34\" width=\"70\" height=\"18\" rx=\"4\" fill=\"#8cb4d6\" opacity=\".8\"/><text x=\"45.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#111\" text-anchor=\"middle\" font-weight=\"700\">Corto</text><text x=\"45.0\" y=\"66.0\" font-size=\"7.5\" fill=\"#8cb4d6\" text-anchor=\"middle\">&lt; 3 meses</text><rect x=\"80\" y=\"34\" width=\"110\" height=\"18\" rx=\"4\" fill=\"#e2c46b\" opacity=\".8\"/><text x=\"135.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#111\" text-anchor=\"middle\" font-weight=\"700\">Mediano</text><text x=\"135.0\" y=\"66.0\" font-size=\"7.5\" fill=\"#e2c46b\" text-anchor=\"middle\">3 meses a 2 años</text><rect x=\"190\" y=\"34\" width=\"82\" height=\"18\" rx=\"4\" fill=\"#e25b16\" opacity=\".8\"/><text x=\"231.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#111\" text-anchor=\"middle\" font-weight=\"700\">Largo</text><text x=\"231.0\" y=\"66.0\" font-size=\"7.5\" fill=\"#e25b16\" text-anchor=\"middle\">&gt; 2 años</text><text x=\"140.0\" y=\"86.0\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"middle\">Cambian datos, detalle y técnica. Son rangos de esa fuente.</text></svg>",
+      "chartLabel": "Rangos de Chase"
+    },
+    {
+      "type": "concepto",
+      "k": "Cualitativos",
+      "title": "No es adivinar: es juicio con procedimiento.",
+      "text": "Chase lista cinco: acumulativo desde la fuerza de ventas, investigación de mercados, consenso o juicio ejecutivo, analogía histórica y Delphi. Sirven ante productos nuevos, cambios tecnológicos o falta de historia comparable.",
+      "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Métodos cualitativos de Chase\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Métodos cualitativos de Chase</text><rect x=\"8.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"32.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Bottom-up</text><text x=\"32.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">vendedores</text><path d=\"M57.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"62.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"86.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Mercado</text><text x=\"86.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">clientes</text><path d=\"M111.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"116.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"140.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Consenso</text><text x=\"140.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">ejecutivos</text><path d=\"M165.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"170.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"194.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Analogía</text><text x=\"194.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">caso similar</text><path d=\"M219.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"224.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"248.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Delphi</text><text x=\"248.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">expertos</text></svg>",
+      "chartLabel": "Chase cap. 15"
+    },
+    {
+      "type": "concepto",
+      "k": "Delphi",
+      "title": "Expertos por separado, en rondas, sin nombres.",
+      "text": "Consultás individualmente para evitar la presión del grupo, resumís sin decir quién opinó qué, devolvés el resumen y pedís revisión. Iterás. Consenso no es verdad: explicá los desacuerdos que quedan.",
+      "svg": "<svg viewBox=\"0 0 280 150\" width=\"100%\" height=\"150\" role=\"img\" aria-label=\"Delphi\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Delphi: cuatro rasgos (Hanke)</text><rect x=\"94.0\" y=\"27.3\" width=\"92\" height=\"22\" rx=\"11\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\"/><text x=\"140.0\" y=\"41.3\" font-size=\"7.6\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Anonimato</text><rect x=\"165.3\" y=\"71.0\" width=\"92\" height=\"22\" rx=\"11\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\"/><text x=\"211.3\" y=\"85.0\" font-size=\"7.6\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Iteración</text><rect x=\"94.0\" y=\"114.7\" width=\"92\" height=\"22\" rx=\"11\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\"/><text x=\"140.0\" y=\"124.7\" font-size=\"7.6\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Retroalimentación</text><text x=\"140.0\" y=\"132.7\" font-size=\"7.6\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">controlada</text><rect x=\"22.7\" y=\"71.0\" width=\"92\" height=\"22\" rx=\"11\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\"/><text x=\"68.7\" y=\"85.0\" font-size=\"7.6\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Agregación</text><circle cx=\"140\" cy=\"82\" r=\"20\" fill=\"#e25b1622\" stroke=\"#e25b16\"/><text x=\"140.0\" y=\"81.0\" font-size=\"7.5\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">rondas</text><text x=\"140.0\" y=\"90.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">de expertos</text></svg>",
+      "chartLabel": "Hanke cap. 10; procedimiento de Chase"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "¿Por qué Delphi consulta a cada experto por separado?",
+      "options": [
+        "Para ahorrar tiempo de reunión",
+        "Para evitar la presión de un grupo reunido o de una jerarquía",
+        "Porque los expertos no se conocen"
+      ],
+      "correct": 1,
+      "feedback": "El anonimato y la consulta individual protegen la información que una voz dominante podría silenciar."
+    },
+    {
+      "type": "concepto",
+      "k": "Combinar",
+      "title": "Dos pronósticos pueden valer más que uno.",
+      "text": "Hanke trata la combinación. Ejemplo propio: si un método dice 480 y otro 520, el promedio simple da 500; con pesos 0,7 y 0,3, da 492. Los pesos se justifican con error sobre datos no usados para elegirlos.",
+      "formula": "0{,}7\\cdot480+0{,}3\\cdot520=492",
+      "ejemplo": "Ajustar «a ojo» sólo agrega valor si incorpora información que el modelo no tiene. Acercar el número a una meta comercial no lo hace más exacto."
+    },
+    {
+      "type": "concepto",
+      "k": "Sistema de pronósticos",
+      "title": "Un sistema, no una fórmula.",
+      "text": "Hanke, cap. 11: nivel estratégico (qué, para qué, quién, qué precisión y costo) y nivel operativo (recopilar, depurar, modelar, emitir y evaluar). La evaluación vuelve al diagnóstico. Chase suma el pronóstico enfocado y CPFR para colaborar entre empresas.",
+      "svg": "<svg viewBox=\"0 0 280 172\" width=\"100%\" height=\"172\" role=\"img\" aria-label=\"Sistema de pronósticos\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Sistema de pronósticos</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. Definí la decisión</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">producto · horizonte</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. Registrá y depurá</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">SIG / ERP</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. Diagnosticá y elegí</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">patrón · costo</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">4. Ajustá y validá</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">error fuera del ajuste</text><rect x=\"8\" y=\"140\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"155.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">5. Decidí y controlá</text><text x=\"266.0\" y=\"155.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">retroalimentación</text></svg>",
+      "chartLabel": "Esquema propio a partir de Hanke cap. 11"
+    },
+    {
+      "type": "cierre",
+      "k": "Para llevar",
+      "title": "Llevate esto de la Clase 2.b.",
+      "text": "Pronóstico ≠ meta. Puntual, intervalo o densidad. Demanda independiente se pronostica, dependiente se calcula. Cualitativos con procedimiento; Delphi: anonimato, rondas, retroalimentación y agregación. Sistema con control y retroalimentación. Próxima: regresión simple."
+    }
+  ]
 }

@@ -260,7 +260,7 @@
         },
         {
           "type": "paragraph",
-          "text": "Mes 5: F₅=700, e₅=−15; L₅=695,5; T₅=−0,45. Mes 6: F₆=695,05 y e₆=−47,05. No uses el nivel posterior para medir el error del mismo mes. Al cerrar mes 11: L≈735,00; T≈3,48; F₁₂≈738,49."
+          "text": "Mes 5: F₅=700, e₅=−15; L₅=695,5; T₅=−0,45. Mes 6: F₆=695,05 y e₆=−47,05. No uses el nivel posterior para medir el error del mismo mes. Al cerrar mes 11: L≈735,00; T≈3,48; F₁₂≈738,47."
         },
         {
           "type": "table",
@@ -376,5 +376,121 @@
       "text": "**Próxima clase → Clase 8 · Winter multiplicativo**"
     }
   ],
-  "historias": []
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "El problema",
+      "title": "SES llega tarde cuando la serie sube.",
+      "text": "T-150, meses 4 a 11: la demanda pasa de 700 a 762. SES con alfa 2/9 va siempre detrás. Su señal de rastreo termina en 6,13: puro error positivo acumulado.",
+      "svg": "<svg viewBox=\"0 0 280 150\" width=\"100%\" height=\"150\" role=\"img\" aria-label=\"T-150: SES queda atrás\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">T-150: SES queda atrás</text><line x1=\"36\" y1=\"107.2\" x2=\"266\" y2=\"107.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"110.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">650</text><line x1=\"36\" y1=\"74.3\" x2=\"266\" y2=\"74.3\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"77.3\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">700</text><line x1=\"36\" y1=\"41.4\" x2=\"266\" y2=\"41.4\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"44.4\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">750</text><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.8\" points=\"36.0,74.3 64.8,84.2 93.5,108.5 122.2,63.1 151.0,65.7 179.8,55.9 208.5,38.8 237.2,33.5\"/><circle cx=\"36.0\" cy=\"74.3\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"64.8\" cy=\"84.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"93.5\" cy=\"108.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"122.2\" cy=\"63.1\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"151.0\" cy=\"65.7\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"179.8\" cy=\"55.9\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"208.5\" cy=\"38.8\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"237.2\" cy=\"33.5\" r=\"2.3\" fill=\"#8cb4d6\"/><polyline fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.8\" stroke-dasharray=\"4 3\" points=\"36.0,107.2 64.8,99.9 93.5,96.4 122.2,99.1 151.0,91.1 179.8,85.4 208.5,78.9 237.2,70.0 266.0,61.9\"/><circle cx=\"36.0\" cy=\"107.2\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"64.8\" cy=\"99.9\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"93.5\" cy=\"96.4\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"122.2\" cy=\"99.1\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"151.0\" cy=\"91.1\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"179.8\" cy=\"85.4\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"208.5\" cy=\"78.9\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"237.2\" cy=\"70.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"266.0\" cy=\"61.9\" r=\"2.3\" fill=\"#e25b16\"/><text x=\"36.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">4</text><text x=\"64.8\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">5</text><text x=\"93.5\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">6</text><text x=\"122.2\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">7</text><text x=\"151.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">8</text><text x=\"179.8\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">9</text><text x=\"208.5\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">10</text><text x=\"237.2\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">11</text><text x=\"266.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">12</text><line x1=\"8\" y1=\"141\" x2=\"20\" y2=\"141\" stroke=\"#8cb4d6\" stroke-width=\"2\"/><text x=\"23.0\" y=\"144.0\" font-size=\"7.5\" fill=\"#8cb4d6\" text-anchor=\"start\">Real</text><line x1=\"48.4\" y1=\"141\" x2=\"60.4\" y2=\"141\" stroke=\"#e25b16\" stroke-width=\"2\" stroke-dasharray=\"3 2\"/><text x=\"63.4\" y=\"144.0\" font-size=\"7.5\" fill=\"#e25b16\" text-anchor=\"start\">SES α 2/9</text></svg>",
+      "chartLabel": "Final 26/09/2002 (F₄ = 650); curva calculada por mí"
+    },
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "Para una tendencia hacen falta dos cosas.",
+      "text": "Un nivel: dónde está la serie hoy. Una pendiente: cuánto cambia por período. Con los dos proyectás una recta desde el último dato. Brown y Holt hacen eso, cada uno a su manera.",
+      "formula": "F_{t+p}=L_t+p\\,T_t",
+      "svg": "<svg viewBox=\"0 0 280 130\" width=\"100%\" height=\"130\" role=\"img\" aria-label=\"Nivel y pendiente\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Holt: un nivel y una pendiente</text><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.8\" points=\"30,96 62,90 94,84 126,80 158,70\"/><circle cx=\"30\" cy=\"96\" r=\"2.6\" fill=\"#8cb4d6\"/><circle cx=\"62\" cy=\"90\" r=\"2.6\" fill=\"#8cb4d6\"/><circle cx=\"94\" cy=\"84\" r=\"2.6\" fill=\"#8cb4d6\"/><circle cx=\"126\" cy=\"80\" r=\"2.6\" fill=\"#8cb4d6\"/><circle cx=\"158\" cy=\"70\" r=\"2.6\" fill=\"#8cb4d6\"/><circle cx=\"158\" cy=\"70\" r=\"5\" fill=\"none\" stroke=\"#e2c46b\" stroke-width=\"1.8\"/><text x=\"150.0\" y=\"86.0\" font-size=\"9\" fill=\"#e2c46b\" text-anchor=\"end\" font-weight=\"700\">Lₜ</text><circle cx=\"190\" cy=\"61\" r=\"3.6\" fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.6\"/><text x=\"190.0\" y=\"53.0\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">L + T</text><circle cx=\"222\" cy=\"52\" r=\"3.6\" fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.6\"/><text x=\"222.0\" y=\"44.0\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">L + 2T</text><circle cx=\"254\" cy=\"43\" r=\"3.6\" fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.6\"/><text x=\"254.0\" y=\"35.0\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">L + 3T</text><line x1=\"158\" y1=\"70\" x2=\"254\" y2=\"43\" stroke=\"#e25b16\" stroke-width=\"1.6\" stroke-dasharray=\"4 3\"/><path d=\"M190 61 v9 h-32\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\".8\"/><text x=\"193.0\" y=\"74.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"start\">T por período</text><text x=\"140.0\" y=\"122.0\" font-size=\"7.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">Esquema: desde cada origen la proyección es una recta Lₜ + p·Tₜ</text></svg>",
+      "chartLabel": "Esquema propio, no es una serie del material"
+    },
+    {
+      "type": "concepto",
+      "k": "Brown",
+      "title": "Dos suavizados, un solo alfa.",
+      "text": "Suavizás la serie (A) y después suavizás ese suavizado (A prima). La distancia entre los dos te da la pendiente; con ella corregís el nivel.",
+      "formula": "a_t=2A_t-A′_t\\qquad b_t=\\frac{\\alpha}{1-\\alpha}(A_t-A′_t)",
+      "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Brown en cadena\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Brown en cadena</text><rect x=\"8.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"32.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Yₜ</text><text x=\"32.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">dato</text><path d=\"M57.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"62.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"86.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Aₜ</text><text x=\"86.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">suaviza Y</text><path d=\"M111.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"116.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"140.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">A′ₜ</text><text x=\"140.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">suaviza A</text><path d=\"M165.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"170.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"194.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">aₜ, bₜ</text><text x=\"194.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">nivel · pend.</text><path d=\"M219.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"224.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"248.0\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Fₜ₊ₚ</text><text x=\"248.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">aₜ + p·bₜ</text></svg>",
+      "chartLabel": "Ojo: el resumen trae una errata (Aₜ = αAₜ…); la primera suavización usa Yₜ"
+    },
+    {
+      "type": "concepto",
+      "k": "Brown en T-150",
+      "title": "Mes 5: el pronóstico de junio es 691.",
+      "text": "Con alfa 0,3 y A₄ = A′₄ = 700: A₅ = 695,5 y A′₅ = 698,65. Nivel a₅ = 692,35 y pendiente b₅ = −1,35. F₆ = 691,00. Al cerrar el mes 11, F₁₂ ≈ 761,7.",
+      "ejemplo": "Cálculo propio para ilustrar el algoritmo, no solución del final ni alfa óptimo."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "En Brown, ¿cuántos parámetros de suavización elegís?",
+      "options": [
+        "Uno: el mismo alfa mueve las dos suavizaciones",
+        "Dos: alfa y beta",
+        "Tres: alfa, beta y gamma"
+      ],
+      "correct": 0,
+      "feedback": "Brown usa un único alfa. Holt separa alfa (nivel) y beta (pendiente). Winter agrega gamma para la estación."
+    },
+    {
+      "type": "concepto",
+      "k": "Holt",
+      "title": "Tres ecuaciones y un orden que no se negocia.",
+      "text": "Primero emitís el pronóstico. Llega el dato y actualizás el nivel. Con el nivel nuevo, la pendiente. Recién ahí proyectás. Si medís el error con el nivel posterior al dato, hacés trampa sin querer.",
+      "svg": "<svg viewBox=\"0 0 280 142\" width=\"100%\" height=\"142\" role=\"img\" aria-label=\"Holt paso a paso\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Holt paso a paso</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. Emití Fₜ = Lₜ₋₁ + Tₜ₋₁</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">antes del dato</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. Actualizá Lₜ con α</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">usa Yₜ</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. Actualizá Tₜ con β</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">usa Lₜ − Lₜ₋₁</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">4. Proyectá Lₜ + p·Tₜ</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">desde ese origen</text></svg>",
+      "chartLabel": "Hanke, ecuaciones de Holt (cap. 4)"
+    },
+    {
+      "type": "concepto",
+      "k": "Hanke 4.9",
+      "title": "Acme, a mano: F₃ = 450,5.",
+      "text": "L₁ = 500, T₁ = 0, alfa 0,3 y beta 0,1. Con Y₂ = 350: L₂ = 455 y T₂ = −4,5. Entonces F₃ = 450,5, y como Y₃ = 250 el error es −200,5.",
+      "formula": "L_2=0{,}3\\cdot350+0{,}7(500+0)=455",
+      "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Holt: un paso del ejemplo 4.9\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Holt: un paso del ejemplo 4.9</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Y₂ = 350</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">dato nuevo</text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">L₂ = 455</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">nivel</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">T₂ = −4,5</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">pendiente</text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"8.5\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">F₃ = 450,5</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">L₂ + T₂</text></svg>",
+      "chartLabel": "Hanke, ejemplo 4.9",
+      "ejemplo": "F₂₅ del libro: 577,7 (mi cálculo: 577,6). MSE: libro 20515,5; reproducción propia 21448,3. Diferencia sin resolver."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Con L₂ = 455 y T₂ = −4,5, ¿cuánto vale F₃?",
+      "options": [
+        "455",
+        "450,5",
+        "459,5"
+      ],
+      "correct": 1,
+      "feedback": "F₃ = L₂ + 1·T₂ = 455 − 4,5 = 450,5. La pendiente negativa baja la proyección; sumar p·T respeta unidades."
+    },
+    {
+      "type": "concepto",
+      "k": "T-150 con Holt",
+      "title": "Ahora el pronóstico acompaña la subida.",
+      "text": "Holt con alfa 0,3 y beta 0,1 arranca en L₄ = 700 y T₄ = 0. Al cierre del mes 11 tiene nivel 735 y pendiente 3,48: F₁₂ ≈ 738,5.",
+      "svg": "<svg viewBox=\"0 0 280 150\" width=\"100%\" height=\"150\" role=\"img\" aria-label=\"T-150: real, SES y Holt\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">T-150: real, SES y Holt</text><line x1=\"36\" y1=\"107.2\" x2=\"266\" y2=\"107.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"110.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">650</text><line x1=\"36\" y1=\"74.3\" x2=\"266\" y2=\"74.3\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"77.3\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">700</text><line x1=\"36\" y1=\"41.4\" x2=\"266\" y2=\"41.4\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"44.4\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">750</text><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.8\" points=\"36.0,74.3 64.8,84.2 93.5,108.5 122.2,63.1 151.0,65.7 179.8,55.9 208.5,38.8 237.2,33.5\"/><circle cx=\"36.0\" cy=\"74.3\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"64.8\" cy=\"84.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"93.5\" cy=\"108.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"122.2\" cy=\"63.1\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"151.0\" cy=\"65.7\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"179.8\" cy=\"55.9\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"208.5\" cy=\"38.8\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"237.2\" cy=\"33.5\" r=\"2.3\" fill=\"#8cb4d6\"/><polyline fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1.8\" stroke-dasharray=\"4 3\" points=\"36.0,107.2 64.8,99.9 93.5,96.4 122.2,99.1 151.0,91.1 179.8,85.4 208.5,78.9 237.2,70.0 266.0,61.9\"/><circle cx=\"36.0\" cy=\"107.2\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"64.8\" cy=\"99.9\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"93.5\" cy=\"96.4\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"122.2\" cy=\"99.1\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"151.0\" cy=\"91.1\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"179.8\" cy=\"85.4\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"208.5\" cy=\"78.9\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"237.2\" cy=\"70.0\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"266.0\" cy=\"61.9\" r=\"2.3\" fill=\"#b7c0c8\"/><polyline fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.8\" stroke-dasharray=\"4 3\" points=\"64.8,74.3 93.5,77.5 122.2,88.1 151.0,81.0 179.8,76.5 208.5,69.7 237.2,58.9 266.0,49.0\"/><circle cx=\"64.8\" cy=\"74.3\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"93.5\" cy=\"77.5\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"122.2\" cy=\"88.1\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"151.0\" cy=\"81.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"179.8\" cy=\"76.5\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"208.5\" cy=\"69.7\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"237.2\" cy=\"58.9\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"266.0\" cy=\"49.0\" r=\"2.3\" fill=\"#e25b16\"/><text x=\"36.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">4</text><text x=\"64.8\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">5</text><text x=\"93.5\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">6</text><text x=\"122.2\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">7</text><text x=\"151.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">8</text><text x=\"179.8\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">9</text><text x=\"208.5\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">10</text><text x=\"237.2\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">11</text><text x=\"266.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">12</text><line x1=\"8\" y1=\"141\" x2=\"20\" y2=\"141\" stroke=\"#8cb4d6\" stroke-width=\"2\"/><text x=\"23.0\" y=\"144.0\" font-size=\"7.5\" fill=\"#8cb4d6\" text-anchor=\"start\">Real</text><line x1=\"48.4\" y1=\"141\" x2=\"60.4\" y2=\"141\" stroke=\"#b7c0c8\" stroke-width=\"2\" stroke-dasharray=\"3 2\"/><text x=\"63.4\" y=\"144.0\" font-size=\"7.5\" fill=\"#b7c0c8\" text-anchor=\"start\">SES</text><line x1=\"84.19999999999999\" y1=\"141\" x2=\"96.19999999999999\" y2=\"141\" stroke=\"#e25b16\" stroke-width=\"2\" stroke-dasharray=\"3 2\"/><text x=\"99.2\" y=\"144.0\" font-size=\"7.5\" fill=\"#e25b16\" text-anchor=\"start\">Holt .3/.1</text></svg>",
+      "chartLabel": "Extensión didáctica propia, no solución oficial del final"
+    },
+    {
+      "type": "concepto",
+      "k": "El tablero",
+      "title": "Menos error y menos sesgo, en la misma ventana.",
+      "text": "Meses 5 a 11. SES: MAD 42,41 y TS 6,13. Holt 0,3/0,1: MAD 34,31 y TS 3,38. Holt 0,5/0,3: MAD 29,16 y TS 3,07. Comparás con igual ventana y denominador, o no comparás.",
+      "svg": "<svg viewBox=\"0 0 280 150\" width=\"100%\" height=\"150\" role=\"img\" aria-label=\"MAD en T-150, meses 5…11\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">MAD en T-150, meses 5…11</text><line x1=\"12\" y1=\"120\" x2=\"268\" y2=\"120\" stroke=\"#5a6570\"/><rect x=\"37.7\" y=\"41.7\" width=\"34.0\" height=\"78.3\" rx=\"3\" fill=\"#b7c0c8\" opacity=\".9\"/><text x=\"54.7\" y=\"37.7\" font-size=\"8\" fill=\"#b7c0c8\" text-anchor=\"middle\" font-weight=\"700\">42,41</text><text x=\"54.7\" y=\"131.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">SES</text><rect x=\"123.0\" y=\"56.7\" width=\"34.0\" height=\"63.3\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"140.0\" y=\"52.7\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">34,31</text><text x=\"140.0\" y=\"131.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Holt .3/.1</text><rect x=\"208.3\" y=\"66.2\" width=\"34.0\" height=\"53.8\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"225.3\" y=\"62.2\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">29,16</text><text x=\"225.3\" y=\"131.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Holt .5/.3</text></svg>",
+      "chartLabel": "Cálculos propios de la Clase 7"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Holt da TS = 3,38, dentro de límites ±4. ¿Ya podés decir que el pronóstico es bueno?",
+      "options": [
+        "Sí: la TS lo garantiza",
+        "No del todo: sólo dice que ese control de sesgo no se activó",
+        "No: una TS buena tiene que ser exactamente 0"
+      ],
+      "correct": 1,
+      "feedback": "La TS dentro de límites no garantiza MAD bajo ni buen desempeño futuro. Además, ±4 acá es un límite didáctico, no un dato del final. Respondé en varios planos: patrón, errores, sesgo y uso."
+    },
+    {
+      "type": "concepto",
+      "k": "Cuidado",
+      "title": "Brown no es Holt con alfa igual a beta.",
+      "text": "Hanke menciona una equivalencia, pero no es literal con estas fórmulas. Complemento algebraico, no está en el material: Brown con alfa 0,3 equivale a un Holt con alfa 0,51 y beta ≈ 0,176. Probá los dos algoritmos, no copies parámetros."
+    },
+    {
+      "type": "cierre",
+      "k": "Para llevar",
+      "title": "Llevate esto de la Clase 7.",
+      "text": "Tendencia = nivel + pendiente. Brown: dos suavizados y un alfa. Holt: emitir, nivel, pendiente, proyectar. En T-150 Holt baja el MAD de 42 a 34 y la TS de 6,1 a 3,4. Próxima: Winter, cuando además hay estación."
+    }
+  ]
 }

@@ -340,5 +340,117 @@
       "text": "**Próxima clase → Fin de la Unidad 2 · Próximo paso: historias para Clases 2.b-teoría, 6–14**"
     }
   ],
-  "historias": []
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "El mejor modelo no es el de más variables.",
+      "text": "Hanke plantea dos fuerzas: sumar variables que aporten exactitud y conservar pocas, porque medirlas y monitorearlas cuesta. Gana el modelo coherente, con supuestos razonables y que pronostica bien fuera de su ajuste."
+    },
+    {
+      "type": "concepto",
+      "k": "Tres pasos",
+      "title": "Juntar, depurar, reducir y validar.",
+      "text": "Reunís X justificadas. Descartás las no fundamentales, duplicadas, con grandes errores de medición o difíciles de medir. Reducís a la mejor combinación y la validás.",
+      "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Selección de variables (Hanke)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Selección de variables (Hanke)</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Reunir</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">X justificadas</text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Depurar</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">duplicadas, caras</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Reducir</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">mejor combinación</text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Validar</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">fuera del ajuste</text></svg>"
+    },
+    {
+      "type": "concepto",
+      "k": "Todas las posibles",
+      "title": "Con 3 variables hay 7 modelos.",
+      "text": "Todas las regresiones posibles examina cada combinación no vacía: 2 a la p, menos 1. La grilla RLM_Ej8 tiene justamente esas siete columnas. Por pasos agrega o saca de a una variable: más rápido, pero puede no hallar la mejor combinación global.",
+      "formula": "2^p-1=2^3-1=7",
+      "svg": "<svg viewBox=\"0 0 280 124\" width=\"100%\" height=\"124\" role=\"img\" aria-label=\"Siete modelos\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3 variables → 2³ − 1 = 7 modelos (grilla RLM_Ej8)</text><rect x=\"8\" y=\"24\" width=\"61\" height=\"32\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\"/><text x=\"38.5\" y=\"44.0\" font-size=\"9\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">D·SC·SL</text><rect x=\"75\" y=\"24\" width=\"61\" height=\"32\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\"/><text x=\"105.5\" y=\"44.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">D·SC</text><rect x=\"142\" y=\"24\" width=\"61\" height=\"32\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\"/><text x=\"172.5\" y=\"44.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">D·SL</text><rect x=\"209\" y=\"24\" width=\"61\" height=\"32\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\"/><text x=\"239.5\" y=\"44.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">SC·SL</text><rect x=\"8\" y=\"64\" width=\"61\" height=\"32\" rx=\"7\" fill=\"#7cc49a22\" stroke=\"#7cc49a\"/><text x=\"38.5\" y=\"84.0\" font-size=\"9\" fill=\"#7cc49a\" text-anchor=\"middle\" font-weight=\"700\">D</text><rect x=\"75\" y=\"64\" width=\"61\" height=\"32\" rx=\"7\" fill=\"#7cc49a22\" stroke=\"#7cc49a\"/><text x=\"105.5\" y=\"84.0\" font-size=\"9\" fill=\"#7cc49a\" text-anchor=\"middle\" font-weight=\"700\">SC</text><rect x=\"142\" y=\"64\" width=\"61\" height=\"32\" rx=\"7\" fill=\"#7cc49a22\" stroke=\"#7cc49a\"/><text x=\"172.5\" y=\"84.0\" font-size=\"9\" fill=\"#7cc49a\" text-anchor=\"middle\" font-weight=\"700\">SL</text><text x=\"140.0\" y=\"118.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">D = dormitorios · SC = sup. cubierta · SL = sup. del lote</text></svg>",
+      "chartLabel": "Grilla RLM_Ej8 (material); conteo verificado por mí"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Con 4 predictores candidatos, ¿cuántos modelos examina «todas las posibles»?",
+      "options": [
+        "8",
+        "15",
+        "16"
+      ],
+      "correct": 1,
+      "feedback": "2⁴ − 1 = 15 combinaciones no vacías. Crece rápido y, con tantas pruebas, también el riesgo de elegir por azar."
+    },
+    {
+      "type": "concepto",
+      "k": "Gaseosas: ¿suma la distancia?",
+      "title": "Tres modelos, tres errores típicos.",
+      "text": "Sólo cajas: sₑ 3,082 y R²aj 0,9625. Sólo distancia: sₑ 14,157 y R²aj 0,2094. Las dos: sₑ 2,287 y R²aj 0,9794. La distancia sola explica poco, pero junto a las cajas mejora.",
+      "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Error típico sₑ (más bajo = mejor)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Error típico sₑ (más bajo = mejor)</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"37.7\" y=\"94.9\" width=\"34.0\" height=\"15.1\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"54.7\" y=\"90.9\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">3,082</text><text x=\"54.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Cajas</text><rect x=\"123.0\" y=\"40.4\" width=\"34.0\" height=\"69.6\" rx=\"3\" fill=\"#b7c0c8\" opacity=\".9\"/><text x=\"140.0\" y=\"36.4\" font-size=\"8\" fill=\"#b7c0c8\" text-anchor=\"middle\" font-weight=\"700\">14,157</text><text x=\"140.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Distancia</text><rect x=\"208.3\" y=\"98.8\" width=\"34.0\" height=\"11.2\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"225.3\" y=\"94.8\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">2,287</text><text x=\"225.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Cajas +</text><text x=\"225.3\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">distancia</text></svg>",
+      "chartLabel": "Cálculo propio con las 25 observaciones de Bigatti"
+    },
+    {
+      "type": "concepto",
+      "k": "F parcial",
+      "title": "Agregar distancia: F parcial ≈ 19,78 = t².",
+      "text": "SCE del modelo reducido ≈ 218,49 y del completo ≈ 115,05, con un término agregado: F parcial ≈ 19,78, que es 4,45² (la t de distancia). Con un solo término, F parcial y t² son la misma prueba.",
+      "formula": "F_{parcial}=\\frac{(218{,}49-115{,}05)/1}{115{,}05/22}\\approx19{,}78",
+      "svg": "<svg viewBox=\"0 0 280 110\" width=\"100%\" height=\"110\" role=\"img\" aria-label=\"SCE en los mismos 25 datos\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">SCE en los mismos 25 datos</text><line x1=\"12\" y1=\"80\" x2=\"268\" y2=\"80\" stroke=\"#5a6570\"/><rect x=\"59.0\" y=\"36.5\" width=\"34.0\" height=\"43.5\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"76.0\" y=\"32.5\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">218,49</text><text x=\"76.0\" y=\"91.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Sólo cajas</text><rect x=\"187.0\" y=\"57.1\" width=\"34.0\" height=\"22.9\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"204.0\" y=\"53.1\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">115,05</text><text x=\"204.0\" y=\"91.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Cajas + distancia</text></svg>",
+      "chartLabel": "Cálculo propio con los datos de Bigatti"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "La distancia da significativa. ¿Ya sabés si conviene registrarla?",
+      "options": [
+        "Sí: significativa = conveniente",
+        "No: falta comparar la mejora con el costo de medirla",
+        "No: hay que sacarla porque su t es menor que la de cajas"
+      ],
+      "correct": 1,
+      "feedback": "La significación dice que aporta información estadística. Si vale el costo de medirla y tenerla a tiempo es otra pregunta: es la segunda fuerza de Hanke."
+    },
+    {
+      "type": "concepto",
+      "k": "Validar con datos nuevos",
+      "title": "Ajustás con 20 y probás con 5.",
+      "text": "Complemento calculado por mí, no protocolo de la cátedra: ajustando con las primeras 20 entregas y probando en las 5 restantes, sólo cajas da RMSE ≈ 2,341 y cajas más distancia ≈ 1,567. La mejora se sostiene fuera del ajuste.",
+      "svg": "<svg viewBox=\"0 0 280 120\" width=\"100%\" height=\"120\" role=\"img\" aria-label=\"RMSE en las 5 entregas retenidas\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">RMSE en las 5 entregas retenidas</text><line x1=\"12\" y1=\"90\" x2=\"268\" y2=\"90\" stroke=\"#5a6570\"/><rect x=\"59.0\" y=\"37.8\" width=\"34.0\" height=\"52.2\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"76.0\" y=\"33.8\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">2,341</text><text x=\"76.0\" y=\"101.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Cajas</text><rect x=\"187.0\" y=\"55.1\" width=\"34.0\" height=\"34.9\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"204.0\" y=\"51.1\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">1,567</text><text x=\"204.0\" y=\"101.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Cajas + distancia</text></svg>",
+      "chartLabel": "Partición ilustrativa en orden, no aleatoria"
+    },
+    {
+      "type": "concepto",
+      "k": "Diagnóstico",
+      "title": "El mejor ajuste puede tener puntos que miran feo.",
+      "text": "Gaseosas: residuos estandarizados de 2,65 (obs. 15) y 2,25 (obs. 17). Mayor palanca: obs. 18, h ≈ 0,293. Mayor Cook: obs. 17, ≈ 0,589, debajo de 1. DW = 2,1312. No se borran: se investigan.",
+      "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Distancia de Cook por observación\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Distancia de Cook por observación</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"13.9\" y=\"107.6\" width=\"6.3\" height=\"2.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"17.1\" y=\"103.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"17.1\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"24.2\" y=\"109.1\" width=\"6.3\" height=\"0.9\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"27.4\" y=\"105.1\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"27.4\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"34.4\" y=\"105.7\" width=\"6.3\" height=\"4.3\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"37.6\" y=\"101.7\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"37.6\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"44.7\" y=\"108.6\" width=\"6.3\" height=\"1.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"47.8\" y=\"104.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"47.8\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"54.9\" y=\"108.3\" width=\"6.3\" height=\"1.7\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"58.1\" y=\"104.3\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"58.1\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"65.1\" y=\"109.5\" width=\"6.3\" height=\"0.5\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"68.3\" y=\"105.5\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"68.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"75.4\" y=\"107.4\" width=\"6.3\" height=\"2.6\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"78.6\" y=\"103.4\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"78.6\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"85.6\" y=\"108.6\" width=\"6.3\" height=\"1.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"88.8\" y=\"104.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"88.8\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"95.9\" y=\"98.4\" width=\"6.3\" height=\"11.6\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"99.0\" y=\"94.4\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">0,16</text><text x=\"99.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">9</text><rect x=\"106.1\" y=\"109.9\" width=\"6.3\" height=\"0.1\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"109.3\" y=\"105.9\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"109.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"116.3\" y=\"109.1\" width=\"6.3\" height=\"0.9\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"119.5\" y=\"105.1\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"119.5\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"126.6\" y=\"109.9\" width=\"6.3\" height=\"0.1\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"129.8\" y=\"105.9\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"129.8\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"136.8\" y=\"109.9\" width=\"6.3\" height=\"0.1\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"140.0\" y=\"105.9\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"140.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"147.1\" y=\"109.8\" width=\"6.3\" height=\"0.2\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"150.2\" y=\"105.8\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"150.2\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"157.3\" y=\"96.5\" width=\"6.3\" height=\"13.5\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"160.5\" y=\"92.5\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">0,19</text><text x=\"160.5\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">15</text><rect x=\"167.5\" y=\"109.9\" width=\"6.3\" height=\"0.1\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"170.7\" y=\"105.9\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"170.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"177.8\" y=\"67.2\" width=\"6.3\" height=\"42.8\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"181.0\" y=\"63.2\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">0,59</text><text x=\"181.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">17</text><rect x=\"188.0\" y=\"98.9\" width=\"6.3\" height=\"11.1\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"191.2\" y=\"94.9\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">0,15</text><text x=\"191.2\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">18</text><rect x=\"198.3\" y=\"108.8\" width=\"6.3\" height=\"1.2\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"201.4\" y=\"104.8\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"201.4\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"208.5\" y=\"110.0\" width=\"6.3\" height=\"0.0\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"211.7\" y=\"106.0\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"211.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"218.7\" y=\"106.4\" width=\"6.3\" height=\"3.6\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"221.9\" y=\"102.4\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"221.9\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"229.0\" y=\"107.8\" width=\"6.3\" height=\"2.2\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"232.2\" y=\"103.8\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"232.2\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"239.2\" y=\"110.0\" width=\"6.3\" height=\"0.0\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"242.4\" y=\"106.0\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"242.4\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"249.5\" y=\"107.1\" width=\"6.3\" height=\"2.9\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"252.6\" y=\"103.1\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"252.6\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><rect x=\"259.7\" y=\"110.0\" width=\"6.3\" height=\"0.0\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"262.9\" y=\"106.0\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"262.9\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><line x1=\"12\" y1=\"37.3\" x2=\"268\" y2=\"37.3\" stroke=\"#e2c46b\" stroke-width=\"1.2\" stroke-dasharray=\"5 3\"/><line x1=\"168.8\" y1=\"21\" x2=\"180.8\" y2=\"21\" stroke=\"#e2c46b\" stroke-width=\"1.2\" stroke-dasharray=\"3 2\"/><text x=\"268.0\" y=\"24.0\" font-size=\"7\" fill=\"#e2c46b\" text-anchor=\"end\">orientación Dᵢ = 1</text></svg>",
+      "chartLabel": "Cook calculado por mí con la definición estándar; DW de la diapositiva"
+    },
+    {
+      "type": "concepto",
+      "k": "Sobreajuste",
+      "title": "Brilla en la muestra, falla afuera.",
+      "text": "Agregar variables que siguen excentricidades de la muestra baja el error de ajuste y sube el de pronóstico. El V6 sugiere al menos 10 observaciones por variable y evaluar con datos no usados. En series de tiempo, ajustás con el pasado y probás con lo posterior.",
+      "svg": "<svg viewBox=\"0 0 280 130\" width=\"100%\" height=\"130\" role=\"img\" aria-label=\"Sobreajuste\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Sobreajuste (esquema)</text><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"2\" points=\"36.0,32.0 60.0,39.0 84.0,45.8 108.0,52.2 132.0,58.2 156.0,64.0 180.0,69.4 204.0,74.6 228.0,79.4 252.0,83.8\"/><text x=\"250.0\" y=\"78.8\" font-size=\"7.5\" fill=\"#8cb4d6\" text-anchor=\"end\" font-weight=\"700\">error de ajuste</text><polyline fill=\"none\" stroke=\"#e25b16\" stroke-width=\"2\" points=\"36.0,32.0 60.0,39.7 84.0,45.3 108.0,48.7 132.0,49.9 156.0,49.0 180.0,45.9 204.0,40.7 228.0,33.3 252.0,23.7\"/><text x=\"250.0\" y=\"18.7\" font-size=\"7.5\" fill=\"#e25b16\" text-anchor=\"end\" font-weight=\"700\">error en datos nuevos</text><line x1=\"36\" y1=\"112\" x2=\"262\" y2=\"112\" stroke=\"#5a6570\"/><text x=\"150.0\" y=\"124.0\" font-size=\"7.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">más variables / más complejidad →</text></svg>",
+      "chartLabel": "Esquema propio, no son datos"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "El modelo con mayor R² dentro de la muestra, ¿ya está validado?",
+      "options": [
+        "Sí, es el mejor por definición",
+        "No: el R² dentro de muestra no es validación",
+        "Sí, si además tiene F significativa"
+      ],
+      "correct": 1,
+      "feedback": "Validar es medir el error en datos que no usaste para ajustar, con el horizonte y las variables que vas a tener al pronosticar."
+    },
+    {
+      "type": "concepto",
+      "k": "Viviendas",
+      "title": "Una conclusión prudente.",
+      "text": "Respuesta guía propia, no clave oficial: estimá los siete modelos de la grilla y compará supuestos, influencia, F, t, R² ajustado y error de validación. Con lo que hay: «el modelo completo explica conjuntamente, pero no separa efectos; hay que comparar modelos reducidos»."
+    },
+    {
+      "type": "cierre",
+      "k": "Para llevar",
+      "title": "Llevate esto de la Clase 14 y de la Unidad 2.",
+      "text": "Elegís con validez, significación, ajuste penalizado, simplicidad y error fuera de muestra. 3 variables = 7 modelos. F parcial = t² con un término. Diagnóstico antes de borrar. Y en series y en regresión: medí donde el modelo no miró. ¡Unidad 2 cerrada!"
+    }
+  ]
 }

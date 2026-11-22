@@ -32,7 +32,7 @@
           "caption": "Árbol decisorio de métodos de pronóstico"
         }
       ],
-      "lede": "Unidad 2 del programa: los métodos de pronósticos. Empieza con el mapa y las siglas (Clases 0 y 0.1), sigue con base estadística, correlación, series, autocorrelación y medidas de error, y completa los métodos de series: promedios, suavización simple, Brown/Holt, Winter, descomposición e integrador con control. Cierra con demanda, métodos cualitativos y sistemas de pronóstico, y con regresión simple, inferencia, regresión múltiple y validación de modelos. Las clases 6 a 14 y 2.b-teoría tienen por ahora sólo teoría larga.",
+      "lede": "Unidad 2 del programa: los métodos de pronósticos. Empieza con el mapa y las siglas (Clases 0 y 0.1), sigue con base estadística, correlación, series, autocorrelación y medidas de error, y completa los métodos de series: promedios, suavización simple, Brown/Holt, Winter, descomposición e integrador con control. Cierra con demanda, métodos cualitativos y sistemas de pronóstico, y con regresión simple, inferencia, regresión múltiple y validación de modelos. Todas las clases tienen teoría larga e historias.",
       "classes": [
         {
           "id": "c0",

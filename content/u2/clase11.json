@@ -368,5 +368,124 @@
       "text": "**Próxima clase → Clase 12 · Inferencia en regresión**"
     }
   ],
-  "historias": []
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "De «cuándo» a «según qué».",
+      "text": "Hasta acá la serie se explicaba con su propia historia. La regresión explica la media de Y según otra variable X. Sirve para pronosticar si vas a conocer X a tiempo. Y ojo: ajustar una recta no prueba causalidad."
+    },
+    {
+      "type": "concepto",
+      "k": "El modelo",
+      "title": "Beta es de la población; b, de tu muestra.",
+      "text": "Beta cero y beta uno son parámetros que no conocés. b cero y b uno son sus estimaciones. Épsilon junta lo no medido y el azar; el residuo e es lo que calculás después del ajuste. No son lo mismo.",
+      "formula": "Y_i=\\beta_0+\\beta_1x_i+ε_i",
+      "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Población vs. muestra\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Población vs. muestra</text><rect x=\"8.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"50.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">β₀, β₁</text><text x=\"50.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">parámetros</text><path d=\"M93.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"98.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"140.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">b₀, b₁</text><text x=\"140.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">estimaciones</text><path d=\"M183.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"188.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"230.0\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">ε ≠ e</text><text x=\"230.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">error ≠ residuo</text></svg>",
+      "chartLabel": "Apunte 2013 / Bigatti"
+    },
+    {
+      "type": "concepto",
+      "k": "Mínimos cuadrados",
+      "title": "La recta que hace más chicos los cuadrados de los residuos.",
+      "text": "Cada segmento amarillo es un residuo: real menos ajustado. Mínimos cuadrados elige b cero y b uno para minimizar la suma de sus cuadrados. Con intercepto, los residuos suman cero… y eso no prueba que el modelo sea bueno.",
+      "svg": "<svg viewBox=\"0 0 280 160\" width=\"100%\" height=\"160\" role=\"img\" aria-label=\"Mascotas: datos, recta y residuos\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Mascotas: datos, recta y residuos</text><line x1=\"34\" x2=\"264\" y1=\"117.2\" y2=\"117.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"120.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">1,4</text><line x1=\"34\" x2=\"264\" y1=\"91.8\" y2=\"91.8\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"94.8\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">2,0</text><line x1=\"34\" x2=\"264\" y1=\"66.2\" y2=\"66.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"69.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">2,5</text><line x1=\"34\" x2=\"264\" y1=\"40.7\" y2=\"40.7\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"43.7\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">3,1</text><line x1=\"58.2\" y1=\"107.8\" x2=\"58.2\" y2=\"98.1\" stroke=\"#e2c46b\" stroke-width=\"1\"/><line x1=\"58.2\" y1=\"81.2\" x2=\"58.2\" y2=\"98.1\" stroke=\"#e2c46b\" stroke-width=\"1\"/><line x1=\"58.2\" y1=\"116.7\" x2=\"58.2\" y2=\"98.1\" stroke=\"#e2c46b\" stroke-width=\"1\"/><line x1=\"118.7\" y1=\"94.5\" x2=\"118.7\" y2=\"81.7\" stroke=\"#e2c46b\" stroke-width=\"1\"/><line x1=\"118.7\" y1=\"72.3\" x2=\"118.7\" y2=\"81.7\" stroke=\"#e2c46b\" stroke-width=\"1\"/><line x1=\"118.7\" y1=\"63.5\" x2=\"118.7\" y2=\"81.7\" stroke=\"#e2c46b\" stroke-width=\"1\"/><line x1=\"179.3\" y1=\"76.8\" x2=\"179.3\" y2=\"65.3\" stroke=\"#e2c46b\" stroke-width=\"1\"/><line x1=\"179.3\" y1=\"59.0\" x2=\"179.3\" y2=\"65.3\" stroke=\"#e2c46b\" stroke-width=\"1\"/><line x1=\"179.3\" y1=\"54.6\" x2=\"179.3\" y2=\"65.3\" stroke=\"#e2c46b\" stroke-width=\"1\"/><line x1=\"239.8\" y1=\"63.5\" x2=\"239.8\" y2=\"48.8\" stroke=\"#e2c46b\" stroke-width=\"1\"/><line x1=\"239.8\" y1=\"50.2\" x2=\"239.8\" y2=\"48.8\" stroke=\"#e2c46b\" stroke-width=\"1\"/><line x1=\"239.8\" y1=\"41.3\" x2=\"239.8\" y2=\"48.8\" stroke=\"#e2c46b\" stroke-width=\"1\"/><line x1=\"34.0\" y1=\"104.6\" x2=\"264.0\" y2=\"42.3\" stroke=\"#e25b16\" stroke-width=\"2\"/><circle cx=\"58.2\" cy=\"107.8\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"58.2\" cy=\"81.2\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"58.2\" cy=\"116.7\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"118.7\" cy=\"94.5\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"118.7\" cy=\"72.3\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"118.7\" cy=\"63.5\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"179.3\" cy=\"76.8\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"179.3\" cy=\"59.0\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"179.3\" cy=\"54.6\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"239.8\" cy=\"63.5\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"239.8\" cy=\"50.2\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"239.8\" cy=\"41.3\" r=\"3\" fill=\"#8cb4d6\"/><text x=\"58.2\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">5</text><text x=\"118.7\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">10</text><text x=\"179.3\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">15</text><text x=\"239.8\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">20</text><text x=\"150.0\" y=\"154.0\" font-size=\"7.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">espacio en góndola (dm)</text></svg>",
+      "chartLabel": "Apunte 2013 (Bigatti–Leale–Moine); redibujo propio"
+    },
+    {
+      "type": "concepto",
+      "k": "Mascotas",
+      "title": "Pendiente 0,074; intercepto 1,45.",
+      "text": "Con 12 datos: Sxy = 27,75 y Sxx = 375. La pendiente es 27,75 sobre 375 = 0,074. El intercepto, 2,375 − 0,074 · 12,5 = 1,45.",
+      "formula": "b_1=\\frac{S_{xy}}{S_{xx}}=\\frac{27{,}75}{375}=0{,}074",
+      "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Mascotas: calcular la pendiente\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Mascotas: calcular la pendiente</text><rect x=\"8.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"50.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Sxy = 27,75</text><text x=\"50.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">covariación</text><path d=\"M93.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"98.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"140.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Sxx = 375</text><text x=\"140.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">variación en x</text><path d=\"M183.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"188.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"230.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">b₁ = 0,074</text><text x=\"230.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">Sxy / Sxx</text></svg>",
+      "chartLabel": "Apunte 2013",
+      "ejemplo": "Ŷ = 1,45 + 0,074x, con ventas en cientos de pesos y espacio en decímetros."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "¿Cómo se lee b₁ = 0,074 en mascotas?",
+      "options": [
+        "Cada dm extra garantiza 0,074 pesos más",
+        "Por cada dm adicional, la venta media estimada sube 0,074 cientos de pesos, o sea 7,40 pesos",
+        "El 7,4% de las ventas depende del espacio"
+      ],
+      "correct": 1,
+      "feedback": "La pendiente tiene unidades de Y por unidad de X. Es una media estimada, dentro del rango observado, y no prueba causalidad sin diseño adecuado."
+    },
+    {
+      "type": "concepto",
+      "k": "¿Cuánto explica?",
+      "title": "R² = 0,684.",
+      "text": "La variabilidad total (3,0025) se parte en lo asociado a x (2,0535) y lo no explicado (0,949). R² = 0,684: la recta explica el 68,4% de la variabilidad de esta muestra. r = 0,827.",
+      "svg": "<svg viewBox=\"0 0 280 100\" width=\"100%\" height=\"100\" role=\"img\" aria-label=\"SCT = SCR + SCE\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Mascotas: SCT = SCR + SCE</text><rect x=\"12\" y=\"34\" width=\"175.1\" height=\"26\" rx=\"4\" fill=\"#e25b16\"/><rect x=\"187.1\" y=\"34\" width=\"80.9\" height=\"26\" rx=\"4\" fill=\"#b7c0c8\" opacity=\".6\"/><text x=\"99.5\" y=\"51.0\" font-size=\"8.5\" fill=\"#111\" text-anchor=\"middle\" font-weight=\"700\">SCR 2,0535 · explicada</text><text x=\"227.5\" y=\"51.0\" font-size=\"8.5\" fill=\"#111\" text-anchor=\"middle\" font-weight=\"700\">SCE 0,949</text><text x=\"12.0\" y=\"76.0\" font-size=\"8\" fill=\"#b7c0c8\" text-anchor=\"start\">SCT = 3,0025</text><text x=\"268.0\" y=\"76.0\" font-size=\"8.5\" fill=\"#e25b16\" text-anchor=\"end\" font-weight=\"700\">R² = 2,0535 / 3,0025 = 0,684</text><text x=\"140.0\" y=\"93.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">R² es fracción de variabilidad muestral, no «precisión» del pronóstico</text></svg>",
+      "chartLabel": "Valores del apunte 2013"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "R² = 0,684. ¿Qué podés afirmar?",
+      "options": [
+        "Que el pronóstico acierta el 68,4% de las veces",
+        "Que la recta explica el 68,4% de la variabilidad muestral de las ventas",
+        "Que el 68,4% de los puntos está sobre la recta"
+      ],
+      "correct": 1,
+      "feedback": "R² compara SCE con SCT en la muestra. No es tasa de acierto, y un R² alto tampoco asegura buen pronóstico fuera del rango."
+    },
+    {
+      "type": "concepto",
+      "k": "Error típico",
+      "title": "sₑ ≈ 0,3081: unos 30,81 pesos.",
+      "text": "El R² dice qué proporción explicás; sₑ dice cuánto se dispersan los puntos alrededor de la recta, en unidades de Y. Con n = 12 usa n − 2 = 10 grados de libertad porque estimaste dos coeficientes.",
+      "formula": "s_e=\\sqrt{\\frac{SCE}{n-2}}=\\sqrt{\\frac{0{,}949}{10}}",
+      "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Mascotas: de SCE a error típico\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Mascotas: de SCE a error típico</text><rect x=\"8.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"50.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">0,949 / 10</text><text x=\"50.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">varianza residual</text><path d=\"M93.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"98.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"140.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">√0,0949</text><text x=\"140.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">raíz</text><path d=\"M183.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"188.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"230.0\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">0,3081</text><text x=\"230.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">sₑ, cientos de pesos</text></svg>",
+      "chartLabel": "Apunte 2013"
+    },
+    {
+      "type": "concepto",
+      "k": "Residuos",
+      "title": "Mirá los restos, no sólo la recta.",
+      "text": "Los residuos de mascotas oscilan entre −0,42 y +0,41 sin un patrón evidente por grupo de x. Así se empiezan a revisar los supuestos: media cero, varianza constante, independencia y normalidad para t y F.",
+      "svg": "<svg viewBox=\"0 0 280 160\" width=\"100%\" height=\"160\" role=\"img\" aria-label=\"Mascotas: residuos e = y − ŷ por x\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Mascotas: residuos e = y − ŷ por x</text><line x1=\"34\" x2=\"264\" y1=\"117.2\" y2=\"117.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"120.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">−0,4</text><line x1=\"34\" x2=\"264\" y1=\"91.8\" y2=\"91.8\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"94.8\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">−0,2</text><line x1=\"34\" x2=\"264\" y1=\"66.2\" y2=\"66.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"69.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">0,2</text><line x1=\"34\" x2=\"264\" y1=\"40.7\" y2=\"40.7\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"43.7\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">0,5</text><line x1=\"34.0\" y1=\"79.0\" x2=\"264.0\" y2=\"79.0\" stroke=\"#e25b16\" stroke-width=\"2\"/><circle cx=\"58.2\" cy=\"97.7\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"58.2\" cy=\"46.7\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"58.2\" cy=\"114.7\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"118.7\" cy=\"103.7\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"118.7\" cy=\"61.2\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"118.7\" cy=\"44.1\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"179.3\" cy=\"101.1\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"179.3\" cy=\"67.1\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"179.3\" cy=\"58.6\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"239.8\" cy=\"107.0\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"239.8\" cy=\"81.5\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"239.8\" cy=\"64.5\" r=\"3\" fill=\"#8cb4d6\"/><text x=\"58.2\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">5</text><text x=\"118.7\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">10</text><text x=\"179.3\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">15</text><text x=\"239.8\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">20</text><text x=\"150.0\" y=\"154.0\" font-size=\"7.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">espacio (dm)</text></svg>",
+      "chartLabel": "Residuos de la tabla de la Clase 11"
+    },
+    {
+      "type": "concepto",
+      "k": "Pronosticar",
+      "title": "x = 8 da 2,042; x = 13 da 2,412.",
+      "text": "Los dos x están dentro de 5 a 20 dm. Para x = 40 la cuenta sale, pero los datos no dicen nada de esa zona: es extrapolación. Y el número estima una media; una venta individual puede quedar lejos.",
+      "formula": "\\hat{Y}_0=1{,}45+0{,}074\\cdot8=2{,}042",
+      "svg": "<svg viewBox=\"0 0 280 160\" width=\"100%\" height=\"160\" role=\"img\" aria-label=\"Rango observado vs. extrapolación\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Rango observado vs. extrapolación</text><line x1=\"34\" x2=\"264\" y1=\"117.2\" y2=\"117.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"120.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">1,5</text><line x1=\"34\" x2=\"264\" y1=\"91.8\" y2=\"91.8\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"94.8\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">2,4</text><line x1=\"34\" x2=\"264\" y1=\"66.2\" y2=\"66.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"69.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">3,4</text><line x1=\"34\" x2=\"264\" y1=\"40.8\" y2=\"40.8\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"43.8\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">4,3</text><line x1=\"34.0\" y1=\"117.9\" x2=\"264.0\" y2=\"34.5\" stroke=\"#e25b16\" stroke-width=\"2\"/><circle cx=\"61.4\" cy=\"113.9\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"61.4\" cy=\"97.8\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"61.4\" cy=\"119.3\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"88.8\" cy=\"105.8\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"88.8\" cy=\"92.4\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"88.8\" cy=\"87.1\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"116.1\" cy=\"95.1\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"116.1\" cy=\"84.4\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"116.1\" cy=\"81.7\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"143.5\" cy=\"87.1\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"143.5\" cy=\"79.0\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"143.5\" cy=\"73.6\" r=\"3\" fill=\"#8cb4d6\"/><text x=\"61.4\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">5</text><text x=\"88.8\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">10</text><text x=\"116.1\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">15</text><text x=\"143.5\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">20</text><text x=\"150.0\" y=\"154.0\" font-size=\"7.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">espacio (dm)</text><rect x=\"61.4\" y=\"26\" width=\"82.1\" height=\"104\" fill=\"#7cc49a\" opacity=\".12\"/><text x=\"102.5\" y=\"36.0\" font-size=\"7\" fill=\"#7cc49a\" text-anchor=\"middle\">rango observado</text><circle cx=\"253.0\" cy=\"36.7\" r=\"4\" fill=\"none\" stroke=\"#e2c46b\" stroke-width=\"1.6\"/><text x=\"247.0\" y=\"50.7\" font-size=\"7.5\" fill=\"#e2c46b\" text-anchor=\"end\" font-weight=\"700\">x = 40: extrapolación</text></svg>",
+      "chartLabel": "Redibujo propio con la recta del apunte"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Te piden la venta para x = 40 dm. ¿Qué respondés?",
+      "options": [
+        "4,41, y listo",
+        "La cuenta da 4,41, pero es extrapolación: no hay datos que la respalden",
+        "No se puede calcular nada"
+      ],
+      "correct": 1,
+      "feedback": "1,45 + 0,074 · 40 = 4,41. El número existe; su validez depende de suponer la misma relación lineal donde no observaste."
+    },
+    {
+      "type": "concepto",
+      "k": "Hanke",
+      "title": "Precio y volumen: pendiente negativa.",
+      "text": "Con n = 10: Ŷ = 32,14 − 14,54X, r = −0,86 y r² = 0,746. Si el precio sube 1 peso, el volumen medio estimado baja 14,54 unidades. El signo de r y de b₁ coinciden siempre.",
+      "formula": "R^2=1-\\frac{59{,}42}{233{,}60}\\approx0{,}746",
+      "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Precio y volumen: signo y explicación\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Precio y volumen: signo y explicación</text><rect x=\"8.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"50.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">r = −0,86</text><text x=\"50.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">asociación negativa</text><path d=\"M93.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"98.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"140.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">b₁ = −14,54</text><text x=\"140.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">pendiente negativa</text><path d=\"M183.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"188.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"230.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">R² = 0,746</text><text x=\"230.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">sin signo</text></svg>",
+      "chartLabel": "Hanke en Resumen V6"
+    },
+    {
+      "type": "cierre",
+      "k": "Para llevar",
+      "title": "Llevate esto de la Clase 11.",
+      "text": "b₁ = Sxy / Sxx, b₀ = ȳ − b₁x̄. Mascotas: Ŷ = 1,45 + 0,074x. R² = 0,684 explica variabilidad; sₑ = 0,308 mide dispersión. Pronóstico puntual = media condicional, dentro del rango. Próxima: inferencia."
+    }
+  ]
 }

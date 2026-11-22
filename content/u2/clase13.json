@@ -328,5 +328,133 @@
       "text": "**Próxima clase → Clase 14 · Validación y comparación de modelos**"
     }
   ],
-  "historias": []
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "Varias X, cada una «con las demás quietas».",
+      "text": "En regresión múltiple cada coeficiente mide un efecto parcial: el cambio promedio de Y por unidad de esa X, manteniendo constantes las otras. Si dos X se mueven siempre juntas, esa condición puede quedar lejos de tus datos.",
+      "formula": "Y_i=\\beta_0+\\beta_1x_{i1}+\\ldots+\\beta_kx_{ik}+ε_i"
+    },
+    {
+      "type": "concepto",
+      "k": "Grados de libertad",
+      "title": "Se pierden k + 1: las pendientes y el intercepto.",
+      "text": "k cuenta las variables explicativas, sin el intercepto. El error residual usa n − k − 1. En la versión matricial, X lleva una columna de unos para el intercepto.",
+      "formula": "s_e^2=\\frac{SCE}{n-k-1}",
+      "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Gaseosas: 2 X y un intercepto\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Gaseosas: 2 X y un intercepto</text><rect x=\"8.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"50.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">n = 25</text><text x=\"50.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">observaciones</text><path d=\"M93.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"98.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"140.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">k + 1 = 3</text><text x=\"140.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">coeficientes</text><path d=\"M183.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"188.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"230.0\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">gl = 22</text><text x=\"230.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">25 − 3</text></svg>",
+      "chartLabel": "Ejemplo de Bigatti"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Tenés 25 entregas y 2 variables explicativas. ¿Grados de libertad del error?",
+      "options": [
+        "23",
+        "22",
+        "25"
+      ],
+      "correct": 1,
+      "feedback": "n − k − 1 = 25 − 2 − 1 = 22. Es el caso de gaseosas."
+    },
+    {
+      "type": "concepto",
+      "k": "Gaseosas",
+      "title": "Tiempo de entrega según cajas y distancia.",
+      "text": "Con 25 entregas de las diapositivas de Bigatti: Ŷ = 2,309 + 2,740 cajas + 0,0124 metros. R² = 0,9811 y sₑ = 2,287. Cada punto compara el tiempo observado con el ajustado: cerca de la diagonal, buen ajuste.",
+      "formula": "\\hat{Y}=2{,}309+2{,}740X_1+0{,}0124X_2",
+      "svg": "<svg viewBox=\"0 0 280 160\" width=\"100%\" height=\"160\" role=\"img\" aria-label=\"Gaseosas: observado vs. ajustado\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Gaseosas: observado vs. ajustado</text><line x1=\"34\" x2=\"264\" y1=\"117.2\" y2=\"117.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"120.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">13</text><line x1=\"34\" x2=\"264\" y1=\"91.8\" y2=\"91.8\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"94.8\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">30</text><line x1=\"34\" x2=\"264\" y1=\"66.2\" y2=\"66.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"69.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">47</text><line x1=\"34\" x2=\"264\" y1=\"40.8\" y2=\"40.8\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"30.0\" y=\"43.8\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">64</text><line x1=\"34.0\" y1=\"130.0\" x2=\"264.0\" y2=\"28.0\" stroke=\"#e25b16\" stroke-width=\"2\"/><circle cx=\"45.7\" cy=\"122.5\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"104.7\" cy=\"100.4\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"133.4\" cy=\"89.3\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"142.3\" cy=\"84.3\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"112.6\" cy=\"99.5\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"70.9\" cy=\"111.9\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"59.6\" cy=\"115.7\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"45.8\" cy=\"123.0\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"113.7\" cy=\"100.5\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"112.8\" cy=\"95.7\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"80.0\" cy=\"111.6\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"145.3\" cy=\"81.3\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"159.0\" cy=\"73.7\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"59.0\" cy=\"119.9\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"71.1\" cy=\"104.7\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"79.5\" cy=\"110.4\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"238.5\" cy=\"32.6\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"59.2\" cy=\"121.9\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"141.9\" cy=\"84.4\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"176.5\" cy=\"66.7\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"178.3\" cy=\"69.3\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"197.1\" cy=\"55.2\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"209.9\" cy=\"52.0\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"85.5\" cy=\"103.9\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"88.9\" cy=\"105.4\" r=\"3\" fill=\"#8cb4d6\"/><text x=\"51.2\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">10</text><text x=\"119.8\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">30</text><text x=\"188.5\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">50</text><text x=\"257.1\" y=\"142.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">70</text><text x=\"150.0\" y=\"154.0\" font-size=\"7.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">tiempo ajustado</text></svg>",
+      "chartLabel": "Datos de Bigatti (2012); ajuste verificado por mí. Línea = diagonal"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Mismas cajas, 100 metros más de recorrido. ¿Cuánto cambia el tiempo esperado?",
+      "options": [
+        "+0,0124",
+        "+1,24",
+        "+2,74"
+      ],
+      "correct": 1,
+      "feedback": "100 · 0,0124 = 1,24 unidades de tiempo, con las cajas constantes. El 2,74 corresponde a una caja más con la misma distancia."
+    },
+    {
+      "type": "concepto",
+      "k": "F primero, t después",
+      "title": "F global ≈ 570,7. Después mirás cada t.",
+      "text": "F prueba si al menos una pendiente es distinta de cero. Si es significativa, revisás las t individuales: cajas 29,32 y distancia 4,45, ambas bien por encima del crítico ≈ 2,074.",
+      "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"t de cada término (22 gl)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">t de cada término (22 gl)</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"37.7\" y=\"104.8\" width=\"34.0\" height=\"5.2\" rx=\"3\" fill=\"#b7c0c8\" opacity=\".9\"/><text x=\"54.7\" y=\"100.8\" font-size=\"8\" fill=\"#b7c0c8\" text-anchor=\"middle\" font-weight=\"700\">2,18</text><text x=\"54.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Intercepto</text><rect x=\"123.0\" y=\"40.4\" width=\"34.0\" height=\"69.6\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"140.0\" y=\"36.4\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">29,32</text><text x=\"140.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Cajas</text><rect x=\"208.3\" y=\"99.4\" width=\"34.0\" height=\"10.6\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"225.3\" y=\"95.4\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">4,45</text><text x=\"225.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Distancia</text><line x1=\"12\" y1=\"105.1\" x2=\"268\" y2=\"105.1\" stroke=\"#e2c46b\" stroke-width=\"1.2\" stroke-dasharray=\"5 3\"/><line x1=\"182.0\" y1=\"21\" x2=\"194.0\" y2=\"21\" stroke=\"#e2c46b\" stroke-width=\"1.2\" stroke-dasharray=\"3 2\"/><text x=\"268.0\" y=\"24.0\" font-size=\"7\" fill=\"#e2c46b\" text-anchor=\"end\">crítico ≈ 2,074</text></svg>",
+      "chartLabel": "Bigatti (2012), salida de R"
+    },
+    {
+      "type": "concepto",
+      "k": "R² ajustado",
+      "title": "Agregar variables siempre sube el R². El ajustado cobra por eso.",
+      "text": "Hanke: con R² = 0,932, n = 10 y k = 2, el R² ajustado baja a 0,912. Penaliza la complejidad. En gaseosas: 0,9811 contra 0,9794.",
+      "formula": "R^2_{aj}=1-(1-0{,}932)\\frac{9}{7}=0{,}912",
+      "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Ajuste y penalización (misma escala)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Ajuste y penalización (misma escala)</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"27.0\" y=\"42.2\" width=\"34.0\" height=\"67.8\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"44.0\" y=\"38.2\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">0,932</text><text x=\"44.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Hanke</text><text x=\"44.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">R²</text><rect x=\"91.0\" y=\"43.7\" width=\"34.0\" height=\"66.3\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"108.0\" y=\"39.7\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">0,912</text><text x=\"108.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Hanke</text><text x=\"108.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">R²aj</text><rect x=\"155.0\" y=\"38.6\" width=\"34.0\" height=\"71.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"172.0\" y=\"34.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">0,981</text><text x=\"172.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Gaseosas</text><text x=\"172.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">R²</text><rect x=\"219.0\" y=\"38.8\" width=\"34.0\" height=\"71.2\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"236.0\" y=\"34.8\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">0,979</text><text x=\"236.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Gaseosas</text><text x=\"236.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">R²aj</text></svg>",
+      "chartLabel": "Hanke / V6 y Bigatti"
+    },
+    {
+      "type": "concepto",
+      "k": "Multicolinealidad",
+      "title": "Cuando dos X dicen lo mismo.",
+      "text": "VIF = 1 / (1 − Rⱼ²), donde Rⱼ² es cuánto explican las otras X a la X j. Con Rⱼ² = 0,90, VIF = 10. En gaseosas cajas y distancia correlacionan ≈ 0,378 y el VIF es ≈ 1,167: sin problema.",
+      "svg": "<svg viewBox=\"0 0 280 150\" width=\"100%\" height=\"150\" role=\"img\" aria-label=\"VIF según Rⱼ²\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">VIF según Rⱼ²</text><line x1=\"36\" y1=\"75.2\" x2=\"266\" y2=\"75.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"78.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">5</text><line x1=\"36\" y1=\"33.5\" x2=\"266\" y2=\"33.5\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"36.5\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">10</text><polyline fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.8\" points=\"36.0,108.5 48.8,108.1 61.6,107.6 74.3,107.0 87.1,106.4 99.9,105.7 112.7,104.9 125.4,104.0 138.2,102.9 151.0,101.7 163.8,100.2 176.6,98.3 189.3,96.0 202.1,93.0 214.9,89.1 227.7,83.5 240.4,75.2 253.2,61.3 266.0,33.5\"/><circle cx=\"36.0\" cy=\"108.5\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"48.8\" cy=\"108.1\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"61.6\" cy=\"107.6\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"74.3\" cy=\"107.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"87.1\" cy=\"106.4\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"99.9\" cy=\"105.7\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"112.7\" cy=\"104.9\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"125.4\" cy=\"104.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"138.2\" cy=\"102.9\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"151.0\" cy=\"101.7\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"163.8\" cy=\"100.2\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"176.6\" cy=\"98.3\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"189.3\" cy=\"96.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"202.1\" cy=\"93.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"214.9\" cy=\"89.1\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"227.7\" cy=\"83.5\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"240.4\" cy=\"75.2\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"253.2\" cy=\"61.3\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"266.0\" cy=\"33.5\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"266.0\" cy=\"33.5\" r=\"4.2\" fill=\"none\" stroke=\"#e2c46b\" stroke-width=\"1.8\"/><text x=\"259.0\" y=\"27.5\" font-size=\"8.5\" fill=\"#e2c46b\" text-anchor=\"end\" font-weight=\"700\">Rⱼ² 0,90 → 10</text><circle cx=\"72.6\" cy=\"107.1\" r=\"4.2\" fill=\"none\" stroke=\"#7cc49a\" stroke-width=\"1.8\"/><text x=\"79.6\" y=\"101.1\" font-size=\"8.5\" fill=\"#7cc49a\" text-anchor=\"start\" font-weight=\"700\">gaseosas ≈ 1,17</text><text x=\"36.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">0,00</text><text x=\"48.8\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"61.6\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"74.3\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"87.1\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"99.9\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"112.7\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">0,30</text><text x=\"125.4\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"138.2\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"151.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"163.8\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"176.6\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"189.3\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">0,60</text><text x=\"202.1\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"214.9\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"227.7\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"240.4\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"253.2\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><text x=\"266.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">0,90</text><line x1=\"8\" y1=\"141\" x2=\"20\" y2=\"141\" stroke=\"#e25b16\" stroke-width=\"2\"/><text x=\"23.0\" y=\"144.0\" font-size=\"7.5\" fill=\"#e25b16\" text-anchor=\"start\">VIF</text></svg>",
+      "chartLabel": "Curva de la fórmula del V6; punto de gaseosas verificado por mí"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "VIF = 10 significa que…",
+      "options": [
+        "La Y tiene R² = 90%",
+        "El 90% de la variación de esa X se explica con las otras X",
+        "El pronóstico se equivoca por 10 unidades"
+      ],
+      "correct": 1,
+      "feedback": "VIFⱼ = 1 / (1 − Rⱼ²). Si VIF = 10, Rⱼ² = 0,90. Es una regresión de una X contra las otras X, no de Y."
+    },
+    {
+      "type": "concepto",
+      "k": "Intervalos",
+      "title": "8 cajas y 275 metros.",
+      "text": "Tiempo medio estimado 27,65. IC 95% para la media de entregas así: 26,65 a 28,65. IP 95% para UNA entrega: 22,81 a 32,50. Y la combinación de X tiene que parecerse a las observadas.",
+      "svg": "<svg viewBox=\"0 0 280 100\" width=\"100%\" height=\"100\" role=\"img\" aria-label=\"Gaseosas, x₀ = (8 cajas; 275 m)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Gaseosas, x₀ = (8 cajas; 275 m)</text><line x1=\"92.0\" y1=\"24\" x2=\"92.0\" y2=\"84\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"92.0\" y=\"94.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">20</text><line x1=\"149.3\" y1=\"24\" x2=\"149.3\" y2=\"84\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"149.3\" y=\"94.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">25</text><line x1=\"206.7\" y1=\"24\" x2=\"206.7\" y2=\"84\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"206.7\" y=\"94.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">30</text><line x1=\"264.0\" y1=\"24\" x2=\"264.0\" y2=\"84\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"264.0\" y=\"94.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">35</text><text x=\"8.0\" y=\"39.0\" font-size=\"7.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">IC media</text><line x1=\"168.3\" y1=\"36\" x2=\"191.2\" y2=\"36\" stroke=\"#8cb4d6\" stroke-width=\"5\" stroke-linecap=\"round\" opacity=\".85\"/><circle cx=\"179.8\" cy=\"36\" r=\"3.2\" fill=\"#111\" stroke=\"#fff\" stroke-width=\"1\"/><text x=\"168.3\" y=\"48.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">26,65</text><text x=\"191.2\" y=\"48.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">28,65</text><text x=\"8.0\" y=\"65.0\" font-size=\"7.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">IP entrega</text><line x1=\"124.2\" y1=\"62\" x2=\"235.3\" y2=\"62\" stroke=\"#e25b16\" stroke-width=\"5\" stroke-linecap=\"round\" opacity=\".85\"/><circle cx=\"179.8\" cy=\"62\" r=\"3.2\" fill=\"#111\" stroke=\"#fff\" stroke-width=\"1\"/><text x=\"124.2\" y=\"74.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">22,81</text><text x=\"235.3\" y=\"74.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">32,50</text></svg>",
+      "chartLabel": "Diapositiva de Bigatti; verificado por mí"
+    },
+    {
+      "type": "concepto",
+      "k": "Dummies",
+      "title": "Una variable 0 / 1 cambia el intercepto.",
+      "text": "Hanke: Ŷ = −1,96 + 0,12X₁ − 2,18X₂, con X₂ = 0 o 1 según el grupo. Quedan dos rectas paralelas separadas por 2,18. Con c categorías e intercepto usás c − 1 dummies.",
+      "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Variable indicadora\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Una dummy corre el intercepto</text><line x1=\"30.0\" y1=\"102.8\" x2=\"260.0\" y2=\"30.8\" stroke=\"#8cb4d6\" stroke-width=\"2\"/><text x=\"12.0\" y=\"32.0\" font-size=\"7.8\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">X₂ = 0: Ŷ = −1,96 + 0,12X₁</text><line x1=\"30.0\" y1=\"115.8\" x2=\"260.0\" y2=\"43.8\" stroke=\"#e25b16\" stroke-width=\"2\"/><text x=\"12.0\" y=\"43.0\" font-size=\"7.8\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">X₂ = 1: Ŷ = −4,14 + 0,12X₁</text><path d=\"M168.0 59.6 V72.6\" stroke=\"#e2c46b\" stroke-width=\"1.4\"/><text x=\"173.0\" y=\"69.1\" font-size=\"8\" fill=\"#e2c46b\" text-anchor=\"start\" font-weight=\"700\">−2,18</text><line x1=\"30\" y1=\"122\" x2=\"262\" y2=\"122\" stroke=\"#5a6570\"/><text x=\"146.0\" y=\"134.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">X₁ (puntaje). Rectas paralelas: misma pendiente</text></svg>",
+      "chartLabel": "Ejemplo de Hanke en el V6; dibujo propio"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Una variable tiene 3 categorías y el modelo tiene intercepto. ¿Cuántas dummies?",
+      "options": [
+        "3",
+        "2",
+        "1"
+      ],
+      "correct": 1,
+      "feedback": "c − 1 = 2. La categoría que queda afuera es la de referencia. Con las 3 tendrías colinealidad perfecta."
+    },
+    {
+      "type": "concepto",
+      "k": "Viviendas",
+      "title": "F significativa y ninguna t significativa.",
+      "text": "Salida estudiantil: precio con dormitorios, superficie cubierta y de lote. F = 40,72 significativa, pero p de 0,742, 0,167 y 0,805, con VIF 83,23 y 78,99 en las superficies. Juntas explican; por separado no se distinguen: redundancia.",
+      "ejemplo": "Resolución estudiantil, no oficial. Se sigue en la Clase 14 con la grilla de siete modelos."
+    },
+    {
+      "type": "cierre",
+      "k": "Para llevar",
+      "title": "Llevate esto de la Clase 13.",
+      "text": "bⱼ = efecto parcial con las demás constantes. Error con n − k − 1. F global primero, t individuales después. R² ajustado penaliza. VIF = 1 / (1 − Rⱼ²). Dummies: c − 1 y una referencia. Próxima: validación y comparación."
+    }
+  ]
 }
