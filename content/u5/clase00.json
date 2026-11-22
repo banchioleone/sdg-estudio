@@ -390,7 +390,83 @@
    "text": "Sigue la Clase 1: qué es un inventario y por qué cuesta tenerlo."
   }
  ],
- "historias": [],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "La unidad en una frase",
+   "title": "Cuándo pedir y cuánto pedir.",
+   "text": "La U5 contesta eso para cada ítem que no sale de un MRP. Después vienen quién lo compra, a qué proveedor, dónde se guarda y cómo llega al cliente.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Las cuatro preguntas de la U5\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Las cuatro preguntas de la U5</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Cuándo</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">punto de pedido</text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Cuánto</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">lote Q</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">A quién</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">compras</text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Dónde</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">almacén y red</text></svg>",
+   "chartLabel": "Esquema propio de la Clase 0"
+  },
+  {
+   "type": "concepto",
+   "k": "Tres bloques",
+   "title": "De la fórmula a la logística.",
+   "text": "A: inventario y modelos determinísticos (EOQ, descuentos, perpetuo y periódico). B: incertidumbre y control (stock de seguridad, período único, ABC). C: compras, almacenes y cadena de suministro.",
+   "svg": "<svg viewBox=\"0 0 280 142\" width=\"100%\" height=\"142\" role=\"img\" aria-label=\"El orden de la unidad\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">El orden de la unidad</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. Bloque A · Modelos básicos</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">clases 1 a 4</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. Bloque B · Incertidumbre y control</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">clases 5 a 7</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. Bloque C · Compras y logística</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">clases 8 a 10</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">4. Integrador</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">ejercicios tipo examen</text></svg>",
+   "chartLabel": "Orden del programa 2008 y del plan de la unidad"
+  },
+  {
+   "type": "concepto",
+   "k": "El libro",
+   "title": "Es Chase, no Monks.",
+   "text": "El PDF grande del Drive es Chase, Jacobs y Aquilano, 12a edición. El capítulo 17 es control de inventarios; el 10 y el 11, cadena de suministro y ubicación. Monks no está en el Drive.",
+   "ejemplo": "Además hay apuntes de Morán (DRP y Producción JIT), la tabla normal de la práctica 1 y el tutorial de Odoo de la cátedra."
+  },
+  {
+   "type": "concepto",
+   "k": "En los finales",
+   "title": "La práctica de inventarios es vieja; la teoría, no.",
+   "text": "Como práctica apareció en 5 de 19 finales con fecha (26%), casi todos de 2002 a 2006. En los finales de 2011 a 2018 no figura como práctica fechada. En teoría sí: el multiple choice de perpetuo o periódico de 2013 y preguntas de EOQ.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Finales con práctica de inventarios\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Finales con práctica de inventarios</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"59.0\" y=\"43.3\" width=\"34.0\" height=\"66.7\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"76.0\" y=\"39.3\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">5</text><text x=\"76.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">19 fechados</text><text x=\"76.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">en total</text><rect x=\"187.0\" y=\"110.0\" width=\"34.0\" height=\"0.0\" rx=\"3\" fill=\"#b7c0c8\" opacity=\".9\"/><text x=\"204.0\" y=\"106.0\" font-size=\"8\" fill=\"#b7c0c8\" text-anchor=\"middle\" font-weight=\"700\">0</text><text x=\"204.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">7 fechados</text><text x=\"204.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">2011–2018</text></svg>",
+   "chartLabel": "Conteos de patrones_examenes.md"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "¿Cómo conviene priorizar la U5?",
+   "options": [
+    "Saltearla: no se toma desde 2006",
+    "Teoría seguro; práctica poco probable pero posible",
+    "Solo la práctica de EOQ"
+   ],
+   "correct": 1,
+   "feedback": "La teoría aparece hasta 2013 (perpetuo/periódico, EOQ) y la librería sigue en «Ejercicios posibles». La práctica no sale en finales fechados desde 2006, pero está en el programa."
+  },
+  {
+   "type": "concepto",
+   "k": "El molde que más se repite",
+   "title": "«Definir, confeccionar y calcular…»",
+   "text": "Demanda diaria normal, 3 días de espera, 6 pesos por pedido, 20% de interés, precio 1,2 y un nivel de servicio. Se resuelve con EOQ más stock de seguridad, y se cierra con la política y los subsistemas.",
+   "ejemplo": "Está desarrollado en la Clase 5, con las tres variantes que circulan."
+  },
+  {
+   "type": "concepto",
+   "k": "Ojo con las letras",
+   "title": "La L cambia de significado.",
+   "text": "En Chase, L es el tiempo de entrega y S el costo de pedir. En las resoluciones manuscritas, L es el costo de pedir y el tiempo de entrega se escribe LT. Morán usa la notación de Chase.",
+   "formula": "\\text{Chase: }Q^*=\\sqrt{\\frac{2DS}{H}} \\qquad \\text{hojas: }Q^*=\\sqrt{\\frac{2DL}{c\\,i}}"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "En una hoja resuelta ves «L = 6». ¿Qué es, casi seguro?",
+   "options": [
+    "El tiempo de entrega en días",
+    "El costo de colocar un pedido",
+    "El stock de seguridad"
+   ],
+   "correct": 1,
+   "feedback": "En las hojas de los finales L es el costo de pedido y el lead time es LT. Definí tus letras al empezar el ejercicio."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 0.",
+   "text": "Cuándo y cuánto pedir. Tres bloques más el integrador. Libro: Chase 12a ed. Teoría vigente, práctica poco probable pero posible. Y en las hojas, L = costo de pedir."
+  }
+ ],
  "block": "intro",
  "blockTitle": "Introducción"
 }

@@ -438,7 +438,112 @@
    "text": "**Cómo se presenta un ejercicio de inventarios en el final:** 1) datos y supuestos (unidades: días/año, i anual); 2) modelo elegido y por qué; 3) cálculos con fórmula escrita; 4) **política** en una frase («pedir Q cuando la posición llegue a R»); 5) subsistemas y qué hace cada uno. Las hojas resueltas de la cátedra siguen ese orden."
   }
  ],
- "historias": [],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "Cinco preguntas",
+   "title": "Casi todo ejercicio sale con esto.",
+   "text": "¿Qué modelo? ¿Cuánto pedir? ¿Cuándo? ¿Cuánto colchón? ¿Qué subsistemas? Respondelas en ese orden y cerrá con la política en una frase.",
+   "svg": "<svg viewBox=\"0 0 280 172\" width=\"100%\" height=\"172\" role=\"img\" aria-label=\"El molde del integrador\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">El molde del integrador</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. ¿Qué modelo?</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">Q, P, único, descuento</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. ¿Cuánto?</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">Q* o q</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. ¿Cuándo?</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">PP o T</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">4. ¿Cuánto colchón?</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">SS = zσ</text><rect x=\"8\" y=\"140\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"155.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">5. ¿Quién?</text><text x=\"266.0\" y=\"155.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">subsistemas</text></svg>",
+   "chartLabel": "Idea central del Integrador"
+  },
+  {
+   "type": "concepto",
+   "k": "Leé el enunciado",
+   "title": "Cada frase te dice el modelo.",
+   "text": "«Demanda constante y entrega cierta»: EOQ. «Tabla de precios»: descuentos. «Distribuida normalmente» y un nivel de servicio: perpetuo con SS. «Se revisa cada…»: periódico. «Costo de sobrar y de faltar»: período único."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "El enunciado dice «se revisa cada 10 días». ¿Qué fórmula usás?",
+   "options": [
+    "R = d̄L + zσL",
+    "q = d̄(T+L) + zσ(T+L) − I",
+    "Q* = √(2DS/H) y listo"
+   ],
+   "correct": 1,
+   "feedback": "Revisión a intervalo fijo es modelo P: el colchón cubre T + L y restás lo que hay."
+  },
+  {
+   "type": "concepto",
+   "k": "Familia A",
+   "title": "Perpetuo con stock de seguridad, la más tomada.",
+   "text": "N(50,10), 85%, 200 días: Q ≈ 707, PP 168. N(60,10), 90%: Q ≈ 775, PP 202. N(85,10), 85%, 240 días: Q ≈ 1010, PP 273.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Q* de cada variante (cajas)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Q* de cada variante (cajas)</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"37.7\" y=\"62.9\" width=\"34.0\" height=\"47.1\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"54.7\" y=\"58.9\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">≈707</text><text x=\"54.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">N(50,10)</text><rect x=\"123.0\" y=\"58.3\" width=\"34.0\" height=\"51.7\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"140.0\" y=\"54.3\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">≈775</text><text x=\"140.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">N(60,10)</text><rect x=\"208.3\" y=\"42.7\" width=\"34.0\" height=\"67.3\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"225.3\" y=\"38.7\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">≈1010</text><text x=\"225.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">N(85,10)</text></svg>",
+   "chartLabel": "Resultados de la Clase 5"
+  },
+  {
+   "type": "concepto",
+   "k": "Familias B y C",
+   "title": "Descuentos y variación del óptimo.",
+   "text": "Librería: Q = 100 en el quiebre, 7,37 por caja, PP 50 (con 20%, Q ≈ 117). IMBA: Q* = 20.000; pide el doble y paga 150 más por año."
+  },
+  {
+   "type": "concepto",
+   "k": "Familia D",
+   "title": "Política de abastecimiento.",
+   "text": "BIT-Kaffee: Q 250, PP 150. Bar: Q 78, PP 15. Hospital: 200 kg y precio implícito de unos 2,08 por kg. Ingap: Q ≈ 1018, PP 240, ahorra unos 386 por año."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "En el final del hospital te dan H = 0,25 por kg y una tasa del 12%. ¿Qué te piden deducir?",
+   "options": [
+    "El precio: c = H/i ≈ 2,08",
+    "El tiempo de entrega",
+    "El nivel de servicio"
+   ],
+   "correct": 0,
+   "feedback": "H = c·i, así que c = 0,25/0,12 ≈ 2,08 por kg. Con eso, Q* = √(2 · 500 · 10/0,25) = 200 kg."
+  },
+  {
+   "type": "concepto",
+   "k": "Familias F y G",
+   "title": "ABC: conteo y capital inmovilizado.",
+   "text": "EBS: 36 artículos por día. Plan de 6300: 90 por día, capacidad 126, 3 horas ociosas. Vender el 50% del capital por incidencia de MO: 12 ítems, 50,5%."
+  },
+  {
+   "type": "concepto",
+   "k": "Teoría que circula",
+   "title": "Lo que más se pregunta.",
+   "text": "Tipo de control para alimentos, diario, combustible, medicamentos y papel moneda. Analizar un sistema periódico. Directos e indirectos, órdenes abiertas y cerradas, etapas de compras. EOQ en multiple choice."
+  },
+  {
+   "type": "concepto",
+   "k": "Chase, problema 9",
+   "title": "Un descuento que no conviene.",
+   "text": "1000 unidades, 10 por pedido, 2 por mantener: Q = 100 y cuesta 200 por año. Con 100 menos por pedido si pedís 500: 20 + 500 − 200 = 320. Seguís pidiendo 100.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Pedir + mantener − descuento (dólares/año)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Pedir + mantener − descuento (dólares/año)</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"59.0\" y=\"67.9\" width=\"34.0\" height=\"42.1\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"76.0\" y=\"63.9\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">200</text><text x=\"76.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Q = 100</text><rect x=\"187.0\" y=\"42.6\" width=\"34.0\" height=\"67.4\" rx=\"3\" fill=\"#b7c0c8\" opacity=\".9\"/><text x=\"204.0\" y=\"38.6\" font-size=\"8\" fill=\"#b7c0c8\" text-anchor=\"middle\" font-weight=\"700\">320</text><text x=\"204.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Q = 500</text><text x=\"204.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">con descuento</text></svg>",
+   "chartLabel": "Cálculo propio: el libro no publica la respuesta"
+  },
+  {
+   "type": "concepto",
+   "k": "Chase, problema 18",
+   "title": "Período fijo con 98%.",
+   "text": "d = 60, σ = 10, T = 10, L = 2, hay 100. σ(T+L) = 10√12 = 34,64 y z = 2,05: q = 720 + 71 − 100 ≈ 691.",
+   "formula": "q = 60\\cdot 12 + 2{,}05\\cdot 34{,}64 - 100 \\approx 691",
+   "ejemplo": "Cálculo propio: el libro no publica la respuesta."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Chase, problema 12: el libro da Q = 89. ¿Para qué te sirven esas respuestas del Apéndice A?",
+   "options": [
+    "Para autocorregirte en los problemas 5, 8 y 12",
+    "Para copiarlas en el final",
+    "No sirven: son de otra materia"
+   ],
+   "correct": 0,
+   "feedback": "El Apéndice A trae respuestas de los problemas 5 (q = 713), 8 y 12. Resolvelos y compará."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto del Integrador.",
+   "text": "Cinco preguntas: modelo, cuánto, cuándo, colchón, quién. El enunciado te dice el modelo. Escribí datos y unidades, fórmula, cálculo y la política en una frase. Y si falta un dato, decí qué supuesto usás."
+  }
+ ],
  "block": "D",
  "blockTitle": "Cierre · Integrador"
 }

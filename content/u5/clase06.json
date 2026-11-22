@@ -438,7 +438,109 @@
    ]
   }
  ],
- "historias": [],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "Período fijo",
+   "title": "El riesgo dura T + L.",
+   "text": "En el periódico solo mirás en la revisión. Una demanda alta justo después de pedir pasa inadvertida hasta la próxima. Por eso el colchón cubre el período más la entrega.",
+   "formula": "q = \\bar{d}\\,(T+L) + z\\,\\sigma_{T+L} - I"
+  },
+  {
+   "type": "concepto",
+   "k": "Chase, Ejemplo 17.5",
+   "title": "d = 10, σ = 3, T = 30, L = 14, I = 150, 98%.",
+   "text": "σ(T+L) = √(44 · 9) = 19,90 y z = 2,05. Pedís la demanda de 44 días, más el colchón, menos lo que tenés: 331 unidades.",
+   "svg": "<svg viewBox=\"0 0 280 150\" width=\"100%\" height=\"150\" role=\"img\" aria-label=\"Ejemplo 17.5: cómo se arma q\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Ejemplo 17.5: cómo se arma q</text><line x1=\"12\" y1=\"120\" x2=\"268\" y2=\"120\" stroke=\"#5a6570\"/><rect x=\"24.8\" y=\"46.5\" width=\"38.4\" height=\"73.5\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"44.0\" y=\"42.5\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">440</text><text x=\"44.0\" y=\"131.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">d(T+L)</text><rect x=\"88.8\" y=\"39.6\" width=\"38.4\" height=\"6.8\" rx=\"3\" fill=\"#e2c46b\" opacity=\".9\"/><text x=\"108.0\" y=\"35.6\" font-size=\"8\" fill=\"#e2c46b\" text-anchor=\"middle\" font-weight=\"700\">+40,8</text><text x=\"108.0\" y=\"131.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">+ z·σ</text><rect x=\"152.8\" y=\"39.6\" width=\"38.4\" height=\"25.1\" rx=\"3\" fill=\"#b7c0c8\" opacity=\".9\"/><text x=\"172.0\" y=\"35.6\" font-size=\"8\" fill=\"#b7c0c8\" text-anchor=\"middle\" font-weight=\"700\">−150</text><text x=\"172.0\" y=\"131.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">− I</text><rect x=\"216.8\" y=\"64.7\" width=\"38.4\" height=\"55.3\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"236.0\" y=\"60.7\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">331</text><text x=\"236.0\" y=\"131.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">q</text></svg>",
+   "chartLabel": "Chase, Ejemplo 17.5 (p. 563–564); gráfico propio"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Problema resuelto 4: hay 200, pero cuando llegue el vendedor quedarán 180. ¿Qué I usás?",
+   "options": [
+    "200: lo que hay ahora",
+    "180: lo que habrá al pedir",
+    "0: siempre se arranca de cero"
+   ],
+   "correct": 1,
+   "feedback": "I es lo que habrá al momento de pedir. Con d = 20, σ = 5, T = 14, L = 7 y 95%: q = 420 + 1,64 · 23 − 180 = 278."
+  },
+  {
+   "type": "concepto",
+   "k": "Período único",
+   "title": "Una sola compra, lo que sobra pierde valor.",
+   "text": "Diarios, playeras de un partido, moda. Se agrega una unidad más mientras convenga: se pide hasta que la probabilidad acumulada llegue a Cu/(Co + Cu).",
+   "formula": "P \\leq \\frac{C_u}{C_o + C_u}"
+  },
+  {
+   "type": "concepto",
+   "k": "El voceador",
+   "title": "Paga 20 centavos, vende a 50.",
+   "text": "Sobrar cuesta Co = 0,20; faltar cuesta Cu = 0,30. El cociente da 0,6 → z ≈ 0,25. Con media 90 y desvío 10: «debe ser de 93 periódicos».",
+   "formula": "\\frac{0{,}30}{0{,}20 + 0{,}30} = 0{,}6 \\quad 90 + 0{,}25\\cdot 10 \\approx 93"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Si faltar cuesta más que sobrar (Cu > Co), ¿qué pedís?",
+   "options": [
+    "Más que la demanda media",
+    "Exactamente la media",
+    "Menos que la media"
+   ],
+   "correct": 0,
+   "feedback": "Cu/(Co + Cu) queda arriba de 0,5, así que z es positivo: pedís por encima de la media. El voceador pide 93 con media 90."
+  },
+  {
+   "type": "concepto",
+   "k": "Chase, Ejemplo 17.1",
+   "title": "Un hotel que sobrevende.",
+   "text": "Cancelaciones con media 5 y desvío 3. Habitación vacía: Cu = 80. Cliente sin lugar: Co = 200. El cociente es 0,2857, z = −0,566: reservar 3 de más, menos que la media.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Costo esperado según reservas extra\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Costo esperado según reservas extra</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"18.9\" y=\"56.0\" width=\"22.7\" height=\"54.0\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"30.3\" y=\"52.0\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">338</text><text x=\"30.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">0</text><rect x=\"55.5\" y=\"66.5\" width=\"22.7\" height=\"43.5\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"66.9\" y=\"62.5\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">272</text><text x=\"66.9\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">1</text><rect x=\"92.1\" y=\"73.5\" width=\"22.7\" height=\"36.5\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"103.4\" y=\"69.5\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">228</text><text x=\"103.4\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">2</text><rect x=\"128.7\" y=\"76.0\" width=\"22.7\" height=\"34.0\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"140.0\" y=\"72.0\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">212</text><text x=\"140.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">3</text><rect x=\"165.2\" y=\"71.8\" width=\"22.7\" height=\"38.2\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"176.6\" y=\"67.8\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">239</text><text x=\"176.6\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">4</text><rect x=\"201.8\" y=\"58.6\" width=\"22.7\" height=\"51.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"213.1\" y=\"54.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">321</text><text x=\"213.1\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">5</text><rect x=\"238.4\" y=\"38.7\" width=\"22.7\" height=\"71.3\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"249.7\" y=\"34.7\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">446</text><text x=\"249.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">6</text></svg>",
+   "chartLabel": "Tabla discreta del Ejemplo 17.1 (Chase, p. 552–553)"
+  },
+  {
+   "type": "concepto",
+   "k": "Problema resuelto 1",
+   "title": "Vende a 100, cuesta 70, se recupera 20.",
+   "text": "Cu = 30 y Co = 50: P ≤ 0,375. Con la distribución de 35 a 40 unidades, corresponde a la 37.ª. El análisis marginal confirma el mínimo en 37.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Costo total según unidades compradas\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Costo total según unidades compradas</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"20.1\" y=\"68.6\" width=\"26.5\" height=\"41.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"33.3\" y=\"64.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">75</text><text x=\"33.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">35</text><rect x=\"62.8\" y=\"80.8\" width=\"26.5\" height=\"29.2\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"76.0\" y=\"76.8\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">53</text><text x=\"76.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">36</text><rect x=\"105.4\" y=\"86.3\" width=\"26.5\" height=\"23.7\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"118.7\" y=\"82.3\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">43</text><text x=\"118.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">37</text><rect x=\"148.1\" y=\"80.8\" width=\"26.5\" height=\"29.2\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"161.3\" y=\"76.8\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">53</text><text x=\"161.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">38</text><rect x=\"190.8\" y=\"64.2\" width=\"26.5\" height=\"45.8\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"204.0\" y=\"60.2\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">83</text><text x=\"204.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">39</text><rect x=\"233.4\" y=\"41.0\" width=\"26.5\" height=\"69.0\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"246.7\" y=\"37.0\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">125</text><text x=\"246.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">40</text></svg>",
+   "chartLabel": "Chase, Problema resuelto 1 (p. 576)"
+  },
+  {
+   "type": "concepto",
+   "k": "Rotación",
+   "title": "Cuántas veces al año da vuelta el stock.",
+   "text": "Costo de lo vendido sobre inventario promedio. Las semanas de suministro son la inversa por 52. Dell 2006: 45.958 / (327 + 247) = 80 vueltas, 0,65 semanas.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Rotación por año (Chase)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Rotación por año (Chase)</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"37.7\" y=\"105.7\" width=\"34.0\" height=\"4.3\" rx=\"3\" fill=\"#b7c0c8\" opacity=\".9\"/><text x=\"54.7\" y=\"101.7\" font-size=\"8\" fill=\"#b7c0c8\" text-anchor=\"middle\" font-weight=\"700\">6–7</text><text x=\"54.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Manufactura</text><text x=\"54.7\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">típica</text><rect x=\"123.0\" y=\"56.6\" width=\"34.0\" height=\"53.4\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"140.0\" y=\"52.6\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">80</text><text x=\"140.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Dell 2006</text><rect x=\"208.3\" y=\"43.3\" width=\"34.0\" height=\"66.7\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"225.3\" y=\"39.3\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">+100</text><text x=\"225.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Supermercado</text></svg>",
+   "chartLabel": "Chase cap. 10: típicos y Ejemplo 10.1"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Chase, 17.6: D = 1000, Q = 300, SS = 40. ¿Cuál es la rotación?",
+   "options": [
+    "3,3 por año",
+    "5,263 por año",
+    "6,7 por año"
+   ],
+   "correct": 1,
+   "feedback": "Inventario promedio = Q/2 + SS = 150 + 40 = 190. Rotación = 1000/190 = 5,263."
+  },
+  {
+   "type": "concepto",
+   "k": "Servicios",
+   "title": "Miles de SKU, sin un EOQ por ítem.",
+   "text": "Una tienda departamental maneja 3000 a 4000 SKU por departamento. Un taller de autos usa ABC y promedios ponderados: con usos 17, 19, 11 y 23 y pesos 0,1 a 0,4, la demanda estimada es 18 por mes."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 6.",
+   "text": "Periódico: q = d̄(T+L) + zσ(T+L) − I, con I al momento de pedir. Período único: pedir hasta Cu/(Co + Cu). Rotación = costo de lo vendido / inventario promedio; Dell, 80."
+  }
+ ],
  "block": "B",
  "blockTitle": "Bloque B · Modelos estocásticos y control"
 }

@@ -462,7 +462,7 @@
       "examen": [
         "Práctica · Inventarios 5/19 (26%)"
       ],
-      "lede": "Unidad 5 del programa: logística e inventarios. Arranca con la Clase 0 · Mapa de la unidad y sigue en tres bloques. Bloque A · Inventario y modelos determinísticos: concepto de inventario, lote económico (EOQ) y punto de pedido, descuentos por cantidad, perpetuo vs. periódico. Bloque B · Modelos estocásticos y control: stock de seguridad y nivel de servicio, período fijo, período único y rotación, ABC y conteo cíclico. Bloque C · Compras, almacenes y logística: compras y proveedores, almacenes, distribución (DRP) y trazabilidad, cadena de suministro y ubicación de plantas. Cierra con el Integrador de ejercicios tipo examen. Por ahora, teoría completa sin historias.",
+      "lede": "Unidad 5 del programa: logística e inventarios. Arranca con la Clase 0 · Mapa de la unidad y sigue en tres bloques. Bloque A · Inventario y modelos determinísticos: concepto de inventario, lote económico (EOQ) y punto de pedido, descuentos por cantidad, perpetuo vs. periódico. Bloque B · Modelos estocásticos y control: stock de seguridad y nivel de servicio, período fijo, período único y rotación, ABC y conteo cíclico. Bloque C · Compras, almacenes y logística: compras y proveedores, almacenes, distribución (DRP) y trazabilidad, cadena de suministro y ubicación de plantas. Cierra con el Integrador de ejercicios tipo examen.",
       "blocks": [
         {
           "id": "intro",

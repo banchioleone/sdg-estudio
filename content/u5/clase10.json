@@ -541,7 +541,113 @@
    ]
   }
  ],
- "historias": [],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "Logística integral",
+   "title": "Toda la cadena como un solo sistema.",
+   "text": "En cada eslabón hay inventario y cada eslabón cuesta. Chase: «el objetivo es tener la cantidad de inventario apropiada y en los lugares correctos de la cadena de suministro»."
+  },
+  {
+   "type": "concepto",
+   "k": "Efecto látigo",
+   "title": "La variación crece aguas arriba.",
+   "text": "En los pañales de Procter & Gamble, los pedidos del detallista varían más que las ventas, y los del mayorista todavía más. Las compras adelantadas por promociones lo agravan.",
+   "svg": "<svg viewBox=\"0 0 280 150\" width=\"100%\" height=\"150\" role=\"img\" aria-label=\"Efecto látigo: la variación crece aguas arriba\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Efecto látigo: la variación crece aguas arriba</text><line x1=\"36\" y1=\"96.0\" x2=\"266\" y2=\"96.0\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"99.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">80</text><line x1=\"36\" y1=\"71.0\" x2=\"266\" y2=\"71.0\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"74.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">100</text><line x1=\"36\" y1=\"46.0\" x2=\"266\" y2=\"46.0\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"49.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">120</text><polyline fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1.8\" points=\"36.0,71.0 55.2,66.8 74.3,64.1 93.5,63.6 112.7,65.7 131.8,69.5 151.0,73.8 170.2,77.2 189.3,78.5 208.5,77.3 227.7,73.9 246.8,69.6 266.0,65.7\"/><circle cx=\"36.0\" cy=\"71.0\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"55.2\" cy=\"66.8\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"74.3\" cy=\"64.1\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"93.5\" cy=\"63.6\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"112.7\" cy=\"65.7\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"131.8\" cy=\"69.5\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"151.0\" cy=\"73.8\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"170.2\" cy=\"77.2\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"189.3\" cy=\"78.5\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"208.5\" cy=\"77.3\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"227.7\" cy=\"73.9\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"246.8\" cy=\"69.6\" r=\"2.3\" fill=\"#b7c0c8\"/><circle cx=\"266.0\" cy=\"65.7\" r=\"2.3\" fill=\"#b7c0c8\"/><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.8\" points=\"36.0,79.4 55.2,69.5 74.3,60.0 93.5,54.3 112.7,54.2 131.8,59.7 151.0,69.0 170.2,79.0 189.3,86.3 208.5,88.4 227.7,84.7 246.8,76.4 266.0,66.2\"/><circle cx=\"36.0\" cy=\"79.4\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"55.2\" cy=\"69.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"74.3\" cy=\"60.0\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"93.5\" cy=\"54.3\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"112.7\" cy=\"54.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"131.8\" cy=\"59.7\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"151.0\" cy=\"69.0\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"170.2\" cy=\"79.0\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"189.3\" cy=\"86.3\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"208.5\" cy=\"88.4\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"227.7\" cy=\"84.7\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"246.8\" cy=\"76.4\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"266.0\" cy=\"66.2\" r=\"2.3\" fill=\"#8cb4d6\"/><polyline fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.8\" points=\"36.0,98.3 55.2,84.0 74.3,65.3 93.5,48.5 112.7,39.3 131.8,40.7 151.0,52.3 170.2,70.2 189.3,88.4 208.5,100.7 227.7,103.0 246.8,94.6 266.0,78.2\"/><circle cx=\"36.0\" cy=\"98.3\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"55.2\" cy=\"84.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"74.3\" cy=\"65.3\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"93.5\" cy=\"48.5\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"112.7\" cy=\"39.3\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"131.8\" cy=\"40.7\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"151.0\" cy=\"52.3\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"170.2\" cy=\"70.2\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"189.3\" cy=\"88.4\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"208.5\" cy=\"100.7\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"227.7\" cy=\"103.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"246.8\" cy=\"94.6\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"266.0\" cy=\"78.2\" r=\"2.3\" fill=\"#e25b16\"/><line x1=\"8\" y1=\"141\" x2=\"20\" y2=\"141\" stroke=\"#b7c0c8\" stroke-width=\"2\"/><text x=\"23.0\" y=\"144.0\" font-size=\"7.5\" fill=\"#b7c0c8\" text-anchor=\"start\">Consumidor</text><line x1=\"76.0\" y1=\"141\" x2=\"88.0\" y2=\"141\" stroke=\"#8cb4d6\" stroke-width=\"2\"/><text x=\"91.0\" y=\"144.0\" font-size=\"7.5\" fill=\"#8cb4d6\" text-anchor=\"start\">Detallista</text><line x1=\"144.0\" y1=\"141\" x2=\"156.0\" y2=\"141\" stroke=\"#e25b16\" stroke-width=\"2\"/><text x=\"159.0\" y=\"144.0\" font-size=\"7.5\" fill=\"#e25b16\" text-anchor=\"start\">Mayorista</text></svg>",
+   "chartLabel": "Esquema propio, no son los datos de P&G"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "¿Qué indica el efecto látigo, según Chase?",
+   "options": [
+    "Falta de sincronía entre los eslabones",
+    "Que el consumidor compra al azar",
+    "Que sobra capacidad de transporte"
+   ],
+   "correct": 0,
+   "feedback": "En unas etapas se acumula inventario y en otras hay demoras y escasez. Lo reduce el reabastecimiento continuo: Campbell Soup bajó el stock del detallista de 4 a 2 semanas."
+  },
+  {
+   "type": "concepto",
+   "k": "Funcional o innovador",
+   "title": "Cada producto pide otra cadena.",
+   "text": "Funcionales: demanda estable, ciclo largo, margen bajo (supermercado). Innovadores: demanda impredecible, ciclo de pocos meses, margen más alto (moda, PC). Hau Lee suma el suministro y llega a cuatro estrategias.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Las cuatro cadenas de Hau Lee\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Las cuatro cadenas de Hau Lee</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Eficiente</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">costo mínimo</text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Compartida</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">riesgo y stock</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Responsiva</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">flexible</text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Ágil</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">las dos</text></svg>",
+   "chartLabel": "Chase cap. 10"
+  },
+  {
+   "type": "concepto",
+   "k": "¿Cinco o seis modos?",
+   "title": "El mismo libro cuenta distinto.",
+   "text": "Cap. 10 (p. 370): cinco modos, carretera, ferrocarril, agua, tubería y aire. Cap. 11 (p. 385): suma la entrega a mano y da seis. En el examen nombrá los seis y aclará."
+  },
+  {
+   "type": "concepto",
+   "k": "Chase, Ejemplo 10.2",
+   "title": "¿Aéreo o terrestre?",
+   "text": "Mantener inventario cuesta 30% al año. FedEx tarda 2 días; UPS terrestre, 8. Conviene el aéreo si el ahorro de 6 días de inventario supera la diferencia de flete.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Valor por libra a partir del cual conviene el aéreo\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Valor por libra a partir del cual conviene el aéreo</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"37.7\" y=\"40.7\" width=\"34.0\" height=\"69.3\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"54.7\" y=\"36.7\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">3032</text><text x=\"54.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">1 libra</text><rect x=\"123.0\" y=\"89.2\" width=\"34.0\" height=\"20.8\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"140.0\" y=\"85.2\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">910</text><text x=\"140.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">5 libras</text><rect x=\"208.3\" y=\"95.3\" width=\"34.0\" height=\"14.7\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"225.3\" y=\"91.3\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">644</text><text x=\"225.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">10 libras</text></svg>",
+   "chartLabel": "Chase, ilustración 10.10 (p. 371–372)"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Un paquete de 1 libra vale 2000 dólares. Con los datos del 10.2, ¿cómo lo mandás?",
+   "options": [
+    "Aéreo: siempre conviene",
+    "Terrestre: vale menos que 3031,53",
+    "Da igual"
+   ],
+   "correct": 1,
+   "feedback": "El valor de equilibrio para 1 libra es 3031,53. Por debajo, el ahorro de inventario no paga los 14,95 de diferencia de flete."
+  },
+  {
+   "type": "concepto",
+   "k": "Criterios de ubicación",
+   "title": "Qué mira Chase.",
+   "text": "Proximidad con los clientes, clima de negocios, costos totales, infraestructura, calidad de la mano de obra, proveedores cercanos y otras instalaciones de la empresa."
+  },
+  {
+   "type": "concepto",
+   "k": "Centroide",
+   "title": "Promedio de coordenadas pesado por volumen.",
+   "text": "Sirve para ubicar almacenes intermedios o de distribución. Cada sitio pesa según lo que se mueve hacia o desde él.",
+   "formula": "C_x = \\frac{\\sum d_{ix}V_i}{\\sum V_i} \\qquad C_y = \\frac{\\sum d_{iy}V_i}{\\sum V_i}"
+  },
+  {
+   "type": "concepto",
+   "k": "Chase, Ejemplo 11.2",
+   "title": "HiOctane busca dónde poner un depósito.",
+   "text": "Refinería en Long Beach (1500) y cuatro distribuidores. Cx = 923.750/3000 = 307,9 y Cy = 650.000/3000 = 216,7. Es «un punto de inicio para buscar un nuevo sitio».",
+   "svg": "<svg viewBox=\"0 0 280 200\" width=\"100%\" height=\"200\" role=\"img\" aria-label=\"HiOctane: centroide\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">HiOctane: el centroide pesa por volumen</text><line x1=\"30\" y1=\"178\" x2=\"266\" y2=\"178\" stroke=\"#5a6570\"/><line x1=\"30\" y1=\"24\" x2=\"30\" y2=\"178\" stroke=\"#5a6570\"/><line x1=\"183.4\" y1=\"154.9\" x2=\"175.3\" y2=\"111.3\" stroke=\"#5a6570\" stroke-width=\".8\"/><line x1=\"218.8\" y1=\"131.8\" x2=\"175.3\" y2=\"111.3\" stroke=\"#5a6570\" stroke-width=\".8\"/><line x1=\"242.4\" y1=\"70.2\" x2=\"175.3\" y2=\"111.3\" stroke=\"#5a6570\" stroke-width=\".8\"/><line x1=\"195.2\" y1=\"54.8\" x2=\"175.3\" y2=\"111.3\" stroke=\"#5a6570\" stroke-width=\".8\"/><line x1=\"41.8\" y1=\"39.4\" x2=\"175.3\" y2=\"111.3\" stroke=\"#5a6570\" stroke-width=\".8\"/><circle cx=\"183.4\" cy=\"154.9\" r=\"12.7\" fill=\"#8cb4d6\" opacity=\".55\" stroke=\"#8cb4d6\"/><text x=\"200.1\" y=\"158.9\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"start\">Long Beach (1500)</text><circle cx=\"218.8\" cy=\"131.8\" r=\"7.0\" fill=\"#8cb4d6\" opacity=\".55\" stroke=\"#8cb4d6\"/><text x=\"229.8\" y=\"135.8\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"start\">Anaheim (250)</text><circle cx=\"242.4\" cy=\"70.2\" r=\"8.3\" fill=\"#8cb4d6\" opacity=\".55\" stroke=\"#8cb4d6\"/><text x=\"242.4\" y=\"88.5\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">La Habra (450)</text><circle cx=\"195.2\" cy=\"54.8\" r=\"7.7\" fill=\"#8cb4d6\" opacity=\".55\" stroke=\"#8cb4d6\"/><text x=\"195.2\" y=\"43.1\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Glendale (350)</text><circle cx=\"41.8\" cy=\"39.4\" r=\"8.3\" fill=\"#8cb4d6\" opacity=\".55\" stroke=\"#8cb4d6\"/><text x=\"54.1\" y=\"43.4\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"start\">Thousand Oaks (450)</text><path d=\"M175.3 104.3 l2 5 5 .5 -4 3.5 1.5 5 -4.5 -3 -4.5 3 1.5 -5 -4 -3.5 5 -.5z\" fill=\"#e25b16\"/><text x=\"166.3\" y=\"114.3\" font-size=\"8.5\" fill=\"#e25b16\" text-anchor=\"end\" font-weight=\"700\">centroide (308; 217)</text><text x=\"30.0\" y=\"188.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">0</text><text x=\"148.0\" y=\"188.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">250</text><text x=\"266.0\" y=\"188.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">500</text></svg>",
+   "chartLabel": "Chase, Ejemplo 11.2 (p. 394); gráfico propio. La tabla del libro imprime 45 donde el cálculo usa 450"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "¿Por qué el centroide de HiOctane queda cerca de Long Beach?",
+   "options": [
+    "Porque es la refinería",
+    "Porque mueve 1500 de los 3000 de volumen",
+    "Por casualidad"
+   ],
+   "correct": 1,
+   "feedback": "El centroide pesa por volumen: Long Beach mueve la mitad del total y tira el punto hacia ella."
+  },
+  {
+   "type": "concepto",
+   "k": "Otros métodos",
+   "title": "Factores, transporte y regresión.",
+   "text": "Calificación de factores: puntos por criterio. Método de transporte: costo mínimo de envío con Solver (Ejemplo 11.1). Servicios: regresión, como la cadena hotelera del Ejemplo 11.3 con 57 sitios."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 10.",
+   "text": "La cadena es un sistema: el látigo muestra falta de sincronización. Funcional → eficiente; innovador → responsiva. Seis modos (cinco en el cap. 10). El aéreo se paga con densidad de valor. Centroide = promedio pesado por volumen: HiOctane (308; 217)."
+  }
+ ],
  "block": "C",
  "blockTitle": "Bloque C · Compras, almacenes y logística"
 }

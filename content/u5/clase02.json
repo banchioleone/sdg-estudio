@@ -472,7 +472,111 @@
    ]
   }
  ],
- "historias": [],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "El dilema",
+   "title": "Pedir mucho o pedir seguido.",
+   "text": "Un pedido grande ahorra pedidos pero llena el depósito. Uno chico ahorra depósito pero te hace pedir todo el tiempo. El lote económico es el punto medio que hace mínima la suma."
+  },
+  {
+   "type": "concepto",
+   "k": "La sierra",
+   "title": "Así se ve el modelo básico.",
+   "text": "BIT-Kaffee consume 30 cajas por día. Pide 250 cuando quedan 150, y el pedido tarda 5 días: llega justo cuando el stock toca cero.",
+   "svg": "<svg viewBox=\"0 0 280 160\" width=\"100%\" height=\"160\" role=\"img\" aria-label=\"BIT-Kaffee: Q = 250, PP = 150\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">BIT-Kaffee: Q = 250, PP = 150</text><line x1=\"34\" y1=\"130\" x2=\"268\" y2=\"130\" stroke=\"#5a6570\"/><line x1=\"34\" y1=\"26\" x2=\"34\" y2=\"130\" stroke=\"#5a6570\"/><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"2\" points=\"34.0,35.5 112.0,130.0 112.0,35.5 190.0,130.0 190.0,35.5 268.0,130.0\"/><line x1=\"34\" x2=\"268\" y1=\"73.3\" y2=\"73.3\" stroke=\"#e2c46b\" stroke-dasharray=\"5 3\"/><text x=\"268.0\" y=\"69.3\" font-size=\"7.5\" fill=\"#e2c46b\" text-anchor=\"end\" font-weight=\"700\">PP = 150</text><circle cx=\"65.2\" cy=\"73.3\" r=\"3.5\" fill=\"#e25b16\"/><path d=\"M65.2 136 L112.0 136\" stroke=\"#e25b16\" stroke-width=\"1.4\"/><text x=\"88.6\" y=\"146.0\" font-size=\"7\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">L = 5 días</text><circle cx=\"143.2\" cy=\"73.3\" r=\"3.5\" fill=\"#e25b16\"/><path d=\"M143.2 136 L190.0 136\" stroke=\"#e25b16\" stroke-width=\"1.4\"/><circle cx=\"221.2\" cy=\"73.3\" r=\"3.5\" fill=\"#e25b16\"/><path d=\"M221.2 136 L268.0 136\" stroke=\"#e25b16\" stroke-width=\"1.4\"/><text x=\"30.0\" y=\"38.5\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">250</text><text x=\"30.0\" y=\"133.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">0</text><text x=\"268.0\" y=\"146.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">días</text><text x=\"116.0\" y=\"32.5\" font-size=\"7.5\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">llega Q</text></svg>",
+   "chartLabel": "Gráfico propio con los datos del final BIT-Kaffee (EFR p.16)"
+  },
+  {
+   "type": "concepto",
+   "k": "Supuestos",
+   "title": "Irreales, pero son el punto de partida.",
+   "text": "Demanda constante y uniforme. Tiempo de entrega constante. Precio fijo. Mantener según el stock promedio. Costo de pedir constante. Y no se permiten faltantes."
+  },
+  {
+   "type": "concepto",
+   "k": "Costo total",
+   "title": "Comprar + pedir + mantener.",
+   "text": "D·C no depende de Q. Pedir baja cuando Q crece; mantener sube. Donde se cruzan está el mínimo.",
+   "formula": "CT = D\\,C + \\frac{D}{Q}\\,S + \\frac{Q}{2}\\,H",
+   "svg": "<svg viewBox=\"0 0 280 160\" width=\"100%\" height=\"160\" role=\"img\" aria-label=\"BIT-Kaffee: costos anuales según Q\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">BIT-Kaffee: costos anuales según Q</text><line x1=\"36\" y1=\"117.7\" x2=\"266\" y2=\"117.7\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"120.7\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">0</text><line x1=\"36\" y1=\"82.9\" x2=\"266\" y2=\"82.9\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"85.9\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">1000</text><line x1=\"36\" y1=\"48.2\" x2=\"266\" y2=\"48.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"51.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">2000</text><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.8\" points=\"36.0,39.5 61.6,78.6 87.1,91.6 112.7,98.1 138.2,102.0 163.8,104.6 189.3,106.5 214.9,107.9 240.4,109.0 266.0,109.9\"/><circle cx=\"36.0\" cy=\"39.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"61.6\" cy=\"78.6\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"87.1\" cy=\"91.6\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"112.7\" cy=\"98.1\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"138.2\" cy=\"102.0\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"163.8\" cy=\"104.6\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"189.3\" cy=\"106.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"214.9\" cy=\"107.9\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"240.4\" cy=\"109.0\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"266.0\" cy=\"109.9\" r=\"2.3\" fill=\"#8cb4d6\"/><polyline fill=\"none\" stroke=\"#e2c46b\" stroke-width=\"1.8\" points=\"36.0,114.5 61.6,111.4 87.1,108.3 112.7,105.2 138.2,102.0 163.8,98.9 189.3,95.8 214.9,92.7 240.4,89.5 266.0,86.4\"/><circle cx=\"36.0\" cy=\"114.5\" r=\"2.3\" fill=\"#e2c46b\"/><circle cx=\"61.6\" cy=\"111.4\" r=\"2.3\" fill=\"#e2c46b\"/><circle cx=\"87.1\" cy=\"108.3\" r=\"2.3\" fill=\"#e2c46b\"/><circle cx=\"112.7\" cy=\"105.2\" r=\"2.3\" fill=\"#e2c46b\"/><circle cx=\"138.2\" cy=\"102.0\" r=\"2.3\" fill=\"#e2c46b\"/><circle cx=\"163.8\" cy=\"98.9\" r=\"2.3\" fill=\"#e2c46b\"/><circle cx=\"189.3\" cy=\"95.8\" r=\"2.3\" fill=\"#e2c46b\"/><circle cx=\"214.9\" cy=\"92.7\" r=\"2.3\" fill=\"#e2c46b\"/><circle cx=\"240.4\" cy=\"89.5\" r=\"2.3\" fill=\"#e2c46b\"/><circle cx=\"266.0\" cy=\"86.4\" r=\"2.3\" fill=\"#e2c46b\"/><polyline fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.8\" points=\"36.0,36.4 61.6,72.4 87.1,82.2 112.7,85.6 138.2,86.4 163.8,85.9 189.3,84.6 214.9,82.9 240.4,80.9 266.0,78.6\"/><circle cx=\"36.0\" cy=\"36.4\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"61.6\" cy=\"72.4\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"87.1\" cy=\"82.2\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"112.7\" cy=\"85.6\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"138.2\" cy=\"86.4\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"163.8\" cy=\"85.9\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"189.3\" cy=\"84.6\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"214.9\" cy=\"82.9\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"240.4\" cy=\"80.9\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"266.0\" cy=\"78.6\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"138.2\" cy=\"86.4\" r=\"4.2\" fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.8\"/><text x=\"145.2\" y=\"78.4\" font-size=\"8.5\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">Q* = 250 → 900</text><text x=\"36.0\" y=\"138.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">50</text><text x=\"87.1\" y=\"138.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">150</text><text x=\"138.2\" y=\"138.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">250</text><text x=\"189.3\" y=\"138.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">350</text><text x=\"240.4\" y=\"138.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">450</text><text x=\"266.0\" y=\"138.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">500</text><line x1=\"8\" y1=\"151\" x2=\"20\" y2=\"151\" stroke=\"#8cb4d6\" stroke-width=\"2\"/><text x=\"23.0\" y=\"154.0\" font-size=\"7.5\" fill=\"#8cb4d6\" text-anchor=\"start\">Pedir</text><line x1=\"53.0\" y1=\"151\" x2=\"65.0\" y2=\"151\" stroke=\"#e2c46b\" stroke-width=\"2\"/><text x=\"68.0\" y=\"154.0\" font-size=\"7.5\" fill=\"#e2c46b\" text-anchor=\"start\">Mantener</text><line x1=\"111.8\" y1=\"151\" x2=\"123.8\" y2=\"151\" stroke=\"#e25b16\" stroke-width=\"2\"/><text x=\"126.8\" y=\"154.0\" font-size=\"7.5\" fill=\"#e25b16\" text-anchor=\"start\">Total</text></svg>",
+   "chartLabel": "Curvas calculadas por mí con los datos de BIT-Kaffee"
+  },
+  {
+   "type": "concepto",
+   "k": "La fórmula",
+   "title": "Derivás, igualás a cero y sale Q*.",
+   "text": "En el óptimo, el costo de pedir es igual al de mantener. Las hojas escriben lo mismo con L = costo de pedido, c = precio e i = tasa.",
+   "formula": "Q^* = \\sqrt{\\frac{2DS}{H}} \\qquad R = \\bar{d}\\,L"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "BIT-Kaffee: 7500 cajas por año, 15 por pedido, manejo 30% de 12 por caja. ¿Cuánto da Q*?",
+   "options": [
+    "150 cajas",
+    "250 cajas",
+    "625 cajas"
+   ],
+   "correct": 1,
+   "feedback": "H = 0,30 · 12 = 3,6. Q* = √(2 · 7500 · 15 / 3,6) = √62.500 = 250. El PP es 30 · 5 = 150: «se realiza un pedido de 250 ítems cuando el PP sea = 150»."
+  },
+  {
+   "type": "concepto",
+   "k": "Chase, Ejemplo 17.2",
+   "title": "D = 1000, S = 5, H = 1,25, L = 5 días.",
+   "text": "Q = √8000 = 89,4 y R = 1000/365 · 5 = 13,7. La política de Chase: «cuando la posición del inventario baja a 14, hacer un pedido de 89 piezas más».",
+   "formula": "Q = \\sqrt{\\frac{2\\cdot 1000\\cdot 5}{1{,}25}} = 89{,}4"
+  },
+  {
+   "type": "concepto",
+   "k": "Problema resuelto 2",
+   "title": "En el óptimo, 100 y 100.",
+   "text": "Chase: 1000 unidades, 5 por pedido, mantener 4 por unidad. Q = 50; costo de pedir 100 y de mantener 100 por año. No es casualidad: en Q* siempre se igualan.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Problema resuelto 2 (Chase, p. 577)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Problema resuelto 2 (Chase, p. 577)</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"59.0\" y=\"48.5\" width=\"34.0\" height=\"61.5\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"76.0\" y=\"44.5\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">100</text><text x=\"76.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Pedir</text><rect x=\"187.0\" y=\"48.5\" width=\"34.0\" height=\"61.5\" rx=\"3\" fill=\"#e2c46b\" opacity=\".9\"/><text x=\"204.0\" y=\"44.5\" font-size=\"8\" fill=\"#e2c46b\" text-anchor=\"middle\" font-weight=\"700\">100</text><text x=\"204.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Mantener</text></svg>",
+   "chartLabel": "Datos de Chase, cap. 17"
+  },
+  {
+   "type": "concepto",
+   "k": "IMBA",
+   "title": "Pedir el doble cuesta, pero no el doble.",
+   "text": "IMBA vende 150.000 ítems al año y pide 40.000; el óptimo es 20.000. La curva es chata cerca del mínimo: pedir el doble cuesta 150 pesos más por año, un 25% más en pedir + mantener.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"IMBA: pedir + mantener por año\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">IMBA: pedir + mantener por año</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"59.0\" y=\"53.5\" width=\"34.0\" height=\"56.5\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"76.0\" y=\"49.5\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">600</text><text x=\"76.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Q = 20.000</text><text x=\"76.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">óptimo</text><rect x=\"187.0\" y=\"39.4\" width=\"34.0\" height=\"70.6\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"204.0\" y=\"35.4\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">750</text><text x=\"204.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Q = 40.000</text><text x=\"204.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">actual</text></svg>",
+   "chartLabel": "Cálculo propio en pesos por año; las hojas lo hacen por unidad (0,154 vs 0,155)"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "IMBA pide 40.000 y Q* = 20.000. ¿Qué variación respecto del óptimo informás?",
+   "options": [
+    "+100% en cantidad, +25% en costo de pedir + mantener",
+    "−50% en cantidad y el mismo costo",
+    "+100% en cantidad y +100% en costo"
+   ],
+   "correct": 0,
+   "feedback": "Pide el doble (+100%), pero el costo de pedir + mantener pasa de 600 a 750 por año: +25%. La hoja anota «50%» mirándolo al revés."
+  },
+  {
+   "type": "concepto",
+   "k": "Ingap SA",
+   "title": "Comprar cada 30 días vs. el óptimo.",
+   "text": "120 vasos por día, 360 días: 43.200 por año. Hoy compra 3600 de una vez; el óptimo es unos 1018. Pedir + mantener baja de unos 810 a 424 por año: ahorra unos 386.",
+   "ejemplo": "PP = 120 · 2 = 240 vasos. Final EFR p.34."
+  },
+  {
+   "type": "concepto",
+   "k": "Con faltantes",
+   "title": "Cuando faltar está permitido.",
+   "text": "Complemento: si cada faltante pendiente cuesta B por año, el lote sube y la existencia máxima baja. En el final de EFR p.30 da Q = 50 y existencia máxima 40.",
+   "formula": "Q^* = \\sqrt{\\frac{2DS}{H}\\cdot\\frac{H+B}{B}}"
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 2.",
+   "text": "CT = DC + (D/Q)S + (Q/2)H. Q* = √(2DS/H) y R = d̄·L. En Q* pedir = mantener. La curva es chata: errar un poco cuesta poco, errar el doble ya se nota. Y cerrá siempre con la política en una frase."
+  }
+ ],
  "block": "A",
  "blockTitle": "Bloque A · Inventario y modelos determinísticos"
 }

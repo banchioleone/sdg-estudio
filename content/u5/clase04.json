@@ -312,7 +312,105 @@
    ]
   }
  ],
- "historias": [],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "Dos sistemas",
+   "title": "Evento o reloj.",
+   "text": "«Los modelos de cantidad de pedido fija se basan en los eventos y los modelos de periodo fijo se basan en el tiempo.» (Chase). El perpetuo pide cuando pasa algo; el periódico, cuando llega la fecha."
+  },
+  {
+   "type": "concepto",
+   "k": "La frase de la cátedra",
+   "title": "Cantidades fijas, fechas variables. Y al revés.",
+   "text": "Perpetuo: reposición por cantidades fijas y fechas variables. Periódico: reposición por cantidades variables en períodos fijos. Así lo responde el banco de abastecimiento.",
+   "svg": "<svg viewBox=\"0 0 280 188\" width=\"100%\" height=\"188\" role=\"img\" aria-label=\"Perpetuo vs periódico (esquema)\"><text x=\"8.0\" y=\"13.0\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Perpetuo: misma Q, fechas que cambian</text><text x=\"8.0\" y=\"104.0\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">Periódico: fechas fijas, cantidades que cambian</text><circle cx=\"65.0\" cy=\"65.0\" r=\"2.6\" fill=\"#e2c46b\"/><line x1=\"80.0\" x2=\"80.0\" y1=\"78.5\" y2=\"24.5\" stroke=\"#8cb4d6\" stroke-width=\"3\" opacity=\".35\"/><text x=\"80.0\" y=\"98.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Q</text><circle cx=\"161.8\" cy=\"65.0\" r=\"2.6\" fill=\"#e2c46b\"/><line x1=\"189.1\" x2=\"189.1\" y1=\"78.5\" y2=\"24.5\" stroke=\"#8cb4d6\" stroke-width=\"3\" opacity=\".35\"/><text x=\"189.1\" y=\"98.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Q</text><circle cx=\"219.1\" cy=\"65.0\" r=\"2.6\" fill=\"#e2c46b\"/><line x1=\"229.1\" x2=\"229.1\" y1=\"78.5\" y2=\"24.5\" stroke=\"#8cb4d6\" stroke-width=\"3\" opacity=\".35\"/><text x=\"229.1\" y=\"98.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Q</text><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.8\" points=\"20.0,24.5 80.0,78.5 80.0,24.5 189.1,78.5 189.1,24.5 229.1,78.5 229.1,24.5\"/><line x1=\"20\" x2=\"268\" y1=\"65.0\" y2=\"65.0\" stroke=\"#e2c46b\" stroke-dasharray=\"4 3\"/><text x=\"268.0\" y=\"62.0\" font-size=\"7.5\" fill=\"#e2c46b\" text-anchor=\"end\" font-weight=\"700\">R</text><line x1=\"80.0\" x2=\"80.0\" y1=\"142.2\" y2=\"112.5\" stroke=\"#e25b16\" stroke-width=\"3\" opacity=\".35\"/><text x=\"80.0\" y=\"186.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">T</text><line x1=\"140.0\" x2=\"140.0\" y1=\"161.1\" y2=\"112.5\" stroke=\"#e25b16\" stroke-width=\"3\" opacity=\".35\"/><text x=\"140.0\" y=\"186.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">T</text><line x1=\"200.0\" x2=\"200.0\" y1=\"134.1\" y2=\"112.5\" stroke=\"#e25b16\" stroke-width=\"3\" opacity=\".35\"/><text x=\"200.0\" y=\"186.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">T</text><line x1=\"260.0\" x2=\"260.0\" y1=\"153.0\" y2=\"112.5\" stroke=\"#e25b16\" stroke-width=\"3\" opacity=\".35\"/><text x=\"260.0\" y=\"186.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">T</text><polyline fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.8\" points=\"20.0,112.5 80.0,142.2 80.0,112.5 140.0,161.1 140.0,112.5 200.0,134.1 200.0,112.5 260.0,153.0 260.0,112.5\"/><line x1=\"20\" x2=\"268\" y1=\"112.5\" y2=\"112.5\" stroke=\"#b7c0c8\" stroke-dasharray=\"4 3\"/><text x=\"268.0\" y=\"109.5\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">máximo</text></svg>",
+   "chartLabel": "Esquema propio, no son datos"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Un sistema repone cuando el stock toca un nivel y siempre pide lo mismo. ¿Cuál es?",
+   "options": [
+    "Periódico (modelo P)",
+    "Perpetuo (modelo Q)",
+    "Período único"
+   ],
+   "correct": 1,
+   "feedback": "Cantidad fija, fecha variable: perpetuo. El disparo es un evento, llegar al punto de pedido R."
+  },
+  {
+   "type": "concepto",
+   "k": "Posición del inventario",
+   "title": "No mires solo el estante.",
+   "text": "Chase: disponible más lo pedido menos los pedidos acumulados. Por eso su política dice «cuando la posición del inventario baje a 36, hacer un pedido de 57 unidades más».",
+   "formula": "\\text{Posición} = \\text{disponible} + \\text{en camino} - \\text{pendientes}"
+  },
+  {
+   "type": "concepto",
+   "k": "Diferencias",
+   "title": "El periódico tiene más stock promedio.",
+   "text": "El perpetuo registra cada retiro y vigila todo el tiempo: le conviene a piezas caras y críticas. El periódico cuenta solo en la revisión y se protege durante T + L, por eso necesita más stock de seguridad.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Modelo Q vs modelo P\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Modelo Q vs modelo P</text><rect x=\"8.0\" y=\"28\" width=\"129.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"72.5\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Perpetuo</text><text x=\"72.5\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">evento · Q fija · registro continuo</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"129.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"207.5\" y=\"47.0\" font-size=\"8.5\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Periódico</text><text x=\"207.5\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">tiempo · q variable · más stock</text></svg>",
+   "chartLabel": "Tabla de diferencias de Chase, cap. 17"
+  },
+  {
+   "type": "concepto",
+   "k": "Cuándo va el periódico",
+   "title": "Muchos ítems, un mismo proveedor.",
+   "text": "Cuando el proveedor visita de rutina y levanta pedidos de toda la línea, cuando querés combinar pedidos para ahorrar flete o cuando el conteo está planificado."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "¿Qué piezas recomienda Chase manejar con el perpetuo?",
+   "options": [
+    "Las baratas y de bajo uso",
+    "Las caras y las críticas",
+    "Las de temporada"
+   ],
+   "correct": 1,
+   "feedback": "El modelo de cantidad fija tiene supervisión más estrecha: «es más apropiado para las piezas importantes como las piezas críticas»."
+  },
+  {
+   "type": "concepto",
+   "k": "Sistemas simples",
+   "title": "Tres formas caseras.",
+   "text": "Resurtido opcional: en cada revisión pedís q = M − I solo si supera un mínimo (modelo P). Dos recipientes: cuando empezás el segundo, pedís (modelo Q). Un recipiente: en fechas fijas reponés siempre hasta el máximo (modelo P).",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Sistemas simples de Chase\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Sistemas simples de Chase</text><rect x=\"8.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"50.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Opcional</text><text x=\"50.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">q = M − I si q ≥ Q</text><path d=\"M93.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"98.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"140.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">2 recipientes</text><text x=\"140.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">abrir el 2.º = pedir</text><path d=\"M183.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"188.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"230.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">1 recipiente</text><text x=\"230.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">reponer al máximo</text></svg>",
+   "chartLabel": "Chase cap. 17"
+  },
+  {
+   "type": "concepto",
+   "k": "El multiple choice",
+   "title": "Lo tomó Feraboli en 2013.",
+   "text": "Poner el tipo de control en cada caso. Las marcas que circulan: alimentos frescos, depende; el diario, periódico; combustible, perpetuo; medicamentos de uso prolongado, periódico; papel moneda de un banco, perpetuo."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Cargar nafta cuando el tanque llega a la reserva es…",
+   "options": [
+    "Periódico: se carga cada semana",
+    "Perpetuo: la reserva es el punto de pedido",
+    "Período único"
+   ],
+   "correct": 1,
+   "feedback": "Se repone al tocar un nivel. Es la misma pregunta que la 9 de repaso de Chase (alimentos, diario, gasolina)."
+  },
+  {
+   "type": "concepto",
+   "k": "Ojo con una marca",
+   "title": "Los críticos no van con periódico.",
+   "text": "Otro ítem del mismo multiple choice dice que los materiales críticos se gestionan con periódico. Chase dice lo contrario: los críticos van con cantidad fija, por la supervisión estrecha."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 4.",
+   "text": "Perpetuo: cantidad fija, fecha variable, lo dispara un evento. Periódico: fecha fija, cantidad variable, lo dispara el tiempo y lleva más stock. Posición = disponible + en camino − pendientes."
+  }
+ ],
  "block": "A",
  "blockTitle": "Bloque A · Inventario y modelos determinísticos"
 }

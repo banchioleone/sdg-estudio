@@ -277,7 +277,107 @@
    ]
   }
  ],
- "historias": [],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "Chase lo dice así",
+   "title": "El inventario es dinero.",
+   "text": "«Un montón de dinero guardado en estantes y anaqueles, así como en camiones y aviones mientras se encuentra en tránsito.» Mirá el depósito y pensá en plata quieta."
+  },
+  {
+   "type": "concepto",
+   "k": "Definición",
+   "title": "Existencias y un sistema que las vigila.",
+   "text": "Inventario son las existencias de una pieza o recurso que usa la organización. El sistema de inventario es el conjunto de políticas y controles que vigila los niveles y decide cuándo y cuánto reponer."
+  },
+  {
+   "type": "concepto",
+   "k": "Tipos",
+   "title": "Cinco clases en manufactura.",
+   "text": "Materia prima, productos terminados, partes componentes, suministros y trabajo en proceso. La cátedra suma otra división: materiales directos (forman parte del producto) e indirectos.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Clasificación de Chase\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Clasificación de Chase</text><rect x=\"8.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"32.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">MP</text><text x=\"32.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">materia prima</text><path d=\"M57.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"62.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"86.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">WIP</text><text x=\"86.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">en proceso</text><path d=\"M111.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"116.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"140.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Comp.</text><text x=\"140.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">componentes</text><path d=\"M165.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"170.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"194.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Sumin.</text><text x=\"194.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">suministros</text><path d=\"M219.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"224.0\" y=\"28\" width=\"48.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"248.0\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">PT</text><text x=\"248.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">terminados</text></svg>",
+   "chartLabel": "Chase cap. 17"
+  },
+  {
+   "type": "concepto",
+   "k": "¿Para qué?",
+   "title": "Cinco razones, también en JIT.",
+   "text": "Independizar operaciones, cubrir la variación de la demanda, dar flexibilidad a la programación, protegerse de demoras del proveedor y aprovechar descuentos por cantidad. Pero Chase avisa: las grandes cantidades no son recomendables."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "¿Cuál NO es una de las cinco razones de Chase para tener inventario?",
+   "options": [
+    "Aprovechar descuentos por tamaño del pedido",
+    "Mostrar más activos en el balance",
+    "Cubrir la variación de la demanda"
+   ],
+   "correct": 1,
+   "feedback": "Las cinco son: independencia entre operaciones, variación de la demanda, flexibilidad de programación, variación del tiempo de entrega y descuentos por cantidad."
+  },
+  {
+   "type": "concepto",
+   "k": "Lo que cuesta",
+   "title": "Cuatro costos que tiran para lados distintos.",
+   "text": "Mantener empuja a tener poco. Preparar y pedir empujan a lotes grandes y pocos pedidos. Faltar empuja a tener más. El lote correcto busca el mínimo de la suma.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Hacia dónde empuja cada costo\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Hacia dónde empuja cada costo</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Mantener</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">stock bajo</text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Preparar</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">lotes grandes</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Pedir</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">pocos pedidos</text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Faltar</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">más stock</text></svg>",
+   "chartLabel": "Tabla de costos de Chase, cap. 17"
+  },
+  {
+   "type": "concepto",
+   "k": "La magnitud",
+   "title": "Tener stock cuesta un tercio de su valor por año.",
+   "text": "Chase da 30 a 35% del valor por año al abrir el capítulo y 25 a 35% más adelante. Ahí entran seguros, obsolescencia, impuestos y el costo de oportunidad del capital."
+  },
+  {
+   "type": "concepto",
+   "k": "Heineken",
+   "title": "Pronosticar mejor baja el stock.",
+   "text": "Con el sistema HOPS, Heineken acortó el tiempo de pronóstico de sus pedidos y bajó el inventario del sistema de 16–18 a 4–6 semanas.",
+   "svg": "<svg viewBox=\"0 0 280 100\" width=\"100%\" height=\"100\" role=\"img\" aria-label=\"Inventario del sistema (semanas)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Inventario del sistema (semanas)</text><line x1=\"92.0\" y1=\"24\" x2=\"92.0\" y2=\"84\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"92.0\" y=\"94.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">0</text><line x1=\"135.0\" y1=\"24\" x2=\"135.0\" y2=\"84\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"135.0\" y=\"94.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">5</text><line x1=\"178.0\" y1=\"24\" x2=\"178.0\" y2=\"84\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"178.0\" y=\"94.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">10</text><line x1=\"221.0\" y1=\"24\" x2=\"221.0\" y2=\"84\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"221.0\" y=\"94.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">15</text><line x1=\"264.0\" y1=\"24\" x2=\"264.0\" y2=\"84\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"264.0\" y=\"94.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">20</text><text x=\"8.0\" y=\"39.0\" font-size=\"7.6\" fill=\"#b7c0c8\" text-anchor=\"start\" font-weight=\"700\">Antes</text><line x1=\"229.6\" y1=\"36\" x2=\"246.8\" y2=\"36\" stroke=\"#b7c0c8\" stroke-width=\"5\" stroke-linecap=\"round\" opacity=\".85\"/><text x=\"229.6\" y=\"48.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">16</text><text x=\"246.8\" y=\"48.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">18</text><text x=\"8.0\" y=\"65.0\" font-size=\"7.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">Con HOPS</text><line x1=\"126.4\" y1=\"62\" x2=\"143.6\" y2=\"62\" stroke=\"#e25b16\" stroke-width=\"5\" stroke-linecap=\"round\" opacity=\".85\"/><text x=\"126.4\" y=\"74.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">4</text><text x=\"143.6\" y=\"74.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">6</text></svg>",
+   "chartLabel": "Ejemplo de Chase, cap. 17; gráfico propio"
+  },
+  {
+   "type": "concepto",
+   "k": "Independiente o dependiente",
+   "title": "Se pronostica o se calcula.",
+   "text": "Independiente: viene de afuera y hay que pronosticarla. Dependiente: sale de otro plan. Si una automotriz arma 500 autos por día, necesita 2000 rines: no se pronostican, se calculan.",
+   "ejemplo": "Esta unidad trata la demanda independiente. La dependiente es del MRP."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Los vasos descartables del comedor de una fábrica, ¿qué demanda tienen?",
+   "options": [
+    "Dependiente: salen del plan maestro",
+    "Independiente: hay que pronosticarla",
+    "Ninguna: son un gasto"
+   ],
+   "correct": 1,
+   "feedback": "No se derivan de la lista de materiales de ningún producto: son consumo. Se gestionan con perpetuo o periódico, como Ingap SA en la Clase 2."
+  },
+  {
+   "type": "concepto",
+   "k": "TOC",
+   "title": "Inventario según Goldratt.",
+   "text": "Complemento (de La Meta, no hay apunte de la cátedra): el inventario es todo el dinero que el sistema invirtió en comprar cosas que pretende vender. Junto con throughput y gasto de operación, es uno de los tres indicadores. La meta: subir el throughput y bajar los otros dos."
+  },
+  {
+   "type": "concepto",
+   "k": "Subsistemas",
+   "title": "Quién hace qué cuando se toca el PP.",
+   "text": "Gestión de stock o almacenes detecta el punto de pedido y emite la reposición. Compras cotiza y coloca la orden. Recepción y control de calidad reciben. Así responden las hojas de final.",
+   "svg": "<svg viewBox=\"0 0 280 142\" width=\"100%\" height=\"142\" role=\"img\" aria-label=\"El circuito del pedido\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">El circuito del pedido</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. Gestión de stock</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">detecta el PP</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. Compras</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">cotiza y ordena</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. Recepción</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">controla cantidad</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">4. Calidad y almacén</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">acepta y guarda</text></svg>",
+   "chartLabel": "Resoluciones de final (SG1 Lu, EFR p.24)"
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 1.",
+   "text": "Inventario = dinero inmovilizado. Cinco tipos, cinco razones, cuatro costos. Cuesta 25 a 35% de su valor por año. La U5 gestiona demanda independiente. Y cuando pidan subsistemas: stock, compras, recepción, calidad."
+  }
+ ],
  "block": "A",
  "blockTitle": "Bloque A · Inventario y modelos determinísticos"
 }

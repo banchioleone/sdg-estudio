@@ -342,7 +342,110 @@
    ]
   }
  ],
- "historias": [],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "La división del trabajo",
+   "title": "El modelo dice cuándo y cuánto; Compras, a quién.",
+   "text": "El circuito arranca con el pedido de reposición que emite gestión de stock y termina cuando la orden se cumple y el proveedor queda evaluado."
+  },
+  {
+   "type": "concepto",
+   "k": "Según el material",
+   "title": "Directo con MRP, indirecto con base estadística.",
+   "text": "Directo (forma parte del producto): el requerimiento sale del MRP y va con orden abierta. Indirecto o de consumo: sale del punto de pedido o de la revisión, perpetuo o periódico, con orden cerrada.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"De dónde sale el requerimiento\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">De dónde sale el requerimiento</text><rect x=\"8.0\" y=\"28\" width=\"129.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"72.5\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Directo</text><text x=\"72.5\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">MRP · orden abierta</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"129.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"207.5\" y=\"47.0\" font-size=\"8.5\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Indirecto</text><text x=\"207.5\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">PP o revisión · orden cerrada</text></svg>",
+   "chartLabel": "Banco de preguntas de abastecimiento (Examen 2005), respuestas 6 y 7"
+  },
+  {
+   "type": "concepto",
+   "k": "Abierta y cerrada",
+   "title": "Cuándo pasa a histórico.",
+   "text": "Respuesta 9 del banco: una vez cumplida, la orden cerrada pasa a archivo histórico. La abierta solo pasa cuando la componente se da de baja y desaparece de la fabricación."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Un ítem que se compra todos los meses mientras siga en producción, ¿qué orden lleva?",
+   "options": [
+    "Cerrada",
+    "Abierta",
+    "Ninguna: se compra en el momento"
+   ],
+   "correct": 1,
+   "feedback": "La orden abierta queda vigente mientras el ítem sea productivo. Ojo: en la respuesta 8 del banco el alumno invirtió las etiquetas."
+  },
+  {
+   "type": "concepto",
+   "k": "Las etapas",
+   "title": "Seis pasos del circuito.",
+   "text": "Así lo responde el banco (respuesta 10) y así lo ordena la clase.",
+   "svg": "<svg viewBox=\"0 0 280 202\" width=\"100%\" height=\"202\" role=\"img\" aria-label=\"Gestión de compras\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Gestión de compras</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. Pedido de reposición</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">gestión de stock</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. Pedidos de cotización</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">a proveedores</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. Evaluación y negociación</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">de ofertas</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">4. Asignación</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">del proveedor</text><rect x=\"8\" y=\"140\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"155.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">5. Orden de compra</text><text x=\"266.0\" y=\"155.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">colocación</text><rect x=\"8\" y=\"170\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"185.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">6. Seguimiento</text><text x=\"266.0\" y=\"185.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">activación y cumplimiento</text></svg>",
+   "chartLabel": "Banco de abastecimiento, respuesta 10"
+  },
+  {
+   "type": "concepto",
+   "k": "Lo mismo en un ERP",
+   "title": "El tutorial de Odoo de la cátedra.",
+   "text": "Ejecutar planificadores con la regla de stock mínimo genera presupuestos; al confirmar pasan a órdenes de compra; la mercadería entra por el albarán (el remito) y se recibe.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Odoo: del punto de pedido al remito\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Odoo: del punto de pedido al remito</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Planificador</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">stock mínimo</text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Presupuesto</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">pedido de cotización</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Orden</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">confirmar</text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Albarán</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">recibir</text></svg>",
+   "chartLabel": "Tutorial MRP Odoo 03 (2015)"
+  },
+  {
+   "type": "concepto",
+   "k": "Los archivos",
+   "title": "Lo que Compras le da al subsistema.",
+   "text": "Proveedores, pedidos de reposición, pedidos de cotización, órdenes emitidas y pendientes, órdenes cumplidas (histórico) y evaluación del desempeño del proveedor."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Según el banco, ¿en qué tres aspectos se evalúa a un proveedor?",
+   "options": [
+    "Precio, entrega y calidad",
+    "Tamaño, antigüedad y ubicación",
+    "Precio, publicidad y crédito"
+   ],
+   "correct": 0,
+   "feedback": "«Precios, rapidez o estabilidad de la entrega y nivel de calidad de sus productos» (respuesta 12). Chase suma la certificación ISO 9000 y los tableros de medidores."
+  },
+  {
+   "type": "concepto",
+   "k": "Procesos de adquisición",
+   "title": "Cuatro formas según Chase.",
+   "text": "Solicitud de propuesta (pocos proveedores, compra importante), solicitud de oferta y concurso inverso (los vendedores compiten), catálogo electrónico y VMI: el proveedor repone solo entre un mínimo y un máximo."
+  },
+  {
+   "type": "concepto",
+   "k": "Subcontratar",
+   "title": "Pasar actividades y decisiones a otro.",
+   "text": "Chase pesa tres cosas: la coordinación que hace falta, el control estratégico que perdés y la propiedad intelectual. Intel no subcontrató su manufactura porque mejorar procesos y productos iba de la mano."
+  },
+  {
+   "type": "concepto",
+   "k": "Proveedores JIT",
+   "title": "Información adelantada, entregas frecuentes.",
+   "text": "Morán: al proveedor se le da una planificación mensual previa y el requerimiento diario, por kanban de proveedor o tabla de secuencia. La tabla de secuencia exige proveedores tan perfeccionados como el cliente."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "¿Qué permite la confianza en las entregas de un proveedor JIT, según Chase?",
+   "options": [
+    "Subir el lote económico",
+    "Reducir los inventarios de seguridad",
+    "Eliminar las órdenes de compra"
+   ],
+   "correct": 1,
+   "feedback": "Si el proveedor cumple, el colchón contra la variación del tiempo de entrega se puede bajar. Con calidad asegurada, también se eliminan inspecciones de recepción."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 8.",
+   "text": "Directo: MRP, orden abierta. Indirecto: PP o revisión, orden cerrada. Seis etapas, de la reposición al seguimiento. Proveedores: precio, entrega y calidad. En JIT: plan mensual + requerimiento diario."
+  }
+ ],
  "block": "C",
  "blockTitle": "Bloque C · Compras, almacenes y logística"
 }
