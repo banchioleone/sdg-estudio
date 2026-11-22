@@ -1,0 +1,539 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c3b",
+  "title": "Clase 3.b · Autocorrelación",
+  "name": "Autocorrelación",
+  "lede": "en la Clase 3.a diagnosticabas la serie a ojo. La autocorrelación es el mismo diagnóstico con números: evidencia objetiva de qué patrón tiene la serie, y por lo tanto de qué método corresponde aplicar.",
+  "visto": true,
+  "source": [
+    "clases_previas/SG/Clase03b_Autocorrelacion.md",
+    "clases_previas/SG/Clase03b_Autocorrelacion.svg",
+    "clases_previas/SG/ArbolDecisorio_MetodosPronostico.svg"
+  ],
+  "laminas": [
+    "u2/img/Clase03b_Autocorrelacion.svg",
+    "u2/img/ArbolDecisorio_MetodosPronostico.svg"
+  ],
+  "next": "Clase 4 · Medidas de error",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2.b (cierre) · Serie: 0 → 0.1 → 1 → 1.b → 2 → 3.a → **3.b****"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Idea central:** en la Clase 3.a diagnosticabas la serie **a ojo**. La autocorrelación es el mismo diagnóstico **con números**: evidencia objetiva de qué patrón tiene la serie, y por lo tanto de qué método corresponde aplicar."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. El problema que resuelve"
+    },
+    {
+      "type": "paragraph",
+      "text": "Mirar el gráfico funciona cuando el patrón es evidente. Pero:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "¿Y si la serie es ruidosa y no estás seguro?",
+        "¿Y si te preguntan \"¿en qué te basás?\" y \"me pareció ver una onda\" no alcanza?"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "La autocorrelación convierte la intuición visual en un dato verificable."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. La idea: correlacionar la serie CONSIGO MISMA"
+    },
+    {
+      "type": "paragraph",
+      "text": "En la Clase 2 correlacionabas **dos variables distintas** (publicidad y ventas). Acá el giro: se correlaciona la serie con **su propio pasado**."
+    },
+    {
+      "type": "paragraph",
+      "text": "Se toma la serie y se la compara contra sí misma corrida **k** períodos hacia atrás. Ese corrimiento se llama **desfasamiento** o **lag (k)**."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Mes",
+        "Yₜ (original)",
+        "Yₜ₋₁ (lag 1)",
+        "Yₜ₋₂ (lag 2)"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "Ene",
+          "100",
+          "—",
+          "—"
+        ],
+        [
+          "Feb",
+          "110",
+          "100",
+          "—"
+        ],
+        [
+          "Mar",
+          "105",
+          "110",
+          "100"
+        ],
+        [
+          "Abr",
+          "120",
+          "105",
+          "110"
+        ],
+        [
+          "May",
+          "115",
+          "120",
+          "105"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Qué compara cada rₖ:**"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**r₁** → cada mes con el mes anterior",
+        "**r₄** → cada trimestre con el mismo trimestre del año pasado (datos trimestrales)",
+        "**r₁₂** → cada mes con el mismo mes del año anterior (datos mensuales)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Fórmula"
+    },
+    {
+      "type": "formula",
+      "tex": "r_k = \\frac{\\sum_{t=k+1}^{n}(Y_t - \\bar{Y})(Y_{t-k} - \\bar{Y})}{\\sum_{t=1}^{n}(Y_t - \\bar{Y})^2}"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/Clase03b_Autocorrelacion.svg",
+      "caption": "Lámina de la Clase 3.b · Autocorrelación y correlograma"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/ArbolDecisorio_MetodosPronostico.svg",
+      "caption": "Árbol decisorio de métodos de pronóstico"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lectura de la fórmula:**"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**Numerador:** para cada par de valores separados por k períodos, multiplico sus desvíos contra la media y sumo.",
+        "**Denominador:** suma de todos los desvíos al cuadrado → normaliza el resultado entre −1 y +1, como cualquier correlación."
+      ]
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Qué significa un rₖ alto:** que saber el valor de hace k períodos te dice mucho sobre el valor de hoy. **Hay memoria en la serie.**"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. El correlograma"
+    },
+    {
+      "type": "paragraph",
+      "text": "Calcular un rₖ suelto sirve poco. Se calculan **muchos** (r₁, r₂, r₃… hasta r₁₂ o más) y se grafican como barras: eje horizontal = lag k, eje vertical = valor de rₖ."
+    },
+    {
+      "type": "paragraph",
+      "text": "Eso es el **correlograma** (o función de autocorrelación, FAC/ACF)."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Clave del tema: cada patrón de serie deja una HUELLA DACTILAR distinta en el correlograma.**"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Las 4 huellas ★ (esto es lo que se pregunta)"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Huella 1 — Serie ALEATORIA (estacionaria pura)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Cómo se ve:** todas las barras cerca de cero, ninguna se destaca.\n**Por qué:** si no hay patrón, conocer el pasado no dice nada del presente.\n→ **Diagnóstico:** serie estacionaria. **Métodos:** promedio móvil, suavizado exponencial simple."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Huella 2 — Serie con TENDENCIA"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Cómo se ve:** primeras barras **grandes y positivas**, que **caen gradualmente** hacia cero al crecer el lag.\n**Por qué:** si la serie viene subiendo, el mes pasado se parece mucho a este; el de hace un año, bastante menos, pero todavía algo.\n→ **Diagnóstico:** hay tendencia, la serie **NO es estacionaria**. **Métodos:** Holt, Brown, regresión — o **diferenciar** para volverla estacionaria."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Huella 3 — Serie con ESTACIONALIDAD"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Cómo se ve:** **pico aislado** justo en el lag del ciclo: **r₄** (trimestral) o **r₁₂** (mensual), a veces repitiendo en r₈, r₂₄… Los lags intermedios quedan chicos.\n→ **Diagnóstico:** estacionalidad de longitud L. **Métodos:** Winter, descomposición."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**El criterio más útil del tema: el lag donde salta el pico TE DICE cuál es la longitud estacional.** Datos mensuales con pico en r₁₂ → estacionalidad anual. Pico en r₆ → semestral."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Huella 4 — COMBINACIÓN (el caso real más frecuente)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Cómo se ve:** barras que decaen lentamente (tendencia) **con picos sobresalientes cada L lags** (estacionalidad).\n→ **Métodos:** Winter o descomposición multiplicativa."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. ¿Cuándo un rₖ es significativo?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Un rₖ nunca da exactamente cero por puro azar. Para distinguir patrón real de ruido se traza una **banda de significancia** alrededor del cero:"
+    },
+    {
+      "type": "formula",
+      "tex": "\\pm \\frac{2}{\\sqrt{n}}"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Ejemplos:**"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "n (datos)",
+        "Banda"
+      ],
+      "rows": [
+        [
+          "---",
+          "---"
+        ],
+        [
+          "24",
+          "±0,41"
+        ],
+        [
+          "36",
+          "±0,33"
+        ],
+        [
+          "48",
+          "±0,29"
+        ],
+        [
+          "60",
+          "±0,26"
+        ],
+        [
+          "100",
+          "±0,20"
+        ]
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Barras **fuera** de la banda → estadísticamente **significativas** (patrón real)",
+        "Barras **dentro** de la banda → se consideran **ruido**"
+      ]
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "En los correlogramas de **Minitab** (el software de la cátedra) estas bandas aparecen dibujadas como líneas punteadas. Interpretarlas es exactamente lo que pueden pedir."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Ejemplo de lectura completa"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Datos:** correlograma de ventas mensuales, n = 48."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Banda: ±2/√48 ≈ **±0,29**",
+        "r₁=0,85 · r₂=0,72 · r₃=0,61 · r₄=0,50 · … · r₁₁=0,15 · **r₁₂=0,68** · r₁₃=0,55"
+      ]
+    },
+    {
+      "type": "svg",
+      "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" aria-hidden=\"true\"><line x1=\"28\" y1=\"69.91304347826087\" x2=\"272\" y2=\"69.91304347826087\" stroke=\"#d0d5db\" stroke-width=\"1.2\"/><line x1=\"28\" y1=\"54.34968839575791\" x2=\"272\" y2=\"54.34968839575791\" stroke=\"#a67c00\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"28\" y1=\"85.47639856076383\" x2=\"272\" y2=\"85.47639856076383\" stroke=\"#a67c00\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"140.0\" y=\"12\" font-size=\"8\" fill=\"#a67c00\" text-anchor=\"middle\">banda ±2/√n</text><rect x=\"34.91428571428571\" y=\"24.086956521739125\" width=\"19.014285714285716\" height=\"45.82608695652175\" fill=\"#1f4e79\"/><text x=\"44.42142857142857\" y=\"132\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">1</text><rect x=\"69.48571428571428\" y=\"31.095652173913038\" width=\"19.014285714285716\" height=\"38.81739130434784\" fill=\"#1f4e79\"/><text x=\"78.99285714285713\" y=\"132\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">2</text><rect x=\"104.05714285714285\" y=\"37.02608695652174\" width=\"19.014285714285716\" height=\"32.88695652173914\" fill=\"#1f4e79\"/><text x=\"113.5642857142857\" y=\"132\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">3</text><rect x=\"138.62857142857143\" y=\"42.95652173913043\" width=\"19.014285714285716\" height=\"26.956521739130444\" fill=\"#1f4e79\"/><text x=\"148.1357142857143\" y=\"132\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">4</text><rect x=\"173.2\" y=\"61.826086956521735\" width=\"19.014285714285716\" height=\"8.08695652173914\" fill=\"#1f4e79\"/><text x=\"182.70714285714286\" y=\"132\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">11</text><rect x=\"207.77142857142854\" y=\"33.25217391304347\" width=\"19.014285714285716\" height=\"36.6608695652174\" fill=\"#c45c26\"/><text x=\"217.2785714285714\" y=\"132\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">12</text><rect x=\"242.34285714285713\" y=\"40.260869565217384\" width=\"19.014285714285716\" height=\"29.65217391304349\" fill=\"#1f4e79\"/><text x=\"251.85\" y=\"132\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">13</text></svg>",
+      "caption": "Correlograma del ejemplo (n=48): decaimiento de r₁ a r₄, y un pico en r₁₂ que rompe la caída. Solo se grafican los lags que da el apunte (no se inventan r₅–r₁₀). La banda punteada es ±2/√48 ≈ ±0,29."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lectura:**"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Las primeras autocorrelaciones son altas y **decaen gradualmente** → tendencia",
+        "Hay un **repunte marcado en r₁₂** que rompe la caída → estacionalidad anual",
+        "Ambos superan la banda de ±0,29 → son significativos"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Redacción como respuesta de examen:**"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "*\"La serie presenta tendencia (autocorrelaciones significativas que decaen gradualmente) y estacionalidad de período 12 (pico significativo en el desfasamiento 12). No es estacionaria. Corresponde aplicar Winter o descomposición multiplicativa.\"*"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Estructura de esa respuesta:** diagnóstico + evidencia + método + justificación. Ese es el molde."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Por qué importa más de lo que parece"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**Es evidencia objetiva.** *\"La serie tiene estacionalidad\"* es una opinión; *\"r₁₂ = 0,68 supera la banda de significancia\"* es un dato.",
+        "**Detecta lo que el ojo no ve.** En series ruidosas, un patrón estacional puede estar escondido y el correlograma lo revela.",
+        "**★ Sirve para evaluar tu propio modelo.** Truco avanzado que suma mucho: una vez hecho el pronóstico, se calcula el correlograma **de los errores**:",
+        "Si los errores **todavía tienen autocorrelación** → el modelo dejó un patrón sin capturar → hay que mejorarlo.",
+        "Si los errores son **ruido puro** (todas las barras dentro de la banda) → se exprimió toda la información disponible."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Es el mejor test de calidad de un modelo de pronóstico."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "8. Chequeos de sensatez"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "rₖ siempre entre −1 y +1",
+        "r₀ = 1 siempre (la serie contra sí misma sin desfasar), por eso no se grafica",
+        "A mayor k, menos pares disponibles para calcular → los rₖ de lags muy altos son menos confiables",
+        "Si TODAS las barras son enormes y no decaen nunca, revisá los datos: puede haber un error de carga"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "9. Mini-resumen para tu doc"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Clase 3.b.** Autocorrelación (rₖ) = correlación de la serie consigo misma desfasada k períodos; mide la \"memoria\" de la serie. El correlograma grafica r₁, r₂, r₃… y cada patrón deja una huella distinta: aleatoria → todas cerca de cero; tendencia → altas al principio y decaen gradualmente; estacionalidad → pico aislado en el lag L (4 trimestral, 12 mensual); combinada → decaimiento con picos periódicos. Banda de significancia ±2/√n: fuera de la banda = patrón real. Es el diagnóstico objetivo que respalda la elección del método, y aplicado a los errores permite verificar si el modelo dejó patrones sin capturar."
+    },
+    {
+      "type": "ejercicio",
+      "title": "10. EJERCICIO — Clase 3.b",
+      "estado": "para resolver",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**1)** Serie **trimestral** de **32 datos**. Correlograma:\nr₁=0,22 · r₂=0,18 · r₃=0,25 · **r₄=0,79** · r₅=0,20 · r₆=0,15 · r₇=0,21 · **r₈=0,64**"
+        },
+        {
+          "type": "paragraph",
+          "text": "a) Calculá la banda de significancia.\nb) ¿Qué barras son significativas?\nc) Diagnosticá el patrón y decí qué método aplicarías, **redactándolo como respuesta de examen**."
+        },
+        {
+          "type": "paragraph",
+          "text": "**2)** Serie **mensual** de **60 datos**:\nr₁=0,91 · r₂=0,86 · r₃=0,80 · r₄=0,74 · r₅=0,69 · r₆=0,63 (siguen bajando parejo, sin repuntes)"
+        },
+        {
+          "type": "paragraph",
+          "text": "a) ¿Qué patrón es?\nb) ¿Es estacionaria? Si no, ¿cómo la volverías estacionaria?"
+        },
+        {
+          "type": "paragraph",
+          "text": "**3)** *Conceptual:* hiciste un pronóstico con suavizado exponencial simple y el correlograma de los **errores** muestra un pico significativo en r₁₂. ¿Qué te está diciendo? ¿Qué harías?"
+        }
+      ],
+      "nota": "Para resolver — en el material no figura la resolución. Cuando lo corriamos, la cargamos acá."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "11. Ejercicios acumulados pendientes de corrección"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**Clase 1.b** (ventas 120, 135, 105, 140, 100): a) X̄ y s · b) P(X<150) · c) P(X>90) · d) P(110<X<145) · e) inverso 90% · f) ¿Z o t?",
+        "**Clase 2** (temperatura vs. bebidas): a) tabla y sumatorias · b) r · c) interpretación · d) ¿causalidad?",
+        "**Clase 3.a** (diagnóstico de 4 series): a) a d)",
+        "**Clase 3.b** (correlogramas): 1) a 3)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** `Clase03b_Autocorrelacion.svg` · `ArbolDecisorio_MetodosPronostico.svg`\n**Fuente:** Hanke, *Pronósticos en los Negocios*, cap. 4 — completo en Drive/Teoría/Libros."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Clase 4: Medidas de error del pronóstico** (MAD, MSE, MAPE, PME): cómo se mide si un pronóstico es bueno y cómo se comparan dos métodos entre sí. Cierra la Unidad 2.b y abre los métodos."
+    }
+  ],
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "El mismo diagnóstico, con números.",
+      "text": "En la 3.a diagnosticabas la serie a ojo. La autocorrelación es esa misma lectura, pero objetiva: evidencia de qué patrón tiene la serie y, por lo tanto, de qué método corresponde."
+    },
+    {
+      "type": "concepto",
+      "k": "El giro",
+      "title": "La serie, correlacionada consigo misma.",
+      "text": "En la Clase 2 correlacionabas dos variables distintas. Acá se correlaciona la serie con su propio pasado, corrida k períodos. Ese corrimiento es el desfasamiento o lag (k).",
+      "ejemplo": "r₁ compara cada mes con el anterior. r₄, en datos trimestrales, cada trimestre con el mismo del año pasado. r₁₂, en mensuales, cada mes con el mismo mes del año anterior."
+    },
+    {
+      "type": "concepto",
+      "k": "La fórmula",
+      "title": "rₖ mide la «memoria» de la serie.",
+      "text": "El numerador suma, para cada par separado por k períodos, el producto de sus desvíos contra la media. El denominador normaliza entre −1 y +1.",
+      "formula": "r_k = \\frac{\\sum_{t=k+1}^{n}(Y_t - \\bar{Y})(Y_{t-k} - \\bar{Y})}{\\sum_{t=1}^{n}(Y_t - \\bar{Y})^2}",
+      "ejemplo": "Un rₖ alto significa que saber el valor de hace k períodos te dice mucho sobre el de hoy. Hay memoria en la serie."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "En una serie mensual, un pico en r₁₂ te está diciendo…",
+      "options": [
+        "Que hay tendencia, porque 12 es un número grande",
+        "Estacionalidad anual: cada mes se parece al mismo mes del año anterior",
+        "Que la serie es aleatoria"
+      ],
+      "correct": 1,
+      "feedback": "El lag donde salta el pico te dice la longitud estacional. Datos mensuales con pico en r₁₂ → estacionalidad anual. En trimestrales, el pico típico es r₄."
+    },
+    {
+      "type": "concepto",
+      "k": "El correlograma",
+      "title": "Cada patrón deja una huella dactilar.",
+      "text": "Se calculan muchos rₖ (r₁, r₂, … hasta r₁₂ o más) y se grafican como barras: eje horizontal = lag, eje vertical = valor. Eso es el correlograma (FAC/ACF). Un rₖ suelto sirve poco."
+    },
+    {
+      "type": "concepto",
+      "k": "Huella 1 y 2",
+      "title": "Aleatoria o con tendencia.",
+      "text": "Aleatoria (estacionaria pura): todas las barras cerca de cero. Métodos: promedio móvil, suavizado exponencial simple. Tendencia: primeras barras grandes y positivas que caen gradualmente. La serie NO es estacionaria. Métodos: Holt, Brown, regresión — o diferenciar."
+    },
+    {
+      "type": "concepto",
+      "k": "Huella 3 y 4",
+      "title": "Estacionalidad, sola o combinada.",
+      "text": "Estacionalidad: pico aislado en el lag del ciclo (r₄ trimestral, r₁₂ mensual), a veces repetido en r₈, r₂₄. Métodos: Winter, descomposición. Combinación (lo más frecuente): decaen lento (tendencia) y además hay picos cada L lags.",
+      "ejemplo": "El criterio más útil: el lag del pico te dice la longitud estacional."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Barras altas al principio que caen de a poco, y un pico que se destaca en r₁₂. ¿Qué hay?",
+      "options": [
+        "Solo una serie aleatoria",
+        "Tendencia y estacionalidad anual (huella combinada)",
+        "Solo ciclo económico"
+      ],
+      "correct": 1,
+      "feedback": "Decaimiento gradual → tendencia. Pico en r₁₂ → estacionalidad anual. Es la huella combinada: Winter o descomposición multiplicativa."
+    },
+    {
+      "type": "concepto",
+      "k": "La banda",
+      "title": "¿Cuándo un rₖ es de verdad?",
+      "text": "Un rₖ nunca da exactamente cero por azar. La banda de significancia es ±2/√n. Fuera de la banda = patrón real. Dentro = ruido.",
+      "formula": "\\pm \\frac{2}{\\sqrt{n}}",
+      "ejemplo": "Con n = 48, la banda es ±0,29. En los correlogramas de Minitab (el software de la cátedra) las bandas aparecen como líneas punteadas."
+    },
+    {
+      "type": "concepto",
+      "k": "Ejemplo de examen",
+      "title": "Ventas mensuales, n = 48.",
+      "text": "r₁=0,85, r₂=0,72, r₃=0,61… r₁₁=0,15, r₁₂=0,68, r₁₃=0,55. Las primeras decaen (tendencia) y hay un repunte en r₁₂ (estacionalidad anual). Ambos superan ±0,29.",
+      "ejemplo": "Redacción: «La serie presenta tendencia (autocorrelaciones significativas que decaen gradualmente) y estacionalidad de período 12 (pico significativo en el desfasamiento 12). No es estacionaria. Corresponde aplicar Winter o descomposición multiplicativa.»",
+      "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" aria-hidden=\"true\"><line x1=\"28\" y1=\"69.91304347826087\" x2=\"272\" y2=\"69.91304347826087\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.2\"/><line x1=\"28\" y1=\"54.34968839575791\" x2=\"272\" y2=\"54.34968839575791\" stroke=\"#e8c56a\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><line x1=\"28\" y1=\"85.47639856076383\" x2=\"272\" y2=\"85.47639856076383\" stroke=\"#e8c56a\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"140.0\" y=\"12\" font-size=\"8\" fill=\"#e8c56a\" text-anchor=\"middle\">banda ±2/√n</text><rect x=\"34.91428571428571\" y=\"24.086956521739125\" width=\"19.014285714285716\" height=\"45.82608695652175\" fill=\"#8cb4d6\"/><text x=\"44.42142857142857\" y=\"132\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">1</text><rect x=\"69.48571428571428\" y=\"31.095652173913038\" width=\"19.014285714285716\" height=\"38.81739130434784\" fill=\"#8cb4d6\"/><text x=\"78.99285714285713\" y=\"132\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">2</text><rect x=\"104.05714285714285\" y=\"37.02608695652174\" width=\"19.014285714285716\" height=\"32.88695652173914\" fill=\"#8cb4d6\"/><text x=\"113.5642857142857\" y=\"132\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">3</text><rect x=\"138.62857142857143\" y=\"42.95652173913043\" width=\"19.014285714285716\" height=\"26.956521739130444\" fill=\"#8cb4d6\"/><text x=\"148.1357142857143\" y=\"132\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">4</text><rect x=\"173.2\" y=\"61.826086956521735\" width=\"19.014285714285716\" height=\"8.08695652173914\" fill=\"#8cb4d6\"/><text x=\"182.70714285714286\" y=\"132\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">11</text><rect x=\"207.77142857142854\" y=\"33.25217391304347\" width=\"19.014285714285716\" height=\"36.6608695652174\" fill=\"#e25b16\"/><text x=\"217.2785714285714\" y=\"132\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">12</text><rect x=\"242.34285714285713\" y=\"40.260869565217384\" width=\"19.014285714285716\" height=\"29.65217391304349\" fill=\"#8cb4d6\"/><text x=\"251.85\" y=\"132\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">13</text></svg>",
+      "chartLabel": "n=48 · pico en r₁₂ (estacionalidad anual) · banda ±2/√n"
+    },
+    {
+      "type": "concepto",
+      "k": "El truco de los errores",
+      "title": "El correlograma también evalúa tu modelo.",
+      "text": "Después del pronóstico, calculá el correlograma de los errores. Si todavía tienen autocorrelación, el modelo dejó un patrón sin capturar. Si son ruido puro (todo dentro de la banda), exprimiste la información disponible.",
+      "ejemplo": "Es el mejor test de calidad de un modelo de pronóstico."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Hiciste un suavizado exponencial simple y el correlograma de los errores tiene un pico significativo en r₁₂. ¿Qué te dice?",
+      "options": [
+        "Que el método está perfecto: r₁₂ alto es una buena señal",
+        "Que quedó un patrón estacional anual sin capturar: hay que cambiar o completar el método",
+        "Nada: los errores siempre tienen r₁₂ alto"
+      ],
+      "correct": 1,
+      "feedback": "Si los errores todavía tienen autocorrelación, el modelo dejó un patrón sin capturar. Un pico en r₁₂ es estacionalidad anual: el suavizado simple no la modela; correspondería Winter o descomposición."
+    },
+    {
+      "type": "cierre",
+      "title": "Llevate esto de la Clase 3.b.",
+      "text": "El correlograma es el diagnóstico con números: decaimiento = tendencia, pico en r_L = estacionalidad. Fuera de ±2/√n, el patrón es real. También se aplica a los errores del modelo. El ejercicio queda para resolver juntos."
+    }
+  ]
+}

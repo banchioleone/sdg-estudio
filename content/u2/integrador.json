@@ -1,0 +1,400 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "cint",
+  "title": "Integrador · Proceso completo",
+  "name": "Proceso completo",
+  "lede": "En una frase: *3.a me da la SOSPECHA · 3.b me da la PRUEBA · el árbol me da el MÉTODO · la clase 4 me dice si ACERTÉ.*",
+  "visto": true,
+  "source": [
+    "clases_previas/SG/Integrador_ProcesoCompleto.md",
+    "clases_previas/SG/ProcesoCompleto_Pronostico.svg",
+    "clases_previas/SG/ArbolDecisorio_MetodosPronostico.svg"
+  ],
+  "laminas": [
+    "u2/img/ProcesoCompleto_Pronostico.svg",
+    "u2/img/ArbolDecisorio_MetodosPronostico.svg"
+  ],
+  "next": "Clase 5 · Métodos no formales y promedios",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Cómo se conectan las clases 3.a, 3.b y 4** · Sistemas de Gestión (UTN FRRo) · Unidad 2"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**En una frase:** *3.a me da la SOSPECHA · 3.b me da la PRUEBA · el árbol me da el MÉTODO · la clase 4 me dice si ACERTÉ.*"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/ProcesoCompleto_Pronostico.svg",
+      "caption": "Lámina · El proceso completo de pronóstico"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/ArbolDecisorio_MetodosPronostico.svg",
+      "caption": "Árbol decisorio de métodos de pronóstico"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. La analogía del médico"
+    },
+    {
+      "type": "paragraph",
+      "text": "Las tres clases no son temas sueltos: son **tres partes de un mismo procedimiento**."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Clase",
+        "Equivale a…",
+        "Qué hace"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "**3.a** — componentes de la serie",
+          "**Mirar al paciente**",
+          "Ves los síntomas a simple vista: \"está pálido, le cuesta respirar\""
+        ],
+        [
+          "**3.b** — autocorrelación",
+          "**Pedir análisis**",
+          "Confirmás con números lo que sospechabas: \"hemoglobina baja\""
+        ],
+        [
+          "**Árbol de decisión**",
+          "**Recetar**",
+          "Según el diagnóstico, corresponde tal tratamiento"
+        ],
+        [
+          "**Clase 4** — medidas de error",
+          "**Control posterior**",
+          "¿Mejoró el paciente? Si no, cambiás el remedio"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "En pronósticos: **diagnosticar a ojo → confirmar con números → aplicar método → medir si funcionó.**"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. El proceso completo en 5 pasos"
+    },
+    {
+      "type": "svg",
+      "svg": "<svg viewBox=\"0 0 280 100\" width=\"100%\" height=\"100\" aria-hidden=\"true\"><rect x=\"8\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#1f4e79\" stroke-width=\"1.5\"/><text x=\"33\" y=\"38\" font-size=\"8\" fill=\"#1f4e79\" font-weight=\"700\" text-anchor=\"middle\">1 Graficar</text><text x=\"58\" y=\"39\" font-size=\"11\" fill=\"#5c6670\">→</text><rect x=\"62\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#a67c00\" stroke-width=\"1.5\"/><text x=\"87\" y=\"38\" font-size=\"8\" fill=\"#a67c00\" font-weight=\"700\" text-anchor=\"middle\">2 Diagnosticar</text><text x=\"112\" y=\"39\" font-size=\"11\" fill=\"#5c6670\">→</text><rect x=\"116\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#a67c00\" stroke-width=\"1.5\"/><text x=\"141\" y=\"38\" font-size=\"8\" fill=\"#a67c00\" font-weight=\"700\" text-anchor=\"middle\">3 Elegir</text><text x=\"166\" y=\"39\" font-size=\"11\" fill=\"#5c6670\">→</text><rect x=\"170\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#1f4e79\" stroke-width=\"1.5\"/><text x=\"195\" y=\"38\" font-size=\"8\" fill=\"#1f4e79\" font-weight=\"700\" text-anchor=\"middle\">4 Aplicar</text><text x=\"220\" y=\"39\" font-size=\"11\" fill=\"#5c6670\">→</text><rect x=\"224\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#c45c26\" stroke-width=\"1.5\"/><text x=\"249\" y=\"38\" font-size=\"8\" fill=\"#c45c26\" font-weight=\"700\" text-anchor=\"middle\">5 Medir</text><path d=\"M 258 54 Q 140 92, 22 54\" fill=\"none\" stroke=\"#c45c26\" stroke-width=\"1.4\" stroke-dasharray=\"3 2\"/><text x=\"140\" y=\"94\" font-size=\"9\" fill=\"#c45c26\" text-anchor=\"middle\">si el error anda mal, volvés a elegir</text></svg>",
+      "caption": "El pronóstico es un circuito: si el error delata un patrón no capturado (PME alto y del mismo signo), se vuelve a elegir el método."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Paso 1 · GRAFICAR *(clase 3.a)*"
+    },
+    {
+      "type": "paragraph",
+      "text": "Dibujás la serie. Mirás si sube, si tiene olas, si es plana.\n→ **Obtenés: la SOSPECHA.**"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Paso 2 · DIAGNOSTICAR con el correlograma *(clase 3.b)*"
+    },
+    {
+      "type": "paragraph",
+      "text": "Calculás las autocorrelaciones y las comparás con la banda ±2/√n.\n→ **Obtenés: la PRUEBA.** El gráfico daba una impresión; esto es un dato verificable."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Paso 3 · ELEGIR el método *(árbol de decisión)*"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Diagnóstico",
+        "Método"
+      ],
+      "rows": [
+        [
+          "---",
+          "---"
+        ],
+        [
+          "estacionaria",
+          "promedio móvil, suavizado exponencial simple"
+        ],
+        [
+          "tendencia",
+          "Holt, Brown, regresión"
+        ],
+        [
+          "estacionalidad",
+          "Winter, descomposición"
+        ],
+        [
+          "ciclo",
+          "descomposición, indicadores económicos"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "→ **Obtenés: el MÉTODO.**"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Paso 4 · APLICAR el método *(clases 5 en adelante)*"
+    },
+    {
+      "type": "paragraph",
+      "text": "Hacés las cuentas y obtenés los pronósticos Ŷ.\n→ **Obtenés: los NÚMEROS.**"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Paso 5 · MEDIR el error *(clase 4)*"
+    },
+    {
+      "type": "paragraph",
+      "text": "Calculás MAD, MSE, MAPE y PME comparando Ŷ contra Y.\n→ **Obtenés: la respuesta a \"¿acerté?\"**"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "⚠ Y acá lo clave: es un CIRCUITO, no una línea recta"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Si el error dice que algo anda mal, volvés al paso 3 y cambiás de método.**"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Ejemplo de punta a punta — una heladería (ventas trimestrales)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Paso",
+        "Qué hago",
+        "Qué obtengo"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "**1 · Graficar**",
+          "Veo que cada verano se dispara y cada invierno se hunde, y que cada año vende un poco más",
+          "*Sospecha:* estacionalidad + tendencia"
+        ],
+        [
+          "**2 · Correlograma**",
+          "Pico grande en r₄ (y otro en r₈); las primeras barras decaen de a poco",
+          "**Prueba:** r₄ ⇒ estacionalidad L=4 · decaimiento ⇒ tendencia"
+        ],
+        [
+          "**3 · Elegir**",
+          "Voy al árbol: tendencia + estacionalidad",
+          "→ **WINTER** (o descomposición)"
+        ],
+        [
+          "**4 · Aplicar**",
+          "Hago las cuentas de Winter",
+          "Los pronósticos Ŷ de los próximos trimestres"
+        ],
+        [
+          "**5 · Medir**",
+          "MAD, MSE, MAPE y PME → MAPE 5%, PME ≈ 0",
+          "✔ Preciso y sin sesgo: me quedo con Winter"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. ¿Y si hubiera salido mal?"
+    },
+    {
+      "type": "paragraph",
+      "text": "Supongamos que en el paso 4 hubiera usado **suavizado exponencial simple**, ignorando el diagnóstico. El paso 5 me habría dado:"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**PME = +12%, siempre positivo**"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lectura:** \"estoy subestimando todos los meses\" → el método no captura la tendencia → **vuelvo al paso 3 y cambio a Winter.**"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "★ La conexión más importante de las tres clases"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**El PME de la clase 4 te DELATA cuando te equivocaste en el diagnóstico de la clase 3.**"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Situación",
+        "Qué significa"
+      ],
+      "rows": [
+        [
+          "---",
+          "---"
+        ],
+        [
+          "Método impreciso pero **centrado** (PME ≈ 0)",
+          "Método **correcto**, datos ruidosos. No hay mucho más que hacer."
+        ],
+        [
+          "Método **sesgado** (PME alto y del mismo signo)",
+          "Método **EQUIVOCADO** para ese patrón. Hay que cambiarlo."
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Cómo se traduce esto en el examen"
+    },
+    {
+      "type": "paragraph",
+      "text": "Las tres clases juntas te permiten escribir una **justificación completa**, que es lo que puntúa la cátedra (\"interpretación de los resultados\" + \"fundamentación de las respuestas\"):"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "*\"La serie presenta tendencia y estacionalidad (evidencia: pico significativo en r₄ y decaimiento gradual de las primeras autocorrelaciones), por lo que apliqué el método de Winter; el MAPE de 5% y el PME cercano a cero confirman que el método es adecuado y no presenta sesgo.\"*"
+    },
+    {
+      "type": "paragraph",
+      "text": "**El molde de esa respuesta:**"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**Diagnóstico** (qué componentes tiene la serie)",
+        "**Evidencia** (gráfico y/o correlograma que lo prueban)",
+        "**Método** (cuál elegí)",
+        "**Justificación** (por qué ese método corresponde a ese patrón)",
+        "**Validación** (qué dicen las medidas de error)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Mini-resumen para tu doc"
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Integrador 3.a + 3.b + 4.** El pronóstico es un circuito de 5 pasos: graficar (sospecha) → correlograma (prueba) → árbol (método) → aplicar (números) → medir error (¿acerté?). Si las medidas de error muestran sesgo (PME alto y consistente), se vuelve al paso 3 y se cambia de método: el PME delata un diagnóstico equivocado. La respuesta de examen combina las tres clases: diagnóstico + evidencia + método + justificación + validación."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** `ProcesoCompleto_Pronostico.svg` · `Clase03a_SeriesDeTiempo.md` · `Clase03b_Autocorrelacion.md` · `Clase04_MedidasDeError.md` · `ArbolDecisorio_MetodosPronostico.svg`"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Sigue → Clase 5: Métodos no formales y promedios** — el paso 4 del circuito (aplicar el método), ahora con los informales y los promedios."
+    }
+  ],
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "Tres clases, un solo procedimiento.",
+      "text": "3.a te da la sospecha, 3.b te da la prueba, el árbol te da el método, la clase 4 te dice si acertaste. No son temas sueltos.",
+      "svg": "<svg viewBox=\"0 0 280 100\" width=\"100%\" height=\"100\" aria-hidden=\"true\"><rect x=\"8\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.5\"/><text x=\"33\" y=\"38\" font-size=\"8\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">1 Graficar</text><text x=\"58\" y=\"39\" font-size=\"11\" fill=\"#9aa3ad\">→</text><rect x=\"62\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.5\"/><text x=\"87\" y=\"38\" font-size=\"8\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">2 Diagnosticar</text><text x=\"112\" y=\"39\" font-size=\"11\" fill=\"#9aa3ad\">→</text><rect x=\"116\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.5\"/><text x=\"141\" y=\"38\" font-size=\"8\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">3 Elegir</text><text x=\"166\" y=\"39\" font-size=\"11\" fill=\"#9aa3ad\">→</text><rect x=\"170\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.5\"/><text x=\"195\" y=\"38\" font-size=\"8\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">4 Aplicar</text><text x=\"220\" y=\"39\" font-size=\"11\" fill=\"#9aa3ad\">→</text><rect x=\"224\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.5\"/><text x=\"249\" y=\"38\" font-size=\"8\" fill=\"#e25b16\" font-weight=\"700\" text-anchor=\"middle\">5 Medir</text><path d=\"M 258 54 Q 140 92, 22 54\" fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.4\" stroke-dasharray=\"3 2\"/><text x=\"140\" y=\"94\" font-size=\"9\" fill=\"#e25b16\" text-anchor=\"middle\">si el error anda mal, volvés a elegir</text></svg>",
+      "chartLabel": "Graficar → correlograma → árbol → aplicar → medir, y volver si falla"
+    },
+    {
+      "type": "concepto",
+      "k": "La analogía",
+      "title": "Como un médico.",
+      "text": "3.a es mirar al paciente (los síntomas a simple vista). 3.b es pedir análisis (confirmar con números). El árbol es recetar. La clase 4 es el control posterior: ¿mejoró? Si no, cambiás el remedio."
+    },
+    {
+      "type": "concepto",
+      "k": "Paso 1 y 2",
+      "title": "Graficar y diagnosticar.",
+      "text": "Paso 1: dibujás la serie y mirás si sube, si tiene olas, si es plana → la SOSPECHA. Paso 2: autocorrelaciones contra la banda ±2/√n → la PRUEBA. El gráfico daba una impresión; esto es un dato verificable."
+    },
+    {
+      "type": "concepto",
+      "k": "Paso 3, 4 y 5",
+      "title": "Elegir, aplicar, medir.",
+      "text": "El árbol propone el método (paso 3). Lo aplicás (paso 4, clases 5 en adelante). Medís MAD, MSE, MAPE y PME (paso 5). Si el error anda mal, no afines a ciegas: volvé a elegir."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "El pronóstico es un circuito, no una línea recta. Si el error anda mal, ¿qué hacés?",
+      "options": [
+        "Ajustás un poco los números a mano y listo",
+        "Volvés al paso 3 y cambiás de método",
+        "Tiras el modelo y usás el promedio, siempre"
+      ],
+      "correct": 1,
+      "feedback": "Si el error dice que algo anda mal, volvés al paso 3 y cambiás de método."
+    },
+    {
+      "type": "concepto",
+      "k": "Heladería",
+      "title": "De punta a punta.",
+      "text": "Heladería, ventas trimestrales: el gráfico sospecha T+S; el correlograma lo prueba (pico en r₄ y decaimiento); el árbol pide Winter; el MAPE 5% y el PME ≈ 0 confirman."
+    },
+    {
+      "type": "concepto",
+      "k": "¿Y si salía mal?",
+      "title": "El PME delata un diagnóstico equivocado.",
+      "text": "Si en el paso 4 hubieras usado suavizado exponencial simple, ignorando el diagnóstico, el paso 5 te habría dado PME = +12%, siempre positivo: estás subestimando todos los meses, el método no captura la tendencia. Volvés al paso 3 y cambiás a Winter.",
+      "ejemplo": "Método impreciso pero centrado (PME ≈ 0): método correcto, datos ruidosos. Método sesgado (PME alto y del mismo signo): método EQUIVOCADO para ese patrón."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Un método tiene MAPE bajo pero PME alto y siempre del mismo signo. ¿Qué significa?",
+      "options": [
+        "Está bien: el MAPE bajo gana siempre",
+        "Es preciso pero sesgado: el método es equivocado para ese patrón y hay que cambiarlo",
+        "Hay que borrar los datos atípicos y nada más"
+      ],
+      "correct": 1,
+      "feedback": "El PME de la clase 4 te delata cuando te equivocaste en el diagnóstico de la clase 3. Sesgo alto y consistente → cambiar de método."
+    },
+    {
+      "type": "concepto",
+      "k": "En el examen",
+      "title": "Una justificación completa puntúa.",
+      "text": "El molde: 1) diagnóstico (qué componentes tiene), 2) evidencia (gráfico y/o correlograma), 3) método, 4) justificación (por qué ese método para ese patrón), 5) validación (qué dicen las medidas de error).",
+      "ejemplo": "«La serie presenta tendencia y estacionalidad (pico significativo en r₄ y decaimiento gradual), por lo que apliqué Winter; el MAPE de 5% y el PME cercano a cero confirman que el método es adecuado y no presenta sesgo.»"
+    },
+    {
+      "type": "cierre",
+      "title": "Llevate el circuito.",
+      "text": "Graficar (sospecha) → correlograma (prueba) → árbol (método) → aplicar (números) → medir el error (¿acerté?). Si el PME es alto y consistente, se vuelve al paso 3. La respuesta de examen combina las tres clases: diagnóstico + evidencia + método + justificación + validación."
+    }
+  ]
+}

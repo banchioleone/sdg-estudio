@@ -1,0 +1,255 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1360" width="1000" height="1360" font-family="Segoe UI, Calibri, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a1" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 Z" fill="#1F4E79"/></marker>
+    <marker id="a2" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0,0 L9,3.5 L0,7 Z" fill="#888"/></marker>
+  </defs>
+  <rect width="1000" height="1360" fill="#FFFFFF"/>
+
+  <!-- TITULO -->
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#1F4E79">ÁRBOL DECISORIO · ¿Qué método de pronóstico uso?</text>
+  <text x="40" y="55" font-size="12.5" fill="#666">Lámina complementaria Clase 3.a — U2 · La respuesta a “justifique la metodología aplicada”</text>
+
+  <rect x="40" y="68" width="920" height="34" rx="8" fill="#FFF3E8" stroke="#D9954A" stroke-width="1.5"/>
+  <text x="56" y="90" font-size="12" font-weight="700" fill="#8A5A16">REGLA MADRE: graficar la serie SIEMPRE antes de decidir. Con pocos datos, graficar es obligatorio. El gráfico manda sobre cualquier fórmula.</text>
+
+  <!-- ===== NIVEL 0 ===== -->
+  <rect x="380" y="116" width="240" height="42" rx="21" fill="#1F4E79"/>
+  <text x="500" y="142" font-size="13.5" font-weight="700" fill="#fff" text-anchor="middle">Necesito pronosticar</text>
+
+  <line x1="500" y1="158" x2="500" y2="176" stroke="#1F4E79" stroke-width="2"/>
+  <line x1="230" y1="176" x2="770" y2="176" stroke="#1F4E79" stroke-width="2"/>
+  <line x1="230" y1="176" x2="230" y2="196" stroke="#1F4E79" stroke-width="2" marker-end="url(#a1)"/>
+  <line x1="770" y1="176" x2="770" y2="196" stroke="#1F4E79" stroke-width="2" marker-end="url(#a1)"/>
+
+  <!-- PREGUNTA 1 -->
+  <text x="500" y="170" font-size="11.5" font-weight="700" fill="#1F4E79" text-anchor="middle">① ¿Tengo datos históricos suficientes y representativos?</text>
+
+  <!-- RAMA NO: CUALITATIVOS -->
+  <rect x="700" y="200" width="260" height="152" rx="8" fill="#F6F2FA" stroke="#5B3E8E" stroke-width="1.5"/>
+  <text x="716" y="222" font-size="12.5" font-weight="700" fill="#5B3E8E">NO → MÉTODOS CUALITATIVOS</text>
+  <text x="716" y="240" font-size="10.5" fill="#666" font-style="italic">Se basan en juicio e intuición, no en datos</text>
+  <text x="716" y="260" font-size="10.8" fill="#333">· Delphi (panel de expertos anónimo)</text>
+  <text x="716" y="276" font-size="10.8" fill="#333">· Investigación de mercado / encuestas</text>
+  <text x="716" y="292" font-size="10.8" fill="#333">· Analogía histórica (producto similar)</text>
+  <text x="716" y="308" font-size="10.8" fill="#333">· Consenso de comité / fuerza de ventas</text>
+  <text x="716" y="330" font-size="10.5" font-weight="700" fill="#5B3E8E">Cuándo: producto nuevo, sin historia,</text>
+  <text x="716" y="345" font-size="10.5" font-weight="700" fill="#5B3E8E">o largo plazo (&gt; 2 años)</text>
+
+  <!-- RAMA SI: CUANTITATIVOS -->
+  <rect x="60" y="200" width="580" height="60" rx="8" fill="#EAF6FB" stroke="#1F4E79" stroke-width="1.5"/>
+  <text x="76" y="222" font-size="12.5" font-weight="700" fill="#1F4E79">SÍ → MÉTODOS CUANTITATIVOS</text>
+  <text x="76" y="242" font-size="11" fill="#333">② ¿Explico la serie con SU PROPIO pasado, o con OTRAS variables?</text>
+  <text x="76" y="256" font-size="10" fill="#888" font-style="italic">(en la práctica se combinan: lo cuantitativo se ajusta con juicio experto)</text>
+
+  <line x1="200" y1="260" x2="200" y2="284" stroke="#1F4E79" stroke-width="2" marker-end="url(#a1)"/>
+  <line x1="500" y1="260" x2="500" y2="284" stroke="#1F4E79" stroke-width="2" marker-end="url(#a1)"/>
+
+  <!-- CAUSALES -->
+  <rect x="360" y="288" width="280" height="120" rx="8" fill="#FDF2F2" stroke="#C00000" stroke-width="1.5"/>
+  <text x="376" y="310" font-size="12.5" font-weight="700" fill="#9C3838">CAUSALES / EXPLICATIVOS</text>
+  <text x="376" y="328" font-size="10.8" fill="#333">“Las ventas dependen de X” (precio,</text>
+  <text x="376" y="343" font-size="10.8" fill="#333">publicidad, PBI, temperatura…)</text>
+  <text x="376" y="363" font-size="11" font-weight="700" fill="#C00000">· Regresión simple (1 variable X)</text>
+  <text x="376" y="379" font-size="11" font-weight="700" fill="#C00000">· Regresión múltiple (varias X)</text>
+  <text x="376" y="396" font-size="10.5" fill="#666">· Modelos econométricos · indicadores</text>
+
+  <!-- SERIES DE TIEMPO -->
+  <rect x="60" y="288" width="280" height="120" rx="8" fill="#F4F8FC" stroke="#1F4E79" stroke-width="1.5"/>
+  <text x="76" y="310" font-size="12.5" font-weight="700" fill="#1F4E79">SERIES DE TIEMPO</text>
+  <text x="76" y="328" font-size="10.8" fill="#333">“Proyecto el patrón que la serie</text>
+  <text x="76" y="343" font-size="10.8" fill="#333">viene mostrando en el tiempo”</text>
+  <text x="76" y="366" font-size="11" font-weight="700" fill="#1F4E79">③ ¿QUÉ PATRÓN tiene la serie?</text>
+  <text x="76" y="384" font-size="10.5" fill="#666">→ mirar el gráfico y el correlograma</text>
+  <text x="76" y="399" font-size="10.5" fill="#666">→ bajar a los 4 casos de abajo ↓</text>
+
+  <line x1="200" y1="408" x2="200" y2="430" stroke="#1F4E79" stroke-width="2"/>
+  <line x1="120" y1="430" x2="880" y2="430" stroke="#1F4E79" stroke-width="2"/>
+  <line x1="120" y1="430" x2="120" y2="452" stroke="#1F4E79" stroke-width="2" marker-end="url(#a1)"/>
+  <line x1="373" y1="430" x2="373" y2="452" stroke="#1F4E79" stroke-width="2" marker-end="url(#a1)"/>
+  <line x1="627" y1="430" x2="627" y2="452" stroke="#1F4E79" stroke-width="2" marker-end="url(#a1)"/>
+  <line x1="880" y1="430" x2="880" y2="452" stroke="#1F4E79" stroke-width="2" marker-end="url(#a1)"/>
+
+  <!-- ===== CASO A: ESTACIONARIA ===== -->
+  <rect x="40" y="456" width="222" height="330" rx="8" fill="#F1F7F2" stroke="#1E6B33" stroke-width="2"/>
+  <text x="54" y="478" font-size="13" font-weight="700" fill="#1E6B33">A · ESTACIONARIA</text>
+  <text x="54" y="494" font-size="10" fill="#666" font-style="italic">promedio constante, sin rumbo</text>
+  <line x1="58" y1="536" x2="58" y2="504" stroke="#aaa" stroke-width="1"/>
+  <line x1="58" y1="536" x2="248" y2="536" stroke="#aaa" stroke-width="1"/>
+  <line x1="58" y1="520" x2="248" y2="520" stroke="#1E6B33" stroke-width="1" stroke-dasharray="3 3"/>
+  <polyline points="64,526 88,512 112,528 136,514 160,530 184,512 208,524 236,516" fill="none" stroke="#1E6B33" stroke-width="2"/>
+
+  <text x="54" y="558" font-size="11" font-weight="700" fill="#1E6B33">MÉTODOS:</text>
+  <text x="54" y="576" font-size="10.8" fill="#333">· Promedio simple (todo el historial)</text>
+  <text x="54" y="592" font-size="10.8" fill="#333">· Promedio móvil de orden n</text>
+  <text x="54" y="608" font-size="10.8" fill="#333">· <tspan font-weight="700">Suavizado exponencial simple (SES)</tspan></text>
+  <text x="54" y="624" font-size="10.8" fill="#333">· Métodos ingenuos: Ŷₜ₊₁ = Yₜ</text>
+  <text x="54" y="640" font-size="10.5" fill="#666">· Box-Jenkins (ARIMA)</text>
+
+  <rect x="52" y="650" width="198" height="60" rx="5" fill="#fff" stroke="#BFDCC4"/>
+  <text x="62" y="668" font-size="10" font-weight="700" fill="#1E6B33">Elegir n / α:</text>
+  <text x="62" y="683" font-size="9.8" fill="#333">n grande o α chico → más suave</text>
+  <text x="62" y="697" font-size="9.8" fill="#333">n chico o α grande → más reactivo</text>
+
+  <text x="54" y="728" font-size="10.5" font-weight="700" fill="#8A5A16">EJEMPLOS:</text>
+  <text x="54" y="744" font-size="10" fill="#333">· Panadería de barrio estable</text>
+  <text x="54" y="758" font-size="10" fill="#333">· Producto maduro sin cambios</text>
+  <text x="54" y="772" font-size="10" fill="#333">· Repuestos de demanda pareja</text>
+
+  <!-- ===== CASO B: TENDENCIA ===== -->
+  <rect x="274" y="456" width="222" height="330" rx="8" fill="#EAF6FB" stroke="#1F4E79" stroke-width="2"/>
+  <text x="288" y="478" font-size="13" font-weight="700" fill="#1F4E79">B · TENDENCIA</text>
+  <text x="288" y="494" font-size="10" fill="#666" font-style="italic">sube o baja sostenidamente</text>
+  <line x1="292" y1="536" x2="292" y2="504" stroke="#aaa" stroke-width="1"/>
+  <line x1="292" y1="536" x2="482" y2="536" stroke="#aaa" stroke-width="1"/>
+  <polyline points="298,530 326,522 354,514 382,506 410,514 438,500 466,492" fill="none" stroke="#1F4E79" stroke-width="2"/>
+
+  <text x="288" y="558" font-size="11" font-weight="700" fill="#1F4E79">MÉTODOS:</text>
+  <text x="288" y="576" font-size="10.8" fill="#333">· <tspan font-weight="700">Holt</tspan> (suav. exp. 2 parámetros α, β)</text>
+  <text x="288" y="592" font-size="10.8" fill="#333">· Brown (suav. exp. doble, 1 parám.)</text>
+  <text x="288" y="608" font-size="10.8" fill="#333">· Promedio móvil doble</text>
+  <text x="288" y="624" font-size="10.8" fill="#333">· Regresión simple contra el tiempo</text>
+  <text x="288" y="640" font-size="10.5" fill="#666">· Gompertz, curvas de crecimiento</text>
+
+  <rect x="286" y="650" width="198" height="60" rx="5" fill="#fff" stroke="#B7D0E5"/>
+  <text x="296" y="668" font-size="10" font-weight="700" fill="#1F4E79">Holt vs. Brown:</text>
+  <text x="296" y="683" font-size="9.8" fill="#333">Brown usa un solo α → tendencia</text>
+  <text x="296" y="697" font-size="9.8" fill="#333">sensible al ruido. Holt separa β → mejor.</text>
+
+  <text x="288" y="728" font-size="10.5" font-weight="700" fill="#8A5A16">EJEMPLOS:</text>
+  <text x="288" y="744" font-size="10" fill="#333">· Suscripciones de una app en alza</text>
+  <text x="288" y="758" font-size="10" fill="#333">· Producto en etapa de crecimiento</text>
+  <text x="288" y="772" font-size="10" fill="#333">· Serie inflacionada año a año</text>
+
+  <!-- ===== CASO C: ESTACIONALIDAD ===== -->
+  <rect x="508" y="456" width="222" height="330" rx="8" fill="#FBF6EE" stroke="#8A5A16" stroke-width="2"/>
+  <text x="522" y="478" font-size="13" font-weight="700" fill="#8A5A16">C · ESTACIONALIDAD</text>
+  <text x="522" y="494" font-size="10" fill="#666" font-style="italic">patrón fijo que se repite cada año</text>
+  <line x1="526" y1="536" x2="526" y2="504" stroke="#aaa" stroke-width="1"/>
+  <line x1="526" y1="536" x2="716" y2="536" stroke="#aaa" stroke-width="1"/>
+  <path d="M 532 528 L 548 508 L 564 528 L 580 530 L 596 508 L 612 528 L 628 530 L 644 506 L 660 528 L 676 530 L 700 508" fill="none" stroke="#B5651D" stroke-width="2"/>
+
+  <text x="522" y="558" font-size="11" font-weight="700" fill="#8A5A16">MÉTODOS:</text>
+  <text x="522" y="576" font-size="10.8" fill="#333">· <tspan font-weight="700">Winter</tspan> (suav. exp. 3 parám. α, β, γ)</text>
+  <text x="522" y="592" font-size="10.8" fill="#333">· <tspan font-weight="700">Descomposición clásica</tspan> (multiplicativa)</text>
+  <text x="522" y="608" font-size="10.8" fill="#333">· Desestacionalizar → pronosticar →</text>
+  <text x="532" y="622" font-size="10.8" fill="#333">re-estacionalizar</text>
+  <text x="522" y="638" font-size="10.5" fill="#666">· Regresión múltiple con dummies · Census II</text>
+
+  <rect x="520" y="648" width="198" height="62" rx="5" fill="#fff" stroke="#E3D2B5"/>
+  <text x="530" y="666" font-size="10" font-weight="700" fill="#8A5A16">Ojo con L y la cantidad de datos:</text>
+  <text x="530" y="681" font-size="9.8" fill="#333">L=4 (trim.) · L=12 (mens.) · L=7 (diario)</text>
+  <text x="530" y="695" font-size="9.8" fill="#333">Winter necesita ≥ 2 ciclos completos</text>
+
+  <text x="522" y="728" font-size="10.5" font-weight="700" fill="#8A5A16">EJEMPLOS:</text>
+  <text x="522" y="744" font-size="10" fill="#333">· Heladería / aires acondicionados</text>
+  <text x="522" y="758" font-size="10" fill="#333">· Ventas de diciembre, útiles escolares</text>
+  <text x="522" y="772" font-size="10" fill="#333">· Consumo eléctrico</text>
+
+  <!-- ===== CASO D: CICLO ===== -->
+  <rect x="742" y="456" width="218" height="330" rx="8" fill="#F6F2FA" stroke="#5B3E8E" stroke-width="2"/>
+  <text x="756" y="478" font-size="13" font-weight="700" fill="#5B3E8E">D · CICLO</text>
+  <text x="756" y="494" font-size="10" fill="#666" font-style="italic">ondas plurianuales, período variable</text>
+  <line x1="760" y1="536" x2="760" y2="504" stroke="#aaa" stroke-width="1"/>
+  <line x1="760" y1="536" x2="946" y2="536" stroke="#aaa" stroke-width="1"/>
+  <path d="M 766 518 C 792 496, 812 496, 834 522 C 858 548, 882 546, 906 512 C 916 498, 926 494, 936 492" fill="none" stroke="#5B3E8E" stroke-width="2"/>
+
+  <text x="756" y="558" font-size="11" font-weight="700" fill="#5B3E8E">MÉTODOS:</text>
+  <text x="756" y="576" font-size="10.8" fill="#333">· Descomposición clásica</text>
+  <text x="756" y="592" font-size="10.8" fill="#333">· Indicadores económicos (líderes)</text>
+  <text x="756" y="608" font-size="10.8" fill="#333">· Modelos econométricos</text>
+  <text x="756" y="624" font-size="10.8" fill="#333">· Regresión múltiple</text>
+  <text x="756" y="640" font-size="10.5" fill="#666">· Box-Jenkins</text>
+
+  <rect x="754" y="650" width="196" height="60" rx="5" fill="#fff" stroke="#D3C4E4"/>
+  <text x="764" y="668" font-size="10" font-weight="700" fill="#C00000">⚠ El más difícil de todos:</text>
+  <text x="764" y="683" font-size="9.8" fill="#333">no tiene período fijo → los métodos</text>
+  <text x="764" y="697" font-size="9.8" fill="#333">de suavizado NO capturan giros bruscos</text>
+
+  <text x="756" y="728" font-size="10.5" font-weight="700" fill="#8A5A16">EJEMPLOS:</text>
+  <text x="756" y="744" font-size="10" fill="#333">· Construcción, acero, automotriz</text>
+  <text x="756" y="758" font-size="10" fill="#333">· Bienes durables y de capital</text>
+  <text x="756" y="772" font-size="10" fill="#333">· Cualquier serie ligada al PBI</text>
+
+  <!-- ===== CASO COMBINADO ===== -->
+  <rect x="40" y="800" width="920" height="96" rx="8" fill="#FFF3E8" stroke="#D9954A" stroke-width="2"/>
+  <text x="56" y="822" font-size="13.5" font-weight="700" fill="#8A5A16">★ EL CASO MÁS FRECUENTE EN EXAMEN: TENDENCIA **+** ESTACIONALIDAD (los patrones se combinan)</text>
+  <text x="56" y="844" font-size="11.5" fill="#333">Si la serie sube año a año Y además repite picos estacionales → <tspan font-weight="700" fill="#C00000">WINTER</tspan> (captura ambos) o <tspan font-weight="700" fill="#C00000">DESCOMPOSICIÓN</tspan> (los separa y proyecta por partes).</text>
+  <text x="56" y="864" font-size="11.5" fill="#333">Alternativa válida y muy defendible: <tspan font-weight="700">desestacionalizar</tspan> la serie → aplicar Holt a la serie sin estacionalidad → <tspan font-weight="700">re-estacionalizar</tspan> el pronóstico.</text>
+  <text x="56" y="884" font-size="11" fill="#8A5A16" font-style="italic">Nunca usar suavizado simple ni promedio móvil acá: van siempre “atrás” de la serie y subestiman sistemáticamente (sesgo visible en el PME).</text>
+
+  <!-- ===== FACTORES ADICIONALES ===== -->
+  <rect x="40" y="908" width="450" height="222" rx="8" fill="#F4F8FC" stroke="#B7D0E5" stroke-width="1.5"/>
+  <text x="56" y="930" font-size="13" font-weight="700" fill="#1F4E79">④ Otros factores que inclinan la elección</text>
+
+  <text x="56" y="954" font-size="11" font-weight="700" fill="#333">HORIZONTE:</text>
+  <text x="66" y="970" font-size="10.5" fill="#333">· Corto plazo (días–meses) → suavizados, promedios</text>
+  <text x="66" y="985" font-size="10.5" fill="#333">· Mediano (meses–2 años) → regresión, descomposición</text>
+  <text x="66" y="1000" font-size="10.5" fill="#333">· Largo plazo (&gt;2 años) → cualitativos, econométricos</text>
+
+  <text x="56" y="1022" font-size="11" font-weight="700" fill="#333">CANTIDAD DE DATOS:</text>
+  <text x="66" y="1038" font-size="10.5" fill="#333">· Muy pocos → ingenuos o promedio simple (y graficar!)</text>
+  <text x="66" y="1053" font-size="10.5" fill="#333">· Winter/descomposición exigen ≥2 ciclos completos</text>
+
+  <text x="56" y="1075" font-size="11" font-weight="700" fill="#333">OTROS CRITERIOS (Hanke):</text>
+  <text x="66" y="1091" font-size="10.5" fill="#333">· Costo del método vs. beneficio del pronóstico</text>
+  <text x="66" y="1106" font-size="10.5" fill="#333">· Facilidad de comprensión para quien decide</text>
+  <text x="66" y="1121" font-size="10.5" fill="#333">· Precisión requerida y confiabilidad</text>
+
+  <!-- ===== VALIDACION ===== -->
+  <rect x="510" y="908" width="450" height="222" rx="8" fill="#FDF2F2" stroke="#C00000" stroke-width="1.5"/>
+  <text x="526" y="930" font-size="13" font-weight="700" fill="#9C3838">⑤ Elegido el método… ¡hay que VALIDARLO!</text>
+  <text x="526" y="952" font-size="11" fill="#333">El árbol propone candidatos; la <tspan font-weight="700">medida de error decide</tspan>.</text>
+
+  <text x="526" y="976" font-size="11" font-weight="700" fill="#333">Procedimiento (Hanke cap. 5):</text>
+  <text x="536" y="992" font-size="10.5" fill="#333">① Partir los datos: inicialización + prueba</text>
+  <text x="536" y="1007" font-size="10.5" fill="#333">② Ajustar el método con la parte de inicialización</text>
+  <text x="536" y="1022" font-size="10.5" fill="#333">③ Pronosticar la parte de prueba y medir el error</text>
+  <text x="536" y="1037" font-size="10.5" fill="#333">④ Comparar contra un método alternativo</text>
+  <text x="536" y="1052" font-size="10.5" fill="#333">⑤ Decidir: usarlo, ajustarlo o cambiarlo</text>
+
+  <rect x="526" y="1062" width="418" height="56" rx="5" fill="#fff" stroke="#E5C2C2"/>
+  <text x="536" y="1080" font-size="10.5" font-weight="700" fill="#C00000">Qué mirar en los errores:</text>
+  <text x="536" y="1095" font-size="10" fill="#333">MAD/MSE/MAPE bajos = buen ajuste · <tspan font-weight="700">PME ≈ 0 = sin sesgo</tspan></text>
+  <text x="536" y="1110" font-size="10" fill="#333">Si el PME es grande y del mismo signo → el método pierde un patrón</text>
+
+  <!-- ===== EJEMPLOS RESUELTOS ===== -->
+  <rect x="40" y="1142" width="920" height="196" rx="8" fill="#EAF6FB" stroke="#1F4E79" stroke-width="2"/>
+  <text x="56" y="1164" font-size="13.5" font-weight="700" fill="#1F4E79">DIAGNÓSTICOS RESUELTOS — así se redacta la justificación en el examen</text>
+
+  <g font-size="10.5">
+    <rect x="56" y="1174" width="888" height="20" fill="#1F4E79"/>
+    <text x="66" y="1189" fill="#fff" font-weight="700">Serie</text>
+    <text x="330" y="1189" fill="#fff" font-weight="700">Diagnóstico</text>
+    <text x="600" y="1189" fill="#fff" font-weight="700">Método y justificación</text>
+
+    <rect x="56" y="1194" width="888" height="24" fill="#fff"/>
+    <text x="66" y="1210" fill="#333">Ventas parejas 900–1.100 kg hace 10 años</text>
+    <text x="330" y="1210" fill="#333">estacionaria, solo irregularidad</text>
+    <text x="600" y="1210" fill="#1E6B33" font-weight="700">SES o promedio móvil: no hay patrón que proyectar</text>
+
+    <rect x="56" y="1218" width="888" height="24" fill="#F2F6FA"/>
+    <text x="66" y="1234" fill="#333">App: 1.000 → 2.290 creciendo parejo</text>
+    <text x="330" y="1234" fill="#333">tendencia lineal, sin estacionalidad</text>
+    <text x="600" y="1234" fill="#1F4E79" font-weight="700">Holt o regresión vs. tiempo: capturan la pendiente</text>
+
+    <rect x="56" y="1242" width="888" height="24" fill="#fff"/>
+    <text x="66" y="1258" fill="#333">Heladería trimestral, picos en T1 y T4, subiendo</text>
+    <text x="330" y="1258" fill="#333">tendencia + estacionalidad (L=4)</text>
+    <text x="600" y="1258" fill="#C00000" font-weight="700">WINTER o descomposición multiplicativa</text>
+
+    <rect x="56" y="1266" width="888" height="24" fill="#F2F6FA"/>
+    <text x="66" y="1282" fill="#333">Constructora: sube, se derrumba 3 años, se recupera</text>
+    <text x="330" y="1282" fill="#333">ciclo dominante (+ tendencia)</text>
+    <text x="600" y="1282" fill="#5B3E8E" font-weight="700">Descomposición o indicadores económicos; no suavizado</text>
+
+    <rect x="56" y="1290" width="888" height="24" fill="#fff"/>
+    <text x="66" y="1306" fill="#333">Producto nuevo, sin historia</text>
+    <text x="330" y="1306" fill="#333">sin datos utilizables</text>
+    <text x="600" y="1306" fill="#5B3E8E" font-weight="700">Cualitativo: Delphi, analogía histórica, investigación</text>
+
+    <rect x="56" y="1314" width="888" height="22" fill="#F2F6FA"/>
+    <text x="66" y="1329" fill="#333">Ventas explicadas por publicidad y precio</text>
+    <text x="330" y="1329" fill="#333">relación causal con otras variables</text>
+    <text x="600" y="1329" fill="#9C3838" font-weight="700">Regresión múltiple (revisar colinealidad y residuos)</text>
+  </g>
+</svg>

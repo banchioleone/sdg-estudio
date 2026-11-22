@@ -1,0 +1,658 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c4",
+  "title": "Clase 4 · Medidas de error",
+  "name": "Medidas de error",
+  "lede": "el árbol de decisión (Clase 3.a) propone *candidatos*; las medidas de error deciden. Sin ellas, \"comparar modelos\" es una opinión; con ellas, es un argumento. Y la cátedra pide explícitamente comparar modelos e interpretar.",
+  "visto": true,
+  "source": [
+    "clases_previas/SG/Clase04_MedidasDeError.md",
+    "clases_previas/SG/Clase04_MedidasDeError.svg",
+    "clases_previas/SG/ArbolDecisorio_MetodosPronostico.svg"
+  ],
+  "laminas": [
+    "u2/img/Clase04_MedidasDeError.svg",
+    "u2/img/ArbolDecisorio_MetodosPronostico.svg"
+  ],
+  "next": "Integrador · El proceso completo",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2.b (cierre) · Serie: 0 → 0.1 → 1 → 1.b → 2 → 3.a → 3.b → **4****"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Idea central:** el árbol de decisión (Clase 3.a) propone *candidatos*; las medidas de error **deciden**. Sin ellas, \"comparar modelos\" es una opinión; con ellas, es un argumento. Y la cátedra pide explícitamente comparar modelos e interpretar."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. La pregunta que resuelve"
+    },
+    {
+      "type": "paragraph",
+      "text": "Pronosticaste 500 y vendiste 480. ¿Estuviste bien o mal? Y sobre todo: si otro método pronosticó 510, **¿cuál de los dos es mejor?**"
+    },
+    {
+      "type": "paragraph",
+      "text": "No se puede responder mirando un mes suelto — cualquiera puede pegarle una vez. Hay que medir el error **a lo largo de toda la serie** y resumirlo en un número."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. El ladrillo: el residual"
+    },
+    {
+      "type": "formula",
+      "tex": "e_t = Y_t - \\hat{Y}_t"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/Clase04_MedidasDeError.svg",
+      "caption": "Lámina de la Clase 4 · Medidas de error"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/ArbolDecisorio_MetodosPronostico.svg",
+      "caption": "Árbol decisorio de métodos de pronóstico"
+    },
+    {
+      "type": "paragraph",
+      "text": "El **residual** o **error de pronóstico**: lo real menos lo pronosticado, período por período."
+    },
+    {
+      "type": "paragraph",
+      "text": "**El signo importa:**"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Signo",
+        "Significa"
+      ],
+      "rows": [
+        [
+          "---",
+          "---"
+        ],
+        [
+          "**e positivo**",
+          "vendiste MÁS de lo previsto → **subestimaste**"
+        ],
+        [
+          "**e negativo**",
+          "vendiste MENOS de lo previsto → **sobreestimaste**"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Las cuatro medidas son distintas maneras de promediar estos e."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Por qué hacen falta cuatro y no una"
+    },
+    {
+      "type": "paragraph",
+      "text": "**El problema de promediar los errores crudos: se cancelan.** Si un mes te equivocás +50 y otro −50, el promedio da 0 y parecerías perfecto, cuando en realidad te equivocaste feo dos veces."
+    },
+    {
+      "type": "paragraph",
+      "text": "Hay **dos soluciones a la cancelación**:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**Valor absoluto** → MAD, MAPE",
+        "**Elevar al cuadrado** → MSE"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Y una medida que **aprovecha la cancelación a propósito** para medir sesgo: **PME**."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Las cuatro medidas"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "4.1 MAD — Desviación Absoluta Media"
+    },
+    {
+      "type": "formula",
+      "tex": "MAD = \\frac{\\sum |Y_t - \\hat{Y}_t|}{n}"
+    },
+    {
+      "type": "paragraph",
+      "text": "Le saca el signo a cada error y promedia. **La más intuitiva**: queda en las unidades originales."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**Lectura:** *\"MAD = 15 unidades\"* → me equivoco típicamente en 15 unidades, para arriba o para abajo.",
+        "**Cuándo usarla:** cuando querés una medida fácil de comunicar y en unidades reales. Es también la base de la **señal de rastreo**."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "4.2 MSE — Error Cuadrático Medio"
+    },
+    {
+      "type": "formula",
+      "tex": "MSE = \\frac{\\sum (Y_t - \\hat{Y}_t)^2}{n}"
+    },
+    {
+      "type": "paragraph",
+      "text": "Eleva cada error al cuadrado y promedia. Como el cuadrado agranda desproporcionadamente los números grandes, **castiga fuerte los errores grandes**."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Ejemplo del castigo:**"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Caso",
+        "Errores",
+        "Error total",
+        "MSE"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "A",
+          "10 y 10",
+          "20",
+          "(100+100)/2 = **100**"
+        ],
+        [
+          "B",
+          "0 y 20",
+          "20",
+          "(0+400)/2 = **200**"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Mismo error total, pero B \"paga\" el doble."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**Cuándo usarla:** cuando un error grande ocasional es mucho peor que varios chicos. *Quedarte sin stock un mes entero es catastrófico; equivocarte por poco todos los meses es tolerable.*",
+        "**★ Dato clave:** el MSE es el **criterio estándar para elegir los parámetros** de un método. Cuando en las próximas clases digamos *\"probamos α de 0,1 a 0,9 y elegimos el que minimiza el error\"*, ese error es el MSE.",
+        "**Ojo:** está en unidades **al cuadrado** → no es interpretable directamente. Sirve para comparar, no para comunicar."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "4.3 MAPE — Porcentaje de Error Medio Absoluto"
+    },
+    {
+      "type": "formula",
+      "tex": "MAPE = \\frac{\\sum \\left|\\dfrac{Y_t - \\hat{Y}_t}{Y_t}\\right|}{n} \\times 100"
+    },
+    {
+      "type": "paragraph",
+      "text": "Cada error se divide por el valor real → queda en **porcentaje**."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**Lectura:** *\"MAPE = 8%\"* → me equivoco en promedio un 8% respecto de lo que realmente pasó.",
+        "**★ Su superpoder:** permite **comparar series distintas**. Un MAD de 500 unidades es horrible para una panadería y excelente para una automotriz; el MAPE es comparable entre ambas. También sirve para fijar objetivos (\"MAPE menor al 10%\").",
+        "**Ojo:** explota si algún Yₜ es cero o muy chico (división por cero)."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "4.4 PME — Porcentaje Medio de Error"
+    },
+    {
+      "type": "formula",
+      "tex": "PME = \\frac{\\sum \\dfrac{Y_t - \\hat{Y}_t}{Y_t}}{n} \\times 100"
+    },
+    {
+      "type": "paragraph",
+      "text": "Idéntica al MAPE **pero SIN valor absoluto**. Al dejar que los errores se cancelen, mide lo que las otras esconden: **el SESGO**."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "PME",
+        "Significa"
+      ],
+      "rows": [
+        [
+          "---",
+          "---"
+        ],
+        [
+          "**≈ 0**",
+          "método **centrado**, se equivoca parejo para ambos lados ✔"
+        ],
+        [
+          "**positivo y grande**",
+          "**subestima sistemáticamente** (siempre pronostica menos de lo que pasa)"
+        ],
+        [
+          "**negativo y grande**",
+          "**sobreestima sistemáticamente**"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**★ Por qué es la más reveladora:** un PME grande no dice *\"el método es impreciso\"*, dice **\"al método se le está escapando un patrón\"**."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Caso típico:** aplicás suavizado exponencial simple a una serie con **tendencia creciente**. El método siempre va \"atrás\" de la serie, siempre pronostica de menos → **PME positivo consistente**. La solución NO es afinar el parámetro: es **cambiar a un método con tendencia (Holt)**."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Ejemplo comparativo completo"
+    },
+    {
+      "type": "paragraph",
+      "text": "Ventas reales y pronósticos de dos métodos, 6 meses:"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Mes",
+        "Real (Y)",
+        "Método A (Ŷ)",
+        "e_A",
+        "Método B (Ŷ)",
+        "e_B"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---",
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "1",
+          "100",
+          "95",
+          "+5",
+          "90",
+          "+10"
+        ],
+        [
+          "2",
+          "110",
+          "105",
+          "+5",
+          "108",
+          "+2"
+        ],
+        [
+          "3",
+          "105",
+          "108",
+          "−3",
+          "112",
+          "−7"
+        ],
+        [
+          "4",
+          "120",
+          "112",
+          "+8",
+          "118",
+          "+2"
+        ],
+        [
+          "5",
+          "115",
+          "118",
+          "−3",
+          "130",
+          "−15"
+        ],
+        [
+          "6",
+          "125",
+          "120",
+          "+5",
+          "122",
+          "+3"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Método A"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**MAD** = (5+5+3+8+3+5)/6 = 29/6 = **4,83**",
+        "**MSE** = (25+25+9+64+9+25)/6 = 157/6 = **26,2**",
+        "**MAPE** = (5,0+4,5+2,9+6,7+2,6+4,0)/6 ≈ **4,3%**",
+        "**PME** = (+5,0+4,5−2,9+6,7−2,6+4,0)/6 ≈ **+2,5%**"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Método B"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**MAD** = (10+2+7+2+15+3)/6 = 39/6 = **6,50**",
+        "**MSE** = (100+4+49+4+225+9)/6 = 391/6 = **65,2**",
+        "**MAPE** = (10,0+1,8+6,7+1,7+13,0+2,4)/6 ≈ **5,9%**",
+        "**PME** = (+10,0+1,8−6,7+1,7−13,0+2,4)/6 ≈ **−0,6%**"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Interpretación — así se redacta en el examen ★"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "*\"El método A presenta menor error en las tres medidas de precisión (MAD 4,83 vs. 6,50; MSE 26,2 vs. 65,2; MAPE 4,3% vs. 5,9%), por lo que resulta más preciso. La diferencia es especialmente marcada en el MSE, lo que indica que el método B produce errores grandes ocasionales (mes 5: −15). En cuanto al sesgo, el método B está mejor centrado (PME −0,6% vs. +2,5%), lo que sugiere que A tiende a subestimar levemente. Se recomienda el método A por su mayor precisión, monitoreando la tendencia a subestimar.\"*"
+    },
+    {
+      "type": "svg",
+      "svg": "<svg viewBox=\"0 0 280 132\" width=\"100%\" height=\"132\" aria-hidden=\"true\"><text x=\"28\" y=\"12\" font-size=\"9\" fill=\"#1f4e79\" font-weight=\"700\">A</text><text x=\"52\" y=\"12\" font-size=\"9\" fill=\"#c45c26\" font-weight=\"700\">B</text><rect x=\"28\" y=\"57.98461538461538\" width=\"14\" height=\"52.01538461538462\" fill=\"#1f4e79\"/><rect x=\"46\" y=\"40.0\" width=\"14\" height=\"70.0\" fill=\"#c45c26\"/><line x1=\"22\" y1=\"110\" x2=\"68\" y2=\"110\" stroke=\"#d0d5db\" stroke-width=\"1\"/><text x=\"46\" y=\"126\" font-size=\"9\" fill=\"#5c6670\" text-anchor=\"middle\">MAD</text><text x=\"35\" y=\"24\" font-size=\"8\" fill=\"#1f4e79\" text-anchor=\"middle\">4,83</text><text x=\"53\" y=\"24\" font-size=\"8\" fill=\"#c45c26\" text-anchor=\"middle\">6,50</text><rect x=\"94\" y=\"81.87116564417178\" width=\"14\" height=\"28.128834355828218\" fill=\"#1f4e79\"/><rect x=\"112\" y=\"40.0\" width=\"14\" height=\"70.0\" fill=\"#c45c26\"/><line x1=\"88\" y1=\"110\" x2=\"134\" y2=\"110\" stroke=\"#d0d5db\" stroke-width=\"1\"/><text x=\"112\" y=\"126\" font-size=\"9\" fill=\"#5c6670\" text-anchor=\"middle\">MSE</text><text x=\"101\" y=\"24\" font-size=\"8\" fill=\"#1f4e79\" text-anchor=\"middle\">26,20</text><text x=\"119\" y=\"24\" font-size=\"8\" fill=\"#c45c26\" text-anchor=\"middle\">65,20</text><rect x=\"160\" y=\"58.98305084745763\" width=\"14\" height=\"51.01694915254237\" fill=\"#1f4e79\"/><rect x=\"178\" y=\"40.0\" width=\"14\" height=\"70.0\" fill=\"#c45c26\"/><line x1=\"154\" y1=\"110\" x2=\"200\" y2=\"110\" stroke=\"#d0d5db\" stroke-width=\"1\"/><text x=\"178\" y=\"126\" font-size=\"9\" fill=\"#5c6670\" text-anchor=\"middle\">MAPE %</text><text x=\"167\" y=\"24\" font-size=\"8\" fill=\"#1f4e79\" text-anchor=\"middle\">4,30</text><text x=\"185\" y=\"24\" font-size=\"8\" fill=\"#c45c26\" text-anchor=\"middle\">5,90</text><rect x=\"226\" y=\"50.0\" width=\"14\" height=\"50.0\" fill=\"#1f4e79\"/><rect x=\"244\" y=\"100\" width=\"14\" height=\"12.0\" fill=\"#c45c26\"/><line x1=\"220\" y1=\"100\" x2=\"266\" y2=\"100\" stroke=\"#d0d5db\" stroke-width=\"1\"/><text x=\"244\" y=\"126\" font-size=\"9\" fill=\"#5c6670\" text-anchor=\"middle\">PME %</text><text x=\"233\" y=\"24\" font-size=\"8\" fill=\"#1f4e79\" text-anchor=\"middle\">2,50</text><text x=\"251\" y=\"24\" font-size=\"8\" fill=\"#c45c26\" text-anchor=\"middle\">-0,60</text></svg>",
+      "caption": "Comparación del ejemplo (6 meses): A gana en MAD, MSE y MAPE (más preciso); B está un poco mejor centrado (PME más cerca de 0). El MSE de B se dispara por el error de −15 del mes 5."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lo importante:** cada medida dice algo **distinto**. Usar las cuatro es lo que convierte una cuenta en una interpretación."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. El procedimiento de validación (Hanke, cap. 5)"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**Elegir un método** según el patrón de datos (árbol de la Clase 3.a).",
+        "**Partir los datos en dos**: parte de **inicialización** (para ajustar) y parte de **prueba** (que el método no vio).",
+        "**Ajustar** el método con la parte de inicialización.",
+        "**Pronosticar la parte de prueba** y medir los errores ahí.",
+        "**Decidir**: usar el método, modificarlo, o probar otro y comparar."
+      ]
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**La lógica:** si medís el error sobre los mismos datos con los que ajustaste, hacés trampa sin querer. La prueba honesta es sobre datos que el método no conoce."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. La señal de rastreo"
+    },
+    {
+      "type": "paragraph",
+      "text": "Un método que hoy funciona puede dejar de funcionar (cambió el mercado, entró un competidor)."
+    },
+    {
+      "type": "paragraph",
+      "text": "La **señal de rastreo** es un control continuo: se monitorea alguna medida del error a través del tiempo y se fijan **límites**; cuando el error los rebasa, se **alerta al pronosticador** para revisar el método o recalibrar sus parámetros (por ejemplo, cambiar el α)."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Versión simple (Hanke):** contar cuántas de las últimas n predicciones fueron **subestimaciones** (U). Si el método está sano, deberían ser aproximadamente **n/2**. Un valor muy alejado de n/2 indica sesgo sistemático. Si el método es razonablemente preciso, los errores deberían distribuirse normalmente con media cero."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "8. Chequeos de sensatez"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "MAD, MSE y MAPE **nunca** pueden ser negativos (llevan valor absoluto o cuadrado)",
+        "El PME **sí** puede ser negativo — de hecho su signo es toda la información",
+        "MSE ≥ MAD² aproximadamente (por la desigualdad del cuadrado)",
+        "Si el MAPE da enorme, revisá si hay algún Yₜ cercano a cero",
+        "Si MAD y MAPE son bajos pero el PME es alto → el método es preciso pero **sesgado**: le falta capturar un patrón"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "9. Mini-resumen para tu doc"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Clase 4.** Residual: e = Y − Ŷ (positivo = subestimé). Cuatro medidas: **MAD** (error promedio en unidades, intuitiva), **MSE** (castiga errores grandes, criterio estándar para elegir parámetros como α), **MAPE** (error en %, única comparable entre series distintas), **PME** (sin valor absoluto → mide **sesgo**: ≈0 centrado, positivo = subestima sistemáticamente). Un PME alto no indica imprecisión sino que el método pierde un patrón (ej.: suavizado simple sobre serie con tendencia → cambiar a Holt). Validación: partir datos en inicialización y prueba, ajustar con una, medir con la otra. Señal de rastreo: control continuo que alerta cuando el error se sale de límites."
+    },
+    {
+      "type": "ejercicio",
+      "title": "10. EJERCICIO — Clase 4",
+      "estado": "para resolver",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Mes",
+            "Real",
+            "Método X",
+            "Método Y"
+          ],
+          "rows": [
+            [
+              "---",
+              "---",
+              "---",
+              "---"
+            ],
+            [
+              "1",
+              "200",
+              "190",
+              "205"
+            ],
+            [
+              "2",
+              "210",
+              "198",
+              "202"
+            ],
+            [
+              "3",
+              "225",
+              "205",
+              "230"
+            ],
+            [
+              "4",
+              "230",
+              "215",
+              "222"
+            ],
+            [
+              "5",
+              "245",
+              "222",
+              "250"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "**a)** Calculá e, |e|, e² y |e/Y| para cada método (armá la tabla completa).\n**b)** Obtené MAD, MSE, MAPE y PME de ambos métodos.\n**c)** ¿Cuál es más preciso? ¿Cuál está mejor centrado?\n**d) ★ La pregunta clave:** mirá el PME del método X y la evolución de los datos reales. ¿Qué te está diciendo? ¿Qué **tipo** de método parece ser X y qué le cambiarías?\n**e)** Redactá la conclusión como respuesta de examen (usando las cuatro medidas para decir cosas distintas)."
+        }
+      ],
+      "nota": "Para resolver — en el material no figura la resolución. Cuando lo corriamos, la cargamos acá."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "11. Ejercicios acumulados pendientes de corrección"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**Clase 1.b** (ventas 120, 135, 105, 140, 100): a) X̄ y s · b) P(X<150) · c) P(X>90) · d) P(110<X<145) · e) inverso 90% · f) ¿Z o t?",
+        "**Clase 2** (temperatura vs. bebidas): a) tabla y sumatorias · b) r · c) interpretación · d) ¿causalidad?",
+        "**Clase 3.a** (diagnóstico de 4 series): a) a d)",
+        "**Clase 3.b** (correlogramas): 1) a 3)",
+        "**Clase 4** (comparación de métodos X e Y): a) a e)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** `Clase04_MedidasDeError.svg` · `ArbolDecisorio_MetodosPronostico.svg`\n**Fuente:** Hanke, *Pronósticos en los Negocios*, caps. 4 y 5 — completo en Drive/Teoría/Libros. Fórmulas también en `Formulas SdG.docx`."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Con esta clase se cierra la Unidad 2.b (demanda, datos y patrones).**"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Sigue → Clase 5: Métodos no formales y promedios** (promedio simple, promedio móvil, promedio móvil doble): el primer bloque de métodos de pronóstico. Arranca la Unidad 2.c. Ya está cargada."
+    }
+  ],
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "El árbol propone. Las medidas deciden.",
+      "text": "Pronosticaste 500 y vendiste 480. ¿Estuviste bien o mal? Y si otro método dijo 510, ¿cuál es mejor? Un mes suelto no alcanza. Hay que medir el error a lo largo de toda la serie y resumirlo en un número."
+    },
+    {
+      "type": "concepto",
+      "k": "El ladrillo",
+      "title": "El residual: lo real menos lo pronosticado.",
+      "text": "eₜ = Yₜ − Ŷₜ. El signo importa: e positivo = vendiste MÁS de lo previsto (subestimaste). e negativo = vendiste MENOS (sobreestimaste).",
+      "formula": "e_t = Y_t - \\hat{Y}_t"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Vendiste 480 y el pronóstico era 500. El residual es…",
+      "options": [
+        "+20: subestimaste",
+        "−20: sobreestimaste",
+        "−20: subestimaste"
+      ],
+      "correct": 1,
+      "feedback": "e = 480 − 500 = −20. Vendiste menos de lo previsto → sobreestimaste."
+    },
+    {
+      "type": "concepto",
+      "k": "Por qué son cuatro",
+      "title": "Si promediás los errores crudos, se cancelan.",
+      "text": "Un mes +50 y otro −50: el promedio da 0 y parecerías perfecto. Hay dos soluciones a la cancelación: valor absoluto (MAD, MAPE) o elevar al cuadrado (MSE). Y una medida que aprovecha la cancelación a propósito para medir sesgo: PME."
+    },
+    {
+      "type": "concepto",
+      "k": "MAD y MSE",
+      "title": "Unidades reales vs. castigo a los grandes.",
+      "text": "MAD = promedio de |e|: queda en las unidades originales («me equivoco típicamente en 15 unidades»). Es la base de la señal de rastreo. MSE = promedio de e²: castiga fuerte los errores grandes y es el criterio estándar para elegir parámetros (el α que minimiza el error).",
+      "ejemplo": "Errores 10 y 10 → MSE = 100. Errores 0 y 20 (mismo total) → MSE = 200. El MSE está en unidades al cuadrado: sirve para comparar, no para comunicar."
+    },
+    {
+      "type": "concepto",
+      "k": "MAPE y PME",
+      "title": "Porcentaje, con y sin valor absoluto.",
+      "text": "MAPE deja el error en % y permite comparar series distintas (un MAD de 500 es horrible para una panadería y excelente para una automotriz). Cuidado: explota si algún Yₜ es cero. PME es igual pero SIN valor absoluto: mide el SESGO.",
+      "ejemplo": "PME ≈ 0: método centrado. Positivo y grande: subestima sistemáticamente. Negativo y grande: sobreestima sistemáticamente."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Un PME positivo y grande te está diciendo…",
+      "options": [
+        "Que el método es impreciso, nada más",
+        "Que subestima sistemáticamente: se le está escapando un patrón",
+        "Que sobreestima, porque el signo del PME se lee al revés"
+      ],
+      "correct": 1,
+      "feedback": "PME positivo = subestima (siempre pronostica de menos). Un PME grande no dice «impreciso»: dice que al método se le escapa un patrón. Caso típico: suavizado simple sobre una serie con tendencia creciente → conviene pasar a Holt."
+    },
+    {
+      "type": "concepto",
+      "k": "El caso típico",
+      "title": "Si el PME delata tendencia, cambiá de método.",
+      "text": "Aplicás suavizado exponencial simple a una serie con tendencia creciente. El método siempre va «atrás», siempre pronostica de menos → PME positivo consistente. La solución no es afinar el α: es cambiar a un método con tendencia (Holt)."
+    },
+    {
+      "type": "concepto",
+      "k": "Ejemplo A vs. B",
+      "title": "Cada medida dice algo distinto.",
+      "text": "Método A: MAD 4,83 · MSE 26,2 · MAPE 4,3% · PME +2,5%. Método B: MAD 6,50 · MSE 65,2 · MAPE 5,9% · PME −0,6%. A es más preciso (sobre todo en MSE: B tiene un error de −15 en el mes 5). B está mejor centrado.",
+      "ejemplo": "Se recomienda A por su mayor precisión, monitoreando la tendencia a subestimar. Usar las cuatro medidas es lo que convierte una cuenta en una interpretación.",
+      "svg": "<svg viewBox=\"0 0 280 132\" width=\"100%\" height=\"132\" aria-hidden=\"true\"><text x=\"28\" y=\"12\" font-size=\"9\" fill=\"#8cb4d6\" font-weight=\"700\">A</text><text x=\"52\" y=\"12\" font-size=\"9\" fill=\"#e25b16\" font-weight=\"700\">B</text><rect x=\"28\" y=\"57.98461538461538\" width=\"14\" height=\"52.01538461538462\" fill=\"#8cb4d6\"/><rect x=\"46\" y=\"40.0\" width=\"14\" height=\"70.0\" fill=\"#e25b16\"/><line x1=\"22\" y1=\"110\" x2=\"68\" y2=\"110\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1\"/><text x=\"46\" y=\"126\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">MAD</text><text x=\"35\" y=\"24\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\">4,83</text><text x=\"53\" y=\"24\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\">6,50</text><rect x=\"94\" y=\"81.87116564417178\" width=\"14\" height=\"28.128834355828218\" fill=\"#8cb4d6\"/><rect x=\"112\" y=\"40.0\" width=\"14\" height=\"70.0\" fill=\"#e25b16\"/><line x1=\"88\" y1=\"110\" x2=\"134\" y2=\"110\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1\"/><text x=\"112\" y=\"126\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">MSE</text><text x=\"101\" y=\"24\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\">26,20</text><text x=\"119\" y=\"24\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\">65,20</text><rect x=\"160\" y=\"58.98305084745763\" width=\"14\" height=\"51.01694915254237\" fill=\"#8cb4d6\"/><rect x=\"178\" y=\"40.0\" width=\"14\" height=\"70.0\" fill=\"#e25b16\"/><line x1=\"154\" y1=\"110\" x2=\"200\" y2=\"110\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1\"/><text x=\"178\" y=\"126\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">MAPE %</text><text x=\"167\" y=\"24\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\">4,30</text><text x=\"185\" y=\"24\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\">5,90</text><rect x=\"226\" y=\"50.0\" width=\"14\" height=\"50.0\" fill=\"#8cb4d6\"/><rect x=\"244\" y=\"100\" width=\"14\" height=\"12.0\" fill=\"#e25b16\"/><line x1=\"220\" y1=\"100\" x2=\"266\" y2=\"100\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1\"/><text x=\"244\" y=\"126\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">PME %</text><text x=\"233\" y=\"24\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\">2,50</text><text x=\"251\" y=\"24\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\">-0,60</text></svg>",
+      "chartLabel": "Método A vs. B: MAD, MSE, MAPE y PME del ejemplo"
+    },
+    {
+      "type": "concepto",
+      "k": "Validación (Hanke)",
+      "title": "No midas el error sobre los datos con los que ajustaste.",
+      "text": "Elegí el método según el patrón (árbol). Partí los datos en inicialización (para ajustar) y prueba (que el método no vio). Ajustá con una, pronosticá la otra, medí ahí. Después decidí: usar, modificar o probar otro.",
+      "ejemplo": "Si medís el error sobre los mismos datos con los que ajustaste, hacés trampa sin querer."
+    },
+    {
+      "type": "concepto",
+      "k": "Señal de rastreo",
+      "title": "Un método que hoy funciona puede dejar de funcionar.",
+      "text": "Se monitorea alguna medida del error y se fijan límites; cuando los rebasa, se alerta para revisar o recalibrar (por ejemplo, cambiar el α).",
+      "ejemplo": "Versión simple de Hanke: contar cuántas de las últimas n predicciones fueron subestimaciones (U). Si está sano, deberían ser ≈ n/2. Muy lejos de n/2 indica sesgo sistemático."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "MAD, MSE y MAPE ¿pueden ser negativos?",
+      "options": [
+        "Sí, si sobreestimaste",
+        "No: llevan valor absoluto o cuadrado. El que sí puede ser negativo es el PME",
+        "Solo el MSE puede ser negativo"
+      ],
+      "correct": 1,
+      "feedback": "MAD, MSE y MAPE nunca pueden ser negativos. El PME sí: de hecho su signo es toda la información."
+    },
+    {
+      "type": "cierre",
+      "title": "Llevate esto de la Clase 4.",
+      "text": "Usá las cuatro medidas: MAD (unidades), MSE (castiga lo grande), MAPE (%) y PME (sesgo). Validá en datos de prueba, no en los de ajuste. El ejercicio X vs. Y queda para resolver juntos."
+    }
+  ]
+}

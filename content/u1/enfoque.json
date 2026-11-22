@@ -1,0 +1,251 @@
+{
+  "unitId": "u1",
+  "unitLabel": "Unidad 1",
+  "unitTitle": "La empresa como productora de bienes",
+  "id": "u1-intro",
+  "title": "Enfoque sistémico",
+  "name": "Enfoque sistémico",
+  "lede": "Objetivo del programa: conocer la empresa bajo un enfoque sistémico y desde la administración de la producción. Es la unidad-marco: da el vocabulario que atraviesa las otras seis. Esta clase no está marcada como Vista: no se dictó en la serie 0 → 1, se arma ahora con el programa, el mapa y los apuntes.",
+  "visto": false,
+  "source": [
+    "programa.md (SG1Progr2008.doc), Unidad temática 1",
+    "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt",
+    "clases_previas/SG/MapaMateria_SistemasDeGestion_v2.svg",
+    "drive/04_Sistemas de Gestión de las Organizaciones/Evolucion de la Gestion en Operaciones.pdf (R. Morán, 2000)",
+    "patrones_examenes.md (pregunta típica de subsistemas / información)"
+  ],
+  "laminas": [
+    "u2/img/MapaMateria_SistemasDeGestion_v2.svg"
+  ],
+  "next": "Clase 0 · Mapa de la materia",
+  "teoria": [
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Idea central:** mirar la empresa como un **sistema**. El programa pide un conocimiento general de las empresas «bajo un enfoque sistémico y desde la función de la administración de la producción». El Documento Maestro lo dice así: es la unidad-marco, la que da el vocabulario que atraviesa todo. El mapa v2 la ubica como el marco de las otras seis, hasta el software ERP (U7)."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. De dónde sale esta clase"
+    },
+    {
+      "type": "paragraph",
+      "text": "No hay un apunte titulado «Enfoque sistémico» ni una clase 0.x de la Unidad 1 en la serie que ya vimos. El contenido se arma con el **programa oficial 2008** (eje, objetivo y temas), el Documento Maestro v2, el mapa v2 y el apunte de cátedra *Evolución de la Gestión de la Producción y de las Operaciones* (R. Morán, 2000), que cubre sobre todo los **antecedentes**. El Maestro remite también a Monks y al cap. 1 de Chase (V6) para el diagrama funcional y el proceso de conversión: esos capítulos no se extractaron aquí como texto corrido, así que no se reconstruye un diagrama que no está en los archivos leídos."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Qué pide el programa"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Eje conceptual:** La Empresa como productora de Bienes (y Servicios). **Objetivo:** que los alumnos adquieran un conocimiento general de las empresas bajo un enfoque sistémico y desde la función de la administración de la producción."
+    },
+    {
+      "type": "paragraph",
+      "text": "Temas, en el orden del programa 2008:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Función de las empresas. Criterios de clasificación. Antecedentes de la empresa industrial.",
+        "La empresa como sistema. El diagrama funcional de la empresa industrial. El proceso de conversión.",
+        "Funciones e interacciones de los subsistemas. El modelo ERP. Administración y gestión del sistema de producción. Flujo de información.",
+        "Los procesos y actividades industriales. La participación del cliente en el modelo.",
+        "Productividad industrial. Principales indicadores de la actividad industrial.",
+        "Excelencia en manufactura. Mejora continua."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. La empresa como sistema y el proceso de conversión"
+    },
+    {
+      "type": "svg",
+      "svg": "<svg viewBox=\"0 0 280 72\" width=\"100%\" height=\"72\" aria-hidden=\"true\"><rect x=\"8\" y=\"16\" width=\"80\" height=\"36\" rx=\"8\" fill=\"none\" stroke=\"#1f4e79\" stroke-width=\"1.6\"/><text x=\"48\" y=\"39\" font-size=\"10\" fill=\"#1f4e79\" font-weight=\"700\" text-anchor=\"middle\">Insumos</text><text x=\"90\" y=\"40\" font-size=\"14\" fill=\"#5c6670\">→</text><rect x=\"100\" y=\"16\" width=\"80\" height=\"36\" rx=\"8\" fill=\"none\" stroke=\"#a67c00\" stroke-width=\"1.6\"/><text x=\"140\" y=\"39\" font-size=\"10\" fill=\"#a67c00\" font-weight=\"700\" text-anchor=\"middle\">Transformación</text><text x=\"182\" y=\"40\" font-size=\"14\" fill=\"#5c6670\">→</text><rect x=\"192\" y=\"16\" width=\"80\" height=\"36\" rx=\"8\" fill=\"none\" stroke=\"#c45c26\" stroke-width=\"1.6\"/><text x=\"232\" y=\"39\" font-size=\"10\" fill=\"#c45c26\" font-weight=\"700\" text-anchor=\"middle\">Productos</text></svg>",
+      "caption": "Proceso de conversión del mapa y del Documento Maestro: insumos → transformación → productos."
+    },
+    {
+      "type": "paragraph",
+      "text": "El mapa v2 y el Documento Maestro resumen el núcleo así: **la empresa como sistema**, el diagrama funcional de la empresa industrial y **el proceso de conversión: insumos → transformación → productos**. Es el esquema mínimo para no estudiar cada unidad suelta: lo que entra, lo que se transforma y lo que sale, con un flujo de información que lo sostiene."
+    },
+    {
+      "type": "paragraph",
+      "text": "El apunte de Evolución (Morán, 2000) llega a la misma idea por la historia: en los años 20 y 30 se vio que había que tomar en cuenta la interacción de factores (diseño del producto, layout, mano de obra, condiciones ambientales, materiales, actitudes de los clientes). «Estas consideraciones condujeron naturalmente al estudio de los medios de producción como sistemas.»"
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Pregunta típica de final** (Documento Maestro y mapa v2): «¿cómo se genera esta información? indique los subsistemas participantes». El criterio oficial de evaluación pide justamente relaciones entre contenidos y vocabulario específico: no alcanza con nombrar un módulo, hay que decir de dónde sale el dato y quiénes intervienen."
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/MapaMateria_SistemasDeGestion_v2.svg",
+      "caption": "Mapa v2: la U1 es el marco; las unidades 2 a 5 son insumos; la U6 es el motor; la U7 empaqueta el modelo en un ERP"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Subsistemas, flujo de información y el modelo ERP"
+    },
+    {
+      "type": "paragraph",
+      "text": "El programa pone juntos: funciones e interacciones de los subsistemas, flujo de información, administración y gestión del sistema de producción, y **el modelo ERP**. El mapa v2 lo formula como «el modelo ERP como integrador». Es la misma tesis de toda la materia: la U1 anticipa lo que la U7 va a mostrar como software (paquetes pre-programados parametrizables para la gestión integral de los recursos)."
+    },
+    {
+      "type": "paragraph",
+      "text": "También entra **la participación del cliente en el modelo**. El programa lo lista entre los temas de esta unidad; no hay en los archivos leídos un desarrollo largo de ese punto, así que acá se deja enunciado, sin inventar un esquema de «el cliente adentro del sistema» que no esté en el apunte."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Antecedentes de la empresa industrial (apunte de Evolución)"
+    },
+    {
+      "type": "paragraph",
+      "text": "El apunte de R. Morán (2000) recorre cómo se llegó a gestionar la producción como sistema. Lo que sigue es ese relato, no un invento posterior:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**Siglo XVIII–XIX:** máquina de vapor, máquinas-herramientas, división del trabajo, intercambiabilidad de piezas; de la fabricación unitaria a la producción en volumen. Eso desemboca en la Revolución Industrial, con departamentalización, flujo de materiales, reducción de costos y planes de incentivos.",
+        "**Comienzos del siglo XX — Administración Científica:** Taylor (métodos; planificación separada de la ejecución); Gantt (programación, sus diagramas); Frank y Lillian Gilbreth (estudios de tiempos y movimientos). El apunte señala que ahí nace la Ingeniería Industrial, aunque en muchas empresas todavía se la identifica solo con métodos y tiempos.",
+        "**Años 20–30:** se ve que el incentivo salarial no basta (teorías del comportamiento; el apunte cita los Estudios de Hawthorne y a Elton Mayo). Walter Shewhart introduce el control estadístico de procesos, ligado a la intercambiabilidad en la producción en masa de Ford. Y aparece el enfoque de **sistemas**.",
+        "**2.ª Guerra y años 40:** Investigación Operativa; computadoras y automatización.",
+        "**Años 70:** primeros sistemas de programación de la producción basados en computadoras, «por ejemplo el sistema MRP de Joseph Orlicky», y después más integración de las funciones de la empresa.",
+        "**Años 80:** just-in-time (Taiichi Ohno, Toyota), gestión de la calidad total (Deming, Juran) y fabricación flexible.",
+        "**Años 90:** era de la información; el apunte también resume aportes de la «administración estilo japonés» (empleo de por vida en las grandes empresas, promociones lentas, decisión por consenso, atención a la calidad) y cierra: ninguno de esos movimientos es una teoría completa, pero un buen conocimiento de todos es la mejor preparación para gestionar los sistemas de producción."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Productividad, excelencia en manufactura y mejora continua"
+    },
+    {
+      "type": "paragraph",
+      "text": "El programa cierra la unidad con productividad industrial, principales indicadores, excelencia en manufactura y mejora continua. El Documento Maestro los agrupa como tema de teoría y remite a Monks y a Chase (caps. 1–2). En los archivos extractados para esta clase **no hay una lista oficial de indicadores** ni una definición de cátedra de «excelencia en manufactura». Se dejan como temas del programa, para desarrollarlos cuando se lea esa bibliografía, sin inventar un tablero de indicadores."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Cómo se conecta con el resto de la materia"
+    },
+    {
+      "type": "paragraph",
+      "text": "Si la U1 es el marco (empresa-sistema y conversión), las unidades 2 a 5 son los cuatro insumos de la planificación (demanda, producto, proceso, stock), la U6 es el motor y la U7 es el ERP que empaqueta el modelo. Por eso el mapa habla de «la anatomía de un ERP». Estudiar la U1 no es un prólogo decorativo: es el lugar desde el cual se entienden las relaciones que el final pide fundamentar."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "8. Qué no está (todavía) en esta clase"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "El **diagrama funcional** de la empresa industrial, que el programa nombra y el Maestro remite a Monks / Chase cap. 1: no está reproducido en los archivos leídos.",
+        "Una lista de **indicadores de productividad** con fórmula o definición de cátedra.",
+        "El desarrollo largo de **participación del cliente** y de **criterios de clasificación** de empresas (están en el programa; no hay apunte específico extractado).",
+        "Esta clase **no se marca como Vista**: no formó parte de la serie ya dictada. Queda disponible para estudiar."
+      ]
+    }
+  ],
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "Mirar la empresa como un sistema.",
+      "text": "El programa pide conocer las empresas bajo un enfoque sistémico y desde la administración de la producción. El Documento Maestro lo llama unidad-marco: da el vocabulario que después usan todas las demás."
+    },
+    {
+      "type": "concepto",
+      "k": "El programa",
+      "title": "El eje es la empresa como productora de bienes (y servicios).",
+      "text": "Los temas oficiales: función y clasificación, antecedentes, la empresa como sistema, el proceso de conversión, subsistemas y flujo de información, el modelo ERP, la participación del cliente, productividad, excelencia y mejora continua."
+    },
+    {
+      "type": "concepto",
+      "k": "La conversión",
+      "title": "Insumos → transformación → productos.",
+      "text": "Así resumen el mapa v2 y el Documento Maestro el proceso de conversión. Es el esquema mínimo: lo que entra, lo que se transforma y lo que sale, con un flujo de información que lo sostiene.",
+      "svg": "<svg viewBox=\"0 0 280 72\" width=\"100%\" height=\"72\" aria-hidden=\"true\"><rect x=\"8\" y=\"16\" width=\"80\" height=\"36\" rx=\"8\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.6\"/><text x=\"48\" y=\"39\" font-size=\"10\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">Insumos</text><text x=\"90\" y=\"40\" font-size=\"14\" fill=\"#9aa3ad\">→</text><rect x=\"100\" y=\"16\" width=\"80\" height=\"36\" rx=\"8\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"140\" y=\"39\" font-size=\"10\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">Transformación</text><text x=\"182\" y=\"40\" font-size=\"14\" fill=\"#9aa3ad\">→</text><rect x=\"192\" y=\"16\" width=\"80\" height=\"36\" rx=\"8\" fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.6\"/><text x=\"232\" y=\"39\" font-size=\"10\" fill=\"#e25b16\" font-weight=\"700\" text-anchor=\"middle\">Productos</text></svg>",
+      "chartLabel": "El proceso de conversión"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "El proceso de conversión, en el mapa y el Documento Maestro, es…",
+      "options": [
+        "Solo el software ERP de la U7",
+        "Insumos → transformación → productos",
+        "El cálculo del MRP"
+      ],
+      "correct": 1,
+      "feedback": "El mapa y el Maestro lo escriben así: insumos, transformación y productos. El ERP aparece como modelo integrador, no como el proceso de conversión mismo."
+    },
+    {
+      "type": "concepto",
+      "k": "Los subsistemas",
+      "title": "La información no aparece sola.",
+      "text": "El programa pide las funciones e interacciones de los subsistemas y el flujo de información. Una pregunta típica de final es: cómo se genera esa información e indicar los subsistemas participantes."
+    },
+    {
+      "type": "concepto",
+      "k": "El ERP",
+      "title": "El modelo ERP aparece ya en la U1.",
+      "text": "No hay que esperar a la Unidad 7 para oír la palabra. El programa y el mapa lo ponen acá como integrador: la U7 va a mostrar el software; la U1 anticipa el modelo de gestión integral."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Una pregunta típica de final de esta unidad pide…",
+      "options": [
+        "Calcular un EOQ",
+        "Cómo se genera la información e indicar los subsistemas participantes",
+        "Armar el correlograma de una serie"
+      ],
+      "correct": 1,
+      "feedback": "Así lo anotan el Documento Maestro y el mapa v2. Es teoría, y pide relaciones entre contenidos, no un cálculo."
+    },
+    {
+      "type": "concepto",
+      "k": "Antecedentes",
+      "title": "Se llegó al enfoque de sistemas por la historia.",
+      "text": "El apunte de Morán (2000) recorre Taylor, Gantt y los Gilbreth; después Shewhart y Ford; y apunta que al ver la interacción de diseño, planta, gente, materiales y clientes se empezó a estudiar los medios de producción como sistemas."
+    },
+    {
+      "type": "concepto",
+      "k": "Más adelante",
+      "title": "De la Investigación Operativa al MRP y al JIT.",
+      "text": "El mismo apunte: Investigación Operativa en la guerra; en los 70, sistemas de programación por computadora, «por ejemplo el MRP de Joseph Orlicky»; en los 80, justo a tiempo (Ohno) y calidad total (Deming, Juran)."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Según el apunte de Evolución, estudiar la interacción de diseño, planta, gente, materiales y clientes condujo a…",
+      "options": [
+        "Abandonar la planificación",
+        "Estudiar los medios de producción como sistemas",
+        "Usar solo el incentivo salarial de Taylor"
+      ],
+      "correct": 1,
+      "feedback": "Morán lo escribe así: esas consideraciones «condujeron naturalmente al estudio de los medios de producción como sistemas»."
+    },
+    {
+      "type": "concepto",
+      "k": "Lo que falta",
+      "title": "Esta clase no inventa el diagrama ni los indicadores.",
+      "text": "El diagrama funcional y la lista de indicadores de productividad están en el programa, y el Maestro los remite a Monks y a Chase. Acá no están reproducidos. Tampoco se marca la clase como Vista: no se dictó en la serie 0 → 1."
+    },
+    {
+      "type": "cierre",
+      "title": "Llevate el marco.",
+      "text": "Empresa como sistema, conversión (insumos → transformación → productos), subsistemas y flujo de información, ERP como integrador. Si te preguntan cómo se genera un dato, nombrá los subsistemas. Sigue el mapa de toda la materia: Clase 0."
+    }
+  ]
+}

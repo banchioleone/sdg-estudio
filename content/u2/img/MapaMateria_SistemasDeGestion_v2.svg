@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 940" width="980" height="940" font-family="Segoe UI, Calibri, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#1F4E79"/>
+    </marker>
+    <marker id="arG" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L9,3.5 L0,7 Z" fill="#8A8A8A"/>
+    </marker>
+  </defs>
+
+  <rect width="980" height="940" fill="#FFFFFF"/>
+
+  <!-- TITULO -->
+  <text x="40" y="36" font-size="24" font-weight="700" fill="#1F4E79">SISTEMAS DE GESTIÓN — mapa v2 según programa oficial</text>
+  <text x="40" y="56" font-size="12.5" fill="#666">Hilo conductor: la materia es la anatomía de un ERP — de la empresa como sistema (U1) al software que la gestiona (U7)</text>
+
+  <!-- ============ U1: MARCO SUPERIOR ============ -->
+  <rect x="40" y="76" width="900" height="96" rx="10" fill="#EDF3F9" stroke="#1F4E79" stroke-width="1.5"/>
+  <text x="58" y="102" font-size="15" font-weight="700" fill="#1F4E79">UNIDAD 1 · LA EMPRESA COMO PRODUCTORA DE BIENES</text>
+  <text x="700" y="102" font-size="11" font-weight="700" fill="#2E74B5">[T] el marco de todo</text>
+  <text x="58" y="124" font-size="11.5" fill="#444">La empresa como sistema · diagrama funcional · proceso de conversión (insumos → transformación → productos)</text>
+  <text x="58" y="142" font-size="11.5" fill="#444">Subsistemas y sus interacciones · flujo de información · el modelo ERP como integrador · productividad e indicadores · mejora continua</text>
+  <text x="58" y="162" font-size="10.5" fill="#888" font-style="italic">Pregunta típica: “¿cómo se genera esta información? indique los subsistemas participantes”</text>
+
+  <line x1="490" y1="172" x2="490" y2="196" stroke="#1F4E79" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <!-- ============ FILA CENTRAL: U2 U3 U4 U5 (los insumos de la planificación) ============ -->
+  <text x="40" y="216" font-size="13" font-weight="700" fill="#555">LOS 4 INSUMOS DE LA PLANIFICACIÓN — qué necesito saber antes de planificar:</text>
+
+  <!-- U2 -->
+  <rect x="40" y="228" width="212" height="204" rx="8" fill="#F4F8FC" stroke="#B7D0E5" stroke-width="1.5"/>
+  <text x="54" y="252" font-size="13.5" font-weight="700" fill="#1F4E79">U2 · PRONÓSTICOS</text>
+  <text x="54" y="269" font-size="10.5" font-weight="700" fill="#C00000">[P] ½ de la práctica</text>
+  <text x="54" y="290" font-size="11" fill="#444">¿Cuánto van a comprar?</text>
+  <text x="54" y="311" font-size="10.8" fill="#333">· Base estadística (normal, t)</text>
+  <text x="54" y="328" font-size="10.8" fill="#333">· Patrones: tendencia, ciclo,</text>
+  <text x="62" y="343" font-size="10.8" fill="#333">estacionalidad · autocorrelación</text>
+  <text x="54" y="360" font-size="10.8" fill="#333">· Errores MAD/MSE/MAPE</text>
+  <text x="54" y="377" font-size="10.8" fill="#333">· Suavización: simple, Holt, Winter</text>
+  <text x="54" y="394" font-size="10.8" fill="#333">· Descomposición multiplicativa</text>
+  <text x="54" y="411" font-size="10.8" fill="#333">· Regresión simple y múltiple</text>
+  <text x="54" y="426" font-size="10" fill="#888" font-style="italic">Clave: elegir método y justificar</text>
+
+  <!-- U3 -->
+  <rect x="270" y="228" width="212" height="204" rx="8" fill="#FBF6EE" stroke="#E3D2B5" stroke-width="1.5"/>
+  <text x="284" y="252" font-size="13.5" font-weight="700" fill="#8A5A16">U3 · EL PRODUCTO</text>
+  <text x="284" y="269" font-size="10.5" font-weight="700" fill="#8A5A16">[T + cálculo puntual]</text>
+  <text x="284" y="290" font-size="11" fill="#444">¿Qué fabricamos y cómo</text>
+  <text x="284" y="305" font-size="11" fill="#444">se representa en el sistema?</text>
+  <text x="284" y="328" font-size="10.8" fill="#333">· Tangibles vs. intangibles</text>
+  <text x="284" y="345" font-size="10.8" fill="#333">· Ciclo de vida y sus etapas ★</text>
+  <text x="284" y="362" font-size="10.8" fill="#333">· Codificación: significativos o no,</text>
+  <text x="292" y="377" font-size="10.8" fill="#333">códigos de barras</text>
+  <text x="284" y="394" font-size="10.8" fill="#333">· Dígito verificador IBM-11 ★ [P]</text>
+  <text x="284" y="411" font-size="10.8" fill="#333">· BOM: explosión por niveles,</text>
+  <text x="292" y="426" font-size="10.8" fill="#333">implosión indentada ★</text>
+
+  <!-- U4 -->
+  <rect x="500" y="228" width="212" height="204" rx="8" fill="#F1F7F2" stroke="#BFDCC4" stroke-width="1.5"/>
+  <text x="514" y="252" font-size="13.5" font-weight="700" fill="#1E6B33">U4 · EL PROCESO</text>
+  <text x="514" y="269" font-size="10.5" font-weight="700" fill="#1E6B33">[T + P]</text>
+  <text x="514" y="290" font-size="11" fill="#444">¿Cómo se produce</text>
+  <text x="514" y="305" font-size="11" fill="#444">físicamente?</text>
+  <text x="514" y="328" font-size="10.8" fill="#333">· Tipos de procesos industriales</text>
+  <text x="514" y="345" font-size="10.8" fill="#333">· Máquinas y centros de trabajo</text>
+  <text x="514" y="362" font-size="10.8" fill="#333">· Estudio del trabajo:</text>
+  <text x="522" y="377" font-size="10.8" fill="#333">gráfica hombre–máquina ★ [P]</text>
+  <text x="514" y="394" font-size="10.8" fill="#333">· JIT ★ · Kanban · TQM · SMED</text>
+  <text x="514" y="411" font-size="10.8" fill="#333">· Teoría de las Restricciones</text>
+  <text x="522" y="426" font-size="10.8" fill="#333">(Goldratt, cuellos de botella)</text>
+
+  <!-- U5 -->
+  <rect x="730" y="228" width="210" height="204" rx="8" fill="#FDF2F2" stroke="#E5C2C2" stroke-width="1.5"/>
+  <text x="744" y="252" font-size="13.5" font-weight="700" fill="#9C3838">U5 · LOGÍSTICA</text>
+  <text x="744" y="269" font-size="10.5" font-weight="700" fill="#C00000">[P + T]</text>
+  <text x="744" y="290" font-size="11" fill="#444">¿Cuánto material tener</text>
+  <text x="744" y="305" font-size="11" fill="#444">y cómo abastecerse?</text>
+  <text x="744" y="328" font-size="10.8" fill="#333">· EOQ/LEC · punto de reorden</text>
+  <text x="744" y="345" font-size="10.8" fill="#333">· EOQ con descuentos ★</text>
+  <text x="744" y="362" font-size="10.8" fill="#333">· Periódico vs. perpetuo ★</text>
+  <text x="744" y="379" font-size="10.8" fill="#333">· Stock de seguridad (normal)</text>
+  <text x="744" y="396" font-size="10.8" fill="#333">· Clasificación ABC ★</text>
+  <text x="744" y="413" font-size="10.8" fill="#333">· Compras, proveedores JIT ★</text>
+  <text x="744" y="428" font-size="10.8" fill="#333">· Almacenes y trazabilidad</text>
+
+  <!-- flechas de los 4 a U6 -->
+  <line x1="146" y1="432" x2="330" y2="500" stroke="#8A8A8A" stroke-width="1.8" marker-end="url(#arG)"/>
+  <line x1="376" y1="432" x2="420" y2="496" stroke="#8A8A8A" stroke-width="1.8" marker-end="url(#arG)"/>
+  <line x1="606" y1="432" x2="560" y2="496" stroke="#8A8A8A" stroke-width="1.8" marker-end="url(#arG)"/>
+  <line x1="835" y1="432" x2="650" y2="500" stroke="#8A8A8A" stroke-width="1.8" marker-end="url(#arG)"/>
+
+  <!-- ============ U6: EL MOTOR ============ -->
+  <rect x="120" y="504" width="740" height="196" rx="10" fill="#EAF6FB" stroke="#1F4E79" stroke-width="2.5"/>
+  <text x="140" y="530" font-size="15" font-weight="700" fill="#1F4E79">UNIDAD 6 · PLANIFICACIÓN Y CONTROL DE LA PRODUCCIÓN</text>
+  <text x="700" y="530" font-size="11" font-weight="700" fill="#C00000">[P] la otra ½ de la práctica</text>
+  <text x="140" y="548" font-size="11" fill="#666" font-style="italic">El motor donde se juntan los 4 insumos — la cadena operativa:</text>
+
+  <g font-size="11" font-weight="700">
+    <rect x="140" y="560" width="126" height="30" rx="15" fill="#1F4E79"/>
+    <text x="203" y="580" fill="#fff" text-anchor="middle">PLAN AGREGADO ★</text>
+    <line x1="270" y1="575" x2="288" y2="575" stroke="#1F4E79" stroke-width="2" marker-end="url(#ar)"/>
+    <rect x="292" y="560" width="86" height="30" rx="15" fill="#1F4E79"/>
+    <text x="335" y="580" fill="#fff" text-anchor="middle">MPS ★</text>
+    <line x1="382" y1="575" x2="400" y2="575" stroke="#1F4E79" stroke-width="2" marker-end="url(#ar)"/>
+    <rect x="404" y="560" width="120" height="30" rx="15" fill="#1F4E79"/>
+    <text x="464" y="580" fill="#fff" text-anchor="middle">CAPACIDAD ★</text>
+    <line x1="528" y1="575" x2="546" y2="575" stroke="#1F4E79" stroke-width="2" marker-end="url(#ar)"/>
+    <rect x="550" y="560" width="86" height="30" rx="15" fill="#1F4E79"/>
+    <text x="593" y="580" fill="#fff" text-anchor="middle">MRP ★</text>
+    <line x1="640" y1="575" x2="658" y2="575" stroke="#1F4E79" stroke-width="2" marker-end="url(#ar)"/>
+    <rect x="662" y="560" width="178" height="30" rx="15" fill="#1F4E79"/>
+    <text x="751" y="580" fill="#fff" text-anchor="middle">CONTROL DE PISO</text>
+  </g>
+
+  <text x="140" y="618" font-size="10.8" fill="#333">· Plan agregado: persecución / nivelación, costos ★   · MPS: pronóstico vs. ventas confirmadas ★ (examen 2018)</text>
+  <text x="140" y="636" font-size="10.8" fill="#333">· Capacidad: listas de capacidad y perfiles de recursos ★, factor de actividad, scrap, curvas de aprendizaje</text>
+  <text x="140" y="654" font-size="10.8" fill="#333">· MRP: brutos→netos, lead times, scrap ★, loteo LEC/TBO-POQ ★/PPB   [tema huérfano: refuerzo extra]   · MRP II (CRP)</text>
+  <text x="140" y="672" font-size="10.8" fill="#333">· Balanceo de línea ★: precedencias, tiempo de ciclo, eficiencia   · Emisión y lanzamiento de órdenes, hoja de ruta ★</text>
+  <text x="140" y="691" font-size="10" fill="#888" font-style="italic">La U6 consume: la demanda de U2, el BOM de U3, la capacidad y métodos de U4, y los modelos de stock de U5.</text>
+
+  <line x1="490" y1="700" x2="490" y2="724" stroke="#1F4E79" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <!-- ============ U7 ============ -->
+  <rect x="120" y="728" width="740" height="80" rx="10" fill="#F6F2FA" stroke="#5B3E8E" stroke-width="1.5"/>
+  <text x="140" y="754" font-size="15" font-weight="700" fill="#5B3E8E">UNIDAD 7 · SOFTWARES ERP</text>
+  <text x="700" y="754" font-size="11" font-weight="700" fill="#7B5AA6">[T] el zoom out final</text>
+  <text x="140" y="776" font-size="11.5" fill="#444">Historia: MRP → MRP II → ERP · caracterización de los sistemas comerciales (SAP como caso típico)</text>
+  <text x="140" y="795" font-size="10.5" fill="#888" font-style="italic">Todo lo anterior, empaquetado en software: por eso esta materia es “la anatomía de un ERP”.</text>
+
+  <!-- ============ COMPLEMENTOS ============ -->
+  <rect x="120" y="822" width="740" height="56" rx="8" fill="#FAFAFA" stroke="#BBB" stroke-dasharray="5 4"/>
+  <text x="140" y="844" font-size="12" font-weight="700" fill="#555">COMPLEMENTOS (fuera del programa 2008, pero preguntados en el examen 2018):</text>
+  <text x="140" y="864" font-size="11" fill="#444">· BI / Data Warehouse: relación ERP–BI ★, modelo dimensional, Kimball    · Métodos de decisión racional ★ (nivel conceptual)</text>
+
+  <!-- LEYENDA -->
+  <text x="40" y="906" font-size="11.5" fill="#333"><tspan font-weight="700" fill="#C00000">[P]</tspan> se calcula → práctica (eliminatoria, primero)    <tspan font-weight="700">[T]</tspan> se explica → teoría + coloquio globalizador    <tspan font-weight="700">★</tspan> cayó en finales relevados</text>
+  <text x="40" y="926" font-size="11.5" fill="#333">Evaluación oficial: claridad conceptual · relaciones entre contenidos · vocabulario específico · interpretación · fundamentación</text>
+</svg>

@@ -1,0 +1,543 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c1",
+  "title": "Clase 1 · Base estadística",
+  "name": "Base estadística",
+  "lede": "el promedio dice el CENTRO de los datos; el desvío estándar dice la DISPERSIÓN. Sin el desvío, el promedio engaña. El desvío es el protagonista silencioso de la materia: reaparece en el error de pronósticos (U2), en el stock de seguridad (U5) y en la confiabilidad de la regresión (U2).",
+  "visto": true,
+  "source": [
+    "clases_previas/SG/Clase01_y_01b_BaseEstadistica.md",
+    "clases_previas/SG/Clase01_BaseEstadistica.svg"
+  ],
+  "laminas": [
+    "u2/img/Clase01_BaseEstadistica.svg"
+  ],
+  "next": "Clase 1.b · La tabla Z y los 5 casos",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2.a · Serie de clases: 0 → 0.1 → 1 → 1.b**"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Idea central de toda la clase:** el promedio dice el CENTRO de los datos; el desvío estándar dice la DISPERSIÓN. Sin el desvío, el promedio engaña. El desvío es el protagonista silencioso de la materia: reaparece en el error de pronósticos (U2), en el stock de seguridad (U5) y en la confiabilidad de la regresión (U2)."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. El promedio engaña si viene solo"
+    },
+    {
+      "type": "paragraph",
+      "text": "Dos fábricas, ventas de 4 meses:"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "",
+        "Mes 1",
+        "Mes 2",
+        "Mes 3",
+        "Mes 4",
+        "Promedio"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---",
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "**Fábrica A**",
+          "490",
+          "510",
+          "495",
+          "505",
+          "**500**"
+        ],
+        [
+          "**Fábrica B**",
+          "200",
+          "800",
+          "350",
+          "650",
+          "**500**"
+        ]
+      ]
+    },
+    {
+      "type": "svg",
+      "svg": "<svg viewBox=\"0 0 280 132\" width=\"100%\" height=\"132\" aria-hidden=\"true\"><line x1=\"28\" y1=\"108\" x2=\"272\" y2=\"108\" stroke=\"#d0d5db\" stroke-width=\"1.2\"/><line x1=\"28\" y1=\"57.41176470588235\" x2=\"250\" y2=\"57.41176470588235\" stroke=\"#a67c00\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"254\" y=\"60.41176470588235\" font-size=\"9\" fill=\"#a67c00\">500</text><polyline fill=\"none\" stroke=\"#1f4e79\" stroke-width=\"2\" points=\"48,58.42352941176471 100,56.4 152,57.917647058823526 204,56.90588235294118\"/><circle cx=\"48\" cy=\"58.42352941176471\" r=\"3.2\" fill=\"#1f4e79\"/><circle cx=\"100\" cy=\"56.4\" r=\"3.2\" fill=\"#1f4e79\"/><circle cx=\"152\" cy=\"57.917647058823526\" r=\"3.2\" fill=\"#1f4e79\"/><circle cx=\"204\" cy=\"56.90588235294118\" r=\"3.2\" fill=\"#1f4e79\"/><polyline fill=\"none\" stroke=\"#c45c26\" stroke-width=\"2\" points=\"48,87.76470588235294 100,27.058823529411768 152,72.58823529411765 204,42.23529411764706\"/><circle cx=\"48\" cy=\"87.76470588235294\" r=\"3.2\" fill=\"#c45c26\"/><circle cx=\"100\" cy=\"27.058823529411768\" r=\"3.2\" fill=\"#c45c26\"/><circle cx=\"152\" cy=\"72.58823529411765\" r=\"3.2\" fill=\"#c45c26\"/><circle cx=\"204\" cy=\"42.23529411764706\" r=\"3.2\" fill=\"#c45c26\"/><text x=\"48\" y=\"124\" font-size=\"9\" fill=\"#5c6670\" text-anchor=\"middle\">Mes 1</text><text x=\"100\" y=\"124\" font-size=\"9\" fill=\"#5c6670\" text-anchor=\"middle\">Mes 2</text><text x=\"152\" y=\"124\" font-size=\"9\" fill=\"#5c6670\" text-anchor=\"middle\">Mes 3</text><text x=\"204\" y=\"124\" font-size=\"9\" fill=\"#5c6670\" text-anchor=\"middle\">Mes 4</text><text x=\"40\" y=\"14\" font-size=\"10\" fill=\"#1f4e79\" font-weight=\"700\">A (s≈9)</text><text x=\"110\" y=\"14\" font-size=\"10\" fill=\"#c45c26\" font-weight=\"700\">B (s≈274)</text></svg>",
+      "caption": "Mismo promedio (500). La A casi no se mueve; la B pega saltos de 200 a 800."
+    },
+    {
+      "type": "paragraph",
+      "text": "Mismo promedio, realidades opuestas. A la A se la planifica tranquilo; la B necesita depósitos grandes, stock de seguridad enorme y pronósticos con margen. Lo que las diferencia es **cuánto se dispersan los datos alrededor del promedio** → el desvío estándar."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Fórmulas base (con su lectura)"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Media muestral"
+    },
+    {
+      "type": "formula",
+      "tex": "\\bar{X} = \\frac{\\sum X}{n}"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/Clase01_BaseEstadistica.svg",
+      "caption": "Lámina de la Clase 1 · Base estadística"
+    },
+    {
+      "type": "paragraph",
+      "text": "*\"Sumo todo, divido por cuántos.\"* El centro de gravedad de los datos."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Desvío estándar muestral"
+    },
+    {
+      "type": "formula",
+      "tex": "s = \\sqrt{\\frac{\\sum (X - \\bar{X})^2}{n-1}}"
+    },
+    {
+      "type": "paragraph",
+      "text": "*\"El error típico respecto del promedio.\"* Por qué cada pieza:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**(X − X̄)**: el desvío de cada dato contra el promedio.",
+        "**(...)²**: se eleva al cuadrado porque los desvíos crudos siempre suman cero (los negativos cancelan a los positivos).",
+        "**÷ (n−1)**: corrección por trabajar con una muestra (ver §3).",
+        "**√**: deshace el cuadrado y devuelve las unidades originales."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Varianza"
+    },
+    {
+      "type": "formula",
+      "tex": "s^2"
+    },
+    {
+      "type": "paragraph",
+      "text": "El desvío sin la raíz final. Aparece en pasos intermedios; para **interpretar**, siempre usar s (está en unidades reales)."
+    },
+    {
+      "type": "ejemplo",
+      "title": "Ejemplo resuelto (Fábrica B: 200, 800, 350, 650 → X̄ = 500)",
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": true,
+          "items": [
+            "Desvíos: −300, +300, −150, +150 *(suman 0 → por eso se elevan al cuadrado)*",
+            "Cuadrados: 90.000 + 90.000 + 22.500 + 22.500 = **225.000**",
+            "Varianza: 225.000 / (4−1) = **75.000**",
+            "Desvío: √75.000 ≈ **274 unidades** → \"vende 500 ± 274 típicamente\""
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Comparar: Fábrica A → mismo X̄=500, pero s ≈ 9. Otra empresa."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. ¿Por qué n−1? (grados de libertad)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Trabajamos con una **muestra** (4 meses) para estimar la **población** (todos los meses posibles). Dividir por n subestimaría la dispersión con pocos datos; **n−1 corrige ese sesgo**. Los n−1 se llaman **grados de libertad (gl)** y son también la fila con la que se entra a la tabla t."
+    },
+    {
+      "type": "paragraph",
+      "text": "*Versión para el final:* \"se divide por n−1 porque al estimar la dispersión poblacional desde una muestra, usar n produce un estimador sesgado (subestima); n−1 lo corrige.\""
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. La distribución normal (la campana)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Si graficás miles de observaciones de un proceso estable, se apilan en forma de **campana**: la mayoría cerca del promedio, cada vez menos hacia los extremos. Propiedad clave: **con solo μ y σ queda definida TODA la campana.**"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Regla 68–95–99,7"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Intervalo",
+        "% de los casos"
+      ],
+      "rows": [
+        [
+          "---",
+          "---"
+        ],
+        [
+          "μ ± 1σ",
+          "68%"
+        ],
+        [
+          "μ ± 2σ",
+          "95%"
+        ],
+        [
+          "μ ± 3σ",
+          "99,7%"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Ejemplo: μ=500, σ=9 → el 95% de los meses vende entre 482 y 518. Con σ=274 → entre −48 y 1048 (ni garantiza vender algo). **El desvío ES la información.**"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Estandarización Z: una tabla para todas las campanas"
+    },
+    {
+      "type": "formula",
+      "tex": "Z = \\frac{X - \\mu}{\\sigma}"
+    },
+    {
+      "type": "paragraph",
+      "text": "*\"¿A cuántos desvíos del promedio está X?\"* El numerador mide la distancia; dividir por σ la expresa en \"desvíos\" en lugar de unidades. Permite usar UNA sola tabla para infinitas campanas."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Despeje inverso (des-estandarización):**"
+    },
+    {
+      "type": "formula",
+      "tex": "X = \\mu + Z\\cdot\\sigma"
+    },
+    {
+      "type": "paragraph",
+      "text": "Es la fórmula del stock de seguridad y de los intervalos. Para cola izquierda: X = μ − Z·σ."
+    },
+    {
+      "type": "glosario",
+      "title": "10. Glosario de símbolos",
+      "intro": "**Convención madre: letras GRIEGAS = población (lo verdadero, desconocido) · letras LATINAS = muestra (lo que calculaste vos).**",
+      "entries": [
+        {
+          "simbolo": "---",
+          "nombre": "---",
+          "significado": "---"
+        },
+        {
+          "simbolo": "X",
+          "nombre": "equis",
+          "significado": "La variable estudiada (ventas, demanda); cada dato es un valor de X"
+        },
+        {
+          "simbolo": "X̄",
+          "nombre": "equis barra",
+          "significado": "**Media muestral** (promedio de TUS datos); la barra = \"promedio de\""
+        },
+        {
+          "simbolo": "μ",
+          "nombre": "mu",
+          "significado": "**Media poblacional**: el promedio verdadero, que se estima con X̄"
+        },
+        {
+          "simbolo": "s",
+          "nombre": "ese",
+          "significado": "**Desvío estándar muestral** (dividiendo por n−1)"
+        },
+        {
+          "simbolo": "σ",
+          "nombre": "sigma (minúsc.)",
+          "significado": "**Desvío estándar poblacional**: el verdadero; s es su estimación"
+        },
+        {
+          "simbolo": "s², σ²",
+          "nombre": "...cuadrado",
+          "significado": "**Varianza** muestral / poblacional (desvío al cuadrado)"
+        },
+        {
+          "simbolo": "Σ",
+          "nombre": "sigma MAYÚSC.",
+          "significado": "**Sumatoria**: \"sumá todo lo que sigue\". ¡No confundir con σ!"
+        },
+        {
+          "simbolo": "√",
+          "nombre": "raíz cuadrada",
+          "significado": "Deshace el cuadrado; devuelve unidades originales"
+        },
+        {
+          "simbolo": "n",
+          "nombre": "ene",
+          "significado": "**Tamaño de la muestra** (cuántos datos)"
+        },
+        {
+          "simbolo": "n−1 / gl / df",
+          "nombre": "grados de libertad",
+          "significado": "Corrección muestral; fila de entrada a la tabla t"
+        },
+        {
+          "simbolo": "P( )",
+          "nombre": "probabilidad de",
+          "significado": "P(X<620) = \"prob. de que X sea menor que 620\"; entre 0 y 1"
+        },
+        {
+          "simbolo": "Z",
+          "nombre": "zeta",
+          "significado": "**Valor estandarizado**: a cuántos desvíos del promedio está un valor"
+        },
+        {
+          "simbolo": "t",
+          "nombre": "te (de Student)",
+          "significado": "Primo de Z para muestras chicas (colas más gordas). \"Student\" = seudónimo de W. Gosset, cervecería Guinness"
+        },
+        {
+          "simbolo": "E(X)",
+          "nombre": "esperanza de X",
+          "significado": "Valor esperado (promedio a largo plazo de una v. aleatoria)"
+        },
+        {
+          "simbolo": "Ŷ",
+          "nombre": "i griega sombrero",
+          "significado": "**^ = estimado/pronosticado**. Y = real; Ŷ = lo que el modelo predijo"
+        },
+        {
+          "simbolo": "e",
+          "nombre": "error / residual",
+          "significado": "e = Y − Ŷ (real menos pronosticado); materia prima de MAD/MSE/MAPE"
+        },
+        {
+          "simbolo": "r",
+          "nombre": "erre",
+          "significado": "**Coeficiente de correlación** (−1 a +1); Clase 2"
+        },
+        {
+          "simbolo": "r², R²",
+          "nombre": "erre cuadrado",
+          "significado": "**Coef. de determinación**: % de variación de Y que explica el modelo"
+        },
+        {
+          "simbolo": "α, β, γ",
+          "nombre": "alfa, beta, gamma",
+          "significado": "En suavizado: **constantes de atenuación** (nivel/tendencia/estacionalidad, entre 0 y 1). ⚠ α tiene otro significado en tests (nivel de significancia)"
+        },
+        {
+          "simbolo": "b₀, b₁",
+          "nombre": "be sub cero/uno",
+          "significado": "Coeficientes de la recta de regresión: ordenada al origen y pendiente"
+        },
+        {
+          "simbolo": "Yₜ",
+          "nombre": "i griega sub te",
+          "significado": "Valor de la serie en el período t; Yₜ₋₁ = período anterior"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "*Consejo de examen: usar la notación correcta (X̄ y no \"prom\"; σ si es dato, s si lo calculaste) suma en el criterio \"vocabulario específico\".*"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "12. Mini-resúmenes oficiales de las clases"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Clase 1.** El promedio dice el centro; el desvío estándar (s = √[Σ(X−X̄)²/(n−1)]) dice la dispersión típica — es el número clave de la materia. Varianza = desvío². Normal: 68/95/99,7% dentro de ±1/2/3σ. Estandarización Z=(X−μ)/σ permite usar una sola tabla; Z=1,64 cubre el 95% (clave en stock de seguridad). t de Student: como la normal pero para muestras chicas, se lee con grados de libertad (n−1). Verificar siempre qué área devuelve la tabla que uso."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "13. Dónde reaparece todo esto"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Concepto",
+        "Reaparece en"
+      ],
+      "rows": [
+        [
+          "---",
+          "---"
+        ],
+        [
+          "Desvío estándar",
+          "Error de pronóstico (MAD/MSE), stock de seguridad, regresión"
+        ],
+        [
+          "Z y caso 5 inverso",
+          "**Stock de seguridad: SS = Z·σ** (U5)"
+        ],
+        [
+          "t de Student",
+          "Intervalos de predicción en regresión (U2, Clases 8–10)"
+        ],
+        [
+          "Interpretación X̄ vs. s",
+          "\"Mismo promedio ≠ misma empresa\" — tipo de justificación que puntúa la cátedra"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Láminas SVG asociadas:** `Clase01_BaseEstadistica.svg` · `Clase01b_TablaZ_5Casos.svg`\n**Material de mesa:** tabla normal y t (`tablas_practica_1.xlsx` del Drive) — practicar su lectura desde ya."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Clase 2: Correlación** (diagramas de dispersión, coeficiente r, correlación ≠ causalidad): el puente entre esta base y los pronósticos."
+    }
+  ],
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "El promedio, solo, engaña.",
+      "text": "El promedio dice el CENTRO de los datos. El desvío estándar dice la DISPERSIÓN. Sin el desvío, el promedio te miente. Es el protagonista silencioso de la materia."
+    },
+    {
+      "type": "concepto",
+      "k": "Mirá los números",
+      "title": "Mismo promedio, otra empresa.",
+      "text": "Dos fábricas, cuatro meses, las dos promedian 500. La A casi no se mueve (490, 510, 495, 505). La B salta de 200 a 800 (200, 800, 350, 650).",
+      "svg": "<svg viewBox=\"0 0 280 150\" width=\"100%\" height=\"150\" aria-hidden=\"true\">\n  <line x1=\"36\" y1=\"16\" x2=\"36\" y2=\"118\" stroke=\"rgba(255,255,255,.25)\" stroke-width=\"1\"/>\n  <line x1=\"36\" y1=\"118\" x2=\"268\" y2=\"118\" stroke=\"rgba(255,255,255,.25)\" stroke-width=\"1\"/>\n  <line x1=\"36\" y1=\"62.4\" x2=\"260\" y2=\"62.4\" stroke=\"rgba(232,197,106,.7)\" stroke-width=\"1\" stroke-dasharray=\"4 3\"/>\n  <text x=\"32\" y=\"59\" font-size=\"9\" fill=\"#e8c56a\" text-anchor=\"end\">500</text>\n  <polyline fill=\"none\" stroke=\"#e25b16\" stroke-width=\"2.4\" points=\"56,95.8 114,29.1 172,79.1 230,45.8\"/>\n  <circle cx=\"56\" cy=\"95.8\" r=\"3\" fill=\"#e25b16\"/><circle cx=\"114\" cy=\"29.1\" r=\"3\" fill=\"#e25b16\"/>\n  <circle cx=\"172\" cy=\"79.1\" r=\"3\" fill=\"#e25b16\"/><circle cx=\"230\" cy=\"45.8\" r=\"3\" fill=\"#e25b16\"/>\n  <polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"2.6\" points=\"56,63.6 114,61.3 172,63.0 230,61.9\"/>\n  <circle cx=\"56\" cy=\"63.6\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"114\" cy=\"61.3\" r=\"3\" fill=\"#8cb4d6\"/>\n  <circle cx=\"172\" cy=\"63.0\" r=\"3\" fill=\"#8cb4d6\"/><circle cx=\"230\" cy=\"61.9\" r=\"3\" fill=\"#8cb4d6\"/>\n  <text x=\"56\" y=\"132\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">Mes 1</text>\n  <text x=\"114\" y=\"132\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">Mes 2</text>\n  <text x=\"172\" y=\"132\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">Mes 3</text>\n  <text x=\"230\" y=\"132\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">Mes 4</text>\n  <text x=\"48\" y=\"14\" font-size=\"10\" fill=\"#8cb4d6\" font-weight=\"700\">A (estable)</text>\n  <text x=\"130\" y=\"14\" font-size=\"10\" fill=\"#e25b16\" font-weight=\"700\">B (dispersa)</text>\n</svg>",
+      "chartLabel": "Ventas de 4 meses · promedio 500 en las dos",
+      "ejemplo": "A la A se la planifica tranquilo. La B necesita depósitos grandes, stock de seguridad enorme y pronósticos con margen."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Las dos fábricas promedian 500. ¿Qué las diferencia?",
+      "options": [
+        "El tipo de producto que fabrican",
+        "Cuánto se dispersan los datos alrededor del promedio",
+        "La cantidad de meses que se midieron"
+      ],
+      "correct": 1,
+      "feedback": "Lo que las diferencia es la dispersión alrededor del promedio: el desvío estándar. Mismo promedio, realidades opuestas."
+    },
+    {
+      "type": "concepto",
+      "k": "Las fórmulas",
+      "title": "Centro, dispersión y varianza.",
+      "text": "Media muestral: «sumo todo, divido por cuántos». Es el centro de gravedad de los datos.",
+      "formula": "X̄ = ΣX / n\ns = √[ Σ(X − X̄)² / (n−1) ]\nVarianza = s²",
+      "ejemplo": "s es «el error típico respecto del promedio». Se eleva al cuadrado porque los desvíos crudos siempre suman cero. Se divide por n−1 porque es una muestra. La raíz devuelve las unidades originales. La varianza aparece en el medio; para interpretar, usá s."
+    },
+    {
+      "type": "concepto",
+      "k": "Paso a paso",
+      "title": "La Fábrica B vende 500 ± 274.",
+      "text": "Datos: 200, 800, 350, 650 → X̄ = 500. Desvíos: −300, +300, −150, +150 (suman 0: por eso se elevan al cuadrado). Cuadrados = 225.000. Varianza: 225.000 / (4−1) = 75.000. Desvío: √75.000 ≈ 274.",
+      "svg": "<svg viewBox=\"0 0 280 86\" width=\"100%\" height=\"86\" aria-hidden=\"true\">\n  <text x=\"8\" y=\"16\" font-size=\"11\" fill=\"#8cb4d6\" font-weight=\"700\">A · 500 ± 9</text>\n  <line x1=\"20\" y1=\"32\" x2=\"260\" y2=\"32\" stroke=\"rgba(255,255,255,.15)\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n  <line x1=\"133\" y1=\"32\" x2=\"147\" y2=\"32\" stroke=\"#8cb4d6\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n  <circle cx=\"140\" cy=\"32\" r=\"4\" fill=\"#e8c56a\"/>\n  <text x=\"8\" y=\"58\" font-size=\"11\" fill=\"#e25b16\" font-weight=\"700\">B · 500 ± 274</text>\n  <line x1=\"20\" y1=\"74\" x2=\"260\" y2=\"74\" stroke=\"rgba(255,255,255,.15)\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n  <line x1=\"54\" y1=\"74\" x2=\"226\" y2=\"74\" stroke=\"#e25b16\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n  <circle cx=\"140\" cy=\"74\" r=\"4\" fill=\"#e8c56a\"/>\n</svg>",
+      "chartLabel": "Mismo centro, otra dispersión",
+      "ejemplo": "La A, con el mismo promedio, tiene s ≈ 9. Otra empresa."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Las dos promedian 500. A tiene s ≈ 9 y B tiene s ≈ 274. ¿Cuál necesita más stock de seguridad?",
+      "options": [
+        "La A, porque vende más estable",
+        "La B, porque sus ventas se dispersan mucho",
+        "Da igual: mismo promedio, mismo plan"
+      ],
+      "correct": 1,
+      "feedback": "A la A se la planifica tranquilo. La B, con s ≈ 274, necesita depósitos grandes, stock de seguridad enorme y pronósticos con margen. El desvío es la información."
+    },
+    {
+      "type": "concepto",
+      "k": "Un detalle que importa",
+      "title": "¿Por qué se divide por n − 1?",
+      "text": "Usás una muestra (4 meses) para estimar la población (todos los meses posibles). Dividir por n subestimaría la dispersión; n−1 corrige ese sesgo.",
+      "ejemplo": "Esos n−1 se llaman grados de libertad (gl): también son la fila con la que entrás a la tabla t. Versión para el final: usar n produce un estimador sesgado (subestima); n−1 lo corrige."
+    },
+    {
+      "type": "concepto",
+      "k": "La campana",
+      "title": "Con μ y σ queda definida toda la campana.",
+      "text": "Si graficás muchas observaciones de un proceso estable, se apilan en forma de campana: la mayoría cerca del promedio, cada vez menos hacia los extremos.",
+      "svg": "<svg viewBox=\"0 0 280 130\" width=\"100%\" height=\"130\" aria-hidden=\"true\">\n  <path d=\"M 16 108 C 40 108, 58 22, 140 22 C 222 22, 240 108, 264 108\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"2.4\"/>\n  <line x1=\"20\" y1=\"108\" x2=\"260\" y2=\"108\" stroke=\"rgba(255,255,255,.3)\" stroke-width=\"1.2\"/>\n  <line x1=\"140\" y1=\"22\" x2=\"140\" y2=\"108\" stroke=\"rgba(232,197,106,.7)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/>\n  <line x1=\"100\" y1=\"108\" x2=\"100\" y2=\"100\" stroke=\"#9aa3ad\"/><line x1=\"180\" y1=\"108\" x2=\"180\" y2=\"100\" stroke=\"#9aa3ad\"/>\n  <line x1=\"60\" y1=\"108\" x2=\"60\" y2=\"100\" stroke=\"#9aa3ad\"/><line x1=\"220\" y1=\"108\" x2=\"220\" y2=\"100\" stroke=\"#9aa3ad\"/>\n  <line x1=\"28\" y1=\"108\" x2=\"28\" y2=\"100\" stroke=\"#9aa3ad\"/><line x1=\"252\" y1=\"108\" x2=\"252\" y2=\"100\" stroke=\"#9aa3ad\"/>\n  <text x=\"140\" y=\"122\" font-size=\"10\" fill=\"#e8c56a\" text-anchor=\"middle\">μ</text>\n  <text x=\"100\" y=\"122\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">−1σ</text>\n  <text x=\"180\" y=\"122\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">+1σ</text>\n  <text x=\"60\" y=\"122\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">−2σ</text>\n  <text x=\"220\" y=\"122\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">+2σ</text>\n  <text x=\"168\" y=\"40\" font-size=\"11\" fill=\"#f3f1ea\" font-weight=\"700\">68%  ·  ±1σ</text>\n  <text x=\"168\" y=\"56\" font-size=\"11\" fill=\"#f3f1ea\">95%  ·  ±2σ</text>\n  <text x=\"168\" y=\"72\" font-size=\"11\" fill=\"#f3f1ea\">99,7%  ·  ±3σ</text>\n</svg>",
+      "chartLabel": "Regla 68–95–99,7",
+      "ejemplo": "μ = 500 y σ = 9: el 95% de los meses vende entre 482 y 518. Con σ = 274, el intervalo va de −48 a 1.048 (ni garantiza vender algo). El desvío ES la información."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Si μ = 500 y σ = 9, el 95% de los meses vende entre…",
+      "options": [
+        "491 y 509 (eso es μ ± 1σ, el 68%)",
+        "482 y 518 (μ ± 2σ)",
+        "473 y 527 (eso es μ ± 3σ, el 99,7%)"
+      ],
+      "correct": 1,
+      "feedback": "Regla 68–95–99,7: el 95% está en μ ± 2σ. 500 ± 2×9 = 482 a 518."
+    },
+    {
+      "type": "concepto",
+      "k": "Una sola tabla",
+      "title": "Z te dice a cuántos desvíos estás.",
+      "text": "Z = (X − μ) / σ. El numerador es la distancia; al dividir por σ la expresás en desvíos. Así usás UNA tabla para todas las campanas. Al revés: X = μ + Z·σ (es la fórmula del stock de seguridad).",
+      "svg": "<svg viewBox=\"0 0 280 120\" width=\"100%\" height=\"120\" aria-hidden=\"true\">\n  <path d=\"M 20 100 C 70 100, 95 28, 140 28 C 185 28, 210 100, 260 100 L 20 100 Z\" fill=\"rgba(140,180,214,.35)\"/>\n  <path d=\"M 20 100 C 70 100, 95 28, 140 28 C 185 28, 210 100, 260 100\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"2.2\"/>\n  <line x1=\"16\" y1=\"100\" x2=\"264\" y2=\"100\" stroke=\"rgba(255,255,255,.3)\"/>\n  <line x1=\"140\" y1=\"28\" x2=\"140\" y2=\"100\" stroke=\"rgba(232,197,106,.75)\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/>\n  <line x1=\"200\" y1=\"100\" x2=\"200\" y2=\"58\" stroke=\"#e25b16\" stroke-width=\"2\"/>\n  <text x=\"140\" y=\"114\" font-size=\"10\" fill=\"#e8c56a\" text-anchor=\"middle\">μ = 500</text>\n  <text x=\"200\" y=\"114\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">620 · Z=1,5</text>\n  <text x=\"48\" y=\"86\" font-size=\"11\" fill=\"#f3f1ea\" font-weight=\"700\">0,5 + 0,4332</text>\n  <text x=\"48\" y=\"72\" font-size=\"12\" fill=\"#e8c56a\" font-weight=\"700\">93,3%</text>\n</svg>",
+      "chartLabel": "μ = 500, σ = 80 · P(X < 620)",
+      "ejemplo": "Z = (620−500)/80 = 1,5. Tabla centro→Z: 0,4332. «Menos de» = 0,5 + 0,4332 = 93,3%. Verificá siempre qué área devuelve tu tabla (centro→Z vs. acumulada). El número estrella: Z = 1,64 cubre el 95%."
+    },
+    {
+      "type": "concepto",
+      "k": "Pocos datos",
+      "title": "Con muestras chicas, entra t de Student.",
+      "text": "Cuando n es chico (menos de 30) y σ se estimó de la muestra, la campana de t es más achatada, con colas más gordas. Para la misma confianza exige un valor mayor que Z: con tan pocos datos, cubrite más.",
+      "ejemplo": "Se lee con dos entradas: confianza + grados de libertad (n−1). Regla para el final: n < 30 y desvío estimado de la muestra → t; n ≥ 30 o σ conocido → Z; en regresión, siempre t."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Tenés 5 meses de ventas y estimaste s de esa muestra. Para un intervalo del 95%, ¿qué usás?",
+      "options": [
+        "La normal (Z = 1,96), porque es más simple",
+        "t de Student, con 4 grados de libertad",
+        "Da igual: con 5 datos Z y t coinciden"
+      ],
+      "correct": 1,
+      "feedback": "n < 30 y desvío estimado de la muestra → t con n−1 gl. Acá n = 5, gl = 4. La t exige un multiplicador mayor (2,776 contra Z = 1,96) porque hay pocos datos."
+    },
+    {
+      "type": "concepto",
+      "k": "En la materia",
+      "title": "El desvío vuelve a aparecer.",
+      "text": "En el error de pronósticos (MAD y MSE usan desvíos), en el stock de seguridad (SS = Z·σ, con el Z = 1,64 del 95%) y en la confiabilidad de la regresión (intervalos con t).",
+      "ejemplo": "«Mismo promedio ≠ misma empresa» es el tipo de justificación que puntúa la cátedra."
+    },
+    {
+      "type": "cierre",
+      "title": "Llevate esto de la Clase 1.",
+      "text": "El promedio dice el centro; el desvío (s) dice la dispersión típica y es el número clave. Varianza = s². Normal: 68/95/99,7% en ±1/2/3σ. Z = (X−μ)/σ; Z = 1,64 cubre el 95%. t es para muestras chicas, con gl = n−1. Siguiente: Clase 1.b, la tabla Z y los 5 casos."
+    }
+  ]
+}

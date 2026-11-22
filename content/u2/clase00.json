@@ -1,0 +1,497 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c0",
+  "title": "Clase 0 · Mapa de la materia",
+  "name": "Mapa",
+  "lede": "La materia es la anatomía de un ERP: de la empresa como sistema (U1) al software que la gestiona (U7). Esta clase arma el mapa oficial, cómo se conectan las 7 unidades y qué se toma en el final, con las frecuencias reales de los exámenes fechados.",
+  "visto": true,
+  "source": [
+    "clases_previas/SG/MapaMateria_SistemasDeGestion_v2.svg",
+    "clases_previas/SG/MapaMateria_SistemasDeGestion.svg",
+    "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt",
+    "programa.md (SG1Progr2008.doc)",
+    "patrones_examenes.md",
+    "clases_previas/conversacion_previa_notas.md",
+    "INDEX.md",
+    "aportes_emiliano/examen_2018_transcripcion.md"
+  ],
+  "laminas": [
+    "u2/img/MapaMateria_SistemasDeGestion_v2.svg",
+    "u2/img/MapaMateria_SistemasDeGestion.svg"
+  ],
+  "next": "Clase 0.1 · Siglas",
+  "teoria": [
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Idea central (mapa v2):** «la materia es la anatomía de un ERP — de la empresa como sistema (U1) al software que la gestiona (U7)». Las cuatro unidades del medio (pronósticos, producto, proceso y logística) son los insumos; la U6 es el motor donde se juntan; la U7 empaqueta todo en software."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. De dónde sale esta clase"
+    },
+    {
+      "type": "paragraph",
+      "text": "No hay un apunte titulado «Clase 0». En la cursada se dictó el mapa general (notas de la conversación previa: serie 0 → 0.1 → 1). Lo que sigue se arma con el mapa v2, el **programa oficial 2008** (`SG1Progr2008.doc`), el Documento Maestro v2 y el mapa de frecuencias de exámenes. Si algo no está en esas fuentes, se marca."
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Programa vigente en el material:** Sistemas de Gestión 1, UTN FRRo, 2008. No aparece un programa posterior. Estudiar con esa estructura importa: uno de los criterios de evaluación es «el establecimiento de relaciones lógicas y jerárquicas entre los contenidos»."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. El mapa oficial (versión 2)"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/MapaMateria_SistemasDeGestion_v2.svg",
+      "caption": "Mapa de la materia, versión 2, alineado a las 7 unidades del programa oficial"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Las 7 unidades del programa"
+    },
+    {
+      "type": "paragraph",
+      "text": "Títulos (eje conceptual) y objetivos, textuales del programa 2008:"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Unidad",
+        "Eje conceptual",
+        "Objetivo (síntesis del programa)"
+      ],
+      "rows": [
+        [
+          "U1",
+          "La Empresa como productora de Bienes (y Servicios)",
+          "Conocimiento general de las empresas bajo un enfoque sistémico y desde la administración de la producción."
+        ],
+        [
+          "U2",
+          "Los Métodos de Pronósticos",
+          "Métodos y técnicas de pronósticos más utilizados y su aplicación en la gestión industrial."
+        ],
+        [
+          "U3",
+          "El Producto",
+          "El concepto de producto y las estructuras de información con que se definen y producen."
+        ],
+        [
+          "U4",
+          "El Proceso de Producción",
+          "El concepto de Sistema de Producción y el sistema de información que lo mantiene activo."
+        ],
+        [
+          "U5",
+          "Logística",
+          "Logística integral e interna, y el modelo de gestión de inventarios adecuado a cada proceso."
+        ],
+        [
+          "U6",
+          "El Sistema de Planificación y Control de la Producción",
+          "Determinar las operaciones básicas de un sistema de gestión, planificación y control de los procesos de conversión."
+        ],
+        [
+          "U7",
+          "Softwares ERP",
+          "Conocer la oferta de paquetes pre-programados parametrizables para la gestión integral de los recursos en empresas industriales (ERP)."
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Cómo se conectan"
+    },
+    {
+      "type": "paragraph",
+      "text": "El mapa v2 lo plantea así. La **U1** es el marco: la empresa como sistema, el proceso de conversión (insumos → transformación → productos) y el modelo ERP como integrador. Antes de planificar hace falta saber cuatro cosas:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**U2 · Pronósticos:** ¿cuánto van a comprar? Demanda y método justificado.",
+        "**U3 · El producto:** ¿qué fabricamos y cómo se representa en el sistema? Ciclo de vida, codificación, BOM.",
+        "**U4 · El proceso:** ¿cómo se produce físicamente? Centros de trabajo, hombre-máquina, JIT, TOC.",
+        "**U5 · Logística:** ¿cuánto material tener y cómo abastecerse? EOQ, stock de seguridad, ABC."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Esos cuatro insumos entran a la **U6**, «el motor donde se juntan». La cadena operativa del mapa es: **plan agregado → MPS → capacidad → MRP → control de piso**. El mapa lo resume en una frase: «La U6 consume: la demanda de U2, el BOM de U3, la capacidad y métodos de U4, y los modelos de stock de U5.»"
+    },
+    {
+      "type": "paragraph",
+      "text": "La **U7** es el zoom out final: historia MRP → MRP II → ERP. «Todo lo anterior, empaquetado en software: por eso esta materia es “la anatomía de un ERP”.»"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Qué se calcula y qué se explica"
+    },
+    {
+      "type": "paragraph",
+      "text": "El mapa distingue dos marcas, que coinciden con la operatoria del final (notas de cursada y foto 2018):"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**[P] se calcula** → práctica (eliminatoria, primero).",
+        "**[T] se explica** → teoría + coloquio globalizador."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "El examen fotografiado de 2018 tenía 1 ejercicio de práctica (40 min, un MPS a partir de ventas confirmadas frente a un pronóstico SES) y 5 preguntas de teoría (30 min)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Criterios de evaluación, textuales del programa (van impresos en el encabezado de cada examen):"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "La claridad conceptual al responder las consignas.",
+        "El establecimiento de relaciones lógicas y jerárquicas entre los contenidos estudiados.",
+        "La utilización de un vocabulario específico.",
+        "La interpretación de los resultados obtenidos en la ejercitación.",
+        "La fundamentación de las respuestas dadas."
+      ]
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Traducción práctica (Documento Maestro):** nunca entregar solo el número. Cada ejercicio se cierra con interpretación y justificación del método, usando el vocabulario de la cátedra."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Qué se toma en la práctica (conteo real)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Las frecuencias de abajo salen de `patrones_examenes.md`, no de una estimación. Criterio: **una mesa cuenta 1 vez por tema** si ese tema apareció en la práctica con atribución segura. Denominador: **19 finales/exámenes con fecha, 2002–2018**. No se incluyen los sin fecha. También se informan los **7 finales fechados 2011–2018**, más cercanos al formato actual (en general 1 ejercicio de práctica + 3 a 5 preguntas de teoría)."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Tema de práctica",
+        "2002–2018 (n=19)",
+        "%",
+        "2011–2018 (n=7)",
+        "%"
+      ],
+      "rows": [
+        [
+          "MRP",
+          "8",
+          "42%",
+          "2",
+          "29%"
+        ],
+        [
+          "Pronósticos (series de tiempo)",
+          "6",
+          "32%",
+          "2",
+          "29%"
+        ],
+        [
+          "Inventarios (EOQ, descuentos, SS, ABC)",
+          "5",
+          "26%",
+          "0",
+          "0%"
+        ],
+        [
+          "Balanceo",
+          "4",
+          "21%",
+          "1",
+          "14%"
+        ],
+        [
+          "Plan agregado",
+          "2",
+          "11%",
+          "0",
+          "0%"
+        ],
+        [
+          "Hombre-máquina",
+          "2",
+          "11%",
+          "1",
+          "14%"
+        ],
+        [
+          "Otros (estructura / scrap, sin MRP completo)",
+          "2",
+          "11%",
+          "0",
+          "0%"
+        ],
+        [
+          "MPS",
+          "1",
+          "5%",
+          "1",
+          "14%"
+        ],
+        [
+          "Capacidad / CRP",
+          "1",
+          "5%",
+          "0",
+          "0%"
+        ],
+        [
+          "Regresión",
+          "0",
+          "0%",
+          "0",
+          "0%"
+        ],
+        [
+          "Dígito verificador",
+          "0",
+          "0%",
+          "0",
+          "0%"
+        ]
+      ]
+    },
+    {
+      "type": "svg",
+      "svg": "<svg viewBox=\"0 0 280 132\" width=\"100%\" height=\"132\" aria-hidden=\"true\"><line x1=\"28\" y1=\"112\" x2=\"272\" y2=\"112\" stroke=\"#d0d5db\" stroke-width=\"1.2\"/><rect x=\"32.0\" y=\"30.0\" width=\"18.3\" height=\"82.0\" fill=\"#a67c00\"/><text x=\"41.15\" y=\"126\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">MRP</text><text x=\"41.15\" y=\"27.0\" font-size=\"8\" fill=\"#a67c00\" text-anchor=\"middle\">8</text><rect x=\"62.5\" y=\"50.5\" width=\"18.3\" height=\"61.5\" fill=\"#1f4e79\"/><text x=\"71.65\" y=\"126\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">Pron</text><text x=\"71.65\" y=\"47.5\" font-size=\"8\" fill=\"#1f4e79\" text-anchor=\"middle\">6</text><rect x=\"93.0\" y=\"60.75\" width=\"18.3\" height=\"51.25\" fill=\"#1f4e79\"/><text x=\"102.15\" y=\"126\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">Inv</text><text x=\"102.15\" y=\"57.75\" font-size=\"8\" fill=\"#1f4e79\" text-anchor=\"middle\">5</text><rect x=\"123.5\" y=\"71.0\" width=\"18.3\" height=\"41.0\" fill=\"#1f4e79\"/><text x=\"132.65\" y=\"126\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">Bal</text><text x=\"132.65\" y=\"68.0\" font-size=\"8\" fill=\"#1f4e79\" text-anchor=\"middle\">4</text><rect x=\"154.0\" y=\"91.5\" width=\"18.3\" height=\"20.5\" fill=\"#1f4e79\"/><text x=\"163.15\" y=\"126\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">PA</text><text x=\"163.15\" y=\"88.5\" font-size=\"8\" fill=\"#1f4e79\" text-anchor=\"middle\">2</text><rect x=\"184.5\" y=\"91.5\" width=\"18.3\" height=\"20.5\" fill=\"#1f4e79\"/><text x=\"193.65\" y=\"126\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">HM</text><text x=\"193.65\" y=\"88.5\" font-size=\"8\" fill=\"#1f4e79\" text-anchor=\"middle\">2</text><rect x=\"215.0\" y=\"101.75\" width=\"18.3\" height=\"10.25\" fill=\"#1f4e79\"/><text x=\"224.15\" y=\"126\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">MPS</text><text x=\"224.15\" y=\"98.75\" font-size=\"8\" fill=\"#1f4e79\" text-anchor=\"middle\">1</text><rect x=\"245.5\" y=\"101.75\" width=\"18.3\" height=\"10.25\" fill=\"#1f4e79\"/><text x=\"254.65\" y=\"126\" font-size=\"8\" fill=\"#5c6670\" text-anchor=\"middle\">Cap</text><text x=\"254.65\" y=\"98.75\" font-size=\"8\" fill=\"#1f4e79\" text-anchor=\"middle\">1</text></svg>",
+      "caption": "Conteo de mesas (n=19) por tema de práctica. MRP es el más frecuente; la regresión no aparece en este set."
+    },
+    {
+      "type": "paragraph",
+      "text": "Límites de la muestra, también del mismo documento: no hay finales 2016–2017 ni 2019–2026; la muestra reciente es chica (7 mesas); la compilación 2002–2006 a veces mezcla hojas, y se fue conservador. Los porcentajes de 2011–2018 hay que tomarlos con ese límite. **Regresión no aparece en la práctica de ningún final fechado**, pese a tener guía y apunte. El dígito verificador no se tomó como ejercicio de práctica; sí en teoría (2011, 2013, 2018)."
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Tema huérfano:** las notas de cursada dicen que el MRP no se dio en la práctica de la cursada, pero **sí se tomó** en finales (2013, 2015 y, con fuerza, 2002–2006). En el conteo 2002–2018 es el tema de práctica más frecuente (42%)."
+    },
+    {
+      "type": "paragraph",
+      "text": "Ojo con el mapa v2: ahí U2 y U6 aparecen como «½ de la práctica» cada una. Eso es un esquema del mapa, no el conteo de mesas. Para estudiar el peso de cada tema, usá la tabla de arriba."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Qué se toma en la teoría (2011–2018)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Conteo de aparición en teoría sobre los **7 finales fechados 2011–2018** (una mesa, un punto, aunque haya más de una pregunta del tema):"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Tema de teoría",
+        "Mesas / 7",
+        "Preguntas típicas (según patrones)"
+      ],
+      "rows": [
+        [
+          "Codificación (saturación, DV, ventajas, potencialidad)",
+          "6",
+          "Incluye dígito verificador IBM-11 (2018: 987-95617-03-01) e IBM13 en el recuerdo de 2011"
+        ],
+        [
+          "Capacidad (estación, sistema, listas/perfiles)",
+          "5",
+          "En 2018: hipótesis de listas de capacidad y perfiles de recursos"
+        ],
+        [
+          "Pronósticos (función, para qué, hipótesis, SES)",
+          "5",
+          "Incluye explicar nivelación o suavización exponencial"
+        ],
+        [
+          "Ciclo de vida del producto",
+          "3",
+          "Función, variables, o graficar (lámpara incandescente, 2013)"
+        ],
+        [
+          "Estructura de producto / BOM / hoja de ruta",
+          "3",
+          "Incluye BOM en un ERP (2014)"
+        ],
+        [
+          "MRP / MCP / ERP / JIT",
+          "3",
+          "2012: qué es MRP, MCP, ERP; 2018: cuándo JIT necesita MRP y relación ERP–BI"
+        ],
+        [
+          "BI / decisiones racionales",
+          "1",
+          "Solo 2018. Están fuera del programa 2008, pero cayeron"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "El mapa v2 anota esos complementos con la misma salvedad: «fuera del programa 2008, pero preguntados en el examen 2018» (BI / Data Warehouse y métodos de decisión racional, a nivel conceptual)."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "8. Una versión anterior del mapa"
+    },
+    {
+      "type": "paragraph",
+      "text": "Antes de alinear el mapa a las 7 unidades oficiales, había una versión de 18 temas en 4 capas (PREDECIR / PLANIFICAR / EJECUTAR / SISTEMAS). Los temas 1–11 eran práctica y los 12–18 teoría. Se conserva como referencia; el mapa que usamos para estudiar es el v2."
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/MapaMateria_SistemasDeGestion.svg",
+      "caption": "Mapa de la materia, versión anterior (18 temas / 4 capas)"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "9. Bibliografía que cita el material"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Programa oficial: Chase (10.ª ed.), Monks, APICS y apuntes de Sessa.",
+        "Práctica de pronósticos (Documento Maestro / notas): Hanke, capítulos 2 a 6, más el apunte de regresión.",
+        "APICS aparece citado como American Production & Inventory Control Society, referencia de vocabulario (Documento Maestro)."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "10. Qué sigue"
+    },
+    {
+      "type": "paragraph",
+      "text": "La Clase 0.1 junta las **siglas** con el significado tal como está en los apuntes (y marca las que aparecen sin expansión). Después entra la Clase 1: la base estadística, que ya está cargada."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Para llevarte:** 7 unidades, 4 insumos, una cadena en la U6, práctica primero (eliminatoria) y teoría después. El peso de cada tema se lee en el conteo de finales, no en un 50 y 50."
+    }
+  ],
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "La materia es la anatomía de un ERP.",
+      "text": "Así lo dice el mapa v2: de la empresa como sistema (U1) al software que la gestiona (U7). En el medio están los insumos y el motor que los junta."
+    },
+    {
+      "type": "concepto",
+      "k": "El programa",
+      "title": "Son 7 unidades, las del programa 2008.",
+      "text": "U1 la empresa, U2 pronósticos, U3 el producto, U4 el proceso, U5 logística, U6 planificación y control, U7 softwares ERP. En el material no hay un programa más nuevo.",
+      "svg": "<svg viewBox=\"0 0 284 100\" width=\"100%\" height=\"100\" aria-hidden=\"true\"><path d=\"M 60 58 L 70 58\" stroke=\"#9aa3ad\" stroke-width=\"1.4\" marker-end=\"\"/><path d=\"M 176 44 L 186 56\" stroke=\"#9aa3ad\" stroke-width=\"1.4\"/><path d=\"M 240 58 L 248 58\" stroke=\"#9aa3ad\" stroke-width=\"1.4\"/><rect x=\"8\" y=\"40\" width=\"52\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.6\"/><text x=\"34.0\" y=\"56\" font-size=\"11\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">U1</text><text x=\"34.0\" y=\"68\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">marco</text><rect x=\"72\" y=\"14\" width=\"48\" height=\"28\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"96.0\" y=\"30\" font-size=\"11\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">U2</text><text x=\"96.0\" y=\"42\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">demanda</text><rect x=\"72\" y=\"46\" width=\"48\" height=\"28\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"96.0\" y=\"62\" font-size=\"11\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">U3</text><text x=\"96.0\" y=\"74\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">BOM</text><rect x=\"128\" y=\"14\" width=\"48\" height=\"28\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"152.0\" y=\"30\" font-size=\"11\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">U4</text><text x=\"152.0\" y=\"42\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">proceso</text><rect x=\"128\" y=\"46\" width=\"48\" height=\"28\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"152.0\" y=\"62\" font-size=\"11\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">U5</text><text x=\"152.0\" y=\"74\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">stock</text><rect x=\"188\" y=\"40\" width=\"52\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.6\"/><text x=\"214.0\" y=\"56\" font-size=\"11\" fill=\"#e25b16\" font-weight=\"700\" text-anchor=\"middle\">U6</text><text x=\"214.0\" y=\"68\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">motor</text><rect x=\"248\" y=\"40\" width=\"28\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.6\"/><text x=\"262.0\" y=\"56\" font-size=\"11\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">U7</text><text x=\"262.0\" y=\"68\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">ERP</text></svg>",
+      "chartLabel": "U1 marco · U2–U5 insumos · U6 motor · U7 software"
+    },
+    {
+      "type": "concepto",
+      "k": "La conexión",
+      "title": "Cuatro insumos entran al motor.",
+      "text": "U2 te dice la demanda, U3 el BOM, U4 la capacidad y los métodos, U5 los modelos de stock. La U6 los consume y arma: plan agregado → MPS → capacidad → MRP → control de piso.",
+      "svg": "<svg viewBox=\"0 0 284 100\" width=\"100%\" height=\"100\" aria-hidden=\"true\"><path d=\"M 60 58 L 70 58\" stroke=\"#9aa3ad\" stroke-width=\"1.4\" marker-end=\"\"/><path d=\"M 176 44 L 186 56\" stroke=\"#9aa3ad\" stroke-width=\"1.4\"/><path d=\"M 240 58 L 248 58\" stroke=\"#9aa3ad\" stroke-width=\"1.4\"/><rect x=\"8\" y=\"40\" width=\"52\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.6\"/><text x=\"34.0\" y=\"56\" font-size=\"11\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">U1</text><text x=\"34.0\" y=\"68\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">marco</text><rect x=\"72\" y=\"14\" width=\"48\" height=\"28\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"96.0\" y=\"30\" font-size=\"11\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">U2</text><text x=\"96.0\" y=\"42\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">demanda</text><rect x=\"72\" y=\"46\" width=\"48\" height=\"28\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"96.0\" y=\"62\" font-size=\"11\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">U3</text><text x=\"96.0\" y=\"74\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">BOM</text><rect x=\"128\" y=\"14\" width=\"48\" height=\"28\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"152.0\" y=\"30\" font-size=\"11\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">U4</text><text x=\"152.0\" y=\"42\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">proceso</text><rect x=\"128\" y=\"46\" width=\"48\" height=\"28\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"152.0\" y=\"62\" font-size=\"11\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">U5</text><text x=\"152.0\" y=\"74\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">stock</text><rect x=\"188\" y=\"40\" width=\"52\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.6\"/><text x=\"214.0\" y=\"56\" font-size=\"11\" fill=\"#e25b16\" font-weight=\"700\" text-anchor=\"middle\">U6</text><text x=\"214.0\" y=\"68\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">motor</text><rect x=\"248\" y=\"40\" width=\"28\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.6\"/><text x=\"262.0\" y=\"56\" font-size=\"11\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">U7</text><text x=\"262.0\" y=\"68\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">ERP</text></svg>",
+      "chartLabel": "La U6 consume demanda, BOM, capacidad y stock"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Según el mapa v2, ¿qué le entra a la U6?",
+      "options": [
+        "Solo el pronóstico de la U2",
+        "La demanda de U2, el BOM de U3, la capacidad de U4 y el stock de U5",
+        "Solo el software de la U7"
+      ],
+      "correct": 1,
+      "feedback": "El mapa lo dice así: «La U6 consume: la demanda de U2, el BOM de U3, la capacidad y métodos de U4, y los modelos de stock de U5.»"
+    },
+    {
+      "type": "concepto",
+      "k": "El final",
+      "title": "Primero se calcula. Después se explica.",
+      "text": "[P] es práctica, eliminatoria y va primero. [T] es teoría. En el examen de 2018: 40 minutos de práctica (un MPS) y 30 minutos de teoría (5 preguntas)."
+    },
+    {
+      "type": "concepto",
+      "k": "Cómo te evalúan",
+      "title": "No alcanza con el número.",
+      "text": "El programa pide claridad conceptual, relaciones entre contenidos, vocabulario específico, interpretación y fundamentación. Esas cinco líneas van impresas en el encabezado del examen."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Si no aprobás la práctica del final…",
+      "options": [
+        "Pasás igual a la teoría",
+        "Quedás libre",
+        "No pasás a la teoría: es eliminatoria"
+      ],
+      "correct": 2,
+      "feedback": "Según las notas de cursada y el Documento Maestro, se rinde primero la práctica y es eliminatoria. Recién después va la teoría."
+    },
+    {
+      "type": "concepto",
+      "k": "La práctica",
+      "title": "El peso se cuenta, no se estima.",
+      "text": "En 19 finales fechados (2002–2018), una mesa cuenta una vez por tema: MRP 42%, pronósticos 32%, inventarios 26%, balanceo 21%. Plan agregado y hombre-máquina, 11%. MPS y capacidad, 5%.",
+      "svg": "<svg viewBox=\"0 0 280 132\" width=\"100%\" height=\"132\" aria-hidden=\"true\"><line x1=\"28\" y1=\"112\" x2=\"272\" y2=\"112\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.2\"/><rect x=\"32.0\" y=\"30.0\" width=\"18.3\" height=\"82.0\" fill=\"#e8c56a\"/><text x=\"41.15\" y=\"126\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">MRP</text><text x=\"41.15\" y=\"27.0\" font-size=\"8\" fill=\"#e8c56a\" text-anchor=\"middle\">8</text><rect x=\"62.5\" y=\"50.5\" width=\"18.3\" height=\"61.5\" fill=\"#8cb4d6\"/><text x=\"71.65\" y=\"126\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">Pron</text><text x=\"71.65\" y=\"47.5\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\">6</text><rect x=\"93.0\" y=\"60.75\" width=\"18.3\" height=\"51.25\" fill=\"#8cb4d6\"/><text x=\"102.15\" y=\"126\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">Inv</text><text x=\"102.15\" y=\"57.75\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\">5</text><rect x=\"123.5\" y=\"71.0\" width=\"18.3\" height=\"41.0\" fill=\"#8cb4d6\"/><text x=\"132.65\" y=\"126\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">Bal</text><text x=\"132.65\" y=\"68.0\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\">4</text><rect x=\"154.0\" y=\"91.5\" width=\"18.3\" height=\"20.5\" fill=\"#8cb4d6\"/><text x=\"163.15\" y=\"126\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">PA</text><text x=\"163.15\" y=\"88.5\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\">2</text><rect x=\"184.5\" y=\"91.5\" width=\"18.3\" height=\"20.5\" fill=\"#8cb4d6\"/><text x=\"193.65\" y=\"126\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">HM</text><text x=\"193.65\" y=\"88.5\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\">2</text><rect x=\"215.0\" y=\"101.75\" width=\"18.3\" height=\"10.25\" fill=\"#8cb4d6\"/><text x=\"224.15\" y=\"126\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">MPS</text><text x=\"224.15\" y=\"98.75\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\">1</text><rect x=\"245.5\" y=\"101.75\" width=\"18.3\" height=\"10.25\" fill=\"#8cb4d6\"/><text x=\"254.65\" y=\"126\" font-size=\"8\" fill=\"#9aa3ad\" text-anchor=\"middle\">Cap</text><text x=\"254.65\" y=\"98.75\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\">1</text></svg>",
+      "chartLabel": "Mesas con el tema en la práctica (n=19 finales con fecha)"
+    },
+    {
+      "type": "concepto",
+      "k": "Con cuidado",
+      "title": "No uses un «50 y 50».",
+      "text": "El mapa v2 dibuja U2 y U6 como media práctica cada una; el conteo de mesas no dice eso. Faltan finales 2016–17 y 2019–26, y la muestra 2011–2018 es de solo 7 mesas."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "En esos 19 finales, el tema de práctica más frecuente fue…",
+      "options": [
+        "Pronósticos",
+        "MRP",
+        "Inventarios (EOQ)"
+      ],
+      "correct": 1,
+      "feedback": "MRP aparece en 8 de 19 mesas (42%). Importante: en la cursada práctica no se llegó a dar, pero sí cae en el final."
+    },
+    {
+      "type": "concepto",
+      "k": "La teoría",
+      "title": "En 7 finales (2011–2018), lo que más sale.",
+      "text": "Codificación en 6 de 7, capacidad y pronósticos en 5 de 7. BI y decisiones racionales aparecieron solo en 2018, y están fuera del programa 2008."
+    },
+    {
+      "type": "concepto",
+      "k": "Bibliografía",
+      "title": "Lo que cita el material.",
+      "text": "Chase, Monks, APICS y los apuntes de Sessa. La práctica de pronósticos se apoya en Hanke (capítulos 2 a 6) y en el apunte de regresión."
+    },
+    {
+      "type": "cierre",
+      "title": "Llevate el mapa.",
+      "text": "Siete unidades. Cuatro insumos que alimentan la U6. Práctica primero (eliminatoria), teoría después. El peso de cada tema sale del conteo de finales. Sigue la Clase 0.1: las siglas, con el significado tal como está en los apuntes."
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 900" width="980" height="900" font-family="Segoe UI, Calibri, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ab" markerWidth="11" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L11,4.5 L0,9 Z" fill="#1F4E79"/></marker>
+    <marker id="ard" markerWidth="11" markerHeight="9" refX="10" refY="4.5" orient="auto"><path d="M0,0 L11,4.5 L0,9 Z" fill="#C00000"/></marker>
+  </defs>
+  <rect width="980" height="900" fill="#FFFFFF"/>
+
+  <!-- TITULO -->
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#1F4E79">EL PROCESO COMPLETO DE PRONÓSTICO</text>
+  <text x="40" y="55" font-size="12.5" fill="#666">Lámina integradora — cómo se conectan las clases 3.a, 3.b y 4</text>
+
+  <!-- ANALOGIA -->
+  <rect x="40" y="70" width="900" height="56" rx="8" fill="#FFF3E8" stroke="#D9954A" stroke-width="1.5"/>
+  <text x="56" y="91" font-size="12.5" font-weight="700" fill="#8A5A16">LA ANALOGÍA DEL MÉDICO:</text>
+  <text x="270" y="91" font-size="12" fill="#333"><tspan font-weight="700">3.a</tspan> = mirar al paciente (síntomas a simple vista) · <tspan font-weight="700">3.b</tspan> = pedir análisis (confirmar con números)</text>
+  <text x="270" y="112" font-size="12" fill="#333"><tspan font-weight="700">Árbol</tspan> = recetar el tratamiento · <tspan font-weight="700">Clase 4</tspan> = controlar si el paciente mejoró (y si no, cambiar el remedio)</text>
+
+  <!-- ===== PASO 1 ===== -->
+  <rect x="40" y="146" width="176" height="230" rx="8" fill="#F4F8FC" stroke="#B7D0E5" stroke-width="1.8"/>
+  <circle cx="70" cy="176" r="16" fill="#1F4E79"/>
+  <text x="70" y="182" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+  <text x="96" y="174" font-size="13.5" font-weight="700" fill="#1F4E79">GRAFICAR</text>
+  <text x="96" y="190" font-size="10" fill="#888">clase 3.a</text>
+  <!-- mini serie -->
+  <rect x="56" y="204" width="144" height="76" rx="5" fill="#fff" stroke="#C9DBEA"/>
+  <line x1="66" y1="270" x2="66" y2="214" stroke="#aaa" stroke-width="1"/>
+  <line x1="66" y1="270" x2="192" y2="270" stroke="#aaa" stroke-width="1"/>
+  <path d="M 72 258 L 88 226 L 104 262 L 120 264 L 136 222 L 152 258 L 168 260 L 184 218" fill="none" stroke="#1F4E79" stroke-width="2"/>
+  <text x="56" y="300" font-size="11" fill="#333">Dibujo la serie y miro:</text>
+  <text x="56" y="316" font-size="10.5" fill="#333">¿sube? ¿tiene olas?</text>
+  <text x="56" y="330" font-size="10.5" fill="#333">¿es plana?</text>
+  <rect x="54" y="340" width="148" height="28" rx="4" fill="#EAF6FB"/>
+  <text x="64" y="358" font-size="10.5" font-weight="700" fill="#1F4E79">→ Me da la SOSPECHA</text>
+
+  <line x1="216" y1="260" x2="238" y2="260" stroke="#1F4E79" stroke-width="2.5" marker-end="url(#ab)"/>
+
+  <!-- ===== PASO 2 ===== -->
+  <rect x="244" y="146" width="176" height="230" rx="8" fill="#F1F7F2" stroke="#BFDCC4" stroke-width="1.8"/>
+  <circle cx="274" cy="176" r="16" fill="#1E6B33"/>
+  <text x="274" y="182" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+  <text x="300" y="174" font-size="13.5" font-weight="700" fill="#1E6B33">DIAGNOSTICAR</text>
+  <text x="300" y="190" font-size="10" fill="#888">clase 3.b · correlograma</text>
+  <!-- mini correlograma -->
+  <rect x="260" y="204" width="144" height="76" rx="5" fill="#fff" stroke="#BFDCC4"/>
+  <line x1="270" y1="270" x2="270" y2="214" stroke="#aaa" stroke-width="1"/>
+  <line x1="270" y1="270" x2="396" y2="270" stroke="#aaa" stroke-width="1"/>
+  <line x1="270" y1="248" x2="396" y2="248" stroke="#C00000" stroke-width="0.9" stroke-dasharray="3 2"/>
+  <rect x="278" y="256" width="8" height="14" fill="#1E6B33"/>
+  <rect x="292" y="260" width="8" height="10" fill="#1E6B33"/>
+  <rect x="306" y="254" width="8" height="16" fill="#1E6B33"/>
+  <rect x="320" y="220" width="8" height="50" fill="#1E6B33"/>
+  <rect x="334" y="258" width="8" height="12" fill="#1E6B33"/>
+  <rect x="348" y="261" width="8" height="9" fill="#1E6B33"/>
+  <rect x="362" y="256" width="8" height="14" fill="#1E6B33"/>
+  <rect x="376" y="230" width="8" height="40" fill="#1E6B33"/>
+  <text x="260" y="300" font-size="11" fill="#333">Confirmo con números</text>
+  <text x="260" y="316" font-size="10.5" fill="#333">lo que vi en el gráfico:</text>
+  <text x="260" y="330" font-size="10.5" fill="#333">pico en r₄, decaimiento…</text>
+  <rect x="258" y="340" width="148" height="28" rx="4" fill="#E8F3EA"/>
+  <text x="268" y="358" font-size="10.5" font-weight="700" fill="#1E6B33">→ Me da la PRUEBA</text>
+
+  <line x1="420" y1="260" x2="442" y2="260" stroke="#1F4E79" stroke-width="2.5" marker-end="url(#ab)"/>
+
+  <!-- ===== PASO 3 ===== -->
+  <rect x="448" y="146" width="176" height="230" rx="8" fill="#FBF6EE" stroke="#E3D2B5" stroke-width="1.8"/>
+  <circle cx="478" cy="176" r="16" fill="#8A5A16"/>
+  <text x="478" y="182" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+  <text x="504" y="174" font-size="13.5" font-weight="700" fill="#8A5A16">ELEGIR MÉTODO</text>
+  <text x="504" y="190" font-size="10" fill="#888">árbol de decisión</text>
+  <rect x="464" y="204" width="144" height="120" rx="5" fill="#fff" stroke="#E3D2B5"/>
+  <text x="474" y="222" font-size="10" fill="#333">estacionaria →</text>
+  <text x="484" y="235" font-size="9.5" font-weight="700" fill="#1E6B33">promedio móvil, SES</text>
+  <text x="474" y="253" font-size="10" fill="#333">tendencia →</text>
+  <text x="484" y="266" font-size="9.5" font-weight="700" fill="#1F4E79">Holt, Brown, regresión</text>
+  <text x="474" y="284" font-size="10" fill="#333">estacionalidad →</text>
+  <text x="484" y="297" font-size="9.5" font-weight="700" fill="#B5651D">Winter, descomposición</text>
+  <text x="474" y="315" font-size="9.5" fill="#333">ciclo → descomp., econométricos</text>
+  <rect x="462" y="340" width="148" height="28" rx="4" fill="#FBF0E0"/>
+  <text x="472" y="358" font-size="10.5" font-weight="700" fill="#8A5A16">→ Me da el MÉTODO</text>
+
+  <line x1="624" y1="260" x2="646" y2="260" stroke="#1F4E79" stroke-width="2.5" marker-end="url(#ab)"/>
+
+  <!-- ===== PASO 4 ===== -->
+  <rect x="652" y="146" width="132" height="230" rx="8" fill="#F6F2FA" stroke="#D3C4E4" stroke-width="1.8"/>
+  <circle cx="682" cy="176" r="16" fill="#5B3E8E"/>
+  <text x="682" y="182" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+  <text x="708" y="174" font-size="13.5" font-weight="700" fill="#5B3E8E">APLICAR</text>
+  <text x="708" y="190" font-size="10" fill="#888">clases 5+</text>
+  <rect x="666" y="204" width="104" height="120" rx="5" fill="#fff" stroke="#D3C4E4"/>
+  <text x="676" y="226" font-size="10.5" fill="#333">Hago las cuentas</text>
+  <text x="676" y="242" font-size="10.5" fill="#333">del método elegido</text>
+  <text x="676" y="258" font-size="10.5" fill="#333">y obtengo los</text>
+  <text x="676" y="274" font-size="10.5" font-weight="700" fill="#5B3E8E">pronósticos Ŷ</text>
+  <text x="676" y="298" font-size="9.5" fill="#888" font-style="italic">(todavía no</text>
+  <text x="676" y="310" font-size="9.5" fill="#888" font-style="italic">vimos esto)</text>
+  <rect x="664" y="340" width="108" height="28" rx="4" fill="#F0EAF7"/>
+  <text x="674" y="358" font-size="10.5" font-weight="700" fill="#5B3E8E">→ Los NÚMEROS</text>
+
+  <line x1="784" y1="260" x2="806" y2="260" stroke="#1F4E79" stroke-width="2.5" marker-end="url(#ab)"/>
+
+  <!-- ===== PASO 5 ===== -->
+  <rect x="812" y="146" width="128" height="230" rx="8" fill="#FDF2F2" stroke="#C00000" stroke-width="2"/>
+  <circle cx="842" cy="176" r="16" fill="#C00000"/>
+  <text x="842" y="182" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+  <text x="868" y="174" font-size="13.5" font-weight="700" fill="#9C3838">MEDIR</text>
+  <text x="868" y="190" font-size="10" fill="#888">clase 4</text>
+  <rect x="826" y="204" width="100" height="120" rx="5" fill="#fff" stroke="#E5C2C2"/>
+  <text x="836" y="224" font-size="10.5" font-weight="700" fill="#333">MAD</text>
+  <text x="836" y="240" font-size="9.5" fill="#666">error en unidades</text>
+  <text x="836" y="258" font-size="10.5" font-weight="700" fill="#333">MSE</text>
+  <text x="836" y="272" font-size="9.5" fill="#666">castiga los grandes</text>
+  <text x="836" y="288" font-size="10.5" font-weight="700" fill="#333">MAPE</text>
+  <text x="836" y="300" font-size="9.5" fill="#666">error en %</text>
+  <text x="836" y="316" font-size="10.5" font-weight="700" fill="#C00000">PME → sesgo</text>
+  <rect x="824" y="340" width="104" height="28" rx="4" fill="#FBE9E9"/>
+  <text x="834" y="358" font-size="10.5" font-weight="700" fill="#C00000">→ ¿ACERTÉ?</text>
+
+  <!-- CICLO DE RETROALIMENTACION -->
+  <path d="M 876 376 L 876 406 L 536 406 L 536 380" fill="none" stroke="#C00000" stroke-width="2.5" stroke-dasharray="7 4" marker-end="url(#ard)"/>
+  <rect x="590" y="388" width="240" height="34" rx="6" fill="#FDF2F2" stroke="#C00000"/>
+  <text x="710" y="410" font-size="11.5" font-weight="700" fill="#C00000" text-anchor="middle">Si el error dice que está mal → VUELVO al paso 3</text>
+
+  <text x="56" y="404" font-size="11.5" font-weight="700" fill="#1F4E79">Es un CIRCUITO, no una línea recta.</text>
+
+  <!-- ===== EJEMPLO ===== -->
+  <rect x="40" y="436" width="900" height="248" rx="8" fill="#EAF6FB" stroke="#1F4E79" stroke-width="2"/>
+  <text x="56" y="460" font-size="14" font-weight="700" fill="#1F4E79">EJEMPLO DE PUNTA A PUNTA — una heladería, ventas trimestrales</text>
+
+  <g font-size="11">
+    <rect x="56" y="472" width="868" height="22" fill="#1F4E79"/>
+    <text x="70" y="488" fill="#fff" font-weight="700">Paso</text>
+    <text x="170" y="488" fill="#fff" font-weight="700">Qué hago</text>
+    <text x="530" y="488" fill="#fff" font-weight="700">Qué obtengo</text>
+
+    <rect x="56" y="494" width="868" height="34" fill="#fff"/>
+    <text x="70" y="515" fill="#1F4E79" font-weight="700">1 · Graficar</text>
+    <text x="170" y="515" fill="#333">Veo que cada verano se dispara y cada invierno se hunde,</text>
+    <text x="530" y="515" fill="#333" font-style="italic">Sospecha: estacionalidad + tendencia</text>
+
+    <rect x="56" y="528" width="868" height="34" fill="#F2F6FA"/>
+    <text x="70" y="549" fill="#1E6B33" font-weight="700">2 · Correlograma</text>
+    <text x="170" y="549" fill="#333">Pico grande en r₄ y en r₈; primeras barras decaen de a poco</text>
+    <text x="530" y="549" fill="#333"><tspan font-weight="700">Prueba:</tspan> r₄ ⇒ estacionalidad L=4; decaimiento ⇒ tendencia</text>
+
+    <rect x="56" y="562" width="868" height="34" fill="#fff"/>
+    <text x="70" y="583" fill="#8A5A16" font-weight="700">3 · Elegir</text>
+    <text x="170" y="583" fill="#333">Voy al árbol: tendencia + estacionalidad</text>
+    <text x="530" y="583" fill="#B5651D" font-weight="700">→ WINTER (o descomposición)</text>
+
+    <rect x="56" y="596" width="868" height="34" fill="#F2F6FA"/>
+    <text x="70" y="617" fill="#5B3E8E" font-weight="700">4 · Aplicar</text>
+    <text x="170" y="617" fill="#333">Hago las cuentas de Winter</text>
+    <text x="530" y="617" fill="#333">Los pronósticos Ŷ para los próximos trimestres</text>
+
+    <rect x="56" y="630" width="868" height="34" fill="#fff"/>
+    <text x="70" y="651" fill="#C00000" font-weight="700">5 · Medir</text>
+    <text x="170" y="651" fill="#333">Calculo MAD, MSE, MAPE y PME → MAPE 5%, PME ≈ 0</text>
+    <text x="530" y="651" fill="#1E6B33" font-weight="700">✔ Preciso y sin sesgo: me quedo con Winter</text>
+  </g>
+
+  <rect x="56" y="666" width="868" height="12" rx="0" fill="#EAF6FB"/>
+
+  <!-- ===== EL CASO DEL ERROR ===== -->
+  <rect x="40" y="696" width="450" height="120" rx="8" fill="#FDF2F2" stroke="#C00000" stroke-width="1.8"/>
+  <text x="56" y="718" font-size="13" font-weight="700" fill="#9C3838">¿Y si hubiera salido mal?</text>
+  <text x="56" y="740" font-size="11" fill="#333">Supongamos que en el paso 4 usé <tspan font-weight="700">suavizado simple</tspan></text>
+  <text x="56" y="756" font-size="11" fill="#333">(ignorando el diagnóstico). El paso 5 me daría:</text>
+  <text x="56" y="778" font-size="12" font-weight="700" fill="#C00000">PME = +12%, siempre positivo</text>
+  <text x="56" y="796" font-size="11" fill="#333">⇒ “subestimo todos los meses” ⇒ el método pierde la</text>
+  <text x="56" y="810" font-size="11" fill="#333">tendencia ⇒ <tspan font-weight="700">vuelvo al paso 3 y cambio a Winter</tspan>.</text>
+
+  <rect x="504" y="696" width="436" height="120" rx="8" fill="#F1F7F2" stroke="#1E6B33" stroke-width="1.8"/>
+  <text x="520" y="718" font-size="13" font-weight="700" fill="#1E6B33">La conexión más importante</text>
+  <text x="520" y="742" font-size="11.5" fill="#333">El <tspan font-weight="700">PME de la clase 4</tspan> te DELATA cuando te equivocaste</text>
+  <text x="520" y="758" font-size="11.5" fill="#333">en el <tspan font-weight="700">diagnóstico de la clase 3</tspan>.</text>
+  <text x="520" y="782" font-size="11" fill="#666" font-style="italic">Un método impreciso pero centrado (PME≈0) es un método</text>
+  <text x="520" y="796" font-size="11" fill="#666" font-style="italic">correcto con datos ruidosos. Un método sesgado (PME alto)</text>
+  <text x="520" y="810" font-size="11" fill="#666" font-style="italic">es un método EQUIVOCADO para ese patrón.</text>
+
+  <!-- ===== FRASE FINAL ===== -->
+  <rect x="40" y="828" width="900" height="56" rx="8" fill="#1F4E79"/>
+  <text x="490" y="852" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">3.a me da la SOSPECHA · 3.b me da la PRUEBA · el árbol me da el MÉTODO · la clase 4 me dice si ACERTÉ</text>
+  <text x="490" y="873" font-size="11" fill="#BBD7EE" text-anchor="middle" font-style="italic">“La serie presenta tendencia y estacionalidad (pico en r₄ y decaimiento gradual), por lo que apliqué Winter; el MAPE de 5% y el PME ≈ 0 confirman que es adecuado.”</text>
+</svg>

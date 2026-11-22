@@ -1,0 +1,185 @@
+{
+  "title": "Sistemas de Gestión",
+  "subtitle": "UTN FRRo · Ingeniería en Sistemas",
+  "units": [
+    {
+      "id": "u1",
+      "title": "U1 · La empresa como productora de bienes",
+      "kind": "Teoría",
+      "classes": [
+        {
+          "id": "u1-intro",
+          "title": "Enfoque sistémico",
+          "soon": false,
+          "file": "u1/enfoque.json",
+          "visto": false,
+          "name": "Enfoque sistémico"
+        }
+      ],
+      "lede": "Unidad 1 del programa: la empresa como productora de bienes (y servicios), bajo un enfoque sistémico. Es el marco de las demás unidades."
+    },
+    {
+      "id": "u2",
+      "title": "U2 · Métodos de pronósticos",
+      "kind": "Práctica",
+      "laminas": [
+        {
+          "file": "u2/img/MapaMateria_SistemasDeGestion_v2.svg",
+          "caption": "Mapa de la materia (versión 2)"
+        },
+        {
+          "file": "u2/img/ArbolDecisorio_MetodosPronostico.svg",
+          "caption": "Árbol decisorio de métodos de pronóstico"
+        }
+      ],
+      "lede": "Unidad 2 del programa: los métodos de pronósticos. Empieza con el mapa de toda la materia y las siglas (Clases 0 y 0.1), y sigue con las clases que ya vimos: base estadística, correlación, series, autocorrelación, medidas de error y el integrador.",
+      "classes": [
+        {
+          "id": "c0",
+          "title": "Clase 0 · Mapa",
+          "soon": false,
+          "file": "u2/clase00.json",
+          "visto": true,
+          "name": "Mapa"
+        },
+        {
+          "id": "c01",
+          "title": "Clase 0.1 · Siglas",
+          "soon": false,
+          "file": "u2/clase01_siglas.json",
+          "visto": true,
+          "name": "Siglas"
+        },
+        {
+          "id": "c1",
+          "title": "Clase 1 · Base estadística",
+          "file": "u2/clase01.json",
+          "soon": false,
+          "visto": true,
+          "name": "Base estadística"
+        },
+        {
+          "id": "c1b",
+          "title": "Clase 1.b · Tabla Z",
+          "file": "u2/clase01b.json",
+          "soon": false,
+          "visto": true,
+          "name": "Tabla Z"
+        },
+        {
+          "id": "c2",
+          "title": "Clase 2 · Correlación",
+          "file": "u2/clase02.json",
+          "soon": false,
+          "visto": true,
+          "name": "Correlación"
+        },
+        {
+          "id": "c3a",
+          "title": "Clase 3.a · Series de tiempo",
+          "file": "u2/clase03a.json",
+          "soon": false,
+          "visto": true,
+          "name": "Series de tiempo"
+        },
+        {
+          "id": "c3b",
+          "title": "Clase 3.b · Autocorrelación",
+          "file": "u2/clase03b.json",
+          "soon": false,
+          "visto": true,
+          "name": "Autocorrelación"
+        },
+        {
+          "id": "c4",
+          "title": "Clase 4 · Medidas de error",
+          "file": "u2/clase04.json",
+          "soon": false,
+          "visto": true,
+          "name": "Medidas de error"
+        },
+        {
+          "id": "cint",
+          "title": "Integrador · Proceso completo",
+          "file": "u2/integrador.json",
+          "soon": false,
+          "visto": true,
+          "name": "Proceso completo"
+        },
+        {
+          "id": "c5",
+          "title": "Clase 5 · Métodos no formales y promedios",
+          "soon": false,
+          "file": "u2/clase05.json",
+          "visto": false,
+          "name": "No formales y promedios"
+        },
+        {
+          "id": "c6",
+          "title": "Clase 6 · Suavizado simple",
+          "soon": true
+        }
+      ]
+    },
+    {
+      "id": "u3",
+      "title": "U3 · El producto",
+      "kind": "Teoría + cálculo",
+      "classes": [
+        {
+          "id": "u3-intro",
+          "title": "Ciclo de vida, BOM, codificación",
+          "soon": true
+        }
+      ]
+    },
+    {
+      "id": "u4",
+      "title": "U4 · El proceso de producción",
+      "kind": "Teoría + práctica",
+      "classes": [
+        {
+          "id": "u4-intro",
+          "title": "JIT, TOC, hombre-máquina",
+          "soon": true
+        }
+      ]
+    },
+    {
+      "id": "u5",
+      "title": "U5 · Logística",
+      "kind": "Práctica + teoría",
+      "classes": [
+        {
+          "id": "u5-intro",
+          "title": "EOQ, stock, ABC",
+          "soon": true
+        }
+      ]
+    },
+    {
+      "id": "u6",
+      "title": "U6 · Planificación y control",
+      "kind": "Práctica",
+      "classes": [
+        {
+          "id": "u6-intro",
+          "title": "Plan agregado, MPS, MRP",
+          "soon": true
+        }
+      ]
+    },
+    {
+      "id": "u7",
+      "title": "U7 · Softwares ERP",
+      "kind": "Teoría",
+      "classes": [
+        {
+          "id": "u7-intro",
+          "title": "De MRP a ERP",
+          "soon": true
+        }
+      ]
+    }
+  ]
+}

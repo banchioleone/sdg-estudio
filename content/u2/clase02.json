@@ -1,0 +1,673 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c2",
+  "title": "Clase 2 · Correlación",
+  "name": "Correlación",
+  "lede": "hasta ahora mirábamos UNA variable (ventas y su dispersión). La correlación mide si DOS variables se mueven juntas. Si encontrás una variable que acompaña a tus ventas, ganás dos cosas: entendés por qué varían y podés pronosticarlas. Es la antesala directa de la regresión.",
+  "visto": true,
+  "source": [
+    "clases_previas/SG/Clase02_Correlacion.md",
+    "clases_previas/SG/Clase02_Correlacion.svg"
+  ],
+  "laminas": [
+    "u2/img/Clase02_Correlacion.svg"
+  ],
+  "next": "Clase 3.a · Series de tiempo",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2.a (cierre) · Serie: 0 → 0.1 → 1 → 1.b → **2****"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Idea central:** hasta ahora mirábamos UNA variable (ventas y su dispersión). La correlación mide si DOS variables se mueven juntas. Si encontrás una variable que acompaña a tus ventas, ganás dos cosas: entendés por qué varían y podés pronosticarlas. Es la antesala directa de la regresión."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. El problema que resuelve"
+    },
+    {
+      "type": "paragraph",
+      "text": "La pregunta útil para una empresa no es solo \"¿cuánto vendo en promedio?\", sino **\"¿de qué dependen mis ventas?\"** — del precio, de la publicidad, de la temperatura, del PBI."
+    },
+    {
+      "type": "paragraph",
+      "text": "Si dos variables se mueven juntas:"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**Entendés** el fenómeno (por qué suben o bajan las ventas).",
+        "**Podés pronosticar**: si conocés la publicidad del mes próximo, estimás las ventas."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Primer paso SIEMPRE: el diagrama de dispersión"
+    },
+    {
+      "type": "paragraph",
+      "text": "Antes de calcular nada, **se grafica**. Cada punto es un par de datos: X en el eje horizontal, Y en el vertical."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Convención de variables"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Variable",
+        "Nombre",
+        "Qué es"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "**X**",
+          "**independiente**",
+          "La que explica; la causa candidata; la que conocés primero"
+        ],
+        [
+          "**Y**",
+          "**dependiente**",
+          "La que querés explicar o predecir"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "*Ejemplo:* para estimar ventas a partir de publicidad → publicidad = X, ventas = Y."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Datos del ejemplo (5 meses)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Publicidad (X, miles $)",
+        "Ventas (Y, unidades)"
+      ],
+      "rows": [
+        [
+          "---",
+          "---"
+        ],
+        [
+          "10",
+          "120"
+        ],
+        [
+          "15",
+          "135"
+        ],
+        [
+          "8",
+          "105"
+        ],
+        [
+          "18",
+          "140"
+        ],
+        [
+          "6",
+          "100"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Al graficar se ve que suben juntos: a más publicidad, más ventas. **Eso ya es información, antes de cualquier fórmula.**"
+    },
+    {
+      "type": "svg",
+      "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" aria-hidden=\"true\"><line x1=\"32\" y1=\"118\" x2=\"272\" y2=\"118\" stroke=\"#d0d5db\" stroke-width=\"1.2\"/><line x1=\"32\" y1=\"20\" x2=\"32\" y2=\"118\" stroke=\"#d0d5db\" stroke-width=\"1.2\"/><line x1=\"59.5\" y1=\"102.66666666666667\" x2=\"224.5\" y2=\"41.33333333333333\" stroke=\"#a67c00\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><circle cx=\"114.5\" cy=\"72.0\" r=\"4\" fill=\"#1f4e79\"/><circle cx=\"183.25\" cy=\"49.0\" r=\"4\" fill=\"#1f4e79\"/><circle cx=\"87.0\" cy=\"95.0\" r=\"4\" fill=\"#1f4e79\"/><circle cx=\"224.5\" cy=\"41.33333333333333\" r=\"4\" fill=\"#1f4e79\"/><circle cx=\"59.5\" cy=\"102.66666666666667\" r=\"4\" fill=\"#1f4e79\"/><text x=\"150\" y=\"134\" font-size=\"9\" fill=\"#5c6670\" text-anchor=\"middle\">Publicidad X (miles $)</text><text x=\"12\" y=\"70\" font-size=\"9\" fill=\"#5c6670\" transform=\"rotate(-90 12 70)\">Ventas Y</text></svg>",
+      "caption": "Diagrama de dispersión del ejemplo: publicidad (X) vs. ventas (Y). Nube lineal positiva, puntos apretados — el r ≈ 0,98 se ve antes de calcularlo."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Los 6 patrones posibles (Hanke, cap. 2)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "#",
+        "Patrón",
+        "Cómo se ve",
+        "Ejemplo típico"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "1",
+          "**Lineal positiva perfecta**",
+          "puntos exactos sobre recta ascendente",
+          "(teórico)"
+        ],
+        [
+          "2",
+          "**Lineal negativa perfecta**",
+          "puntos exactos sobre recta descendente",
+          "(teórico)"
+        ],
+        [
+          "3",
+          "**Lineal positiva imperfecta**",
+          "nube alargada hacia arriba",
+          "publicidad vs. ventas ← *el caso realista*"
+        ],
+        [
+          "4",
+          "**Lineal negativa imperfecta**",
+          "nube alargada hacia abajo",
+          "precio vs. cantidad vendida"
+        ],
+        [
+          "5",
+          "**Curva**",
+          "relación clara pero no recta (U, exponencial)",
+          "⚠ el caso trampa"
+        ],
+        [
+          "6",
+          "**Sin relación**",
+          "nube redonda, sin dirección",
+          "X no dice nada de Y"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Qué buscar en el gráfico, en este orden:**"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "¿Lineal o curva?",
+        "Si es lineal: ¿positiva o negativa?",
+        "¿Cuán apretados están los puntos alrededor de la recta? (el grado de la relación)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. El coeficiente de correlación (r)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Definición:** mide el grado en que dos variables se relacionan **LINEALMENTE**."
+    },
+    {
+      "type": "formula",
+      "tex": "r = \\frac{n\\sum XY - \\sum X \\sum Y}{\\sqrt{\\left[n\\sum X^2 - (\\sum X)^2\\right]\\cdot\\left[n\\sum Y^2 - (\\sum Y)^2\\right]}}"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/Clase02_Correlacion.svg",
+      "caption": "Lámina de la Clase 2 · Correlación"
+    },
+    {
+      "type": "paragraph",
+      "text": "Parece compleja pero es pura sumatoria: se arma una tabla con columnas **X, Y, XY, X², Y²**, se suma cada columna y se reemplaza."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Escala de lectura"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "r",
+        "Interpretación"
+      ],
+      "rows": [
+        [
+          "---",
+          "---"
+        ],
+        [
+          "+1",
+          "positiva perfecta"
+        ],
+        [
+          "+0,7 a +0,99",
+          "positiva fuerte"
+        ],
+        [
+          "+0,3 a +0,7",
+          "positiva moderada"
+        ],
+        [
+          "≈ 0",
+          "sin relación **lineal**"
+        ],
+        [
+          "−0,3 a −0,7",
+          "negativa moderada"
+        ],
+        [
+          "−0,7 a −0,99",
+          "negativa fuerte"
+        ],
+        [
+          "−1",
+          "negativa perfecta"
+        ]
+      ]
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**El signo** → la **dirección** (¿suben juntas o en direcciones opuestas?)",
+        "**El valor absoluto** → la **fuerza** (qué tan pegados a la recta están los puntos)",
+        "**Siempre** entre −1 y +1. Si te da 1,3 o −2, hay error de cálculo."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Ejemplo resuelto paso a paso"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Datos:** publicidad (X) y ventas (Y), n = 5."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "X",
+        "Y",
+        "XY",
+        "X²",
+        "Y²"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "10",
+          "120",
+          "1.200",
+          "100",
+          "14.400"
+        ],
+        [
+          "15",
+          "135",
+          "2.025",
+          "225",
+          "18.225"
+        ],
+        [
+          "8",
+          "105",
+          "840",
+          "64",
+          "11.025"
+        ],
+        [
+          "18",
+          "140",
+          "2.520",
+          "324",
+          "19.600"
+        ],
+        [
+          "6",
+          "100",
+          "600",
+          "36",
+          "10.000"
+        ],
+        [
+          "**ΣX = 57**",
+          "**ΣY = 600**",
+          "**ΣXY = 7.185**",
+          "**ΣX² = 749**",
+          "**ΣY² = 73.250**"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**① Numerador:**\nn·ΣXY − ΣX·ΣY = 5(7.185) − (57)(600) = 35.925 − 34.200 = **1.725**"
+    },
+    {
+      "type": "paragraph",
+      "text": "**② Primer corchete:**\nn·ΣX² − (ΣX)² = 5(749) − 57² = 3.745 − 3.249 = **496**"
+    },
+    {
+      "type": "paragraph",
+      "text": "**③ Segundo corchete:**\nn·ΣY² − (ΣY)² = 5(73.250) − 600² = 366.250 − 360.000 = **6.250**"
+    },
+    {
+      "type": "paragraph",
+      "text": "**④ Denominador:**\n√(496 × 6.250) = √3.100.000 ≈ **1.760,7**"
+    },
+    {
+      "type": "paragraph",
+      "text": "**⑤ Resultado:**"
+    },
+    {
+      "type": "formula",
+      "tex": "r = \\frac{1.725}{1.760,7} \\approx \\mathbf{0,98}"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Interpretación:** correlación positiva **muy fuerte**. La publicidad y las ventas se mueven casi en línea recta. Con un r así, un modelo de regresión sobre estos datos va a ajustar muy bien."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Las DOS advertencias que siempre se preguntan ★"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "⚠ 1. Correlación NO implica causalidad"
+    },
+    {
+      "type": "paragraph",
+      "text": "Que dos cosas se muevan juntas no significa que una cause la otra. Puede haber:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Una **tercera variable** moviendo a ambas → *ejemplo clásico: la venta de helados y los ahogamientos suben juntos; no es que el helado ahogue, es el calor que causa ambos.*",
+        "**Pura coincidencia** (correlaciones espurias)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**r mide asociación, no causa.** Quien decide si hay causalidad es el criterio del analista sobre el negocio, no la fórmula."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "⚠ 2. Un r bajo NO significa \"sin relación\""
+    },
+    {
+      "type": "paragraph",
+      "text": "r mide **solo relación lineal**. Una relación en forma de U perfecta puede dar **r ≈ 0** y sin embargo ser una relación fortísima."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Por eso: primero se grafica, después se calcula.** Si te guiás solo por el número, te perdés las relaciones curvas. *Esta es exactamente la razón por la que la cátedra insiste con el \"análisis de gráficos\".*"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. El puente hacia lo que viene"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Herramienta",
+        "Qué te dice",
+        "Dónde se ve"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "**r**",
+          "*Si* hay relación lineal y cuán fuerte",
+          "Clase 2 (hoy)"
+        ],
+        [
+          "**Regresión**",
+          "La *ecuación de la recta* para poder pronosticar",
+          "Clases 8–9"
+        ],
+        [
+          "**R² = r²**",
+          "Qué **% de la variación de Y** explica el modelo",
+          "Clase 9"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "En el ejemplo: r = 0,98 → **R² = 0,96** → *\"la publicidad explica el 96% de la variación de las ventas\"*. Esa frase es interpretación pura: el tipo de respuesta que puntúa la cátedra."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Más adelante:** con varias variables explicativas (regresión múltiple) se arma la **matriz de correlación** — todos los r cruzados entre todas las variables — para elegir buenas predictoras y detectar **colinealidad**. Todo eso nace de este r."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "8. Chequeos de sensatez"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "r siempre entre −1 y +1 (fuera de ese rango = error de cálculo)",
+        "El signo de r debe coincidir con lo que ves en el gráfico (si la nube sube, r > 0)",
+        "Si r ≈ 0 pero el gráfico muestra un patrón claro → la relación es **curva**, no inexistente",
+        "Un r alto **no autoriza** a hablar de causa"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "9. Mini-resumen para tu doc"
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Clase 2.** Correlación mide si dos variables se mueven juntas. Siempre graficar primero (diagrama de dispersión, X=independiente, Y=dependiente) e identificar el patrón entre los 6 posibles. r ∈ [−1, +1]: el signo da dirección, el valor absoluto la fuerza. Se calcula con la tabla de Σ (X, Y, XY, X², Y²). Dos advertencias de examen: correlación ≠ causalidad, y r bajo solo descarta relación LINEAL (una curva puede dar r≈0). r² = % de variación explicada; enlaza directo con regresión."
+    },
+    {
+      "type": "ejercicio",
+      "title": "10. EJERCICIO PENDIENTE — Clase 2",
+      "estado": "para resolver",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Una fábrica registró, para 5 meses, la temperatura media (°C) y las ventas de bebidas (miles de litros):"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Temp (X)",
+            "18",
+            "25",
+            "30",
+            "22",
+            "15"
+          ],
+          "rows": [
+            [
+              "---",
+              "---",
+              "---",
+              "---",
+              "---",
+              "---"
+            ],
+            [
+              "Ventas (Y)",
+              "40",
+              "65",
+              "78",
+              "52",
+              "30"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "**a)** Armá la tabla con las 5 columnas (X, Y, XY, X², Y²) y obtené las sumatorias.\n**b)** Calculá r.\n**c)** Interpretá: dirección, fuerza, y qué % de la variación de las ventas queda explicado.\n**d)** *Pregunta de criterio:* ¿podés afirmar que la temperatura **causa** las ventas? Justificá."
+        },
+        {
+          "type": "callout",
+          "kind": "idea",
+          "text": "**Recordatorio:** graficá los puntos antes de calcular. El gráfico es método y es puntaje (criterio oficial: \"interpretación de los resultados\" y \"fundamentación de las respuestas\")."
+        }
+      ],
+      "nota": "Para resolver — en el material no figura la resolución. Cuando lo corriamos, la cargamos acá."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "11. Ejercicios acumulados pendientes de corrección"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "**Clase 1.b** (ventas 120, 135, 105, 140, 100): ítems a) X̄ y s · b) P(X<150) · c) P(X>90) · d) P(110<X<145) · e) inverso 90% · f) ¿Z o t?",
+        "**Clase 2** (temperatura vs. bebidas): ítems a) a d)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** `Clase01_y_01b_BaseEstadistica.md` · `Clase01_BaseEstadistica.svg` · `Clase01b_TablaZ_5Casos.svg`\n**Fuente:** Hanke, *Pronósticos en los Negocios*, cap. 2 (análisis de correlación) — disponible completo en Drive/Teoría/Libros."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Clase 3: Fuentes y tipos de datos + componentes de una serie de tiempo** (tendencia, ciclo, estacionalidad, irregularidad): el ingreso formal a los pronósticos."
+    }
+  ],
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "Ahora miramos dos variables juntas.",
+      "text": "Hasta ahora mirábamos una variable (ventas y su dispersión). La correlación mide si dos variables se mueven juntas. Si encontrás una que acompaña a tus ventas, entendés por qué varían y podés pronosticarlas. Es la antesala de la regresión."
+    },
+    {
+      "type": "concepto",
+      "k": "La pregunta útil",
+      "title": "¿De qué dependen mis ventas?",
+      "text": "No alcanza con «¿cuánto vendo en promedio?». Si dos variables se mueven juntas, entendés el fenómeno y, si conocés una (la publicidad del mes que viene), estimás la otra."
+    },
+    {
+      "type": "concepto",
+      "k": "Paso uno",
+      "title": "Siempre se grafica primero.",
+      "text": "Cada punto es un par: X en el horizontal, Y en el vertical. X es la independiente (la que explica, la que conocés primero). Y es la dependiente (la que querés explicar o predecir).",
+      "ejemplo": "Para estimar ventas a partir de publicidad: publicidad = X, ventas = Y. Con 5 meses (10→120, 15→135, 8→105, 18→140, 6→100) se ve que suben juntos. Eso ya es información, antes de cualquier fórmula.",
+      "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" aria-hidden=\"true\"><line x1=\"32\" y1=\"118\" x2=\"272\" y2=\"118\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.2\"/><line x1=\"32\" y1=\"20\" x2=\"32\" y2=\"118\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.2\"/><line x1=\"59.5\" y1=\"102.66666666666667\" x2=\"224.5\" y2=\"41.33333333333333\" stroke=\"#e8c56a\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><circle cx=\"114.5\" cy=\"72.0\" r=\"4\" fill=\"#8cb4d6\"/><circle cx=\"183.25\" cy=\"49.0\" r=\"4\" fill=\"#8cb4d6\"/><circle cx=\"87.0\" cy=\"95.0\" r=\"4\" fill=\"#8cb4d6\"/><circle cx=\"224.5\" cy=\"41.33333333333333\" r=\"4\" fill=\"#8cb4d6\"/><circle cx=\"59.5\" cy=\"102.66666666666667\" r=\"4\" fill=\"#8cb4d6\"/><text x=\"150\" y=\"134\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">Publicidad X (miles $)</text><text x=\"12\" y=\"70\" font-size=\"9\" fill=\"#9aa3ad\" transform=\"rotate(-90 12 70)\">Ventas Y</text></svg>",
+      "chartLabel": "Publicidad vs. ventas (5 meses del apunte)"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Si querés estimar ventas a partir de la publicidad, ¿cuál es X?",
+      "options": [
+        "Las ventas, porque es lo que más te importa",
+        "La publicidad: es la independiente, la que conocés primero",
+        "Da igual: r no distingue X de Y"
+      ],
+      "correct": 1,
+      "feedback": "X es la independiente, la causa candidata, la que conocés primero. Y es la que querés explicar o predecir. Publicidad = X, ventas = Y."
+    },
+    {
+      "type": "concepto",
+      "k": "Seis patrones",
+      "title": "Hanke, capítulo 2.",
+      "text": "Lineal positiva o negativa, perfecta o imperfecta; curva; o sin relación. En la práctica, el caso realista es la nube alargada (imperfecta).",
+      "ejemplo": "Qué buscar, en este orden: ¿lineal o curva? Si es lineal, ¿positiva o negativa? ¿Cuán apretados están los puntos?"
+    },
+    {
+      "type": "concepto",
+      "k": "El coeficiente r",
+      "title": "Mide la relación LINEAL.",
+      "text": "Se arma una tabla con X, Y, XY, X², Y², se suma cada columna y se reemplaza en la fórmula. r siempre está entre −1 y +1. El signo es la dirección; el valor absoluto, la fuerza.",
+      "formula": "r = \\frac{n\\sum XY - \\sum X \\sum Y}{\\sqrt{\\left[n\\sum X^2 - (\\sum X)^2\\right]\\cdot\\left[n\\sum Y^2 - (\\sum Y)^2\\right]}}",
+      "ejemplo": "Si te da 1,3 o −2, hay error de cálculo."
+    },
+    {
+      "type": "concepto",
+      "k": "Paso a paso",
+      "title": "Publicidad y ventas: r ≈ 0,98.",
+      "text": "n = 5, ΣX = 57, ΣY = 600, ΣXY = 7.185, ΣX² = 749, ΣY² = 73.250. Numerador 1.725, denominador ≈ 1.760,7.",
+      "ejemplo": "r ≈ 0,98: correlación positiva muy fuerte. Se mueven casi en línea recta. Un modelo de regresión sobre estos datos va a ajustar muy bien.",
+      "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" aria-hidden=\"true\"><line x1=\"32\" y1=\"118\" x2=\"272\" y2=\"118\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.2\"/><line x1=\"32\" y1=\"20\" x2=\"32\" y2=\"118\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.2\"/><line x1=\"59.5\" y1=\"102.66666666666667\" x2=\"224.5\" y2=\"41.33333333333333\" stroke=\"#e8c56a\" stroke-width=\"1.4\" stroke-dasharray=\"4 3\"/><circle cx=\"114.5\" cy=\"72.0\" r=\"4\" fill=\"#8cb4d6\"/><circle cx=\"183.25\" cy=\"49.0\" r=\"4\" fill=\"#8cb4d6\"/><circle cx=\"87.0\" cy=\"95.0\" r=\"4\" fill=\"#8cb4d6\"/><circle cx=\"224.5\" cy=\"41.33333333333333\" r=\"4\" fill=\"#8cb4d6\"/><circle cx=\"59.5\" cy=\"102.66666666666667\" r=\"4\" fill=\"#8cb4d6\"/><text x=\"150\" y=\"134\" font-size=\"9\" fill=\"#9aa3ad\" text-anchor=\"middle\">Publicidad X (miles $)</text><text x=\"12\" y=\"70\" font-size=\"9\" fill=\"#9aa3ad\" transform=\"rotate(-90 12 70)\">Ventas Y</text></svg>",
+      "chartLabel": "r ≈ 0,98: casi una recta"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Un r = 0,98 entre publicidad y ventas significa…",
+      "options": [
+        "Que la publicidad causa el 98% de las ventas",
+        "Correlación positiva muy fuerte: se mueven casi en línea recta",
+        "Que no hay relación, porque r tiene que ser entero"
+      ],
+      "correct": 1,
+      "feedback": "r = 0,98 es positiva y muy fuerte (cerca de +1). No autoriza a hablar de causa: r mide asociación, no causalidad."
+    },
+    {
+      "type": "concepto",
+      "k": "Advertencia 1",
+      "title": "Correlación no implica causalidad.",
+      "text": "Que dos cosas se muevan juntas no significa que una cause la otra. Puede haber una tercera variable moviendo a ambas, o pura coincidencia (correlaciones espurias).",
+      "ejemplo": "Ejemplo clásico del apunte: la venta de helados y los ahogamientos suben juntos; no es que el helado ahogue, es el calor que causa ambos. Quien decide si hay causalidad es el criterio del analista sobre el negocio, no la fórmula."
+    },
+    {
+      "type": "concepto",
+      "k": "Advertencia 2",
+      "title": "Un r bajo no es «sin relación».",
+      "text": "r mide solo relación lineal. Una relación en forma de U perfecta puede dar r ≈ 0 y ser, igual, una relación fortísima.",
+      "ejemplo": "Por eso: primero se grafica, después se calcula. Si te guiás solo por el número, te perdés las curvas. Es exactamente por lo que la cátedra insiste con el análisis de gráficos."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Si el gráfico muestra una U clara pero r ≈ 0, ¿qué pasa?",
+      "options": [
+        "No hay ninguna relación entre las variables",
+        "Hay error de cálculo: r no puede dar 0",
+        "Hay relación, pero no es lineal: r no la captura"
+      ],
+      "correct": 2,
+      "feedback": "r solo mide relación lineal. Una curva puede dar r ≈ 0 y ser una relación fortísima. Por eso se grafica primero."
+    },
+    {
+      "type": "concepto",
+      "k": "El puente",
+      "title": "r² es el porcentaje que explica el modelo.",
+      "text": "r te dice si hay relación lineal y cuán fuerte. La regresión te da la ecuación para pronosticar. R² = r² es el % de la variación de Y que explica el modelo.",
+      "ejemplo": "En el ejemplo, r = 0,98 → R² = 0,96 → «la publicidad explica el 96% de la variación de las ventas». Esa frase es el tipo de interpretación que puntúa la cátedra."
+    },
+    {
+      "type": "cierre",
+      "title": "Llevate esto de la Clase 2.",
+      "text": "Siempre graficá primero. r dice si hay relación lineal, no si hay causa, y un r bajo no descarta una curva. r² es el % de variación que explica el modelo. El ejercicio de temperatura y bebidas queda para resolver juntos."
+    }
+  ]
+}

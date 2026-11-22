@@ -1,0 +1,478 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c01",
+  "title": "Clase 0.1 · Siglas",
+  "name": "Siglas",
+  "lede": "El criterio de evaluación pide vocabulario específico. Esta clase junta las siglas del programa, el mapa, los apuntes y los exámenes, con el significado tal como aparece en el material. Si una sigla se usa pero no se desarrolla, va al final: no se inventa.",
+  "visto": true,
+  "source": [
+    "texto/resumenes/Resumen_Sistema_de_Gestion_7p.txt",
+    "texto/resumenes/ResumenSG-Final-V6_345p.txt",
+    "texto/resumenes/Resumen_Hanke_25p.txt",
+    "texto/Preguntas_Frecuentes.txt",
+    "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt",
+    "clases_previas/SG/Clase04_MedidasDeError.md",
+    "clases_previas/SG/Clase03b_Autocorrelacion.md",
+    "clases_previas/SG/Clase02_Correlacion.md",
+    "programa.md (SG1Progr2008.doc)",
+    "patrones_examenes.md",
+    "clases_previas/SG/MapaMateria_SistemasDeGestion_v2.svg",
+    "clases_previas/conversacion_previa_notas.md",
+    "aportes_emiliano/examen_2018_transcripcion.md",
+    "drive/03_El proceso de Producción/PAC.pdf (R. Morán, 2001) → texto/apuntes_nuevos/PAC.txt",
+    "drive/06_Decisiones en Logística Integral/DRP.pdf (R. Morán, 2000) → texto/apuntes_nuevos/DRP.txt",
+    "drive/03_El proceso de Producción/Planificacion de la Capacidad.pdf (R. Morán, 2001)",
+    "drive/07_Sistema de Soporte a la Toma de Decisiones/2014 - Inteligencia de Negocios.pdf",
+    "texto/examenes/Preguntas SG1.txt (y bancos de teoría equivalentes)"
+  ],
+  "laminas": [
+    "u2/img/MapaMateria_SistemasDeGestion_v2.svg"
+  ],
+  "next": "Clase 1 · Base estadística",
+  "teoria": [
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Idea central:** no memorices una lista suelta. Las siglas son el vocabulario de la cadena de planificación (plan agregado → MPS → capacidad → MRP → control de piso → ERP) y de los insumos que la alimentan. El programa pide «la utilización de un vocabulario específico»."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. De dónde sale esta clase"
+    },
+    {
+      "type": "paragraph",
+      "text": "No hay un apunte titulado «Clase 0.1 · Siglas». En la cursada se dictó (notas de la conversación previa). El glosario se reconstruyó con el Resumen de 7 páginas, el Resumen SG Final V6 (Chase), el resumen de Hanke, Preguntas frecuentes, el Documento Maestro v2, el programa 2008, el mapa v2, los apuntes de las Clases 2 a 4 y la transcripción del final 2018. Cada significado lleva la fuente. **No se completa una sigla “de memoria general”.**"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. La cadena corta"
+    },
+    {
+      "type": "paragraph",
+      "text": "El Resumen de 7 páginas dice que el sistema de **Planificación de los Requerimientos de Materiales (MRP: Material Requirements Planning)** obtiene las necesidades de cada una de las partes, en cada período, para cumplir con las cantidades de los productos finales fijadas en el **Plan Maestro de Producción (MPS)**. El MRP gestiona existencias de **demanda dependiente**: las necesidades se calculan a partir del MPS."
+    },
+    {
+      "type": "paragraph",
+      "text": "En el Resumen V6, «el programa maestro de producción (MPS) es el plan con los tiempos desglosados que especifica cuántas piezas finales va a fabricar la empresa y cuándo»."
+    },
+    {
+      "type": "paragraph",
+      "text": "El mismo V6 presenta **MRP II** como **planeación de recursos de manufactura**: una expansión del MRP para planear y monitorear más áreas de la empresa. El programa oficial habla de «Sistemas MRPII (CRP)». El Documento Maestro anota: «MRP II (CRP — planificación de requerimientos de capacidad)» y la pregunta textual «MRP vs. MRP II/MCP vs. ERP». **MCP aparece en esa pregunta; el material leído no desarrolla la sigla** (queda en la sección 8)."
+    },
+    {
+      "type": "paragraph",
+      "text": "**ERP**, en el objetivo de la U7 del programa: «paquetes pre-programados parametrizables existentes en el mercado para la gestión integral de los recursos en empresas industriales (ERP)». El V6 habla de «sistemas de planeación de recursos empresariales». El mapa resume la historia: **MRP → MRP II → ERP**. SAP aparece como «caso típico» de sistema comercial, no como una sigla a expandir."
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/MapaMateria_SistemasDeGestion_v2.svg",
+      "caption": "Mapa v2: la cadena vive en la U6 y se empaqueta en la U7"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Glosario: planificación y producto"
+    },
+    {
+      "type": "glosario",
+      "title": "Planificación, materiales y producto",
+      "intro": "Significado según el material. Entre paréntesis, la fuente.",
+      "entries": [
+        {
+          "simbolo": "MRP",
+          "nombre": "Material Requirements Planning",
+          "significado": "Planificación de los Requerimientos de Materiales. Calcula las necesidades de conjuntos, piezas y materias primas por período para cumplir el MPS. Es gestión de existencias de demanda dependiente. (Resumen 7 p.)"
+        },
+        {
+          "simbolo": "MPS",
+          "nombre": "Plan Maestro de Producción / Master Production Schedule",
+          "significado": "Programa o plan maestro de producción: el plan con los tiempos desglosados que especifica cuántas piezas finales va a fabricar la empresa y cuándo. El inglés Master Production Schedule aparece explícito en PAC.pdf. (apunte: PAC.pdf; también V6 y Resumen 7 p.)"
+        },
+        {
+          "simbolo": "MRP II",
+          "nombre": "planeación de recursos de manufactura",
+          "significado": "Planeación de recursos de manufactura: expansión del MRP para planear y monitorear más recursos de la empresa. (V6). El programa lo menciona junto a CRP."
+        },
+        {
+          "simbolo": "CRP",
+          "nombre": "Capacity Requirements Planning",
+          "significado": "Planificación de los Requerimientos de Capacidad (PAC.pdf). El apunte de capacidad la describe como el Plan de Capacidad Detallado: determina período a período lo que resulta del MRP, y es complementaria del RCCP (Rough-Cut Capacity Planning). El Documento Maestro la anota junto a MRP II. (apunte: PAC.pdf y Planificacion de la Capacidad.pdf — R. Morán, 2001)"
+        },
+        {
+          "simbolo": "ERP",
+          "nombre": "planeación / gestión integral de recursos empresariales",
+          "significado": "En el programa U7: gestión integral de los recursos en empresas industriales, mediante paquetes pre-programados parametrizables. En el V6: planeación de recursos empresariales. Historia del mapa: MRP → MRP II → ERP."
+        },
+        {
+          "simbolo": "BOM",
+          "nombre": "lista de materiales / estructura de producto",
+          "significado": "El programa (U3) dice «Estructura de producto. BOM. Explosión sumarizada y por niveles». Preguntas frecuentes pregunta: «¿En ERP qué información tiene la BOM (lista de materiales)?». El V6 describe el archivo con la lista de materiales que especifica qué se usa para hacer cada pieza."
+        },
+        {
+          "simbolo": "PAC",
+          "nombre": "Production Activity Control",
+          "significado": "Control de las Actividades de Producción. Objetivo: «realizar el lanzamiento, la programación y el control del progreso de las órdenes de producción, es decir administrar el trabajo en curso de ejecución». También se lo designa Control de la Producción o Control del Taller (SFC: Shop Floor Control). La entrada del PAC son las salidas del MPS, del MRP y del CRP, más datos de ingeniería. (apunte: PAC.pdf — R. Morán, 2001)"
+        },
+        {
+          "simbolo": "SFC",
+          "nombre": "Shop Floor Control",
+          "significado": "Control del Taller: otra designación del PAC, según el mismo apunte. (apunte: PAC.pdf — R. Morán, 2001)"
+        },
+        {
+          "simbolo": "DRP",
+          "nombre": "Distribution Requirements Planning",
+          "significado": "Planificación de los Requerimientos de Distribución. «Es un sistema muy similar al MRP en su funcionamiento básico, pero referido exclusivamente a productos finales.» Se usa cuando hay centros de distribución (CD) para generar requerimientos hacia el MPS. (apunte: DRP.pdf — R. Morán, 2000)"
+        },
+        {
+          "simbolo": "MCP",
+          "nombre": "duda: ver sección 8",
+          "significado": "Aparece en la pregunta textual de final «Qué es MRP, MCP, ERP» (13/12/2012) y el Documento Maestro la escribe como «MRP vs. MRP II/MCP vs. ERP». Ningún apunte leído desarrolla la sigla. Opciones halladas: (1) en el contexto de esa pregunta, la cátedra parece usarla del lado de MRP II, sin definirla; (2) en sitios de software (p. ej. TIC Portal) MCP es Machine Capacity Planning, planificación de la capacidad de las máquinas, distinto de CRP. No se adopta una como definición oficial. (examen 2012 / patrones; Documento Maestro; web: ticportal.es)"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Glosario: inventarios y loteo"
+    },
+    {
+      "type": "glosario",
+      "title": "Inventarios y loteo",
+      "intro": null,
+      "entries": [
+        {
+          "simbolo": "EOQ",
+          "nombre": "Economic Order Quantity",
+          "significado": "Lote económico clásico / cantidad de pedido económico. Se usa cuando la demanda período a período es poco variable. (Resumen 7 p.; V6)"
+        },
+        {
+          "simbolo": "LEC",
+          "nombre": "lote económico de compra (lectura del material + uso estándar)",
+          "significado": "En los bancos de teoría aparece junto a LEF, y con LTF / LTC, en el archivo de gestión de stock (LEC y LEF, LTF y LTC). El Documento Maestro y el mapa lo escriben «EOQ/LEC» como loteo. El material de cátedra no escribe la frase «lote económico de compra» letra por letra; sí define LEF como lote económico de fabricación. En textos universitarios de producción, LEC es el lote económico de compra, contraparte del LEF (p. ej. programa de Administración IV, UNLP). (banco: Preguntas SG1.txt; Documento Maestro; web/conocimiento general: uso estándar LEC/LEF). Duda menor: la forma larga no está textual en los PDF de la cátedra. En el OCR de EjerciciosFinalesResueltos.pdf (p.30), un EOQ de *compra* (hospital, 500 kg de algodón) pregunta «Cual es su L.E.C.». Eso refuerza esta lectura, pero la frase «lote económico de compra» sigue sin aparecer completa en el material."
+        },
+        {
+          "simbolo": "TBO",
+          "nombre": "Time Between Orders",
+          "significado": "Tiempo entre órdenes, expresado en períodos de planificación. (Resumen 7 p.)"
+        },
+        {
+          "simbolo": "POQ",
+          "nombre": "Periodic Order Quantity",
+          "significado": "Cantidad periódica de producción: modelo de período fijo y cantidad variable, que usa la fórmula del EOQ para hallar el TBO y luego las cantidades a ordenar. (Resumen 7 p.)"
+        },
+        {
+          "simbolo": "PPB",
+          "nombre": "Part Period Balancing",
+          "significado": "Balance cantidad-período: agrupa los requerimientos del MRP para minimizar el costo unitario total de producción y mantenimiento en stock. (Resumen 7 p.)"
+        },
+        {
+          "simbolo": "ABC",
+          "nombre": "análisis / clasificación ABC",
+          "significado": "Método para analizar el inventario con base en el valor; el V6 lo presenta como aplicación del análisis de Pareto al inventario. El programa y el mapa lo ubican en logística."
+        },
+        {
+          "simbolo": "SS",
+          "nombre": "stock de seguridad",
+          "significado": "Así lo usa el mapa de frecuencias («EOQ + SS»). En el programa y el mapa de la materia el tema se nombra «stock de seguridad»."
+        },
+        {
+          "simbolo": "OP / OC",
+          "nombre": "orden de producción / orden de compra",
+          "significado": "En el Resumen 7 p., un ingreso programado significa que existe una OP o una OC, y que las materias primas y piezas ya están comprometidas con esa orden."
+        },
+        {
+          "simbolo": "LEF",
+          "nombre": "lote económico de fabricación",
+          "significado": "Así lo escribe el banco de teoría: «Inventarios aporta los saldos, lote económico de fabricación (LEF) y lead time (LTF) para las componentes a fabricar». Se usa en pareja con LEC. (banco: Preguntas SG1.txt y equivalentes)"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Glosario: pronósticos"
+    },
+    {
+      "type": "glosario",
+      "title": "Pronósticos y error",
+      "intro": "Nombres según Hanke y la Clase 4 (Medidas de error).",
+      "entries": [
+        {
+          "simbolo": "SES",
+          "nombre": "nivelación / suavización exponencial simple",
+          "significado": "Así aparece en finales (p. ej. 2018: el MPS parte de un pronóstico por «Nivelación Exponencial Simple») y en las clases de pronósticos."
+        },
+        {
+          "simbolo": "MAD",
+          "nombre": "desviación absoluta media (o de la media)",
+          "significado": "Mide el error de pronóstico en unidades, con valor absoluto. Hanke: Desviación Absoluta de la Media. Clase 4: desviación / error absoluto medio."
+        },
+        {
+          "simbolo": "MSE",
+          "nombre": "error cuadrático medio",
+          "significado": "Promedio de los errores al cuadrado; castiga más los errores grandes. Se usa para elegir parámetros. (Hanke; Clase 4). El V6 también nombra RMSE como √MSE."
+        },
+        {
+          "simbolo": "MAPE",
+          "nombre": "porcentaje de error medio absoluto",
+          "significado": "El error en porcentaje; permite comparar series de distinta escala. (Hanke; Clase 4)"
+        },
+        {
+          "simbolo": "PME",
+          "nombre": "porcentaje medio de error",
+          "significado": "Conserva el signo, por eso muestra el sesgo. Un PME alto y consistente delata un patrón no capturado. (Clase 4)"
+        },
+        {
+          "simbolo": "FAC / ACF",
+          "nombre": "función de autocorrelación",
+          "significado": "El correlograma de la Clase 3.b; sirve para probar el patrón de la serie (tendencia, estacionalidad, etc.)."
+        },
+        {
+          "simbolo": "r / R²",
+          "nombre": "correlación / coeficiente de determinación",
+          "significado": "Clase 2: r mide si dos variables se mueven juntas (signo = dirección, valor absoluto = fuerza). r² es el porcentaje de variación explicada."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Glosario: proceso de producción"
+    },
+    {
+      "type": "glosario",
+      "title": "Proceso (U4 del programa)",
+      "intro": "El programa nombra SMED, TQM, Kanban, JIT, producción sincronizada y Teoría de las restricciones. Las expansiones de abajo están en el V6 o en el Documento Maestro.",
+      "entries": [
+        {
+          "simbolo": "JIT",
+          "nombre": "justo a tiempo",
+          "significado": "En Preguntas frecuentes y en el mapa: JIT (justo a tiempo). El V6: «Justo a tiempo significa producir lo que se necesita cuando se necesita». El final 2018 preguntó cuándo una empresa JIT necesita MRP."
+        },
+        {
+          "simbolo": "Kanban",
+          "nombre": "«signo» o «tarjeta de instrucción»",
+          "significado": "El V6: «Kanban significa “signo” o “tarjeta de instrucción” en japonés». Sistema de señalización para regular los flujos justo a tiempo."
+        },
+        {
+          "simbolo": "SMED",
+          "nombre": "single-minute exchange of die",
+          "significado": "Cambio de troqueles en un minuto: procedimientos para bajar los tiempos de preparación de las máquinas. (V6)"
+        },
+        {
+          "simbolo": "TQM",
+          "nombre": "administración de (por) la calidad total",
+          "significado": "El V6 usa «administración de la calidad total» y «administración por calidad total». El programa lo lista entre los conceptos básicos de la U4."
+        },
+        {
+          "simbolo": "TOC",
+          "nombre": "Teoría de las Restricciones",
+          "significado": "Documento Maestro: «Teoría de las Restricciones (TOC): cuellos de botella, la meta, mejora continua según Goldratt». El programa nombra «Teoría de las restricciones» sin la sigla inglesa."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Glosario: información, BI y otras"
+    },
+    {
+      "type": "glosario",
+      "title": "Información, calidad de código y referencias",
+      "intro": "BI no está en el programa 2008, pero cayó en la teoría de 2018 (relación ERP–BI).",
+      "entries": [
+        {
+          "simbolo": "BI",
+          "nombre": "Business Intelligence / Inteligencia de Negocios",
+          "significado": "El V6: «La Inteligencia de Negocios (Business Intelligence, BI) es una disciplina que combina consultas, servicios, aplicaciones y tecnologías» para transformar datos en información útil. El Documento Maestro la relaciona con Data Warehouse y con el examen 2018."
+        },
+        {
+          "simbolo": "ETL",
+          "nombre": "Extracción, Transformación y Carga",
+          "significado": "Así lo titula el V6. Sirve para poblar el Data Warehouse, moviendo bloques de datos desde los sistemas operacionales."
+        },
+        {
+          "simbolo": "DW",
+          "nombre": "Data Warehouse",
+          "significado": "El V6: «un conjunto de datos integrados orientados a una materia, que varían con el tiempo y que no son transitorios, los cuales soportan el proceso de toma de decisiones de una organización»."
+        },
+        {
+          "simbolo": "IBM-11",
+          "nombre": "dígito verificador módulo 11",
+          "significado": "Preguntas frecuentes: el dígito verificador es un elemento de control; el módulo 11 aplica pesos 2 a 7. Cayó en teoría (2013, 2018; código 2018: 987-95617-03-01). No es ejercicio de práctica en los finales fechados."
+        },
+        {
+          "simbolo": "APICS",
+          "nombre": "American Production & Inventory Control Society",
+          "significado": "Así la cita el Documento Maestro, como referencia de vocabulario de la bibliografía de cátedra."
+        },
+        {
+          "simbolo": "DSS / SSD",
+          "nombre": "Decision Support System / Sistema de Soporte de Decisiones",
+          "significado": "El apunte de 2014 define el Sistema de Soporte de Decisiones (SSD): «un sistema de computación diseñado para apoyar al proceso de toma de decisiones (de planeamiento, de administración y operacionales) en un negocio» y «la ventana del usuario a los datos informativos almacenados en el Data Warehouse». El Documento Maestro lista el tema como DSS, junto a BI / Data Warehouse. DSS es la forma inglesa habitual de ese mismo concepto (Decision Support System). El apunte 2014 no escribe la sigla DSS, sino SSD. (apunte: 2014 - Inteligencia de Negocios.pdf; Documento Maestro v2)"
+        },
+        {
+          "simbolo": "WIP",
+          "nombre": "Work in Process / trabajo en proceso o en curso",
+          "significado": "El Resumen V6 (Chase) usa «inventario WIP» en el control de piso, sin expandir la sigla. El apunte PAC habla de «trabajo en curso» como lo que administra el PAC. En administración de operaciones, WIP es Work in Process: materiales o productos que ya empezaron a fabricarse y todavía no son producto terminado (trabajo en proceso / en curso). (apunte/uso: V6 y PAC.pdf; web/conocimiento general: Work in Process)"
+        },
+        {
+          "simbolo": "IBM-13",
+          "nombre": "duda: ver sección 8",
+          "significado": "Solo aparece en el recuerdo de un alumno del final 17/03/2011: «Calcular el dígito verificador en IBM13». Los apuntes de cátedra desarrollan IBM 11 (módulo 11, Preguntas frecuentes y exámenes) y las claves de control módulo 10 (PAC no; Clasificación y Codificación de Productos.pdf de R. Morán, y Preguntas frecuentes). No hay un procedimiento rotulado «IBM-13». No se inventa el cálculo. (examen 2011, transcripción de alumno; apunte: Clasificación y Codificación de Productos.pdf)"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "8. Lo que quedó en duda (y lo que ya no)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Después de leer PAC.pdf, DRP.pdf, Planificación de la Capacidad, el apunte de BI 2014, el de Codificación y los bancos de teoría, PAC, DRP, DSS/SSD, LEC/LEF y WIP ya tienen significado con fuente. Quedan dos casos dudosos. No se elige una definición oficial inventada."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Sigla",
+        "Qué se encontró",
+        "Estado"
+      ],
+      "rows": [
+        [
+          "MCP",
+          "Pregunta de final 2012: «Qué es MRP, MCP, ERP». El Documento Maestro escribe «MRP vs. MRP II/MCP vs. ERP», como si MCP fuera el término intermedio (del lado de MRP II). Ningún PDF de la cátedra expande la sigla. En la web, TIC Portal usa MCP como Machine Capacity Planning (planificación de la capacidad de las máquinas), que no es lo mismo que CRP.",
+          "Duda. No se adopta una sola expansión."
+        ],
+        [
+          "IBM-13",
+          "Solo en el recuerdo de un alumno (final 17/03/2011). El material de cátedra desarrolla IBM 11 (módulo 11) y las claves módulo 10 (Morán, Codificación; Preguntas frecuentes). No hay un método titulado IBM-13.",
+          "Duda. No se inventa el procedimiento."
+        ],
+        [
+          "LEC",
+          "No está la frase «lote económico de compra» en los PDF leídos. Sí está LEF = lote económico de fabricación, y LEC aparece como su pareja (LEC y LEF, LTF y LTC) y como EOQ/LEC. En la bibliografía universitaria de producción, LEC es lote económico de compra.",
+          "Lectura fundada, con esa salvedad."
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Para el final:** en 2012 preguntaron MRP, MCP y ERP. MCP es de las que siguen en duda: si cae, conviene decir lo que sí está en el material (la serie MRP → MRP II → ERP, y que MCP aparece escrito junto a MRP II) y no afirmar una forma inglesa que la cátedra no da. IBM-11 sí hay que saber calcularlo; IBM-13, no hay apunte."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "9. Qué sigue"
+    },
+    {
+      "type": "paragraph",
+      "text": "Con el mapa y las siglas en su lugar, entra la **Clase 1 · Base estadística** (ya cargada): media, dispersión, n − 1, la campana, Z y t, hasta el stock de seguridad."
+    }
+  ],
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "Para qué",
+      "title": "El examen pide vocabulario específico.",
+      "text": "Esta clase no inventa significados. Si una sigla aparece en un final o en un apunte y no se desarrolla, se deja marcada. El resto sale de los textos que ya tenemos."
+    },
+    {
+      "type": "concepto",
+      "k": "La cadena",
+      "title": "MPS dice el qué y el cuándo. MRP explota las partes.",
+      "text": "MPS: plan maestro, cuántas piezas finales y cuándo (V6). MRP: planificación de los requerimientos de materiales. Parte del MPS y calcula, período a período, conjuntos, piezas y materias primas (Resumen 7 p.). Es demanda dependiente.",
+      "svg": "<svg viewBox=\"0 0 280 72\" width=\"100%\" height=\"72\" aria-hidden=\"true\"><rect x=\"8\" y=\"18\" width=\"46\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"31\" y=\"39\" font-size=\"12\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">MPS</text><text x=\"58\" y=\"40\" font-size=\"12\" fill=\"#9aa3ad\">→</text><rect x=\"63\" y=\"18\" width=\"46\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.6\"/><text x=\"86\" y=\"39\" font-size=\"12\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">CRP</text><text x=\"113\" y=\"40\" font-size=\"12\" fill=\"#9aa3ad\">→</text><rect x=\"118\" y=\"18\" width=\"46\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"141\" y=\"39\" font-size=\"12\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">MRP</text><text x=\"168\" y=\"40\" font-size=\"12\" fill=\"#9aa3ad\">→</text><rect x=\"173\" y=\"18\" width=\"46\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.6\"/><text x=\"196\" y=\"39\" font-size=\"12\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">PAC</text><text x=\"223\" y=\"40\" font-size=\"12\" fill=\"#9aa3ad\">→</text><rect x=\"228\" y=\"18\" width=\"46\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.6\"/><text x=\"251\" y=\"39\" font-size=\"12\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">ERP</text></svg>",
+      "chartLabel": "Cadena corta: el MPS alimenta al MRP; el ERP las empaqueta"
+    },
+    {
+      "type": "concepto",
+      "k": "La historia",
+      "title": "MRP se agranda y termina en ERP.",
+      "text": "MRP II, en el V6, es planeación de recursos de manufactura. El programa habla de sistemas MRPII (CRP); el Documento Maestro anota CRP como planificación de requerimientos de capacidad. ERP, en el programa, es la gestión integral de los recursos en empresas industriales."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "El MRP calcula las necesidades de partes a partir de…",
+      "options": [
+        "Un pronóstico suelto de cada tornillo",
+        "Las cantidades de productos finales fijadas en el MPS",
+        "El stock de seguridad de la U5"
+      ],
+      "correct": 1,
+      "feedback": "El Resumen de 7 páginas lo dice: el MRP obtiene las necesidades de cada parte para cumplir el Plan Maestro de Producción. Por eso es demanda dependiente."
+    },
+    {
+      "type": "concepto",
+      "k": "El producto y el lote",
+      "title": "BOM es la lista. EOQ es el lote económico.",
+      "text": "BOM: lista de materiales / estructura de producto (programa y Preguntas frecuentes). EOQ: Economic Order Quantity, lote económico clásico (7 p. y V6). Junto a él aparecen TBO (tiempo entre órdenes), POQ (cantidad periódica) y PPB (balance cantidad-período)."
+    },
+    {
+      "type": "concepto",
+      "k": "El proceso",
+      "title": "JIT, Kanban, SMED, TQM, TOC.",
+      "text": "JIT es justo a tiempo: producir lo que se necesita cuando se necesita (V6). Kanban es «signo» o «tarjeta de instrucción» en japonés. SMED: cambio de troqueles en un minuto. TQM: administración de la calidad total. TOC: Teoría de las Restricciones (Documento Maestro)."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "JIT significa…",
+      "options": [
+        "Justo a tiempo: producir lo que se necesita cuando se necesita",
+        "Un tipo de MRP",
+        "Un software ERP"
+      ],
+      "correct": 0,
+      "feedback": "Así lo traen el Resumen V6 y las Preguntas frecuentes. El final 2018, además, preguntó cuándo una empresa JIT necesita MRP."
+    },
+    {
+      "type": "concepto",
+      "k": "Los errores",
+      "title": "Cuatro siglas para medir el pronóstico.",
+      "text": "MAD: desviación absoluta media (en unidades). MSE: error cuadrático medio (castiga los grandes). MAPE: porcentaje de error medio absoluto (para comparar series). PME: porcentaje medio de error, el que muestra el sesgo. (Hanke y Clase 4)"
+    },
+    {
+      "type": "concepto",
+      "k": "Inventarios",
+      "title": "ABC por valor. SS, el stock de seguridad.",
+      "text": "ABC clasifica ítems por valor de consumo (A pocos y valiosos, C muchos y baratos). SS es el stock de seguridad: cubre la incertidumbre de la demanda o del lead time. OP/OC es el punto de pedido."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "¿Cuál de estas medidas sirve para ver si el método tiene sesgo?",
+      "options": [
+        "MAD",
+        "MSE",
+        "PME"
+      ],
+      "correct": 2,
+      "feedback": "El PME conserva el signo y por eso muestra el sesgo. MAD y MSE miran magnitud, no dirección."
+    },
+    {
+      "type": "concepto",
+      "k": "Información",
+      "title": "BI, ETL y el dígito verificador.",
+      "text": "BI: Inteligencia de Negocios / Business Intelligence (V6). ETL: Extracción, Transformación y Carga, para poblar el Data Warehouse. IBM-11: dígito verificador módulo 11 (cayó en 2018). APICS: American Production & Inventory Control Society."
+    },
+    {
+      "type": "concepto",
+      "k": "Con honestidad",
+      "title": "Dos siglas siguen en duda.",
+      "text": "PAC, DRP, DSS (SSD), LEC/LEF y WIP ya están en los apuntes o con fuente clara. Quedan MCP (aparece en «qué es MRP, MCP, ERP», sin expansión en la cátedra) e IBM-13 (solo un recuerdo de 2011, sin procedimiento). Esas no se inventan."
+    },
+    {
+      "type": "cierre",
+      "title": "Llevate el vocabulario.",
+      "text": "MPS y MRP son el corazón de la cadena; el PAC controla el piso; el DRP lleva el MRP a la distribución; ERP integra el software. JIT, EOQ, BOM, MAD/MSE/MAPE/PME y BI están en los apuntes. MCP e IBM-13 siguen marcadas como duda. Sigue la Clase 1: la base estadística."
+    }
+  ]
+}

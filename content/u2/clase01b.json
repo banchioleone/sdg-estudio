@@ -1,0 +1,480 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c1b",
+  "title": "Clase 1.b · Tabla Z",
+  "name": "Tabla Z",
+  "lede": "Clase 1.b. Paso cero: identificar la tabla (Z=1,00 → 0,3413 centro→Z / 0,8413 acumulada). Método: Z → dibujo → tabla → armar con ±0,5. Cinco casos: menos-que (0,5+área), más-que (0,5−área), Z negativo (simetría), entre-dos (distinto lado sumo / mismo lado resto), inverso (tabla al revés + X=μ±Z·σ). Z famosos: 1,28/1,64/1,96/2,33. t de Student: colas gordas, 2 entradas (confianza + gl=n−1), converge a Z en n≈30; en regresión siempre t.",
+  "visto": true,
+  "source": [
+    "clases_previas/SG/Clase01_y_01b_BaseEstadistica.md",
+    "clases_previas/SG/Clase01b_TablaZ_5Casos.svg"
+  ],
+  "laminas": [
+    "u2/img/Clase01b_TablaZ_5Casos.svg"
+  ],
+  "next": "Clase 2 · Correlación",
+  "teoria": [
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Clase 1.b.** Paso cero: identificar la tabla (Z=1,00 → 0,3413 centro→Z / 0,8413 acumulada). Método: Z → dibujo → tabla → armar con ±0,5. Cinco casos: menos-que (0,5+área), más-que (0,5−área), Z negativo (simetría), entre-dos (distinto lado sumo / mismo lado resto), inverso (tabla al revés + X=μ±Z·σ). Z famosos: 1,28/1,64/1,96/2,33. t de Student: colas gordas, 2 entradas (confianza + gl=n−1), converge a Z en n≈30; en regresión siempre t."
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/Clase01b_TablaZ_5Casos.svg",
+      "caption": "Lámina de la Clase 1.b · La tabla normal Z — los 5 casos"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. La tabla Z: paso cero y método"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "⚠ PASO CERO — identificar qué tabla tenés"
+    },
+    {
+      "type": "paragraph",
+      "text": "Buscá Z = 1,00:"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Dice **0,3413** → tabla **\"centro→Z\"** (da el área entre el medio y tu Z; máximo 0,5). La usual en UTN y la usada en este apunte.",
+        "Dice **0,8413** → tabla **\"acumulada\"** (área desde −∞ hasta Z; ya incluye el 0,5 izquierdo)."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Anotalo con lapicera arriba de tu tabla. Es EL error clásico de examen."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Cómo se busca:** fila = Z hasta el primer decimal; columna = segundo decimal. Z=1,64 → fila \"1,6\", columna \"0,04\" → 0,4495."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Método de los 4 pasos (siempre igual)"
+    },
+    {
+      "type": "formula",
+      "tex": "Z = \\frac{X - \\mu}{\\sigma}"
+    },
+    {
+      "type": "formula",
+      "tex": "X = \\mu + Z\\cdot\\sigma"
+    },
+    {
+      "type": "formula",
+      "tex": "Z = \\frac{X - \\mu}{\\sigma}"
+    },
+    {
+      "type": "paragraph",
+      "text": "*¿A cuántos desvíos del promedio está X?* Después, en el caso inverso:"
+    },
+    {
+      "type": "formula",
+      "tex": "X = \\mu + Z\\cdot\\sigma"
+    },
+    {
+      "type": "paragraph",
+      "text": "Es la des-estandarización: la del stock de seguridad. Para cola izquierda, X = μ − Z·σ."
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**Calcular Z** = (X−μ)/σ",
+        "**Dibujar la campana** y **pintar** el área que pide la pregunta",
+        "**Buscar en la tabla** el área de tu Z",
+        "**Armar la respuesta** sumando/restando 0,5 (cada mitad de la campana vale 0,5)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Los 5 casos (no existen más que estos)"
+    },
+    {
+      "type": "paragraph",
+      "text": "*Ejemplo base para todos: μ = 500, σ = 80, tabla centro→Z.*"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "CASO 1 — \"Menos que\" un X mayor al promedio"
+    },
+    {
+      "type": "paragraph",
+      "text": "**P(X < 620):** Z = (620−500)/80 = **+1,5**. Pinto todo lo izquierdo de 620 = mitad izquierda entera + pedazo centro→620.\nTabla(1,50) = 0,4332 → **P = 0,5 + 0,4332 = 0,9332 → 93,3%**\n*Chequeo: 620 está sobre μ ⇒ debe dar >50%. ✔*"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "CASO 2 — \"Más que\" un X mayor al promedio"
+    },
+    {
+      "type": "paragraph",
+      "text": "**P(X > 620):** mismo Z=1,5. Pinto la colita derecha. La mitad derecha vale 0,5, le quito lo del caso 1:\n**P = 0,5 − 0,4332 = 0,0668 → 6,7%**\n*Chequeo: complemento del caso 1 (93,3 + 6,7 = 100). ✔*"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "CASO 3 — Z negativo (X menor al promedio)"
+    },
+    {
+      "type": "paragraph",
+      "text": "**P(X < 420):** Z = (420−500)/80 = **−1,0**. La tabla no tiene negativos: por **SIMETRÍA** busco Z=+1,00 → 0,3413. Pinto la colita izquierda:\n**P = 0,5 − 0,3413 = 0,1587 → 15,9%**\n*Chequeo: bajo μ ⇒ <50%. ✔*"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "CASO 4 — Entre dos valores"
+    },
+    {
+      "type": "paragraph",
+      "text": "**P(420 < X < 620):** piezas 0,3413 (izq) y 0,4332 (der), en **lados opuestos** del centro → se **SUMAN**:\n**P = 0,3413 + 0,4332 = 0,7745 → 77,5%**"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Variante con trampa — mismo lado:** P(580 < X < 620): Z₁=1,0 y Z₂=1,5, ambos a la derecha → se **RESTAN**: 0,4332 − 0,3413 = **9,2%**."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Regla: distinto lado de μ → sumo · mismo lado → resto.** El dibujo de la campana evita confundirse."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "CASO 5 — INVERSO ★ (el del stock de seguridad — casi seguro cae)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Tengo la probabilidad deseada, busco el X. *\"Cubrir la demanda el 95% de las veces: ¿cuánto stock?\"*"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Busco X tal que P(demanda < X) = 0,95 = 0,5 + **0,45**",
+        "Leo la tabla **al revés**: ¿qué Z tiene área 0,45? → 0,4495→Z=1,64 · 0,4505→Z=1,65 ⇒ **Z ≈ 1,64**",
+        "Des-estandarizo: X = μ + Z·σ = 500 + 1,64×80 = **631 unidades**"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Z famosos (memorizar):**"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Cobertura",
+        "Z"
+      ],
+      "rows": [
+        [
+          "---",
+          "---"
+        ],
+        [
+          "90%",
+          "1,28"
+        ],
+        [
+          "95%",
+          "1,64"
+        ],
+        [
+          "97,5%",
+          "1,96"
+        ],
+        [
+          "99%",
+          "2,33"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "8. t de Student — pocos datos, más prudencia"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Problema que resuelve:** las fórmulas usan σ (desvío verdadero), pero en la realidad lo estimás con s desde pocos datos. Hay doble incertidumbre: el próximo valor es incierto Y tu regla de medir (s) también es imprecisa."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Solución:** la t es una campana **más baja en el centro y con colas más gordas** → para la misma confianza exige un multiplicador **mayor** que Z. Es la estadística diciendo \"con tan pocos datos, cubrite más\"."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Cómo se lee su tabla (2 entradas):** filas = **grados de libertad (n−1)**; columnas = confianza o cola (identificar si la tabla es de una o dos colas). Adentro: el valor t que reemplaza a Z."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Convergencia a la normal (t al 95%, dos colas)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "n (datos)",
+        "gl",
+        "t",
+        "vs. Z=1,96"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "5",
+          "4",
+          "2,776",
+          "+42% más exigente"
+        ],
+        [
+          "10",
+          "9",
+          "2,262",
+          "+15%"
+        ],
+        [
+          "20",
+          "19",
+          "2,093",
+          "+7%"
+        ],
+        [
+          "30",
+          "29",
+          "2,045",
+          "+4%"
+        ],
+        [
+          "∞",
+          "∞",
+          "1,960",
+          "= Z"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "De ahí la regla \"con n≥30 usá la normal\"."
+    },
+    {
+      "type": "ejemplo",
+      "title": "Ejemplo completo",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "5 meses de ventas, X̄=120, s=15. Intervalo del 95% para un mes típico:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "items": [
+            "Con normal (incorrecto acá): 120 ± 1,96×15 = [90,6 ; 149,4]",
+            "Con t (correcto): gl=4 → t=2,776 → **120 ± 2,776×15 = [78,4 ; 161,6]**"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "El intervalo correcto es más ancho: la t cobra el precio de saber poco."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Regla de decisión para el final"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "n < 30 y desvío estimado de la muestra → **t con n−1 gl**",
+        "n ≥ 30 o σ conocido/dado por enunciado → **normal (Z)**",
+        "Regresión → **siempre t** (con n−2 gl; el porqué, en la clase de regresión)"
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "9. Chequeos de sensatez (hacerlos SIEMPRE — valen puntos de \"fundamentación\")"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "X sobre el promedio ⇒ P(\"menos que X\") > 50% · X bajo el promedio ⇒ < 50%",
+        "Un área jamás es negativa ni mayor que 1",
+        "\"Más que\" y \"menos que\" del mismo X suman 100%",
+        "Si el resultado viola algo de esto: **revisá el DIBUJO, no la tabla**"
+      ]
+    },
+    {
+      "type": "ejercicio",
+      "title": "11. EJERCICIO PENDIENTE (traerlo resuelto)",
+      "estado": "para resolver",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**Datos: ventas mensuales de una autopartista = 120, 135, 105, 140, 100** (n=5)"
+        },
+        {
+          "type": "paragraph",
+          "text": "a) **X̄ y s**, paso a paso como el ejemplo de la Fábrica B.\nb) **P(X < 150)** — caso 1.\nc) **P(X > 90)** — caso 3 espejado: Z negativo, pensarlo con el dibujo.\nd) **P(110 < X < 145)** — caso 4.\ne) **Inverso:** ¿qué nivel de ventas superás el 90% de los meses? — caso 5, cola izquierda: X = μ − Z·σ.\nf) Con n=5, ¿el intervalo de confianza del promedio conviene hacerlo con Z o con t? ¿Por qué?"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Dibujá la campana en cada ítem: es método y es puntaje** (criterio oficial: \"interpretación de los resultados\" y \"fundamentación\")."
+        }
+      ],
+      "nota": "Para resolver — en el material no figura la resolución. Cuando lo corriamos, la cargamos acá."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Mini-resumen de la Clase 1.b"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Clase 1.b.** Paso cero: identificar la tabla (Z=1,00 → 0,3413 centro→Z / 0,8413 acumulada). Método: Z → dibujo → tabla → armar con ±0,5. Cinco casos: menos-que (0,5+área), más-que (0,5−área), Z negativo (simetría), entre-dos (distinto lado sumo / mismo lado resto), inverso (tabla al revés + X=μ±Z·σ). Z famosos: 1,28/1,64/1,96/2,33. t de Student: colas gordas, 2 entradas (confianza + gl=n−1), converge a Z en n≈30; en regresión siempre t."
+    }
+  ],
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "Una tabla, para todas las campanas.",
+      "text": "Z convierte cualquier campana en una sola. El método es siempre el mismo: calcular Z, dibujar y pintar el área, buscar en la tabla y armar la respuesta con ±0,5."
+    },
+    {
+      "type": "concepto",
+      "k": "Paso cero",
+      "title": "Primero, identificá tu tabla.",
+      "text": "Buscá Z = 1,00. Si dice 0,3413, es tabla «centro→Z» (máximo 0,5): la usual en UTN y la de este apunte. Si dice 0,8413, es acumulada (ya incluye el 0,5 izquierdo).",
+      "ejemplo": "Anotalo arriba de la tabla. Es EL error clásico de examen."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Si para Z = 1,00 la tabla da 0,3413, ¿qué tabla tenés?",
+      "options": [
+        "Acumulada, desde −∞ hasta Z",
+        "Centro→Z, el área entre el medio y tu Z",
+        "Una tabla t de Student"
+      ],
+      "correct": 1,
+      "feedback": "0,3413 es el área entre el centro y Z = 1. Es la tabla centro→Z, la usual en UTN. La acumulada, para el mismo Z, daría 0,8413."
+    },
+    {
+      "type": "concepto",
+      "k": "El método",
+      "title": "Siempre los mismos 4 pasos.",
+      "text": "① Z = (X − μ) / σ. ② Dibujá la campana y pintá el área que pide la pregunta. ③ Buscá en la tabla el área de tu Z. ④ Armá la respuesta sumando o restando 0,5 (cada mitad vale 0,5).",
+      "ejemplo": "Cómo se busca: fila = Z hasta el primer decimal; columna = segundo decimal. Z = 1,64 → fila 1,6, columna 0,04 → 0,4495."
+    },
+    {
+      "type": "concepto",
+      "k": "Caso 1",
+      "title": "«Menos que» un X mayor al promedio.",
+      "text": "Ejemplo base: μ = 500, σ = 80. P(X < 620): Z = (620−500)/80 = +1,5. Pinto todo lo izquierdo de 620.",
+      "ejemplo": "Tabla(1,50) = 0,4332 → P = 0,5 + 0,4332 = 0,9332 → 93,3%. Chequeo: 620 está sobre μ ⇒ debe dar > 50%.",
+      "svg": "<svg viewBox=\"0 0 280 120\" width=\"100%\" height=\"120\" aria-hidden=\"true\"><path d=\"M 16 100 C 40 100, 58 18, 140 18 C 222 18, 240 100, 264 100\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"2.2\"/><line x1=\"20\" y1=\"100\" x2=\"260\" y2=\"100\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.2\"/><line x1=\"140\" y1=\"18\" x2=\"140\" y2=\"100\" stroke=\"#e8c56a\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"140\" y=\"114\" font-size=\"10\" fill=\"#e8c56a\" text-anchor=\"middle\">μ=500</text><path d=\"M 16 100 C 40 100, 58 18, 140 18 C 175 18, 190 40, 200 58 L 200 100 L 16 100 Z\" fill=\"#8cb4d6\" fill-opacity=\".35\"/><line x1=\"200\" y1=\"100\" x2=\"200\" y2=\"58\" stroke=\"#e25b16\" stroke-width=\"2\"/><text x=\"200\" y=\"114\" font-size=\"9\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">620</text><text x=\"90\" y=\"72\" font-size=\"12\" fill=\"#d5dbe2\" font-weight=\"700\">93,3%</text></svg>",
+      "chartLabel": "μ = 500, σ = 80 · P(X < 620) = 93,3%"
+    },
+    {
+      "type": "concepto",
+      "k": "Caso 2",
+      "title": "«Más que» es el complemento.",
+      "text": "P(X > 620) usa el mismo Z = +1,5. Pinto la colita derecha: 0,5 − 0,4332 = 0,0668 → 6,7%.",
+      "ejemplo": "Chequeo: 93,3% + 6,7% = 100%.",
+      "svg": "<svg viewBox=\"0 0 280 120\" width=\"100%\" height=\"120\" aria-hidden=\"true\"><path d=\"M 16 100 C 40 100, 58 18, 140 18 C 222 18, 240 100, 264 100\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"2.2\"/><line x1=\"20\" y1=\"100\" x2=\"260\" y2=\"100\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.2\"/><line x1=\"140\" y1=\"18\" x2=\"140\" y2=\"100\" stroke=\"#e8c56a\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"140\" y=\"114\" font-size=\"10\" fill=\"#e8c56a\" text-anchor=\"middle\">μ=500</text><path d=\"M 200 58 C 222 80, 240 100, 264 100 L 200 100 Z\" fill=\"#e25b16\" fill-opacity=\".4\"/><line x1=\"200\" y1=\"100\" x2=\"200\" y2=\"58\" stroke=\"#e25b16\" stroke-width=\"2\"/><text x=\"200\" y=\"114\" font-size=\"9\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">620</text><text x=\"222\" y=\"86\" font-size=\"11\" fill=\"#d5dbe2\" font-weight=\"700\">6,7%</text></svg>",
+      "chartLabel": "P(X > 620) = 6,7%, complemento del caso 1"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Si P(X < 620) = 93,3%, ¿cuánto vale P(X > 620)?",
+      "options": [
+        "También 93,3%",
+        "6,7%, porque son complementarias",
+        "50%, porque es la mitad derecha"
+      ],
+      "correct": 1,
+      "feedback": "«Más que» y «menos que» del mismo X suman 100%. 100 − 93,3 = 6,7%."
+    },
+    {
+      "type": "concepto",
+      "k": "Caso 3",
+      "title": "Z negativo: usá la simetría.",
+      "text": "P(X < 420): Z = (420−500)/80 = −1,0. La tabla no tiene negativos: buscá Z = +1,00 → 0,3413. Pinto la colita izquierda: 0,5 − 0,3413 = 0,1587 → 15,9%.",
+      "ejemplo": "Chequeo: 420 está bajo μ ⇒ debe dar < 50%.",
+      "svg": "<svg viewBox=\"0 0 280 120\" width=\"100%\" height=\"120\" aria-hidden=\"true\"><path d=\"M 16 100 C 40 100, 58 18, 140 18 C 222 18, 240 100, 264 100\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"2.2\"/><line x1=\"20\" y1=\"100\" x2=\"260\" y2=\"100\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.2\"/><line x1=\"140\" y1=\"18\" x2=\"140\" y2=\"100\" stroke=\"#e8c56a\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"140\" y=\"114\" font-size=\"10\" fill=\"#e8c56a\" text-anchor=\"middle\">μ=500</text><path d=\"M 16 100 C 40 100, 58 18, 80 58 L 80 100 Z\" fill=\"#e25b16\" fill-opacity=\".4\"/><line x1=\"80\" y1=\"100\" x2=\"80\" y2=\"58\" stroke=\"#e25b16\" stroke-width=\"2\"/><text x=\"80\" y=\"114\" font-size=\"9\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">420</text><text x=\"44\" y=\"86\" font-size=\"11\" fill=\"#d5dbe2\" font-weight=\"700\">15,9%</text></svg>",
+      "chartLabel": "P(X < 420): Z = −1 → por simetría, 15,9%"
+    },
+    {
+      "type": "concepto",
+      "k": "Caso 4",
+      "title": "Entre dos valores: sumo o resto.",
+      "text": "P(420 < X < 620): piezas 0,3413 (izq.) y 0,4332 (der.), en lados opuestos del centro → se SUMAN: 77,5%. Si ambos quedan del mismo lado, se RESTAN.",
+      "ejemplo": "Regla: distinto lado de μ → sumo · mismo lado → resto. El dibujo evita confundirse.",
+      "svg": "<svg viewBox=\"0 0 280 120\" width=\"100%\" height=\"120\" aria-hidden=\"true\"><path d=\"M 16 100 C 40 100, 58 18, 140 18 C 222 18, 240 100, 264 100\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"2.2\"/><line x1=\"20\" y1=\"100\" x2=\"260\" y2=\"100\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.2\"/><line x1=\"140\" y1=\"18\" x2=\"140\" y2=\"100\" stroke=\"#e8c56a\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"140\" y=\"114\" font-size=\"10\" fill=\"#e8c56a\" text-anchor=\"middle\">μ=500</text><path d=\"M 80 58 C 100 30, 120 18, 140 18 C 175 18, 190 40, 200 58 L 200 100 L 80 100 Z\" fill=\"#8cb4d6\" fill-opacity=\".35\"/><line x1=\"80\" y1=\"100\" x2=\"80\" y2=\"58\" stroke=\"#e25b16\" stroke-width=\"2\"/><line x1=\"200\" y1=\"100\" x2=\"200\" y2=\"58\" stroke=\"#e25b16\" stroke-width=\"2\"/><text x=\"80\" y=\"114\" font-size=\"9\" fill=\"#e25b16\" text-anchor=\"middle\">420</text><text x=\"200\" y=\"114\" font-size=\"9\" fill=\"#e25b16\" text-anchor=\"middle\">620</text><text x=\"140\" y=\"70\" font-size=\"12\" fill=\"#d5dbe2\" font-weight=\"700\" text-anchor=\"middle\">77,5%</text></svg>",
+      "chartLabel": "P(420 < X < 620) = 0,3413 + 0,4332 = 77,5%"
+    },
+    {
+      "type": "concepto",
+      "k": "Caso 5 ★",
+      "title": "El inverso: el del stock de seguridad.",
+      "text": "Tengo la probabilidad y busco el X. Cubrir la demanda el 95% de las veces: área 0,5 + 0,45. Tabla al revés: Z ≈ 1,64. X = μ + Z·σ = 500 + 1,64×80 = 631.",
+      "ejemplo": "Z famosos: 90% → 1,28 · 95% → 1,64 · 97,5% → 1,96 · 99% → 2,33.",
+      "svg": "<svg viewBox=\"0 0 280 120\" width=\"100%\" height=\"120\" aria-hidden=\"true\"><path d=\"M 16 100 C 40 100, 58 18, 140 18 C 222 18, 240 100, 264 100\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"2.2\"/><line x1=\"20\" y1=\"100\" x2=\"260\" y2=\"100\" stroke=\"rgba(255,255,255,.22)\" stroke-width=\"1.2\"/><line x1=\"140\" y1=\"18\" x2=\"140\" y2=\"100\" stroke=\"#e8c56a\" stroke-width=\"1\" stroke-dasharray=\"3 3\"/><text x=\"140\" y=\"114\" font-size=\"10\" fill=\"#e8c56a\" text-anchor=\"middle\">μ=500</text><path d=\"M 16 100 C 40 100, 58 18, 140 18 C 185 18, 205 48, 214 64 L 214 100 L 16 100 Z\" fill=\"#8cb4d6\" fill-opacity=\".35\"/><line x1=\"214\" y1=\"100\" x2=\"214\" y2=\"64\" stroke=\"#e25b16\" stroke-width=\"2\"/><text x=\"214\" y=\"114\" font-size=\"9\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">631</text><text x=\"100\" y=\"72\" font-size=\"12\" fill=\"#d5dbe2\" font-weight=\"700\">95%</text></svg>",
+      "chartLabel": "Cobertura 95% → Z ≈ 1,64 → X = 500 + 1,64×80 = 631"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Para cubrir la demanda el 95% de las veces, el Z que se usa es…",
+      "options": [
+        "1,28",
+        "1,64",
+        "1,96"
+      ],
+      "correct": 1,
+      "feedback": "Se busca el área 0,45 en la tabla centro→Z: 0,4495 → Z = 1,64. Es el número estrella del stock de seguridad. 1,96 es el 97,5% (o el 95% a dos colas)."
+    },
+    {
+      "type": "concepto",
+      "k": "Pocos datos",
+      "title": "Con n chico, entra t de Student.",
+      "text": "La t es más baja en el centro y con colas más gordas: para la misma confianza exige un multiplicador mayor que Z. Se lee con dos entradas: confianza + grados de libertad (n−1).",
+      "ejemplo": "n < 30 y desvío estimado de la muestra → t. n ≥ 30 o σ conocido → Z. En regresión, siempre t (con n−2 gl). Con n = 5, gl = 4, t al 95% = 2,776 (contra Z = 1,96)."
+    },
+    {
+      "type": "concepto",
+      "k": "Chequeos",
+      "title": "Si no cierra, revisá el dibujo.",
+      "text": "X sobre el promedio ⇒ P(«menos que X») > 50%. Un área jamás es negativa ni mayor que 1. «Más que» y «menos que» del mismo X suman 100%.",
+      "ejemplo": "Si el resultado viola algo de esto: revisá el DIBUJO, no la tabla."
+    },
+    {
+      "type": "cierre",
+      "title": "Llevate esto de la Clase 1.b.",
+      "text": "Paso cero: identificá la tabla (0,3413 = centro→Z). Método: Z → dibujo → tabla → armar con ±0,5. Cinco casos: menos-que, más-que, Z negativo, entre-dos, inverso. Z famosos: 1,28 / 1,64 / 1,96 / 2,33. t: colas gordas, dos entradas, converge a Z cerca de n = 30."
+    }
+  ]
+}

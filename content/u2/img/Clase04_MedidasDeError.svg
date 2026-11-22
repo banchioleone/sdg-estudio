@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 1080" width="980" height="1080" font-family="Segoe UI, Calibri, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#1F4E79"/></marker>
+  </defs>
+  <rect width="980" height="1080" fill="#FFFFFF"/>
+
+  <!-- TITULO -->
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#1F4E79">CLASE 4 · Medidas de error del pronóstico</text>
+  <text x="560" y="34" font-size="12.5" fill="#666">U2.b (cierre) — cómo se DECIDE cuál método usar</text>
+  <text x="40" y="56" font-size="12.5" font-weight="700" fill="#C00000">El árbol propone candidatos; las medidas de error deciden. Sin ellas, “comparar modelos” es opinión.</text>
+
+  <!-- ===== EL RESIDUAL ===== -->
+  <rect x="40" y="72" width="450" height="146" rx="8" fill="#EAF6FB" stroke="#1F4E79" stroke-width="2"/>
+  <text x="56" y="94" font-size="13.5" font-weight="700" fill="#1F4E79">El ladrillo: el RESIDUAL</text>
+  <text x="140" y="128" font-size="18" font-weight="700" fill="#1F4E79" font-family="Cambria Math, Georgia, serif">eₜ = Yₜ − Ŷₜ</text>
+  <text x="300" y="128" font-size="11" fill="#666">real − pronosticado</text>
+  <rect x="56" y="142" width="418" height="62" rx="5" fill="#fff" stroke="#B7D0E5"/>
+  <text x="70" y="162" font-size="11.5" fill="#333"><tspan font-weight="700" fill="#1E6B33">e POSITIVO</tspan> → vendiste MÁS de lo previsto → <tspan font-weight="700">SUBESTIMASTE</tspan></text>
+  <text x="70" y="182" font-size="11.5" fill="#333"><tspan font-weight="700" fill="#C00000">e NEGATIVO</tspan> → vendiste MENOS de lo previsto → <tspan font-weight="700">SOBREESTIMASTE</tspan></text>
+  <text x="70" y="198" font-size="10.5" fill="#888" font-style="italic">Las 4 medidas son distintas formas de promediar estos e.</text>
+
+  <!-- ===== POR QUE 4 ===== -->
+  <rect x="504" y="72" width="436" height="146" rx="8" fill="#FFF3E8" stroke="#D9954A" stroke-width="1.5"/>
+  <text x="520" y="94" font-size="13.5" font-weight="700" fill="#8A5A16">¿Por qué hacen falta CUATRO?</text>
+  <text x="520" y="116" font-size="11.5" fill="#333">Problema: promediar los errores crudos → <tspan font-weight="700">SE CANCELAN</tspan>.</text>
+  <text x="520" y="134" font-size="11" fill="#666">Si te equivocás +50 y −50, el promedio da 0 y parecerías perfecto.</text>
+  <text x="520" y="160" font-size="11.5" fill="#333">Dos soluciones a la cancelación:</text>
+  <text x="534" y="178" font-size="11.5" fill="#333">· <tspan font-weight="700">valor absoluto</tspan> → MAD, MAPE</text>
+  <text x="534" y="194" font-size="11.5" fill="#333">· <tspan font-weight="700">elevar al cuadrado</tspan> → MSE</text>
+  <text x="520" y="212" font-size="11.5" fill="#C00000" font-weight="700">Y una que APROVECHA la cancelación para medir sesgo → PME</text>
+
+  <!-- ===== LAS 4 MEDIDAS ===== -->
+  <rect x="40" y="232" width="900" height="320" rx="8" fill="#F4F8FC" stroke="#B7D0E5" stroke-width="1.5"/>
+  <text x="56" y="256" font-size="14" font-weight="700" fill="#1F4E79">Las 4 medidas — cada una dice algo DISTINTO</text>
+
+  <!-- MAD -->
+  <rect x="58" y="268" width="208" height="270" rx="6" fill="#fff" stroke="#BFDCC4" stroke-width="1.5"/>
+  <text x="72" y="290" font-size="14" font-weight="700" fill="#1E6B33">MAD</text>
+  <text x="72" y="306" font-size="10" fill="#666">Desviación Absoluta Media</text>
+  <text x="92" y="336" font-size="12" fill="#1E6B33" font-family="Cambria Math, Georgia, serif" font-weight="700">Σ |Yₜ − Ŷₜ|</text>
+  <line x1="84" y1="343" x2="240" y2="343" stroke="#1E6B33" stroke-width="1.4"/>
+  <text x="155" y="362" font-size="12" fill="#1E6B33" font-family="Cambria Math, Georgia, serif" font-weight="700">n</text>
+  <text x="72" y="388" font-size="10.8" fill="#333">Le saca el signo y promedia.</text>
+  <text x="72" y="406" font-size="10.8" font-weight="700" fill="#1E6B33">LA MÁS INTUITIVA</text>
+  <text x="72" y="422" font-size="10.5" fill="#333">Queda en unidades originales.</text>
+  <rect x="70" y="432" width="184" height="38" rx="4" fill="#F1F7F2"/>
+  <text x="80" y="448" font-size="10" fill="#333" font-style="italic">“MAD = 15 unidades” →</text>
+  <text x="80" y="462" font-size="10" fill="#333" font-style="italic">me equivoco típicamente en 15 u.</text>
+  <text x="72" y="490" font-size="10.5" font-weight="700" fill="#8A5A16">CUÁNDO:</text>
+  <text x="72" y="506" font-size="10.2" fill="#333">fácil de comunicar, en unidades</text>
+  <text x="72" y="519" font-size="10.2" fill="#333">reales. Base de la señal de rastreo.</text>
+
+  <!-- MSE -->
+  <rect x="278" y="268" width="208" height="270" rx="6" fill="#fff" stroke="#B7D0E5" stroke-width="1.5"/>
+  <text x="292" y="290" font-size="14" font-weight="700" fill="#1F4E79">MSE</text>
+  <text x="292" y="306" font-size="10" fill="#666">Error Cuadrático Medio</text>
+  <text x="308" y="336" font-size="12" fill="#1F4E79" font-family="Cambria Math, Georgia, serif" font-weight="700">Σ (Yₜ − Ŷₜ)²</text>
+  <line x1="304" y1="343" x2="460" y2="343" stroke="#1F4E79" stroke-width="1.4"/>
+  <text x="375" y="362" font-size="12" fill="#1F4E79" font-family="Cambria Math, Georgia, serif" font-weight="700">n</text>
+  <text x="292" y="388" font-size="10.8" font-weight="700" fill="#C00000">CASTIGA LOS ERRORES GRANDES</text>
+  <rect x="290" y="396" width="184" height="52" rx="4" fill="#EAF6FB"/>
+  <text x="300" y="412" font-size="10" fill="#333" font-weight="700">Mismo error total, distinto MSE:</text>
+  <text x="300" y="427" font-size="10" fill="#333">errores 10 y 10 → MSE = 100</text>
+  <text x="300" y="441" font-size="10" fill="#C00000" font-weight="700">errores 0 y 20 → MSE = 200 (¡el doble!)</text>
+  <text x="292" y="466" font-size="10.5" font-weight="700" fill="#8A5A16">CUÁNDO:</text>
+  <text x="292" y="481" font-size="10.2" fill="#333">un error grande ocasional es peor</text>
+  <text x="292" y="494" font-size="10.2" fill="#333">que muchos chicos (quedarse sin stock).</text>
+  <text x="292" y="514" font-size="10.2" font-weight="700" fill="#C00000">★ Criterio estándar para elegir</text>
+  <text x="292" y="527" font-size="10.2" font-weight="700" fill="#C00000">parámetros (el α del suavizado)</text>
+
+  <!-- MAPE -->
+  <rect x="498" y="268" width="208" height="270" rx="6" fill="#fff" stroke="#E3D2B5" stroke-width="1.5"/>
+  <text x="512" y="290" font-size="14" font-weight="700" fill="#8A5A16">MAPE</text>
+  <text x="512" y="306" font-size="10" fill="#666">% de Error Medio Absoluto</text>
+  <text x="530" y="336" font-size="12" fill="#8A5A16" font-family="Cambria Math, Georgia, serif" font-weight="700">Σ |(Yₜ − Ŷₜ)/Yₜ|</text>
+  <line x1="524" y1="343" x2="680" y2="343" stroke="#8A5A16" stroke-width="1.4"/>
+  <text x="588" y="362" font-size="12" fill="#8A5A16" font-family="Cambria Math, Georgia, serif" font-weight="700">n</text>
+  <text x="640" y="352" font-size="11" fill="#8A5A16" font-weight="700">× 100</text>
+  <text x="512" y="388" font-size="10.8" fill="#333">Divide cada error por el valor real</text>
+  <text x="512" y="403" font-size="10.8" fill="#333">→ queda en <tspan font-weight="700">PORCENTAJE</tspan>.</text>
+  <rect x="510" y="412" width="184" height="52" rx="4" fill="#FBF6EE"/>
+  <text x="520" y="428" font-size="10" font-weight="700" fill="#8A5A16">★ SU SUPERPODER:</text>
+  <text x="520" y="443" font-size="10" fill="#333">permite comparar SERIES DISTINTAS</text>
+  <text x="520" y="457" font-size="9.5" fill="#666" font-style="italic">(panadería vs. automotriz)</text>
+  <text x="512" y="482" font-size="10.5" font-weight="700" fill="#8A5A16">CUÁNDO:</text>
+  <text x="512" y="497" font-size="10.2" fill="#333">comparar entre series o fijar</text>
+  <text x="512" y="510" font-size="10.2" fill="#333">objetivos (“MAPE &lt; 10%”).</text>
+  <text x="512" y="528" font-size="10" fill="#C00000" font-weight="700">⚠ explota si algún Yₜ ≈ 0</text>
+
+  <!-- PME -->
+  <rect x="718" y="268" width="204" height="270" rx="6" fill="#FDF2F2" stroke="#C00000" stroke-width="2"/>
+  <text x="732" y="290" font-size="14" font-weight="700" fill="#9C3838">PME</text>
+  <text x="732" y="306" font-size="10" fill="#666">Porcentaje Medio de Error</text>
+  <text x="748" y="336" font-size="12" fill="#9C3838" font-family="Cambria Math, Georgia, serif" font-weight="700">Σ (Yₜ − Ŷₜ)/Yₜ</text>
+  <line x1="742" y1="343" x2="896" y2="343" stroke="#9C3838" stroke-width="1.4"/>
+  <text x="806" y="362" font-size="12" fill="#9C3838" font-family="Cambria Math, Georgia, serif" font-weight="700">n</text>
+  <text x="856" y="352" font-size="11" fill="#9C3838" font-weight="700">× 100</text>
+  <text x="732" y="386" font-size="10.8" font-weight="700" fill="#C00000">SIN valor absoluto ⇒ mide SESGO</text>
+  <text x="732" y="406" font-size="10.5" fill="#1E6B33" font-weight="700">≈ 0 → centrado ✔</text>
+  <text x="732" y="422" font-size="10.5" fill="#333"><tspan font-weight="700">+ grande</tspan> → subestima siempre</text>
+  <text x="732" y="438" font-size="10.5" fill="#333"><tspan font-weight="700">− grande</tspan> → sobreestima siempre</text>
+  <rect x="730" y="446" width="180" height="84" rx="4" fill="#fff" stroke="#E5C2C2"/>
+  <text x="740" y="462" font-size="10" font-weight="700" fill="#C00000">★ LA MÁS REVELADORA:</text>
+  <text x="740" y="477" font-size="9.8" fill="#333">PME alto NO dice “impreciso”,</text>
+  <text x="740" y="490" font-size="9.8" fill="#333">dice <tspan font-weight="700">“se le escapa un patrón”</tspan>.</text>
+  <text x="740" y="507" font-size="9.5" fill="#666" font-style="italic">Suavizado simple sobre serie con</text>
+  <text x="740" y="519" font-size="9.5" fill="#666" font-style="italic">tendencia → PME+ ⇒ pasar a HOLT</text>
+
+  <!-- ===== EJEMPLO COMPARATIVO ===== -->
+  <rect x="40" y="566" width="900" height="256" rx="8" fill="#FBF6EE" stroke="#E3D2B5" stroke-width="1.5"/>
+  <text x="56" y="590" font-size="14" font-weight="700" fill="#8A5A16">Ejemplo comparativo — dos métodos sobre la misma serie (6 meses)</text>
+
+  <g font-size="10.5">
+    <rect x="56" y="600" width="400" height="18" fill="#8A5A16"/>
+    <text x="66" y="613" fill="#fff" font-weight="700">Mes</text><text x="120" y="613" fill="#fff" font-weight="700">Real</text><text x="185" y="613" fill="#fff" font-weight="700">Mét. A</text><text x="250" y="613" fill="#fff" font-weight="700">e_A</text><text x="310" y="613" fill="#fff" font-weight="700">Mét. B</text><text x="395" y="613" fill="#fff" font-weight="700">e_B</text>
+    <text x="66" y="631" fill="#333">1</text><text x="120" y="631" fill="#333">100</text><text x="185" y="631" fill="#333">95</text><text x="250" y="631" fill="#1E6B33">+5</text><text x="310" y="631" fill="#333">90</text><text x="395" y="631" fill="#1E6B33">+10</text>
+    <text x="66" y="647" fill="#333">2</text><text x="120" y="647" fill="#333">110</text><text x="185" y="647" fill="#333">105</text><text x="250" y="647" fill="#1E6B33">+5</text><text x="310" y="647" fill="#333">108</text><text x="395" y="647" fill="#1E6B33">+2</text>
+    <text x="66" y="663" fill="#333">3</text><text x="120" y="663" fill="#333">105</text><text x="185" y="663" fill="#333">108</text><text x="250" y="663" fill="#C00000">−3</text><text x="310" y="663" fill="#333">112</text><text x="395" y="663" fill="#C00000">−7</text>
+    <text x="66" y="679" fill="#333">4</text><text x="120" y="679" fill="#333">120</text><text x="185" y="679" fill="#333">112</text><text x="250" y="679" fill="#1E6B33">+8</text><text x="310" y="679" fill="#333">118</text><text x="395" y="679" fill="#1E6B33">+2</text>
+    <text x="66" y="695" fill="#333">5</text><text x="120" y="695" fill="#333">115</text><text x="185" y="695" fill="#333">118</text><text x="250" y="695" fill="#C00000">−3</text><text x="310" y="695" fill="#333">130</text><text x="395" y="695" fill="#C00000" font-weight="700">−15</text>
+    <text x="66" y="711" fill="#333">6</text><text x="120" y="711" fill="#333">125</text><text x="185" y="711" fill="#333">120</text><text x="250" y="711" fill="#1E6B33">+5</text><text x="310" y="711" fill="#333">122</text><text x="395" y="711" fill="#1E6B33">+3</text>
+  </g>
+
+  <g font-size="11">
+    <rect x="476" y="600" width="200" height="18" fill="#1F4E79"/>
+    <text x="486" y="613" fill="#fff" font-weight="700">Medida</text><text x="570" y="613" fill="#fff" font-weight="700">Mét. A</text><text x="630" y="613" fill="#fff" font-weight="700">Mét. B</text>
+    <text x="486" y="633" fill="#333" font-weight="700">MAD</text><text x="570" y="633" fill="#1E6B33" font-weight="700">4,83</text><text x="630" y="633" fill="#333">6,50</text>
+    <text x="486" y="653" fill="#333" font-weight="700">MSE</text><text x="570" y="653" fill="#1E6B33" font-weight="700">26,2</text><text x="630" y="653" fill="#C00000" font-weight="700">65,2</text>
+    <text x="486" y="673" fill="#333" font-weight="700">MAPE</text><text x="570" y="673" fill="#1E6B33" font-weight="700">4,3%</text><text x="630" y="673" fill="#333">5,9%</text>
+    <text x="486" y="693" fill="#333" font-weight="700">PME</text><text x="570" y="693" fill="#333">+2,5%</text><text x="630" y="693" fill="#1E6B33" font-weight="700">−0,6%</text>
+    <text x="486" y="713" fill="#888" font-size="9.5" font-style="italic">verde = mejor en esa medida</text>
+  </g>
+
+  <rect x="56" y="724" width="868" height="86" rx="6" fill="#fff" stroke="#E3D2B5"/>
+  <text x="68" y="742" font-size="11" font-weight="700" fill="#8A5A16">★ Interpretación — así se redacta en el examen:</text>
+  <text x="68" y="760" font-size="10.3" fill="#333" font-style="italic">“El método A presenta menor error en las tres medidas de precisión (MAD 4,83 vs. 6,50; MSE 26,2 vs. 65,2; MAPE 4,3% vs. 5,9%), por lo que resulta</text>
+  <text x="68" y="774" font-size="10.3" fill="#333" font-style="italic">más preciso. La diferencia es especialmente marcada en el MSE, lo que indica que B produce errores grandes ocasionales (mes 5: −15). En cuanto</text>
+  <text x="68" y="788" font-size="10.3" fill="#333" font-style="italic">al sesgo, B está mejor centrado (PME −0,6% vs. +2,5%), lo que sugiere que A tiende a subestimar levemente. Se recomienda A por su mayor</text>
+  <text x="68" y="802" font-size="10.3" fill="#333" font-style="italic">precisión, monitoreando la tendencia a subestimar.”</text>
+
+  <!-- ===== VALIDACION + RASTREO ===== -->
+  <rect x="40" y="836" width="450" height="140" rx="8" fill="#F1F7F2" stroke="#1E6B33" stroke-width="1.5"/>
+  <text x="56" y="858" font-size="13" font-weight="700" fill="#1E6B33">Procedimiento de validación (Hanke cap. 5)</text>
+  <text x="56" y="878" font-size="10.8" fill="#333">① Elegir método según el patrón (árbol Clase 3.a)</text>
+  <text x="56" y="894" font-size="10.8" fill="#333">② Partir datos: <tspan font-weight="700">inicialización</tspan> + <tspan font-weight="700">prueba</tspan></text>
+  <text x="56" y="910" font-size="10.8" fill="#333">③ Ajustar el método con la inicialización</text>
+  <text x="56" y="926" font-size="10.8" fill="#333">④ Pronosticar la prueba y medir el error ahí</text>
+  <text x="56" y="942" font-size="10.8" fill="#333">⑤ Decidir: usar, modificar o cambiar de método</text>
+  <text x="56" y="964" font-size="10.2" fill="#1E6B33" font-weight="700">Lógica: medir sobre los datos con que ajustaste = hacer trampa.</text>
+
+  <rect x="504" y="836" width="436" height="140" rx="8" fill="#F6F2FA" stroke="#5B3E8E" stroke-width="1.5"/>
+  <text x="520" y="858" font-size="13" font-weight="700" fill="#5B3E8E">Señal de rastreo</text>
+  <text x="520" y="878" font-size="10.8" fill="#333">Un método que hoy funciona puede dejar de servir</text>
+  <text x="520" y="893" font-size="10.8" fill="#333">(cambió el mercado, entró un competidor).</text>
+  <text x="520" y="913" font-size="10.8" fill="#333">Es un <tspan font-weight="700">control continuo</tspan>: se monitorea el error y se</text>
+  <text x="520" y="928" font-size="10.8" fill="#333">fijan límites; al rebasarlos, se <tspan font-weight="700">alerta al pronosticador</tspan>.</text>
+  <text x="520" y="950" font-size="10.5" fill="#5B3E8E" font-weight="700">Versión simple: contar subestimaciones (U) de los últimos n.</text>
+  <text x="520" y="965" font-size="10.5" fill="#333">Si el método está sano, U ≈ n/2. Muy lejos de n/2 → sesgo.</text>
+
+  <!-- PIE EJERCICIO -->
+  <rect x="40" y="990" width="900" height="72" rx="6" fill="#FAFAFA" stroke="#CCC"/>
+  <text x="56" y="1010" font-size="11" font-weight="700" fill="#555">EJERCICIO — Real: 200, 210, 225, 230, 245 · Método X: 190, 198, 205, 215, 222 · Método Y: 205, 202, 230, 222, 250</text>
+  <text x="56" y="1028" font-size="10.8" fill="#555">a) tabla con e, |e|, e², |e/Y|   b) MAD, MSE, MAPE y PME de ambos   c) ¿cuál es más preciso? ¿cuál mejor centrado?</text>
+  <text x="56" y="1046" font-size="10.8" fill="#555">d) ★ mirá el PME de X y la evolución de los datos reales: ¿qué te dice? ¿qué TIPO de método parece X y qué le cambiarías?   e) conclusión redactada</text>
+</svg>

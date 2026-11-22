@@ -1,0 +1,584 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c3a",
+  "title": "Clase 3.a · Series de tiempo",
+  "name": "Series de tiempo",
+  "lede": "toda serie de ventas es la superposición de cuatro componentes (tendencia, ciclo, estacionalidad, irregularidad). Aprender a mirar un gráfico y decir qué componentes tiene es lo que permite elegir y justificar el método de pronóstico — exactamente lo que evalúa la cátedra.",
+  "visto": true,
+  "source": [
+    "clases_previas/SG/Clase03a_SeriesDeTiempo.md",
+    "clases_previas/SG/Clase03a_SeriesDeTiempo.svg",
+    "clases_previas/SG/ArbolDecisorio_MetodosPronostico.svg"
+  ],
+  "laminas": [
+    "u2/img/Clase03a_SeriesDeTiempo.svg",
+    "u2/img/ArbolDecisorio_MetodosPronostico.svg"
+  ],
+  "next": "Clase 3.b · Autocorrelación",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2.b · Serie: 0 → 0.1 → 1 → 1.b → 2 → **3.a****"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Idea central:** toda serie de ventas es la superposición de cuatro componentes (tendencia, ciclo, estacionalidad, irregularidad). Aprender a mirar un gráfico y decir qué componentes tiene es lo que permite **elegir y justificar el método de pronóstico** — exactamente lo que evalúa la cátedra."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. El cambio de mirada: dos tipos de datos"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Tipo",
+        "Qué es",
+        "¿Importa el orden?",
+        "Ejemplo"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "**Corte transversal**",
+          "datos reunidos en **un solo momento** del tiempo",
+          "No",
+          "sueldo de 50 empleados hoy"
+        ],
+        [
+          "**Serie de tiempo**",
+          "secuencia **ordenada** de observaciones de una variable a lo largo del tiempo",
+          "**Sí, el orden ES la información**",
+          "ventas de ene, feb, mar…"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "En las clases 1 y 2 los datos eran de corte transversal: mezclarlos no cambiaba el promedio ni el desvío. **En una serie de tiempo, mezclar los períodos destruye la información.**"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Lógica de fondo del pronóstico:** si descubro el patrón que la serie tuvo en el pasado, puedo proyectarlo al futuro."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Notación estándar:** **Yₜ** = valor de la serie en el período t · **Yₜ₋₁** = período anterior · **Ŷₜ** = pronóstico para ese período."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. La descomposición clásica: los 4 componentes"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "Analogía: como escuchar una canción y distinguir la batería, el bajo y la voz. Suenan juntos, pero son fuentes separadas."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "T · TENDENCIA"
+    },
+    {
+      "type": "paragraph",
+      "text": "Componente de **largo plazo**: crecimiento o disminución sostenida a lo largo de un período amplio."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "*Causas:* crecimiento poblacional, cambio tecnológico, ganancia/pérdida de mercado, inflación.",
+        "*Ejemplo:* la empresa vendía 100 hace cinco años y hoy vende 300."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "C · CICLO"
+    },
+    {
+      "type": "paragraph",
+      "text": "Fluctuación **en forma de onda alrededor de la tendencia**, de **varios años** (típicamente 2 a 10). Épocas de bonanza y recesión."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "*Causas:* ciclo económico general, cambios en el gusto popular, ciclo de vida del producto.",
+        "*Por qué es el más difícil:* **no tiene período fijo** (una recesión puede durar 2 años o 6). Por eso es el componente que menos se puede modelar con confianza."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "S · ESTACIONALIDAD"
+    },
+    {
+      "type": "paragraph",
+      "text": "Patrón que **se repite año tras año** con período **fijo y conocido**."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "*Causas:* clima y calendario (fiestas, vacaciones, cierres fiscales).",
+        "*Ejemplos:* helados en verano, paraguas en otoño, pico de ventas en diciembre.",
+        "**Longitud estacional L** (dato clave para las fórmulas): **L = 4** en datos trimestrales · **L = 12** en mensuales · **L = 7** en diarios. Esta L aparece en el método de Winter."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "I · IRREGULARIDAD (aleatoria o errática)"
+    },
+    {
+      "type": "paragraph",
+      "text": "Lo que queda **después de sacar los otros tres**. El ruido."
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "*Ejemplos:* una huelga, un incendio, un pedido excepcional, el azar puro.",
+        "*Característica:* **impredecible por definición**. El objetivo de un buen modelo es que lo único que quede sin explicar sea esto."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. ⚠ Ciclo vs. Estacionalidad — la confusión clásica de examen"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "",
+        "**Estacionalidad**",
+        "**Ciclo**"
+      ],
+      "rows": [
+        [
+          "---",
+          "---",
+          "---"
+        ],
+        [
+          "Duración",
+          "**fija**, dentro del año",
+          "**variable**, varios años"
+        ],
+        [
+          "¿Predecible?",
+          "sí, se sabe cuándo viene",
+          "no, difícil de anticipar"
+        ],
+        [
+          "Causa",
+          "clima, calendario",
+          "economía, mercado"
+        ],
+        [
+          "Ejemplo",
+          "picos cada diciembre",
+          "recesión 2018–2020"
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Regla mnemotécnica:** si podés poner en el calendario cuándo va a pasar → **estacionalidad**. Si depende de la economía y nadie sabe cuándo → **ciclo**."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Cómo se combinan: modelo aditivo vs. multiplicativo"
+    },
+    {
+      "type": "svg",
+      "svg": "<svg viewBox=\"0 0 280 128\" width=\"100%\" height=\"128\" aria-hidden=\"true\"><polyline fill=\"none\" stroke=\"#1f4e79\" stroke-width=\"1.8\" points=\"20.0,44.0 25.0,49.1 30.0,50.1 35.0,45.8 40.0,38.4 45.0,32.3 50.0,31.2 55.0,35.1 60.0,40.8 65.0,43.7 70.0,41.4 75.0,34.7 80.0,27.6 85.0,24.3 90.0,26.5 95.0,32.0 100.0,36.5 105.0,36.3 110.0,31.0 115.0,23.5 120.0,18.3 125.0,18.4 130.0,23.0 135.0,28.5 140.0,30.4\"/><text x=\"20\" y=\"14\" font-size=\"9\" fill=\"#1f4e79\" font-weight=\"700\">Aditivo: ondas del mismo tamaño</text><polyline fill=\"none\" stroke=\"#c45c26\" stroke-width=\"1.8\" points=\"20.0,100.0 25.0,105.7 30.0,107.6 35.0,103.0 40.0,93.6 45.0,85.1 50.0,83.1 55.0,89.4 60.0,99.7 65.0,106.2 70.0,103.2 75.0,91.3 80.0,77.4 85.0,70.8 90.0,76.1 95.0,90.0 100.0,102.6 105.0,104.2 110.0,92.2 115.0,73.5 120.0,60.2 125.0,61.4 130.0,76.6 135.0,95.3 140.0,104.0\"/><text x=\"20\" y=\"70\" font-size=\"9\" fill=\"#c45c26\" font-weight=\"700\">Multiplicativo: ondas que se agrandan</text></svg>",
+      "caption": "Arriba, modelo aditivo (ondas de amplitud constante). Abajo, multiplicativo (las ondas se agrandan con la tendencia). Esquema del criterio del apunte, no una serie real."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Aditivo"
+    },
+    {
+      "type": "formula",
+      "tex": "Y = T + C + S + I"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/Clase03a_SeriesDeTiempo.svg",
+      "caption": "Lámina de la Clase 3.a · Serie de tiempo y componentes"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/ArbolDecisorio_MetodosPronostico.svg",
+      "caption": "Árbol decisorio de métodos de pronóstico"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Los componentes **se suman**.",
+        "La estacionalidad es una cantidad **fija en unidades**: *\"en diciembre siempre vendo 200 unidades más\"*.",
+        "**En el gráfico:** ondas de **amplitud constante**, parejas a lo largo del tiempo."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Multiplicativo"
+    },
+    {
+      "type": "formula",
+      "tex": "Y = T \\times C \\times S \\times I"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Los componentes **se multiplican**.",
+        "La estacionalidad es un **porcentaje**: *\"en diciembre siempre vendo un 40% más\"*.",
+        "**En el gráfico:** ondas que **se agrandan** a medida que crece la tendencia (forma de embudo abierto)."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Cómo decidir"
+    },
+    {
+      "type": "paragraph",
+      "text": "Mirando el gráfico: ¿las ondas mantienen el mismo tamaño con los años? → **aditivo**. ¿Se agrandan junto con el nivel de la serie? → **multiplicativo**."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "En la práctica industrial el **multiplicativo** es el más común, y es el que menciona explícitamente el programa de la cátedra (\"modelos de descomposición multiplicativo\")."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Serie estacionaria: el concepto que ordena todo"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Una serie es estacionaria cuando su valor promedio no cambia a través del tiempo.** Fluctúa, pero alrededor de un nivel constante — sin irse para arriba ni para abajo."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Por qué importa:** cada familia de métodos sirve para un tipo de serie. \"¿Es estacionaria?\" es la **primera bifurcación** del árbol de decisión."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Árbol de decisión de métodos ★"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Si la serie…",
+        "Métodos aplicables"
+      ],
+      "rows": [
+        [
+          "---",
+          "---"
+        ],
+        [
+          "**Es estacionaria**",
+          "promedio simple, promedio móvil, suavizado exponencial simple, Box-Jenkins"
+        ],
+        [
+          "**Tiene tendencia**",
+          "promedio móvil doble, Brown, **Holt**, regresión simple, modelos exponenciales"
+        ],
+        [
+          "**Tiene estacionalidad**",
+          "**Winter**, descomposición clásica, regresión múltiple de series de tiempo, Census II"
+        ],
+        [
+          "**Tiene ciclo**",
+          "descomposición clásica, indicadores económicos, modelos econométricos, regresión múltiple"
+        ]
+      ]
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Este cuadro ES la respuesta a \"justifique la metodología aplicada\" del examen.**"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Si no es estacionaria: diferenciación"
+    },
+    {
+      "type": "paragraph",
+      "text": "Consiste en trabajar con las **diferencias entre períodos consecutivos** (Yₜ − Yₜ₋₁) en lugar de los valores originales.\n*Ejemplo:* si una serie crece de a 10 por mes, sus diferencias son todas 10 → serie plana → **estacionaria**. Se le sacó la tendencia."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Ejemplo integrador: aires acondicionados (ventas trimestrales)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Observación",
+        "Diagnóstico"
+      ],
+      "rows": [
+        [
+          "---",
+          "---"
+        ],
+        [
+          "Cada año vende más que el anterior",
+          "**Tendencia** creciente"
+        ],
+        [
+          "Cada verano se dispara, cada invierno se hunde, siempre igual",
+          "**Estacionalidad**, L = 4"
+        ],
+        [
+          "En 2020 todo cayó por la recesión y luego se recuperó",
+          "**Ciclo**"
+        ],
+        [
+          "Un mes hubo un pedido raro de un hotel",
+          "**Irregularidad**"
+        ],
+        [
+          "Los picos de verano son cada vez más grandes en unidades",
+          "Modelo **multiplicativo**"
+        ],
+        [
+          "¿Es estacionaria?",
+          "**No**: el promedio sube con los años"
+        ],
+        [
+          "**¿Qué método?**",
+          "**Winter o descomposición** (tiene tendencia Y estacionalidad)"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Mini-resumen para tu doc"
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Clase 3.a.** Serie de tiempo = secuencia ordenada de observaciones (Yₜ); el orden es información. Descomposición clásica: toda serie = Tendencia (largo plazo) + Ciclo (ondas plurianuales, sin período fijo) + Estacionalidad (patrón anual de período fijo, L=4 o 12) + Irregularidad (ruido impredecible). Ciclo vs. estacionalidad: si va en el calendario, es estacionalidad. Combinación aditiva (ondas parejas, estacionalidad en unidades) o multiplicativa (ondas crecientes, estacionalidad en %). Serie estacionaria = promedio constante en el tiempo; es la primera pregunta del diagnóstico porque define la familia de métodos. Si no lo es, se puede diferenciar (Yₜ − Yₜ₋₁)."
+    },
+    {
+      "type": "ejercicio",
+      "title": "8. EJERCICIO — Clase 3.a",
+      "estado": "para resolver",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Para cada serie: ¿qué componentes tiene? ¿es estacionaria? ¿el modelo parece aditivo o multiplicativo? ¿qué familia de métodos usarías?"
+        },
+        {
+          "type": "paragraph",
+          "text": "**a)** Ventas mensuales de una panadería de barrio, estables hace 10 años, oscilando entre 900 y 1.100 kg sin patrón visible."
+        },
+        {
+          "type": "paragraph",
+          "text": "**b)** Ventas trimestrales de una heladería:"
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Año",
+            "T1",
+            "T2",
+            "T3",
+            "T4"
+          ],
+          "rows": [
+            [
+              "---",
+              "---",
+              "---",
+              "---",
+              "---"
+            ],
+            [
+              "2022",
+              "800",
+              "200",
+              "150",
+              "700"
+            ],
+            [
+              "2023",
+              "950",
+              "240",
+              "180",
+              "830"
+            ],
+            [
+              "2024",
+              "1.100",
+              "280",
+              "210",
+              "980"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "**c)** Suscripciones de una app que crece sostenidamente: 1.000, 1.250, 1.480, 1.760, 2.010, 2.290."
+        },
+        {
+          "type": "paragraph",
+          "text": "**d)** Ventas de una constructora que subieron hasta 2018, se derrumbaron 2019–2021 y se recuperan desde 2022."
+        },
+        {
+          "type": "callout",
+          "kind": "idea",
+          "text": "Este ejercicio es **de criterio, no de cuenta** — es exactamente lo que la cátedra evalúa cuando pide \"fundamentar la metodología aplicada\"."
+        }
+      ],
+      "nota": "Para resolver — en el material no figura la resolución. Cuando lo corriamos, la cargamos acá."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "9. Ejercicios acumulados pendientes de corrección"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "**Clase 1.b** (ventas 120, 135, 105, 140, 100): a) X̄ y s · b) P(X<150) · c) P(X>90) · d) P(110<X<145) · e) inverso 90% · f) ¿Z o t?",
+        "**Clase 2** (temperatura vs. bebidas): a) tabla y sumatorias · b) r · c) interpretación · d) ¿causalidad?",
+        "**Clase 3.a** (diagnóstico de 4 series): a) a d)"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** `Clase03a_SeriesDeTiempo.svg`\n**Fuente:** Hanke, *Pronósticos en los Negocios*, caps. 3 y 4 — completo en Drive/Teoría/Libros."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Clase 3.b: Autocorrelación y correlograma** — la herramienta técnica para detectar estos mismos patrones con números en lugar de a ojo."
+    }
+  ],
+  "historias": [
+    {
+      "type": "concepto",
+      "k": "La idea",
+      "title": "Mirar el gráfico es elegir el método.",
+      "text": "Toda serie de ventas es la superposición de cuatro componentes: tendencia, ciclo, estacionalidad e irregularidad. Aprender a mirar un gráfico y decir qué componentes tiene es lo que permite elegir y justificar el método de pronóstico: exactamente lo que evalúa la cátedra."
+    },
+    {
+      "type": "concepto",
+      "k": "Dos tipos de datos",
+      "title": "En una serie, el orden ES la información.",
+      "text": "Corte transversal: datos en un solo momento (el sueldo de 50 empleados hoy); el orden no importa. Serie de tiempo: secuencia ordenada (ventas de ene, feb, mar…). Mezclar los períodos destruye la información.",
+      "ejemplo": "Notación: Yₜ = valor en el período t · Yₜ₋₁ = el anterior · Ŷₜ = pronóstico para ese período. Si descubro el patrón del pasado, puedo proyectarlo al futuro."
+    },
+    {
+      "type": "concepto",
+      "k": "Cuatro componentes",
+      "title": "T, C, S e I, como instrumentos de una canción.",
+      "text": "Tendencia (largo plazo), ciclo (ondas de varios años, período variable), estacionalidad (se repite con período fijo: L=4 trimestral, L=12 mensual) e irregularidad (el ruido impredecible).",
+      "ejemplo": "Helados en verano, pico en diciembre: estacionalidad. Recesión de varios años: ciclo."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "¿Qué diferencia a la estacionalidad del ciclo?",
+      "options": [
+        "El ciclo se repite todos los años en la misma fecha",
+        "La estacionalidad tiene período fijo y se puede marcar en el calendario; el ciclo no",
+        "No hay diferencia: son dos nombres del mismo componente"
+      ],
+      "correct": 1,
+      "feedback": "Regla del apunte: si podés poner en el calendario cuándo va a pasar → estacionalidad. Si depende de la economía y nadie sabe cuándo → ciclo."
+    },
+    {
+      "type": "concepto",
+      "k": "La confusión clásica",
+      "title": "Si va en el calendario, es estacionalidad.",
+      "text": "Estacionalidad: duración fija, dentro del año, predecible, clima o calendario. Ciclo: duración variable, varios años, difícil de anticipar, economía o mercado."
+    },
+    {
+      "type": "concepto",
+      "k": "Cómo se combinan",
+      "title": "Aditivo o multiplicativo.",
+      "text": "Aditivo: los componentes se suman (en diciembre, +200 unidades). Multiplicativo: se multiplican (en diciembre, +40%). En la industria, el multiplicativo es el más común, y es el que nombra el programa.",
+      "formula": "Y = T \\times C \\times S \\times I",
+      "ejemplo": "En la práctica industrial el multiplicativo es el más común, y es el que menciona el programa de la cátedra («modelos de descomposición multiplicativo»).",
+      "svg": "<svg viewBox=\"0 0 280 128\" width=\"100%\" height=\"128\" aria-hidden=\"true\"><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.8\" points=\"20.0,44.0 25.0,49.1 30.0,50.1 35.0,45.8 40.0,38.4 45.0,32.3 50.0,31.2 55.0,35.1 60.0,40.8 65.0,43.7 70.0,41.4 75.0,34.7 80.0,27.6 85.0,24.3 90.0,26.5 95.0,32.0 100.0,36.5 105.0,36.3 110.0,31.0 115.0,23.5 120.0,18.3 125.0,18.4 130.0,23.0 135.0,28.5 140.0,30.4\"/><text x=\"20\" y=\"14\" font-size=\"9\" fill=\"#8cb4d6\" font-weight=\"700\">Aditivo: ondas del mismo tamaño</text><polyline fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.8\" points=\"20.0,100.0 25.0,105.7 30.0,107.6 35.0,103.0 40.0,93.6 45.0,85.1 50.0,83.1 55.0,89.4 60.0,99.7 65.0,106.2 70.0,103.2 75.0,91.3 80.0,77.4 85.0,70.8 90.0,76.1 95.0,90.0 100.0,102.6 105.0,104.2 110.0,92.2 115.0,73.5 120.0,60.2 125.0,61.4 130.0,76.6 135.0,95.3 140.0,104.0\"/><text x=\"20\" y=\"70\" font-size=\"9\" fill=\"#e25b16\" font-weight=\"700\">Multiplicativo: ondas que se agrandan</text></svg>",
+      "chartLabel": "Aditivo: mismas ondas. Multiplicativo: se agrandan con la tendencia"
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Si en el gráfico las ondas se agrandan a medida que crece la serie, el modelo es…",
+      "options": [
+        "Aditivo: la estacionalidad es una cantidad fija de unidades",
+        "Multiplicativo: la estacionalidad es un porcentaje",
+        "Solo irregularidad, no hay estacionalidad"
+      ],
+      "correct": 1,
+      "feedback": "Ondas que se agrandan con el nivel (embudo abierto) → multiplicativo. Si mantienen el mismo tamaño → aditivo."
+    },
+    {
+      "type": "concepto",
+      "k": "Estacionaria",
+      "title": "La primera pregunta del árbol.",
+      "text": "Una serie es estacionaria cuando su valor promedio no cambia a través del tiempo. Fluctúa, pero alrededor de un nivel constante. «¿Es estacionaria?» es la primera bifurcación del árbol de decisión.",
+      "ejemplo": "Si no lo es, se puede diferenciar: trabajar con Yₜ − Yₜ₋₁. Si una serie crece de a 10 por mes, sus diferencias son todas 10: queda plana, estacionaria."
+    },
+    {
+      "type": "concepto",
+      "k": "El árbol ★",
+      "title": "Esta tabla justifica la metodología.",
+      "text": "Estacionaria → promedio simple, móvil, suavizado exponencial simple, Box-Jenkins. Tendencia → móvil doble, Brown, Holt, regresión. Estacionalidad → Winter, descomposición, regresión múltiple de series, Census II. Ciclo → descomposición, indicadores, econométricos.",
+      "ejemplo": "Este cuadro es la respuesta a «justifique la metodología aplicada» del examen."
+    },
+    {
+      "type": "concepto",
+      "k": "Ejemplo",
+      "title": "Aires acondicionados, ventas trimestrales.",
+      "text": "Cada año vende más: tendencia. Cada verano se dispara y cada invierno se hunde: estacionalidad, L = 4. En 2020 cayó por la recesión: ciclo. Un pedido raro de un hotel: irregularidad. Los picos de verano cada vez más grandes: multiplicativo. No es estacionaria.",
+      "ejemplo": "¿Qué método? Winter o descomposición, porque tiene tendencia Y estacionalidad."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "title": "Ventas trimestrales de aires: tendencia + estacionalidad, no estacionaria. ¿Qué familia usarías?",
+      "options": [
+        "Promedio móvil o suavizado exponencial simple",
+        "Winter o descomposición",
+        "Solo un promedio simple, porque es más estable"
+      ],
+      "correct": 1,
+      "feedback": "El árbol: si tiene tendencia y estacionalidad, corresponden Winter o descomposición. El suavizado simple es para series estacionarias."
+    },
+    {
+      "type": "cierre",
+      "title": "Llevate esto de la Clase 3.a.",
+      "text": "El orden de la serie es información. Diagnosticá T, C, S e I a ojo, decidí aditivo o multiplicativo, y usá el árbol para justificar el método. El ejercicio de las 4 series queda para resolver juntos."
+    }
+  ]
+}

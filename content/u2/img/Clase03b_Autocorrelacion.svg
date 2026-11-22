@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 1040" width="980" height="1040" font-family="Segoe UI, Calibri, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#1F4E79"/></marker>
+  </defs>
+  <rect width="980" height="1040" fill="#FFFFFF"/>
+
+  <!-- TITULO -->
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#1F4E79">CLASE 3.b · Autocorrelación y correlograma</text>
+  <text x="530" y="34" font-size="12.5" fill="#666">U2.b (cierre) — el diagnóstico con NÚMEROS</text>
+  <text x="40" y="56" font-size="12.5" font-weight="700" fill="#C00000">Idea: correlacionar la serie CONSIGO MISMA desfasada k períodos → mide la “memoria” de la serie.</text>
+
+  <!-- ===== CONCEPTO ===== -->
+  <rect x="40" y="72" width="450" height="196" rx="8" fill="#F4F8FC" stroke="#B7D0E5" stroke-width="1.5"/>
+  <text x="56" y="94" font-size="13.5" font-weight="700" fill="#1F4E79">El desfasamiento (lag k)</text>
+  <g font-size="10.5">
+    <rect x="56" y="104" width="416" height="18" fill="#1F4E79"/>
+    <text x="68" y="117" fill="#fff" font-weight="700">Mes</text>
+    <text x="150" y="117" fill="#fff" font-weight="700">Yₜ (original)</text>
+    <text x="270" y="117" fill="#fff" font-weight="700">Yₜ₋₁ (lag 1)</text>
+    <text x="382" y="117" fill="#fff" font-weight="700">Yₜ₋₂ (lag 2)</text>
+    <text x="68" y="135" fill="#333">Ene</text><text x="150" y="135" fill="#333">100</text><text x="270" y="135" fill="#bbb">—</text><text x="382" y="135" fill="#bbb">—</text>
+    <text x="68" y="151" fill="#333">Feb</text><text x="150" y="151" fill="#333">110</text><text x="270" y="151" fill="#333">100</text><text x="382" y="151" fill="#bbb">—</text>
+    <text x="68" y="167" fill="#333">Mar</text><text x="150" y="167" fill="#333">105</text><text x="270" y="167" fill="#333">110</text><text x="382" y="167" fill="#333">100</text>
+    <text x="68" y="183" fill="#333">Abr</text><text x="150" y="183" fill="#333">120</text><text x="270" y="183" fill="#333">105</text><text x="382" y="183" fill="#333">110</text>
+    <text x="68" y="199" fill="#333">May</text><text x="150" y="199" fill="#333">115</text><text x="270" y="199" fill="#333">120</text><text x="382" y="199" fill="#333">105</text>
+  </g>
+  <text x="56" y="222" font-size="11" fill="#333"><tspan font-weight="700">r₁</tspan> = cada mes vs. el anterior · <tspan font-weight="700">r₄</tspan> = vs. mismo trimestre del año pasado</text>
+  <text x="56" y="240" font-size="11" fill="#333"><tspan font-weight="700">r₁₂</tspan> = cada mes vs. el mismo mes del año anterior</text>
+  <text x="56" y="260" font-size="10.5" fill="#1F4E79" font-weight="700">rₖ alto ⇒ el pasado de hace k períodos predice el presente ⇒ hay patrón</text>
+
+  <!-- ===== FORMULA ===== -->
+  <rect x="504" y="72" width="436" height="196" rx="8" fill="#EAF6FB" stroke="#1F4E79" stroke-width="2"/>
+  <text x="520" y="94" font-size="13.5" font-weight="700" fill="#1F4E79">Fórmula del coeficiente de autocorrelación</text>
+
+  <text x="560" y="132" font-size="12.5" fill="#1F4E79" font-family="Cambria Math, Georgia, serif" font-weight="700">Σ (Yₜ − Ȳ)(Yₜ₋ₖ − Ȳ)</text>
+  <line x1="548" y1="140" x2="800" y2="140" stroke="#1F4E79" stroke-width="1.6"/>
+  <text x="520" y="138" font-size="14" fill="#1F4E79" font-family="Cambria Math, Georgia, serif" font-weight="700">rₖ =</text>
+  <text x="600" y="162" font-size="12.5" fill="#1F4E79" font-family="Cambria Math, Georgia, serif" font-weight="700">Σ (Yₜ − Ȳ)²</text>
+
+  <text x="520" y="190" font-size="10.8" fill="#333"><tspan font-weight="700">Numerador:</tspan> por cada par separado k períodos, multiplico</text>
+  <text x="520" y="205" font-size="10.8" fill="#333">sus desvíos contra la media, y sumo.</text>
+  <text x="520" y="224" font-size="10.8" fill="#333"><tspan font-weight="700">Denominador:</tspan> suma de desvíos² → normaliza entre −1 y +1.</text>
+  <text x="520" y="248" font-size="10.5" fill="#666" font-style="italic">Es el mismo r de la Clase 2, adaptado a la propia serie.</text>
+
+  <!-- ===== LAS 4 HUELLAS ===== -->
+  <rect x="40" y="282" width="900" height="330" rx="8" fill="#FBF6EE" stroke="#E3D2B5" stroke-width="1.5"/>
+  <text x="56" y="306" font-size="14" font-weight="700" fill="#8A5A16">★ LAS 4 HUELLAS DACTILARES — cada patrón deja una marca distinta en el correlograma</text>
+  <text x="56" y="324" font-size="10.5" fill="#666" font-style="italic">Eje horizontal = lag k · Eje vertical = valor de rₖ · Líneas punteadas = banda de significancia</text>
+
+  <!-- H1 ALEATORIA -->
+  <rect x="58" y="336" width="208" height="256" rx="6" fill="#fff" stroke="#BFDCC4" stroke-width="1.5"/>
+  <text x="72" y="358" font-size="12" font-weight="700" fill="#1E6B33">1 · ALEATORIA</text>
+  <text x="72" y="373" font-size="9.8" fill="#666">(estacionaria pura)</text>
+  <line x1="76" y1="452" x2="76" y2="386" stroke="#999" stroke-width="1"/>
+  <line x1="76" y1="430" x2="252" y2="430" stroke="#555" stroke-width="1.2"/>
+  <line x1="76" y1="404" x2="252" y2="404" stroke="#C00000" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="76" y1="456" x2="252" y2="456" stroke="#C00000" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect x="86" y="422" width="9" height="8" fill="#1E6B33"/>
+  <rect x="102" y="430" width="9" height="7" fill="#1E6B33"/>
+  <rect x="118" y="424" width="9" height="6" fill="#1E6B33"/>
+  <rect x="134" y="430" width="9" height="9" fill="#1E6B33"/>
+  <rect x="150" y="421" width="9" height="9" fill="#1E6B33"/>
+  <rect x="166" y="430" width="9" height="6" fill="#1E6B33"/>
+  <rect x="182" y="425" width="9" height="5" fill="#1E6B33"/>
+  <rect x="198" y="430" width="9" height="8" fill="#1E6B33"/>
+  <rect x="214" y="423" width="9" height="7" fill="#1E6B33"/>
+  <rect x="230" y="430" width="9" height="5" fill="#1E6B33"/>
+  <text x="72" y="482" font-size="10.5" fill="#333">Todas las barras cerca de</text>
+  <text x="72" y="496" font-size="10.5" fill="#333">cero, ninguna se destaca.</text>
+  <text x="72" y="516" font-size="10.5" font-weight="700" fill="#1E6B33">⇒ ESTACIONARIA</text>
+  <text x="72" y="536" font-size="10.2" fill="#333">Sin patrón: el pasado no</text>
+  <text x="72" y="549" font-size="10.2" fill="#333">dice nada del presente.</text>
+  <text x="72" y="570" font-size="10.2" font-weight="700" fill="#8A5A16">Método: promedio móvil,</text>
+  <text x="72" y="583" font-size="10.2" font-weight="700" fill="#8A5A16">suavizado exp. simple</text>
+
+  <!-- H2 TENDENCIA -->
+  <rect x="278" y="336" width="208" height="256" rx="6" fill="#fff" stroke="#B7D0E5" stroke-width="1.5"/>
+  <text x="292" y="358" font-size="12" font-weight="700" fill="#1F4E79">2 · TENDENCIA</text>
+  <text x="292" y="373" font-size="9.8" fill="#666">decaimiento gradual</text>
+  <line x1="296" y1="452" x2="296" y2="386" stroke="#999" stroke-width="1"/>
+  <line x1="296" y1="452" x2="472" y2="452" stroke="#555" stroke-width="1.2"/>
+  <line x1="296" y1="426" x2="472" y2="426" stroke="#C00000" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect x="306" y="390" width="9" height="62" fill="#1F4E79"/>
+  <rect x="322" y="396" width="9" height="56" fill="#1F4E79"/>
+  <rect x="338" y="402" width="9" height="50" fill="#1F4E79"/>
+  <rect x="354" y="409" width="9" height="43" fill="#1F4E79"/>
+  <rect x="370" y="416" width="9" height="36" fill="#1F4E79"/>
+  <rect x="386" y="423" width="9" height="29" fill="#1F4E79"/>
+  <rect x="402" y="430" width="9" height="22" fill="#9DC3E6"/>
+  <rect x="418" y="436" width="9" height="16" fill="#9DC3E6"/>
+  <rect x="434" y="441" width="9" height="11" fill="#9DC3E6"/>
+  <rect x="450" y="445" width="9" height="7" fill="#9DC3E6"/>
+  <text x="292" y="482" font-size="10.5" fill="#333">Altas al principio y caen</text>
+  <text x="292" y="496" font-size="10.5" fill="#333">GRADUALMENTE a cero.</text>
+  <text x="292" y="516" font-size="10.5" font-weight="700" fill="#C00000">⇒ NO ESTACIONARIA</text>
+  <text x="292" y="536" font-size="10.2" fill="#333">El mes pasado se parece</text>
+  <text x="292" y="549" font-size="10.2" fill="#333">mucho; el de hace un año, menos.</text>
+  <text x="292" y="570" font-size="10.2" font-weight="700" fill="#8A5A16">Método: Holt, Brown,</text>
+  <text x="292" y="583" font-size="10.2" font-weight="700" fill="#8A5A16">regresión — o diferenciar</text>
+
+  <!-- H3 ESTACIONALIDAD -->
+  <rect x="498" y="336" width="208" height="256" rx="6" fill="#fff" stroke="#E3D2B5" stroke-width="1.5"/>
+  <text x="512" y="358" font-size="12" font-weight="700" fill="#8A5A16">3 · ESTACIONALIDAD</text>
+  <text x="512" y="373" font-size="9.8" fill="#666">pico aislado en el lag L</text>
+  <line x1="516" y1="452" x2="516" y2="386" stroke="#999" stroke-width="1"/>
+  <line x1="516" y1="452" x2="692" y2="452" stroke="#555" stroke-width="1.2"/>
+  <line x1="516" y1="426" x2="692" y2="426" stroke="#C00000" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect x="526" y="440" width="9" height="12" fill="#D9954A"/>
+  <rect x="542" y="443" width="9" height="9" fill="#D9954A"/>
+  <rect x="558" y="438" width="9" height="14" fill="#D9954A"/>
+  <rect x="574" y="392" width="9" height="60" fill="#B5651D"/>
+  <rect x="590" y="442" width="9" height="10" fill="#D9954A"/>
+  <rect x="606" y="444" width="9" height="8" fill="#D9954A"/>
+  <rect x="622" y="440" width="9" height="12" fill="#D9954A"/>
+  <rect x="638" y="402" width="9" height="50" fill="#B5651D"/>
+  <rect x="654" y="443" width="9" height="9" fill="#D9954A"/>
+  <rect x="670" y="445" width="9" height="7" fill="#D9954A"/>
+  <text x="578" y="470" font-size="9" fill="#B5651D" font-weight="700" text-anchor="middle">k=4</text>
+  <text x="642" y="470" font-size="9" fill="#B5651D" font-weight="700" text-anchor="middle">k=8</text>
+  <text x="512" y="490" font-size="10.5" fill="#333">Pico aislado en el lag del</text>
+  <text x="512" y="504" font-size="10.5" fill="#333">ciclo (y sus múltiplos).</text>
+  <text x="512" y="524" font-size="10.5" font-weight="700" fill="#B5651D">⇒ L = 4 (trim) o 12 (mens)</text>
+  <text x="512" y="544" font-size="10.2" fill="#C00000" font-weight="700">El lag del pico TE DICE</text>
+  <text x="512" y="557" font-size="10.2" fill="#C00000" font-weight="700">la longitud estacional.</text>
+  <text x="512" y="578" font-size="10.2" font-weight="700" fill="#8A5A16">Método: Winter, descomposición</text>
+
+  <!-- H4 COMBINADA -->
+  <rect x="718" y="336" width="204" height="256" rx="6" fill="#fff" stroke="#C00000" stroke-width="1.8"/>
+  <text x="732" y="358" font-size="12" font-weight="700" fill="#9C3838">4 · COMBINADA</text>
+  <text x="732" y="373" font-size="9.8" fill="#666">el caso REAL más frecuente</text>
+  <line x1="736" y1="452" x2="736" y2="386" stroke="#999" stroke-width="1"/>
+  <line x1="736" y1="452" x2="908" y2="452" stroke="#555" stroke-width="1.2"/>
+  <line x1="736" y1="426" x2="908" y2="426" stroke="#C00000" stroke-width="1" stroke-dasharray="4 3"/>
+  <rect x="744" y="390" width="9" height="62" fill="#9C3838"/>
+  <rect x="759" y="398" width="9" height="54" fill="#9C3838"/>
+  <rect x="774" y="406" width="9" height="46" fill="#9C3838"/>
+  <rect x="789" y="414" width="9" height="38" fill="#9C3838"/>
+  <rect x="804" y="422" width="9" height="30" fill="#9C3838"/>
+  <rect x="819" y="430" width="9" height="22" fill="#E8A0A0"/>
+  <rect x="834" y="436" width="9" height="16" fill="#E8A0A0"/>
+  <rect x="849" y="396" width="9" height="56" fill="#9C3838"/>
+  <rect x="864" y="438" width="9" height="14" fill="#E8A0A0"/>
+  <rect x="879" y="442" width="9" height="10" fill="#E8A0A0"/>
+  <text x="853" y="470" font-size="9" fill="#9C3838" font-weight="700" text-anchor="middle">k=L</text>
+  <text x="732" y="490" font-size="10.5" fill="#333">Decaimiento gradual CON</text>
+  <text x="732" y="504" font-size="10.5" fill="#333">picos cada L lags.</text>
+  <text x="732" y="524" font-size="10.5" font-weight="700" fill="#C00000">⇒ TENDENCIA + ESTAC.</text>
+  <text x="732" y="546" font-size="10.2" fill="#333">Es lo más común en series</text>
+  <text x="732" y="559" font-size="10.2" fill="#333">industriales reales.</text>
+  <text x="732" y="580" font-size="10.2" font-weight="700" fill="#8A5A16">Método: WINTER o descomposición</text>
+
+  <!-- ===== BANDA DE SIGNIFICANCIA ===== -->
+  <rect x="40" y="626" width="450" height="176" rx="8" fill="#FDF2F2" stroke="#C00000" stroke-width="2"/>
+  <text x="56" y="648" font-size="13.5" font-weight="700" fill="#9C3838">¿Cuándo un rₖ es SIGNIFICATIVO?</text>
+  <text x="56" y="668" font-size="11" fill="#333">Un rₖ nunca da exactamente cero por azar. Se traza una banda:</text>
+  <text x="180" y="700" font-size="18" font-weight="700" fill="#C00000" font-family="Cambria Math, Georgia, serif">± 2 / √n</text>
+  <g font-size="10.5">
+    <rect x="56" y="712" width="418" height="18" fill="#9C3838"/>
+    <text x="80" y="725" fill="#fff" font-weight="700">n = 24</text><text x="164" y="725" fill="#fff" font-weight="700">n = 36</text><text x="248" y="725" fill="#fff" font-weight="700">n = 48</text><text x="332" y="725" fill="#fff" font-weight="700">n = 60</text><text x="410" y="725" fill="#fff" font-weight="700">n = 100</text>
+    <text x="80" y="744" fill="#333">±0,41</text><text x="164" y="744" fill="#333">±0,33</text><text x="248" y="744" fill="#333">±0,29</text><text x="332" y="744" fill="#333">±0,26</text><text x="410" y="744" fill="#333">±0,20</text>
+  </g>
+  <text x="56" y="768" font-size="11" fill="#333">Barras <tspan font-weight="700">FUERA</tspan> de la banda → patrón real · <tspan font-weight="700">DENTRO</tspan> → ruido</text>
+  <text x="56" y="790" font-size="10.5" fill="#666" font-style="italic">En Minitab (software de la cátedra) la banda aparece como líneas punteadas.</text>
+
+  <!-- ===== EJEMPLO DE LECTURA ===== -->
+  <rect x="504" y="626" width="436" height="176" rx="8" fill="#EAF6FB" stroke="#1F4E79" stroke-width="2"/>
+  <text x="520" y="648" font-size="13.5" font-weight="700" fill="#1F4E79">Ejemplo de lectura completa (n = 48)</text>
+  <text x="520" y="668" font-size="10.8" fill="#333">Banda: ±2/√48 ≈ ±0,29</text>
+  <text x="520" y="685" font-size="10.8" fill="#333">r₁=0,85 · r₂=0,72 · r₃=0,61 · r₄=0,50 … r₁₁=0,15 · <tspan font-weight="700" fill="#C00000">r₁₂=0,68</tspan> · r₁₃=0,55</text>
+  <text x="520" y="706" font-size="10.8" fill="#333">① Decaen gradualmente → <tspan font-weight="700">tendencia</tspan></text>
+  <text x="520" y="722" font-size="10.8" fill="#333">② Repunte en r₁₂ que rompe la caída → <tspan font-weight="700">estacionalidad anual</tspan></text>
+  <text x="520" y="738" font-size="10.8" fill="#333">③ Ambos &gt; 0,29 → significativos</text>
+  <rect x="520" y="746" width="404" height="46" rx="5" fill="#fff" stroke="#B7D0E5"/>
+  <text x="530" y="762" font-size="9.8" fill="#333" font-style="italic">“La serie presenta tendencia (autocorrelaciones significativas que decaen</text>
+  <text x="530" y="774" font-size="9.8" fill="#333" font-style="italic">gradualmente) y estacionalidad de período 12 (pico significativo en el lag 12).</text>
+  <text x="530" y="786" font-size="9.8" fill="#333" font-style="italic">No es estacionaria. Corresponde aplicar Winter o descomposición multiplicativa.”</text>
+
+  <!-- ===== TRUCO DE LOS ERRORES ===== -->
+  <line x1="490" y1="806" x2="490" y2="822" stroke="#1F4E79" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="40" y="826" width="900" height="86" rx="8" fill="#F6F2FA" stroke="#5B3E8E" stroke-width="2"/>
+  <text x="56" y="848" font-size="13.5" font-weight="700" fill="#5B3E8E">★ TRUCO AVANZADO: el correlograma DE LOS ERRORES — el mejor test de calidad de un modelo</text>
+  <text x="56" y="870" font-size="11.5" fill="#333">Una vez hecho el pronóstico, calculá la autocorrelación de los errores (e = Y − Ŷ):</text>
+  <text x="56" y="890" font-size="11.5" fill="#333">· Si los errores <tspan font-weight="700" fill="#C00000">TODAVÍA tienen autocorrelación</tspan> → el modelo dejó un patrón sin capturar → hay que mejorarlo</text>
+  <text x="56" y="906" font-size="11.5" fill="#333">· Si los errores son <tspan font-weight="700" fill="#1E6B33">ruido puro</tspan> (todo dentro de la banda) → se exprimió toda la información disponible ✔</text>
+
+  <!-- PIE EJERCICIO -->
+  <rect x="40" y="922" width="900" height="102" rx="6" fill="#FAFAFA" stroke="#CCC"/>
+  <text x="56" y="942" font-size="11" font-weight="700" fill="#555">EJERCICIOS:</text>
+  <text x="56" y="960" font-size="10.8" fill="#555">1) Trimestral, n=32: r₁=0,22 r₂=0,18 r₃=0,25 <tspan font-weight="700">r₄=0,79</tspan> r₅=0,20 r₆=0,15 r₇=0,21 <tspan font-weight="700">r₈=0,64</tspan> → a) banda  b) ¿cuáles significativas?  c) diagnóstico + método</text>
+  <text x="56" y="978" font-size="10.8" fill="#555">2) Mensual, n=60: r₁=0,91 r₂=0,86 r₃=0,80 r₄=0,74 r₅=0,69 r₆=0,63 (bajan parejo) → a) ¿qué patrón?  b) ¿estacionaria? ¿cómo la volverías estacionaria?</text>
+  <text x="56" y="996" font-size="10.8" fill="#555">3) Conceptual: pronosticaste con suavizado simple y el correlograma de los ERRORES tiene pico en r₁₂. ¿Qué significa? ¿Qué harías?</text>
+  <text x="56" y="1015" font-size="10" fill="#888" font-style="italic">Redactar la (1c) con el molde: diagnóstico + evidencia + método + justificación.</text>
+</svg>

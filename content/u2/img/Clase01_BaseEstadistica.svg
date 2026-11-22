@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 760" width="980" height="760" font-family="Segoe UI, Calibri, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#1F4E79"/>
+    </marker>
+  </defs>
+
+  <rect width="980" height="760" fill="#FFFFFF"/>
+
+  <!-- TITULO -->
+  <text x="40" y="36" font-size="22" font-weight="700" fill="#1F4E79">CLASE 1 · Base estadística</text>
+  <text x="360" y="36" font-size="12.5" fill="#666">Unidad 2.a — la herramienta transversal de toda la materia</text>
+  <text x="40" y="58" font-size="12.5" font-weight="700" fill="#C00000">Idea central: el promedio dice el CENTRO; el desvío estándar dice la DISPERSIÓN. Sin el desvío, el promedio engaña.</text>
+
+  <!-- ===== BLOQUE 1: PROMEDIO Y DESVIO ===== -->
+  <rect x="40" y="76" width="440" height="250" rx="8" fill="#F4F8FC" stroke="#B7D0E5" stroke-width="1.5"/>
+  <text x="56" y="100" font-size="14" font-weight="700" fill="#1F4E79">1 · Promedio y desvío estándar</text>
+
+  <text x="56" y="126" font-size="12" font-weight="700" fill="#333">Promedio (media muestral):</text>
+  <text x="270" y="126" font-size="13" fill="#1F4E79" font-family="Cambria Math, Georgia, serif">X̄ = ΣX / n</text>
+
+  <text x="56" y="152" font-size="12" font-weight="700" fill="#333">Desvío estándar muestral:</text>
+  <text x="245" y="154" font-size="13" fill="#1F4E79" font-family="Cambria Math, Georgia, serif">s = √[ Σ(X − X̄)² / (n−1) ]</text>
+
+  <text x="56" y="176" font-size="12" font-weight="700" fill="#333">Varianza:</text>
+  <text x="135" y="176" font-size="13" fill="#1F4E79" font-family="Cambria Math, Georgia, serif">s²</text>
+  <text x="165" y="176" font-size="11" fill="#666">(el desvío al cuadrado)</text>
+
+  <rect x="56" y="190" width="408" height="120" rx="6" fill="#fff" stroke="#C9DBEA"/>
+  <text x="68" y="210" font-size="11.5" font-weight="700" fill="#555">Ejemplo (Fábrica B): 200, 800, 350, 650  →  X̄ = 500</text>
+  <text x="68" y="230" font-size="11" fill="#333">① Desvíos: −300, +300, −150, +150   (suman 0: por eso se elevan ²)</text>
+  <text x="68" y="248" font-size="11" fill="#333">② Cuadrados: 90.000 + 90.000 + 22.500 + 22.500 = 225.000</text>
+  <text x="68" y="266" font-size="11" fill="#333">③ Varianza: 225.000 / (4−1) = 75.000</text>
+  <text x="68" y="284" font-size="11" fill="#333">④ Desvío: √75.000 ≈ <tspan font-weight="700" fill="#C00000">274 unidades</tspan>  → “vende 500 ± 274 típicamente”</text>
+  <text x="68" y="302" font-size="10.5" fill="#888" font-style="italic">Comparar: Fábrica A (490,510,495,505) → mismo X̄=500 pero s≈9. Otra empresa.</text>
+
+  <!-- ===== BLOQUE 2: POR QUE n-1 ===== -->
+  <rect x="500" y="76" width="440" height="110" rx="8" fill="#FBF6EE" stroke="#E3D2B5" stroke-width="1.5"/>
+  <text x="516" y="100" font-size="14" font-weight="700" fill="#8A5A16">2 · ¿Por qué n−1?  (grados de libertad)</text>
+  <text x="516" y="124" font-size="11.5" fill="#333">Uso una MUESTRA (pocos meses) para estimar la POBLACIÓN (todos</text>
+  <text x="516" y="141" font-size="11.5" fill="#333">los meses posibles). Dividir por n subestimaría la dispersión;</text>
+  <text x="516" y="158" font-size="11.5" fill="#333">n−1 corrige ese sesgo.</text>
+  <text x="516" y="177" font-size="11" fill="#8A5A16" font-weight="700">Grados de libertad = n − 1 → también se usan para leer la tabla t.</text>
+
+  <!-- ===== BLOQUE 3: NORMAL ===== -->
+  <rect x="500" y="200" width="440" height="220" rx="8" fill="#F1F7F2" stroke="#BFDCC4" stroke-width="1.5"/>
+  <text x="516" y="224" font-size="14" font-weight="700" fill="#1E6B33">3 · Distribución normal (la campana)</text>
+
+  <!-- campana dibujada -->
+  <path d="M 530 330 C 580 330, 600 245, 650 245 C 700 245, 720 330, 770 330" fill="none" stroke="#1E6B33" stroke-width="2.5"/>
+  <line x1="650" y1="245" x2="650" y2="336" stroke="#999" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="530" y1="336" x2="770" y2="336" stroke="#666" stroke-width="1.5"/>
+  <text x="650" y="352" font-size="10.5" fill="#333" text-anchor="middle">μ</text>
+  <text x="610" y="352" font-size="10.5" fill="#333" text-anchor="middle">−1σ</text>
+  <text x="690" y="352" font-size="10.5" fill="#333" text-anchor="middle">+1σ</text>
+  <text x="570" y="352" font-size="10.5" fill="#333" text-anchor="middle">−2σ</text>
+  <text x="730" y="352" font-size="10.5" fill="#333" text-anchor="middle">+2σ</text>
+  <line x1="610" y1="336" x2="610" y2="330" stroke="#666" stroke-width="1.5"/>
+  <line x1="690" y1="336" x2="690" y2="330" stroke="#666" stroke-width="1.5"/>
+  <line x1="570" y1="336" x2="570" y2="330" stroke="#666" stroke-width="1.5"/>
+  <line x1="730" y1="336" x2="730" y2="330" stroke="#666" stroke-width="1.5"/>
+
+  <text x="790" y="250" font-size="11.5" font-weight="700" fill="#1E6B33">Regla 68–95–99,7</text>
+  <text x="790" y="270" font-size="11" fill="#333">μ ± 1σ → 68%</text>
+  <text x="790" y="288" font-size="11" fill="#333">μ ± 2σ → 95%</text>
+  <text x="790" y="306" font-size="11" fill="#333">μ ± 3σ → 99,7%</text>
+
+  <text x="516" y="380" font-size="11" fill="#333">Con solo dos números (μ y σ) queda definida TODA la campana.</text>
+  <text x="516" y="398" font-size="10.5" fill="#888" font-style="italic">Ej.: μ=500, σ=9 → el 95% de los meses vende entre 482 y 518.</text>
+
+  <!-- ===== BLOQUE 4: Z ===== -->
+  <rect x="40" y="340" width="440" height="230" rx="8" fill="#EAF6FB" stroke="#1F4E79" stroke-width="2"/>
+  <text x="56" y="364" font-size="14" font-weight="700" fill="#1F4E79">4 · Estandarización Z  (una tabla para todas las campanas)</text>
+
+  <text x="56" y="392" font-size="15" fill="#1F4E79" font-family="Cambria Math, Georgia, serif" font-weight="700">Z = (X − μ) / σ</text>
+  <text x="220" y="392" font-size="11" fill="#666">= “a cuántos desvíos del promedio está X”</text>
+
+  <rect x="56" y="406" width="408" height="112" rx="6" fill="#fff" stroke="#C9DBEA"/>
+  <text x="68" y="426" font-size="11.5" font-weight="700" fill="#555">Ejemplo: μ=500, σ=80 · ¿P(vender menos de 620)?</text>
+  <text x="68" y="446" font-size="11" fill="#333">① Z = (620−500)/80 = <tspan font-weight="700">1,5</tspan></text>
+  <text x="68" y="464" font-size="11" fill="#333">② Tabla (área centro→Z): 0,4332</text>
+  <text x="68" y="482" font-size="11" fill="#333">③ “Menos de” ⇒ sumo la mitad izquierda: 0,5 + 0,4332 = <tspan font-weight="700" fill="#C00000">93,3%</tspan></text>
+  <text x="68" y="504" font-size="10.5" fill="#8A5A16" font-weight="700">⚠ Verificar QUÉ área devuelve tu tabla (centro→Z vs. acumulada desde la izq.)</text>
+
+  <text x="56" y="544" font-size="11.5" font-weight="700" fill="#C00000">El número estrella: Z = 1,64 cubre el 95%</text>
+  <text x="56" y="562" font-size="10.5" fill="#666" font-style="italic">(cuenta inversa: busco área 0,45 en la tabla → lo usarás en stock de seguridad)</text>
+
+  <!-- ===== BLOQUE 5: t STUDENT ===== -->
+  <rect x="500" y="434" width="440" height="136" rx="8" fill="#F6F2FA" stroke="#D3C4E4" stroke-width="1.5"/>
+  <text x="516" y="458" font-size="14" font-weight="700" fill="#5B3E8E">5 · t de Student  (la normal para pocos datos)</text>
+  <text x="516" y="482" font-size="11.5" fill="#333">Se usa cuando n es chico (&lt;30) y σ se estimó de la muestra.</text>
+  <text x="516" y="500" font-size="11.5" fill="#333">Campana más “achatada”: exige valores mayores para la misma confianza.</text>
+  <text x="516" y="520" font-size="11.5" fill="#333">Se lee con DOS entradas: <tspan font-weight="700">confianza</tspan> + <tspan font-weight="700">grados de libertad (n−1)</tspan>.</text>
+  <text x="516" y="542" font-size="11" fill="#5B3E8E" font-weight="700">La vas a usar en regresión (Clases 8–10).</text>
+  <text x="516" y="560" font-size="10.5" fill="#888" font-style="italic">Regla rápida: muchos datos → normal · pocos datos → t</text>
+
+  <!-- ===== CONEXION A LA MATERIA ===== -->
+  <line x1="490" y1="586" x2="490" y2="606" stroke="#1F4E79" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="40" y="610" width="900" height="76" rx="8" fill="#EDF3F9" stroke="#1F4E79" stroke-width="1.5"/>
+  <text x="58" y="634" font-size="13" font-weight="700" fill="#1F4E79">¿Dónde reaparece todo esto en la materia?</text>
+  <text x="58" y="656" font-size="11.5" fill="#333">· <tspan font-weight="700">Pronósticos (U2):</tspan> medir el error del método (MAD/MSE usan desvíos)   · <tspan font-weight="700">Stock de seguridad (U5):</tspan> SS = Z · σ → el Z=1,64 del 95%</text>
+  <text x="58" y="674" font-size="11.5" fill="#333">· <tspan font-weight="700">Regresión (U2):</tspan> confiabilidad de la recta, intervalos de predicción (con t)   · <tspan font-weight="700">Interpretación:</tspan> mismo promedio ≠ misma empresa</text>
+
+  <!-- PIE -->
+  <rect x="40" y="702" width="900" height="42" rx="6" fill="#FAFAFA" stroke="#CCC"/>
+  <text x="58" y="720" font-size="11" font-weight="700" fill="#555">Ejercicio pendiente: ventas 120, 135, 105, 140, 100 → a) X̄ y s   b) P(X&lt;150) con Z   c) ¿Fábrica “A” o “B”? ¿qué implica para planificar?</text>
+  <text x="58" y="737" font-size="10.5" fill="#888" font-style="italic">Material de mesa: tabla normal y t (tablas_practica_1.xlsx) — practicar su lectura desde YA.</text>
+</svg>

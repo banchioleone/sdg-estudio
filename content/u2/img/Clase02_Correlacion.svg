@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 980" width="980" height="980" font-family="Segoe UI, Calibri, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#1F4E79"/>
+    </marker>
+  </defs>
+  <rect width="980" height="980" fill="#FFFFFF"/>
+
+  <!-- TITULO -->
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#1F4E79">CLASE 2 · Correlación</text>
+  <text x="290" y="34" font-size="12.5" fill="#666">U2.a (cierre) — la antesala de la regresión</text>
+  <text x="40" y="56" font-size="12.5" font-weight="700" fill="#C00000">Idea central: ¿DOS variables se mueven juntas? Si sí → entiendo el fenómeno y puedo pronosticar.</text>
+
+  <!-- REGLA DE ORO -->
+  <rect x="40" y="70" width="900" height="40" rx="8" fill="#FFF3E8" stroke="#D9954A" stroke-width="1.5"/>
+  <text x="56" y="95" font-size="12.5" font-weight="700" fill="#8A5A16">REGLA DE ORO: PRIMERO SE GRAFICA, DESPUÉS SE CALCULA.  ·  X = variable independiente (la que explica) · Y = dependiente (la que quiero predecir)</text>
+
+  <!-- ===== LOS 6 PATRONES ===== -->
+  <rect x="40" y="122" width="900" height="216" rx="8" fill="#F4F8FC" stroke="#B7D0E5" stroke-width="1.5"/>
+  <text x="56" y="145" font-size="14" font-weight="700" fill="#1F4E79">Los 6 patrones del diagrama de dispersión (Hanke cap. 2)</text>
+
+  <!-- p1 -->
+  <rect x="58" y="158" width="136" height="106" rx="5" fill="#fff" stroke="#C9DBEA"/>
+  <line x1="70" y1="252" x2="70" y2="170" stroke="#999" stroke-width="1"/>
+  <line x1="70" y1="252" x2="182" y2="252" stroke="#999" stroke-width="1"/>
+  <circle cx="84" cy="240" r="3" fill="#1F4E79"/><circle cx="106" cy="221" r="3" fill="#1F4E79"/><circle cx="128" cy="202" r="3" fill="#1F4E79"/><circle cx="150" cy="183" r="3" fill="#1F4E79"/><circle cx="172" cy="176" r="3" fill="#1F4E79"/>
+  <text x="126" y="280" font-size="10.5" font-weight="700" fill="#333" text-anchor="middle">1 · Lineal positiva</text>
+  <text x="126" y="294" font-size="10.5" font-weight="700" fill="#333" text-anchor="middle">PERFECTA</text>
+  <text x="126" y="310" font-size="11" fill="#C00000" text-anchor="middle" font-weight="700">r = +1</text>
+
+  <!-- p2 -->
+  <rect x="204" y="158" width="136" height="106" rx="5" fill="#fff" stroke="#C9DBEA"/>
+  <line x1="216" y1="252" x2="216" y2="170" stroke="#999" stroke-width="1"/>
+  <line x1="216" y1="252" x2="328" y2="252" stroke="#999" stroke-width="1"/>
+  <circle cx="230" cy="176" r="3" fill="#1F4E79"/><circle cx="252" cy="194" r="3" fill="#1F4E79"/><circle cx="274" cy="212" r="3" fill="#1F4E79"/><circle cx="296" cy="230" r="3" fill="#1F4E79"/><circle cx="318" cy="243" r="3" fill="#1F4E79"/>
+  <text x="272" y="280" font-size="10.5" font-weight="700" fill="#333" text-anchor="middle">2 · Lineal negativa</text>
+  <text x="272" y="294" font-size="10.5" font-weight="700" fill="#333" text-anchor="middle">PERFECTA</text>
+  <text x="272" y="310" font-size="11" fill="#C00000" text-anchor="middle" font-weight="700">r = −1</text>
+
+  <!-- p3 -->
+  <rect x="350" y="158" width="136" height="106" rx="5" fill="#EAF6FB" stroke="#1F4E79" stroke-width="1.6"/>
+  <line x1="362" y1="252" x2="362" y2="170" stroke="#999" stroke-width="1"/>
+  <line x1="362" y1="252" x2="474" y2="252" stroke="#999" stroke-width="1"/>
+  <circle cx="376" cy="236" r="3" fill="#1F4E79"/><circle cx="396" cy="242" r="3" fill="#1F4E79"/><circle cx="410" cy="215" r="3" fill="#1F4E79"/><circle cx="432" cy="206" r="3" fill="#1F4E79"/><circle cx="446" cy="218" r="3" fill="#1F4E79"/><circle cx="464" cy="181" r="3" fill="#1F4E79"/>
+  <text x="418" y="280" font-size="10.5" font-weight="700" fill="#333" text-anchor="middle">3 · Lineal positiva</text>
+  <text x="418" y="294" font-size="10.5" font-weight="700" fill="#333" text-anchor="middle">imperfecta</text>
+  <text x="418" y="310" font-size="10.5" fill="#1F4E79" text-anchor="middle" font-weight="700">EL CASO REALISTA</text>
+
+  <!-- p4 -->
+  <rect x="496" y="158" width="136" height="106" rx="5" fill="#fff" stroke="#C9DBEA"/>
+  <line x1="508" y1="252" x2="508" y2="170" stroke="#999" stroke-width="1"/>
+  <line x1="508" y1="252" x2="620" y2="252" stroke="#999" stroke-width="1"/>
+  <circle cx="522" cy="182" r="3" fill="#1F4E79"/><circle cx="542" cy="200" r="3" fill="#1F4E79"/><circle cx="558" cy="190" r="3" fill="#1F4E79"/><circle cx="578" cy="224" r="3" fill="#1F4E79"/><circle cx="596" cy="218" r="3" fill="#1F4E79"/><circle cx="612" cy="242" r="3" fill="#1F4E79"/>
+  <text x="564" y="280" font-size="10.5" font-weight="700" fill="#333" text-anchor="middle">4 · Lineal negativa</text>
+  <text x="564" y="294" font-size="10.5" font-weight="700" fill="#333" text-anchor="middle">imperfecta</text>
+  <text x="564" y="310" font-size="10" fill="#666" text-anchor="middle">ej.: precio vs. cantidad</text>
+
+  <!-- p5 -->
+  <rect x="642" y="158" width="136" height="106" rx="5" fill="#FFF3E8" stroke="#D9954A" stroke-width="1.6"/>
+  <line x1="654" y1="252" x2="654" y2="170" stroke="#999" stroke-width="1"/>
+  <line x1="654" y1="252" x2="766" y2="252" stroke="#999" stroke-width="1"/>
+  <circle cx="666" cy="180" r="3" fill="#B5651D"/><circle cx="686" cy="212" r="3" fill="#B5651D"/><circle cx="706" cy="238" r="3" fill="#B5651D"/><circle cx="726" cy="236" r="3" fill="#B5651D"/><circle cx="744" cy="210" r="3" fill="#B5651D"/><circle cx="760" cy="178" r="3" fill="#B5651D"/>
+  <text x="710" y="280" font-size="10.5" font-weight="700" fill="#333" text-anchor="middle">5 · CURVA</text>
+  <text x="710" y="296" font-size="10" fill="#8A5A16" text-anchor="middle" font-weight="700">⚠ relación fuerte</text>
+  <text x="710" y="310" font-size="10" fill="#8A5A16" text-anchor="middle" font-weight="700">pero r ≈ 0</text>
+
+  <!-- p6 -->
+  <rect x="788" y="158" width="136" height="106" rx="5" fill="#fff" stroke="#C9DBEA"/>
+  <line x1="800" y1="252" x2="800" y2="170" stroke="#999" stroke-width="1"/>
+  <line x1="800" y1="252" x2="912" y2="252" stroke="#999" stroke-width="1"/>
+  <circle cx="820" cy="200" r="3" fill="#888"/><circle cx="850" cy="232" r="3" fill="#888"/><circle cx="874" cy="188" r="3" fill="#888"/><circle cx="836" cy="222" r="3" fill="#888"/><circle cx="892" cy="228" r="3" fill="#888"/><circle cx="862" cy="210" r="3" fill="#888"/>
+  <text x="856" y="280" font-size="10.5" font-weight="700" fill="#333" text-anchor="middle">6 · SIN RELACIÓN</text>
+  <text x="856" y="296" font-size="10" fill="#666" text-anchor="middle">nube redonda</text>
+  <text x="856" y="310" font-size="11" fill="#C00000" text-anchor="middle" font-weight="700">r ≈ 0</text>
+
+  <!-- ===== FORMULA r ===== -->
+  <rect x="40" y="350" width="530" height="188" rx="8" fill="#EAF6FB" stroke="#1F4E79" stroke-width="2"/>
+  <text x="56" y="374" font-size="14" font-weight="700" fill="#1F4E79">Coeficiente de correlación r</text>
+  <text x="56" y="394" font-size="11" fill="#666">Mide el grado de relación LINEAL entre dos variables</text>
+
+  <text x="150" y="428" font-size="13.5" fill="#1F4E79" font-family="Cambria Math, Georgia, serif" font-weight="700">n·ΣXY − ΣX·ΣY</text>
+  <line x1="105" y1="436" x2="500" y2="436" stroke="#1F4E79" stroke-width="1.6"/>
+  <text x="60" y="432" font-size="15" fill="#1F4E79" font-family="Cambria Math, Georgia, serif" font-weight="700">r =</text>
+  <text x="110" y="460" font-size="13.5" fill="#1F4E79" font-family="Cambria Math, Georgia, serif" font-weight="700">√ [ n·ΣX² − (ΣX)² ] · [ n·ΣY² − (ΣY)² ]</text>
+
+  <text x="56" y="490" font-size="11" fill="#333">Se resuelve armando una tabla de 5 columnas y sumando cada una:</text>
+  <rect x="56" y="498" width="498" height="30" rx="4" fill="#fff" stroke="#C9DBEA"/>
+  <text x="70" y="518" font-size="11.5" font-weight="700" fill="#1F4E79">X   |   Y   |   XY   |   X²   |   Y²      →   ΣX, ΣY, ΣXY, ΣX², ΣY²</text>
+
+  <!-- ESCALA -->
+  <rect x="590" y="350" width="350" height="188" rx="8" fill="#F1F7F2" stroke="#BFDCC4" stroke-width="1.5"/>
+  <text x="606" y="374" font-size="14" font-weight="700" fill="#1E6B33">Escala de lectura</text>
+  <!-- barra -->
+  <rect x="606" y="388" width="310" height="18" rx="4" fill="url(#g)" />
+  <rect x="606" y="388" width="103" height="18" fill="#E8A0A0"/>
+  <rect x="709" y="388" width="104" height="18" fill="#E0E0E0"/>
+  <rect x="813" y="388" width="103" height="18" fill="#A9D6B0"/>
+  <text x="612" y="401" font-size="10" fill="#7A2020" font-weight="700">−1</text>
+  <text x="755" y="401" font-size="10" fill="#555" font-weight="700">0</text>
+  <text x="898" y="401" font-size="10" fill="#1E6B33" font-weight="700">+1</text>
+  <text x="606" y="424" font-size="11" fill="#333"><tspan font-weight="700">El SIGNO</tspan> → dirección (juntas ↑↑ o inversas ↑↓)</text>
+  <text x="606" y="442" font-size="11" fill="#333"><tspan font-weight="700">El VALOR ABSOLUTO</tspan> → fuerza (cercanía a la recta)</text>
+  <text x="606" y="466" font-size="10.8" fill="#333">|r| 0,7–1 → fuerte     |r| 0,3–0,7 → moderada</text>
+  <text x="606" y="484" font-size="10.8" fill="#333">|r| ≈ 0 → sin relación <tspan font-weight="700">lineal</tspan></text>
+  <text x="606" y="510" font-size="10.5" fill="#C00000" font-weight="700">⚠ Si te da fuera de [−1,+1] → error de cálculo</text>
+  <text x="606" y="528" font-size="10.5" fill="#1E6B33" font-weight="700">R² = r² → % de variación de Y explicada</text>
+
+  <!-- ===== EJEMPLO RESUELTO ===== -->
+  <rect x="40" y="550" width="530" height="242" rx="8" fill="#FBF6EE" stroke="#E3D2B5" stroke-width="1.5"/>
+  <text x="56" y="574" font-size="14" font-weight="700" fill="#8A5A16">Ejemplo resuelto — publicidad (X) vs. ventas (Y), n=5</text>
+
+  <!-- tabla -->
+  <g font-size="10.5">
+    <rect x="56" y="584" width="290" height="18" fill="#8A5A16"/>
+    <text x="72" y="597" fill="#fff" font-weight="700">X</text><text x="122" y="597" fill="#fff" font-weight="700">Y</text><text x="176" y="597" fill="#fff" font-weight="700">XY</text><text x="242" y="597" fill="#fff" font-weight="700">X²</text><text x="292" y="597" fill="#fff" font-weight="700">Y²</text>
+    <text x="72" y="615" fill="#333">10</text><text x="122" y="615" fill="#333">120</text><text x="176" y="615" fill="#333">1.200</text><text x="242" y="615" fill="#333">100</text><text x="292" y="615" fill="#333">14.400</text>
+    <text x="72" y="631" fill="#333">15</text><text x="122" y="631" fill="#333">135</text><text x="176" y="631" fill="#333">2.025</text><text x="242" y="631" fill="#333">225</text><text x="292" y="631" fill="#333">18.225</text>
+    <text x="72" y="647" fill="#333">8</text><text x="122" y="647" fill="#333">105</text><text x="176" y="647" fill="#333">840</text><text x="242" y="647" fill="#333">64</text><text x="292" y="647" fill="#333">11.025</text>
+    <text x="72" y="663" fill="#333">18</text><text x="122" y="663" fill="#333">140</text><text x="176" y="663" fill="#333">2.520</text><text x="242" y="663" fill="#333">324</text><text x="292" y="663" fill="#333">19.600</text>
+    <text x="72" y="679" fill="#333">6</text><text x="122" y="679" fill="#333">100</text><text x="176" y="679" fill="#333">600</text><text x="242" y="679" fill="#333">36</text><text x="292" y="679" fill="#333">10.000</text>
+    <line x1="56" y1="686" x2="346" y2="686" stroke="#8A5A16" stroke-width="1.2"/>
+    <text x="66" y="700" fill="#8A5A16" font-weight="700">Σ 57</text><text x="116" y="700" fill="#8A5A16" font-weight="700">600</text><text x="170" y="700" fill="#8A5A16" font-weight="700">7.185</text><text x="238" y="700" fill="#8A5A16" font-weight="700">749</text><text x="286" y="700" fill="#8A5A16" font-weight="700">73.250</text>
+  </g>
+
+  <text x="360" y="600" font-size="10.8" fill="#333">① Num: 5(7.185)−57·600</text>
+  <text x="374" y="616" font-size="10.8" font-weight="700" fill="#333">= 1.725</text>
+  <text x="360" y="636" font-size="10.8" fill="#333">② 5(749)−57² = 496</text>
+  <text x="360" y="654" font-size="10.8" fill="#333">③ 5(73.250)−600²</text>
+  <text x="374" y="670" font-size="10.8" font-weight="700" fill="#333">= 6.250</text>
+  <text x="360" y="690" font-size="10.8" fill="#333">④ √(496·6.250)</text>
+  <text x="374" y="706" font-size="10.8" font-weight="700" fill="#333">≈ 1.760,7</text>
+
+  <rect x="56" y="714" width="498" height="66" rx="6" fill="#fff" stroke="#E3D2B5"/>
+  <text x="70" y="736" font-size="14" font-weight="700" fill="#C00000">r = 1.725 / 1.760,7 ≈ 0,98</text>
+  <text x="70" y="756" font-size="11" fill="#333">→ correlación positiva <tspan font-weight="700">muy fuerte</tspan>; se mueven casi en línea recta.</text>
+  <text x="70" y="772" font-size="11" fill="#333">→ R² = 0,98² = 0,96 ⇒ <tspan font-weight="700">“la publicidad explica el 96% de la variación de las ventas”</tspan></text>
+
+  <!-- ===== LAS DOS ADVERTENCIAS ===== -->
+  <rect x="590" y="550" width="350" height="242" rx="8" fill="#FDF2F2" stroke="#C00000" stroke-width="2"/>
+  <text x="606" y="574" font-size="14" font-weight="700" fill="#9C3838">★ LAS 2 ADVERTENCIAS DE EXAMEN</text>
+
+  <text x="606" y="600" font-size="12" font-weight="700" fill="#C00000">1 · Correlación ≠ Causalidad</text>
+  <text x="606" y="618" font-size="10.8" fill="#333">Moverse juntas no implica que una cause</text>
+  <text x="606" y="634" font-size="10.8" fill="#333">la otra. Puede haber una TERCERA variable</text>
+  <text x="606" y="650" font-size="10.8" fill="#333">moviendo a ambas, o pura coincidencia.</text>
+  <text x="606" y="670" font-size="10.5" fill="#8A5A16" font-style="italic">Ej.: helados y ahogamientos suben juntos →</text>
+  <text x="606" y="684" font-size="10.5" fill="#8A5A16" font-style="italic">no ahoga el helado: es el CALOR (3ª variable)</text>
+  <text x="606" y="702" font-size="10.5" fill="#333" font-weight="700">r mide asociación, no causa.</text>
+
+  <line x1="606" y1="712" x2="924" y2="712" stroke="#E5C2C2" stroke-width="1"/>
+
+  <text x="606" y="732" font-size="12" font-weight="700" fill="#C00000">2 · r bajo ≠ “sin relación”</text>
+  <text x="606" y="750" font-size="10.8" fill="#333">r mide SOLO relación lineal. Una U perfecta</text>
+  <text x="606" y="766" font-size="10.8" fill="#333">da r≈0 y la relación es fortísima (patrón 5).</text>
+  <text x="606" y="784" font-size="10.5" fill="#C00000" font-weight="700">⇒ por eso: graficar SIEMPRE antes de calcular</text>
+
+  <!-- ===== PUENTE ===== -->
+  <line x1="490" y1="796" x2="490" y2="814" stroke="#1F4E79" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="40" y="818" width="900" height="66" rx="8" fill="#EDF3F9" stroke="#1F4E79" stroke-width="1.5"/>
+  <text x="58" y="840" font-size="13" font-weight="700" fill="#1F4E79">El puente hacia lo que viene</text>
+  <text x="58" y="860" font-size="11.5" fill="#333">· <tspan font-weight="700">r</tspan> → ¿HAY relación lineal y cuán fuerte? (hoy)    · <tspan font-weight="700">Regresión</tspan> → la ECUACIÓN de la recta para pronosticar (Clases 8–9)</text>
+  <text x="58" y="878" font-size="11.5" fill="#333">· <tspan font-weight="700">R² = r²</tspan> → % de Y explicado    · <tspan font-weight="700">Matriz de correlación</tspan> → todos los r cruzados, para elegir predictoras y detectar colinealidad (reg. múltiple)</text>
+
+  <!-- PIE EJERCICIO -->
+  <rect x="40" y="896" width="900" height="66" rx="6" fill="#FAFAFA" stroke="#CCC"/>
+  <text x="56" y="916" font-size="11" font-weight="700" fill="#555">EJERCICIO — temperatura (X): 18, 25, 30, 22, 15  ·  ventas de bebidas (Y): 40, 65, 78, 52, 30</text>
+  <text x="56" y="934" font-size="11" fill="#555">a) tabla de 5 columnas y sumatorias   b) calcular r   c) interpretar dirección, fuerza y % explicado   d) ¿la temperatura CAUSA las ventas? justificar</text>
+  <text x="56" y="952" font-size="10" fill="#888" font-style="italic">Graficar los puntos antes de calcular: es método y es puntaje.</text>
+</svg>

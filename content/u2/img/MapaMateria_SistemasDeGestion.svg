@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 900" width="960" height="900" font-family="Segoe UI, Calibri, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#1F4E79"/>
+    </marker>
+    <marker id="arS" markerWidth="8" markerHeight="7" refX="7" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="#2E74B5"/>
+    </marker>
+  </defs>
+
+  <rect width="960" height="900" fill="#FFFFFF"/>
+
+  <!-- TITULO -->
+  <text x="40" y="34" font-size="24" font-weight="700" fill="#1F4E79">SISTEMAS DE GESTIÓN — mapa de la materia</text>
+  <text x="40" y="53" font-size="12.5" fill="#666">Los 18 temas ubicados en la cadena real de planificación de una empresa</text>
+
+  <!-- CADENA / COLUMNA VERTEBRAL -->
+  <g font-size="11.5" font-weight="700">
+    <rect x="40" y="68" width="152" height="30" rx="15" fill="#1F4E79"/>
+    <text x="116" y="88" fill="#fff" text-anchor="middle">PRONÓSTICO</text>
+    <line x1="196" y1="83" x2="216" y2="83" stroke="#1F4E79" stroke-width="2" marker-end="url(#ar)"/>
+    <rect x="222" y="68" width="152" height="30" rx="15" fill="#1F4E79"/>
+    <text x="298" y="88" fill="#fff" text-anchor="middle">PLAN AGREGADO</text>
+    <line x1="378" y1="83" x2="398" y2="83" stroke="#1F4E79" stroke-width="2" marker-end="url(#ar)"/>
+    <rect x="404" y="68" width="152" height="30" rx="15" fill="#1F4E79"/>
+    <text x="480" y="88" fill="#fff" text-anchor="middle">MPS</text>
+    <line x1="560" y1="83" x2="580" y2="83" stroke="#1F4E79" stroke-width="2" marker-end="url(#ar)"/>
+    <rect x="586" y="68" width="152" height="30" rx="15" fill="#1F4E79"/>
+    <text x="662" y="88" fill="#fff" text-anchor="middle">MRP</text>
+    <line x1="742" y1="83" x2="762" y2="83" stroke="#1F4E79" stroke-width="2" marker-end="url(#ar)"/>
+    <rect x="768" y="68" width="152" height="30" rx="15" fill="#1F4E79"/>
+    <text x="844" y="88" fill="#fff" text-anchor="middle">COMPRAS / PROD.</text>
+  </g>
+
+  <!-- ===== CAPA 1 ===== -->
+  <rect x="40" y="118" width="640" height="212" rx="8" fill="#F4F8FC" stroke="#B7D0E5"/>
+  <text x="58" y="143" font-size="15.5" font-weight="700" fill="#1F4E79">CAPA 1 · PREDECIR</text>
+  <text x="205" y="143" font-size="12" fill="#666">¿Qué nos van a comprar?</text>
+  <text x="662" y="143" font-size="11" font-weight="700" fill="#2E74B5" text-anchor="end">Temas 1–5</text>
+
+  <rect x="58" y="154" width="298" height="76" rx="6" fill="#fff" stroke="#C9DBEA"/>
+  <text x="72" y="176" font-size="12.5" font-weight="700" fill="#1F4E79">1 · Fundamentos estadísticos</text>
+  <text x="72" y="196" font-size="11.5" fill="#444">Promedio, desvío, curva normal,</text>
+  <text x="72" y="213" font-size="11.5" fill="#444">t de Student, correlación</text>
+
+  <rect x="366" y="154" width="298" height="76" rx="6" fill="#fff" stroke="#C9DBEA"/>
+  <text x="380" y="176" font-size="12.5" font-weight="700" fill="#1F4E79">2 · Patrones y elección de técnica</text>
+  <text x="380" y="196" font-size="11.5" fill="#444">Tendencia, ciclo, estacionalidad;</text>
+  <text x="380" y="213" font-size="11.5" fill="#444">autocorrelación; errores MAD/MSE/MAPE</text>
+
+  <rect x="58" y="240" width="298" height="76" rx="6" fill="#fff" stroke="#C9DBEA"/>
+  <text x="72" y="262" font-size="12.5" font-weight="700" fill="#1F4E79">3 · Promedios y suavizado</text>
+  <text x="72" y="282" font-size="11.5" fill="#444">Promedio móvil, exponencial simple,</text>
+  <text x="72" y="299" font-size="11.5" fill="#444">Brown, Holt, Winter</text>
+
+  <rect x="366" y="240" width="298" height="76" rx="6" fill="#fff" stroke="#C9DBEA"/>
+  <text x="380" y="262" font-size="12.5" font-weight="700" fill="#1F4E79">4 y 5 · Regresión simple y múltiple</text>
+  <text x="380" y="282" font-size="11.5" fill="#444">Explicar la demanda con otras variables;</text>
+  <text x="380" y="299" font-size="11.5" fill="#444">R², residuos, comparación de modelos</text>
+
+  <line x1="360" y1="330" x2="360" y2="356" stroke="#1F4E79" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <!-- ===== CAPA 2 ===== -->
+  <rect x="40" y="362" width="640" height="212" rx="8" fill="#F1F7F2" stroke="#BFDCC4"/>
+  <text x="58" y="387" font-size="15.5" font-weight="700" fill="#1E6B33">CAPA 2 · PLANIFICAR</text>
+  <text x="215" y="387" font-size="12" fill="#666">¿Cuánto produzco y qué materiales necesito?</text>
+  <text x="662" y="387" font-size="11" font-weight="700" fill="#2E8B57" text-anchor="end">Temas 6, 7, 8, 12</text>
+
+  <rect x="58" y="398" width="298" height="76" rx="6" fill="#fff" stroke="#CBE3D0"/>
+  <text x="72" y="420" font-size="12.5" font-weight="700" fill="#1E6B33">6 · Planeación agregada → MPS</text>
+  <text x="72" y="440" font-size="11.5" fill="#444">Estrategias persecución / nivelación;</text>
+  <text x="72" y="457" font-size="11.5" fill="#444">costos, horas extra, plan mensual</text>
+
+  <rect x="366" y="398" width="298" height="76" rx="6" fill="#fff" stroke="#CBE3D0"/>
+  <text x="380" y="420" font-size="12.5" font-weight="700" fill="#1E6B33">7 · Inventarios (stock)</text>
+  <text x="380" y="440" font-size="11.5" fill="#444">EOQ/LEC, punto de reorden,</text>
+  <text x="380" y="457" font-size="11.5" fill="#444">stock de seguridad, clasificación ABC</text>
+
+  <rect x="58" y="484" width="298" height="76" rx="6" fill="#fff" stroke="#CBE3D0"/>
+  <text x="72" y="506" font-size="12.5" font-weight="700" fill="#1E6B33">8 · MRP</text>
+  <text x="72" y="526" font-size="11.5" fill="#444">BOM, requerimientos brutos y netos,</text>
+  <text x="72" y="543" font-size="11.5" fill="#444">lead times, loteo (EOQ/POQ/PPB)</text>
+
+  <rect x="366" y="484" width="298" height="76" rx="6" fill="#fff" stroke="#CBE3D0" stroke-dasharray="4 3"/>
+  <text x="380" y="506" font-size="12.5" font-weight="700" fill="#1E6B33">12 · Teoría de la decisión  (transversal)</text>
+  <text x="380" y="526" font-size="11.5" fill="#444">Criterios bajo incertidumbre y riesgo,</text>
+  <text x="380" y="543" font-size="11.5" fill="#444">valor esperado, árboles de decisión</text>
+
+  <line x1="360" y1="574" x2="360" y2="600" stroke="#1F4E79" stroke-width="2.5" marker-end="url(#ar)"/>
+
+  <!-- ===== CAPA 3 ===== -->
+  <rect x="40" y="606" width="640" height="212" rx="8" fill="#FBF6EE" stroke="#E3D2B5"/>
+  <text x="58" y="631" font-size="15.5" font-weight="700" fill="#8A5A16">CAPA 3 · EJECUTAR</text>
+  <text x="205" y="631" font-size="12" fill="#666">¿Cómo se produce y cómo se identifica cada cosa?</text>
+  <text x="662" y="631" font-size="11" font-weight="700" fill="#B07C2A" text-anchor="end">Temas 9–11, 13, 14</text>
+
+  <rect x="58" y="642" width="192" height="76" rx="6" fill="#fff" stroke="#EADCC5"/>
+  <text x="70" y="664" font-size="12.5" font-weight="700" fill="#8A5A16">9 · Balanceo de línea</text>
+  <text x="70" y="684" font-size="11.5" fill="#444">Precedencias, tiempo de</text>
+  <text x="70" y="701" font-size="11.5" fill="#444">ciclo, eficiencia</text>
+
+  <rect x="262" y="642" width="192" height="76" rx="6" fill="#fff" stroke="#EADCC5"/>
+  <text x="274" y="664" font-size="12.5" font-weight="700" fill="#8A5A16">10 · Hombre–máquina</text>
+  <text x="274" y="684" font-size="11.5" fill="#444">Ciclo, tiempo ocioso,</text>
+  <text x="274" y="701" font-size="11.5" fill="#444">costo horario</text>
+
+  <rect x="466" y="642" width="198" height="76" rx="6" fill="#fff" stroke="#EADCC5"/>
+  <text x="478" y="664" font-size="12.5" font-weight="700" fill="#8A5A16">11 · Capacidad</text>
+  <text x="478" y="684" font-size="11.5" fill="#444">Capacidad real, scrap,</text>
+  <text x="478" y="701" font-size="11.5" fill="#444">curvas de aprendizaje</text>
+
+  <rect x="58" y="728" width="298" height="76" rx="6" fill="#fff" stroke="#EADCC5"/>
+  <text x="72" y="750" font-size="12.5" font-weight="700" fill="#8A5A16">13 · Producto</text>
+  <text x="72" y="770" font-size="11.5" fill="#444">Ciclo de vida y sus etapas, estructura</text>
+  <text x="72" y="787" font-size="11.5" fill="#444">del producto (BOM), hoja de ruta</text>
+
+  <rect x="366" y="728" width="298" height="76" rx="6" fill="#fff" stroke="#EADCC5"/>
+  <text x="380" y="750" font-size="12.5" font-weight="700" fill="#8A5A16">14 · Identificación y codificación</text>
+  <text x="380" y="770" font-size="11.5" fill="#444">Clasificación de materiales, códigos,</text>
+  <text x="380" y="787" font-size="11.5" fill="#444">dígito verificador IBM-11</text>
+
+  <!-- ===== CAPA 4 (banda derecha) ===== -->
+  <rect x="700" y="118" width="220" height="700" rx="8" fill="#F6F2FA" stroke="#D3C4E4"/>
+  <text x="716" y="143" font-size="15.5" font-weight="700" fill="#5B3E8E">CAPA 4</text>
+  <text x="716" y="162" font-size="14" font-weight="700" fill="#5B3E8E">SISTEMAS</text>
+  <text x="716" y="180" font-size="11.5" fill="#666">Gobiernan las 3 capas</text>
+  <text x="904" y="143" font-size="11" font-weight="700" fill="#7B5AA6" text-anchor="end">Temas 15–18</text>
+
+  <rect x="716" y="196" width="188" height="88" rx="6" fill="#fff" stroke="#DFD3EC"/>
+  <text x="728" y="218" font-size="12.5" font-weight="700" fill="#5B3E8E">15 · Estrategia</text>
+  <text x="728" y="238" font-size="11.5" fill="#444">Administración estratégica</text>
+  <text x="728" y="255" font-size="11.5" fill="#444">de la capacidad; visión</text>
+  <text x="728" y="272" font-size="11.5" fill="#444">de largo plazo</text>
+
+  <rect x="716" y="296" width="188" height="106" rx="6" fill="#fff" stroke="#DFD3EC"/>
+  <text x="728" y="318" font-size="12.5" font-weight="700" fill="#5B3E8E">16 · Sistemas de</text>
+  <text x="728" y="335" font-size="12.5" font-weight="700" fill="#5B3E8E">planificación</text>
+  <text x="728" y="356" font-size="11.5" fill="#444">MRP → MRP II (MCP) → ERP</text>
+  <text x="728" y="373" font-size="11.5" fill="#444">PAC · DRP (distribución)</text>
+  <text x="728" y="390" font-size="11.5" fill="#444">JIT (justo a tiempo)</text>
+
+  <rect x="716" y="414" width="188" height="106" rx="6" fill="#fff" stroke="#DFD3EC"/>
+  <text x="728" y="436" font-size="12.5" font-weight="700" fill="#5B3E8E">17 · Decisión y datos</text>
+  <text x="728" y="457" font-size="11.5" fill="#444">DSS · BI · Data Warehouse</text>
+  <text x="728" y="474" font-size="11.5" fill="#444">ETL, modelo dimensional,</text>
+  <text x="728" y="491" font-size="11.5" fill="#444">drill down / roll up,</text>
+  <text x="728" y="508" font-size="11.5" fill="#444">ciclo de vida Kimball</text>
+
+  <rect x="716" y="532" width="188" height="88" rx="6" fill="#fff" stroke="#DFD3EC"/>
+  <text x="728" y="554" font-size="12.5" font-weight="700" fill="#5B3E8E">18 · Complementos</text>
+  <text x="728" y="574" font-size="11.5" fill="#444">Calidad Six Sigma, lean,</text>
+  <text x="728" y="591" font-size="11.5" fill="#444">logística, programación</text>
+  <text x="728" y="608" font-size="11.5" fill="#888">(prioridad baja)</text>
+
+  <line x1="700" y1="470" x2="682" y2="470" stroke="#7B5AA6" stroke-width="2" marker-end="url(#arS)"/>
+  <text x="716" y="648" font-size="11.5" fill="#5B3E8E" font-weight="700">El ERP es la versión</text>
+  <text x="716" y="665" font-size="11.5" fill="#5B3E8E" font-weight="700">informatizada de todo</text>
+  <text x="716" y="682" font-size="11.5" fill="#5B3E8E" font-weight="700">lo que está a la izquierda.</text>
+  <text x="716" y="712" font-size="11.5" fill="#555">Como ingeniero en sistemas,</text>
+  <text x="716" y="729" font-size="11.5" fill="#555">esta capa es el puente entre</text>
+  <text x="716" y="746" font-size="11.5" fill="#555">la fábrica y el software que</text>
+  <text x="716" y="763" font-size="11.5" fill="#555">la gobierna.</text>
+
+  <!-- LEYENDA -->
+  <rect x="40" y="838" width="14" height="14" rx="3" fill="#1F4E79"/>
+  <text x="62" y="850" font-size="12" fill="#333"><tspan font-weight="700">Temas 1 a 11:</tspan> se CALCULAN → examen de práctica (eliminatorio, se rinde primero)</text>
+  <rect x="40" y="862" width="14" height="14" rx="3" fill="#7B5AA6"/>
+  <text x="62" y="874" font-size="12" fill="#333"><tspan font-weight="700">Temas 12 a 18:</tspan> se EXPLICAN → examen de teoría (después de aprobar la práctica)</text>
+</svg>

@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 1000" width="980" height="1000" font-family="Segoe UI, Calibri, Helvetica, Arial, sans-serif">
+  <rect width="980" height="1000" fill="#FFFFFF"/>
+
+  <!-- TITULO -->
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#1F4E79">CLASE 1.b · La tabla normal Z — los 5 casos</text>
+  <text x="560" y="34" font-size="12" fill="#666">Ejemplo base: μ=500, σ=80 · tabla “centro→Z”</text>
+
+  <!-- IDENTIFICAR TABLA -->
+  <rect x="40" y="48" width="900" height="54" rx="8" fill="#FFF3E8" stroke="#D9954A" stroke-width="1.5"/>
+  <text x="56" y="70" font-size="12" font-weight="700" fill="#8A5A16">⚠ PASO CERO — identificá tu tabla: buscá Z=1,00.</text>
+  <text x="56" y="90" font-size="11.5" fill="#333">Si dice <tspan font-weight="700">0,3413</tspan> → tabla “centro→Z” (máx. 0,5; la usual en UTN y la de esta lámina). Si dice <tspan font-weight="700">0,8413</tspan> → “acumulada” (ya incluye el 0,5 izquierdo).</text>
+
+  <!-- METODO -->
+  <rect x="40" y="112" width="900" height="40" rx="8" fill="#EDF3F9" stroke="#1F4E79"/>
+  <text x="56" y="137" font-size="12" font-weight="700" fill="#1F4E79">MÉTODO (siempre igual):  ① Z=(X−μ)/σ   ② dibujar campana y PINTAR el área pedida   ③ tabla   ④ armar con ±0,5 (cada mitad vale 0,5)</text>
+
+  <!-- ============ FILA 1: CASOS 1 y 2 ============ -->
+  <!-- CASO 1 -->
+  <rect x="40" y="164" width="440" height="188" rx="8" fill="#F4F8FC" stroke="#B7D0E5" stroke-width="1.5"/>
+  <text x="56" y="186" font-size="13" font-weight="700" fill="#1F4E79">CASO 1 · “Menos que” X mayor al promedio</text>
+  <text x="56" y="204" font-size="11.5" fill="#333">P(X &lt; 620) → Z = (620−500)/80 = <tspan font-weight="700">+1,5</tspan></text>
+  <!-- campana: area izquierda + centro a Z pintada -->
+  <path d="M 70 320 C 115 320, 133 244, 175 244 C 217 244, 235 320, 280 320 L 70 320 Z" fill="#9DC3E6" opacity="0.75"/>
+  <path d="M 280 320 C 296 320, 306 308, 320 302 L 320 320 Z" fill="none"/>
+  <path d="M 70 320 C 115 320, 133 244, 175 244 C 217 244, 235 320, 320 320" fill="none" stroke="#1F4E79" stroke-width="2"/>
+  <line x1="175" y1="244" x2="175" y2="324" stroke="#666" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="280" y1="320" x2="280" y2="290" stroke="#C00000" stroke-width="1.8"/>
+  <line x1="60" y1="320" x2="330" y2="320" stroke="#555" stroke-width="1.5"/>
+  <text x="175" y="338" font-size="10" fill="#333" text-anchor="middle">μ=500</text>
+  <text x="280" y="338" font-size="10" fill="#C00000" text-anchor="middle" font-weight="700">620 (Z=1,5)</text>
+  <text x="350" y="256" font-size="11" fill="#333">pinto TODO lo</text>
+  <text x="350" y="272" font-size="11" fill="#333">izquierdo de 620:</text>
+  <text x="350" y="294" font-size="11.5" fill="#333">0,5 + tabla(1,5)</text>
+  <text x="350" y="312" font-size="11.5" fill="#333">= 0,5 + 0,4332</text>
+  <text x="350" y="332" font-size="12.5" font-weight="700" fill="#C00000">= 93,3%</text>
+
+  <!-- CASO 2 -->
+  <rect x="500" y="164" width="440" height="188" rx="8" fill="#F4F8FC" stroke="#B7D0E5" stroke-width="1.5"/>
+  <text x="516" y="186" font-size="13" font-weight="700" fill="#1F4E79">CASO 2 · “Más que” X mayor al promedio</text>
+  <text x="516" y="204" font-size="11.5" fill="#333">P(X &gt; 620) → mismo Z = +1,5 · pinto la colita derecha</text>
+  <path d="M 740 290 C 748 302, 760 314, 780 320 L 740 320 Z" fill="#9DC3E6" opacity="0.85"/>
+  <path d="M 530 320 C 575 320, 593 244, 635 244 C 677 244, 695 320, 780 320" fill="none" stroke="#1F4E79" stroke-width="2"/>
+  <line x1="635" y1="244" x2="635" y2="324" stroke="#666" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="740" y1="320" x2="740" y2="288" stroke="#C00000" stroke-width="1.8"/>
+  <line x1="520" y1="320" x2="790" y2="320" stroke="#555" stroke-width="1.5"/>
+  <text x="635" y="338" font-size="10" fill="#333" text-anchor="middle">μ=500</text>
+  <text x="740" y="338" font-size="10" fill="#C00000" text-anchor="middle" font-weight="700">620</text>
+  <text x="810" y="256" font-size="11" fill="#333">la mitad derecha</text>
+  <text x="810" y="272" font-size="11" fill="#333">vale 0,5; le quito</text>
+  <text x="810" y="288" font-size="11" fill="#333">lo pintado del c.1:</text>
+  <text x="810" y="308" font-size="11.5" fill="#333">0,5 − 0,4332</text>
+  <text x="810" y="328" font-size="12.5" font-weight="700" fill="#C00000">= 6,7%</text>
+
+  <!-- ============ FILA 2: CASOS 3 y 4 ============ -->
+  <!-- CASO 3 -->
+  <rect x="40" y="364" width="440" height="196" rx="8" fill="#F1F7F2" stroke="#BFDCC4" stroke-width="1.5"/>
+  <text x="56" y="386" font-size="13" font-weight="700" fill="#1E6B33">CASO 3 · Z NEGATIVO (X menor al promedio)</text>
+  <text x="56" y="404" font-size="11.5" fill="#333">P(X &lt; 420) → Z = (420−500)/80 = <tspan font-weight="700">−1,0</tspan></text>
+  <text x="56" y="421" font-size="11" fill="#1E6B33" font-weight="700">La tabla no tiene negativos: por SIMETRÍA busco Z=+1,00 → 0,3413</text>
+  <path d="M 70 528 C 90 528, 102 518, 112 508 L 112 528 Z" fill="#A9D6B0" opacity="0.9"/>
+  <path d="M 70 528 C 115 528, 133 452, 175 452 C 217 452, 235 528, 320 528" fill="none" stroke="#1E6B33" stroke-width="2"/>
+  <line x1="175" y1="452" x2="175" y2="532" stroke="#666" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="112" y1="528" x2="112" y2="505" stroke="#C00000" stroke-width="1.8"/>
+  <line x1="60" y1="528" x2="330" y2="528" stroke="#555" stroke-width="1.5"/>
+  <text x="175" y="546" font-size="10" fill="#333" text-anchor="middle">μ=500</text>
+  <text x="112" y="546" font-size="10" fill="#C00000" text-anchor="middle" font-weight="700">420 (Z=−1)</text>
+  <text x="350" y="464" font-size="11" fill="#333">pinto la colita</text>
+  <text x="350" y="480" font-size="11" fill="#333">izquierda de 420:</text>
+  <text x="350" y="502" font-size="11.5" fill="#333">0,5 − 0,3413</text>
+  <text x="350" y="522" font-size="12.5" font-weight="700" fill="#C00000">= 15,9%</text>
+  <text x="350" y="546" font-size="10" fill="#888" font-style="italic">chequeo: bajo μ ⇒ &lt;50% ✔</text>
+
+  <!-- CASO 4 -->
+  <rect x="500" y="364" width="440" height="196" rx="8" fill="#F1F7F2" stroke="#BFDCC4" stroke-width="1.5"/>
+  <text x="516" y="386" font-size="13" font-weight="700" fill="#1E6B33">CASO 4 · ENTRE dos valores</text>
+  <text x="516" y="404" font-size="11.5" fill="#333">P(420 &lt; X &lt; 620): áreas 0,3413 (izq) y 0,4332 (der)</text>
+  <path d="M 592 585 C 600 570, 610 532, 635 532 C 660 532, 672 562, 697 578 C 703 582, 710 585, 718 587 L 718 608 L 592 608 Z" fill="#A9D6B0" opacity="0.85"/>
+  <path d="M 530 608 C 575 608, 593 532, 635 532 C 677 532, 695 608, 780 608" fill="none" stroke="#1E6B33" stroke-width="2"/>
+  <line x1="635" y1="532" x2="635" y2="612" stroke="#666" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="592" y1="608" x2="592" y2="583" stroke="#C00000" stroke-width="1.8"/>
+  <line x1="718" y1="608" x2="718" y2="585" stroke="#C00000" stroke-width="1.8"/>
+  <line x1="520" y1="608" x2="790" y2="608" stroke="#555" stroke-width="1.5"/>
+  <text x="592" y="625" font-size="10" fill="#C00000" text-anchor="middle" font-weight="700">420</text>
+  <text x="635" y="625" font-size="10" fill="#333" text-anchor="middle">μ</text>
+  <text x="718" y="625" font-size="10" fill="#C00000" text-anchor="middle" font-weight="700">620</text>
+  <text x="810" y="464" font-size="11" font-weight="700" fill="#1E6B33">Regla:</text>
+  <text x="810" y="482" font-size="11" fill="#333">distinto lado de μ</text>
+  <text x="810" y="498" font-size="11" fill="#333">→ SUMO:</text>
+  <text x="810" y="516" font-size="11.5" fill="#333">0,3413+0,4332</text>
+  <text x="810" y="534" font-size="12.5" font-weight="700" fill="#C00000">= 77,5%</text>
+  <text x="810" y="556" font-size="10.5" fill="#555">mismo lado → RESTO</text>
+  <text x="810" y="572" font-size="10.5" fill="#555">(580–620: 0,4332−0,3413)</text>
+
+  <!-- ============ CASO 5 ============ -->
+  <rect x="40" y="572" width="440" height="230" rx="8" fill="#FDF2F2" stroke="#E5C2C2" stroke-width="2"/>
+  <text x="56" y="596" font-size="13" font-weight="700" fill="#9C3838">CASO 5 · INVERSO — tengo la probabilidad, busco X</text>
+  <text x="56" y="615" font-size="11" fill="#9C3838" font-weight="700">★ El del stock de seguridad — casi seguro cae</text>
+  <text x="56" y="636" font-size="11.5" fill="#333">“Cubrir la demanda el 95% de las veces: ¿cuánto stock?”</text>
+  <text x="56" y="658" font-size="11" fill="#333">① Busco X tal que P(demanda&lt;X)=0,95 = 0,5 + <tspan font-weight="700">0,45</tspan></text>
+  <text x="56" y="678" font-size="11" fill="#333">② Leo la tabla AL REVÉS: ¿qué Z tiene área 0,45?</text>
+  <text x="76" y="696" font-size="11" fill="#333">0,4495→Z=1,64 · 0,4505→Z=1,65 ⇒ <tspan font-weight="700">Z≈1,64</tspan></text>
+  <text x="56" y="718" font-size="11" fill="#333">③ Des-estandarizo:  <tspan font-weight="700" font-family="Cambria Math, Georgia, serif">X = μ + Z·σ</tspan> = 500 + 1,64×80</text>
+  <text x="56" y="740" font-size="12.5" font-weight="700" fill="#C00000">= 631 unidades de stock</text>
+  <rect x="56" y="754" width="408" height="36" rx="6" fill="#fff" stroke="#E5C2C2"/>
+  <text x="68" y="770" font-size="10.5" font-weight="700" fill="#555">Z famosos (memorizar): 90%→1,28 · 95%→1,64 · 97,5%→1,96 · 99%→2,33</text>
+  <text x="68" y="784" font-size="10" fill="#888" font-style="italic">cola izquierda (“superar el 90% de las veces”): X = μ − Z·σ</text>
+
+  <!-- ============ t STUDENT ============ -->
+  <rect x="500" y="572" width="440" height="230" rx="8" fill="#F6F2FA" stroke="#D3C4E4" stroke-width="1.5"/>
+  <text x="516" y="596" font-size="13" font-weight="700" fill="#5B3E8E">t DE STUDENT — pocos datos, más prudencia</text>
+  <text x="516" y="617" font-size="11" fill="#333">Con n chico, s es una estimación imprecisa de σ →</text>
+  <text x="516" y="633" font-size="11" fill="#333">la t es una campana con <tspan font-weight="700">colas más gordas</tspan>: exige</text>
+  <text x="516" y="649" font-size="11" fill="#333">multiplicadores mayores para la misma confianza.</text>
+  <!-- mini campanas comparadas -->
+  <path d="M 545 720 C 580 720, 594 664, 625 664 C 656 664, 670 720, 705 720" fill="none" stroke="#5B3E8E" stroke-width="2"/>
+  <path d="M 530 718 C 575 712, 596 678, 625 678 C 654 678, 675 712, 720 718" fill="none" stroke="#C00000" stroke-width="1.8" stroke-dasharray="5 3"/>
+  <line x1="525" y1="722" x2="725" y2="722" stroke="#555" stroke-width="1.2"/>
+  <text x="548" y="700" font-size="9.5" fill="#5B3E8E" font-weight="700">normal</text>
+  <text x="672" y="694" font-size="9.5" fill="#C00000" font-weight="700">t (colas ↑)</text>
+  <!-- tabla convergencia -->
+  <text x="745" y="662" font-size="10.5" font-weight="700" fill="#5B3E8E">t al 95% (2 colas):</text>
+  <text x="745" y="680" font-size="10.5" fill="#333">n=5 (gl 4) → 2,78</text>
+  <text x="745" y="696" font-size="10.5" fill="#333">n=10 (gl 9) → 2,26</text>
+  <text x="745" y="712" font-size="10.5" fill="#333">n=30 (gl 29) → 2,05</text>
+  <text x="745" y="728" font-size="10.5" fill="#333">n=∞ → 1,96 = Z</text>
+  <text x="516" y="752" font-size="10.5" fill="#333">Se lee con 2 entradas: <tspan font-weight="700">confianza</tspan> + <tspan font-weight="700">gl = n−1</tspan>.</text>
+  <text x="516" y="770" font-size="10.5" fill="#333">Ej.: X̄=120, s=15, n=5 → 120 ± 2,776×15 = [78 ; 162]</text>
+  <text x="516" y="790" font-size="10.5" font-weight="700" fill="#5B3E8E">Decisión: n&lt;30 y s muestral → t · n≥30 o σ conocido → Z · regresión → siempre t</text>
+
+  <!-- PIE -->
+  <rect x="40" y="816" width="900" height="86" rx="8" fill="#EDF3F9" stroke="#1F4E79"/>
+  <text x="56" y="840" font-size="12.5" font-weight="700" fill="#1F4E79">CHEQUEOS DE SENSATEZ (hacerlos SIEMPRE — valen puntos de fundamentación):</text>
+  <text x="56" y="862" font-size="11" fill="#333">· X sobre el promedio ⇒ P(“menos que X”) &gt; 50% · X bajo el promedio ⇒ &lt; 50%   · Un área jamás es negativa ni mayor que 1</text>
+  <text x="56" y="880" font-size="11" fill="#333">· “Más que” y “menos que” del mismo X suman 100%   · Si tu resultado viola algo de esto: revisá el DIBUJO, no la tabla</text>
+
+  <rect x="40" y="912" width="900" height="70" rx="6" fill="#FAFAFA" stroke="#CCC"/>
+  <text x="56" y="934" font-size="11" font-weight="700" fill="#555">Ejercicio (ventas 120, 135, 105, 140, 100):  a) X̄ y s   b) P(X&lt;150) — caso 1   c) P(X&gt;90) — caso 3 espejado   d) P(110&lt;X&lt;145) — caso 4</text>
+  <text x="56" y="954" font-size="11" font-weight="700" fill="#555">e) ¿qué nivel superás el 90% de los meses? — caso 5, cola izquierda   f) intervalo del promedio con n=5: ¿Z o t? ¿por qué?</text>
+  <text x="56" y="972" font-size="10" fill="#888" font-style="italic">Dibujá la campana en cada ítem: es método y es puntaje.</text>
+</svg>
