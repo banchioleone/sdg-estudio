@@ -68,7 +68,7 @@ h1{font-size:28px;letter-spacing:-.02em;margin:4px 0 8px}
 }
 
 /* STORIES */
-#stories{display:none;position:fixed;inset:0;z-index:50;background:#11161c;color:#f3f1ea}
+#stories{display:none;position:fixed;inset:0;z-index:50;background:#11161c;color:#f3f1ea;touch-action:manipulation;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
 #stories.on{display:block}
 .st-chrome{position:absolute;top:0;left:0;right:0;z-index:3;padding:calc(10px + var(--top)) 12px 8px}
 .st-top{display:flex;align-items:center;gap:8px;margin-bottom:8px}
@@ -105,7 +105,10 @@ header.app .voice{background:var(--elev);color:var(--ink);border:1px solid var(-
 .seg{display:flex;gap:4px;height:3px}
 .seg i{flex:1;background:rgba(255,255,255,.25);border-radius:99px;overflow:hidden}
 .seg i b{display:block;height:100%;width:0;background:#fff}
-.seg i.on b,.seg i.now b{width:100%}
+.seg i.on b{width:100%}
+.seg i.now b{width:0}
+.hold-mark{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);z-index:5;width:56px;height:56px;border-radius:50%;background:rgba(0,0,0,.4);color:#fff;display:grid;place-items:center;font-size:22px;pointer-events:none}
+.hold-mark[hidden]{display:none !important}
 .stage{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-start;padding:calc(92px + var(--top)) 22px calc(28px + var(--bot));pointer-events:none;overflow:hidden}
 .hit{position:absolute;top:84px;bottom:0;z-index:3}
 .hit.L{left:0;width:18%}.hit.R{right:0;width:18%}
@@ -231,7 +234,7 @@ details.solucion summary{cursor:pointer;font-weight:700}
       <button class="x" type="button" id="btnCloseSt" aria-label="Cerrar">✕</button>
       <div class="st-name" id="stName"></div>
       <button class="voice" type="button" id="btnVoice" aria-label="Elegir voz" aria-expanded="false" title="Voz"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M19.4 13.5a7.7 7.7 0 0 0 .1-1.5 7.7 7.7 0 0 0-.1-1.5l2-1.5a.5.5 0 0 0 .1-.6l-1.9-3.3a.5.5 0 0 0-.6-.2l-2.3 1a7.4 7.4 0 0 0-2.6-1.5l-.4-2.5a.5.5 0 0 0-.5-.4h-3.8a.5.5 0 0 0-.5.4l-.4 2.5a7.4 7.4 0 0 0-2.6 1.5l-2.3-1a.5.5 0 0 0-.6.2L.6 8.4a.5.5 0 0 0 .1.6l2 1.5a7.7 7.7 0 0 0-.1 1.5 7.7 7.7 0 0 0 .1 1.5l-2 1.5a.5.5 0 0 0-.1.6l1.9 3.3a.5.5 0 0 0 .6.2l2.3-1a7.4 7.4 0 0 0 2.6 1.5l.4 2.5a.5.5 0 0 0 .5.4h3.8a.5.5 0 0 0 .5-.4l.4-2.5a7.4 7.4 0 0 0 2.6-1.5l2.3 1a.5.5 0 0 0 .6-.2l1.9-3.3a.5.5 0 0 0-.1-.6l-2-1.5zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/></svg></button>
-      <button class="mute" type="button" id="btnMute" aria-label="Silenciar">🔊</button>
+      <button class="mute" type="button" id="btnMute" aria-label="Activar audio">🔇</button>
       <div class="st-count" id="stCount"></div>
     </div>
     <div class="seg" id="seg"></div>
@@ -240,6 +243,7 @@ details.solucion summary{cursor:pointer;font-weight:700}
   <div class="hit R" id="hitR"></div>
   <div class="stage slide" id="stage"></div>
   <div class="toast" id="toast"></div>
+  <div id="holdMark" class="hold-mark" hidden>⏸</div>
 </div>
 <div id="voiceMenu" class="voice-menu" hidden>
   <div id="voiceList"></div>
@@ -273,13 +277,22 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
   function isClose(c){ return !!(c && (c.type==="cierre" || c.type==="close")); }
   function correctIdx(c){ return (c.correct!=null)?c.correct:c.a; }
 
+  const AUDIO_KEY = "sdg.audio";
   function load(){
-    const def={completed:[], answers:{}, pos:{}, lastClass:firstPlayable(), muted:false};
+    const def={completed:[], answers:{}, pos:{}, lastClass:firstPlayable(), muted:true};
     try{ return Object.assign(def, JSON.parse(localStorage.getItem(KEY)||"null")); }
     catch(e){ return def; }
   }
   function save(){ try{ localStorage.setItem(KEY, JSON.stringify(state)); }catch(e){} }
+  function readAudioOn(){
+    try { return localStorage.getItem(AUDIO_KEY) === "on"; }
+    catch(e){ return false; }
+  }
+  function applyAudioPref(){
+    state.muted = !readAudioOn();
+  }
   let state = load();
+  applyAudioPref();
   state.answers = state.answers || {};
   state.pos = state.pos || {};
   if(!state.lastClass || !PLAYABLE.some(c=>c.id===state.lastClass)) state.lastClass = firstPlayable();
@@ -458,7 +471,8 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
   $("#back").onclick=closeMenu;
   $("#btnReset").onclick=()=>{
     localStorage.removeItem(KEY);
-    state={completed:[],answers:{},pos:{},lastClass:firstPlayable(),muted:false};
+    state={completed:[],answers:{},pos:{},lastClass:firstPlayable(),muted:true};
+    applyAudioPref();
     view="home"; location.hash="";
     closeMenu(); renderMain();
   };
@@ -696,7 +710,7 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
     kick();
   }
   function startSpeech(){
-    if(state.muted) return;
+    if(state.muted || holding) return;
     if(!window.speechSynthesis) return;
     const text = cardSpeakText();
     if(!text) return;
@@ -724,10 +738,12 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
   function toggleMute(e){
     if(e) e.stopPropagation();
     state.muted = !state.muted;
+    try { localStorage.setItem(AUDIO_KEY, state.muted ? "off" : "on"); }
+    catch(err){}
     save();
     paintMute();
     if(state.muted) stopSpeech();
-    else startSpeech();
+    else if(st.open) startSpeech();
   }
   function renderVoiceMenu(){
     const box = $("#voiceList");
@@ -883,7 +899,8 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
     state.pos[st.classId]=st.i;
     state.lastClass=st.classId;
     save();
-    if(!state.muted) startSpeech();
+    if(!state.muted && !holding) startSpeech();
+    startClock();
   }
   function onQuiz(e){
     e.stopPropagation();
@@ -907,6 +924,8 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
     paintStories();
   }
   function closeStories(){
+    endHold(false);
+    stopClock();
     stopSpeech();
     st.open=false;
     $("#stories").classList.remove("on");
@@ -968,20 +987,146 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
   };
   $("#btnVoiceTry").onclick=function(e){ e.stopPropagation(); previewVoice(); };
   document.addEventListener("click", closeVoiceMenu);
-  $("#hitR").onclick=()=>{ if(st.open) nextCard(); };
-  $("#hitL").onclick=()=>{ if(st.open) prevCard(); };
-
-  let y0=0,x0=0;
+  let holding = false;
+  let speechHold = null;
+  let press = null;
+  let clockRaf = 0;
+  let clockStart = 0;
+  let clockPausedAt = 0;
+  const HOLD_MS = 200;
+  const CLOCK_MS = 8000;
   const root=$("#stories");
-  root.addEventListener("touchstart",e=>{ x0=e.touches[0].clientX; y0=e.touches[0].clientY; },{passive:true});
-  root.addEventListener("touchend",e=>{
-    if(!st.open) return;
-    const t=e.changedTouches[0];
-    const dx=t.clientX-x0, dy=t.clientY-y0;
-    if(Math.abs(dy)>70 && Math.abs(dy)>Math.abs(dx)*1.2){
-      if(dy<0) nextClass(); else prevClass();
+
+  function stopClock(){
+    if(clockRaf) cancelAnimationFrame(clockRaf);
+    clockRaf = 0;
+  }
+  function startClock(){
+    stopClock();
+    clockStart = performance.now();
+    clockPausedAt = 0;
+    const step = function(now){
+      if(!st.open) return;
+      const bar = $("#seg i.now b");
+      if(holding){
+        if(!clockPausedAt) clockPausedAt = now;
+        clockRaf = requestAnimationFrame(step);
+        return;
+      }
+      if(clockPausedAt){
+        clockStart += now - clockPausedAt;
+        clockPausedAt = 0;
+      }
+      const t = Math.min(1, (now - clockStart) / CLOCK_MS);
+      if(bar) bar.style.width = (t * 100).toFixed(2) + "%";
+      if(t < 1) clockRaf = requestAnimationFrame(step);
+    };
+    clockRaf = requestAnimationFrame(step);
+  }
+  function pauseStorySpeech(){
+    speechHold = null;
+    if(state.muted || !window.speechSynthesis) return;
+    try {
+      if(speechSynthesis.speaking || speechSynthesis.pending || speaking){
+        speechSynthesis.pause();
+        if(speechSynthesis.paused){ speechHold = "pause"; return; }
+      }
+    } catch(e){}
+    if(speaking || speechOn()){
+      stopSpeech();
+      speechHold = "restart";
     }
-  },{passive:true});
+  }
+  function resumeStorySpeech(){
+    const mode = speechHold;
+    speechHold = null;
+    if(state.muted || !st.open) return;
+    if(mode === "pause"){
+      try {
+        if(speechSynthesis.paused && speechSynthesis.resume){ speechSynthesis.resume(); return; }
+      } catch(e){}
+      startSpeech();
+      return;
+    }
+    if(mode === "restart") startSpeech();
+  }
+  function beginHold(){
+    if(holding || !st.open) return;
+    holding = true;
+    root.classList.add("holding");
+    const mark = $("#holdMark");
+    if(mark) mark.hidden = false;
+    pauseStorySpeech();
+  }
+  function endHold(resume){
+    if(press){ clearTimeout(press.timer); press = null; }
+    if(!holding) return;
+    holding = false;
+    root.classList.remove("holding");
+    const mark = $("#holdMark");
+    if(mark) mark.hidden = true;
+    if(resume !== false) resumeStorySpeech();
+    else speechHold = null;
+  }
+  function storyZone(x){
+    const r = root.getBoundingClientRect();
+    const rel = r.width ? (x - r.left) / r.width : 0.5;
+    if(rel <= 0.18) return "prev";
+    if(rel >= 0.82) return "next";
+    return "mid";
+  }
+  function interactiveTarget(el){
+    return !!(el && el.closest && el.closest("button, a, input, textarea, .opts, .voice-menu"));
+  }
+  function onPressStart(e){
+    if(!st.open || e.isPrimary === false) return;
+    if(e.button != null && e.button !== 0) return;
+    if(interactiveTarget(e.target)) return;
+    if(press) clearTimeout(press.timer);
+    press = {id:e.pointerId, x:e.clientX, y:e.clientY, t:performance.now(), held:false, moved:false};
+    press.timer = setTimeout(function(){
+      if(!press) return;
+      press.held = true;
+      beginHold();
+    }, HOLD_MS);
+  }
+  function onPressMove(e){
+    if(!press || e.pointerId !== press.id) return;
+    const dx = e.clientX - press.x, dy = e.clientY - press.y;
+    if(!press.held && (Math.abs(dx) > 18 || Math.abs(dy) > 18)){
+      clearTimeout(press.timer);
+      press.moved = true;
+    }
+  }
+  function onPressEnd(e){
+    if(!press || e.pointerId !== press.id) return;
+    clearTimeout(press.timer);
+    const dx = e.clientX - press.x, dy = e.clientY - press.y;
+    const held = press.held || (performance.now() - press.t) >= HOLD_MS;
+    const swipe = Math.abs(dy) > 70 && Math.abs(dy) > Math.abs(dx) * 1.2;
+    const zone = storyZone(press.x);
+    press = null;
+    if(!st.open){ endHold(false); return; }
+    if(swipe){
+      endHold(false);
+      if(dy < 0) nextClass(); else prevClass();
+      return;
+    }
+    if(held){ endHold(true); return; }
+    if(zone === "prev") prevCard();
+    else if(zone === "next") nextCard();
+  }
+  root.addEventListener("pointerdown", onPressStart);
+  root.addEventListener("pointermove", onPressMove);
+  window.addEventListener("pointerup", onPressEnd);
+  window.addEventListener("pointercancel", function(e){
+    if(!press || e.pointerId !== press.id) return;
+    clearTimeout(press.timer);
+    press = null;
+    endHold(true);
+  });
+  root.addEventListener("contextmenu", function(e){ if(st.open) e.preventDefault(); });
+  root.addEventListener("selectstart", function(e){ e.preventDefault(); });
 
   let wheelLock=0;
   root.addEventListener("wheel",e=>{
@@ -1006,7 +1151,8 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
     }
   });
 
-  window.__sdg={openStories,closeStories,resumeStories,nextCard,prevCard,nextClass,prevClass,openClass,openUnit,paintStories,toggleSpeech,toggleMute,startSpeech,stopSpeech,cardSpeakText,pickVoice,spanishVoices,rankVoices,speakable,formulaToSpeech,chunkSpeech,utteranceLang,noteVoices,openVoiceMenu,previewVoice,get st(){return st;},state};
+  window.__sdg={openStories,closeStories,resumeStories,nextCard,prevCard,nextClass,prevClass,openClass,openUnit,paintStories,toggleSpeech,toggleMute,startSpeech,stopSpeech,cardSpeakText,pickVoice,spanishVoices,rankVoices,speakable,formulaToSpeech,chunkSpeech,utteranceLang,noteVoices,openVoiceMenu,previewVoice,get holding(){return holding;},get st(){return st;},state};
+  paintMute();
   applyBrand();
   const hid=location.hash.replace("#","");
   if(hid && (classMeta(hid) || unitById(hid))) view=hid;
