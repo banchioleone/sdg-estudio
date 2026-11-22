@@ -5,6 +5,12 @@
 <link rel="icon" href="data:,">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Sistemas de Gestión · Estudio</title>
+<script>
+(function(){
+  try{ if(localStorage.getItem("sdg.tema")==="light") return; }catch(e){}
+  document.documentElement.classList.add("dark");
+})();
+</script>
 <style>
 :root{
   --bg:#f4f1ea; --surf:#fff; --elev:#fffdf8; --ink:#1c232a; --muted:#5c6570;
@@ -82,6 +88,8 @@ h1{font-size:28px;letter-spacing:-.02em;margin:4px 0 8px}
 .story-chip em{font-style:normal;font-size:11.5px;font-weight:700}
 .mute{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.12);font-size:16px;flex-shrink:0;color:#fff}
 .voice{width:34px;height:34px;border-radius:10px;flex-shrink:0;color:#fff;background:rgba(255,255,255,.12);display:grid;place-items:center;padding:0}
+.tema{width:34px;height:34px;border-radius:10px;flex-shrink:0;border:1px solid var(--line);background:var(--elev);display:grid;place-items:center;padding:0;font-size:16px;line-height:1}
+html.dark header.app .tema{background:#1b222b;color:#f3f1ea;border-color:#2a323c}
 .voice svg{display:block}
 header.app .voice{background:var(--elev);color:var(--ink);border:1px solid var(--line)}
 .voice-menu{position:fixed;z-index:80;width:min(248px,calc(100vw - 20px));padding:6px;border-radius:16px;background:rgba(17,22,28,.94);color:#f3f1ea;border:1px solid rgba(255,255,255,.12);box-shadow:0 16px 40px rgba(0,0,0,.35);backdrop-filter:blur(12px)}
@@ -217,41 +225,47 @@ details.solucion summary{cursor:pointer;font-weight:700}
   .brand > span{display:none}
 }
 .brand:hover strong{color:var(--brand)}
-body.dark{background:#0d1116}
-body.dark header.app{background:#11161c;border-bottom-color:#232b35;color:#f3f1ea}
-body.dark .brand span{color:#9aa3ad}
-body.dark .brand:hover strong{color:#fff}
-body.dark .prog label{color:#9aa3ad}
-body.dark .bar{background:#2a323c}
-body.dark .bar i{background:linear-gradient(90deg,#f9ce34,#ee2a7b,#6228d7)}
-body.dark header.app .voice,body.dark .burger{background:#1b222b;color:#f3f1ea;border-color:#2a323c}
-body.dark main{background:#0d1116;color:#f3f1ea}
-body.dark aside.nav{background:#11161c;color:#f3f1ea;border-right-color:#232b35;box-shadow:none}
-body.dark .nav-h,body.dark .unit b small,body.dark .blk-h,body.dark .nav .blk-h{color:#9aa3ad}
-body.dark .lessons a,body.dark .lessons span,body.dark .unit b{color:#f3f1ea}
-body.dark .lessons a:hover,body.dark .unit-link:hover{background:#1b222b}
-body.dark .lessons a.on{background:#1c2a38;color:#9ec3e4;font-weight:700}
-body.dark .unit-link:hover b{color:#fff}
-body.dark .reset{color:#9ec3e4}
-body.dark .badge{background:#2c2618;color:#e8c56a}
-body.dark .badge.ok{background:rgba(61,190,116,.18);color:#5fd08f}
-body.dark .badge.live{background:#1c2a38;color:#9ec3e4}
-body.dark .back{background:rgba(0,0,0,.66)}
-body.dark .voice-menu,body.dark .voice-menu.light{background:rgba(17,22,28,.96);color:#f3f1ea;border-color:rgba(255,255,255,.12);box-shadow:0 16px 40px rgba(0,0,0,.45)}
-body.dark .voice-menu .v small,body.dark .voice-menu.light .v small{color:#9aa3ad}
-body.dark .voice-menu .v.on,body.dark .voice-menu.light .v.on{background:rgba(255,255,255,.12)}
-body.dark .voice-menu .try,body.dark .voice-menu.light .try{background:#f3f1ea;color:#111}
-body.dark .voice-menu .empty,body.dark .voice-menu.light .empty{color:#d5dbe2}
-body.dark .card,body.dark .ejercicio,body.dark .eq-wrap,body.dark .teoria table{background:#161c23;color:#f3f1ea;border-color:#232b35}
-body.dark .teoria th,body.dark .teoria td{border-color:#2a323c;color:#f3f1ea}
-body.dark .teoria th{background:#1c2a38}
-body.dark blockquote.idea{background:#1c2a38;color:#f3f1ea}
-body.dark blockquote.aviso{background:#2c2618;color:#f3f1ea}
-body.dark blockquote.examen{background:#16261c;color:#f3f1ea}
-body.dark .ejemplo-box{background:#241c12;border-color:#4a3a22;color:#f3f1ea}
-body.dark .para-resolver{background:#2c2618}
-body.dark details.solucion{background:#16261c;color:#f3f1ea}
-body.dark .lamina{background:#f4f1ea;color:#1c232a}
+html.dark,html.dark body{background:#0d1116;color:#f3f1ea}
+html.dark header.app{background:#11161c;border-bottom-color:#232b35;color:#f3f1ea}
+html.dark .brand span{color:#9aa3ad}
+html.dark .brand:hover strong{color:#fff}
+html.dark .prog label{color:#9aa3ad}
+html.dark .bar{background:#2a323c}
+html.dark .bar i{background:linear-gradient(90deg,#f9ce34,#ee2a7b,#6228d7)}
+html.dark header.app .voice,html.dark .burger{background:#1b222b;color:#f3f1ea;border-color:#2a323c}
+html.dark main{background:#0d1116;color:#f3f1ea}
+html.dark aside.nav{background:#11161c;color:#f3f1ea;border-right-color:#232b35;box-shadow:none}
+html.dark .nav-h,html.dark .unit b small,html.dark .blk-h,html.dark .nav .blk-h{color:#9aa3ad}
+html.dark .lessons a,html.dark .lessons span,html.dark .unit b{color:#f3f1ea}
+html.dark .lessons a:hover,html.dark .unit-link:hover{background:#1b222b}
+html.dark .lessons a.on{background:#1c2a38;color:#9ec3e4;font-weight:700}
+html.dark .unit-link:hover b{color:#fff}
+html.dark .reset{color:#9ec3e4}
+html.dark .badge{background:#2c2618;color:#e8c56a}
+html.dark .badge.ok{background:rgba(61,190,116,.18);color:#5fd08f}
+html.dark .badge.live{background:#1c2a38;color:#9ec3e4}
+html.dark .back{background:rgba(0,0,0,.66)}
+html.dark .voice-menu,html.dark .voice-menu.light{background:rgba(17,22,28,.96);color:#f3f1ea;border-color:rgba(255,255,255,.12);box-shadow:0 16px 40px rgba(0,0,0,.45)}
+html.dark .voice-menu .v small,html.dark .voice-menu.light .v small{color:#9aa3ad}
+html.dark .voice-menu .v.on,html.dark .voice-menu.light .v.on{background:rgba(255,255,255,.12)}
+html.dark .voice-menu .try,html.dark .voice-menu.light .try{background:#f3f1ea;color:#111}
+html.dark .voice-menu .empty,html.dark .voice-menu.light .empty{color:#d5dbe2}
+html.dark .card,html.dark .ejercicio,html.dark .eq-wrap,html.dark .teoria table{background:#161c23;color:#f3f1ea;border-color:#232b35}
+html.dark .teoria th,html.dark .teoria td{border-color:#2a323c;color:#f3f1ea}
+html.dark .teoria th{background:#1c2a38}
+html.dark blockquote.idea{background:#1c2a38;color:#f3f1ea}
+html.dark blockquote.aviso{background:#2c2618;color:#f3f1ea}
+html.dark blockquote.examen{background:#16261c;color:#f3f1ea}
+html.dark .ejemplo-box{background:#241c12;border-color:#4a3a22;color:#f3f1ea}
+html.dark .para-resolver{background:#2c2618}
+html.dark details.solucion{background:#16261c;color:#f3f1ea}
+html.dark .lamina{background:#f4f1ea;color:#1c232a}
+html.dark .lede,html.dark .muted,html.dark .h-note{color:#9aa3ad}
+html.dark h1,html.dark h2,html.dark .teoria h2{color:#f3f1ea}
+html.dark .teoria h3,html.dark .kicker,html.dark .kicker a{color:#9ec3e4}
+html.dark .class-index a,html.dark .class-index span{color:#f3f1ea}
+html.dark .sty .ring i{background:#1b222b;border-color:#0d1116;color:#f3f1ea}
+html.dark .sty em,html.dark .light .sgrp>small{color:#d5dbe2}
 .h-sec{font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#8cb4d6;margin:22px 0 10px}
 .h-sec small{font-weight:650;letter-spacing:0;text-transform:none;color:#9aa3ad;margin-left:6px}
 .sbar{display:flex;gap:14px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -300,6 +314,18 @@ body.dark .lamina{background:#f4f1ea;color:#1c232a}
 .vb{margin-left:auto;font-size:10.5px;font-weight:800;padding:3px 8px;border-radius:99px;background:#232b35;color:#9aa3ad}
 .vb.ok{background:rgba(61,190,116,.18);color:#5fd08f}
 .post-c{padding:4px 12px 14px;font-size:13.5px;color:#c4ccd5;line-height:1.45}
+html:not(.dark) .sty .ring i{background:#fff;border-color:var(--bg);color:var(--brand)}
+html:not(.dark) .sty em,html:not(.dark) .sgrp>small{color:var(--muted)}
+html:not(.dark) .h-sec{color:var(--brand)}
+html:not(.dark) .utile{background:var(--surf);border-color:var(--line);color:var(--ink)}
+html:not(.dark) .utile .n small,html:not(.dark) .utile .meta,html:not(.dark) .h-note,html:not(.dark) .post-h small,html:not(.dark) .post-c{color:var(--muted)}
+html:not(.dark) .utile .bar{background:var(--line)}
+html:not(.dark) .post{background:var(--surf);border-color:var(--line);color:var(--ink)}
+html:not(.dark) .post-m.txt{background:linear-gradient(160deg,#fffdf8,#f4f1ea);color:var(--ink)}
+html:not(.dark) .post-m.txt p{color:var(--muted)}
+html:not(.dark) .post-a .prd{background:var(--elev);color:var(--ink);border:1px solid var(--line)}
+html:not(.dark) .vb{background:var(--brand-soft);color:var(--brand)}
+html:not(.dark) .vb.ok{background:var(--ok-soft);color:var(--ok)}
 .blk-h{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);padding:14px 0 4px}
 .nav .blk-h{padding:8px 10px 2px 16px;font-size:10px;color:var(--muted)}
 .light{margin:0 0 14px}
@@ -316,6 +342,7 @@ body.dark .lamina{background:#f4f1ea;color:#1c232a}
     <button class="burger" id="btnMenu" type="button" aria-label="Abrir menú">☰</button>
     <button class="brand" type="button" id="btnHome" aria-label="Volver al inicio"><strong class="brand-full">Sistemas de Gestión</strong><strong class="brand-short">SdG</strong><span>UTN FRRo · Ingeniería en Sistemas</span></button>
     <div class="prog"><label><span class="lab">Progreso</span><span id="progTxt">0%</span></label><div class="bar"><i id="progFill"></i></div></div>
+    <button class="tema" type="button" id="btnTema" aria-label="Usar tema claro" title="Tema claro">☀️</button>
     <button class="voice" type="button" id="btnVoiceLms" aria-label="Elegir voz" aria-expanded="false" title="Voz"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M19.4 13.5a7.7 7.7 0 0 0 .1-1.5 7.7 7.7 0 0 0-.1-1.5l2-1.5a.5.5 0 0 0 .1-.6l-1.9-3.3a.5.5 0 0 0-.6-.2l-2.3 1a7.4 7.4 0 0 0-2.6-1.5l-.4-2.5a.5.5 0 0 0-.5-.4h-3.8a.5.5 0 0 0-.5.4l-.4 2.5a7.4 7.4 0 0 0-2.6 1.5l-2.3-1a.5.5 0 0 0-.6.2L.6 8.4a.5.5 0 0 0 .1.6l2 1.5a7.7 7.7 0 0 0-.1 1.5 7.7 7.7 0 0 0 .1 1.5l-2 1.5a.5.5 0 0 0-.1.6l1.9 3.3a.5.5 0 0 0 .6.2l2.3-1a7.4 7.4 0 0 0 2.6 1.5l.4 2.5a.5.5 0 0 0 .5.4h3.8a.5.5 0 0 0 .5-.4l.4-2.5a7.4 7.4 0 0 0 2.6-1.5l2.3 1a.5.5 0 0 0 .6-.2l1.9-3.3a.5.5 0 0 0-.1-.6l-2-1.5zM12 15.5A3.5 3.5 0 1 1 12 8.5a3.5 3.5 0 0 1 0 7z"/></svg></button>
   </header>
   <div class="back" id="back"></div>
@@ -452,6 +479,20 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
     if(b) b.innerHTML='<strong class="brand-full">'+esc(idx.title||"Sistemas de Gestión")+'</strong><strong class="brand-short">SdG</strong><span>'+esc(idx.subtitle||"")+"</span>";
     const n=$("#navH");
     if(n) n.textContent="Programa · "+units().length+" unidades";
+  }
+  function paintTema(){
+    const b=$("#btnTema");
+    if(!b) return;
+    const dark=document.documentElement.classList.contains("dark");
+    b.textContent=dark?"☀️":"🌙";
+    b.setAttribute("aria-label", dark?"Usar tema claro":"Usar tema oscuro");
+    b.title=dark?"Tema claro":"Tema oscuro";
+  }
+  function setTema(mode){
+    const dark=mode!=="light";
+    document.documentElement.classList.toggle("dark", dark);
+    try{ localStorage.setItem("sdg.tema", dark?"dark":"light"); }catch(e){}
+    paintTema();
   }
   function menu(){
     const host=$("#navUnits");
@@ -673,7 +714,6 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
   function renderMain(){
     const el=$("#main");
     applyBrand();
-    document.body.classList.toggle("dark", view==="home");
     if(view==="home"){
       el.innerHTML=homeHTML();
     } else if(unitById(view)){
@@ -1284,6 +1324,7 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
   $("#btnReplay").onclick=toggleSpeech;
   $("#btnVoice").onclick=function(e){ toggleVoiceMenu(e, false); };
   $("#btnVoiceLms").onclick=function(e){ toggleVoiceMenu(e, true); };
+  $("#btnTema").onclick=function(){ setTema(document.documentElement.classList.contains("dark")?"light":"dark"); };
   $("#voiceMenu").onclick=function(e){ e.stopPropagation(); };
   $("#voiceList").onclick=function(e){
     const btn = e.target.closest("[data-uri]");
@@ -1460,6 +1501,7 @@ window.SDG_CONTENT = {"index":{"title":"Sistemas de Gestión","subtitle":"UTN FR
   $("#btnHome").onclick=function(e){ e.preventDefault(); if(st.open) hideStories(); goHome(); };
   window.__sdg={openStories,closeStories,goHome,go,parseHash,hashFor,resumeStories,nextCard,prevCard,nextClass,prevClass,openClass,openUnit,paintStories,toggleSpeech,toggleMute,startSpeech,stopSpeech,cardSpeakText,pickVoice,spanishVoices,rankVoices,speakable,formulaToSpeech,chunkSpeech,utteranceLang,noteVoices,openVoiceMenu,previewVoice,get holding(){return holding;},get st(){return st;},state};
   paintMute();
+  paintTema();
   applyBrand();
   (function init(){
     const r=parseHash(location.hash);
