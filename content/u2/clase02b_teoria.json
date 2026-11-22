@@ -1,0 +1,342 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c2bteoria",
+  "title": "Clase 2.b-teoría · Demanda, cualitativos y sistemas de pronóstico",
+  "name": "Demanda, cualitativos y sistemas de pronóstico",
+  "lede": "Pronosticar reduce incertidumbre: no crea certeza, no reemplaza la decisión y no es fijar una meta. Completamos el marco del programa después de los métodos de series y antes de los modelos causales de regresión.",
+  "visto": false,
+  "source": [
+    "texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15).",
+    "texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes).",
+    "Hanke y Wichern, cap. 1 y caps. 10–11, pp. 481–512; especialmente proceso estratégico/operativo y SIG.",
+    "Documento Maestro v2, U2.b; Preguntas Frecuentes (Juanje), preguntas 12, 18 y 37."
+  ],
+  "laminas": [
+    "u2/img/SistemaPronostico.svg"
+  ],
+  "next": "Clase 11 · Regresión lineal simple",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 2.b-teoría · Demanda, cualitativos y sistemas de pronóstico**"
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "Pronosticar reduce incertidumbre: no crea certeza, no reemplaza la decisión y no es fijar una meta. Completamos el marco del programa después de los métodos de series y antes de los modelos causales de regresión."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. Qué estimás y para qué"
+    },
+    {
+      "type": "paragraph",
+      "text": "No arranques por una fórmula: precisá qué decisión necesita el pronóstico. Una estimación semanal por artículo sirve para inventarios; una proyección agregada de varios años sirve para capacidad. Cambian el horizonte, el detalle, los datos y el costo admisible del error. Hanke plantea el pronóstico como apoyo de decisiones y exige que el resultado llegue a tiempo y resulte comprensible para quien lo usa."
+    },
+    {
+      "type": "paragraph",
+      "text": "El compilado Preguntas Frecuentes presenta el pronóstico de demanda como una estimación probabilística y distingue media, intervalo y distribución. **Puntual**: un valor central. **Por intervalo**: un rango con un nivel de confianza o cobertura. **De densidad**: distribución de posibilidades. Decir «500» sin unidad, período ni incertidumbre no termina el problema."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Complemento (no está en el material): demanda frente a venta.** En el material consultado no aparece una definición explícita que confronte ambos términos. Como distinción operativa general, demanda es lo que se requiere o se desea comprar bajo condiciones dadas; venta observada es lo efectivamente transado. Pueden diferir por faltantes, restricciones de capacidad o pérdida de pedidos. No atribuyas esta redacción a la cátedra."
+    },
+    {
+      "type": "ejemplo",
+      "title": "Ejemplo propio, no dato de la bibliografía",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Si se solicitaron 120 unidades y sólo había 90 disponibles, pueden observarse 90 ventas aunque existan 30 solicitudes no atendidas. Ajustar una serie con 90 como si fuera demanda irrestricta perpetuaría el faltante. El número 120 sólo es conocido si registraste también los pedidos no atendidos; no lo reconstruís mirando únicamente la facturación."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Administración de la demanda: qué podés influir"
+    },
+    {
+      "type": "paragraph",
+      "text": "Chase define su propósito como coordinar y controlar todas las fuentes de demanda para usar eficientemente el sistema productivo y entregar a tiempo. La empresa puede adoptar un papel **activo**, buscando influir en el momento o volumen de demanda, o **pasivo**, atendiendo la demanda sin intentar modificarla. Administración de demanda no equivale, entonces, a ejecutar un cálculo estadístico."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Tipo",
+        "Origen",
+        "Tratamiento"
+      ],
+      "rows": [
+        [
+          "Dependiente",
+          "Se deriva de otro artículo o decisión de producción",
+          "Se calcula desde cantidades y estructuras."
+        ],
+        [
+          "Independiente",
+          "Demanda externa del artículo final",
+          "Necesita estimación; no se deduce de una lista de materiales."
+        ]
+      ]
+    },
+    {
+      "type": "ejemplo",
+      "title": "Ejemplo de Chase: triciclos",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Para fabricar 1000 triciclos se requieren 1000 ruedas delanteras y 2000 traseras. Es demanda dependiente: no tiene sentido pronosticar tres series independientes y luego obtener cantidades incompatibles. Sí puede ser necesario pronosticar cuántos triciclos se venderán. El ejemplo no incluye inventarios, pérdidas ni tamaños de lote."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Clasificar no es seleccionar automáticamente"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Criterio",
+        "Alternativas",
+        "Qué cambia"
+      ],
+      "rows": [
+        [
+          "Horizonte, Chase",
+          "Corto: <3 meses; medio: 3 meses–2 años; largo: >2 años",
+          "Datos, detalle y técnica. Son rangos de esa fuente, no una ley universal."
+        ],
+        [
+          "Alcance, Hanke",
+          "Micro / macro; corto / largo",
+          "Objeto y escala de la decisión."
+        ],
+        [
+          "Información",
+          "Cualitativo / cuantitativo",
+          "Juicio estructurado o datos medibles; pueden integrarse."
+        ],
+        [
+          "Familia, Chase",
+          "Cualitativos / series / causales / simulación",
+          "Cómo se genera el pronóstico."
+        ],
+        [
+          "Salida, Hanke",
+          "Punto / intervalo / densidad",
+          "Cómo comunicás la incertidumbre."
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Chase enumera horizonte, disponibilidad de datos, precisión requerida, presupuesto y personal capacitado como factores de elección. También importan flexibilidad y consecuencias de equivocarse. Hanke exige datos confiables, pertinentes, consistentes y periódicos. La técnica más sofisticada puede ser peor elección si no tenés las variables a tiempo o nadie puede mantenerla."
+    },
+    {
+      "type": "paragraph",
+      "text": "Las series de tiempo extrapolan información de la propia historia; las causales incorporan variables explicativas. En regresión, una asociación útil no prueba por sí sola causalidad. Simular permite estudiar resultados de un sistema bajo supuestos; no evita justificar esos supuestos. Antes de elegir SES, Holt o Winter, ya deberías saber si el nivel, la pendiente o la estacionalidad requieren modelarse."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Métodos cualitativos: cuándo, cómo y límites"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Método de Chase",
+        "Procedimiento",
+        "Punto de cuidado"
+      ],
+      "rows": [
+        [
+          "Acumulativo / bottom-up",
+          "Recoger estimaciones cercanas al mercado y agregarlas",
+          "Coherencia entre niveles y posibles incentivos de cada vendedor."
+        ],
+        [
+          "Investigación de mercados",
+          "Recabar información de clientes o mercados",
+          "Representatividad y diferencia entre intención y compra."
+        ],
+        [
+          "Consenso / juicio ejecutivo",
+          "Reunir conocimiento de áreas y discutir una estimación",
+          "Una jerarquía dominante puede silenciar información."
+        ],
+        [
+          "Analogía histórica",
+          "Usar un producto o experiencia comparable",
+          "Justificar similitud; no copiar curvas sin contexto."
+        ],
+        [
+          "Delfos / Delphi",
+          "Rondas de consulta a expertos con devolución controlada",
+          "Selección de expertos y calidad de las preguntas."
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Estos métodos resultan especialmente pertinentes ante productos nuevos, cambios tecnológicos o falta de historia comparable. No significan «adivinar»: su calidad depende de un procedimiento explícito, información relevante y revisión. Hanke, cap. 10, recuerda que también los modelos cuantitativos requieren juicio para escoger datos, método e interpretación."
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Definí el problema y seleccioná expertos con conocimientos diferentes.",
+        "Consultá individualmente: evitá presión de un grupo reunido.",
+        "Resumí respuestas y razones sin identificar quién opinó qué.",
+        "Devolvé el resumen y pedí revisión o fundamentación.",
+        "Iterá hasta obtener una síntesis útil y explicá desacuerdos persistentes."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "La lista anterior es una **síntesis didáctica** del procedimiento Delfos descrito por Chase. Hanke destaca cuatro rasgos: anonimato, iteración, retroalimentación controlada y agregación de respuestas. No confundas consenso con verdad. En Hanke también aparecen escenarios: futuros alternativos coherentes para preparar decisiones, no una única cifra inevitable."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Integración: números, experiencia y pronóstico enfocado"
+    },
+    {
+      "type": "paragraph",
+      "text": "Hanke distingue la historia modelada del conocimiento adicional del contexto. Un ajuste de juicio sólo agrega valor si incorpora información que el modelo no tiene; cambiar un número para acercarlo a una meta comercial no vuelve más exacto al pronóstico. Las modificaciones pequeñas y rutinarias pueden introducir ruido. Documentá el motivo y después medí si mejoraron el resultado."
+    },
+    {
+      "type": "paragraph",
+      "text": "Chase describe el **pronóstico enfocado**: comparar reglas sencillas mediante simulación de su comportamiento sobre unos 18–24 meses de historia, seleccionar la que se desempeña mejor y permitir revisión por compradores. No es afirmar que una regla funciona para siempre. La integración colaborativa agrega información entre empresas; CPFR busca coordinar planeación, pronóstico y reabastecimiento. Compartir datos exige compatibilidad, confianza y compromiso: instalar un sistema no garantiza cooperación."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Complemento (no está en el material): ejemplo calculado por mí de combinación.** Si dos pronósticos son 480 y 520, un promedio simple da 500. Con pesos 0,7 y 0,3 da 492. Los pesos no se justifican porque «parecen buenos»: compará su desempeño sobre observaciones no usadas para elegirlos. La combinación está tratada por Hanke; estos números son propios."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Sistema de pronósticos: nivel estratégico y operativo"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/SistemaPronostico.svg",
+      "caption": "Esquema propio a partir de Hanke, cap. 11: la evaluación vuelve al diagnóstico, no termina en el número."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Nivel",
+        "Preguntas",
+        "Responsabilidad"
+      ],
+      "rows": [
+        [
+          "Estratégico",
+          "Qué pronosticar, para qué, quién lo hará y qué precisión/costo aceptar",
+          "Acordar el uso y el responsable."
+        ],
+        [
+          "Operativo",
+          "Recopilar, depurar, modelar, emitir y evaluar",
+          "Mantener un procedimiento repetible con datos nuevos."
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Hanke contrasta centralización y descentralización. Un equipo especializado concentra capacidades, pero puede desconectarse de quienes deciden. Cada área pronosticando por su cuenta conoce mejor el uso, pero puede duplicar recursos y producir cifras incompatibles. La coordinación debe contemplar incentivos: marketing puede valorar disponibilidad mientras producción también carga con el exceso de inventario."
+    },
+    {
+      "type": "paragraph",
+      "text": "El SIG o ERP aporta registro y distribución de información. Antes de volver a recopilar datos, comprobá qué existe, con qué definición, período y calidad. El costo total incluye software y especialistas, pero también tiempo para limpiar datos, coordinar áreas, interpretar y supervisar. La evaluación compara ese costo con beneficios de decisiones mejores."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Hipótesis y control de la operación"
+    },
+    {
+      "type": "paragraph",
+      "text": "La pregunta frecuente sobre «lo que pasó ayer sigue pasando» resume una hipótesis de continuidad: los patrones relevantes o las relaciones explicativas se mantendrán lo suficiente para extrapolarlos. No supone que cada demanda futura repetirá exactamente el último dato. Una ruptura estructural puede invalidar el modelo aunque haya tenido buen error histórico."
+    },
+    {
+      "type": "paragraph",
+      "text": "El control de la operación compara pronósticos emitidos con valores que se van conociendo. Incluye errores, límites, sesgo y revisión de datos o parámetros. En la Clase 4 ya se presentó la idea general; en la Clase 10, inmediatamente anterior a ésta, calculamos RSFE/MAD, el conteo U de Hanke y límites por RMSE, sin confundirlos."
+    },
+    {
+      "type": "ejercicio",
+      "title": "Chequeo conceptual integrador",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Una empresa lanza un servicio sin historia propia. Otra repone semanalmente un producto estable con años de datos. Indicá qué información pedirías, qué familias considerarías y cómo controlarías el resultado."
+        }
+      ],
+      "estado": "para resolver",
+      "nota": "No hay una resolución oficial de este enunciado: es una consigna propia de repaso, no un ejercicio de final transcripto."
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Para el final.** Podés explicar para qué pronosticar, diferenciar demanda independiente/dependiente, justificar una familia con datos y horizonte, describir Delphi y dibujar el sistema con retroalimentación. Una meta no es un pronóstico."
+    },
+    {
+      "type": "glosario",
+      "title": "Glosario para leer las fórmulas",
+      "intro": "Distinguí observaciones, parámetros y estimaciones antes de reemplazar números.",
+      "entries": [
+        {
+          "simbolo": "D",
+          "nombre": "demanda",
+          "significado": "Variable que se necesita estimar; especificá producto, lugar, unidad y período."
+        },
+        {
+          "simbolo": "s",
+          "nombre": "periodicidad",
+          "significado": "Cantidad de períodos del ciclo estacional."
+        },
+        {
+          "simbolo": "SIG / ERP",
+          "nombre": "sistemas de información",
+          "significado": "Infraestructura que registra datos y distribuye pronósticos para decidir."
+        },
+        {
+          "simbolo": "CPFR",
+          "nombre": "colaboración",
+          "significado": "Planeación, pronóstico y reabastecimiento colaborativos, tratado por Chase."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fuentes, alcance y huecos"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15). · texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes). · Hanke y Wichern, cap. 1 y caps. 10–11, pp. 481–512; especialmente proceso estratégico/operativo y SIG. · Documento Maestro v2, U2.b; Preguntas Frecuentes (Juanje), preguntas 12, 18 y 37."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Hueco explícito:** no se encontró una definición de cátedra de demanda–venta. La distinción incorporada está marcada como complemento. CPFR se desarrolla al nivel del capítulo de Chase disponible; no se inventa un procedimiento de implementación ni software obligatorio."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Clase 11 · Regresión lineal simple**"
+    }
+  ],
+  "historias": []
+}

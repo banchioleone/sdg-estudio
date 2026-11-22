@@ -1,0 +1,344 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c14",
+  "title": "Clase 14 · Validación y comparación de modelos",
+  "name": "Validación y comparación de modelos",
+  "lede": "El mejor modelo no es el que más variables tiene ni el de mayor R² sobre los datos usados. Debe ser coherente, cumplir supuestos razonables y pronosticar bien fuera de su ajuste.",
+  "visto": false,
+  "source": [
+    "drive_u2/Pronosticos_RLM.pdf: Ing. Cristian G. Bigatti (2012), regresión lineal múltiple; ejemplo de gaseosas y variables indicadoras.",
+    "texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15).",
+    "texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes).",
+    "drive_u2/RLM_Ej8.pdf: grilla de comparación 2013, diapositiva 20.",
+    "drive_u2/PracticaRegresionSimpleyMultiple.docx (resoluciones estudiantiles, no clave oficial).",
+    "Hanke, cap. 7 en Resumen V6 y 25p: selección de la mejor ecuación, regresión por pasos y sobreajuste."
+  ],
+  "laminas": [
+    "u2/img/ComparacionModelos.svg"
+  ],
+  "next": "Fin de la Unidad 2 · Próximo paso: historias para Clases 2.b-teoría, 6–14",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 14 · Validación y comparación de modelos**"
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "El mejor modelo no es el que más variables tiene ni el de mayor R² sobre los datos usados. Debe ser coherente, cumplir supuestos razonables y pronosticar bien fuera de su ajuste."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. Dos fuerzas opuestas"
+    },
+    {
+      "type": "paragraph",
+      "text": "Hanke plantea dos criterios antagónicos: incluir tantas variables como puedan aportar exactitud y conservar pocas porque obtenerlas y monitorearlas tiene costo. La ecuación más simple suele preferirse, pero no a costa de omitir información esencial. La selección exige criterio y conocimiento del problema; no termina al ordenar una columna de software."
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Reuní un conjunto potencial de variables explicativas justificadas.",
+        "Descartá las no fundamentales, con grandes errores de medición, duplicadas o difíciles de medir.",
+        "Reducí la lista para obtener la mejor combinación disponible y validala."
+      ]
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/ComparacionModelos.svg",
+      "caption": "Esquema propio que ordena criterios del material. No es un algoritmo oficial con pesos predefinidos."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Todas las regresiones posibles y por pasos"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Procedimiento",
+        "Cómo procede",
+        "Riesgo"
+      ],
+      "rows": [
+        [
+          "Todas las posibles",
+          "Examina cada combinación de predictores",
+          "Con muchas X crece rápido y aumenta el riesgo de elegir por azar."
+        ],
+        [
+          "Por pasos",
+          "Agrega o elimina una variable por vez según un criterio",
+          "Puede no encontrar la mejor combinación global y depende de umbrales."
+        ],
+        [
+          "Eliminación razonada",
+          "Retirar de a una, con atención a multicolinealidad",
+          "Una t baja puede deberse a redundancia, no a irrelevancia."
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Para p predictores, todas las combinaciones no vacías son 2ᵖ−1. Con 3 variables son 7, exactamente las columnas de la grilla RLM_Ej8: D–SC–SL, D–SC, D–SL, SC–SL, D, SC y SL. El conteo es algebraico y verificado por mí; la grilla pertenece al material."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Fila de RLM_Ej8",
+        "Qué escribir"
+      ],
+      "rows": [
+        [
+          "Supuestos",
+          "Media 0 · varianza constante · normalidad · no multicolinealidad"
+        ],
+        [
+          "Puntos influyentes",
+          "Observaciones, motivo y efecto en el ajuste"
+        ],
+        [
+          "F-test",
+          "Significación conjunta"
+        ],
+        [
+          "t-test D / SC / SL",
+          "Aporte de cada variable dada las demás"
+        ],
+        [
+          "R² / R²aj",
+          "Ajuste y penalización por complejidad"
+        ]
+      ],
+      "caption": "La diapositiva presenta la estructura; no se encontró la grilla completa resuelta."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Ejemplo calculado: cuánto agrega distancia"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Modelo gaseosas",
+        "Ecuación aproximada",
+        "sₑ",
+        "R²",
+        "R²aj"
+      ],
+      "rows": [
+        [
+          "Cajas",
+          "5,1398+2,8977X₁",
+          "3,082",
+          "0,9641",
+          "0,9625"
+        ],
+        [
+          "Distancia",
+          "14,5957+0,0435X₂",
+          "14,157",
+          "0,2423",
+          "0,2094"
+        ],
+        [
+          "Cajas + distancia",
+          "2,3092+2,7404X₁+0,0124X₂",
+          "2,287",
+          "0,9811",
+          "0,9794"
+        ]
+      ],
+      "caption": "Calculado por mí con las 25 observaciones de Bigatti. Son ajustes dentro de muestra."
+    },
+    {
+      "type": "formula",
+      "tex": "F_{parcial}=\\frac{(SCE_{red}-SCE_{comp})/q}{SCE_{comp}/(n-k-1)}"
+    },
+    {
+      "type": "paragraph",
+      "text": "Para agregar distancia a un modelo con cajas: q=1, SCE reducido≈218,49 y completo≈115,05. F parcial≈19,78, coincidente con t²≈4,45². Con un término agregado, F parcial y t² comunican la misma prueba. Que la mejora sea significativa no responde todavía si vale el costo de registrar la distancia."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Complemento (no está en el material): validación con retención calculada por mí.** Ajustando con las primeras 20 observaciones y evaluando las 5 restantes, el modelo con cajas obtiene RMSE≈2,341; con cajas y distancia, ≈1,567. Es una partición ilustrativa del orden listado, no una muestra aleatoria ni un protocolo de la cátedra."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Supuestos: el mejor ajuste puede ser inválido"
+    },
+    {
+      "type": "paragraph",
+      "text": "Repetí residuos vs ajustados, contra cada X relevante, normalidad y orden temporal si corresponde. La heterocedasticidad es varianza no constante de errores. Sin independencia, los errores estándar y pruebas pueden ser engañosos. En gaseosas, la diapositiva informa DW=2,1312 con p≈0,59: no hay evidencia de autocorrelación de primer orden si el orden representa una secuencia relevante."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Evidencia gaseosas",
+        "Resultado",
+        "Lectura"
+      ],
+      "rows": [
+        [
+          "Residuos estandarizados",
+          "obs. 15≈2,65; obs. 17≈2,25",
+          "Mirar ambos casos; no se borran automáticamente."
+        ],
+        [
+          "Mayor palanca",
+          "obs. 18, h≈0,293",
+          "X inusual; requiere evaluar efecto."
+        ],
+        [
+          "Mayor Cook",
+          "obs. 17≈0,589",
+          "Menor que 1: no supera la orientación de la diapositiva."
+        ],
+        [
+          "VIF",
+          "≈1,167",
+          "Sin multicolinealidad preocupante."
+        ]
+      ],
+      "caption": "Residuos destacados en diapositiva; palanca y Cook calculados por mí con definición estándar."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Sobreajuste y validación"
+    },
+    {
+      "type": "paragraph",
+      "text": "El V6 describe sobreajuste como agregar variables que siguen excentricidades de la muestra. El modelo luce excelente en el ajuste y pronostica peor en datos nuevos. Se sugiere al menos 10 observaciones por variable independiente y desarrollar la ecuación con una parte para evaluar otra. Si los errores de pronóstico son sustancialmente mayores que los de ajuste, hay indicio de sobreajuste."
+    },
+    {
+      "type": "paragraph",
+      "text": "Para datos temporales, una partición aleatoria puede filtrar información futura. Mantené el orden: ajustá con el pasado y evaluá con lo posterior. Si una X no estará disponible cuando se emite el pronóstico, su excelente ajuste histórico no sirve operativamente salvo que tengas su propio pronóstico."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Elegir y redactar la conclusión"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Pregunta",
+        "Evidencia",
+        "Consecuencia"
+      ],
+      "rows": [
+        [
+          "¿Es válido?",
+          "Supuestos, independencia, influencia",
+          "Si falla, revisar especificación o datos."
+        ],
+        [
+          "¿Es significativo?",
+          "F y t correctamente interpretadas",
+          "No mezclar conjunto con individuales."
+        ],
+        [
+          "¿Explica sin sobrecomplicar?",
+          "sₑ, R²aj, tamaño de efectos",
+          "Preferir simplicidad ante desempeño equivalente."
+        ],
+        [
+          "¿Pronostica?",
+          "Error fuera del ajuste",
+          "El criterio decisivo para usar el modelo."
+        ],
+        [
+          "¿Se puede operar?",
+          "Disponibilidad y costo de X",
+          "Un modelo inviable no sirve aunque ajuste."
+        ]
+      ]
+    },
+    {
+      "type": "ejercicio",
+      "title": "Viviendas: redactar con la grilla",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Con las salidas del docx: modelo completo D–SC–SL, F significativa, ninguna t significativa y VIF altos para SC y SL. Indicá qué otros modelos debés estimar y cuál sería una conclusión prudente."
+        }
+      ],
+      "estado": "resuelto",
+      "solucion": [
+        {
+          "type": "callout",
+          "kind": "aviso",
+          "text": "Respuesta guía propia, no clave oficial: estimá los siete modelos de la grilla con los mismos datos. Compará supuestos, influencia, F, t, R²aj y error de validación. La salida completa sugiere redundancia de superficies; no permite elegir una de ellas sólo por p-valor. Una conclusión prudente es «el modelo completo explica conjuntamente pero no separa efectos; se requiere comparar modelos reducidos»."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "**Integración con pronósticos de series:** comparar regresiones usa la misma ética de Clase 10. Medí el desempeño en datos no utilizados para ajustar, declarando horizonte, variables disponibles y protocolo. El mayor R² dentro de muestra no es una validación."
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Para el final.** Elegí con validez, significación, ajuste penalizado, simplicidad y desempeño fuera de muestra. Usá la grilla de siete modelos para tres variables y evitá decidir por R² dentro de muestra."
+    },
+    {
+      "type": "glosario",
+      "title": "Glosario para leer las fórmulas",
+      "intro": "Distinguí observaciones, parámetros y estimaciones antes de reemplazar números.",
+      "entries": [
+        {
+          "simbolo": "R²aj",
+          "nombre": "determinación ajustada",
+          "significado": "Penaliza por grados de libertad; no garantiza pronóstico futuro."
+        },
+        {
+          "simbolo": "hᵢᵢ",
+          "nombre": "leverage",
+          "significado": "Separa puntos con X inusual; no equivale a residuo grande."
+        },
+        {
+          "simbolo": "Cook",
+          "nombre": "influencia",
+          "significado": "Evalúa cuánto cambia el ajuste al retirar una observación."
+        },
+        {
+          "simbolo": "Ajuste / prueba",
+          "nombre": "dos evaluaciones",
+          "significado": "Explicar los datos usados no es lo mismo que anticipar observaciones no utilizadas."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fuentes, alcance y huecos"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** drive_u2/Pronosticos_RLM.pdf: Ing. Cristian G. Bigatti (2012), regresión lineal múltiple; ejemplo de gaseosas y variables indicadoras. · texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15). · texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes). · drive_u2/RLM_Ej8.pdf: grilla de comparación 2013, diapositiva 20. · drive_u2/PracticaRegresionSimpleyMultiple.docx (resoluciones estudiantiles, no clave oficial). · Hanke, cap. 7 en Resumen V6 y 25p: selección de la mejor ecuación, regresión por pasos y sobreajuste."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Huecos:** RLM_Ej8 trae la grilla pero no su resolución completa; el docx sólo reporta el modelo completo de viviendas sin las siete salidas. La validación por retención y los diagnósticos con fórmulas estándar se marcan como cálculos propios."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Fin de la Unidad 2 · Próximo paso: historias para Clases 2.b-teoría, 6–14**"
+    }
+  ],
+  "historias": []
+}

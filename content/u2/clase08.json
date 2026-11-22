@@ -1,0 +1,350 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c8",
+  "title": "Clase 8 · Winter multiplicativo",
+  "name": "Winter multiplicativo",
+  "lede": "Winter —también Winters o Holt-Winters— agrega una estación al nivel y la tendencia. La clave es sacar la estación para estimar el nivel y devolverla al pronosticar.",
+  "visto": false,
+  "source": [
+    "Bibliografía: Hanke y Wichern, Pronósticos en los negocios, cap. 4, pp. 119–135 (PDF Hanke_libro.pdf; la página PDF es la impresa +20).",
+    "texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes).",
+    "texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15).",
+    "drive_u2/PracticaPronosticos.pdf, UTN FRRo, versión 2.0 (2015), ejercicio 3 y Cuadro 3; PracticaPronosticos.xlsx, hoja Ejercicio 3 (archivo de trabajo, no solución oficial verificada)."
+  ],
+  "laminas": [
+    "u2/img/Winter_Ciclo.svg",
+    "u2/img/Winter_Prueba.svg"
+  ],
+  "next": "Clase 9 · Descomposición y desestacionalización",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 8 · Winter multiplicativo**"
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "Winter —también Winters o Holt-Winters— agrega una estación al nivel y la tendencia. La clave es sacar la estación para estimar el nivel y devolverla al pronosticar."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. Tres estados, tres constantes y una periodicidad"
+    },
+    {
+      "type": "paragraph",
+      "text": "Holt no alcanza si los picos y valles reaparecen en el calendario. Winter multiplicativo supone que la estacionalidad actúa como proporción del nivel: 20% más, no necesariamente 20 unidades más. Necesitás conocer s, la cantidad de períodos por vuelta. En datos trimestrales con patrón anual s=4; no es 12 porque el año tenga doce meses. La frecuencia de observación y el período del patrón se justifican con calendario, gráfico y autocorrelación."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Estado",
+        "Interpretación",
+        "Constante"
+      ],
+      "rows": [
+        [
+          "Lₜ",
+          "Nivel sin estacionalidad",
+          "α"
+        ],
+        [
+          "Tₜ",
+          "Cambio del nivel por período",
+          "β"
+        ],
+        [
+          "Sₜ",
+          "Índice de esta estación",
+          "γ"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "La versión multiplicativa divide por índices y por el nivel. Exige denominadores válidos y una interpretación de factores; ceros o valores negativos requieren revisar el enfoque. No fuerces una estacionalidad proporcional sólo porque el software permita elegirla. Si la amplitud es aproximadamente constante, el esquema aditivo merece consideración."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Complemento (no está en el material de Winter desarrollado aquí):** existen variantes aditivas que actualizan una estación expresada en unidades de Y. No se desarrolla un algoritmo aditivo atribuido a esta cátedra: la versión bibliográfica que seguimos es multiplicativa."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Las cuatro ecuaciones completas"
+    },
+    {
+      "type": "formula",
+      "tex": "L_t=\\alpha\\frac{Y_t}{S_{t-s}}+(1-\\alpha)(L_{t-1}+T_{t-1})"
+    },
+    {
+      "type": "formula",
+      "tex": "T_t=\\beta(L_t-L_{t-1})+(1-\\beta)T_{t-1}"
+    },
+    {
+      "type": "formula",
+      "tex": "S_t=\\gamma\\frac{Y_t}{L_t}+(1-\\gamma)S_{t-s}"
+    },
+    {
+      "type": "formula",
+      "tex": "F_{t+p}=(L_t+pT_t)S_{t-s+p}\\qquad 1\\leq p\\leq s"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/Winter_Ciclo.svg",
+      "caption": "Esquema propio de las ecuaciones 4.18–4.21 de Hanke. El error de prueba se calcula antes de actualizar con el dato probado."
+    },
+    {
+      "type": "paragraph",
+      "text": "En Lₜ, el índice Sₜ₋ₛ corresponde a **la misma estación de la vuelta anterior**, no al período inmediatamente anterior. En Sₜ usás el nivel actual ya calculado, Lₜ. En la proyección usás el último índice conocido de la estación que querés anticipar. No inventás S futuro ni actualizás estados con pronósticos haciéndolos pasar por datos."
+    },
+    {
+      "type": "paragraph",
+      "text": "Para p mayor que s, repetí cíclicamente los últimos s índices disponibles. La notación simple Sₜ₋ₛ₊ₚ se escribe usualmente para la primera vuelta; fuera de ella hay que mapear el período a su estación. En cada origen el nivel y la tendencia se proyectan, mientras el patrón estacional se reutiliza hasta conocer datos nuevos."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Errata detectada:** el resumen de 25 páginas escribe una proyección con Aₜ−pTₜ. Hanke, ecuación 4.21, usa **Lₜ+pTₜ**. Una pendiente positiva debe aumentar la base proyectada, no restarla. También Minitab puede llamar gamma al parámetro de tendencia y delta al estacional: compará funciones, no sólo letras."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Arranque: no es un detalle decorativo"
+    },
+    {
+      "type": "paragraph",
+      "text": "Hanke presenta una inicialización sencilla: nivel igual a la primera observación, tendencia cero e índices iniciales iguales a 1. También explica que Minitab estima nivel y pendiente con una regresión e índices desde datos sin tendencia. Por eso una tabla de software no tiene por qué coincidir con el arranque neutro. Para una serie corta, la diferencia puede ser grande."
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Especificá el origen inicial de L y T y qué índices previos están disponibles.",
+        "Separá los datos usados para estimar estados y constantes de la evaluación independiente.",
+        "Elegí α, β y γ mediante criterio declarado o minimización de error. Tres parámetros dan flexibilidad, pero también más posibilidad de sobreajuste.",
+        "Después evaluá errores, autocorrelaciones y estabilidad del patrón; no sólo el MSE mínimo."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Un paso completo del ejemplo 4.10 de Hanke"
+    },
+    {
+      "type": "ejemplo",
+      "title": "Acme / ferretería: actualización del trimestre 24",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "La tabla 4-9 usa α=0,4, β=0,1 y γ=0,3, con s=4. Antes de actualizar t=24 se dispone de L₂₃=501,286; T₂₃=9,1484; S₂₀=1,39628 y Y₂₄=650. Valores de la bibliografía, no inventados."
+        },
+        {
+          "type": "formula",
+          "tex": "L_{24}=0{,}4\\frac{650}{1{,}39628}+0{,}6(501{,}286+9{,}1484)\\approx492{,}469"
+        },
+        {
+          "type": "formula",
+          "tex": "T_{24}=0{,}1(492{,}469-501{,}286)+0{,}9\\cdot9{,}1484\\approx7{,}352"
+        },
+        {
+          "type": "formula",
+          "tex": "S_{24}=0{,}3\\frac{650}{492{,}469}+0{,}7\\cdot1{,}39628\\approx1{,}37336"
+        },
+        {
+          "type": "paragraph",
+          "text": "Antes de conocer Y₂₄, su pronóstico había sido (L₂₃+T₂₃)·S₂₀≈712,712. Su error es 650−712,712=−62,712. **S₂₄ no se usa para fabricar retroactivamente ese pronóstico.** Actualizar S₂₄ sirve para el cuarto trimestre de la vuelta futura."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Los cuatro pronósticos desde el mismo origen"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Objetivo",
+        "Índice conocido",
+        "Cuenta base",
+        "F de Hanke"
+      ],
+      "rows": [
+        [
+          "t=25, I",
+          "S₂₁=1,55691",
+          "(492,469+1·7,3518)·1,55691",
+          "778,179"
+        ],
+        [
+          "t=26, II",
+          "S₂₂=1,02907",
+          "(492,469+2·7,3518)·1,02907",
+          "521,917"
+        ],
+        [
+          "t=27, III",
+          "S₂₃=0,76465",
+          "(492,469+3·7,3518)·0,76465",
+          "393,430"
+        ],
+        [
+          "t=28, IV",
+          "S₂₄=1,37336",
+          "(492,469+4·7,3518)·1,37336",
+          "716,726"
+        ]
+      ],
+      "caption": "Hanke tabla 4-9; pequeñas diferencias al multiplicar con estados impresos se deben a redondeo."
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/Winter_Prueba.svg",
+      "caption": "Pronósticos bibliográficos desde t=24, sin actualizarlos con cada demanda real de 2006."
+    },
+    {
+      "type": "paragraph",
+      "text": "El índice 1,55691 no significa 155,691 unidades: significa 55,691% sobre el nivel proyectado del primer trimestre. Al avanzar a t=26 no usás otra vez el índice de I; corresponde II. Compará también F₂₅=778,179 con SES de 576 o 469: la estación fuerte del primer trimestre era la información que faltaba."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Evaluar sin mezclar horizontes"
+    },
+    {
+      "type": "paragraph",
+      "text": "Hanke informa MSE de ajuste 7636,86 y un Ljung-Box de residuos LBQ=5,01 para seis retardos, sin evidencia fuerte de patrón residual en ese ejemplo. Son resultados bibliográficos, no una demostración universal de que Winter domina a Holt. Tampoco confundas el MSE de ajuste de t=1…24 con el error de prueba de 2006."
+    },
+    {
+      "type": "ejemplo",
+      "title": "Prueba 2006 · calculada por mí con pronósticos del libro",
+      "blocks": [
+        {
+          "type": "table",
+          "headers": [
+            "Trimestre",
+            "Real",
+            "F fijo desde t=24",
+            "Error"
+          ],
+          "rows": [
+            [
+              "1",
+              "850",
+              "778,179",
+              "71,821"
+            ],
+            [
+              "2",
+              "600",
+              "521,917",
+              "78,083"
+            ],
+            [
+              "3",
+              "450",
+              "393,430",
+              "56,570"
+            ],
+            [
+              "4",
+              "700",
+              "716,726",
+              "-16,726"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Sobre esos cuatro errores, calculo MAD≈55,80 y MSE≈3683,81. Son cuatro pronósticos de horizontes 1 a 4 desde un origen fijo. No los compares como si todos fueran de un paso con una tabla que actualiza el modelo cada trimestre. Una diferencia de protocolo puede cambiar el ranking."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Ejercicio de lectura y alternativa por desestacionalización"
+    },
+    {
+      "type": "ejercicio",
+      "title": "Reconstruí el próximo ciclo",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "A partir de los estados de t=24 y los cuatro índices de la tabla, calculá F₂₅…F₂₈ e indicá cuál es un pronóstico a cuatro pasos. Luego explicá por qué el cuarto índice actualizado no interviene en F₂₅."
+        }
+      ],
+      "estado": "resuelto",
+      "solucion": [
+        {
+          "type": "paragraph",
+          "text": "Es una consigna de repaso propia con valores bibliográficos. La solución numérica está en la tabla de la sección 5: F₂₈≈716,726 es a cuatro pasos. El índice S₂₄ pertenece a IV; F₂₅ corresponde a I y usa S₂₁. Lo importante no es sólo el número: es conservar calendario y origen."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Hanke también plantea quitar primero la estacionalidad, ajustar SES o Holt a la serie depurada y volver a estacionalizar. Es una alternativa de organización del cálculo; no es idéntica a actualizar simultáneamente los tres estados de Winter. La Clase 9 desarrolla descomposición e índices para que puedas reconocer qué hace cada paso."
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Para el final.** Podés calcular las cuatro ecuaciones, identificar la estación correcta y defender el signo +pT. Declarás inicialización, periodicidad y protocolo de prueba. No confundís índice, nivel y pronóstico."
+    },
+    {
+      "type": "glosario",
+      "title": "Glosario para leer las fórmulas",
+      "intro": "Distinguí observaciones, parámetros y estimaciones antes de reemplazar números.",
+      "entries": [
+        {
+          "simbolo": "s",
+          "nombre": "longitud estacional",
+          "significado": "4 si los datos son trimestrales y el patrón se repite cada año; 12 si son mensuales."
+        },
+        {
+          "simbolo": "Sₜ",
+          "nombre": "índice estacional",
+          "significado": "Factor sin unidades: 1,20 representa 20% sobre el nivel no estacional."
+        },
+        {
+          "simbolo": "γ",
+          "nombre": "gamma",
+          "significado": "Peso de actualización del componente estacional."
+        },
+        {
+          "simbolo": "Lₜ / Tₜ",
+          "nombre": "nivel y pendiente",
+          "significado": "Se estiman después de quitar estacionalidad al dato."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fuentes, alcance y huecos"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** Bibliografía: Hanke y Wichern, Pronósticos en los negocios, cap. 4, pp. 119–135 (PDF Hanke_libro.pdf; la página PDF es la impresa +20). · texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes). · texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15). · drive_u2/PracticaPronosticos.pdf, UTN FRRo, versión 2.0 (2015), ejercicio 3 y Cuadro 3; PracticaPronosticos.xlsx, hoja Ejercicio 3 (archivo de trabajo, no solución oficial verificada)."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Alcance:** el ejemplo ahora cuenta con resolución del libro original (Hanke, no clave oficial de un final UTN). No se reconstruye la inicialización interna de Minitab a partir de estados redondeados. No hay una solución oficial identificada de un final Winter en los documentos revisados."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Clase 9 · Descomposición y desestacionalización**"
+    }
+  ],
+  "historias": []
+}

@@ -1,0 +1,380 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c7",
+  "title": "Clase 7 · Brown y Holt",
+  "name": "Brown y Holt",
+  "lede": "Una tendencia necesita nivel y pendiente. Brown obtiene ambos desde dos suavizados; Holt los actualiza directamente con dos parámetros. La justificación pesa tanto como la tabla.",
+  "visto": false,
+  "source": [
+    "Bibliografía: Hanke y Wichern, Pronósticos en los negocios, cap. 4, pp. 119–135 (PDF Hanke_libro.pdf; la página PDF es la impresa +20).",
+    "texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes).",
+    "texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15).",
+    "texto/examenes/SG!EVA.txt y SG1_Evaluaciones_hasta_2006.txt; resoluciones manuscritas en texto/ocr/sg1_ppm y efr_ppm (estudiantiles, no oficiales).",
+    "texto/examenes/mesa_especial_oct.txt (recuerdo de alumno; no incluye datos ni solución oficial)."
+  ],
+  "laminas": [
+    "u2/img/T150_SES_Holt.svg"
+  ],
+  "next": "Clase 8 · Winter multiplicativo",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 7 · Brown y Holt**"
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "Una tendencia necesita nivel y pendiente. Brown obtiene ambos desde dos suavizados; Holt los actualiza directamente con dos parámetros. La justificación pesa tanto como la tabla."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. Por qué SES queda atrás"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/T150_SES_Holt.svg",
+      "caption": "Serie real del final 26/09/2002; curvas calculadas por mí con las condiciones declaradas. La curva de Holt muestra F para cada mes, no L posterior al dato."
+    },
+    {
+      "type": "paragraph",
+      "text": "Si la demanda aumenta de forma sostenida, promediar el dato reciente con un nivel pasado produce rezago. Subir α reduce parte del atraso, pero sigue sin representar una pendiente. Brown y Holt extienden el modelo para una tendencia aproximadamente lineal local: la dirección y velocidad pueden evolucionar con el tiempo. Picos aislados no son automáticamente estaciones."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Brown: dos suavizados, un parámetro"
+    },
+    {
+      "type": "formula",
+      "tex": "A_t=\\alpha Y_t+(1-\\alpha)A_{t-1}"
+    },
+    {
+      "type": "formula",
+      "tex": "A'_t=\\alpha A_t+(1-\\alpha)A'_{t-1}"
+    },
+    {
+      "type": "formula",
+      "tex": "a_t=2A_t-A'_t\\qquad b_t=\\frac{\\alpha}{1-\\alpha}(A_t-A'_t)"
+    },
+    {
+      "type": "formula",
+      "tex": "F_{t+p}=a_t+p b_t"
+    },
+    {
+      "type": "paragraph",
+      "text": "Primero suavizás Y; después suavizás el primer suavizado. La diferencia entre ambos aporta información sobre la pendiente. El nivel corregido aₜ no es Aₜ; el pronóstico tampoco es la segunda suavización. Un único α determina la velocidad de ambas actualizaciones. Un arranque didáctico posible es A₁=A′₁=Y₁, que implica pendiente inicial cero; registrá qué períodos quedan dedicados al arranque."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Errata del resumen:** la primera recurrencia no puede ser Aₜ=αAₜ+(1−α)Aₜ₋₁: debe incorporar el dato Yₜ. La fórmula anterior usa Yₜ. Esta corrección algebraica se explicita; no se reproduce la errata como definición."
+    },
+    {
+      "type": "ejemplo",
+      "title": "Brown sobre T-150 · cálculo propio, no solución del final",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Uso α=0,3 y A₄=A′₄=700. Al cerrar mes 5: A₅=695,5; A′₅=698,65; a₅=692,35; b₅=−1,35. Entonces F₆=691,00. Al cerrar mes 11, mis cálculos sin redondeos intermedios dan a₁₁=753,23 y b₁₁=8,47; F₁₂≈761,7. Los parámetros se eligen sólo para ilustrar el algoritmo; no se afirma optimalidad."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Holt: tres ecuaciones y un orden estricto"
+    },
+    {
+      "type": "formula",
+      "tex": "L_t=\\alpha Y_t+(1-\\alpha)(L_{t-1}+T_{t-1})"
+    },
+    {
+      "type": "formula",
+      "tex": "T_t=\\beta(L_t-L_{t-1})+(1-\\beta)T_{t-1}"
+    },
+    {
+      "type": "formula",
+      "tex": "F_{t+p}=L_t+pT_t"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Antes de observar Yₜ, emití Fₜ=Lₜ₋₁+Tₜ₋₁ para poder medir eₜ.",
+        "Observado Yₜ, actualizá Lₜ usando el nivel proyectado anterior.",
+        "Calculá Tₜ con el cambio Lₜ−Lₜ₋₁ y la pendiente anterior.",
+        "Desde ese origen generá Fₜ₊ₚ. Para p=3 multiplicás Tₜ por 3; no actualizás estados con demandas futuras inexistentes."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "α suaviza el nivel; β suaviza la pendiente. α grande vuelve al nivel más sensible; β grande responde más a cambios en pendiente y también al ruido. La tendencia T tiene unidades de demanda por período. Sumar pT al nivel respeta unidades; sumar sólo β a L no las respeta. La proyección es una recta desde cada origen, pero al llegar un dato nuevo puede cambiar su pendiente."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Decisión",
+        "Opciones documentadas",
+        "Riesgo"
+      ],
+      "rows": [
+        [
+          "Arranque",
+          "L inicial=primera observación; T inicial=0. Alternativa: media y pendiente estimada de datos iniciales.",
+          "La estimación inicial puede dominar una serie corta."
+        ],
+        [
+          "Parámetros",
+          "Grilla α y β o algoritmo que minimice MSE.",
+          "Sobreajuste si elegís y juzgás con lo mismo."
+        ],
+        [
+          "Diagnóstico",
+          "Serie con tendencia y sin estación remanente importante.",
+          "Holt no corrige una estacionalidad que no modela."
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Ejemplo bibliográfico y control de redondeo"
+    },
+    {
+      "type": "ejemplo",
+      "title": "Hanke, ejemplo 4.9, pp. 128–130",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Acme: Y₁=500, Y₂=350, Y₃=250; L₁=500, T₁=0; α=0,3 y β=0,1."
+        },
+        {
+          "type": "formula",
+          "tex": "L_2=0{,}3\\cdot350+0{,}7(500+0)=455"
+        },
+        {
+          "type": "formula",
+          "tex": "T_2=0{,}1(455-500)+0{,}9\\cdot0=-4{,}5"
+        },
+        {
+          "type": "formula",
+          "tex": "F_3=455-4{,}5=450{,}5"
+        },
+        {
+          "type": "paragraph",
+          "text": "Por lo tanto e₃=250−450,5=−200,5. La tabla del libro informa para t=24 L=564,2 y T=13,5, y F₂₅=577,7. Mi recurrencia sin redondeos intermedios da aproximadamente 577,65 (577,6 a un decimal). El libro informa MSE=20515,5 para su tabla, pero mi reproducción con las condiciones enunciadas y t=1…24 da 21448,3: no uso ese MSE como verificación exacta. Se conserva la discrepancia, no se la oculta."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. T-150: tabla completa y señal de rastreo"
+    },
+    {
+      "type": "ejercicio",
+      "title": "Final 26/09/2002 · extensión didáctica Holt",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "El final entrega F₄=650 y demanda meses 4…11: 700; 685; 648; 717; 713; 728; 754; 762, y pide graficar/analizar SES. La comparación con Holt que sigue es **propia**, no forma parte de una solución oficial. Para Holt inicio L₄=700, T₄=0, α=0,3, β=0,1; evalúo meses 5…11."
+        }
+      ],
+      "estado": "resuelto",
+      "solucion": [
+        {
+          "type": "table",
+          "headers": [
+            "Mes",
+            "Y",
+            "F previo",
+            "L al cierre",
+            "T al cierre"
+          ],
+          "rows": [
+            [
+              "4",
+              "700",
+              "—",
+              "700,00",
+              "0,00"
+            ],
+            [
+              "5",
+              "685",
+              "700,00",
+              "695,50",
+              "-0,45"
+            ],
+            [
+              "6",
+              "648",
+              "695,05",
+              "680,93",
+              "-1,86"
+            ],
+            [
+              "7",
+              "717",
+              "679,07",
+              "690,45",
+              "-0,72"
+            ],
+            [
+              "8",
+              "713",
+              "689,73",
+              "696,71",
+              "-0,03"
+            ],
+            [
+              "9",
+              "728",
+              "696,68",
+              "706,08",
+              "0,91"
+            ],
+            [
+              "10",
+              "754",
+              "706,99",
+              "721,09",
+              "2,32"
+            ],
+            [
+              "11",
+              "762",
+              "723,42",
+              "734,99",
+              "3,48"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Mes 5: F₅=700, e₅=−15; L₅=695,5; T₅=−0,45. Mes 6: F₆=695,05 y e₆=−47,05. No uses el nivel posterior para medir el error del mismo mes. Al cerrar mes 11: L≈735,00; T≈3,48; F₁₂≈738,49."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Método · meses 5…11",
+            "MAD",
+            "MSE",
+            "RSFE/MAD"
+          ],
+          "rows": [
+            [
+              "SES α=2/9; F₄=650",
+              "42,41",
+              "2027,7",
+              "6,13"
+            ],
+            [
+              "Holt α=0,3; β=0,1",
+              "34,31",
+              "1299,7",
+              "3,38"
+            ],
+            [
+              "Holt α=0,5; β=0,3",
+              "29,16",
+              "1061,6",
+              "3,07"
+            ]
+          ],
+          "caption": "Todo calculado por mí sin redondeos intermedios. Mismo intervalo de evaluación; distinta inicialización declarada. Es evidencia retrospectiva, no validación independiente."
+        },
+        {
+          "type": "paragraph",
+          "text": "Para el primer Holt, Σe≈116,10 y Σ|e|≈240,20: MAD≈34,31 y TS≈3,38. Para SES usando meses 4…11 —otra ventana— TS≈7,15 y MAD≈43,36. **No mezcles denominadores y ventanas.** Si el caso fijara límites ±4, el SES de meses 5…11 daría alarma y ese Holt no; ±4 aquí es una convención didáctica, no un umbral entregado por el final. La muestra es corta y no permite proclamar superioridad futura."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Brown no se programa copiando α=β sin más"
+    },
+    {
+      "type": "paragraph",
+      "text": "Hanke, p. 128, y el resumen expresan una equivalencia entre Holt con α=β y Brown. **Cuidado con parametrizaciones:** no tomes esa frase como identidad numérica entre las recurrencias aquí escritas. Probá ambos algoritmos y verificá estados iniciales y significado de los parámetros. Con Brown α=0,3 sobre T-150 obtuve F₁₂≈761,7; no corresponde reemplazar sin más α=β=0,3 en Holt y exigir el mismo número."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Complemento (no está en el material): comprobación algebraica de parametrización.** El Brown de doble suavizado puede escribirse como Holt con α_H=2α_B−α_B² y β_H=α_B/(2−α_B), junto con estados compatibles. Para α_B=0,3: α_H=0,51 y β_H≈0,17647. No es α_H=β_H=0,3. Se incluye para evitar aprender una equivalencia literal incorrecta entre fórmulas distintas."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Qué justificar en el final"
+    },
+    {
+      "type": "paragraph",
+      "text": "El recuerdo de mesa especial de octubre dice que había tendencia ascendente y picos/valles locales, y el estudiante eligió Holt. Es una **respuesta relatada por un alumno**, no una corrección oficial. La defensa sólida es: tendencia evolutiva, necesidad de actualizar nivel y pendiente, ausencia de patrón estacional demostrado, comparación de errores y control. Si los picos reaparecen a intervalos regulares, investigá estación antes de elegir."
+    },
+    {
+      "type": "paragraph",
+      "text": "Una TS dentro de límites sólo dice que no se activó ese control de sesgo. No garantiza bajo MAD, independencia ni buena capacidad futura. Si te preguntan si el pronóstico es bueno, respondé en varios planos: patrón representado, errores, sesgo y uso operativo. La Clase 10 integra esos planos."
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Para el final.** Distinguí nivel de pronóstico, ejecutá nivel→tendencia→proyección, no confundas p con t, y acompañá la elección con errores y rastreo. Tendencia no es estacionalidad."
+    },
+    {
+      "type": "glosario",
+      "title": "Glosario para leer las fórmulas",
+      "intro": "Distinguí observaciones, parámetros y estimaciones antes de reemplazar números.",
+      "entries": [
+        {
+          "simbolo": "Lₜ / Tₜ",
+          "nombre": "nivel / tendencia",
+          "significado": "Estado al cerrar t; unidades de Y y de Y por período, respectivamente."
+        },
+        {
+          "simbolo": "α / β",
+          "nombre": "suavizadores",
+          "significado": "Pesos para nivel y tendencia en Holt."
+        },
+        {
+          "simbolo": "Aₜ / A′ₜ",
+          "nombre": "suavizados de Brown",
+          "significado": "Primera y segunda suavización de la misma serie."
+        },
+        {
+          "simbolo": "p",
+          "nombre": "horizonte",
+          "significado": "Pasos desde el origen t hasta el período que pronosticás."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fuentes, alcance y huecos"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** Bibliografía: Hanke y Wichern, Pronósticos en los negocios, cap. 4, pp. 119–135 (PDF Hanke_libro.pdf; la página PDF es la impresa +20). · texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes). · texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15). · texto/examenes/SG!EVA.txt y SG1_Evaluaciones_hasta_2006.txt; resoluciones manuscritas en texto/ocr/sg1_ppm y efr_ppm (estudiantiles, no oficiales). · texto/examenes/mesa_especial_oct.txt (recuerdo de alumno; no incluye datos ni solución oficial)."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Huecos:** el recuerdo de mesa especial no trae tabla ni constantes, por lo que no se puede reconstruir su resultado. T-150 se extiende con cálculos propios. Se documentan la discrepancia de MSE de Holt en Hanke y el problema de equivalencia literal Brown/Holt; no se reemplazan silenciosamente las fuentes."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Clase 8 · Winter multiplicativo**"
+    }
+  ],
+  "historias": []
+}

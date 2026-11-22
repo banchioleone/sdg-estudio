@@ -20,7 +20,7 @@
   "laminas": [
     "u2/img/ArbolDecisorio_MetodosPronostico.svg"
   ],
-  "next": "Clase 6 · Suavizado exponencial simple (próximamente)",
+  "next": "Clase 6 · Suavización exponencial simple",
   "teoria": [
     {
       "type": "paragraph",
@@ -601,7 +601,7 @@
     },
     {
       "type": "paragraph",
-      "text": "**Próxima clase → Clase 6: Suavizado exponencial simple** (elección de α, inicialización). La señal de rastreo ya está en la Clase 4."
+      "text": "**Próxima clase → Clase 6: Suavización exponencial simple** (elección de α, inicialización, ejercicio 2.2 del alimento para perros y control)."
     }
   ],
   "historias": [

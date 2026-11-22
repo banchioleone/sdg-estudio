@@ -1,0 +1,375 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c10",
+  "title": "Clase 10 · Integrador de métodos y control",
+  "name": "Integrador de métodos y control",
+  "lede": "Elegir implica diagnosticar, calcular y defender. La precisión mide cuánto te equivocás; el rastreo busca sesgo; la utilidad depende de la decisión. Ninguno reemplaza a los otros.",
+  "visto": false,
+  "source": [
+    "Bibliografía: Hanke y Wichern, Pronósticos en los negocios, cap. 4, pp. 119–135 (PDF Hanke_libro.pdf; la página PDF es la impresa +20).",
+    "texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes).",
+    "texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15).",
+    "drive_u2/PracticaPronosticos.pdf, UTN FRRo, versión 2.0 (2015), ejercicio 3 y Cuadro 3; PracticaPronosticos.xlsx, hoja Ejercicio 3 (archivo de trabajo, no solución oficial verificada).",
+    "texto/examenes/SG!EVA.txt y SG1_Evaluaciones_hasta_2006.txt; resoluciones manuscritas en texto/ocr/sg1_ppm y efr_ppm (estudiantiles, no oficiales).",
+    "Hanke, cap. 11, pp. 503–512; texto/examenes/17-02-14.txt, Final SG1 - 8 Agosto de 2013.txt y mesa_especial_oct.txt."
+  ],
+  "laminas": [
+    "u2/img/Rastreo_T150.svg"
+  ],
+  "next": "Clase 2.b-teoría · Demanda, cualitativos y sistemas de pronóstico",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 10 · Integrador de métodos y control**"
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "Elegir implica diagnosticar, calcular y defender. La precisión mide cuánto te equivocás; el rastreo busca sesgo; la utilidad depende de la decisión. Ninguno reemplaza a los otros."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. Matriz de elección razonada"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Lo que ves / sabés",
+        "Candidatos",
+        "Justificación y control"
+      ],
+      "rows": [
+        [
+          "Nivel estable, sin estación",
+          "Informal, promedio, móvil, SES",
+          "Base simple; elegí memoria por error de prueba."
+        ],
+        [
+          "Pendiente evolutiva, sin estación",
+          "Brown / Holt",
+          "Actualizan nivel y pendiente; controlá rezago."
+        ],
+        [
+          "Tendencia con estación proporcional",
+          "Winter multiplicativo",
+          "Nivel sin estación + tendencia + factores por posición."
+        ],
+        [
+          "Patrón interpretable por componentes",
+          "Descomposición",
+          "Estimá índices, proyectá base y recomponé."
+        ],
+        [
+          "X explicativa disponible y relación plausible",
+          "Regresión simple o múltiple",
+          "Validá supuestos, disponibilidad futura y extrapolación."
+        ],
+        [
+          "Sin historia comparable / cambio de régimen",
+          "Juicio estructurado, analogía, escenarios",
+          "Documentá información, incertidumbre y revisión."
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Un algoritmo no se elige porque «es el último visto». Tampoco porque una única métrica histórica sea mínima entre opciones mal planteadas. Primero evitá errores de familia; después ajustá parámetros. Finalmente comprobá si el costo del error resultante permite la decisión. La bibliografía menciona también ARIMA/Box-Jenkins para varias familias; acá no inventamos una clase de algoritmos que el plan de esta secuencia no desarrolla."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Protocolo completo: de la necesidad a la revisión"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Definí decisión, variable, unidad, frecuencia, horizonte y fecha de emisión.",
+        "Revisá registros: faltantes, cambios de unidad, datos atípicos, ventas restringidas y comparabilidad.",
+        "Graficá, analizá componentes y autocorrelación, formulá candidatos.",
+        "Separá ajuste y prueba. Fijá arranque, ventanas y criterio; compará sobre fechas y horizontes comunes.",
+        "Emití, medí errores y controlá. Ante una alarma, investigá antes de retocar parámetros."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Hanke presenta cinco pasos generales —problema y datos, depuración, modelado y evaluación, implementación y evaluación del pronóstico— y en cap. 11 incorpora la retroalimentación. El procedimiento anterior es una síntesis de trabajo, no una cita literal ni un «algoritmo oficial» nuevo."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Tres herramientas de control que no son intercambiables"
+    },
+    {
+      "type": "formula",
+      "tex": "RSFE_t=\\sum_{i=1}^{t}e_i\\qquad MAD_t=\\frac{\\sum_{i=1}^{t}|e_i|}{t}"
+    },
+    {
+      "type": "formula",
+      "tex": "TS_t=\\frac{RSFE_t}{MAD_t}"
+    },
+    {
+      "type": "paragraph",
+      "text": "Con e=Y−F, TS positiva indica acumulación de subestimaciones; negativa, sobreestimaciones. Si MAD=0, todos los errores de la ventana son cero y la razón 0/0 no está definida: describí ajuste perfecto de esa ventana, no hagas una división inválida. La ventana puede ser acumulada o móvil; mantenela igual en numerador y denominador."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Control",
+        "Qué mide",
+        "Qué exige"
+      ],
+      "rows": [
+        [
+          "TS=RSFE/MAD, Chase",
+          "Magnitud y persistencia del error firmado respecto de MAD",
+          "Límites establecidos por el caso; no un umbral universal."
+        ],
+        [
+          "Conteo U, Hanke",
+          "Cuántos errores positivos hubo en los últimos k pronósticos",
+          "Ventana y regla de alarma; no usa tamaños."
+        ],
+        [
+          "Límites ±2 RMSE, Hanke",
+          "Si un error individual es demasiado grande",
+          "Aproximación normal, media cero y variabilidad representativa."
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "En el ejemplo de Hanke con k=10, E(U)=5. El libro considera 2≤U≤8 como zona sin alarma y U=0,1,9,10 como señal: bajo signos independientes equiprobables su probabilidad conjunta es aproximadamente 0,022. **No traslades esa regla a k=7 ni confundas U=8 con TS=8.** Si todos los errores positivos son diminutos y uno negativo enorme, el conteo y la TS pueden contar historias distintas."
+    },
+    {
+      "type": "formula",
+      "tex": "\\text{Límites aproximados del error}=0\\pm2\\sqrt{MSE}"
+    },
+    {
+      "type": "paragraph",
+      "text": "El ejemplo 4.8 usa MSE=19447 y RMSE≈139,5; límite aproximado ±279 unidades. En cap. 11, σₑ=935 y z=1,96 dan ±1833. No son límites de TS. Son límites en unidades de Y; TS es una razón. Una alarma no prueba automáticamente que α es el culpable: puede haber un dato incorrecto, una promoción o un cambio real de patrón."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Holt + rastreo: cálculo listo para defender"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/Rastreo_T150.svg",
+      "caption": "Cálculo propio a partir de los errores de Clase 7. Los límites ±4 son una hipótesis didáctica, no un dato del final de T-150."
+    },
+    {
+      "type": "ejemplo",
+      "title": "T-150: lectura correcta de un control",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Holt α=0,3 y β=0,1 en meses 5…11 arroja RSFE≈116,10; MAD≈34,31; TS≈3,38. Con límites hipotéticos ±4 no dispara alarma al final de la ventana. Eso no significa «sesgo cero»: hay acumulación positiva, cinco errores positivos y dos negativos, y conviene mirar su secuencia. SES, en la misma ventana de evaluación, da TS≈6,13 y sí alertaría."
+        },
+        {
+          "type": "paragraph",
+          "text": "La curva acumulada comienza en −1 porque el primer error es negativo y MAD coincide con su magnitud. A medida que crecen los errores positivos, cambia el signo del acumulado. Podés obtener una TS aceptable y aun así MAD inaceptable para abastecimiento: la empresa debe fijar qué error puede tolerar."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Heladeras: por qué no se comparan ventanas distintas"
+    },
+    {
+      "type": "ejercicio",
+      "title": "SG!EVA · PM6, PM3 y nivelación exponencial",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Demanda enero…junio: 200; 300; 200; 400; 500; 600. El enunciado dice que la demanda es sostenida hasta agosto y pide calcular, interpretar, recomendar y clasificar la empresa de ensamble."
+        }
+      ],
+      "estado": "resuelto",
+      "solucion": [
+        {
+          "type": "callout",
+          "kind": "aviso",
+          "text": "**Resolución estudiantil SG1 p-09:** adopta α=0,28, F_ene=200; informa F_jul≈408, PM6≈366, PM3=500, MAD_SES≈160 y MAD_PM3≈200,3, y recomienda SES. No es clave oficial. A continuación contrasto las cuentas y la comparabilidad."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Mes",
+            "Real",
+            "SES recalculado",
+            "PM3"
+          ],
+          "rows": [
+            [
+              "Ene",
+              "200",
+              "200,00",
+              "—"
+            ],
+            [
+              "Feb",
+              "300",
+              "200,00",
+              "—"
+            ],
+            [
+              "Mar",
+              "200",
+              "228,00",
+              "—"
+            ],
+            [
+              "Abr",
+              "400",
+              "220,16",
+              "233,33"
+            ],
+            [
+              "May",
+              "500",
+              "270,52",
+              "300,00"
+            ],
+            [
+              "Jun",
+              "600",
+              "334,77",
+              "366,67"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Mis resultados sin redondeo: F_jul(SES)=409,04; PM6_jul=366,67; PM3_jul=500. Para abril…junio, PM3 tiene MAD=200,00 y SES MAD≈224,85. El MAD≈160,51 de SES corresponde a febrero…junio: no es la misma ventana. **El veredicto estudiantil no queda justificado por esa comparación.** Sobre el intervalo común, PM3 se desempeña mejor que ese SES, pero con tres errores no hay validación sólida."
+        },
+        {
+          "type": "paragraph",
+          "text": "PM6 sólo tiene pronóstico de julio, sin demanda real de julio informada: no podés calcular su error de prueba. «Sostenida hasta agosto» tampoco entrega números reales de julio/agosto. Desde el origen junio, SES proyecta el mismo nivel para ambos; si proyectás PM3 recursivo, tendrías que declarar cómo reemplazás datos no observados. La empresa de ensamble se clasifica como industrial; la descripción por serie/ensamble viene de la solución estudiantil y no es criterio para elegir el pronóstico."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Lo que efectivamente piden los finales"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Fuente",
+        "Pedido observado",
+        "Respuesta esperable"
+      ],
+      "rows": [
+        [
+          "08/08/2013",
+          "Explicar nivelación o suavización exponencial",
+          "Ecuación, símbolos, peso, actualización y supuesto de nivel."
+        ],
+        [
+          "17/02/2014",
+          "SES, justificar y saber cuál es mejor",
+          "Métodos comparables, error y patrón; no sólo reemplazo numérico."
+        ],
+        [
+          "Mesa especial octubre (recuerdo)",
+          "Elegir método del gráfico; juzgar salida/TS; capacidad al 95%",
+          "Distinguir técnica, control y cobertura de demanda."
+        ],
+        [
+          "26/09/2002 · T-150",
+          "Graficar y analizar resultados de SES",
+          "Mostrar rezago y discutir tendencia, no sólo llenar una columna."
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "El recuerdo de mesa no tiene datos numéricos completos. La frase del alumno «TS dentro de límites, técnica buena» debe matizarse: sólo es un control de sesgo que no se activó. Tampoco se considera una solución oficial ni prueba de que basta con mirar un único estadístico."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Complemento (no está en el enunciado numérico disponible): capacidad para una cobertura de un período.** Si la demanda condicional fuera normal, con media pronosticada F y desviación σₑ conocida, una capacidad C=F+1,645σₑ cubriría aproximadamente 95% por un solo lado. F+1,96σₑ corresponde al extremo de un intervalo bilateral central 95%, no a la misma pregunta. Debés considerar período, agregación, correlación y restricciones; no se reconstruye el resultado de aquella mesa sin sus datos."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Errores de examen que tenés que frenar"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "No llames «mejor» al modelo con menor suma firmada: los errores se cancelan.",
+        "No compares un MAD de tres meses con otro de cinco sin declarar la diferencia.",
+        "No uses el MSE de regresión con denominador n−k−1 como si fuera el MSE de prueba Σe²/m sin distinguirlos.",
+        "No tomes ausencia de alarma como demostración de normalidad o independencia.",
+        "No confundas nivelación de pronósticos con nivelación de capacidad de las unidades posteriores.",
+        "Si una pregunta frecuente marca «minimizar el valor absoluto del error», reconocé el criterio de esa pregunta; no concluyas que MAD es universalmente superior a MSE o que cualquier pronóstico óptimo usa lo mismo."
+      ]
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Para el final.** En el final escribí: diagnóstico → técnica y supuestos → cuentas fechadas → error comparable → rastreo → conclusión limitada. Podés justificar un cambio de modelo sin confundir precisión, sesgo y cobertura."
+    },
+    {
+      "type": "glosario",
+      "title": "Glosario para leer las fórmulas",
+      "intro": "Distinguí observaciones, parámetros y estimaciones antes de reemplazar números.",
+      "entries": [
+        {
+          "simbolo": "RSFE",
+          "nombre": "suma de errores",
+          "significado": "Σ(Yₜ − Fₜ) sobre la ventana declarada."
+        },
+        {
+          "simbolo": "TS",
+          "nombre": "señal de rastreo",
+          "significado": "RSFE/MAD: signo de sesgo acumulado, no tamaño típico del error."
+        },
+        {
+          "simbolo": "U",
+          "nombre": "conteo de subestimaciones",
+          "significado": "Número de errores positivos en una ventana de k pronósticos."
+        },
+        {
+          "simbolo": "RMSE",
+          "nombre": "raíz del MSE",
+          "significado": "Medida en unidades de demanda; puede usarse como estimación de σ del error bajo supuestos."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fuentes, alcance y huecos"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** Bibliografía: Hanke y Wichern, Pronósticos en los negocios, cap. 4, pp. 119–135 (PDF Hanke_libro.pdf; la página PDF es la impresa +20). · texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes). · texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15). · drive_u2/PracticaPronosticos.pdf, UTN FRRo, versión 2.0 (2015), ejercicio 3 y Cuadro 3; PracticaPronosticos.xlsx, hoja Ejercicio 3 (archivo de trabajo, no solución oficial verificada). · texto/examenes/SG!EVA.txt y SG1_Evaluaciones_hasta_2006.txt; resoluciones manuscritas en texto/ocr/sg1_ppm y efr_ppm (estudiantiles, no oficiales). · Hanke, cap. 11, pp. 503–512; texto/examenes/17-02-14.txt, Final SG1 - 8 Agosto de 2013.txt y mesa_especial_oct.txt."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Huecos:** no hay tabla completa del recuerdo de mesa especial ni límites de TS fijados para T-150. Se usa un ejemplo calculado propio y se rotulan los límites didácticos. La clasificación de la empresa de heladeras no se amplía más allá de lo que permite el enunciado."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Clase 2.b-teoría · Demanda, cualitativos y sistemas de pronóstico**"
+    }
+  ],
+  "historias": []
+}

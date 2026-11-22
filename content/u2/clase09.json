@@ -1,0 +1,416 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c9",
+  "title": "Clase 9 · Descomposición y desestacionalización",
+  "name": "Descomposición y desestacionalización",
+  "lede": "Descomponer es separar patrones; pronosticar es recombinarlos con hipótesis explícitas. Sacar una estación no elimina ni tendencia ni incertidumbre.",
+  "visto": false,
+  "source": [
+    "Bibliografía: Hanke y Wichern, Pronósticos en los negocios, cap. 5, pp. 165–187, ejemplos 5.1–5.4.",
+    "texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes).",
+    "texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15).",
+    "Hanke, cap. 5: Cavanaugh, tablas 5-2/5-3 y Coastal Marine, tabla 5-4.",
+    "Chase cap. 15 en Resumen V6, procedimiento ilustración 15.15 (datos de origen parcialmente en imagen)."
+  ],
+  "laminas": [
+    "u2/img/Descomposicion.svg",
+    "u2/img/Indices_Coastal.svg"
+  ],
+  "next": "Clase 10 · Integrador de métodos y control",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 9 · Descomposición y desestacionalización**"
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "Descomponer es separar patrones; pronosticar es recombinarlos con hipótesis explícitas. Sacar una estación no elimina ni tendencia ni incertidumbre."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. Del diagnóstico al modelo de componentes"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Aspecto",
+        "Aditivo",
+        "Multiplicativo"
+      ],
+      "rows": [
+        [
+          "Modelo",
+          "Y=T+S+I (o +C si se separa)",
+          "Y=T·S·I (o ·C si se separa)"
+        ],
+        [
+          "Amplitud estacional",
+          "Aproximadamente constante en unidades",
+          "Crece aproximadamente con el nivel"
+        ],
+        [
+          "S sin efecto",
+          "0",
+          "1"
+        ],
+        [
+          "Desestacionalizar",
+          "Y−S",
+          "Y/S"
+        ],
+        [
+          "Unidades de S",
+          "Unidades de la serie",
+          "Factor sin unidades"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "La forma de embudo o megáfono sugiere un modelo multiplicativo cuando crece la variabilidad con el nivel. No alcanza con que la tendencia sea ascendente: verificá si crece la amplitud de las oscilaciones. Hanke explica que la separación entre tendencia y ciclo no siempre es nítida; por simplificación, a menudo el ciclo se considera dentro de la tendencia."
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/Descomposicion.svg",
+      "caption": "Esquema propio. El orden concreto de estimación de tendencia e índices depende del método y del software: no mezcles procedimientos sin declararlo."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Tendencia: estimar no es extrapolar indefinidamente"
+    },
+    {
+      "type": "formula",
+      "tex": "\\hat{T}_t=b_0+b_1t\\qquad \\hat{T}_{n+p}=b_0+b_1(n+p)"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Curva bibliográfica",
+        "Forma",
+        "Interpretación"
+      ],
+      "rows": [
+        [
+          "Lineal",
+          "b₀+b₁t",
+          "Incremento absoluto constante por período."
+        ],
+        [
+          "Cuadrática",
+          "b₀+b₁t+b₂t²",
+          "Pendiente que cambia; proyección lejana puede ser poco plausible."
+        ],
+        [
+          "Exponencial",
+          "b₀·b₁ᵗ",
+          "Tasa proporcional constante: 100(b₁−1)%."
+        ],
+        [
+          "Curvas de crecimiento",
+          "Logística / Gompertz",
+          "Permiten saturación; no se asume crecimiento ilimitado."
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "El origen n es el último período conocido; p es cuántos pasos querés avanzar. El código temporal debe ser consistente: si t=1 representa el primer trimestre de 2000, t=29 es el primero de 2007. Una tendencia que ajusta bien no siempre tiene sentido proyectada. Revisá continuidad de condiciones, alcance de los datos y límites del fenómeno."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Índices por proporción al promedio móvil centrado"
+    },
+    {
+      "type": "paragraph",
+      "text": "El libro original de Hanke sí desarrolla este procedimiento en pp. 176–179, aunque no estaba desplegado en los resúmenes. Se estima localmente tendencia-ciclo con un promedio de una vuelta estacional, se compara cada dato con esa base y se sintetizan razones de la misma estación. Para un número par de períodos hay que centrar: el promedio inicial cae entre dos fechas."
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Calculá promedios móviles de una vuelta completa: 12 meses si el patrón anual se observa mensualmente.",
+        "Centrálos promediando dos promedios consecutivos; en datos trimestrales equivale a un promedio 2×4.",
+        "Dividí cada Yₜ por el promedio centrado disponible de esa fecha. Obtenés razones estacionales con irregularidad.",
+        "Agrupá razones del mismo mes o trimestre. Hanke usa la mediana para limitar la influencia de valores extremos.",
+        "Normalizá: los índices multiplicativos deben promediar 1; por tanto sumar 12 en mensual o 4 en trimestral."
+      ]
+    },
+    {
+      "type": "formula",
+      "tex": "S_j=\\frac{s\\,m_j}{\\sum_{j=1}^{s}m_j}"
+    },
+    {
+      "type": "paragraph",
+      "text": "Aquí mⱼ es la mediana de razones para la estación j; la fórmula compacta es mi escritura del ajuste explicado por Hanke. Al perderse promedios centrados en los extremos, no podés prolongar la tendencia simplemente usando un PMC inexistente. Para pronosticar se necesita una tendencia extrapolable u otro método para la base."
+    },
+    {
+      "type": "ejemplo",
+      "title": "Cavanaugh: cuenta bibliográfica verificable",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Ventas mensuales 2004: 518; 404; 300; 210; 196; 186; 247; 343; 464; 680; 711; 610. Enero de 2005: 613. Los totales móviles de doce meses que rodean julio 2004 son 4869 y 4964."
+        },
+        {
+          "type": "formula",
+          "tex": "PMC_{jul04}=\\frac{4869+4964}{24}=409{,}7083"
+        },
+        {
+          "type": "formula",
+          "tex": "\\text{razón}_{jul04}=\\frac{247}{409{,}7083}\\approx0{,}603"
+        },
+        {
+          "type": "paragraph",
+          "text": "La tabla 5-3 reúne varios años: mediana de julio≈0,651 y suma de las doce medianas≈11,948. Multiplicador=12/11,948≈1,0044. Índice de julio publicado≈0,654; una posición cerca de 35% por debajo de la base. Los valores son bibliográficos; las divisiones anteriores fueron verificadas por mí. Los índices impresos suman 12,002 por redondeo, no exactamente 12."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Qué significa desestacionalizar"
+    },
+    {
+      "type": "formula",
+      "tex": "Y_t^{(d)}=\\frac{Y_t}{S_t}=T_t C_t I_t"
+    },
+    {
+      "type": "paragraph",
+      "text": "Comparar enero con diciembre sin ajustar puede confundir recuperación con calendario. La serie desestacionalizada permite comparar períodos, estudiar relaciones con otras variables y modelar una base más limpia para pronosticar. No se convierte en una serie constante: todavía contiene tendencia, ciclo e irregularidad. Un índice 0,8 exige dividir por 0,8 para quitar su efecto, no multiplicar."
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/Indices_Coastal.svg",
+      "caption": "Índices de Hanke, ejemplo 5.3. El índice neutro es 1, no 0."
+    },
+    {
+      "type": "ejemplo",
+      "title": "Coastal Marine: separar componentes",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Para 2000-I, Hanke informa Y=232,7, T=262 y S=0,77967. Sin tendencia: Y/T≈0,888. Sin estación: Y/S≈298,458. Sin ambos: Y/(T·S)≈1,139. Son tres transformaciones diferentes con interpretaciones distintas."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Dato",
+            "Resultado bibliográfico",
+            "Lectura"
+          ],
+          "rows": [
+            [
+              "Y/T",
+              "0,888",
+              "Quedan S·C·I."
+            ],
+            [
+              "Y/S",
+              "298,458",
+              "Quedan T·C·I, en unidades de Y."
+            ],
+            [
+              "Y/(T·S)",
+              "1,139",
+              "Quedan C·I, un factor."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Si se separan ciclo e irregularidad"
+    },
+    {
+      "type": "formula",
+      "tex": "CI_t=\\frac{Y_t}{T_tS_t}\\qquad I_t=\\frac{CI_t}{C_t}"
+    },
+    {
+      "type": "paragraph",
+      "text": "Hanke suaviza CI con un móvil impar para aproximar C: tres períodos en trimestral; 5, 7, 9 u 11 en mensual según el caso. Luego divide CI por C. En Coastal, los tres primeros CI son 1,139; 1,159; 1,056: el promedio centrado para el segundo trimestre es 1,118; I₂≈1,159/1,118≈1,036."
+    },
+    {
+      "type": "paragraph",
+      "text": "No conviertas el ciclo en una estación de duración fija. El ciclo macroeconómico tiene puntos de giro inciertos. Hanke distingue indicadores adelantados, coincidentes y retrasados como información de contexto; aun los adelantados requieren juicio. Para proyectar Coastal el libro adopta C=1 e I=1, no porque se hayan extinguido sino porque no incorpora una predicción específica de sus desvíos."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Recomponer el pronóstico: ejemplo del libro"
+    },
+    {
+      "type": "formula",
+      "tex": "F_{n+p}=\\hat{T}_{n+p}S_{n+p}\\quad\\text{si se adopta } C=I=1"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Período",
+        "T proyectada con 261,24+0,759t",
+        "S",
+        "F bibliográfico"
+      ],
+      "rows": [
+        [
+          "29 · 2007-I",
+          "283,251",
+          "0,77967",
+          "220,842"
+        ],
+        [
+          "30 · 2007-II",
+          "284,010",
+          "1,01566",
+          "288,455"
+        ],
+        [
+          "31 · 2007-III",
+          "284,769",
+          "1,11667",
+          "317,990"
+        ],
+        [
+          "32 · 2007-IV",
+          "285,528",
+          "1,08800",
+          "310,654"
+        ]
+      ],
+      "caption": "Hanke ejemplo 5.4. Las proyecciones usan el período absoluto 28+p, no solamente p."
+    },
+    {
+      "type": "paragraph",
+      "text": "Una base con incremento constante puede producir pronósticos que suben y bajan por estación. Eso no contradice la tendencia positiva. Los factores S permanecen constantes en este esquema clásico; Winter los actualiza. Si cambia la estación, estimar índices con demasiados años puede promediar patrones que ya no representan el presente."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. La alternativa sencilla de Chase"
+    },
+    {
+      "type": "paragraph",
+      "text": "El V6 describe otro procedimiento: estimar factores como promedio de cada trimestre dividido por promedio global, dividir la serie por esos factores, ajustar mínimos cuadrados a la serie desestacionalizada, proyectar y multiplicar por el factor futuro. **No es la misma estimación que razón a PMC.** Un promedio estacional simple puede confundirse con tendencia si el diseño de los datos no es equilibrado o el nivel cambia."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Período",
+        "Base de tendencia",
+        "Factor",
+        "Pronóstico de Chase"
+      ],
+      "rows": [
+        [
+          "13",
+          "5003,5",
+          "0,82",
+          "4102,87"
+        ],
+        [
+          "14",
+          "5345,7",
+          "1,10",
+          "5880,27"
+        ],
+        [
+          "15",
+          "5687,9",
+          "0,97",
+          "5517,26"
+        ],
+        [
+          "16",
+          "6030,1",
+          "1,12",
+          "6753,71"
+        ]
+      ],
+      "caption": "Tabla final del V6. Los factores redondeados suman 4,01. No los renormalizo silenciosamente: se conservan como en la fuente."
+    },
+    {
+      "type": "paragraph",
+      "text": "El total original 33350/12≈2779 aparece en el texto, pero la tabla de observaciones iniciales de Chase es imagen y no está disponible como serie completa en la extracción consultada. No se inventan datos para reconstruir una regresión. El ejemplo de Hanke anterior permite estudiar un procedimiento completo con información verificable."
+    },
+    {
+      "type": "ejercicio",
+      "title": "Explicá y verificá, no sólo multipliques",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "En Coastal, repetí el pronóstico del trimestre 29, indicá qué supone I=1 y explicá si Y/S elimina el ciclo."
+        }
+      ],
+      "estado": "resuelto",
+      "solucion": [
+        {
+          "type": "paragraph",
+          "text": "Con valores bibliográficos: (261,24+0,759·29)·0,77967≈220,842. I=1 es un factor neutro para el pronóstico puntual: no significa ausencia de errores futuros. Y/S conserva T·C·I, por lo que no elimina el ciclo. Consigna propia de lectura del ejemplo resuelto del libro."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Para el final.** Descomponer, desestacionalizar y pronosticar no son sinónimos. Identificá qué queda en cada cociente y qué estación corresponde al objetivo. Declará C=I=1 como hipótesis, no como verdad."
+    },
+    {
+      "type": "glosario",
+      "title": "Glosario para leer las fórmulas",
+      "intro": "Distinguí observaciones, parámetros y estimaciones antes de reemplazar números.",
+      "entries": [
+        {
+          "simbolo": "T / S / C / I",
+          "nombre": "componentes",
+          "significado": "Tendencia, estacionalidad, ciclo e irregularidad."
+        },
+        {
+          "simbolo": "PMC",
+          "nombre": "promedio móvil centrado",
+          "significado": "Estimación local de tendencia-ciclo; no equivale a un pronóstico móvil desplazado."
+        },
+        {
+          "simbolo": "Y/S",
+          "nombre": "serie desestacionalizada",
+          "significado": "Conserva tendencia, ciclo e irregularidad."
+        },
+        {
+          "simbolo": "p / n",
+          "nombre": "pasos / origen",
+          "significado": "El período objetivo es n+p, no p aislado."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fuentes, alcance y huecos"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** Bibliografía: Hanke y Wichern, Pronósticos en los negocios, cap. 5, pp. 165–187, ejemplos 5.1–5.4. · texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes). · texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15). · Hanke, cap. 5: Cavanaugh, tablas 5-2/5-3 y Coastal Marine, tabla 5-4. · Chase cap. 15 en Resumen V6, procedimiento ilustración 15.15 (datos de origen parcialmente en imagen)."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Huecos:** no se reconstruye la tabla bruta faltante de Chase. Se usa el desarrollo completo de Hanke para cubrir centrado, normalización, ciclo y recomposición. El tratamiento de índices depende del procedimiento: se señala cuándo los resultados provienen del libro y cuándo la cuenta fue verificada por mí."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Clase 10 · Integrador de métodos y control**"
+    }
+  ],
+  "historias": []
+}

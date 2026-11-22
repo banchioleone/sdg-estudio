@@ -1,0 +1,372 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c11",
+  "title": "Clase 11 · Regresión lineal simple",
+  "name": "Regresión lineal simple",
+  "lede": "La regresión explica la media condicional de Y según X y permite pronosticar si X será conocida o proyectada. Mínimos cuadrados ajusta una recta: no prueba causalidad.",
+  "visto": false,
+  "source": [
+    "drive_u2/Apunte2013_RLS.pdf: Bigatti–Leale–Moine, Regresión lineal simple, versión 2013/1.0; y Pronosticos_RLS.pdf, Bigatti (2014).",
+    "texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15).",
+    "texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes).",
+    "drive_u2/PracticaRegresionSimpleyMultiple.docx (resoluciones estudiantiles, no clave oficial).",
+    "Hanke, cap. 6; ejemplo de volumen/precio reproducido en el Resumen V6."
+  ],
+  "laminas": [
+    "u2/img/RLS_Mascotas.svg"
+  ],
+  "next": "Clase 12 · Inferencia en regresión",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 11 · Regresión lineal simple**"
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "La regresión explica la media condicional de Y según X y permite pronosticar si X será conocida o proyectada. Mínimos cuadrados ajusta una recta: no prueba causalidad."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. Antes de ajustar: qué relación querés modelar"
+    },
+    {
+      "type": "paragraph",
+      "text": "En series de tiempo la variable explicativa puede ser el tiempo; en un modelo causal, una variable distinta. El análisis pide una relación interpretable y disponibilidad de X en el momento de pronosticar. Si para predecir ventas necesitás un precio futuro desconocido, debés pronosticar también ese precio. La correlación de la Clase 2 resume asociación lineal; la regresión asigna roles a respuesta y predictora."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Forma de obtener datos, apunte",
+        "Qué permite",
+        "Cuidado"
+      ],
+      "rows": [
+        [
+          "Retrospectiva",
+          "Usar registros históricos",
+          "Pueden faltar variables o haber cambiado definiciones."
+        ],
+        [
+          "Observacional",
+          "Medir sin intervenir",
+          "La asociación puede tener terceros factores."
+        ],
+        [
+          "Experimento diseñado",
+          "Controlar niveles de X",
+          "No elimina errores de medición ni extrapolación."
+        ]
+      ]
+    },
+    {
+      "type": "formula",
+      "tex": "Y_i=\\beta_0+\\beta_1x_i+ε_i\\qquad i=1,\\ldots,n"
+    },
+    {
+      "type": "paragraph",
+      "text": "β₀ y β₁ son parámetros poblacionales; b₀ y b₁, estimaciones muestrales. εᵢ representa factores no medidos y aleatoriedad, nunca un residuo calculado. En el apunte la recta se escribe también como Ŷ=a+bx. Es la misma estructura: a=b₀ y b=b₁. No uses un símbolo con dos significados en la misma resolución."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Mínimos cuadrados"
+    },
+    {
+      "type": "formula",
+      "tex": "\\text{mín}_{b_0,b_1}\\;\\sum_{i=1}^{n}(Y_i-b_0-b_1x_i)^2"
+    },
+    {
+      "type": "formula",
+      "tex": "S_{xx}=\\sum(x_i-\\bar{x})^2\\qquad S_{xy}=\\sum(x_i-\\bar{x})(Y_i-\\bar{Y})"
+    },
+    {
+      "type": "formula",
+      "tex": "b_1=\\frac{S_{xy}}{S_{xx}}\\qquad b_0=\\bar{Y}-b_1\\bar{x}"
+    },
+    {
+      "type": "paragraph",
+      "text": "Los residuos son eᵢ=Yᵢ−Ŷᵢ. Con intercepto, mínimos cuadrados obliga Σeᵢ=0 y Σxᵢeᵢ=0. Que la suma de residuos sea cero no prueba un buen modelo. La pendiente tiene unidades de Y por unidad de X. El intercepto puede carecer de interpretación práctica si x=0 está lejos de los datos."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Ejemplo del apunte: alimentos para mascotas"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/RLS_Mascotas.svg",
+      "caption": "Los 12 puntos se reconstruyen desde la tabla del apunte 2013. Recta del apunte; verificada por mí."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Espacio x (dm)",
+        "Ventas y (cientos de pesos): observaciones"
+      ],
+      "rows": [
+        [
+          "5",
+          "1,6 · 2,2 · 1,4"
+        ],
+        [
+          "10",
+          "1,9 · 2,4 · 2,6"
+        ],
+        [
+          "15",
+          "2,3 · 2,7 · 2,8"
+        ],
+        [
+          "20",
+          "2,6 · 2,9 · 3,1"
+        ]
+      ]
+    },
+    {
+      "type": "formula",
+      "tex": "\\sum x=150\\quad\\sum y=28{,}5\\quad\\sum xy=384\\quad\\sum x^2=2250"
+    },
+    {
+      "type": "formula",
+      "tex": "S_{xx}=2250-\\frac{150^2}{12}=375\\qquad S_{xy}=384-\\frac{150\\cdot28{,}5}{12}=27{,}75"
+    },
+    {
+      "type": "formula",
+      "tex": "b_1=\\frac{27{,}75}{375}=0{,}074\\qquad b_0=2{,}375-0{,}074\\cdot12{,}5=1{,}45"
+    },
+    {
+      "type": "paragraph",
+      "text": "Interpretación del apunte: **por cada decímetro adicional, la venta media estimada aumenta 0,074 cientos de pesos, es decir 7,40 pesos**, dentro del rango observado. No significa que agregar espacio garantice ese resultado en cualquier comercio ni que el efecto sea causal sin diseño adecuado."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Variación explicada y no explicada"
+    },
+    {
+      "type": "formula",
+      "tex": "SCT=\\sum(Y_i-\\bar{Y})^2=SCR+SCE"
+    },
+    {
+      "type": "formula",
+      "tex": "R^2=1-\\frac{SCE}{SCT}\\qquad s_e=\\sqrt{\\frac{SCE}{n-2}}"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Medida mascotas",
+        "Valor",
+        "Lectura"
+      ],
+      "rows": [
+        [
+          "SCT",
+          "3,0025",
+          "Variabilidad total alrededor de 2,375."
+        ],
+        [
+          "SCR",
+          "2,0535",
+          "Parte asociada linealmente a x."
+        ],
+        [
+          "SCE",
+          "0,9490",
+          "Parte no explicada por esta recta."
+        ],
+        [
+          "R²",
+          "0,684",
+          "68,4% de la variabilidad muestral."
+        ],
+        [
+          "r",
+          "0,827",
+          "Positiva y moderada/fuerte en esta muestra."
+        ],
+        [
+          "sₑ",
+          "0,3081",
+          "≈ 30,81 pesos: dispersión residual típica."
+        ]
+      ],
+      "caption": "Valores del apunte 2013 y del análisis de R; verificados por mí."
+    },
+    {
+      "type": "paragraph",
+      "text": "Con n=12, la estimación de σ usa n−2=10 grados de libertad: se estimaron dos coeficientes. R² alto no asegura pronóstico acertado fuera del rango. R² bajo no prueba que X carezca de relación: puede haber mucho ruido, o una relación no lineal que la recta no capta. El apunte también informa R²aj≈65,2%."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "x",
+        "Residuos e=y−ŷ"
+      ],
+      "rows": [
+        [
+          "5",
+          "-0,22 · 0,38 · -0,42"
+        ],
+        [
+          "10",
+          "-0,29 · 0,21 · 0,41"
+        ],
+        [
+          "15",
+          "-0,26 · 0,14 · 0,24"
+        ],
+        [
+          "20",
+          "-0,33 · -0,03 · 0,17"
+        ]
+      ],
+      "caption": "Cálculo verificado por mí; Σe=0 salvo redondeo."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Supuestos y consecuencias"
+    },
+    {
+      "type": "list",
+      "ordered": false,
+      "items": [
+        "Relación media lineal en los parámetros dentro del rango usado.",
+        "Errores centrados: E(ε)=0.",
+        "Homocedasticidad: varianza constante del error.",
+        "Independencia de errores; especialmente sensible en datos temporales.",
+        "Normalidad para usar pruebas t/F e intervalos clásicos en muestras chicas.",
+        "x medida sin error relevante o no correlacionada con el error, según la formulación del apunte."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "El apunte explica que bajo los supuestos de Gauss–Markov los estimadores de mínimos cuadrados son los mejores lineales insesgados. Ese resultado no requiere normalidad para el insesgamiento, pero las pruebas clásicas sí la usan. No te limites a recitar: los supuestos se revisan con gráficos de residuos, contexto de recolección y, si es temporal, autocorrelación."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Pronóstico puntual: lo que todavía no es intervalo"
+    },
+    {
+      "type": "formula",
+      "tex": "\\hat{Y}_0=b_0+b_1x_0"
+    },
+    {
+      "type": "ejemplo",
+      "title": "Dos predicciones del apunte",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Para x=8: Ŷ=1,45+0,074·8=2,042 cientos de pesos. Para x=13: Ŷ=2,412. Ambos x están dentro de 5–20 dm. Si x=40, la cuenta es posible pero el apunte no ofrece evidencia del comportamiento en esa zona; eso es extrapolación."
+        },
+        {
+          "type": "paragraph",
+          "text": "El número puntual estima la **media condicional**. Una venta individual puede quedar lejos aunque el ajuste sea correcto. En Clase 12 separamos el intervalo de confianza para la media del intervalo de predicción para una observación nueva."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Leer una salida resumida"
+    },
+    {
+      "type": "ejemplo",
+      "title": "Hanke en Resumen V6: precio y volumen",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Con n=10, la salida informa r=−0,86, ecuación Ŷ=32,14−14,54X, error estándar residual 2,725, t de pendiente −4,84, p=0,001 y r²=0,746. Interpretación: ante un aumento de 1 peso en el precio, el volumen medio estimado disminuye 14,54 unidades de la escala de la tabla (el resumen menciona 14,539 «unidades»). El signo de r y b₁ coinciden."
+        },
+        {
+          "type": "paragraph",
+          "text": "SCE=59,42 y SCT=233,60, por lo que 1−59,42/233,60≈0,746. La significación de la pendiente no autoriza proyectar con precios fuera del rango ni confirmar causalidad sin otros argumentos."
+        }
+      ]
+    },
+    {
+      "type": "ejercicio",
+      "title": "Resolución estudiantil: entrevistas",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "El docx de práctica presenta un ajuste 1,62+0,173x con S=0,6618, R²=94%, r=0,969, t=11,16 y crítico 2,306; predice x=30→6,81. Interpretá qué podés afirmar sin el conjunto de datos visible en esta clase."
+        }
+      ],
+      "estado": "resuelto",
+      "solucion": [
+        {
+          "type": "callout",
+          "kind": "aviso",
+          "text": "Resolución estudiantil, no oficial. La predicción puntual coincide algebraicamente: 1,62+0,173·30=6,81. Como t>2,306, la prueba informada rechaza pendiente nula al nivel usado. No verifico supuestos ni extrapolación porque esta clase no reproduce los datos del ejercicio."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Para el final.** Escribí modelo poblacional y estimado, calculá b₁ desde Sxy/Sxx, interpretá unidades, separá R² de sₑ y aclará que una predicción puntual estima una media condicional."
+    },
+    {
+      "type": "glosario",
+      "title": "Glosario para leer las fórmulas",
+      "intro": "Distinguí observaciones, parámetros y estimaciones antes de reemplazar números.",
+      "entries": [
+        {
+          "simbolo": "β₀ / β₁",
+          "nombre": "parámetros",
+          "significado": "Intercepto y pendiente poblacionales; desconocidos."
+        },
+        {
+          "simbolo": "b₀ / b₁",
+          "nombre": "estimaciones",
+          "significado": "Coeficientes calculados con la muestra."
+        },
+        {
+          "simbolo": "εᵢ / eᵢ",
+          "nombre": "error / residuo",
+          "significado": "Error poblacional no observable / diferencia Yᵢ − Ŷᵢ calculada."
+        },
+        {
+          "simbolo": "SCE / SCR / SCT",
+          "nombre": "sumas de cuadrados",
+          "significado": "Error / regresión / total; en inglés SSE / SSR / SST."
+        },
+        {
+          "simbolo": "sₑ",
+          "nombre": "error estándar residual",
+          "significado": "√[SCE/(n−2)], en unidades de Y."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fuentes, alcance y huecos"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** drive_u2/Apunte2013_RLS.pdf: Bigatti–Leale–Moine, Regresión lineal simple, versión 2013/1.0; y Pronosticos_RLS.pdf, Bigatti (2014). · texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15). · texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes). · drive_u2/PracticaRegresionSimpleyMultiple.docx (resoluciones estudiantiles, no clave oficial). · Hanke, cap. 6; ejemplo de volumen/precio reproducido en el Resumen V6."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Hueco:** la guía de regresión trae algunos datos truncados con puntos; por eso el ejemplo principal se toma del apunte, que tiene la tabla completa. Las resoluciones del docx son estudiantiles y se usan como contraste."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Clase 12 · Inferencia en regresión**"
+    }
+  ],
+  "historias": []
+}

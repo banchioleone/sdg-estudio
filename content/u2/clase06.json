@@ -1,0 +1,413 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c6",
+  "title": "Clase 6 · Suavización exponencial simple",
+  "name": "Suavización exponencial simple",
+  "lede": "SES estima un nivel que se actualiza corrigiendo una fracción del error. Aprendé a fechar cada pronóstico, elegir α, inicializar y justificar cuándo no alcanza.",
+  "visto": false,
+  "source": [
+    "Bibliografía: Hanke y Wichern, Pronósticos en los negocios, cap. 4, pp. 119–135 (PDF Hanke_libro.pdf; la página PDF es la impresa +20).",
+    "texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes).",
+    "texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15).",
+    "drive_u2/PracticaPronosticos.pdf, UTN FRRo, versión 2.0 (2015), ejercicio 3 y Cuadro 3; PracticaPronosticos.xlsx, hoja Ejercicio 3 (archivo de trabajo, no solución oficial verificada).",
+    "texto/examenes/SG!EVA.txt y SG1_Evaluaciones_hasta_2006.txt; resoluciones manuscritas en texto/ocr/sg1_ppm y efr_ppm (estudiantiles, no oficiales).",
+    "texto/ocr/sg1_ppm/p-03.png: alimento perros; p-09.png: heladeras; p-11.png: serie trimestral; efr_ppm/p-04.png: variante."
+  ],
+  "laminas": [
+    "u2/img/SES_Acme.svg"
+  ],
+  "next": "Clase 7 · Brown y Holt",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 6 · Suavización exponencial simple**"
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "SES estima un nivel que se actualiza corrigiendo una fracción del error. Aprendé a fechar cada pronóstico, elegir α, inicializar y justificar cuándo no alcanza."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. Un nivel, no una pendiente"
+    },
+    {
+      "type": "paragraph",
+      "text": "La suavización exponencial simple —también nivelación o atenuación— es apropiada cuando no hay una tendencia predecible ni una estación que el modelo deba representar. Un nivel puede cambiar y el método lo acompaña. Una pendiente sostenida es otra cosa: SES reaccionará tarde porque no tiene un estado para la tendencia. «Suavizar» no significa que el pronóstico se vuelva automáticamente adecuado."
+    },
+    {
+      "type": "formula",
+      "tex": "F_{t+1}=\\alpha Y_t+(1-\\alpha)F_t"
+    },
+    {
+      "type": "formula",
+      "tex": "F_{t+1}=F_t+\\alpha e_t\\qquad e_t=Y_t-F_t"
+    },
+    {
+      "type": "paragraph",
+      "text": "Al cerrar t conocés el dato Yₜ y el error del pronóstico que habías emitido para t. Recién entonces construís Fₜ₊₁. Si usás Yₜ para calcular un supuesto Fₜ, incorporaste información futura: no es una evaluación honesta. Con α entre 0 y 1, el nuevo pronóstico queda entre el dato y el pronóstico anterior."
+    },
+    {
+      "type": "ejemplo",
+      "title": "Chase: ajuste mínimo de un pronóstico",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "El texto plantea F=1050, demanda real=1000 y α=0,05. La corrección es 0,05·(1000−1050)=−2,5: el nuevo pronóstico es 1047,5. La operación final está calculada por mí a partir de los valores del texto. No se restan 50 completos: sólo se absorbe el 5% del error."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Por qué los pesos son exponenciales"
+    },
+    {
+      "type": "formula",
+      "tex": "F_{t+1}=\\alpha Y_t+\\alpha(1-\\alpha)Y_{t-1}+\\alpha(1-\\alpha)^2Y_{t-2}+\\ldots"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Antigüedad",
+        "Peso α=0,1",
+        "Peso α=0,6"
+      ],
+      "rows": [
+        [
+          "Dato actual",
+          "0,100",
+          "0,600"
+        ],
+        [
+          "Un período",
+          "0,090",
+          "0,240"
+        ],
+        [
+          "Dos períodos",
+          "0,081",
+          "0,096"
+        ],
+        [
+          "Tres períodos",
+          "0,0729",
+          "0,0384"
+        ],
+        [
+          "Cuatro períodos",
+          "0,06561",
+          "0,01536"
+        ]
+      ],
+      "caption": "Pesos calculados por mí con la fórmula de Hanke; el resto permanece en datos anteriores y en la inicialización."
+    },
+    {
+      "type": "paragraph",
+      "text": "Un promedio móvil descarta de golpe lo que sale de la ventana. SES reduce gradualmente el peso de lo antiguo y necesita guardar sólo el último pronóstico, el dato reciente y α para actualizarse. α grande reacciona más y transmite más variación; α chico estabiliza más y conserva memoria. No confundas «peso exponencial» con una curva de crecimiento exponencial de la demanda."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Inicialización y selección de α"
+    },
+    {
+      "type": "list",
+      "ordered": true,
+      "items": [
+        "Declaración inicial posible: F₁=Y₁. El primer error queda artificialmente en cero; no lo presentes como evidencia de capacidad predictiva.",
+        "Otra posibilidad bibliográfica: media de las primeras k observaciones, por ejemplo cinco o seis. Esos datos son de inicialización; no los cuentes luego como prueba fuera de muestra.",
+        "Ensayá α=0,1; 0,2; …; 0,9, con igual ventana e igual información. Conservá el menor error según el criterio fijado, usualmente MSE en Hanke.",
+        "El α elegido históricamente requiere control posterior. Un cambio de patrón puede exigir recalibración o cambio de familia."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Chase menciona rangos de uso —pequeños para demanda estable y mayores para respuesta rápida—, pero no reemplazan la evaluación del caso. Si el enunciado entrega α, usalo. Si no lo entrega y no exige optimización, explicá la convención que adoptás. Dos alumnos con distintas inicializaciones pueden obtener resultados diferentes sin haber aplicado mal la recurrencia."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Complemento (no está en el material bibliográfico de SES consultado): α≈2/(n+1).** La equivalencia de memoria con un promedio móvil aparece usada en resoluciones estudiantiles. No es una estimación óptima ni una regla universal de la cátedra. Para n=6, 2/7=0,285714…; escribir 0,28 es una aproximación que cambia el resultado."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. Ejercicio 2.2 pendiente de Clase 5: alimento para perros"
+    },
+    {
+      "type": "ejercicio",
+      "title": "SG!EVA 2.2 · Pronosticar agosto",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Demanda mensual en toneladas. Utilizando nivelación exponencial, pronosticá agosto e interpretá. El enunciado no fija α ni inicialización."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Feb",
+            "Mar",
+            "Abr",
+            "May",
+            "Jun",
+            "Jul"
+          ],
+          "rows": [
+            [
+              "620",
+              "840",
+              "770",
+              "250",
+              "1000",
+              "870"
+            ]
+          ]
+        }
+      ],
+      "estado": "resuelto",
+      "solucion": [
+        {
+          "type": "callout",
+          "kind": "aviso",
+          "text": "**Resolución estudiantil, no oficial:** SG1, Final (1), p-03. Adopta α=0,28 y F_feb=620. La tabla siguiente fue recalculada por mí sin redondeos intermedios."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Mes",
+            "Y",
+            "F emitido",
+            "e=Y−F"
+          ],
+          "rows": [
+            [
+              "Feb",
+              "620",
+              "620,00",
+              "0,00"
+            ],
+            [
+              "Mar",
+              "840",
+              "620,00",
+              "220,00"
+            ],
+            [
+              "Abr",
+              "770",
+              "681,60",
+              "88,40"
+            ],
+            [
+              "May",
+              "250",
+              "706,35",
+              "-456,35"
+            ],
+            [
+              "Jun",
+              "1000",
+              "578,57",
+              "421,43"
+            ],
+            [
+              "Jul",
+              "870",
+              "696,57",
+              "173,43"
+            ]
+          ]
+        },
+        {
+          "type": "formula",
+          "tex": "F_{ago}=0{,}28(870)+0{,}72(696{,}57)"
+        },
+        {
+          "type": "paragraph",
+          "text": "**Resultado con esa convención: 745,13 t.** Julio está por encima de lo anticipado: e_jul=173,43 y el nivel sube 48,56 t. El dato 250 de mayo se amortigua, pero no podés llamarlo error de registro sin investigarlo. Con α exacto=2/7, mi cálculo da 747,02 t. No son dos soluciones idénticas; cada una corresponde al α declarado."
+        },
+        {
+          "type": "paragraph",
+          "text": "La respuesta de examen incluye un supuesto de estabilidad del nivel y la advertencia de que seis observaciones son pocas para diagnosticar estacionalidad. Que exista una cuenta no prueba que SES sea el mejor método: faltan comparación y control."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Ferretería: un ejemplo resuelto en la bibliografía"
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/SES_Acme.svg",
+      "caption": "Datos del Cuadro 3 de la práctica 2015; coinciden con Acme Tool de Hanke. Curvas calculadas por mí con F₁=500."
+    },
+    {
+      "type": "table",
+      "headers": [
+        "α",
+        "F₂₅ (2006-I)",
+        "MSE ajuste t=1…24",
+        "MAPE ajuste"
+      ],
+      "rows": [
+        [
+          "0,1",
+          "469,1",
+          "24262",
+          "38,9%"
+        ],
+        [
+          "0,6",
+          "576,0",
+          "22248",
+          "36,5%"
+        ]
+      ],
+      "caption": "Valores del ejemplo 4.5 de Hanke, pp. 121–122; incluyen el error inicial cero. No son errores fuera de muestra."
+    },
+    {
+      "type": "paragraph",
+      "text": "Para F₁=500, F₂=500; con α=0,1, F₃=0,1·350+0,9·500=485. Con α=0,6, F₃=410. El libro compara también el primer dato de prueba, 850: usando pronósticos redondeados, cuadrados de error 145161 y 75076. Mis cálculos sin redondear dan aproximadamente 145104 y 75083. Conservá precisión durante la recurrencia y redondeá al informar."
+    },
+    {
+      "type": "paragraph",
+      "text": "Hanke muestra que cambiar el arranque a la media de seis valores, 383,3, cambia la comparación: MSE 21091 para α=0,1 y 22152 para α=0,6. La moraleja no es escoger el número más lindo: declarás el arranque y no mezclás protocolos. El gráfico conserva un patrón estacional, por eso aun el mejor SES puede ser insuficiente."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Archivo de trabajo con inconsistencias.** PracticaPronosticos.xlsx, hoja Ejercicio 3, contiene valores 670/825/585/475 para α=0,1 y 770/700/510/600 para α=0,6 en 2006. No resultan de la recurrencia anterior con los datos publicados. Además, la tabla inferior desplaza valores y registra un error 700 en su último renglón. No se adopta esa planilla como clave oficial ni se usa su veredicto."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Variantes de final: interpretar antes de calcular"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Caso del material",
+        "Qué se puede resolver",
+        "Qué no ocultar"
+      ],
+      "rows": [
+        [
+          "Serie trimestral 24…32",
+          "SES α=0,2: F₂₇=3922,8; F₃₃=4266,25 (cálculos propios).",
+          "Pesos 2–2,5–3–3,5 describen un móvil ponderado, no un único α."
+        ],
+        [
+          "F₂₈=4700, Y₂₈=2100",
+          "e₂₈=−2600; |e|=2600. Si α=0,2: F₂₇=4595.",
+          "El F₂₈ informado no coincide con el SES inicializado en 3550. Son ramas distintas del enunciado."
+        ],
+        [
+          "Variante manuscrita EFR",
+          "Si α=0,4: F₂₇=(4700−0,4·5120)/0,6=4420.",
+          "No combinar este α con la tabla estudiantil α=0,2."
+        ],
+        [
+          "Móvil ponderado del mismo caso",
+          "Con datos 4676,5240,3980,4720: F₃₃=50912/11=4628,36.",
+          "No llamar SES a esa cuenta."
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Serie completa de ese final: 3550; 4280; 4830; 5120; 2100; 4676; 5240; 3980; 4720 (trimestres 24 a 32). La resolución SG1 p-11 toma α=0,2; la variante EFR p-04 usa 0,4 para despejar. Mi tabla separa explícitamente los supuestos y mantiene el signo de error e=real−pronóstico. Un error no es siempre positivo: lo positivo es su magnitud absoluta."
+    },
+    {
+      "type": "ejercicio",
+      "title": "Final: convertir α=0,4 a promedio móvil",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "El final pide una ventana con «peso» equivalente y luego un peso histórico 40% mayor. Analizá qué se está haciendo equivalente."
+        }
+      ],
+      "estado": "resuelto",
+      "solucion": [
+        {
+          "type": "callout",
+          "kind": "aviso",
+          "text": "Solución estudiantil: n=2/α−1=4. Para el segundo inciso interpreta aumentar α un 40%: 0,4·1,4=0,56, y obtiene n≈2,57, que redondea a 3. **No es clave oficial.** Esa lectura aumenta el peso reciente, no la memoria histórica; el enunciado es ambiguo. Debés explicitar la interpretación, no memorizar «3» como respuesta universal."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Qué pasa a varios pasos y cómo controlás"
+    },
+    {
+      "type": "paragraph",
+      "text": "Sin datos nuevos, SES sólo conoce el último nivel. Los pronósticos a varios pasos desde un mismo origen son constantes: Fₜ₊ₚ=Fₜ₊₁ para p≥1. Eso no significa ausencia de incertidumbre: significa que el modelo no tiene tendencia ni estación. Recalcular después de recibir una observación nueva cambia el origen, no completa mágicamente lo que sabías antes."
+    },
+    {
+      "type": "paragraph",
+      "text": "Hanke propone controlar la frecuencia de subestimaciones y el tamaño de los errores. Chase usa también RSFE/MAD. Los desarrollamos en Clase 10: un error pequeño en promedio no descarta sesgo; una TS dentro de límites no demuestra que el error sea económicamente aceptable. En T-150, por ejemplo, el rezago de SES es visible y se puede medir; lo trabajamos con Holt en Clase 7."
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Para el final.** Escribí Fₜ₊₁=Fₜ+αeₜ, definí cada símbolo, justificá patrón e inicialización, mostrá la secuencia con fechas y compará modelos sobre períodos comunes. Los pesos de un móvil no son el α de SES."
+    },
+    {
+      "type": "glosario",
+      "title": "Glosario para leer las fórmulas",
+      "intro": "Distinguí observaciones, parámetros y estimaciones antes de reemplazar números.",
+      "entries": [
+        {
+          "simbolo": "Yₜ / Fₜ",
+          "nombre": "real / pronóstico",
+          "significado": "Yₜ se conoce al cerrar t; Fₜ se debía emitir antes de conocerlo."
+        },
+        {
+          "simbolo": "α",
+          "nombre": "alfa",
+          "significado": "Constante de suavización; controla cuánto se corrige del error."
+        },
+        {
+          "simbolo": "eₜ",
+          "nombre": "error",
+          "significado": "En toda esta unidad: Yₜ − Fₜ; positivo significa subestimación."
+        },
+        {
+          "simbolo": "Fₜ₊₁",
+          "nombre": "pronóstico siguiente",
+          "significado": "No lo confundas con el valor ajustado del período t."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fuentes, alcance y huecos"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** Bibliografía: Hanke y Wichern, Pronósticos en los negocios, cap. 4, pp. 119–135 (PDF Hanke_libro.pdf; la página PDF es la impresa +20). · texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes). · texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15). · drive_u2/PracticaPronosticos.pdf, UTN FRRo, versión 2.0 (2015), ejercicio 3 y Cuadro 3; PracticaPronosticos.xlsx, hoja Ejercicio 3 (archivo de trabajo, no solución oficial verificada). · texto/examenes/SG!EVA.txt y SG1_Evaluaciones_hasta_2006.txt; resoluciones manuscritas en texto/ocr/sg1_ppm y efr_ppm (estudiantiles, no oficiales). · texto/ocr/sg1_ppm/p-03.png: alimento perros; p-09.png: heladeras; p-11.png: serie trimestral; efr_ppm/p-04.png: variante."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Huecos y advertencias:** no hay clave oficial identificada para los finales citados; no se determina un α único cuando el enunciado no lo fija. La planilla de práctica presenta inconsistencias y se contrasta con Hanke. El 2.2 de perros queda completo sólo bajo la convención explícita de la resolución estudiantil."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Clase 7 · Brown y Holt**"
+    }
+  ],
+  "historias": []
+}

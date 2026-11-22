@@ -32,7 +32,7 @@
           "caption": "Árbol decisorio de métodos de pronóstico"
         }
       ],
-      "lede": "Unidad 2 del programa: los métodos de pronósticos. Empieza con el mapa de toda la materia y las siglas (Clases 0 y 0.1), y sigue con las clases que ya vimos: base estadística, correlación, series, autocorrelación, medidas de error y el integrador.",
+      "lede": "Unidad 2 del programa: los métodos de pronósticos. Empieza con el mapa y las siglas (Clases 0 y 0.1), sigue con base estadística, correlación, series, autocorrelación y medidas de error, y completa los métodos de series: promedios, suavización simple, Brown/Holt, Winter, descomposición e integrador con control. Cierra con demanda, métodos cualitativos y sistemas de pronóstico, y con regresión simple, inferencia, regresión múltiple y validación de modelos. Las clases 6 a 14 y 2.b-teoría tienen por ahora sólo teoría larga.",
       "classes": [
         {
           "id": "c0",
@@ -116,8 +116,83 @@
         },
         {
           "id": "c6",
-          "title": "Clase 6 · Suavizado simple",
-          "soon": true
+          "title": "Clase 6 · Suavización exponencial simple",
+          "soon": false,
+          "file": "u2/clase06.json",
+          "visto": false,
+          "name": "Suavización exponencial simple"
+        },
+        {
+          "id": "c7",
+          "title": "Clase 7 · Brown y Holt",
+          "soon": false,
+          "file": "u2/clase07.json",
+          "visto": false,
+          "name": "Brown y Holt"
+        },
+        {
+          "id": "c8",
+          "title": "Clase 8 · Winter multiplicativo",
+          "soon": false,
+          "file": "u2/clase08.json",
+          "visto": false,
+          "name": "Winter multiplicativo"
+        },
+        {
+          "id": "c9",
+          "title": "Clase 9 · Descomposición y desestacionalización",
+          "soon": false,
+          "file": "u2/clase09.json",
+          "visto": false,
+          "name": "Descomposición y desestacionalización"
+        },
+        {
+          "id": "c10",
+          "title": "Clase 10 · Integrador de métodos y control",
+          "soon": false,
+          "file": "u2/clase10.json",
+          "visto": false,
+          "name": "Integrador de métodos y control"
+        },
+        {
+          "id": "c2bteoria",
+          "title": "Clase 2.b-teoría · Demanda, cualitativos y sistemas de pronóstico",
+          "soon": false,
+          "file": "u2/clase02b_teoria.json",
+          "visto": false,
+          "name": "Demanda, cualitativos y sistemas de pronóstico"
+        },
+        {
+          "id": "c11",
+          "title": "Clase 11 · Regresión lineal simple",
+          "soon": false,
+          "file": "u2/clase11.json",
+          "visto": false,
+          "name": "Regresión lineal simple"
+        },
+        {
+          "id": "c12",
+          "title": "Clase 12 · Inferencia en regresión",
+          "soon": false,
+          "file": "u2/clase12.json",
+          "visto": false,
+          "name": "Inferencia en regresión"
+        },
+        {
+          "id": "c13",
+          "title": "Clase 13 · Regresión múltiple",
+          "soon": false,
+          "file": "u2/clase13.json",
+          "visto": false,
+          "name": "Regresión múltiple"
+        },
+        {
+          "id": "c14",
+          "title": "Clase 14 · Validación y comparación de modelos",
+          "soon": false,
+          "file": "u2/clase14.json",
+          "visto": false,
+          "name": "Validación y comparación de modelos"
         }
       ]
     },

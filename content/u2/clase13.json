@@ -1,0 +1,332 @@
+{
+  "unitId": "u2",
+  "unitLabel": "Unidad 2",
+  "unitTitle": "Métodos de pronósticos",
+  "id": "c13",
+  "title": "Clase 13 · Regresión múltiple",
+  "name": "Regresión múltiple",
+  "lede": "Con varias variables, cada coeficiente mide un efecto parcial manteniendo constantes las demás. La significación conjunta, la individual y la multicolinealidad responden preguntas distintas.",
+  "visto": false,
+  "source": [
+    "drive_u2/Pronosticos_RLM.pdf: Ing. Cristian G. Bigatti (2012), regresión lineal múltiple; ejemplo de gaseosas y variables indicadoras.",
+    "texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15).",
+    "texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes).",
+    "drive_u2/PracticaRegresionSimpleyMultiple.docx (resoluciones estudiantiles, no clave oficial).",
+    "Preguntas Frecuentes (Juanje), pregunta 16: multicolinealidad y VIF."
+  ],
+  "laminas": [
+    "u2/img/RLM_Gaseosas.svg"
+  ],
+  "next": "Clase 14 · Validación y comparación de modelos",
+  "teoria": [
+    {
+      "type": "paragraph",
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 13 · Regresión múltiple**"
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+    },
+    {
+      "type": "callout",
+      "kind": "idea",
+      "text": "Con varias variables, cada coeficiente mide un efecto parcial manteniendo constantes las demás. La significación conjunta, la individual y la multicolinealidad responden preguntas distintas."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. Modelo, matriz y grados de libertad"
+    },
+    {
+      "type": "formula",
+      "tex": "Y_i=\\beta_0+\\beta_1x_{i1}+\\ldots+\\beta_kx_{ik}+ε_i"
+    },
+    {
+      "type": "formula",
+      "tex": "\\mathbf{y}=X\\mathbf{β}+ε\\qquad \\hat{\\beta}=(X′X)^{-1}X′\\mathbf{y}"
+    },
+    {
+      "type": "paragraph",
+      "text": "X incluye una columna de unos si estimás intercepto. k cuenta las variables explicativas, no ese intercepto. El error residual usa n−k−1 grados de libertad. «Lineal» significa lineal en los parámetros: una variable puede entrar transformada o como producto con otra, pero cada coeficiente sigue multiplicando un término."
+    },
+    {
+      "type": "formula",
+      "tex": "s_e^2=\\frac{SCE}{n-k-1}\\qquad R^2_{aj}=1-\\frac{SCE/(n-k-1)}{SCT/(n-1)}"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. Interpretar coeficientes parciales"
+    },
+    {
+      "type": "paragraph",
+      "text": "Hanke en el V6 lo dice con precisión: bⱼ es el cambio promedio estimado de Y por unidad de cambio en Xⱼ **manteniendo constantes las demás variables independientes**. Si Xⱼ y otra X se mueven juntas, esa condición puede estar lejos de los datos. Un coeficiente puede cambiar de signo al agregar variables, sin contradicción algebraica."
+    },
+    {
+      "type": "ejemplo",
+      "title": "Hanke en Resumen V6",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Salida: Ŷ=16,4−8,25X₁+0,585X₂; R²=93,2%; sₑ=1,5072 galones; t(X₁)=−3,76 con p=0,007; t(X₂)=4,38 con p=0,003; F=108,85/2,27≈47,92."
+        },
+        {
+          "type": "formula",
+          "tex": "R^2_{aj}=1-(1-0{,}932)\\frac{10-1}{10-2-1}=0{,}912"
+        },
+        {
+          "type": "paragraph",
+          "text": "Cada t evalúa una variable dada la otra. F evalúa si al menos una pendiente es distinta de cero. No uses el R²≈93% como si fuera exactitud porcentual de cada pronóstico."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "3. Gaseosas: datos completos de las diapositivas"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Variable",
+        "Significado"
+      ],
+      "rows": [
+        [
+          "Y",
+          "Tiempo de entrega, en la escala de la diapositiva."
+        ],
+        [
+          "X₁",
+          "Cajas entregadas."
+        ],
+        [
+          "X₂",
+          "Distancia recorrida, en metros."
+        ]
+      ]
+    },
+    {
+      "type": "svg",
+      "file": "u2/img/RLM_Gaseosas.svg",
+      "caption": "Recorrido de 25 observaciones; ajuste verificado por mí con los datos de Bigatti. El orden no se interpreta como tiempo."
+    },
+    {
+      "type": "formula",
+      "tex": "\\hat{Y}=2{,}309+2{,}740X_1+0{,}0124X_2"
+    },
+    {
+      "type": "table",
+      "headers": [
+        "Término",
+        "b",
+        "EE",
+        "t"
+      ],
+      "rows": [
+        [
+          "Intercepto",
+          "2,309",
+          "1,0595",
+          "2,18"
+        ],
+        [
+          "Cajas",
+          "2,740",
+          "0,0935",
+          "29,32"
+        ],
+        [
+          "Distancia",
+          "0,0124",
+          "0,0028",
+          "4,45"
+        ]
+      ],
+      "caption": "Bigatti (2012), salida de R; recalculado por mí."
+    },
+    {
+      "type": "paragraph",
+      "text": "Interpretación: con igual distancia, cada caja adicional se asocia a 2,740 unidades adicionales de tiempo esperado. Con igual cantidad de cajas, 100 m adicionales se asocian a 1,24 unidades. Con n=25 y k=2, gl residuales=22; sₑ=2,287. R²=0,9811 y R²aj=0,9794. La alta explicación no garantiza que se cumplan los supuestos."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "4. F primero, t después y multicolinealidad"
+    },
+    {
+      "type": "formula",
+      "tex": "F_0=\\frac{SCR/k}{SCE/(n-k-1)}"
+    },
+    {
+      "type": "paragraph",
+      "text": "En gaseosas, F≈570,7 con (2,22) gl. La regla de trabajo de los apuntes estudiantiles es: si F no es significativa, no hay evidencia conjunta; si lo es, examinar t individuales. Eliminar variables de a una y revisar multicolinealidad antes evita descartar mecánicamente información útil."
+    },
+    {
+      "type": "formula",
+      "tex": "VIF_j=\\frac{1}{1-R_j^2}"
+    },
+    {
+      "type": "paragraph",
+      "text": "El V6 muestra que Rⱼ²=0,90 implica VIF=10. En gaseosas, la correlación entre cajas y distancia es ≈0,378 y VIF≈1,167 para ambas; no indica un problema. Bigatti cita además síntomas como determinante de X′X cercano a cero, cociente de autovalores grande y contradicción entre F significativa y t no significativas. Los umbrales 5 ó 10 son señales para analizar, no un botón automático de eliminación."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "5. Intervalos con varias X"
+    },
+    {
+      "type": "formula",
+      "tex": "\\hat{\\mu}_0=x_0′\\hat{\\beta}\\qquad h_{00}=x_0′(X′X)^{-1}x_0"
+    },
+    {
+      "type": "ejemplo",
+      "title": "Gaseosas: 8 cajas y 275 m",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Con x₀=(1,8,275): μ̂₀=27,653 y h₀₀=0,0444. IC 95% para la media: [26,65; 28,65]. IP 95% para una entrega: [22,81; 32,50]. Diapositiva de Bigatti; verificado por mí con t₂₂,₀,₀₂₅≈2,074."
+        },
+        {
+          "type": "paragraph",
+          "text": "El IC mide la incertidumbre sobre el promedio de entregas con esas características. El IP agrega la variabilidad de una entrega concreta. La combinación de cajas y distancia también debe parecerse a las observadas; ser cada valor individual «dentro de rango» no asegura que la combinación lo esté."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "6. Variables indicadoras e interacción"
+    },
+    {
+      "type": "paragraph",
+      "text": "Una dummy toma 0 en la categoría de referencia y 1 en la categoría indicada. Para c categorías, con intercepto, usás c−1 indicadoras; incluir todas genera colinealidad perfecta. En el modelo aditivo cambia el intercepto entre grupos y la pendiente de otras X se mantiene común."
+    },
+    {
+      "type": "ejemplo",
+      "title": "Desempeño, examen y sexo en Hanke/V6",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Ŷ=−1,96+0,12X₁−2,18X₂, con X₂=0 mujeres y 1 hombres. Mujeres: Ŷ=−1,96+0,12X₁. Hombres: Ŷ=−4,14+0,12X₁. Las rectas son paralelas: −2,18 es la diferencia estimada de intercepto con igual puntaje. Es interpretación de este ajuste, no una regla general sobre personas."
+        }
+      ]
+    },
+    {
+      "type": "ejemplo",
+      "title": "Autos: un caso de refinamiento",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "En Bigatti, con n=100, Precio=26700+90,48·blanco−0,03703·km+295,5·plata; blanco tiene p≈0,19 y R²=0,698. El modelo depurado es Ŷ=26740−0,0369·km+248,9·plata, R²=0,6925 y R²aj=0,6862. Plata=1 si el auto es plateado; 0 en otro color de la referencia del ejemplo."
+        },
+        {
+          "type": "paragraph",
+          "text": "Quitar una indicadora cambia el grupo de comparación implícito. No interpretes 248,9 como «plata frente a blanco» sin revisar la codificación final. En el ejemplo, reportá el contraste definido por esa variable y el resto de las condiciones del modelo."
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "text": "Una interacción X₁·D permite que la pendiente de X₁ difiera por grupo. Se interpreta con el término principal y el producto juntos. Si agregás interacciones, el número de parámetros crece y necesitás datos suficientes en cada combinación."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "7. Resoluciones estudiantiles para practicar crítica"
+    },
+    {
+      "type": "ejercicio",
+      "title": "Ahorro y crédito: multicolinealidad",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Salida reportada: margen=1,5645+0,2372·ingreso−0,00024908·entidades; t 4,27 y −7,77; S=0,0533; R²=86,5%; R²aj=85,3%; F=70,66 con (2,22); DW=1,948 (dL=1,19, dU=1,55); VIF=8,732; r entre X≈0,941."
+        }
+      ],
+      "estado": "resuelto",
+      "solucion": [
+        {
+          "type": "callout",
+          "kind": "aviso",
+          "text": "Resolución estudiantil, no oficial. Concluye multicolinealidad y propone conservar una variable. El docx confunde en un tramo R² con 85,3%, que es R²aj. D=1,948>dU no rechaza autocorrelación positiva de primer orden. VIF≈8,7 merece análisis, aunque ambas t sean grandes; la decisión no debe hacerse sin objetivos y validación."
+        }
+      ]
+    },
+    {
+      "type": "ejercicio",
+      "title": "Viviendas: F significativa sin t individuales",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Salida reportada: precio=37694+2309Dorm+73,85SupCub−4,22SupLote; p=0,742; 0,167; 0,805; VIF=3,54; 83,23; 78,99; R²=56,0%; R²aj=54,6%; F=40,72 significativa."
+        }
+      ],
+      "estado": "resuelto",
+      "solucion": [
+        {
+          "type": "callout",
+          "kind": "aviso",
+          "text": "Resolución estudiantil. El patrón es típico de redundancia entre superficie cubierta y de lote: conjuntamente explican, pero cuesta separar efectos. Revisá matriz de correlación, especificación, supuestos y comparación con modelos más simples. La plantilla RLM_Ej8 se desarrolla en Clase 14; no hay clave completa en el material."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "kind": "examen",
+      "text": "**Para el final.** Interpretá bⱼ con «manteniendo constantes las demás», usá n−k−1, distinguí F global de t individual, controlá VIF y definí la categoría de referencia de cada dummy."
+    },
+    {
+      "type": "glosario",
+      "title": "Glosario para leer las fórmulas",
+      "intro": "Distinguí observaciones, parámetros y estimaciones antes de reemplazar números.",
+      "entries": [
+        {
+          "simbolo": "k",
+          "nombre": "cantidad de regresores",
+          "significado": "No incluye el intercepto; gl residuales = n−k−1."
+        },
+        {
+          "simbolo": "X",
+          "nombre": "matriz de diseño",
+          "significado": "Incluye columna de unos si hay intercepto."
+        },
+        {
+          "simbolo": "VIFⱼ",
+          "nombre": "inflación de varianza",
+          "significado": "1/(1−Rⱼ²); Rⱼ² viene de regresar Xⱼ contra las demás X."
+        },
+        {
+          "simbolo": "bⱼ",
+          "nombre": "coeficiente parcial",
+          "significado": "Cambio estimado en media de Y por unidad de Xⱼ, manteniendo las demás X constantes."
+        },
+        {
+          "simbolo": "D",
+          "nombre": "dummy",
+          "significado": "Indicadora 0/1; definí categoría de referencia."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fuentes, alcance y huecos"
+    },
+    {
+      "type": "paragraph",
+      "text": "**Material asociado:** drive_u2/Pronosticos_RLM.pdf: Ing. Cristian G. Bigatti (2012), regresión lineal múltiple; ejemplo de gaseosas y variables indicadoras. · texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15). · texto/resumenes/Resumen_Hanke_25p.txt (capítulos correspondientes). · drive_u2/PracticaRegresionSimpleyMultiple.docx (resoluciones estudiantiles, no clave oficial). · Preguntas Frecuentes (Juanje), pregunta 16: multicolinealidad y VIF."
+    },
+    {
+      "type": "callout",
+      "kind": "aviso",
+      "text": "**Huecos:** los datos completos de ahorro/crédito y viviendas no están reproducidos en esta clase; se discuten como salidas informadas. Los ejemplos gaseosas y autos vienen de diapositivas y no tienen una solución de final asociada."
+    },
+    {
+      "type": "paragraph",
+      "text": "**Próxima clase → Clase 14 · Validación y comparación de modelos**"
+    }
+  ],
+  "historias": []
+}
