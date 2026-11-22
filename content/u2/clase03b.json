@@ -3,9 +3,9 @@
   "unitLabel": "Unidad 2",
   "unitTitle": "Métodos de pronósticos",
   "id": "c3b",
-  "title": "Clase 3.b · Autocorrelación",
-  "name": "Autocorrelación",
-  "lede": "en la Clase 3.a diagnosticabas la serie a ojo. La autocorrelación es el mismo diagnóstico con números: evidencia objetiva de qué patrón tiene la serie, y por lo tanto de qué método corresponde aplicar.",
+  "title": "Clase 3.b · Autocorrelación y correlograma",
+  "name": "Autocorrelación y correlograma",
+  "lede": "en la Clase 3 diagnosticabas la serie a ojo. La autocorrelación es el mismo diagnóstico con números: evidencia objetiva de qué patrón tiene la serie, y por lo tanto de qué método corresponde aplicar.",
   "visto": true,
   "source": [
     "clases_previas/SG/Clase03b_Autocorrelacion.md",
@@ -20,12 +20,12 @@
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2.b (cierre) · Serie: 0 → 0.1 → 1 → 1.b → 2 → 3.a → **3.b****"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque B · Clase 3.b · Autocorrelación y correlograma**"
     },
     {
       "type": "callout",
       "kind": "idea",
-      "text": "**Idea central:** en la Clase 3.a diagnosticabas la serie **a ojo**. La autocorrelación es el mismo diagnóstico **con números**: evidencia objetiva de qué patrón tiene la serie, y por lo tanto de qué método corresponde aplicar."
+      "text": "**Idea central:** en la Clase 3 diagnosticabas la serie **a ojo**. La autocorrelación es el mismo diagnóstico **con números**: evidencia objetiva de qué patrón tiene la serie, y por lo tanto de qué método corresponde aplicar."
     },
     {
       "type": "heading",
@@ -416,7 +416,7 @@
       "items": [
         "**Clase 1.b** (ventas 120, 135, 105, 140, 100): a) X̄ y s · b) P(X<150) · c) P(X>90) · d) P(110<X<145) · e) inverso 90% · f) ¿Z o t?",
         "**Clase 2** (temperatura vs. bebidas): a) tabla y sumatorias · b) r · c) interpretación · d) ¿causalidad?",
-        "**Clase 3.a** (diagnóstico de 4 series): a) a d)",
+        "**Clase 3** (diagnóstico de 4 series): a) a d)",
         "**Clase 3.b** (correlogramas): 1) a 3)"
       ]
     },
@@ -426,7 +426,7 @@
     },
     {
       "type": "paragraph",
-      "text": "**Próxima clase → Clase 4: Medidas de error del pronóstico** (MAD, MSE, MAPE, PME): cómo se mide si un pronóstico es bueno y cómo se comparan dos métodos entre sí. Cierra la Unidad 2.b y abre los métodos."
+      "text": "**Próxima clase → Clase 4: Medidas de error del pronóstico** (MAD, MSE, MAPE, PME): cómo se mide si un pronóstico es bueno y cómo se comparan dos métodos entre sí. Después vienen la Clase 4.b (demanda y sistemas de pronóstico) y el Integrador, que cierran el Bloque B."
     }
   ],
   "historias": [
@@ -434,7 +434,7 @@
       "type": "concepto",
       "k": "La idea",
       "title": "El mismo diagnóstico, con números.",
-      "text": "En la 3.a diagnosticabas la serie a ojo. La autocorrelación es esa misma lectura, pero objetiva: evidencia de qué patrón tiene la serie y, por lo tanto, de qué método corresponde."
+      "text": "En la Clase 3 diagnosticabas la serie a ojo. La autocorrelación es esa misma lectura, pero objetiva: evidencia de qué patrón tiene la serie y, por lo tanto, de qué método corresponde."
     },
     {
       "type": "concepto",
@@ -535,5 +535,7 @@
       "title": "Llevate esto de la Clase 3.b.",
       "text": "El correlograma es el diagnóstico con números: decaimiento = tendencia, pico en r_L = estacionalidad. Fuera de ±2/√n, el patrón es real. También se aplica a los errores del modelo. El ejercicio queda para resolver juntos."
     }
-  ]
+  ],
+  "block": "B",
+  "blockTitle": "Bloque B · Demanda, datos y patrones"
 }

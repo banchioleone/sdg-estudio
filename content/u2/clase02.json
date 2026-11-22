@@ -14,11 +14,11 @@
   "laminas": [
     "u2/img/Clase02_Correlacion.svg"
   ],
-  "next": "Clase 3.a · Series de tiempo",
+  "next": "Clase 3 · Series de tiempo",
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2.a (cierre) · Serie: 0 → 0.1 → 1 → 1.b → **2****"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque B · Clase 2 · Correlación**"
     },
     {
       "type": "callout",
@@ -558,7 +558,7 @@
     },
     {
       "type": "paragraph",
-      "text": "**Próxima clase → Clase 3: Fuentes y tipos de datos + componentes de una serie de tiempo** (tendencia, ciclo, estacionalidad, irregularidad): el ingreso formal a los pronósticos."
+      "text": "**Próxima clase → Clase 3 · Series de tiempo**: fuentes y tipos de datos, y componentes de una serie (tendencia, ciclo, estacionalidad, irregularidad): el ingreso formal a los pronósticos."
     }
   ],
   "historias": [
@@ -669,5 +669,7 @@
       "title": "Llevate esto de la Clase 2.",
       "text": "Siempre graficá primero. r dice si hay relación lineal, no si hay causa, y un r bajo no descarta una curva. r² es el % de variación que explica el modelo. El ejercicio de temperatura y bebidas queda para resolver juntos."
     }
-  ]
+  ],
+  "block": "B",
+  "blockTitle": "Bloque B · Demanda, datos y patrones"
 }

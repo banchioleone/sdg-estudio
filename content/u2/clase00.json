@@ -4,7 +4,7 @@
   "unitTitle": "Métodos de pronósticos",
   "id": "c0",
   "title": "Clase 0 · Mapa de la materia",
-  "name": "Mapa",
+  "name": "Mapa de la materia",
   "lede": "La materia es la anatomía de un ERP: de la empresa como sistema (U1) al software que la gestiona (U7). Esta clase arma el mapa oficial, cómo se conectan las 7 unidades y qué se toma en el final, con las frecuencias reales de los exámenes fechados.",
   "visto": true,
   "source": [
@@ -493,5 +493,7 @@
       "title": "Llevate el mapa.",
       "text": "Siete unidades. Cuatro insumos que alimentan la U6. Práctica primero (eliminatoria), teoría después. El peso de cada tema sale del conteo de finales. Sigue la Clase 0.1: las siglas, con el significado tal como está en los apuntes."
     }
-  ]
+  ],
+  "block": "intro",
+  "blockTitle": "Introducción"
 }

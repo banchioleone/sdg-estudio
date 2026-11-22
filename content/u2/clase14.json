@@ -18,16 +18,16 @@
   "laminas": [
     "u2/img/ComparacionModelos.svg"
   ],
-  "next": "Fin de la Unidad 2 · Próximo paso: historias para Clases 2.b-teoría, 6–14",
+  "next": "Fin de la Unidad 2",
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 14 · Validación y comparación de modelos**"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque D · Clase 14 · Validación y comparación de modelos**"
     },
     {
       "type": "callout",
       "kind": "aviso",
-      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados."
     },
     {
       "type": "callout",
@@ -337,7 +337,7 @@
     },
     {
       "type": "paragraph",
-      "text": "**Próxima clase → Fin de la Unidad 2 · Próximo paso: historias para Clases 2.b-teoría, 6–14**"
+      "text": "**Fin de la Unidad 2 · Métodos de pronósticos.**"
     }
   ],
   "historias": [
@@ -452,5 +452,7 @@
       "title": "Llevate esto de la Clase 14 y de la Unidad 2.",
       "text": "Elegís con validez, significación, ajuste penalizado, simplicidad y error fuera de muestra. 3 variables = 7 modelos. F parcial = t² con un término. Diagnóstico antes de borrar. Y en series y en regresión: medí donde el modelo no miró. ¡Unidad 2 cerrada!"
     }
-  ]
+  ],
+  "block": "D",
+  "blockTitle": "Bloque D · Regresión"
 }

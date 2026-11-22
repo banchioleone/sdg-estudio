@@ -3,8 +3,8 @@
   "unitLabel": "Unidad 2",
   "unitTitle": "Métodos de pronósticos",
   "id": "c5",
-  "title": "Clase 5 · Métodos no formales y promedios",
-  "name": "No formales y promedios",
+  "title": "Clase 5 · Métodos ingenuos y promedios",
+  "name": "Métodos ingenuos y promedios",
   "lede": "Los períodos recientes son, en estos métodos, los mejores pronosticadores del futuro. Arrancamos por los modelos informales y seguimos por promedio simple, móvil, móvil doble y —con Chase— el móvil ponderado. La suavización exponencial queda para la Clase 6.",
   "visto": false,
   "source": [
@@ -24,12 +24,12 @@
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2.c · Serie: 0 → 0.1 → 1 → 1.b → 2 → 3.a → 3.b → 4 → Integrador → **5**"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque C · Clase 5 · Métodos ingenuos y promedios**"
     },
     {
       "type": "callout",
       "kind": "aviso",
-      "text": "**De dónde sale esta clase.** No hay un apunte de la cátedra titulado «Clase 5». Se arma con el resumen de Hanke (25 páginas y 7 páginas), el Capítulo 4 del Resumen V6, el árbol de la Clase 3.a y un ejemplo de promedio móvil ponderado de Chase que está en el mismo Resumen V6. En el plan de clases y en el Documento Maestro se habló de «métodos ingenuos»; Hanke y el V6 dicen **métodos no formales** o **informales**. No presento «ingenuo» como término de Hanke. La suavización exponencial, que el Documento Maestro agrupa en la misma semana, queda para la **Clase 6**."
+      "text": "**De dónde sale esta clase.** No hay un apunte de la cátedra titulado «Clase 5». Se arma con el resumen de Hanke (25 páginas y 7 páginas), el Capítulo 4 del Resumen V6, el árbol de la Clase 3 y un ejemplo de promedio móvil ponderado de Chase que está en el mismo Resumen V6. En el plan de clases y en el Documento Maestro se habló de «métodos ingenuos»; Hanke y el V6 dicen **métodos no formales** o **informales**. No presento «ingenuo» como término de Hanke. La suavización exponencial, que el Documento Maestro agrupa en la misma semana, queda para la **Clase 6**."
     },
     {
       "type": "callout",
@@ -43,12 +43,12 @@
     },
     {
       "type": "paragraph",
-      "text": "En la Clase 3.a quedó armada la primera bifurcación: *¿la serie es estacionaria?* (el promedio no cambia a lo largo del tiempo). El árbol de la cátedra asigna así las familias de esta clase:"
+      "text": "En la Clase 3 quedó armada la primera bifurcación: *¿la serie es estacionaria?* (el promedio no cambia a lo largo del tiempo). El árbol de la cátedra asigna así las familias de esta clase:"
     },
     {
       "type": "table",
       "headers": [
-        "Diagnóstico (Clase 3.a)",
+        "Diagnóstico (Clase 3)",
         "Métodos de esta clase"
       ],
       "rows": [
@@ -61,7 +61,7 @@
           "promedio móvil doble (además: Brown, Holt, regresión, modelos exponenciales)"
         ]
       ],
-      "caption": "Recorte del árbol y de la tabla de la Clase 3.a. No se inventan asignaciones nuevas."
+      "caption": "Recorte del árbol y de la tabla de la Clase 3. No se inventan asignaciones nuevas."
     },
     {
       "type": "svg",
@@ -271,7 +271,7 @@
     },
     {
       "type": "paragraph",
-      "text": "Para series con **tendencia lineal**, Hanke y el V6 proponen el promedio móvil doble: se calcula un conjunto de promedios móviles y después un **segundo conjunto** como promedio móvil del primero. (En la tabla de la Clase 3.a aparece también como *promedio móvil lineal*.)"
+      "text": "Para series con **tendencia lineal**, Hanke y el V6 proponen el promedio móvil doble: se calcula un conjunto de promedios móviles y después un **segundo conjunto** como promedio móvil del primero. (En la tabla de la Clase 3 aparece también como *promedio móvil lineal*.)"
     },
     {
       "type": "paragraph",
@@ -609,7 +609,7 @@
       "type": "concepto",
       "k": "El árbol",
       "title": "¿Estacionaria o con tendencia?",
-      "text": "Si la serie es estacionaria, en esta clase los candidatos son el promedio simple y el móvil. Si tiene tendencia lineal, el candidato es el móvil doble. Eso ya lo fijó el árbol de la Clase 3.a: no se inventan asignaciones nuevas."
+      "text": "Si la serie es estacionaria, en esta clase los candidatos son el promedio simple y el móvil. Si tiene tendencia lineal, el candidato es el móvil doble. Eso ya lo fijó el árbol de la Clase 3: no se inventan asignaciones nuevas."
     },
     {
       "type": "concepto",
@@ -716,5 +716,7 @@
       "title": "Llevate esto de la Clase 5.",
       "text": "Informales: Ŷ = Yₜ, o con tendencia, tasa o estación. Promedio simple si es estacionaria. Móvil MA(k): ventana, pesos iguales; k chico reacciona, k grande suaviza. Móvil doble si hay tendencia lineal. Ponderado (Chase): pesos que suman 1. Siguiente: suavizado exponencial simple."
     }
-  ]
+  ],
+  "block": "C",
+  "blockTitle": "Bloque C · Métodos de series de tiempo"
 }

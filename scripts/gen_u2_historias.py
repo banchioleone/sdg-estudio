@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Historias (modo stories) para U2 · Clases 2.b-teoría y 6–14.
+"""Historias (modo stories) para U2 · Clases 4.b y 6–14.
 
 Escribe sólo el campo `historias` de cada content/u2/claseNN.json; la teoría
 queda intacta. Los números salen de la teoría de cada clase (y del material
@@ -500,7 +500,7 @@ H['clase09'] = [
    'Dividís por el factor, ajustás una recta a la serie desestacionalizada, proyectás y volvés a multiplicar. Con factores 0,82, 1,10, 0,97 y 1,12, Chase llega a 4102,87, 5880,27, 5517,26 y 6753,71. No es lo mismo que razón al promedio móvil.',
    ejemplo='La tabla de datos originales de Chase es una imagen: no se reconstruye la regresión.'),
  Z('Llevate esto de la Clase 9.',
-   'Elegí aditivo o multiplicativo mirando la amplitud. Índices: razón al PMC, mediana y normalizar a 4 o 12. Desestacionalizar es dividir por S. Pronóstico = tendencia proyectada × índice, con C = I = 1 como hipótesis. Próxima: integrador y control.'),
+   'Elegí aditivo o multiplicativo mirando la amplitud. Índices: razón al PMC, mediana y normalizar a 4 o 12. Desestacionalizar es dividir por S. Pronóstico = tendencia proyectada × índice, con C = I = 1 como hipótesis. Próxima: elegir y controlar el método.'),
 ]
 
 # ======================= Clase 10 · Integrador y control
@@ -584,10 +584,10 @@ H['clase10'] = [
    'Complemento, no está en el enunciado disponible: si la demanda fuera normal con media F y desvío sigma conocido, cubrir el 95% por un lado pide F + 1,645 sigma. El 1,96 es para un intervalo de dos colas: es otra pregunta.',
    formula=r'C=F+1{,}645\,\sigma_e'),
  Z('Llevate esto de la Clase 10.',
-   'Familia por patrón e información, parámetros por error de prueba, misma ventana para comparar. Tres controles distintos: TS, conteo U y ±2 RMSE. Una TS dentro de límites no prueba un buen pronóstico. Próxima: demanda, cualitativos y sistemas.'),
+   'Familia por patrón e información, parámetros por error de prueba, misma ventana para comparar. Tres controles distintos: TS, conteo U y ±2 RMSE. Una TS dentro de límites no prueba un buen pronóstico. Próxima: regresión lineal simple.'),
 ]
 
-# ======================= Clase 2.b-teoría
+# ======================= Clase 4.b
 def salida_svg():
     s = svg_open(120, 'Tipos de pronóstico')
     s.append(txt(8, 13, 'Tres formas de decir «la demanda será…»', 9, BL, bold=True))
@@ -637,7 +637,7 @@ def delphi_svg():
     s.append(txt(cx, cy - 1, 'rondas', 7.5, OR, 'middle', True)); s.append(txt(cx, cy + 8, 'de expertos', 6.5, GR, 'middle'))
     s.append('</svg>'); return ''.join(s)
 
-H['clase02b_teoria'] = [
+H['clase04b'] = [
  C('La idea', 'Un pronóstico no es una meta.',
    'Pronosticar reduce incertidumbre: no crea certeza ni reemplaza la decisión. Antes de la fórmula, preguntá para qué decisión es: inventario semanal por artículo o capacidad a varios años piden horizontes, datos y precisión distintos.'),
  C('Salida', 'Decir «500» no termina el problema.',
@@ -679,8 +679,8 @@ H['clase02b_teoria'] = [
    'Hanke, cap. 11: nivel estratégico (qué, para qué, quién, qué precisión y costo) y nivel operativo (recopilar, depurar, modelar, emitir y evaluar). La evaluación vuelve al diagnóstico. Chase suma el pronóstico enfocado y CPFR para colaborar entre empresas.',
    svg=flow_v([('Definí la decisión','producto · horizonte'),('Registrá y depurá','SIG / ERP'),('Diagnosticá y elegí','patrón · costo'),('Ajustá y validá','error fuera del ajuste'),('Decidí y controlá','retroalimentación')], 'Sistema de pronósticos'),
    chartLabel='Esquema propio a partir de Hanke cap. 11'),
- Z('Llevate esto de la Clase 2.b.',
-   'Pronóstico ≠ meta. Puntual, intervalo o densidad. Demanda independiente se pronostica, dependiente se calcula. Cualitativos con procedimiento; Delphi: anonimato, rondas, retroalimentación y agregación. Sistema con control y retroalimentación. Próxima: regresión simple.'),
+ Z('Llevate esto de la Clase 4.b.',
+   'Pronóstico ≠ meta. Puntual, intervalo o densidad. Demanda independiente se pronostica, dependiente se calcula. Cualitativos con procedimiento; Delphi: anonimato, rondas, retroalimentación y agregación. Sistema con control y retroalimentación. Próxima: el Integrador.'),
 ]
 
 # ======================= Clase 11 · RLS

@@ -7,12 +7,12 @@
 
   <!-- TITULO -->
   <text x="40" y="34" font-size="22" font-weight="700" fill="#1F4E79">EL PROCESO COMPLETO DE PRONÓSTICO</text>
-  <text x="40" y="55" font-size="12.5" fill="#666">Lámina integradora — cómo se conectan las clases 3.a, 3.b y 4</text>
+  <text x="40" y="55" font-size="12.5" fill="#666">Lámina integradora — cómo se conectan las clases 3, 3.b y 4</text>
 
   <!-- ANALOGIA -->
   <rect x="40" y="70" width="900" height="56" rx="8" fill="#FFF3E8" stroke="#D9954A" stroke-width="1.5"/>
   <text x="56" y="91" font-size="12.5" font-weight="700" fill="#8A5A16">LA ANALOGÍA DEL MÉDICO:</text>
-  <text x="270" y="91" font-size="12" fill="#333"><tspan font-weight="700">3.a</tspan> = mirar al paciente (síntomas a simple vista) · <tspan font-weight="700">3.b</tspan> = pedir análisis (confirmar con números)</text>
+  <text x="270" y="91" font-size="12" fill="#333"><tspan font-weight="700">3</tspan> = mirar al paciente (síntomas a simple vista) · <tspan font-weight="700">3.b</tspan> = pedir análisis (confirmar con números)</text>
   <text x="270" y="112" font-size="12" fill="#333"><tspan font-weight="700">Árbol</tspan> = recetar el tratamiento · <tspan font-weight="700">Clase 4</tspan> = controlar si el paciente mejoró (y si no, cambiar el remedio)</text>
 
   <!-- ===== PASO 1 ===== -->
@@ -20,7 +20,7 @@
   <circle cx="70" cy="176" r="16" fill="#1F4E79"/>
   <text x="70" y="182" font-size="16" font-weight="700" fill="#fff" text-anchor="middle">1</text>
   <text x="96" y="174" font-size="13.5" font-weight="700" fill="#1F4E79">GRAFICAR</text>
-  <text x="96" y="190" font-size="10" fill="#888">clase 3.a</text>
+  <text x="96" y="190" font-size="10" fill="#888">Clase 3</text>
   <!-- mini serie -->
   <rect x="56" y="204" width="144" height="76" rx="5" fill="#fff" stroke="#C9DBEA"/>
   <line x1="66" y1="270" x2="66" y2="214" stroke="#aaa" stroke-width="1"/>
@@ -179,6 +179,6 @@
 
   <!-- ===== FRASE FINAL ===== -->
   <rect x="40" y="828" width="900" height="56" rx="8" fill="#1F4E79"/>
-  <text x="490" y="852" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">3.a me da la SOSPECHA · 3.b me da la PRUEBA · el árbol me da el MÉTODO · la clase 4 me dice si ACERTÉ</text>
+  <text x="490" y="852" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">La 3 me da la SOSPECHA · la 3.b me da la PRUEBA · el árbol me da el MÉTODO · la clase 4 me dice si ACERTÉ</text>
   <text x="490" y="873" font-size="11" fill="#BBD7EE" text-anchor="middle" font-style="italic">“La serie presenta tendencia y estacionalidad (pico en r₄ y decaimiento gradual), por lo que apliqué Winter; el MAPE de 5% y el PME ≈ 0 confirman que es adecuado.”</text>
 </svg>

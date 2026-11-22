@@ -7,7 +7,7 @@
 
   <!-- TITULO -->
   <text x="40" y="34" font-size="22" font-weight="700" fill="#1F4E79">ÁRBOL DECISORIO · ¿Qué método de pronóstico uso?</text>
-  <text x="40" y="55" font-size="12.5" fill="#666">Lámina complementaria Clase 3.a — U2 · La respuesta a “justifique la metodología aplicada”</text>
+  <text x="40" y="55" font-size="12.5" fill="#666">Lámina complementaria Clase 3 — U2 · La respuesta a “justifique la metodología aplicada”</text>
 
   <rect x="40" y="68" width="920" height="34" rx="8" fill="#FFF3E8" stroke="#D9954A" stroke-width="1.5"/>
   <text x="56" y="90" font-size="12" font-weight="700" fill="#8A5A16">REGLA MADRE: graficar la serie SIEMPRE antes de decidir. Con pocos datos, graficar es obligatorio. El gráfico manda sobre cualquier fórmula.</text>

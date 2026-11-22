@@ -2,8 +2,8 @@
   "unitId": "u2",
   "unitLabel": "Unidad 2",
   "unitTitle": "Métodos de pronósticos",
-  "id": "c3a",
-  "title": "Clase 3.a · Series de tiempo",
+  "id": "c3",
+  "title": "Clase 3 · Series de tiempo",
   "name": "Series de tiempo",
   "lede": "toda serie de ventas es la superposición de cuatro componentes (tendencia, ciclo, estacionalidad, irregularidad). Aprender a mirar un gráfico y decir qué componentes tiene es lo que permite elegir y justificar el método de pronóstico — exactamente lo que evalúa la cátedra.",
   "visto": true,
@@ -13,14 +13,14 @@
     "clases_previas/SG/ArbolDecisorio_MetodosPronostico.svg"
   ],
   "laminas": [
-    "u2/img/Clase03a_SeriesDeTiempo.svg",
+    "u2/img/Clase03_SeriesDeTiempo.svg",
     "u2/img/ArbolDecisorio_MetodosPronostico.svg"
   ],
-  "next": "Clase 3.b · Autocorrelación",
+  "next": "Clase 3.b · Autocorrelación y correlograma",
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2.b · Serie: 0 → 0.1 → 1 → 1.b → 2 → **3.a****"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque B · Clase 3 · Series de tiempo**"
     },
     {
       "type": "callout",
@@ -218,8 +218,8 @@
     },
     {
       "type": "svg",
-      "file": "u2/img/Clase03a_SeriesDeTiempo.svg",
-      "caption": "Lámina de la Clase 3.a · Serie de tiempo y componentes"
+      "file": "u2/img/Clase03_SeriesDeTiempo.svg",
+      "caption": "Lámina de la Clase 3 · Serie de tiempo y componentes"
     },
     {
       "type": "svg",
@@ -383,11 +383,11 @@
     {
       "type": "callout",
       "kind": "idea",
-      "text": "**Clase 3.a.** Serie de tiempo = secuencia ordenada de observaciones (Yₜ); el orden es información. Descomposición clásica: toda serie = Tendencia (largo plazo) + Ciclo (ondas plurianuales, sin período fijo) + Estacionalidad (patrón anual de período fijo, L=4 o 12) + Irregularidad (ruido impredecible). Ciclo vs. estacionalidad: si va en el calendario, es estacionalidad. Combinación aditiva (ondas parejas, estacionalidad en unidades) o multiplicativa (ondas crecientes, estacionalidad en %). Serie estacionaria = promedio constante en el tiempo; es la primera pregunta del diagnóstico porque define la familia de métodos. Si no lo es, se puede diferenciar (Yₜ − Yₜ₋₁)."
+      "text": "**Clase 3.** Serie de tiempo = secuencia ordenada de observaciones (Yₜ); el orden es información. Descomposición clásica: toda serie = Tendencia (largo plazo) + Ciclo (ondas plurianuales, sin período fijo) + Estacionalidad (patrón anual de período fijo, L=4 o 12) + Irregularidad (ruido impredecible). Ciclo vs. estacionalidad: si va en el calendario, es estacionalidad. Combinación aditiva (ondas parejas, estacionalidad en unidades) o multiplicativa (ondas crecientes, estacionalidad en %). Serie estacionaria = promedio constante en el tiempo; es la primera pregunta del diagnóstico porque define la familia de métodos. Si no lo es, se puede diferenciar (Yₜ − Yₜ₋₁)."
     },
     {
       "type": "ejercicio",
-      "title": "8. EJERCICIO — Clase 3.a",
+      "title": "8. EJERCICIO — Clase 3",
       "estado": "para resolver",
       "blocks": [
         {
@@ -469,7 +469,7 @@
       "items": [
         "**Clase 1.b** (ventas 120, 135, 105, 140, 100): a) X̄ y s · b) P(X<150) · c) P(X>90) · d) P(110<X<145) · e) inverso 90% · f) ¿Z o t?",
         "**Clase 2** (temperatura vs. bebidas): a) tabla y sumatorias · b) r · c) interpretación · d) ¿causalidad?",
-        "**Clase 3.a** (diagnóstico de 4 series): a) a d)"
+        "**Clase 3** (diagnóstico de 4 series): a) a d)"
       ]
     },
     {
@@ -577,8 +577,10 @@
     },
     {
       "type": "cierre",
-      "title": "Llevate esto de la Clase 3.a.",
+      "title": "Llevate esto de la Clase 3.",
       "text": "El orden de la serie es información. Diagnosticá T, C, S e I a ojo, decidí aditivo o multiplicativo, y usá el árbol para justificar el método. El ejercicio de las 4 series queda para resolver juntos."
     }
-  ]
+  ],
+  "block": "B",
+  "blockTitle": "Bloque B · Demanda, datos y patrones"
 }

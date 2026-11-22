@@ -18,7 +18,7 @@ Sale `index.html` en la raíz.
 
 ## `index.json`
 
-Cada clase: `id`, `title`, `file` (si está cargada), `soon`, `visto` (ya la vimos en el estudio), `name`.
+Cada clase: `id`, `title`, `file` (si está cargada), `soon`, `visto` (ya la vimos en el estudio), `name`, y para la home `short` (nombre corto bajo el círculo), `emoji` (avatar: emoji o número) y `block` (id del bloque). La unidad puede tener `blocks` (`[{id, title}]`, encabezados del índice), `examen` (pistas de finales, con conteos de patrones_examenes.md) y `oldIds` (ids viejos → nuevos, para migrar el progreso guardado).
 
 Las láminas generales de la unidad (mapa, árbol decisorio) van en `units[].laminas`.
 
@@ -29,7 +29,7 @@ Campos: `id`, `unitId`, `unitLabel`, `unitTitle`, `title`, `name`, `lede`, `vist
 Hay **dos lecturas** de la misma clase:
 
 - `teoria` — desarrollo completo, fiel al apunte: se muestra en la página LMS.
-- `historias` — repaso corto, visual, una idea por tarjeta (modo historias).
+- `historias` — repaso corto, visual, una idea por tarjeta (modo historias). Además de `concepto`, `pregunta` y `cierre`, existe `sigla` (`k`, `sigla`, `en`, `es`, `text`: definición de una línea), que usa la Clase 0.1.
 
 ### Bloques de `teoria` (en orden)
 

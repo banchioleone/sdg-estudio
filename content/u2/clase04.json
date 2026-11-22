@@ -5,7 +5,7 @@
   "id": "c4",
   "title": "Clase 4 · Medidas de error",
   "name": "Medidas de error",
-  "lede": "el árbol de decisión (Clase 3.a) propone *candidatos*; las medidas de error deciden. Sin ellas, \"comparar modelos\" es una opinión; con ellas, es un argumento. Y la cátedra pide explícitamente comparar modelos e interpretar.",
+  "lede": "el árbol de decisión (Clase 3) propone *candidatos*; las medidas de error deciden. Sin ellas, \"comparar modelos\" es una opinión; con ellas, es un argumento. Y la cátedra pide explícitamente comparar modelos e interpretar.",
   "visto": true,
   "source": [
     "clases_previas/SG/Clase04_MedidasDeError.md",
@@ -16,16 +16,16 @@
     "u2/img/Clase04_MedidasDeError.svg",
     "u2/img/ArbolDecisorio_MetodosPronostico.svg"
   ],
-  "next": "Integrador · El proceso completo",
+  "next": "Clase 4.b · Demanda y sistemas de pronóstico",
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2.b (cierre) · Serie: 0 → 0.1 → 1 → 1.b → 2 → 3.a → 3.b → **4****"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque B · Clase 4 · Medidas de error**"
     },
     {
       "type": "callout",
       "kind": "idea",
-      "text": "**Idea central:** el árbol de decisión (Clase 3.a) propone *candidatos*; las medidas de error **deciden**. Sin ellas, \"comparar modelos\" es una opinión; con ellas, es un argumento. Y la cátedra pide explícitamente comparar modelos e interpretar."
+      "text": "**Idea central:** el árbol de decisión (Clase 3) propone *candidatos*; las medidas de error **deciden**. Sin ellas, \"comparar modelos\" es una opinión; con ellas, es un argumento. Y la cátedra pide explícitamente comparar modelos e interpretar."
     },
     {
       "type": "heading",
@@ -407,7 +407,7 @@
       "type": "list",
       "ordered": true,
       "items": [
-        "**Elegir un método** según el patrón de datos (árbol de la Clase 3.a).",
+        "**Elegir un método** según el patrón de datos (árbol de la Clase 3).",
         "**Partir los datos en dos**: parte de **inicialización** (para ajustar) y parte de **prueba** (que el método no vio).",
         "**Ajustar** el método con la parte de inicialización.",
         "**Pronosticar la parte de prueba** y medir los errores ahí.",
@@ -532,7 +532,7 @@
       "items": [
         "**Clase 1.b** (ventas 120, 135, 105, 140, 100): a) X̄ y s · b) P(X<150) · c) P(X>90) · d) P(110<X<145) · e) inverso 90% · f) ¿Z o t?",
         "**Clase 2** (temperatura vs. bebidas): a) tabla y sumatorias · b) r · c) interpretación · d) ¿causalidad?",
-        "**Clase 3.a** (diagnóstico de 4 series): a) a d)",
+        "**Clase 3** (diagnóstico de 4 series): a) a d)",
         "**Clase 3.b** (correlogramas): 1) a 3)",
         "**Clase 4** (comparación de métodos X e Y): a) a e)"
       ]
@@ -543,11 +543,11 @@
     },
     {
       "type": "paragraph",
-      "text": "**Con esta clase se cierra la Unidad 2.b (demanda, datos y patrones).**"
+      "text": "**Con esta clase termina la parte de datos y patrones del Bloque B.** Faltan la Clase 4.b y el Integrador."
     },
     {
       "type": "paragraph",
-      "text": "**Sigue → Clase 5: Métodos no formales y promedios** (promedio simple, promedio móvil, promedio móvil doble): el primer bloque de métodos de pronóstico. Arranca la Unidad 2.c. Ya está cargada."
+      "text": "**Sigue → Clase 4.b · Demanda y sistemas de pronóstico**: qué se pronostica y para qué, demanda dependiente e independiente, métodos cualitativos y el sistema de pronósticos. Después, el Integrador cierra el Bloque B y la Clase 5 abre el Bloque C (métodos de series de tiempo)."
     }
   ],
   "historias": [
@@ -654,5 +654,7 @@
       "title": "Llevate esto de la Clase 4.",
       "text": "Usá las cuatro medidas: MAD (unidades), MSE (castiga lo grande), MAPE (%) y PME (sesgo). Validá en datos de prueba, no en los de ajuste. El ejercicio X vs. Y queda para resolver juntos."
     }
-  ]
+  ],
+  "block": "B",
+  "blockTitle": "Bloque B · Demanda, datos y patrones"
 }

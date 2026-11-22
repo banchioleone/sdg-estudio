@@ -39,6 +39,306 @@
     },
     {
       "type": "heading",
+      "id": "tabla-rapida-h",
+      "level": 2,
+      "text": "Tabla rápida: una línea por sigla"
+    },
+    {
+      "type": "table",
+      "id": "tabla-rapida",
+      "headers": [
+        "Sigla",
+        "Significado",
+        "Traducción",
+        "Definición corta",
+        "Unidad"
+      ],
+      "rows": [
+        [
+          "SES",
+          "Simple Exponential Smoothing *",
+          "Suavización (nivelación) exponencial simple",
+          "Nuevo pronóstico = anterior + α × último error.",
+          "U2"
+        ],
+        [
+          "MAD",
+          "Mean Absolute Deviation *",
+          "Desviación absoluta media",
+          "Error promedio en valor absoluto, en unidades.",
+          "U2"
+        ],
+        [
+          "MSE",
+          "Mean Squared Error *",
+          "Error cuadrático medio",
+          "Promedio de errores al cuadrado: castiga los grandes.",
+          "U2"
+        ],
+        [
+          "MAPE",
+          "Mean Absolute Percentage Error *",
+          "Porcentaje de error medio absoluto",
+          "Error en %: compara series de distinta escala.",
+          "U2"
+        ],
+        [
+          "PME",
+          "sigla en castellano",
+          "Porcentaje medio de error",
+          "Conserva el signo: muestra el sesgo.",
+          "U2"
+        ],
+        [
+          "FAC / ACF",
+          "Autocorrelation Function *",
+          "Función de autocorrelación",
+          "El correlograma: prueba tendencia o estación con números.",
+          "U2"
+        ],
+        [
+          "r / R²",
+          "sin expansión",
+          "Correlación / coeficiente de determinación",
+          "r: si dos variables se mueven juntas; R²: % de variación explicada.",
+          "U2"
+        ],
+        [
+          "MPS",
+          "Master Production Schedule",
+          "Plan (programa) maestro de producción",
+          "Cuántos productos finales se fabrican y cuándo.",
+          "U6"
+        ],
+        [
+          "MRP",
+          "Material Requirements Planning",
+          "Planificación de los requerimientos de materiales",
+          "Partes y materias primas por período para cumplir el MPS.",
+          "U6"
+        ],
+        [
+          "MRP II",
+          "Manufacturing Resource Planning *",
+          "Planeación de recursos de manufactura",
+          "El MRP ampliado a más recursos y áreas de la empresa.",
+          "U6"
+        ],
+        [
+          "CRP",
+          "Capacity Requirements Planning",
+          "Planificación de los requerimientos de capacidad",
+          "Capacidad detallada, período a período, que exige el MRP.",
+          "U6"
+        ],
+        [
+          "RCCP",
+          "Rough-Cut Capacity Planning",
+          "Planificación aproximada de la capacidad (trad. propia)",
+          "Chequeo grueso de capacidad; el apunte lo pone como complementario del CRP.",
+          "U6"
+        ],
+        [
+          "PAC",
+          "Production Activity Control",
+          "Control de las actividades de producción",
+          "Lanza, programa y controla las órdenes en curso.",
+          "U6"
+        ],
+        [
+          "SFC",
+          "Shop Floor Control",
+          "Control del taller",
+          "Otro nombre del PAC.",
+          "U6"
+        ],
+        [
+          "WIP",
+          "Work in Process *",
+          "Trabajo en proceso (en curso)",
+          "Lo que ya entró a producción y no terminó; lo administra el PAC.",
+          "U6"
+        ],
+        [
+          "OP / OC",
+          "siglas en castellano",
+          "Orden de producción / orden de compra",
+          "Si hay un ingreso programado, existe una OP o una OC.",
+          "U6"
+        ],
+        [
+          "TBO",
+          "Time Between Orders",
+          "Tiempo entre órdenes",
+          "Cada cuántos períodos se lanza una orden.",
+          "U6"
+        ],
+        [
+          "POQ",
+          "Periodic Order Quantity",
+          "Cantidad periódica de producción",
+          "Período fijo, cantidad variable: usa el EOQ para hallar el TBO.",
+          "U6"
+        ],
+        [
+          "PPB",
+          "Part Period Balancing",
+          "Balance cantidad-período",
+          "Agrupa requerimientos para minimizar producción + stock.",
+          "U6"
+        ],
+        [
+          "EOQ",
+          "Economic Order Quantity",
+          "Lote económico (cantidad económica de pedido)",
+          "El lote clásico, para demanda poco variable.",
+          "U5"
+        ],
+        [
+          "LEC",
+          "sigla en castellano",
+          "Lote económico de compra",
+          "El lote económico de lo que se compra; pareja del LEF.",
+          "U5"
+        ],
+        [
+          "LEF",
+          "sigla en castellano",
+          "Lote económico de fabricación",
+          "El lote económico de lo que se fabrica.",
+          "U5"
+        ],
+        [
+          "SS",
+          "Safety Stock *",
+          "Stock de seguridad",
+          "Colchón contra la incertidumbre de la demanda o del lead time.",
+          "U5"
+        ],
+        [
+          "ABC",
+          "no se expande",
+          "Análisis / clasificación ABC",
+          "Pareto aplicado al inventario: clasifica por valor.",
+          "U5"
+        ],
+        [
+          "DRP",
+          "Distribution Requirements Planning",
+          "Planificación de los requerimientos de distribución",
+          "Un MRP de productos finales para centros de distribución.",
+          "U5"
+        ],
+        [
+          "BOM",
+          "Bill of Materials *",
+          "Lista de materiales / estructura de producto",
+          "Qué componentes, y cuántos, lleva cada producto.",
+          "U3"
+        ],
+        [
+          "IBM-11",
+          "sin expansión",
+          "Dígito verificador módulo 11",
+          "Control de un código con pesos 2 a 7.",
+          "U3"
+        ],
+        [
+          "JIT",
+          "Just In Time *",
+          "Justo a tiempo",
+          "Producir lo que se necesita cuando se necesita.",
+          "U4"
+        ],
+        [
+          "Kanban",
+          "palabra japonesa",
+          "«Signo» o «tarjeta de instrucción»",
+          "La señal que regula el flujo justo a tiempo.",
+          "U4"
+        ],
+        [
+          "SMED",
+          "Single-Minute Exchange of Die",
+          "Cambio de troqueles en un minuto",
+          "Bajar los tiempos de preparación de las máquinas.",
+          "U4"
+        ],
+        [
+          "TQM",
+          "Total Quality Management *",
+          "Administración de la calidad total",
+          "Concepto básico de la U4 en el programa.",
+          "U4"
+        ],
+        [
+          "TOC",
+          "Theory of Constraints *",
+          "Teoría de las restricciones",
+          "Cuellos de botella, la meta y mejora continua (Goldratt).",
+          "U4"
+        ],
+        [
+          "ERP",
+          "Enterprise Resource Planning *",
+          "Planificación de recursos empresariales",
+          "Paquete parametrizable para la gestión integral de la empresa.",
+          "U7"
+        ],
+        [
+          "BI",
+          "Business Intelligence",
+          "Inteligencia de negocios",
+          "Convierte datos en información útil para decidir.",
+          "U7"
+        ],
+        [
+          "DW",
+          "Data Warehouse",
+          "Almacén de datos (trad. propia)",
+          "Datos integrados, por materia, históricos y no volátiles.",
+          "U7"
+        ],
+        [
+          "ETL",
+          "Extract, Transform, Load *",
+          "Extracción, transformación y carga",
+          "Lleva los datos de los sistemas operacionales al DW.",
+          "U7"
+        ],
+        [
+          "DSS / SSD",
+          "Decision Support System",
+          "Sistema de soporte de decisiones",
+          "Sistema de computación para apoyar decisiones.",
+          "U7"
+        ],
+        [
+          "APICS",
+          "American Production & Inventory Control Society",
+          "Sociedad estadounidense de control de producción e inventarios (trad. propia)",
+          "Referencia de vocabulario de la bibliografía.",
+          "ref."
+        ],
+        [
+          "MCP",
+          "sin expansión en la cátedra",
+          "—",
+          "Cae en «Qué es MRP, MCP, ERP» (2012); ningún apunte la define.",
+          "U7"
+        ],
+        [
+          "IBM-13",
+          "sin expansión",
+          "—",
+          "Sólo un recuerdo de un final de 2011; sin procedimiento en los apuntes.",
+          "U3"
+        ]
+      ],
+      "caption": "Tabla rápida. Definiciones resumidas del glosario de abajo, que cita la fuente de cada una. * complemento: la expansión en inglés no está en el material. La columna Unidad ubica la sigla según el programa y el mapa v2; cuando el material no la ubica, es una lectura propia."
+    },
+    {
+      "type": "heading",
       "level": 2,
       "text": "1. De dónde sale esta clase"
     },
@@ -379,100 +679,388 @@
   "historias": [
     {
       "type": "concepto",
-      "k": "Para qué",
-      "title": "El examen pide vocabulario específico.",
-      "text": "Esta clase no inventa significados. Si una sigla aparece en un final o en un apunte y no se desarrolla, se deja marcada. El resto sale de los textos que ya tenemos."
+      "k": "Siglas",
+      "title": "Una sigla por tarjeta.",
+      "text": "Sigla, qué significa en inglés, cómo se traduce y una línea. Agrupadas por unidad. Las expansiones con * no están en el material."
     },
     {
-      "type": "concepto",
-      "k": "La cadena",
-      "title": "MPS dice el qué y el cuándo. MRP explota las partes.",
-      "text": "MPS: plan maestro, cuántas piezas finales y cuándo (V6). MRP: planificación de los requerimientos de materiales. Parte del MPS y calcula, período a período, conjuntos, piezas y materias primas (Resumen 7 p.). Es demanda dependiente.",
-      "svg": "<svg viewBox=\"0 0 280 72\" width=\"100%\" height=\"72\" aria-hidden=\"true\"><rect x=\"8\" y=\"18\" width=\"46\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"31\" y=\"39\" font-size=\"12\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">MPS</text><text x=\"58\" y=\"40\" font-size=\"12\" fill=\"#9aa3ad\">→</text><rect x=\"63\" y=\"18\" width=\"46\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.6\"/><text x=\"86\" y=\"39\" font-size=\"12\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">CRP</text><text x=\"113\" y=\"40\" font-size=\"12\" fill=\"#9aa3ad\">→</text><rect x=\"118\" y=\"18\" width=\"46\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.6\"/><text x=\"141\" y=\"39\" font-size=\"12\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">MRP</text><text x=\"168\" y=\"40\" font-size=\"12\" fill=\"#9aa3ad\">→</text><rect x=\"173\" y=\"18\" width=\"46\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.6\"/><text x=\"196\" y=\"39\" font-size=\"12\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">PAC</text><text x=\"223\" y=\"40\" font-size=\"12\" fill=\"#9aa3ad\">→</text><rect x=\"228\" y=\"18\" width=\"46\" height=\"32\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.6\"/><text x=\"251\" y=\"39\" font-size=\"12\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">ERP</text></svg>",
-      "chartLabel": "Cadena corta: el MPS alimenta al MRP; el ERP las empaqueta"
+      "type": "sigla",
+      "k": "U2 · Pronósticos",
+      "sigla": "SES",
+      "en": "Simple Exponential Smoothing *",
+      "es": "Suavización (nivelación) exponencial simple",
+      "text": "Nuevo pronóstico = anterior + α × último error."
     },
     {
-      "type": "concepto",
-      "k": "La historia",
-      "title": "MRP se agranda y termina en ERP.",
-      "text": "MRP II, en el V6, es planeación de recursos de manufactura. El programa habla de sistemas MRPII (CRP); el Documento Maestro anota CRP como planificación de requerimientos de capacidad. ERP, en el programa, es la gestión integral de los recursos en empresas industriales."
+      "type": "sigla",
+      "k": "U2 · Pronósticos",
+      "sigla": "MAD",
+      "en": "Mean Absolute Deviation *",
+      "es": "Desviación absoluta media",
+      "text": "Error promedio en valor absoluto, en unidades."
     },
     {
-      "type": "pregunta",
-      "k": "A ver…",
-      "title": "El MRP calcula las necesidades de partes a partir de…",
-      "options": [
-        "Un pronóstico suelto de cada tornillo",
-        "Las cantidades de productos finales fijadas en el MPS",
-        "El stock de seguridad de la U5"
-      ],
-      "correct": 1,
-      "feedback": "El Resumen de 7 páginas lo dice: el MRP obtiene las necesidades de cada parte para cumplir el Plan Maestro de Producción. Por eso es demanda dependiente."
+      "type": "sigla",
+      "k": "U2 · Pronósticos",
+      "sigla": "MSE",
+      "en": "Mean Squared Error *",
+      "es": "Error cuadrático medio",
+      "text": "Promedio de errores al cuadrado: castiga los grandes."
     },
     {
-      "type": "concepto",
-      "k": "El producto y el lote",
-      "title": "BOM es la lista. EOQ es el lote económico.",
-      "text": "BOM: lista de materiales / estructura de producto (programa y Preguntas frecuentes). EOQ: Economic Order Quantity, lote económico clásico (7 p. y V6). Junto a él aparecen TBO (tiempo entre órdenes), POQ (cantidad periódica) y PPB (balance cantidad-período)."
+      "type": "sigla",
+      "k": "U2 · Pronósticos",
+      "sigla": "MAPE",
+      "en": "Mean Absolute Percentage Error *",
+      "es": "Porcentaje de error medio absoluto",
+      "text": "Error en %: compara series de distinta escala."
     },
     {
-      "type": "concepto",
-      "k": "El proceso",
-      "title": "JIT, Kanban, SMED, TQM, TOC.",
-      "text": "JIT es justo a tiempo: producir lo que se necesita cuando se necesita (V6). Kanban es «signo» o «tarjeta de instrucción» en japonés. SMED: cambio de troqueles en un minuto. TQM: administración de la calidad total. TOC: Teoría de las Restricciones (Documento Maestro)."
+      "type": "sigla",
+      "k": "U2 · Pronósticos",
+      "sigla": "PME",
+      "en": "sigla en castellano",
+      "es": "Porcentaje medio de error",
+      "text": "Conserva el signo: muestra el sesgo."
     },
     {
-      "type": "pregunta",
-      "k": "A ver…",
-      "title": "JIT significa…",
-      "options": [
-        "Justo a tiempo: producir lo que se necesita cuando se necesita",
-        "Un tipo de MRP",
-        "Un software ERP"
-      ],
-      "correct": 0,
-      "feedback": "Así lo traen el Resumen V6 y las Preguntas frecuentes. El final 2018, además, preguntó cuándo una empresa JIT necesita MRP."
+      "type": "sigla",
+      "k": "U2 · Pronósticos",
+      "sigla": "FAC / ACF",
+      "en": "Autocorrelation Function *",
+      "es": "Función de autocorrelación",
+      "text": "El correlograma: prueba tendencia o estación con números."
     },
     {
-      "type": "concepto",
-      "k": "Los errores",
-      "title": "Cuatro siglas para medir el pronóstico.",
-      "text": "MAD: desviación absoluta media (en unidades). MSE: error cuadrático medio (castiga los grandes). MAPE: porcentaje de error medio absoluto (para comparar series). PME: porcentaje medio de error, el que muestra el sesgo. (Hanke y Clase 4)"
-    },
-    {
-      "type": "concepto",
-      "k": "Inventarios",
-      "title": "ABC por valor. SS, el stock de seguridad.",
-      "text": "ABC clasifica ítems por valor de consumo (A pocos y valiosos, C muchos y baratos). SS es el stock de seguridad: cubre la incertidumbre de la demanda o del lead time. OP/OC es el punto de pedido."
+      "type": "sigla",
+      "k": "U2 · Pronósticos",
+      "sigla": "r / R²",
+      "en": "sin expansión",
+      "es": "Correlación / coeficiente de determinación",
+      "text": "r: si dos variables se mueven juntas; R²: % de variación explicada."
     },
     {
       "type": "pregunta",
       "k": "A ver…",
-      "title": "¿Cuál de estas medidas sirve para ver si el método tiene sesgo?",
+      "qid": "sq-pme",
+      "title": "¿Qué sigla muestra si el método tiene sesgo?",
       "options": [
         "MAD",
         "MSE",
         "PME"
       ],
       "correct": 2,
-      "feedback": "El PME conserva el signo y por eso muestra el sesgo. MAD y MSE miran magnitud, no dirección."
+      "feedback": "El PME conserva el signo. MAD y MSE miran magnitud, no dirección."
     },
     {
-      "type": "concepto",
-      "k": "Información",
-      "title": "BI, ETL y el dígito verificador.",
-      "text": "BI: Inteligencia de Negocios / Business Intelligence (V6). ETL: Extracción, Transformación y Carga, para poblar el Data Warehouse. IBM-11: dígito verificador módulo 11 (cayó en 2018). APICS: American Production & Inventory Control Society."
+      "type": "sigla",
+      "k": "U6 · Planificación",
+      "sigla": "MPS",
+      "en": "Master Production Schedule",
+      "es": "Plan (programa) maestro de producción",
+      "text": "Cuántos productos finales se fabrican y cuándo."
     },
     {
-      "type": "concepto",
-      "k": "Con honestidad",
-      "title": "Dos siglas siguen en duda.",
-      "text": "PAC, DRP, DSS (SSD), LEC/LEF y WIP ya están en los apuntes o con fuente clara. Quedan MCP (aparece en «qué es MRP, MCP, ERP», sin expansión en la cátedra) e IBM-13 (solo un recuerdo de 2011, sin procedimiento). Esas no se inventan."
+      "type": "sigla",
+      "k": "U6 · Planificación",
+      "sigla": "MRP",
+      "en": "Material Requirements Planning",
+      "es": "Planificación de los requerimientos de materiales",
+      "text": "Partes y materias primas por período para cumplir el MPS."
+    },
+    {
+      "type": "sigla",
+      "k": "U6 · Planificación",
+      "sigla": "MRP II",
+      "en": "Manufacturing Resource Planning *",
+      "es": "Planeación de recursos de manufactura",
+      "text": "El MRP ampliado a más recursos y áreas de la empresa."
+    },
+    {
+      "type": "sigla",
+      "k": "U6 · Planificación",
+      "sigla": "CRP",
+      "en": "Capacity Requirements Planning",
+      "es": "Planificación de los requerimientos de capacidad",
+      "text": "Capacidad detallada, período a período, que exige el MRP."
+    },
+    {
+      "type": "sigla",
+      "k": "U6 · Planificación",
+      "sigla": "RCCP",
+      "en": "Rough-Cut Capacity Planning",
+      "es": "Planificación aproximada de la capacidad (trad. propia)",
+      "text": "Chequeo grueso de capacidad; el apunte lo pone como complementario del CRP."
+    },
+    {
+      "type": "sigla",
+      "k": "U6 · Planificación",
+      "sigla": "PAC",
+      "en": "Production Activity Control",
+      "es": "Control de las actividades de producción",
+      "text": "Lanza, programa y controla las órdenes en curso."
+    },
+    {
+      "type": "sigla",
+      "k": "U6 · Planificación",
+      "sigla": "SFC",
+      "en": "Shop Floor Control",
+      "es": "Control del taller",
+      "text": "Otro nombre del PAC."
+    },
+    {
+      "type": "sigla",
+      "k": "U6 · Planificación",
+      "sigla": "WIP",
+      "en": "Work in Process *",
+      "es": "Trabajo en proceso (en curso)",
+      "text": "Lo que ya entró a producción y no terminó; lo administra el PAC."
+    },
+    {
+      "type": "sigla",
+      "k": "U6 · Planificación",
+      "sigla": "OP / OC",
+      "en": "siglas en castellano",
+      "es": "Orden de producción / orden de compra",
+      "text": "Si hay un ingreso programado, existe una OP o una OC."
+    },
+    {
+      "type": "sigla",
+      "k": "U6 · Planificación",
+      "sigla": "TBO",
+      "en": "Time Between Orders",
+      "es": "Tiempo entre órdenes",
+      "text": "Cada cuántos períodos se lanza una orden."
+    },
+    {
+      "type": "sigla",
+      "k": "U6 · Planificación",
+      "sigla": "POQ",
+      "en": "Periodic Order Quantity",
+      "es": "Cantidad periódica de producción",
+      "text": "Período fijo, cantidad variable: usa el EOQ para hallar el TBO."
+    },
+    {
+      "type": "sigla",
+      "k": "U6 · Planificación",
+      "sigla": "PPB",
+      "en": "Part Period Balancing",
+      "es": "Balance cantidad-período",
+      "text": "Agrupa requerimientos para minimizar producción + stock."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "qid": "sq-mps",
+      "title": "¿Qué es el MPS?",
+      "options": [
+        "El cálculo de partes y materias primas",
+        "Cuántos productos finales se fabrican y cuándo",
+        "El control del taller"
+      ],
+      "correct": 1,
+      "feedback": "MPS = Master Production Schedule, plan maestro de producción. El cálculo de partes es el MRP; el control del taller, el PAC (SFC)."
+    },
+    {
+      "type": "sigla",
+      "k": "U5 · Inventarios y logística",
+      "sigla": "EOQ",
+      "en": "Economic Order Quantity",
+      "es": "Lote económico (cantidad económica de pedido)",
+      "text": "El lote clásico, para demanda poco variable."
+    },
+    {
+      "type": "sigla",
+      "k": "U5 · Inventarios y logística",
+      "sigla": "LEC",
+      "en": "sigla en castellano",
+      "es": "Lote económico de compra",
+      "text": "El lote económico de lo que se compra; pareja del LEF."
+    },
+    {
+      "type": "sigla",
+      "k": "U5 · Inventarios y logística",
+      "sigla": "LEF",
+      "en": "sigla en castellano",
+      "es": "Lote económico de fabricación",
+      "text": "El lote económico de lo que se fabrica."
+    },
+    {
+      "type": "sigla",
+      "k": "U5 · Inventarios y logística",
+      "sigla": "SS",
+      "en": "Safety Stock *",
+      "es": "Stock de seguridad",
+      "text": "Colchón contra la incertidumbre de la demanda o del lead time."
+    },
+    {
+      "type": "sigla",
+      "k": "U5 · Inventarios y logística",
+      "sigla": "ABC",
+      "en": "no se expande",
+      "es": "Análisis / clasificación ABC",
+      "text": "Pareto aplicado al inventario: clasifica por valor."
+    },
+    {
+      "type": "sigla",
+      "k": "U5 · Inventarios y logística",
+      "sigla": "DRP",
+      "en": "Distribution Requirements Planning",
+      "es": "Planificación de los requerimientos de distribución",
+      "text": "Un MRP de productos finales para centros de distribución."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "qid": "sq-drp",
+      "title": "¿Qué es el DRP?",
+      "options": [
+        "Un MRP de productos finales para centros de distribución",
+        "El stock de seguridad",
+        "El lote económico de compra"
+      ],
+      "correct": 0,
+      "feedback": "DRP = Distribution Requirements Planning: muy similar al MRP, pero referido sólo a productos finales."
+    },
+    {
+      "type": "sigla",
+      "k": "U3 · Producto",
+      "sigla": "BOM",
+      "en": "Bill of Materials *",
+      "es": "Lista de materiales / estructura de producto",
+      "text": "Qué componentes, y cuántos, lleva cada producto."
+    },
+    {
+      "type": "sigla",
+      "k": "U3 · Producto",
+      "sigla": "IBM-11",
+      "en": "sin expansión",
+      "es": "Dígito verificador módulo 11",
+      "text": "Control de un código con pesos 2 a 7."
+    },
+    {
+      "type": "sigla",
+      "k": "U4 · Proceso",
+      "sigla": "JIT",
+      "en": "Just In Time *",
+      "es": "Justo a tiempo",
+      "text": "Producir lo que se necesita cuando se necesita."
+    },
+    {
+      "type": "sigla",
+      "k": "U4 · Proceso",
+      "sigla": "Kanban",
+      "en": "palabra japonesa",
+      "es": "«Signo» o «tarjeta de instrucción»",
+      "text": "La señal que regula el flujo justo a tiempo."
+    },
+    {
+      "type": "sigla",
+      "k": "U4 · Proceso",
+      "sigla": "SMED",
+      "en": "Single-Minute Exchange of Die",
+      "es": "Cambio de troqueles en un minuto",
+      "text": "Bajar los tiempos de preparación de las máquinas."
+    },
+    {
+      "type": "sigla",
+      "k": "U4 · Proceso",
+      "sigla": "TQM",
+      "en": "Total Quality Management *",
+      "es": "Administración de la calidad total",
+      "text": "Concepto básico de la U4 en el programa."
+    },
+    {
+      "type": "sigla",
+      "k": "U4 · Proceso",
+      "sigla": "TOC",
+      "en": "Theory of Constraints *",
+      "es": "Teoría de las restricciones",
+      "text": "Cuellos de botella, la meta y mejora continua (Goldratt)."
+    },
+    {
+      "type": "pregunta",
+      "k": "A ver…",
+      "qid": "sq-jit",
+      "title": "JIT significa…",
+      "options": [
+        "Un tipo de MRP",
+        "Justo a tiempo: producir lo que se necesita cuando se necesita",
+        "Un software ERP"
+      ],
+      "correct": 1,
+      "feedback": "Así lo traen el Resumen V6 y las Preguntas frecuentes. El final 2018 preguntó cuándo una empresa JIT necesita MRP."
+    },
+    {
+      "type": "sigla",
+      "k": "U7 · ERP e información",
+      "sigla": "ERP",
+      "en": "Enterprise Resource Planning *",
+      "es": "Planificación de recursos empresariales",
+      "text": "Paquete parametrizable para la gestión integral de la empresa."
+    },
+    {
+      "type": "sigla",
+      "k": "U7 · ERP e información",
+      "sigla": "BI",
+      "en": "Business Intelligence",
+      "es": "Inteligencia de negocios",
+      "text": "Convierte datos en información útil para decidir."
+    },
+    {
+      "type": "sigla",
+      "k": "U7 · ERP e información",
+      "sigla": "DW",
+      "en": "Data Warehouse",
+      "es": "Almacén de datos (trad. propia)",
+      "text": "Datos integrados, por materia, históricos y no volátiles."
+    },
+    {
+      "type": "sigla",
+      "k": "U7 · ERP e información",
+      "sigla": "ETL",
+      "en": "Extract, Transform, Load *",
+      "es": "Extracción, transformación y carga",
+      "text": "Lleva los datos de los sistemas operacionales al DW."
+    },
+    {
+      "type": "sigla",
+      "k": "U7 · ERP e información",
+      "sigla": "DSS / SSD",
+      "en": "Decision Support System",
+      "es": "Sistema de soporte de decisiones",
+      "text": "Sistema de computación para apoyar decisiones."
+    },
+    {
+      "type": "sigla",
+      "k": "ref. · ERP e información",
+      "sigla": "APICS",
+      "en": "American Production & Inventory Control Society",
+      "es": "Sociedad estadounidense de control de producción e inventarios (trad. propia)",
+      "text": "Referencia de vocabulario de la bibliografía."
+    },
+    {
+      "type": "sigla",
+      "k": "U7 · En duda",
+      "sigla": "MCP",
+      "en": "sin expansión en la cátedra",
+      "es": "—",
+      "text": "Cae en «Qué es MRP, MCP, ERP» (2012); ningún apunte la define."
+    },
+    {
+      "type": "sigla",
+      "k": "U3 · En duda",
+      "sigla": "IBM-13",
+      "en": "sin expansión",
+      "es": "—",
+      "text": "Sólo un recuerdo de un final de 2011; sin procedimiento en los apuntes."
     },
     {
       "type": "cierre",
       "title": "Llevate el vocabulario.",
-      "text": "MPS y MRP son el corazón de la cadena; el PAC controla el piso; el DRP lleva el MRP a la distribución; ERP integra el software. JIT, EOQ, BOM, MAD/MSE/MAPE/PME y BI están en los apuntes. MCP e IBM-13 siguen marcadas como duda. Sigue la Clase 1: la base estadística."
+      "text": "MPS dice qué y cuándo; MRP calcula las partes; CRP mide la capacidad; PAC controla el taller; DRP lleva el MRP a la distribución; ERP integra todo. MAD, MSE, MAPE y PME miden el error. MCP e IBM-13 siguen en duda. Sigue la Clase 1: la base estadística."
     }
-  ]
+  ],
+  "block": "intro",
+  "blockTitle": "Introducción"
 }

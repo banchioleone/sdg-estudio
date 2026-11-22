@@ -3,8 +3,8 @@
   "unitLabel": "Unidad 2",
   "unitTitle": "Métodos de pronósticos",
   "id": "c10",
-  "title": "Clase 10 · Integrador de métodos y control",
-  "name": "Integrador de métodos y control",
+  "title": "Clase 10 · Elegir y controlar el método",
+  "name": "Elegir y controlar el método",
   "lede": "Elegir implica diagnosticar, calcular y defender. La precisión mide cuánto te equivocás; el rastreo busca sesgo; la utilidad depende de la decisión. Ninguno reemplaza a los otros.",
   "visto": false,
   "source": [
@@ -18,16 +18,16 @@
   "laminas": [
     "u2/img/Rastreo_T150.svg"
   ],
-  "next": "Clase 2.b-teoría · Demanda, cualitativos y sistemas de pronóstico",
+  "next": "Clase 11 · Regresión lineal simple",
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 10 · Integrador de métodos y control**"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque C · Clase 10 · Elegir y controlar el método**"
     },
     {
       "type": "callout",
       "kind": "aviso",
-      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados."
     },
     {
       "type": "callout",
@@ -368,7 +368,7 @@
     },
     {
       "type": "paragraph",
-      "text": "**Próxima clase → Clase 2.b-teoría · Demanda, cualitativos y sistemas de pronóstico**"
+      "text": "**Próxima clase → Clase 11 · Regresión lineal simple** (abre el Bloque D)"
     }
   ],
   "historias": [
@@ -488,7 +488,9 @@
       "type": "cierre",
       "k": "Para llevar",
       "title": "Llevate esto de la Clase 10.",
-      "text": "Familia por patrón e información, parámetros por error de prueba, misma ventana para comparar. Tres controles distintos: TS, conteo U y ±2 RMSE. Una TS dentro de límites no prueba un buen pronóstico. Próxima: demanda, cualitativos y sistemas."
+      "text": "Familia por patrón e información, parámetros por error de prueba, misma ventana para comparar. Tres controles distintos: TS, conteo U y ±2 RMSE. Una TS dentro de límites no prueba un buen pronóstico. Próxima: regresión lineal simple."
     }
-  ]
+  ],
+  "block": "C",
+  "blockTitle": "Bloque C · Métodos de series de tiempo"
 }

@@ -9,7 +9,7 @@
 
   <!-- TITULO -->
   <text x="40" y="36" font-size="22" font-weight="700" fill="#1F4E79">CLASE 1 · Base estadística</text>
-  <text x="360" y="36" font-size="12.5" fill="#666">Unidad 2.a — la herramienta transversal de toda la materia</text>
+  <text x="360" y="36" font-size="12.5" fill="#666">U2 · Bloque A — la herramienta transversal de toda la materia</text>
   <text x="40" y="58" font-size="12.5" font-weight="700" fill="#C00000">Idea central: el promedio dice el CENTRO; el desvío estándar dice la DISPERSIÓN. Sin el desvío, el promedio engaña.</text>
 
   <!-- ===== BLOQUE 1: PROMEDIO Y DESVIO ===== -->

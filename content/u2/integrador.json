@@ -3,9 +3,9 @@
   "unitLabel": "Unidad 2",
   "unitTitle": "Métodos de pronósticos",
   "id": "cint",
-  "title": "Integrador · Proceso completo",
-  "name": "Proceso completo",
-  "lede": "En una frase: *3.a me da la SOSPECHA · 3.b me da la PRUEBA · el árbol me da el MÉTODO · la clase 4 me dice si ACERTÉ.*",
+  "title": "Integrador · El proceso completo de pronóstico",
+  "name": "El proceso completo de pronóstico",
+  "lede": "En una frase: *la Clase 3 me da la SOSPECHA · la 3.b me da la PRUEBA · el árbol me da el MÉTODO · la clase 4 me dice si ACERTÉ.*",
   "visto": true,
   "source": [
     "clases_previas/SG/Integrador_ProcesoCompleto.md",
@@ -16,16 +16,16 @@
     "u2/img/ProcesoCompleto_Pronostico.svg",
     "u2/img/ArbolDecisorio_MetodosPronostico.svg"
   ],
-  "next": "Clase 5 · Métodos no formales y promedios",
+  "next": "Clase 5 · Métodos ingenuos y promedios",
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Cómo se conectan las clases 3.a, 3.b y 4** · Sistemas de Gestión (UTN FRRo) · Unidad 2"
+      "text": "**Cómo se conectan las clases 3, 3.b y 4** · Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque B"
     },
     {
       "type": "callout",
       "kind": "idea",
-      "text": "**En una frase:** *3.a me da la SOSPECHA · 3.b me da la PRUEBA · el árbol me da el MÉTODO · la clase 4 me dice si ACERTÉ.*"
+      "text": "**En una frase:** *la Clase 3 me da la SOSPECHA · la 3.b me da la PRUEBA · el árbol me da el MÉTODO · la clase 4 me dice si ACERTÉ.*"
     },
     {
       "type": "svg",
@@ -60,7 +60,7 @@
           "---"
         ],
         [
-          "**3.a** — componentes de la serie",
+          "**Clase 3** — componentes de la serie",
           "**Mirar al paciente**",
           "Ves los síntomas a simple vista: \"está pálido, le cuesta respirar\""
         ],
@@ -98,7 +98,7 @@
     {
       "type": "heading",
       "level": 3,
-      "text": "Paso 1 · GRAFICAR *(clase 3.a)*"
+      "text": "Paso 1 · GRAFICAR *(Clase 3)*"
     },
     {
       "type": "paragraph",
@@ -309,7 +309,7 @@
     {
       "type": "callout",
       "kind": "examen",
-      "text": "**Integrador 3.a + 3.b + 4.** El pronóstico es un circuito de 5 pasos: graficar (sospecha) → correlograma (prueba) → árbol (método) → aplicar (números) → medir error (¿acerté?). Si las medidas de error muestran sesgo (PME alto y consistente), se vuelve al paso 3 y se cambia de método: el PME delata un diagnóstico equivocado. La respuesta de examen combina las tres clases: diagnóstico + evidencia + método + justificación + validación."
+      "text": "**Integrador 3 + 3.b + 4.** El pronóstico es un circuito de 5 pasos: graficar (sospecha) → correlograma (prueba) → árbol (método) → aplicar (números) → medir error (¿acerté?). Si las medidas de error muestran sesgo (PME alto y consistente), se vuelve al paso 3 y se cambia de método: el PME delata un diagnóstico equivocado. La respuesta de examen combina las tres clases: diagnóstico + evidencia + método + justificación + validación."
     },
     {
       "type": "paragraph",
@@ -317,7 +317,7 @@
     },
     {
       "type": "paragraph",
-      "text": "**Sigue → Clase 5: Métodos no formales y promedios** — el paso 4 del circuito (aplicar el método), ahora con los informales y los promedios."
+      "text": "**Sigue → Clase 5 · Métodos ingenuos y promedios** — el paso 4 del circuito (aplicar el método), ahora con los informales y los promedios."
     }
   ],
   "historias": [
@@ -325,7 +325,7 @@
       "type": "concepto",
       "k": "La idea",
       "title": "Tres clases, un solo procedimiento.",
-      "text": "3.a te da la sospecha, 3.b te da la prueba, el árbol te da el método, la clase 4 te dice si acertaste. No son temas sueltos.",
+      "text": "La Clase 3 te da la sospecha, la 3.b te da la prueba, el árbol te da el método, la clase 4 te dice si acertaste. No son temas sueltos.",
       "svg": "<svg viewBox=\"0 0 280 100\" width=\"100%\" height=\"100\" aria-hidden=\"true\"><rect x=\"8\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.5\"/><text x=\"33\" y=\"38\" font-size=\"8\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">1 Graficar</text><text x=\"58\" y=\"39\" font-size=\"11\" fill=\"#9aa3ad\">→</text><rect x=\"62\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.5\"/><text x=\"87\" y=\"38\" font-size=\"8\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">2 Diagnosticar</text><text x=\"112\" y=\"39\" font-size=\"11\" fill=\"#9aa3ad\">→</text><rect x=\"116\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#e8c56a\" stroke-width=\"1.5\"/><text x=\"141\" y=\"38\" font-size=\"8\" fill=\"#e8c56a\" font-weight=\"700\" text-anchor=\"middle\">3 Elegir</text><text x=\"166\" y=\"39\" font-size=\"11\" fill=\"#9aa3ad\">→</text><rect x=\"170\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.5\"/><text x=\"195\" y=\"38\" font-size=\"8\" fill=\"#8cb4d6\" font-weight=\"700\" text-anchor=\"middle\">4 Aplicar</text><text x=\"220\" y=\"39\" font-size=\"11\" fill=\"#9aa3ad\">→</text><rect x=\"224\" y=\"16\" width=\"50\" height=\"36\" rx=\"6\" fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.5\"/><text x=\"249\" y=\"38\" font-size=\"8\" fill=\"#e25b16\" font-weight=\"700\" text-anchor=\"middle\">5 Medir</text><path d=\"M 258 54 Q 140 92, 22 54\" fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.4\" stroke-dasharray=\"3 2\"/><text x=\"140\" y=\"94\" font-size=\"9\" fill=\"#e25b16\" text-anchor=\"middle\">si el error anda mal, volvés a elegir</text></svg>",
       "chartLabel": "Graficar → correlograma → árbol → aplicar → medir, y volver si falla"
     },
@@ -333,7 +333,7 @@
       "type": "concepto",
       "k": "La analogía",
       "title": "Como un médico.",
-      "text": "3.a es mirar al paciente (los síntomas a simple vista). 3.b es pedir análisis (confirmar con números). El árbol es recetar. La clase 4 es el control posterior: ¿mejoró? Si no, cambiás el remedio."
+      "text": "La Clase 3 es mirar al paciente (los síntomas a simple vista). 3.b es pedir análisis (confirmar con números). El árbol es recetar. La clase 4 es el control posterior: ¿mejoró? Si no, cambiás el remedio."
     },
     {
       "type": "concepto",
@@ -396,5 +396,7 @@
       "title": "Llevate el circuito.",
       "text": "Graficar (sospecha) → correlograma (prueba) → árbol (método) → aplicar (números) → medir el error (¿acerté?). Si el PME es alto y consistente, se vuelve al paso 3. La respuesta de examen combina las tres clases: diagnóstico + evidencia + método + justificación + validación."
     }
-  ]
+  ],
+  "block": "B",
+  "blockTitle": "Bloque B · Demanda, datos y patrones"
 }

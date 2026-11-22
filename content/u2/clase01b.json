@@ -476,5 +476,7 @@
       "title": "Llevate esto de la Clase 1.b.",
       "text": "Paso cero: identificá la tabla (0,3413 = centro→Z). Método: Z → dibujo → tabla → armar con ±0,5. Cinco casos: menos-que, más-que, Z negativo, entre-dos, inverso. Z famosos: 1,28 / 1,64 / 1,96 / 2,33. t: colas gordas, dos entradas, converge a Z cerca de n = 30."
     }
-  ]
+  ],
+  "block": "A",
+  "blockTitle": "Bloque A · Base estadística"
 }

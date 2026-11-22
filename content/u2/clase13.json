@@ -21,12 +21,12 @@
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 13 · Regresión múltiple**"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque D · Clase 13 · Regresión múltiple**"
     },
     {
       "type": "callout",
       "kind": "aviso",
-      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados."
     },
     {
       "type": "callout",
@@ -456,5 +456,7 @@
       "title": "Llevate esto de la Clase 13.",
       "text": "bⱼ = efecto parcial con las demás constantes. Error con n − k − 1. F global primero, t individuales después. R² ajustado penaliza. VIF = 1 / (1 − Rⱼ²). Dummies: c − 1 y una referencia. Próxima: validación y comparación."
     }
-  ]
+  ],
+  "block": "D",
+  "blockTitle": "Bloque D · Regresión"
 }

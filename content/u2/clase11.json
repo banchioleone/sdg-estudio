@@ -21,12 +21,12 @@
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 11 · Regresión lineal simple**"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque D · Clase 11 · Regresión lineal simple**"
     },
     {
       "type": "callout",
       "kind": "aviso",
-      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados."
     },
     {
       "type": "callout",
@@ -487,5 +487,7 @@
       "title": "Llevate esto de la Clase 11.",
       "text": "b₁ = Sxy / Sxx, b₀ = ȳ − b₁x̄. Mascotas: Ŷ = 1,45 + 0,074x. R² = 0,684 explica variabilidad; sₑ = 0,308 mide dispersión. Pronóstico puntual = media condicional, dentro del rango. Próxima: inferencia."
     }
-  ]
+  ],
+  "block": "D",
+  "blockTitle": "Bloque D · Regresión"
 }

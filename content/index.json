@@ -13,7 +13,9 @@
           "soon": false,
           "file": "u1/enfoque.json",
           "visto": false,
-          "name": "Enfoque sistémico"
+          "name": "Enfoque sistémico",
+          "short": "Enfoque",
+          "emoji": "🏭"
         }
       ],
       "lede": "Unidad 1 del programa: la empresa como productora de bienes (y servicios), bajo un enfoque sistémico. Es el marco de las demás unidades."
@@ -32,15 +34,18 @@
           "caption": "Árbol decisorio de métodos de pronóstico"
         }
       ],
-      "lede": "Unidad 2 del programa: los métodos de pronósticos. Empieza con el mapa y las siglas (Clases 0 y 0.1), sigue con base estadística, correlación, series, autocorrelación y medidas de error, y completa los métodos de series: promedios, suavización simple, Brown/Holt, Winter, descomposición e integrador con control. Cierra con demanda, métodos cualitativos y sistemas de pronóstico, y con regresión simple, inferencia, regresión múltiple y validación de modelos. Todas las clases tienen teoría larga e historias.",
+      "lede": "Unidad 2 del programa: los métodos de pronósticos. Arranca con una introducción (Clase 0 · Mapa de la materia y Clase 0.1 · Siglas) y sigue en cuatro bloques. Bloque A · Base estadística: promedio, desvío, distribución normal y tabla Z. Bloque B · Demanda, datos y patrones: correlación, series de tiempo, autocorrelación, medidas de error, demanda y sistemas de pronóstico, y el Integrador del proceso completo. Bloque C · Métodos de series de tiempo: ingenuos y promedios, suavización exponencial simple, Brown y Holt, Winter, descomposición multiplicativa y cómo elegir y controlar el método. Bloque D · Regresión: simple, inferencia, múltiple y validación de modelos. Todas las clases tienen teoría completa e historias.",
       "classes": [
         {
           "id": "c0",
-          "title": "Clase 0 · Mapa",
+          "title": "Clase 0 · Mapa de la materia",
           "soon": false,
           "file": "u2/clase00.json",
           "visto": true,
-          "name": "Mapa"
+          "name": "Mapa de la materia",
+          "short": "Mapa",
+          "emoji": "🗺️",
+          "block": "intro"
         },
         {
           "id": "c01",
@@ -48,7 +53,10 @@
           "soon": false,
           "file": "u2/clase01_siglas.json",
           "visto": true,
-          "name": "Siglas"
+          "name": "Siglas",
+          "short": "Siglas",
+          "emoji": "🔤",
+          "block": "intro"
         },
         {
           "id": "c1",
@@ -56,7 +64,10 @@
           "file": "u2/clase01.json",
           "soon": false,
           "visto": true,
-          "name": "Base estadística"
+          "name": "Base estadística",
+          "short": "Estadística",
+          "emoji": "1",
+          "block": "A"
         },
         {
           "id": "c1b",
@@ -64,7 +75,10 @@
           "file": "u2/clase01b.json",
           "soon": false,
           "visto": true,
-          "name": "Tabla Z"
+          "name": "Tabla Z",
+          "short": "Tabla Z",
+          "emoji": "1.b",
+          "block": "A"
         },
         {
           "id": "c2",
@@ -72,23 +86,32 @@
           "file": "u2/clase02.json",
           "soon": false,
           "visto": true,
-          "name": "Correlación"
+          "name": "Correlación",
+          "short": "Correlación",
+          "emoji": "2",
+          "block": "B"
         },
         {
-          "id": "c3a",
-          "title": "Clase 3.a · Series de tiempo",
-          "file": "u2/clase03a.json",
+          "id": "c3",
+          "title": "Clase 3 · Series de tiempo",
+          "file": "u2/clase03.json",
           "soon": false,
           "visto": true,
-          "name": "Series de tiempo"
+          "name": "Series de tiempo",
+          "short": "Series",
+          "emoji": "3",
+          "block": "B"
         },
         {
           "id": "c3b",
-          "title": "Clase 3.b · Autocorrelación",
+          "title": "Clase 3.b · Autocorrelación y correlograma",
           "file": "u2/clase03b.json",
           "soon": false,
           "visto": true,
-          "name": "Autocorrelación"
+          "name": "Autocorrelación y correlograma",
+          "short": "Autocorr.",
+          "emoji": "3.b",
+          "block": "B"
         },
         {
           "id": "c4",
@@ -96,23 +119,43 @@
           "file": "u2/clase04.json",
           "soon": false,
           "visto": true,
-          "name": "Medidas de error"
+          "name": "Medidas de error",
+          "short": "Error",
+          "emoji": "4",
+          "block": "B"
+        },
+        {
+          "id": "c4b",
+          "title": "Clase 4.b · Demanda y sistemas de pronóstico",
+          "soon": false,
+          "file": "u2/clase04b.json",
+          "visto": false,
+          "name": "Demanda y sistemas de pronóstico",
+          "short": "Demanda",
+          "emoji": "4.b",
+          "block": "B"
         },
         {
           "id": "cint",
-          "title": "Integrador · Proceso completo",
+          "title": "Integrador · El proceso completo de pronóstico",
           "file": "u2/integrador.json",
           "soon": false,
           "visto": true,
-          "name": "Proceso completo"
+          "name": "El proceso completo de pronóstico",
+          "short": "Integrador",
+          "emoji": "∑",
+          "block": "B"
         },
         {
           "id": "c5",
-          "title": "Clase 5 · Métodos no formales y promedios",
+          "title": "Clase 5 · Métodos ingenuos y promedios",
           "soon": false,
           "file": "u2/clase05.json",
           "visto": false,
-          "name": "No formales y promedios"
+          "name": "Métodos ingenuos y promedios",
+          "short": "Promedios",
+          "emoji": "5",
+          "block": "C"
         },
         {
           "id": "c6",
@@ -120,7 +163,10 @@
           "soon": false,
           "file": "u2/clase06.json",
           "visto": false,
-          "name": "Suavización exponencial simple"
+          "name": "Suavización exponencial simple",
+          "short": "SES",
+          "emoji": "6",
+          "block": "C"
         },
         {
           "id": "c7",
@@ -128,39 +174,43 @@
           "soon": false,
           "file": "u2/clase07.json",
           "visto": false,
-          "name": "Brown y Holt"
+          "name": "Brown y Holt",
+          "short": "Holt",
+          "emoji": "7",
+          "block": "C"
         },
         {
           "id": "c8",
-          "title": "Clase 8 · Winter multiplicativo",
+          "title": "Clase 8 · Winter",
           "soon": false,
           "file": "u2/clase08.json",
           "visto": false,
-          "name": "Winter multiplicativo"
+          "name": "Winter",
+          "short": "Winter",
+          "emoji": "8",
+          "block": "C"
         },
         {
           "id": "c9",
-          "title": "Clase 9 · Descomposición y desestacionalización",
+          "title": "Clase 9 · Descomposición multiplicativa",
           "soon": false,
           "file": "u2/clase09.json",
           "visto": false,
-          "name": "Descomposición y desestacionalización"
+          "name": "Descomposición multiplicativa",
+          "short": "Descomp.",
+          "emoji": "9",
+          "block": "C"
         },
         {
           "id": "c10",
-          "title": "Clase 10 · Integrador de métodos y control",
+          "title": "Clase 10 · Elegir y controlar el método",
           "soon": false,
           "file": "u2/clase10.json",
           "visto": false,
-          "name": "Integrador de métodos y control"
-        },
-        {
-          "id": "c2bteoria",
-          "title": "Clase 2.b-teoría · Demanda, cualitativos y sistemas de pronóstico",
-          "soon": false,
-          "file": "u2/clase02b_teoria.json",
-          "visto": false,
-          "name": "Demanda, cualitativos y sistemas de pronóstico"
+          "name": "Elegir y controlar el método",
+          "short": "Control",
+          "emoji": "10",
+          "block": "C"
         },
         {
           "id": "c11",
@@ -168,7 +218,10 @@
           "soon": false,
           "file": "u2/clase11.json",
           "visto": false,
-          "name": "Regresión lineal simple"
+          "name": "Regresión lineal simple",
+          "short": "Reg. simple",
+          "emoji": "11",
+          "block": "D"
         },
         {
           "id": "c12",
@@ -176,7 +229,10 @@
           "soon": false,
           "file": "u2/clase12.json",
           "visto": false,
-          "name": "Inferencia en regresión"
+          "name": "Inferencia en regresión",
+          "short": "Inferencia",
+          "emoji": "12",
+          "block": "D"
         },
         {
           "id": "c13",
@@ -184,7 +240,10 @@
           "soon": false,
           "file": "u2/clase13.json",
           "visto": false,
-          "name": "Regresión múltiple"
+          "name": "Regresión múltiple",
+          "short": "Reg. múltiple",
+          "emoji": "13",
+          "block": "D"
         },
         {
           "id": "c14",
@@ -192,8 +251,42 @@
           "soon": false,
           "file": "u2/clase14.json",
           "visto": false,
-          "name": "Validación y comparación de modelos"
+          "name": "Validación y comparación de modelos",
+          "short": "Validación",
+          "emoji": "14",
+          "block": "D"
         }
+      ],
+      "blocks": [
+        {
+          "id": "intro",
+          "title": "Introducción"
+        },
+        {
+          "id": "A",
+          "title": "Bloque A · Base estadística"
+        },
+        {
+          "id": "B",
+          "title": "Bloque B · Demanda, datos y patrones"
+        },
+        {
+          "id": "C",
+          "title": "Bloque C · Métodos de series de tiempo"
+        },
+        {
+          "id": "D",
+          "title": "Bloque D · Regresión"
+        }
+      ],
+      "oldIds": {
+        "c3a": "c3",
+        "c2bteoria": "c4b"
+      },
+      "examen": [
+        "Práctica · Pronósticos 6/19 finales (32%)",
+        "Práctica · Regresión 0/19",
+        "Teoría · Pronósticos 5/7 mesas"
       ]
     },
     {
@@ -206,6 +299,11 @@
           "title": "Ciclo de vida, BOM, codificación",
           "soon": true
         }
+      ],
+      "examen": [
+        "Teoría · Codificación 6/7 mesas",
+        "Teoría · Ciclo de vida 3/7",
+        "Teoría · BOM / estructura 3/7"
       ]
     },
     {
@@ -218,6 +316,9 @@
           "title": "JIT, TOC, hombre-máquina",
           "soon": true
         }
+      ],
+      "examen": [
+        "Práctica · Hombre-máquina 2/19 (11%)"
       ]
     },
     {
@@ -230,6 +331,9 @@
           "title": "EOQ, stock, ABC",
           "soon": true
         }
+      ],
+      "examen": [
+        "Práctica · Inventarios 5/19 (26%)"
       ]
     },
     {
@@ -242,6 +346,13 @@
           "title": "Plan agregado, MPS, MRP",
           "soon": true
         }
+      ],
+      "examen": [
+        "Práctica · MRP 8/19 (42%)",
+        "Práctica · Balanceo 4/19 (21%)",
+        "Práctica · Plan agregado 2/19 (11%)",
+        "Práctica · MPS 1/19 · Capacidad 1/19",
+        "Teoría · Capacidad 5/7"
       ]
     },
     {
@@ -254,7 +365,12 @@
           "title": "De MRP a ERP",
           "soon": true
         }
+      ],
+      "examen": [
+        "Teoría · MRP / MCP / ERP / JIT 3/7",
+        "Teoría · BI 1/7"
       ]
     }
-  ]
+  ],
+  "examenNota": "Conteos de patrones_examenes.md: práctica sobre 19 finales fechados 2002–2018; teoría sobre 7 mesas 2011–2018. Ubicar cada tema en una unidad es lectura propia del programa 2008."
 }

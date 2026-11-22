@@ -17,16 +17,16 @@
   "laminas": [
     "u2/img/T150_SES_Holt.svg"
   ],
-  "next": "Clase 8 · Winter multiplicativo",
+  "next": "Clase 8 · Winter",
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 7 · Brown y Holt**"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque C · Clase 7 · Brown y Holt**"
     },
     {
       "type": "callout",
       "kind": "aviso",
-      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados."
     },
     {
       "type": "callout",
@@ -373,7 +373,7 @@
     },
     {
       "type": "paragraph",
-      "text": "**Próxima clase → Clase 8 · Winter multiplicativo**"
+      "text": "**Próxima clase → Clase 8 · Winter**"
     }
   ],
   "historias": [
@@ -492,5 +492,7 @@
       "title": "Llevate esto de la Clase 7.",
       "text": "Tendencia = nivel + pendiente. Brown: dos suavizados y un alfa. Holt: emitir, nivel, pendiente, proyectar. En T-150 Holt baja el MAD de 42 a 34 y la TS de 6,1 a 3,4. Próxima: Winter, cuando además hay estación."
     }
-  ]
+  ],
+  "block": "C",
+  "blockTitle": "Bloque C · Métodos de series de tiempo"
 }

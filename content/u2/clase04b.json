@@ -2,10 +2,10 @@
   "unitId": "u2",
   "unitLabel": "Unidad 2",
   "unitTitle": "Métodos de pronósticos",
-  "id": "c2bteoria",
-  "title": "Clase 2.b-teoría · Demanda, cualitativos y sistemas de pronóstico",
-  "name": "Demanda, cualitativos y sistemas de pronóstico",
-  "lede": "Pronosticar reduce incertidumbre: no crea certeza, no reemplaza la decisión y no es fijar una meta. Completamos el marco del programa después de los métodos de series y antes de los modelos causales de regresión.",
+  "id": "c4b",
+  "title": "Clase 4.b · Demanda y sistemas de pronóstico",
+  "name": "Demanda y sistemas de pronóstico",
+  "lede": "Pronosticar reduce incertidumbre: no crea certeza, no reemplaza la decisión y no es fijar una meta. Cierra el Bloque B con el marco del programa, antes de los métodos de series (Bloque C) y de los modelos causales de regresión (Bloque D).",
   "visto": false,
   "source": [
     "texto/resumenes/ResumenSG-Final-V6_345p.txt (Hanke caps. 1, 4–7; Chase cap. 15).",
@@ -16,21 +16,21 @@
   "laminas": [
     "u2/img/SistemaPronostico.svg"
   ],
-  "next": "Clase 11 · Regresión lineal simple",
+  "next": "Integrador · El proceso completo de pronóstico",
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 2.b-teoría · Demanda, cualitativos y sistemas de pronóstico**"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque B · Clase 4.b · Demanda y sistemas de pronóstico**"
     },
     {
       "type": "callout",
       "kind": "aviso",
-      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados."
     },
     {
       "type": "callout",
       "kind": "idea",
-      "text": "Pronosticar reduce incertidumbre: no crea certeza, no reemplaza la decisión y no es fijar una meta. Completamos el marco del programa después de los métodos de series y antes de los modelos causales de regresión."
+      "text": "Pronosticar reduce incertidumbre: no crea certeza, no reemplaza la decisión y no es fijar una meta. Cierra el Bloque B con el marco del programa, antes de los métodos de series (Bloque C) y de los modelos causales de regresión (Bloque D)."
     },
     {
       "type": "heading",
@@ -273,7 +273,7 @@
     },
     {
       "type": "paragraph",
-      "text": "El control de la operación compara pronósticos emitidos con valores que se van conociendo. Incluye errores, límites, sesgo y revisión de datos o parámetros. En la Clase 4 ya se presentó la idea general; en la Clase 10, inmediatamente anterior a ésta, calculamos RSFE/MAD, el conteo U de Hanke y límites por RMSE, sin confundirlos."
+      "text": "El control de la operación compara pronósticos emitidos con valores que se van conociendo. Incluye errores, límites, sesgo y revisión de datos o parámetros. En la Clase 4 ya se presentó la idea general; en la Clase 10 se calculan RSFE/MAD, el conteo U de Hanke y límites por RMSE, sin confundirlos."
     },
     {
       "type": "ejercicio",
@@ -335,7 +335,7 @@
     },
     {
       "type": "paragraph",
-      "text": "**Próxima clase → Clase 11 · Regresión lineal simple**"
+      "text": "**Próxima clase → Integrador · El proceso completo de pronóstico**"
     }
   ],
   "historias": [
@@ -454,8 +454,10 @@
     {
       "type": "cierre",
       "k": "Para llevar",
-      "title": "Llevate esto de la Clase 2.b.",
-      "text": "Pronóstico ≠ meta. Puntual, intervalo o densidad. Demanda independiente se pronostica, dependiente se calcula. Cualitativos con procedimiento; Delphi: anonimato, rondas, retroalimentación y agregación. Sistema con control y retroalimentación. Próxima: regresión simple."
+      "title": "Llevate esto de la Clase 4.b.",
+      "text": "Pronóstico ≠ meta. Puntual, intervalo o densidad. Demanda independiente se pronostica, dependiente se calcula. Cualitativos con procedimiento; Delphi: anonimato, rondas, retroalimentación y agregación. Sistema con control y retroalimentación. Próxima: el Integrador."
     }
-  ]
+  ],
+  "block": "B",
+  "blockTitle": "Bloque B · Demanda, datos y patrones"
 }

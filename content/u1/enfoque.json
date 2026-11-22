@@ -5,7 +5,7 @@
   "id": "u1-intro",
   "title": "Enfoque sistémico",
   "name": "Enfoque sistémico",
-  "lede": "Objetivo del programa: conocer la empresa bajo un enfoque sistémico y desde la administración de la producción. Es la unidad-marco: da el vocabulario que atraviesa las otras seis. Esta clase no está marcada como Vista: no se dictó en la serie 0 → 1, se arma ahora con el programa, el mapa y los apuntes.",
+  "lede": "Objetivo del programa: conocer la empresa bajo un enfoque sistémico y desde la administración de la producción. Es la unidad-marco: da el vocabulario que atraviesa las otras seis. No se dictó en las clases previas: se arma con el programa, el mapa y los apuntes.",
   "visto": false,
   "source": [
     "programa.md (SG1Progr2008.doc), Unidad temática 1",
@@ -31,7 +31,7 @@
     },
     {
       "type": "paragraph",
-      "text": "No hay un apunte titulado «Enfoque sistémico» ni una clase 0.x de la Unidad 1 en la serie que ya vimos. El contenido se arma con el **programa oficial 2008** (eje, objetivo y temas), el Documento Maestro v2, el mapa v2 y el apunte de cátedra *Evolución de la Gestión de la Producción y de las Operaciones* (R. Morán, 2000), que cubre sobre todo los **antecedentes**. El Maestro remite también a Monks y al cap. 1 de Chase (V6) para el diagrama funcional y el proceso de conversión: esos capítulos no se extractaron aquí como texto corrido, así que no se reconstruye un diagrama que no está en los archivos leídos."
+      "text": "No hay un apunte titulado «Enfoque sistémico» ni una clase 0.x de la Unidad 1 entre las clases previas. El contenido se arma con el **programa oficial 2008** (eje, objetivo y temas), el Documento Maestro v2, el mapa v2 y el apunte de cátedra *Evolución de la Gestión de la Producción y de las Operaciones* (R. Morán, 2000), que cubre sobre todo los **antecedentes**. El Maestro remite también a Monks y al cap. 1 de Chase (V6) para el diagrama funcional y el proceso de conversión: esos capítulos no se extractaron aquí como texto corrido, así que no se reconstruye un diagrama que no está en los archivos leídos."
     },
     {
       "type": "heading",

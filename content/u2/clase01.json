@@ -14,11 +14,11 @@
   "laminas": [
     "u2/img/Clase01_BaseEstadistica.svg"
   ],
-  "next": "Clase 1.b · La tabla Z y los 5 casos",
+  "next": "Clase 1.b · Tabla Z",
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2.a · Serie de clases: 0 → 0.1 → 1 → 1.b**"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque A · Clase 1 · Base estadística**"
     },
     {
       "type": "callout",
@@ -539,5 +539,7 @@
       "title": "Llevate esto de la Clase 1.",
       "text": "El promedio dice el centro; el desvío (s) dice la dispersión típica y es el número clave. Varianza = s². Normal: 68/95/99,7% en ±1/2/3σ. Z = (X−μ)/σ; Z = 1,64 cubre el 95%. t es para muestras chicas, con gl = n−1. Siguiente: Clase 1.b, la tabla Z y los 5 casos."
     }
-  ]
+  ],
+  "block": "A",
+  "blockTitle": "Bloque A · Base estadística"
 }

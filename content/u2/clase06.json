@@ -22,12 +22,12 @@
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 6 · Suavización exponencial simple**"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque C · Clase 6 · Suavización exponencial simple**"
     },
     {
       "type": "callout",
       "kind": "aviso",
-      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados."
     },
     {
       "type": "callout",
@@ -543,5 +543,7 @@
       "title": "Llevate esto de la Clase 6.",
       "text": "Fₜ₊₁ = Fₜ + α·eₜ. Alfa grande reacciona, alfa chico estabiliza. Declarás alfa y arranque. Perros: 745,13 t con α 0,28. Pesos de un móvil no son un alfa. Próxima: Brown y Holt."
     }
-  ]
+  ],
+  "block": "C",
+  "blockTitle": "Bloque C · Métodos de series de tiempo"
 }

@@ -7,8 +7,8 @@
   <rect width="980" height="1010" fill="#FFFFFF"/>
 
   <!-- TITULO -->
-  <text x="40" y="34" font-size="22" font-weight="700" fill="#1F4E79">CLASE 3.a · La serie de tiempo y sus 4 componentes</text>
-  <text x="620" y="34" font-size="12.5" fill="#666">U2.b — el diagnóstico de la serie</text>
+  <text x="40" y="34" font-size="22" font-weight="700" fill="#1F4E79">CLASE 3 · La serie de tiempo y sus 4 componentes</text>
+  <text x="620" y="34" font-size="12.5" fill="#666">U2 · Bloque B — el diagnóstico de la serie</text>
   <text x="40" y="56" font-size="12.5" font-weight="700" fill="#C00000">Serie de tiempo = secuencia ORDENADA de observaciones (Yₜ). El orden ES la información.</text>
 
   <!-- ===== LOS 4 COMPONENTES ===== -->

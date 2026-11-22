@@ -3,8 +3,8 @@
   "unitLabel": "Unidad 2",
   "unitTitle": "Métodos de pronósticos",
   "id": "c9",
-  "title": "Clase 9 · Descomposición y desestacionalización",
-  "name": "Descomposición y desestacionalización",
+  "title": "Clase 9 · Descomposición multiplicativa",
+  "name": "Descomposición multiplicativa",
   "lede": "Descomponer es separar patrones; pronosticar es recombinarlos con hipótesis explícitas. Sacar una estación no elimina ni tendencia ni incertidumbre.",
   "visto": false,
   "source": [
@@ -18,16 +18,16 @@
     "u2/img/Descomposicion.svg",
     "u2/img/Indices_Coastal.svg"
   ],
-  "next": "Clase 10 · Integrador de métodos y control",
+  "next": "Clase 10 · Elegir y controlar el método",
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 9 · Descomposición y desestacionalización**"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque C · Clase 9 · Descomposición multiplicativa**"
     },
     {
       "type": "callout",
       "kind": "aviso",
-      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados."
     },
     {
       "type": "callout",
@@ -409,7 +409,7 @@
     },
     {
       "type": "paragraph",
-      "text": "**Próxima clase → Clase 10 · Integrador de métodos y control**"
+      "text": "**Próxima clase → Clase 10 · Elegir y controlar el método**"
     }
   ],
   "historias": [
@@ -527,7 +527,9 @@
       "type": "cierre",
       "k": "Para llevar",
       "title": "Llevate esto de la Clase 9.",
-      "text": "Elegí aditivo o multiplicativo mirando la amplitud. Índices: razón al PMC, mediana y normalizar a 4 o 12. Desestacionalizar es dividir por S. Pronóstico = tendencia proyectada × índice, con C = I = 1 como hipótesis. Próxima: integrador y control."
+      "text": "Elegí aditivo o multiplicativo mirando la amplitud. Índices: razón al PMC, mediana y normalizar a 4 o 12. Desestacionalizar es dividir por S. Pronóstico = tendencia proyectada × índice, con C = I = 1 como hipótesis. Próxima: elegir y controlar el método."
     }
-  ]
+  ],
+  "block": "C",
+  "blockTitle": "Bloque C · Métodos de series de tiempo"
 }

@@ -19,12 +19,12 @@
   "teoria": [
     {
       "type": "paragraph",
-      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Teoría larga · Clase 12 · Inferencia en regresión**"
+      "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 2 · Bloque D · Clase 12 · Inferencia en regresión**"
     },
     {
       "type": "callout",
       "kind": "aviso",
-      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados. No se agregan historias."
+      "text": "**De dónde sale esta clase.** Desarrollo de estudio construido con las fuentes listadas al cierre. No es un apunte nuevo atribuido a la cátedra. Los ejemplos bibliográficos se identifican como tales; los cálculos y extensiones propios están rotulados."
     },
     {
       "type": "callout",
@@ -453,5 +453,7 @@
       "title": "Llevate esto de la Clase 12.",
       "text": "t = b₁ / s_b: 4,652 > 2,228, rechazás H₀. IC de β₁: (0,039; 0,109). En simple F = t². IP más ancho que IC. Residuos y Durbin–Watson (sólo con orden temporal). Palanca ≠ atípico. Próxima: regresión múltiple."
     }
-  ]
+  ],
+  "block": "D",
+  "blockTitle": "Bloque D · Regresión"
 }
