@@ -1,0 +1,146 @@
+from u5lib import *
+
+def c4():
+    t = [
+        P("**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque A · Clase 4 · Perpetuo y periódico**"),
+        AVISO("**De dónde sale esta clase.** Modelo Q y modelo P, sus diferencias y los sistemas simples: **Chase cap. 17**. Las definiciones cortas de perpetuo y periódico, el multiple choice y la pregunta «analice un sistema periódico»: **banco de preguntas** (Examen 2005, Preguntas Frecuentes, multiple choice), con respuestas **de alumnos**."),
+        IDEA("**Idea central:** el **perpetuo** pide siempre la **misma cantidad** en **fechas variables** (cuando el stock toca el punto de pedido). El **periódico** revisa en **fechas fijas** y pide **cantidades variables** (lo que falta para llegar a un máximo)."),
+        H("1. Un período o varios"),
+        P("Chase separa los sistemas en **de un período** (compra única que cubre un período y no se repite: diarios, artículos de temporada; se ve en la Clase 6) y **de varios períodos**, diseñados para que la pieza esté disponible todo el año. Los de varios períodos son dos:"),
+        L(["**Cantidad de pedido fija**: también llamado EOQ o **modelo Q**. Es el **perpetuo**.",
+           "**Período fijo**: también llamado sistema periódico, de revisión periódica, de intervalo fijo o **modelo P**."]),
+        P("«La distinción fundamental es que los modelos de cantidad de pedido fija se basan en los **eventos** y los modelos de periodo fijo se basan en el **tiempo**.» (Chase)"),
+        S("u5_QvsP.svg", "Perpetuo vs. periódico (esquema propio)"),
+        H("2. Las definiciones de la cátedra (banco de preguntas)"),
+        P("La respuesta del banco de abastecimiento (Examen 2005) a «¿qué modelo de stock se aplica a los materiales indirectos?»: «Sistema de control de base estadístico, el cual se basa en datos históricos de consumo y pronóstico. Existen 2 tipos:"),
+        L(["**Perpetuo:** método de reposición de stock por **cantidades fijas y fechas variables**.",
+           "**Periódico:** método de reposición de stock por **cantidades variables en periodos fijos**.»"]),
+        P("Y la pregunta 28 de Preguntas Frecuentes: «Un sistema de gestión de inventarios periódico es un modelo de reposición de stocks con cantidades de pedido variable a intervalos de tiempo fijo. Ejemplo: para ciertos productos alimenticios, ir al supermercado.»"),
+        H("3. Posición del inventario"),
+        P("En el perpetuo el pedido se dispara con la **posición del inventario**, no solo con lo que hay en el estante. Chase: «La posición del inventario se define como la cantidad disponible más la pedida menos los pedidos acumulados.»"),
+        F("\\text{Posición} = \\text{disponible} + \\text{pedido en camino} - \\text{pedidos acumulados (pendientes)}"),
+        P("Ejemplo de redacción de Chase: «cuando la posición del inventario baje a 36, hacer un pedido de 57 unidades más»."),
+        H("4. Diferencias (Chase)"),
+        T(["", "Perpetuo (modelo Q)", "Periódico (modelo P)"], [
+            ["Qué dispara el pedido", "un **evento**: llegar al punto de pedido R", "el **paso del tiempo**: fin del período T"],
+            ["Cantidad", "fija (Q)", "variable (q, lo que falta hasta el máximo)"],
+            ["Registro", "**cada** retiro y adición se registra; vigilancia continua", "se cuenta solo en la revisión"],
+            ["Inventario promedio", "más bajo", "**más alto**: protege también durante T"],
+            ["Le conviene a…", "piezas **más caras** y piezas **importantes o críticas** (supervisión más estrecha, respuesta rápida)", "muchos ítems de un mismo proveedor, pedidos combinados para ahorrar flete, conteo planificado"],
+            ["Mantenimiento del sistema", "**más tiempo** (registrar todo)", "menos"],
+        ]),
+        P("Cuándo Chase recomienda el período fijo: cuando los proveedores hacen visitas de rutina y levantan pedidos de toda la línea, cuando los compradores quieren **combinar pedidos para ahorrar transporte**, o para facilitar el conteo («el Distribuidor X llama cada dos semanas y los empleados saben que es preciso contar todos los productos del Distribuidor X»)."),
+        H("5. Tres sistemas simples (Chase)"),
+        T(["Sistema", "Cómo funciona", "Es un…"], [
+            ["**Resurtido opcional**", "Se revisa con frecuencia fija. Se calcula $q = M - I$ (máximo menos posición). Si $q \\geq Q$ (un mínimo), se pide $q$; si no, no se pide nada.", "modelo P"],
+            ["**Dos recipientes**", "Se consume del primero; el segundo guarda una cantidad igual al punto de pedido R. Cuando se empieza el segundo, se pide para reponerlo.", "modelo Q"],
+            ["**Un recipiente**", "En períodos fijos se repone **siempre** hasta un máximo, sin importar cuánto se usó.", "modelo P"],
+        ]),
+        F("q = M - I \\qquad \\text{si } q \\geq Q \\text{ se pide } q;\\ \\text{si no, no se pide}", "sistema de resurtido opcional (Chase)"),
+        H("6. ¿Qué control uso? El multiple choice"),
+        P("Este ejercicio de multiple choice circula en el banco (Examen SG1 mult choice, Preguntas Frecuentes, Ejercicios posibles) y lo mencionan como tomado en una mesa de teoría. Las marcas son **de alumnos**:"),
+        T(["Situación", "Marca que circula", "Comentario (propio)"], [
+            ["Suministro de alimentos frescos para su cocina", "Depende", "Razonable: si se compran en días fijos es periódico; si se repone al terminarse, perpetuo."],
+            ["Recibir a diario el periódico", "Periódico", "Coincide: entrega a intervalo fijo."],
+            ["Comprar combustible para su vehículo", "Perpetuo", "Coincide: se carga cuando el tanque baja a la reserva (punto de pedido)."],
+            ["Medicamentos de uso prolongado", "Periódico", "Coincide: se compran cada mes / cada receta."],
+            ["Dinero en papel moneda para un banco", "Perpetuo", "Coincide: se vigila el saldo y se repone al bajar de un nivel."],
+        ]),
+        P("Otro ítem del mismo multiple choice: «La adquisición de todo material utilizado en la empresa lo realiza el área de Compras, pero cada tipo requiere un método particular de gestión, por ejemplo: 2.1 Los llamados independientes con el MRP · 2.2 Los Indirectos solo con el sistema Perpetuo · 2.3 Los clasificados como Críticos con el Periódico · 2.4 Los Consumibles con orden abierta · 2.5 Ninguna de las respuestas dadas es satisfactoria». La copia que circula tiene marcada la **2.3**."),
+        AVISO("**Ojo con esa marca.** Chase dice lo contrario: el modelo de cantidad fija (perpetuo) «es más apropiado para las piezas importantes como las **piezas críticas**, porque hay una supervisión más estrecha». La 2.1 es falsa (los independientes **no** van con MRP) y la 2.2 también (el «solo» la hace falsa). Con el libro en la mano, la respuesta defendible es **2.5**, salvo que la cátedra tenga otro criterio. **Preguntale a Emiliano si hay clave oficial.**"),
+        EX("7. EJERCICIO DE TEORÍA — «Analice la aplicación de un sistema de gestión de inventarios periódicos y ejemplifique» (EFR p.36; Preguntas Frecuentes 28)", [
+            P("Pregunta de teoría de un examen tipeado sin fecha (EFR p.36) que también está en el banco de Preguntas Frecuentes."),
+        ], [
+            AVISO("Respuesta armada con Chase y el banco; no es clave de la cátedra."),
+            P("**Qué es:** reposición a **intervalos fijos** T con **cantidades variables**: en cada revisión se cuenta y se pide lo necesario para cubrir la demanda del período de revisión más el tiempo de entrega, más el stock de seguridad, menos lo disponible (fórmula en la Clase 6)."),
+            P("**Cuándo conviene:** muchos ítems del mismo proveedor (se arma un solo pedido y se ahorra flete), visitas de rutina del proveedor, conteos planificados, ítems de bajo valor (clase C)."),
+            P("**Costo:** necesita **más stock de seguridad** que el perpetuo, porque la protección cubre $T + L$ y no solo $L$. A cambio no exige registrar cada movimiento."),
+            P("**Ejemplos:** el banco: «ir al supermercado» por ciertos alimentos; Chase: el distribuidor que llama cada dos semanas; el diario que llega todos los días."),
+        ]),
+        EXAM("**En el final:** definí ambos con la frase de la cátedra (cantidades fijas / fechas variables, y al revés), agregá **qué dispara** el pedido (evento vs. tiempo) y una diferencia de costo (el periódico tiene más inventario promedio)."),
+        G("8. Glosario", "", [
+            ["Modelo Q", "perpetuo", "Cantidad fija, se pide al llegar a R"], ["Modelo P", "periódico", "Período fijo T, cantidad variable q"],
+            ["Posición del inventario", "", "disponible + pedido − pendientes"], ["M", "nivel máximo", "Hasta dónde se repone en el periódico"],
+            ["I", "posición en la revisión", "Lo que hay (más lo pedido) al revisar"], ["q", "cantidad a pedir en el P", "q = M − I"],
+        ]),
+    ]
+    src = [V6, PA, MC, "texto/examenes/Ejercicios posibles.txt (multiple choice)", "texto/examenes/Preguntas de teoria del final de SG1.txt (mesa con el multiple choice)",
+           EFR(36, "examen tipeado, pregunta 3 de teoría")]
+    return clase("u5c4", "Clase 4 · Perpetuo y periódico", "Perpetuo y periódico", "A",
+                 "Los dos sistemas de reposición de varios períodos: cantidad fija y fechas variables contra fechas fijas y cantidades variables. Diferencias, sistemas simples y el multiple choice del banco.",
+                 src, t, "Clase 5 · Stock de seguridad y nivel de servicio", ["u5/img/u5_QvsP.svg"])
+
+
+def c5():
+    t = [
+        P("**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque B · Clase 5 · Stock de seguridad y nivel de servicio**"),
+        AVISO("**De dónde sale esta clase.** El enfoque de probabilidad y el modelo de cantidad fija con inventario de seguridad: **Chase cap. 17**. Los ejercicios: la familia «demanda normal» de los finales (SG!EVA 2002–2004) con tres resoluciones manuscritas que **no coinciden entre sí**; las comparo y doy la resolución que se puede defender. La tabla normal y el cálculo de $z$ están en la **U2, Clase 1.b**."),
+        IDEA("**Idea central:** si la demanda varía, el peligro de faltante está **solo durante el tiempo de entrega**. Se pide antes: $R = \\bar d\\,L + z\\,\\sigma_L$. El lote $Q$ se sigue calculando con el EOQ; lo que cambia es el **punto de pedido**."),
+        H("1. Stock de seguridad"),
+        P("Chase: «El inventario de seguridad se define como las existencias que se manejan **además de la demanda esperada**. En una distribución normal, ésta sería la media.» Ejemplo del libro: demanda mensual promedio 100; si se manejan 120, hay 20 de inventario de seguridad."),
+        P("Se puede fijar como «cierta cantidad de semanas de suministro», pero Chase prefiere un enfoque que capte la variabilidad: el **enfoque de probabilidad**. Ojo: «sólo considera la probabilidad de quedarse sin inventario, no la cantidad de unidades faltantes»."),
+        EJ("Ejemplo de Chase: 100 unidades con σ = 20", [
+            P("Si se empieza el mes con 100 unidades (la media), la probabilidad de faltante es **50%**: a la larga, faltaría en seis meses del año."),
+            P("Con 20 unidades extra (un desvío), la normal acumulada da **0,8413**: «aproximadamente 84% del tiempo no se espera que se agoten las existencias y 16% del tiempo, sí»."),
+            P("Para **95%** se manejan «alrededor de **1,64** desviaciones estándar», o sea unas **33 unidades**: $1{,}64 \\cdot 20 \\approx 33$. No se piden 33 extra cada mes: se programa la recepción para que queden 33 cuando llega el pedido. Así, se espera un faltante **una vez cada 20 meses**."),
+        ]),
+        H("2. Modelo de cantidad fija con stock de seguridad"),
+        P("El sistema perpetuo vigila el stock y pide al llegar a R. «El peligro de tener faltantes en ese modelo ocurre **sólo durante el tiempo de entrega**.» (Chase)"),
+        F("R = \\bar d\\,L + z\\,\\sigma_L", "punto de pedido con SS (Chase)"),
+        F("SS = z\\,\\sigma_L \\qquad \\sigma_L = \\sqrt{\\sum_{i=1}^{L}\\sigma_{d}^2} = \\sigma_d\\sqrt{L}", "días independientes con el mismo desvío"),
+        P("Chase: la desviación estándar de una serie de ocurrencias independientes «es igual a la raíz cuadrada de la suma de las varianzas». Su ejemplo: σ = 10 unidades por día y entrega de 5 días: $\\sigma_L = \\sqrt{5\\cdot 10^2} = \\sqrt{500} \\approx 22{,}4$; para 95%, $z = 1{,}64$ y $SS = 1{,}64\\cdot 22{,}4 \\approx 37$ (cuenta propia con los datos del texto; el resultado es imagen en el V6)."),
+        P("La cantidad a pedir es la misma que sin incertidumbre: «la diferencia clave … radica en el cálculo del punto de volver a pedir. **La cantidad del pedido es la misma en ambos casos**.»"),
+        S("u5_normal.svg", "SS = z·σL con los datos del final N(50,10), 85% (gráfico propio)"),
+        H("3. Cómo sale z"),
+        T(["Nivel de servicio", "z (tabla normal, una cola)", "Lo que usan las hojas resueltas"], [
+            ["80%", "0,84", ""], ["84,13%", "1,00", "**Lu Final 1 usa z = 1 para 85%**"], ["85%", "**1,04**", "EFR p.10 usa 1,15 para 85%"],
+            ["90%", "**1,28**", "Lu Final 9 y EFR p.10 usan 1,25"], ["95%", "**1,64** (1,645)", "Chase usa 1,64"], ["97,5%", "1,96", ""], ["99%", "2,33", ""]]),
+        AVISO("**Las hojas resueltas redondean z de distintas maneras** (1 o 1,15 para 85%; 1,25 para 90%). Con la tabla, **85% → z ≈ 1,04 y 90% → z ≈ 1,28**. En estos ejercicios la diferencia en el SS es de 1 caja, pero escribí el valor de tabla y cómo lo buscaste (área 0,85 → z = 1,04)."),
+        H("4. El ejercicio que más se repite"),
+        EX("5. EJERCICIO — «Definir, confeccionar y calcular un sistema de gestión de inventarios» (SG!EVA; EFR p.24; SG1 Lu Final 1)", [
+            P("«La demanda diaria de un producto indirecto está distribuida normalmente por una media diaria de **50 cajas** con una desviación estándar de **10 cajas**. El abastecimiento es prácticamente seguro, con un tiempo de espera de **tres días**. El costo de colocación de un pedido es de **$6** y el interés perdido por mantenimiento de stock es de **20% TEA**, el precio unitario de la componente es de **$1,2**. Se desea un nivel de satisfacción del servicio al cliente estimado en el **85%**, inclusive cuando demanden el producto en el período de reabastecimiento. Nota: pueden haber pedidos no surtidos, cuando la existencia es nula, que se cumplirán posteriormente. Se trabaja **200 días** al año.»"),
+            L(["Definir, confeccionar y calcular el sistema de gestión de inventarios.", "Indicar los subsistemas participantes y la función desarrollada por cada uno."]),
+        ], [
+            AVISO("**Fuentes:** SG1.doc (Final 1, pág. 2) y EFR p.24. **Las dos hojas tienen problemas:** Lu calcula $Q^* = \\sqrt{2\\cdot 50\\cdot 6/(1{,}2\\cdot 0{,}2)} = 50$ cajas, mezclando la **demanda diaria** con una **tasa anual**; EFR p.24 deja el $Q^*$ en blanco. La resolución de abajo pone todo en las mismas unidades (cálculo propio) y conserva el resto del procedimiento de las hojas."),
+            P("**Definir.** Demanda independiente con variación aleatoria, entrega segura, se admiten pedidos pendientes: **sistema perpetuo (cantidad fija, modelo Q) con stock de seguridad**. Lu lo escribe así: «Suponemos sist. perpetuo (o modelo básico)»."),
+            P("**Datos:** $\\bar d = 50$ cajas/día, $\\sigma_d = 10$, $L = 3$ días, $S = \\$6$, $i = 0{,}20$, $C = \\$1{,}2$, 200 días/año → $D = 50\\cdot 200 = 10\\,000$ cajas/año; $H = 0{,}2\\cdot 1{,}2 = \\$0{,}24$ por caja y por año."),
+            F("Q^* = \\sqrt{\\frac{2\\cdot 10\\,000\\cdot 6}{0{,}24}} = \\sqrt{500\\,000} \\approx 707 \\text{ cajas}"),
+            P("(Equivalente: con demanda diaria hay que usar costo de mantener **diario**, $0{,}24/200$; da lo mismo.)"),
+            F("\\bar d\\,L = 50\\cdot 3 = 150 \\qquad \\sigma_L = 10\\sqrt{3} \\approx 17{,}3"),
+            F("SS = z\\,\\sigma_L = 1{,}04\\cdot 17{,}3 \\approx 18 \\qquad R = 150 + 18 = 168 \\text{ cajas}"),
+            P("Lu llega a **SS = 18 y PP = 168** con z = 1 (17,3 → 18); EFR p.24 escribe 150 + 1,04·17,32 ≈ 168. **Coinciden.**"),
+            P("**Confeccionar (la política):** cada vez que la posición del inventario baje a **168 cajas**, emitir un pedido de **707 cajas**. Son $10\\,000/707 \\approx 14$ pedidos al año, uno cada **~14 días** de trabajo. Stock promedio esperado $Q/2 + SS \\approx 372$ cajas (cálculo propio)."),
+            P("**Subsistemas** (EFR p.24 y Lu): **gestión de stock / almacenes** detecta el PP y emite el pedido de reposición; **compras** coloca la orden; **recepción y almacenaje** recibe; **control de calidad** inspecciona; **contable-financiero** paga y valoriza (todo eso es el «abastecimiento»)."),
+        ]),
+        EX("6. VARIANTE — N(60,10), 90%, 200 días (SG!EVA; EFR p.10; SG1 Lu Final 9)", [
+            P("Mismo enunciado con **media diaria 60 cajas**, desvío 10, tres días de espera, $6, 20% TEA, $1,2, nivel de servicio **90%**, **200 días** al año."),
+        ], [
+            AVISO("**Fuentes:** EFR p.10 (segunda mitad) y SG1.doc Final 9. EFR usa bien las unidades: $Q^* = \\sqrt{2\\cdot 60\\cdot 6/(1{,}2\\cdot 0{,}2/200)} = 775$. Lu repite el error de unidades y da 55. Me quedo con EFR."),
+            F("D = 12\\,000 \\qquad Q^* = \\sqrt{\\frac{2\\cdot 12\\,000\\cdot 6}{0{,}24}} \\approx 775 \\text{ cajas}"),
+            F("SS = 1{,}28\\cdot 17{,}3 \\approx 22 \\qquad R = 180 + 22 = 202 \\text{ cajas}"),
+            P("Las dos hojas: **SS = 22 y PP = 202** (con z = 1,25). EFR cierra: «cada vez que el nivel de existencias alcance las 202 cajas, se deberá realizar un pedido de 775 u los cuales arribarán en 3 días»."),
+        ]),
+        EX("7. VARIANTE — N(85,10), 85%, 240 días (SG!EVA 18/07/2002; EFR p.9–10)", [
+            P("«La demanda diaria para una componente de un determinado producto, está distribuida normalmente por una media diaria de **85 cajas** con una desviación estándar de 10 cajas … tiempo de espera de tres días … $6 … 20% TEA … $1,2 … **85%** … Se trabaja **240 días** al año. Definir, Confeccionar y Calcular un sistema de gestión de inventarios.»"),
+        ], [
+            AVISO("**Fuente:** EFR p.10 (primera mitad). La hoja da $D_{LT} = 255$, $\\sigma_{LT} = 17{,}32$, SS = 20 con z = 1,15 y **PP = 275**, pero el $Q^*$ escrito (≈3193) no sale de los datos. Cálculo propio abajo."),
+            F("D = 85\\cdot 240 = 20\\,400 \\qquad Q^* = \\sqrt{\\frac{2\\cdot 20\\,400\\cdot 6}{0{,}24}} \\approx 1010 \\text{ cajas}"),
+            F("SS = 1{,}04\\cdot 17{,}3 \\approx 18 \\qquad R = 255 + 18 = 273 \\text{ cajas}"),
+            P("Con el z = 1,15 de la hoja, R = 275. Política: pedir ≈1010 cajas cuando la posición baje a 273 (≈20 pedidos al año, cada ~12 días)."),
+        ], estado="cálculo propio"),
+        EXAM("**Checklist del ejercicio tipo:** 1) **definir** el modelo (perpetuo con SS, demanda normal, se admiten pendientes); 2) pasar todo a las **mismas unidades** (D anual con i anual); 3) $Q^*$; 4) $\\bar d L$, $\\sigma_L = \\sigma_d\\sqrt L$, $z$ de tabla, SS y PP; 5) enunciar la **política** con números; 6) **subsistemas** y qué hace cada uno."),
+        H("8. Otro uso del mismo razonamiento"),
+        P("En una mesa especial de octubre (sin fecha) la práctica de pronósticos terminaba pidiendo «la tasa de capacidad de producción para que, con un **95%** de probabilidad, no haya faltantes en la línea de producción». Es la misma idea: **pronóstico medio + 1,64 desvíos del error**. No tengo los datos de esa mesa."),
+        G("9. Glosario", "", [
+            ["SS", "stock de seguridad", "Existencias por encima de la demanda esperada en el lead time"],
+            ["z", "desvíos", "De la tabla normal según el nivel de servicio"], ["σd", "desvío diario", "De la demanda por día"],
+            ["σL", "desvío en el lead time", "σd·√L si los días son independientes"], ["d̄L (D_LT)", "demanda media en el lead time", ""],
+            ["R = d̄L + zσL", "punto de pedido", "PP en las hojas"], ["NS (NSF, EF)", "nivel de servicio", "Probabilidad de no faltar en el ciclo"],
+        ]),
+    ]
+    src = [V6, EVA, EFR(9, "enunciado N(85,10)"), EFR(10, "N(85,10) y N(60,10)"), EFR(24, "N(50,10) y subsistemas"),
+           LU(2, "Final 1, N(50,10)"), LU(11, "Final 9, N(60,10)"), "texto/examenes/mesa_especial_oct.txt", PAT,
+           "content/u2/clase01b.json (tabla Z, U2 Clase 1.b)"]
+    return clase("u5c5", "Clase 5 · Stock de seguridad y nivel de servicio", "Stock de seguridad y nivel de servicio", "B",
+                 "Cuando la demanda varía: stock de seguridad por probabilidad, el punto de pedido R = d̄L + zσL y el ejercicio de final que más se repite, con sus tres variantes y lo que hay que corregir de las hojas resueltas.",
+                 src, t, "Clase 6 · Período fijo, período único y rotación", ["u5/img/u5_normal.svg"])

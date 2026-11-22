@@ -1,0 +1,346 @@
+{
+ "unitId": "u5",
+ "unitLabel": "Unidad 5",
+ "unitTitle": "Logística",
+ "id": "u5c5",
+ "title": "Clase 5 · Stock de seguridad y nivel de servicio",
+ "name": "Stock de seguridad y nivel de servicio",
+ "lede": "Cuando la demanda varía: stock de seguridad por probabilidad, el punto de pedido R = d̄L + zσL y el ejercicio de final que más se repite, con sus tres variantes y lo que hay que corregir de las hojas resueltas.",
+ "visto": false,
+ "source": [
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 17 «Control de inventarios» (Chase), págs. 258–285 del PDF del resumen",
+  "texto/examenes/SG!EVA.txt (compilado de finales 2002–2006)",
+  "texto/ocr/efr_ppm/p-09.png — EjerciciosFinalesResueltos, resolución manuscrita (enunciado N(85,10))",
+  "texto/ocr/efr_ppm/p-10.png — EjerciciosFinalesResueltos, resolución manuscrita (N(85,10) y N(60,10))",
+  "texto/ocr/efr_ppm/p-24.png — EjerciciosFinalesResueltos, resolución manuscrita (N(50,10) y subsistemas)",
+  "texto/ocr/sg1_ppm/p-02.png — SG1.doc, resolución manuscrita (Final 1, N(50,10))",
+  "texto/ocr/sg1_ppm/p-11.png — SG1.doc, resolución manuscrita (Final 9, N(60,10))",
+  "texto/examenes/mesa_especial_oct.txt",
+  "patrones_examenes.md (conteos de finales)",
+  "content/u2/clase01b.json (tabla Z, U2 Clase 1.b)"
+ ],
+ "laminas": [
+  "u5/img/u5_normal.svg"
+ ],
+ "next": "Clase 6 · Período fijo, período único y rotación",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque B · Clase 5 · Stock de seguridad y nivel de servicio**"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**De dónde sale esta clase.** El enfoque de probabilidad y el modelo de cantidad fija con inventario de seguridad: **Chase cap. 17**. Los ejercicios: la familia «demanda normal» de los finales (SG!EVA 2002–2004) con tres resoluciones manuscritas que **no coinciden entre sí**; las comparo y doy la resolución que se puede defender. La tabla normal y el cálculo de $z$ están en la **U2, Clase 1.b**."
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** si la demanda varía, el peligro de faltante está **solo durante el tiempo de entrega**. Se pide antes: $R = \\bar d\\,L + z\\,\\sigma_L$. El lote $Q$ se sigue calculando con el EOQ; lo que cambia es el **punto de pedido**."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Stock de seguridad"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase: «El inventario de seguridad se define como las existencias que se manejan **además de la demanda esperada**. En una distribución normal, ésta sería la media.» Ejemplo del libro: demanda mensual promedio 100; si se manejan 120, hay 20 de inventario de seguridad."
+  },
+  {
+   "type": "paragraph",
+   "text": "Se puede fijar como «cierta cantidad de semanas de suministro», pero Chase prefiere un enfoque que capte la variabilidad: el **enfoque de probabilidad**. Ojo: «sólo considera la probabilidad de quedarse sin inventario, no la cantidad de unidades faltantes»."
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo de Chase: 100 unidades con σ = 20",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Si se empieza el mes con 100 unidades (la media), la probabilidad de faltante es **50%**: a la larga, faltaría en seis meses del año."
+    },
+    {
+     "type": "paragraph",
+     "text": "Con 20 unidades extra (un desvío), la normal acumulada da **0,8413**: «aproximadamente 84% del tiempo no se espera que se agoten las existencias y 16% del tiempo, sí»."
+    },
+    {
+     "type": "paragraph",
+     "text": "Para **95%** se manejan «alrededor de **1,64** desviaciones estándar», o sea unas **33 unidades**: $1{,}64 \\cdot 20 \\approx 33$. No se piden 33 extra cada mes: se programa la recepción para que queden 33 cuando llega el pedido. Así, se espera un faltante **una vez cada 20 meses**."
+    }
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Modelo de cantidad fija con stock de seguridad"
+  },
+  {
+   "type": "paragraph",
+   "text": "El sistema perpetuo vigila el stock y pide al llegar a R. «El peligro de tener faltantes en ese modelo ocurre **sólo durante el tiempo de entrega**.» (Chase)"
+  },
+  {
+   "type": "formula",
+   "tex": "R = \\bar d\\,L + z\\,\\sigma_L",
+   "caption": "punto de pedido con SS (Chase)"
+  },
+  {
+   "type": "formula",
+   "tex": "SS = z\\,\\sigma_L \\qquad \\sigma_L = \\sqrt{\\sum_{i=1}^{L}\\sigma_{d}^2} = \\sigma_d\\sqrt{L}",
+   "caption": "días independientes con el mismo desvío"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase: la desviación estándar de una serie de ocurrencias independientes «es igual a la raíz cuadrada de la suma de las varianzas». Su ejemplo: σ = 10 unidades por día y entrega de 5 días: $\\sigma_L = \\sqrt{5\\cdot 10^2} = \\sqrt{500} \\approx 22{,}4$; para 95%, $z = 1{,}64$ y $SS = 1{,}64\\cdot 22{,}4 \\approx 37$ (cuenta propia con los datos del texto; el resultado es imagen en el V6)."
+  },
+  {
+   "type": "paragraph",
+   "text": "La cantidad a pedir es la misma que sin incertidumbre: «la diferencia clave … radica en el cálculo del punto de volver a pedir. **La cantidad del pedido es la misma en ambos casos**.»"
+  },
+  {
+   "type": "svg",
+   "file": "u5/img/u5_normal.svg",
+   "caption": "SS = z·σL con los datos del final N(50,10), 85% (gráfico propio)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Cómo sale z"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Nivel de servicio",
+    "z (tabla normal, una cola)",
+    "Lo que usan las hojas resueltas"
+   ],
+   "rows": [
+    [
+     "80%",
+     "0,84",
+     ""
+    ],
+    [
+     "84,13%",
+     "1,00",
+     "**Lu Final 1 usa z = 1 para 85%**"
+    ],
+    [
+     "85%",
+     "**1,04**",
+     "EFR p.10 usa 1,15 para 85%"
+    ],
+    [
+     "90%",
+     "**1,28**",
+     "Lu Final 9 y EFR p.10 usan 1,25"
+    ],
+    [
+     "95%",
+     "**1,64** (1,645)",
+     "Chase usa 1,64"
+    ],
+    [
+     "97,5%",
+     "1,96",
+     ""
+    ],
+    [
+     "99%",
+     "2,33",
+     ""
+    ]
+   ]
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Las hojas resueltas redondean z de distintas maneras** (1 o 1,15 para 85%; 1,25 para 90%). Con la tabla, **85% → z ≈ 1,04 y 90% → z ≈ 1,28**. En estos ejercicios la diferencia en el SS es de 1 caja, pero escribí el valor de tabla y cómo lo buscaste (área 0,85 → z = 1,04)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. El ejercicio que más se repite"
+  },
+  {
+   "type": "ejercicio",
+   "title": "5. EJERCICIO — «Definir, confeccionar y calcular un sistema de gestión de inventarios» (SG!EVA; EFR p.24; SG1 Lu Final 1)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«La demanda diaria de un producto indirecto está distribuida normalmente por una media diaria de **50 cajas** con una desviación estándar de **10 cajas**. El abastecimiento es prácticamente seguro, con un tiempo de espera de **tres días**. El costo de colocación de un pedido es de **\\$6** y el interés perdido por mantenimiento de stock es de **20% TEA**, el precio unitario de la componente es de **\\$1,2**. Se desea un nivel de satisfacción del servicio al cliente estimado en el **85%**, inclusive cuando demanden el producto en el período de reabastecimiento. Nota: pueden haber pedidos no surtidos, cuando la existencia es nula, que se cumplirán posteriormente. Se trabaja **200 días** al año.»"
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "Definir, confeccionar y calcular el sistema de gestión de inventarios.",
+      "Indicar los subsistemas participantes y la función desarrollada por cada uno."
+     ]
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Fuentes:** SG1.doc (Final 1, pág. 2) y EFR p.24. **Las dos hojas tienen problemas:** Lu calcula $Q^* = \\sqrt{2\\cdot 50\\cdot 6/(1{,}2\\cdot 0{,}2)} = 50$ cajas, mezclando la **demanda diaria** con una **tasa anual**; EFR p.24 deja el $Q^*$ en blanco. La resolución de abajo pone todo en las mismas unidades (cálculo propio) y conserva el resto del procedimiento de las hojas."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Definir.** Demanda independiente con variación aleatoria, entrega segura, se admiten pedidos pendientes: **sistema perpetuo (cantidad fija, modelo Q) con stock de seguridad**. Lu lo escribe así: «Suponemos sist. perpetuo (o modelo básico)»."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Datos:** $\\bar d = 50$ cajas/día, $\\sigma_d = 10$, $L = 3$ días, $S = \\$6$, $i = 0{,}20$, $C = \\$1{,}2$, 200 días/año → $D = 50\\cdot 200 = 10\\,000$ cajas/año; $H = 0{,}2\\cdot 1{,}2 = \\$0{,}24$ por caja y por año."
+    },
+    {
+     "type": "formula",
+     "tex": "Q^* = \\sqrt{\\frac{2\\cdot 10\\,000\\cdot 6}{0{,}24}} = \\sqrt{500\\,000} \\approx 707 \\text{ cajas}"
+    },
+    {
+     "type": "paragraph",
+     "text": "(Equivalente: con demanda diaria hay que usar costo de mantener **diario**, $0{,}24/200$; da lo mismo.)"
+    },
+    {
+     "type": "formula",
+     "tex": "\\bar d\\,L = 50\\cdot 3 = 150 \\qquad \\sigma_L = 10\\sqrt{3} \\approx 17{,}3"
+    },
+    {
+     "type": "formula",
+     "tex": "SS = z\\,\\sigma_L = 1{,}04\\cdot 17{,}3 \\approx 18 \\qquad R = 150 + 18 = 168 \\text{ cajas}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Lu llega a **SS = 18 y PP = 168** con z = 1 (17,3 → 18); EFR p.24 escribe 150 + 1,04·17,32 ≈ 168. **Coinciden.**"
+    },
+    {
+     "type": "paragraph",
+     "text": "**Confeccionar (la política):** cada vez que la posición del inventario baje a **168 cajas**, emitir un pedido de **707 cajas**. Son $10\\,000/707 \\approx 14$ pedidos al año, uno cada **~14 días** de trabajo. Stock promedio esperado $Q/2 + SS \\approx 372$ cajas (cálculo propio)."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Subsistemas** (EFR p.24 y Lu): **gestión de stock / almacenes** detecta el PP y emite el pedido de reposición; **compras** coloca la orden; **recepción y almacenaje** recibe; **control de calidad** inspecciona; **contable-financiero** paga y valoriza (todo eso es el «abastecimiento»)."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "6. VARIANTE — N(60,10), 90%, 200 días (SG!EVA; EFR p.10; SG1 Lu Final 9)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Mismo enunciado con **media diaria 60 cajas**, desvío 10, tres días de espera, \\$6, 20% TEA, \\$1,2, nivel de servicio **90%**, **200 días** al año."
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Fuentes:** EFR p.10 (segunda mitad) y SG1.doc Final 9. EFR usa bien las unidades: $Q^* = \\sqrt{2\\cdot 60\\cdot 6/(1{,}2\\cdot 0{,}2/200)} = 775$. Lu repite el error de unidades y da 55. Me quedo con EFR."
+    },
+    {
+     "type": "formula",
+     "tex": "D = 12\\,000 \\qquad Q^* = \\sqrt{\\frac{2\\cdot 12\\,000\\cdot 6}{0{,}24}} \\approx 775 \\text{ cajas}"
+    },
+    {
+     "type": "formula",
+     "tex": "SS = 1{,}28\\cdot 17{,}3 \\approx 22 \\qquad R = 180 + 22 = 202 \\text{ cajas}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Las dos hojas: **SS = 22 y PP = 202** (con z = 1,25). EFR cierra: «cada vez que el nivel de existencias alcance las 202 cajas, se deberá realizar un pedido de 775 u los cuales arribarán en 3 días»."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "7. VARIANTE — N(85,10), 85%, 240 días (SG!EVA 18/07/2002; EFR p.9–10)",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«La demanda diaria para una componente de un determinado producto, está distribuida normalmente por una media diaria de **85 cajas** con una desviación estándar de 10 cajas … tiempo de espera de tres días … \\$6 … 20% TEA … \\$1,2 … **85%** … Se trabaja **240 días** al año. Definir, Confeccionar y Calcular un sistema de gestión de inventarios.»"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Fuente:** EFR p.10 (primera mitad). La hoja da $D_{LT} = 255$, $\\sigma_{LT} = 17{,}32$, SS = 20 con z = 1,15 y **PP = 275**, pero el $Q^*$ escrito (≈3193) no sale de los datos. Cálculo propio abajo."
+    },
+    {
+     "type": "formula",
+     "tex": "D = 85\\cdot 240 = 20\\,400 \\qquad Q^* = \\sqrt{\\frac{2\\cdot 20\\,400\\cdot 6}{0{,}24}} \\approx 1010 \\text{ cajas}"
+    },
+    {
+     "type": "formula",
+     "tex": "SS = 1{,}04\\cdot 17{,}3 \\approx 18 \\qquad R = 255 + 18 = 273 \\text{ cajas}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Con el z = 1,15 de la hoja, R = 275. Política: pedir ≈1010 cajas cuando la posición baje a 273 (≈20 pedidos al año, cada ~12 días)."
+    }
+   ]
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Checklist del ejercicio tipo:** 1) **definir** el modelo (perpetuo con SS, demanda normal, se admiten pendientes); 2) pasar todo a las **mismas unidades** (D anual con i anual); 3) $Q^*$; 4) $\\bar d L$, $\\sigma_L = \\sigma_d\\sqrt L$, $z$ de tabla, SS y PP; 5) enunciar la **política** con números; 6) **subsistemas** y qué hace cada uno."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "8. Otro uso del mismo razonamiento"
+  },
+  {
+   "type": "paragraph",
+   "text": "En una mesa especial de octubre (sin fecha) la práctica de pronósticos terminaba pidiendo «la tasa de capacidad de producción para que, con un **95%** de probabilidad, no haya faltantes en la línea de producción». Es la misma idea: **pronóstico medio + 1,64 desvíos del error**. No tengo los datos de esa mesa."
+  },
+  {
+   "type": "glosario",
+   "title": "9. Glosario",
+   "intro": "",
+   "entries": [
+    {
+     "simbolo": "SS",
+     "nombre": "stock de seguridad",
+     "significado": "Existencias por encima de la demanda esperada en el lead time"
+    },
+    {
+     "simbolo": "z",
+     "nombre": "desvíos",
+     "significado": "De la tabla normal según el nivel de servicio"
+    },
+    {
+     "simbolo": "σd",
+     "nombre": "desvío diario",
+     "significado": "De la demanda por día"
+    },
+    {
+     "simbolo": "σL",
+     "nombre": "desvío en el lead time",
+     "significado": "σd·√L si los días son independientes"
+    },
+    {
+     "simbolo": "d̄L (D_LT)",
+     "nombre": "demanda media en el lead time",
+     "significado": ""
+    },
+    {
+     "simbolo": "R = d̄L + zσL",
+     "nombre": "punto de pedido",
+     "significado": "PP en las hojas"
+    },
+    {
+     "simbolo": "NS (NSF, EF)",
+     "nombre": "nivel de servicio",
+     "significado": "Probabilidad de no faltar en el ciclo"
+    }
+   ]
+  }
+ ],
+ "historias": [],
+ "block": "B",
+ "blockTitle": "Bloque B · Modelos estocásticos y control"
+}

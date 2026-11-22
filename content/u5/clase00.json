@@ -1,0 +1,326 @@
+{
+ "unitId": "u5",
+ "unitLabel": "Unidad 5",
+ "unitTitle": "Logística",
+ "id": "u5c0",
+ "title": "Clase 0 · Mapa de la unidad",
+ "name": "Mapa de la unidad",
+ "lede": "Qué entra en la U5 (Logística), en qué orden la vemos, cómo se tomó en los finales y la notación que vas a encontrar en el libro y en las resoluciones.",
+ "visto": false,
+ "source": [
+  "programa.md — Unidad 5 · Logística (programa 2008)",
+  "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 5 y Semana 7",
+  "patrones_examenes.md (conteos de finales)",
+  "clases_previas/conversacion_previa_notas.md",
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 17 «Control de inventarios» (Chase), págs. 258–285 del PDF del resumen",
+  "texto/examenes/SG!EVA.txt (compilado de finales 2002–2006)",
+  "texto/ocr/INVENTARIO_OCR.md (índice de resoluciones manuscritas de inventarios)"
+ ],
+ "laminas": [
+  "u5/img/u5_mapa.svg"
+ ],
+ "next": "Clase 1 · Concepto de inventario",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Introducción · Clase 0 · Mapa de la unidad**"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**De dónde sale esta clase.** No hay un apunte de la cátedra con el plan de la U5. El orden sale del **programa 2008** (temas de la Unidad 5), del **Documento Maestro v2** (qué es teoría [T] y qué es práctica [P], y la Semana 7 de inventarios) y de lo que efectivamente cayó en finales (`patrones_examenes.md`). La teoría de inventarios viene de **Chase, cap. 17** (en el Resumen V6); la de cadena, logística y ubicación, de **Chase caps. 10–12**; la distribución, de la nota técnica **DRP** de R. Morán."
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** la U5 contesta dos preguntas para cada ítem que no sale de un MRP: **cuándo pedir** y **cuánto pedir**. Y después, quién lo pide (Compras), a quién (proveedores), dónde se guarda y se cuenta (almacenes) y cómo llega al cliente (distribución)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Qué dice el programa"
+  },
+  {
+   "type": "paragraph",
+   "text": "El **objetivo** de la unidad, tal cual el programa 2008: «Que los alumnos comprendan y apliquen el concepto de logística, integral e interna. Que logren determinar y aplicar el modelo de gestión de inventarios adecuado para cada proceso de producción. Definir las estructuras de información con que se definen y producen.»"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los **temas** del programa, en el orden en que aparecen:"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "Concepto de inventario según la teoría de las restricciones.",
+    "Transacciones del inventario.",
+    "Aplicación de modelos determinísticos, Periódico y Perpetuo.",
+    "Modelos Estocásticos.",
+    "Herramientas informatizadas de cálculo.",
+    "El sistema de compras; Ingeniería de Compra, selección de Proveedores para la fabricación JIT.",
+    "Almacenes, introducción a la trazabilidad.",
+    "Ubicaciones y distribuciones de plantas.",
+    "La logística del abastecimiento.",
+    "Satisfacción del cliente."
+   ]
+  },
+  {
+   "type": "svg",
+   "file": "u5/img/u5_mapa.svg",
+   "caption": "Mapa de la Unidad 5 (esquema propio, no es lámina de la cátedra)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Las clases de esta unidad"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Clase",
+    "Qué ves",
+    "Tema del programa"
+   ],
+   "rows": [
+    [
+     "**Bloque A · Inventario y modelos determinísticos**",
+     "",
+     ""
+    ],
+    [
+     "1 · Concepto de inventario",
+     "definición, tipos, propósitos, costos, transacciones, demanda independiente y dependiente, la mirada de TOC",
+     "concepto de inventario; transacciones"
+    ],
+    [
+     "2 · EOQ / LEC y punto de pedido",
+     "modelo básico, supuestos, costo total, $Q^*$, punto de pedido, sensibilidad",
+     "modelos determinísticos"
+    ],
+    [
+     "3 · EOQ con descuentos",
+     "precio por tramos, procedimiento de dos pasos, caso librería",
+     "modelos determinísticos"
+    ],
+    [
+     "4 · Perpetuo y periódico",
+     "modelo Q vs. modelo P, posición de inventario, sistemas simples, qué control conviene",
+     "periódico y perpetuo"
+    ],
+    [
+     "**Bloque B · Modelos estocásticos y control**",
+     "",
+     ""
+    ],
+    [
+     "5 · Stock de seguridad y nivel de servicio",
+     "demanda normal, $z$, $\\sigma_L$, punto de pedido con SS; el ejercicio «definir, confeccionar y calcular»",
+     "modelos estocásticos"
+    ],
+    [
+     "6 · Período fijo, período único y rotación",
+     "SS en el periódico, el voceador, rotación y semanas de suministro, herramientas informatizadas",
+     "modelos estocásticos; herramientas"
+    ],
+    [
+     "7 · ABC y conteo cíclico",
+     "Pareto, control por clase, plan de conteo, ABC con otro criterio (mano de obra)",
+     "almacenes (exactitud de registros)"
+    ],
+    [
+     "**Bloque C · Compras, almacenes y logística**",
+     "",
+     ""
+    ],
+    [
+     "8 · Compras y proveedores",
+     "etapas de la compra, órdenes abiertas y cerradas, archivos, evaluación de proveedores, proveedores JIT",
+     "sistema de compras; proveedores JIT"
+    ],
+    [
+     "9 · Almacenes, distribución y trazabilidad",
+     "funciones del almacén, cross-docking, DRP, trazabilidad",
+     "almacenes; trazabilidad; logística del abastecimiento"
+    ],
+    [
+     "10 · Cadena de suministro y ubicación de plantas",
+     "medidas de la cadena, efecto látigo, transporte, criterios y métodos de ubicación, formatos de distribución",
+     "ubicaciones y distribuciones de plantas; satisfacción del cliente"
+    ],
+    [
+     "**Cierre**",
+     "",
+     ""
+    ],
+    [
+     "Integrador · Ejercicios tipo examen",
+     "todas las familias de ejercicios de inventarios que cayeron, con el camino de resolución",
+     "todo"
+    ]
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Cómo se toma en el final"
+  },
+  {
+   "type": "paragraph",
+   "text": "Según `patrones_examenes.md`: **inventarios (EOQ, descuentos, SS, ABC) apareció como práctica en 5 de 19 finales fechados (26%)**, casi todos entre 2002 y 2006. En los 7 finales fechados 2011–2018 no aparece como práctica fechada; sí aparece un final **sin fecha** cuya práctica fue «un solo ejercicio de Clasificación ABC», y en teoría circula el multiple choice de **periódico vs. perpetuo**."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Familia de ejercicio",
+    "Dónde está",
+    "Clase"
+   ],
+   "rows": [
+    [
+     "EOQ + stock de seguridad con demanda normal («Definir, confeccionar y calcular un sistema de gestión de inventarios» + subsistemas)",
+     "SG!EVA 23/05/2002, 18/07/2002, 06/05/2004; EFR p.9–10 y 24; SG1 Lu Finales 1 y 9",
+     "5"
+    ],
+    [
+     "EOQ con descuentos por volumen (librería)",
+     "SG!EVA (varias), 27/02/2003; EFR p.3; SG1 Lu Final 2",
+     "3"
+    ],
+    [
+     "Variación respecto del lote óptimo (IMBA / TT)",
+     "SG!EVA 09/03/2006 y otros; EFR p.2; SG1 Lu Final 14",
+     "2"
+    ],
+    [
+     "Política de abastecimiento con EOQ (BIT-Kaffee, bar, Ingap SA, hospital)",
+     "EFR p.16, 17, 30, 34",
+     "2"
+    ],
+    [
+     "EOQ con faltantes",
+     "EFR p.30",
+     "2"
+    ],
+    [
+     "Plan de conteo ABC (EBS 6400 artículos; plan de 6300)",
+     "SG!EVA Evaluación 16/04/2003; EFR p.4, 13, 24, 30, 34; SG1 Lu Final 6",
+     "7"
+    ],
+    [
+     "ABC por incidencia de mano de obra (vender el 50% del capital inmovilizado)",
+     "SG!EVA; EFR p.8–9; SG1 Lu Final 8",
+     "7"
+    ],
+    [
+     "Teoría: periódico vs. perpetuo, tipo de control, compras",
+     "multiple choice; preguntasabastecimiento (2005); EFR p.36",
+     "4 y 8"
+    ]
+   ]
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**El molde que más se repite:** «Definir, confeccionar y calcular un sistema de gestión de inventarios» con demanda diaria normal, tiempo de espera de 3 días, costo de pedido \\$6, interés 20% TEA, precio \\$1,2 y un nivel de servicio (85% o 90%), más «indicar los subsistemas participantes». Se resuelve en la Clase 5 y se repasa en el Integrador."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Notación: la del libro y la de las resoluciones"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Ojo con la letra L.** En Chase, **L es el tiempo de entrega** (lead time) y **S el costo de preparar un pedido**. En las **resoluciones manuscritas** de los finales (EjerciciosFinalesResueltos y SG1.doc), **L es el costo de colocación del pedido** y el tiempo de entrega se escribe **LT**. En el examen podés usar cualquiera de las dos, pero definí las letras al principio."
+  },
+  {
+   "type": "glosario",
+   "title": "5. Glosario de símbolos de la unidad",
+   "intro": "Las dos notaciones lado a lado. En estas clases uso la de Chase y, cuando transcribo una resolución, la de la hoja.",
+   "entries": [
+    {
+     "simbolo": "D",
+     "nombre": "demanda",
+     "significado": "Demanda anual (unidades/año). En las hojas: D"
+    },
+    {
+     "simbolo": "d̄ · σd",
+     "nombre": "demanda diaria",
+     "significado": "Media y desvío de la demanda por día (o por período)"
+    },
+    {
+     "simbolo": "S (Chase) · L (resoluciones)",
+     "nombre": "costo de pedido",
+     "significado": "Costo de colocar un pedido o de preparar un lote (\\$/pedido)"
+    },
+    {
+     "simbolo": "C (Chase) · c (resoluciones)",
+     "nombre": "costo unitario",
+     "significado": "Precio o costo de una unidad"
+    },
+    {
+     "simbolo": "i",
+     "nombre": "tasa de mantenimiento",
+     "significado": "Porcentaje anual del valor del ítem que cuesta tenerlo (TEA, «costo de manejo»)"
+    },
+    {
+     "simbolo": "H = iC",
+     "nombre": "costo de mantener",
+     "significado": "Costo anual de mantener una unidad en stock"
+    },
+    {
+     "simbolo": "Q · Q*",
+     "nombre": "cantidad a pedir",
+     "significado": "Tamaño del pedido; Q* es el óptimo (EOQ, LEC: lote económico de compra; LEF: de fabricación)"
+    },
+    {
+     "simbolo": "L (Chase) · LT (resoluciones)",
+     "nombre": "tiempo de entrega",
+     "significado": "Lead time: del pedido a la recepción"
+    },
+    {
+     "simbolo": "R (Chase) · PP (resoluciones)",
+     "nombre": "punto de pedido",
+     "significado": "Nivel de stock en que se emite el pedido"
+    },
+    {
+     "simbolo": "SS",
+     "nombre": "stock de seguridad",
+     "significado": "Existencias por encima de la demanda esperada"
+    },
+    {
+     "simbolo": "z",
+     "nombre": "desvíos de la normal",
+     "significado": "Cantidad de desvíos estándar que da el nivel de servicio buscado"
+    },
+    {
+     "simbolo": "σL (Chase) · σDLT (hojas)",
+     "nombre": "desvío en el lead time",
+     "significado": "Desvío de la demanda durante el tiempo de entrega"
+    },
+    {
+     "simbolo": "NS · EF · NSF",
+     "nombre": "nivel de servicio",
+     "significado": "Probabilidad de no quedarse sin stock en el ciclo (las hojas escriben NSF o EF)"
+    },
+    {
+     "simbolo": "T",
+     "nombre": "período de revisión",
+     "significado": "Cada cuánto se revisa en el sistema periódico; en las hojas también el tiempo entre pedidos Q*/d"
+    },
+    {
+     "simbolo": "CT",
+     "nombre": "costo total",
+     "significado": "Chase: anual. Las hojas lo usan por unidad: CT = c + L/Q + c·i·Q/(2D)"
+    }
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Sigue la Clase 1: qué es un inventario y por qué cuesta tenerlo."
+  }
+ ],
+ "historias": [],
+ "block": "intro",
+ "blockTitle": "Introducción"
+}

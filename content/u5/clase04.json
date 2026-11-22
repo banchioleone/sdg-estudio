@@ -1,0 +1,318 @@
+{
+ "unitId": "u5",
+ "unitLabel": "Unidad 5",
+ "unitTitle": "Logística",
+ "id": "u5c4",
+ "title": "Clase 4 · Perpetuo y periódico",
+ "name": "Perpetuo y periódico",
+ "lede": "Los dos sistemas de reposición de varios períodos: cantidad fija y fechas variables contra fechas fijas y cantidades variables. Diferencias, sistemas simples y el multiple choice del banco.",
+ "visto": false,
+ "source": [
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 17 «Control de inventarios» (Chase), págs. 258–285 del PDF del resumen",
+  "texto/examenes/preguntasabastecimiento.txt (Examen 2005, respuestas de alumno)",
+  "texto/examenes/Examen SG1 mult choice.txt y texto/Preguntas_Frecuentes.txt (multiple choice con marcas de alumno)",
+  "texto/examenes/Ejercicios posibles.txt (multiple choice)",
+  "texto/examenes/Preguntas de teoria del final de SG1.txt (mesa con el multiple choice)",
+  "texto/ocr/efr_ppm/p-36.png — EjerciciosFinalesResueltos, resolución manuscrita (examen tipeado, pregunta 3 de teoría)"
+ ],
+ "laminas": [
+  "u5/img/u5_QvsP.svg"
+ ],
+ "next": "Clase 5 · Stock de seguridad y nivel de servicio",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque A · Clase 4 · Perpetuo y periódico**"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**De dónde sale esta clase.** Modelo Q y modelo P, sus diferencias y los sistemas simples: **Chase cap. 17**. Las definiciones cortas de perpetuo y periódico, el multiple choice y la pregunta «analice un sistema periódico»: **banco de preguntas** (Examen 2005, Preguntas Frecuentes, multiple choice), con respuestas **de alumnos**."
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** el **perpetuo** pide siempre la **misma cantidad** en **fechas variables** (cuando el stock toca el punto de pedido). El **periódico** revisa en **fechas fijas** y pide **cantidades variables** (lo que falta para llegar a un máximo)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Un período o varios"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase separa los sistemas en **de un período** (compra única que cubre un período y no se repite: diarios, artículos de temporada; se ve en la Clase 6) y **de varios períodos**, diseñados para que la pieza esté disponible todo el año. Los de varios períodos son dos:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "**Cantidad de pedido fija**: también llamado EOQ o **modelo Q**. Es el **perpetuo**.",
+    "**Período fijo**: también llamado sistema periódico, de revisión periódica, de intervalo fijo o **modelo P**."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "«La distinción fundamental es que los modelos de cantidad de pedido fija se basan en los **eventos** y los modelos de periodo fijo se basan en el **tiempo**.» (Chase)"
+  },
+  {
+   "type": "svg",
+   "file": "u5/img/u5_QvsP.svg",
+   "caption": "Perpetuo vs. periódico (esquema propio)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Las definiciones de la cátedra (banco de preguntas)"
+  },
+  {
+   "type": "paragraph",
+   "text": "La respuesta del banco de abastecimiento (Examen 2005) a «¿qué modelo de stock se aplica a los materiales indirectos?»: «Sistema de control de base estadístico, el cual se basa en datos históricos de consumo y pronóstico. Existen 2 tipos:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "**Perpetuo:** método de reposición de stock por **cantidades fijas y fechas variables**.",
+    "**Periódico:** método de reposición de stock por **cantidades variables en periodos fijos**.»"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Y la pregunta 28 de Preguntas Frecuentes: «Un sistema de gestión de inventarios periódico es un modelo de reposición de stocks con cantidades de pedido variable a intervalos de tiempo fijo. Ejemplo: para ciertos productos alimenticios, ir al supermercado.»"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Posición del inventario"
+  },
+  {
+   "type": "paragraph",
+   "text": "En el perpetuo el pedido se dispara con la **posición del inventario**, no solo con lo que hay en el estante. Chase: «La posición del inventario se define como la cantidad disponible más la pedida menos los pedidos acumulados.»"
+  },
+  {
+   "type": "formula",
+   "tex": "\\text{Posición} = \\text{disponible} + \\text{pedido en camino} - \\text{pedidos acumulados (pendientes)}"
+  },
+  {
+   "type": "paragraph",
+   "text": "Ejemplo de redacción de Chase: «cuando la posición del inventario baje a 36, hacer un pedido de 57 unidades más»."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Diferencias (Chase)"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "",
+    "Perpetuo (modelo Q)",
+    "Periódico (modelo P)"
+   ],
+   "rows": [
+    [
+     "Qué dispara el pedido",
+     "un **evento**: llegar al punto de pedido R",
+     "el **paso del tiempo**: fin del período T"
+    ],
+    [
+     "Cantidad",
+     "fija (Q)",
+     "variable (q, lo que falta hasta el máximo)"
+    ],
+    [
+     "Registro",
+     "**cada** retiro y adición se registra; vigilancia continua",
+     "se cuenta solo en la revisión"
+    ],
+    [
+     "Inventario promedio",
+     "más bajo",
+     "**más alto**: protege también durante T"
+    ],
+    [
+     "Le conviene a…",
+     "piezas **más caras** y piezas **importantes o críticas** (supervisión más estrecha, respuesta rápida)",
+     "muchos ítems de un mismo proveedor, pedidos combinados para ahorrar flete, conteo planificado"
+    ],
+    [
+     "Mantenimiento del sistema",
+     "**más tiempo** (registrar todo)",
+     "menos"
+    ]
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Cuándo Chase recomienda el período fijo: cuando los proveedores hacen visitas de rutina y levantan pedidos de toda la línea, cuando los compradores quieren **combinar pedidos para ahorrar transporte**, o para facilitar el conteo («el Distribuidor X llama cada dos semanas y los empleados saben que es preciso contar todos los productos del Distribuidor X»)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Tres sistemas simples (Chase)"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Sistema",
+    "Cómo funciona",
+    "Es un…"
+   ],
+   "rows": [
+    [
+     "**Resurtido opcional**",
+     "Se revisa con frecuencia fija. Se calcula $q = M - I$ (máximo menos posición). Si $q \\geq Q$ (un mínimo), se pide $q$; si no, no se pide nada.",
+     "modelo P"
+    ],
+    [
+     "**Dos recipientes**",
+     "Se consume del primero; el segundo guarda una cantidad igual al punto de pedido R. Cuando se empieza el segundo, se pide para reponerlo.",
+     "modelo Q"
+    ],
+    [
+     "**Un recipiente**",
+     "En períodos fijos se repone **siempre** hasta un máximo, sin importar cuánto se usó.",
+     "modelo P"
+    ]
+   ]
+  },
+  {
+   "type": "formula",
+   "tex": "q = M - I \\qquad \\text{si } q \\geq Q \\text{ se pide } q;\\ \\text{si no, no se pide}",
+   "caption": "sistema de resurtido opcional (Chase)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. ¿Qué control uso? El multiple choice"
+  },
+  {
+   "type": "paragraph",
+   "text": "Este ejercicio de multiple choice circula en el banco (Examen SG1 mult choice, Preguntas Frecuentes, Ejercicios posibles) y lo mencionan como tomado en una mesa de teoría. Las marcas son **de alumnos**:"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Situación",
+    "Marca que circula",
+    "Comentario (propio)"
+   ],
+   "rows": [
+    [
+     "Suministro de alimentos frescos para su cocina",
+     "Depende",
+     "Razonable: si se compran en días fijos es periódico; si se repone al terminarse, perpetuo."
+    ],
+    [
+     "Recibir a diario el periódico",
+     "Periódico",
+     "Coincide: entrega a intervalo fijo."
+    ],
+    [
+     "Comprar combustible para su vehículo",
+     "Perpetuo",
+     "Coincide: se carga cuando el tanque baja a la reserva (punto de pedido)."
+    ],
+    [
+     "Medicamentos de uso prolongado",
+     "Periódico",
+     "Coincide: se compran cada mes / cada receta."
+    ],
+    [
+     "Dinero en papel moneda para un banco",
+     "Perpetuo",
+     "Coincide: se vigila el saldo y se repone al bajar de un nivel."
+    ]
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Otro ítem del mismo multiple choice: «La adquisición de todo material utilizado en la empresa lo realiza el área de Compras, pero cada tipo requiere un método particular de gestión, por ejemplo: 2.1 Los llamados independientes con el MRP · 2.2 Los Indirectos solo con el sistema Perpetuo · 2.3 Los clasificados como Críticos con el Periódico · 2.4 Los Consumibles con orden abierta · 2.5 Ninguna de las respuestas dadas es satisfactoria». La copia que circula tiene marcada la **2.3**."
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Ojo con esa marca.** Chase dice lo contrario: el modelo de cantidad fija (perpetuo) «es más apropiado para las piezas importantes como las **piezas críticas**, porque hay una supervisión más estrecha». La 2.1 es falsa (los independientes **no** van con MRP) y la 2.2 también (el «solo» la hace falsa). Con el libro en la mano, la respuesta defendible es **2.5**, salvo que la cátedra tenga otro criterio. **Preguntale a Emiliano si hay clave oficial.**"
+  },
+  {
+   "type": "ejercicio",
+   "title": "7. EJERCICIO DE TEORÍA — «Analice la aplicación de un sistema de gestión de inventarios periódicos y ejemplifique» (EFR p.36; Preguntas Frecuentes 28)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Pregunta de teoría de un examen tipeado sin fecha (EFR p.36) que también está en el banco de Preguntas Frecuentes."
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "Respuesta armada con Chase y el banco; no es clave de la cátedra."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Qué es:** reposición a **intervalos fijos** T con **cantidades variables**: en cada revisión se cuenta y se pide lo necesario para cubrir la demanda del período de revisión más el tiempo de entrega, más el stock de seguridad, menos lo disponible (fórmula en la Clase 6)."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Cuándo conviene:** muchos ítems del mismo proveedor (se arma un solo pedido y se ahorra flete), visitas de rutina del proveedor, conteos planificados, ítems de bajo valor (clase C)."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Costo:** necesita **más stock de seguridad** que el perpetuo, porque la protección cubre $T + L$ y no solo $L$. A cambio no exige registrar cada movimiento."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Ejemplos:** el banco: «ir al supermercado» por ciertos alimentos; Chase: el distribuidor que llama cada dos semanas; el diario que llega todos los días."
+    }
+   ]
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**En el final:** definí ambos con la frase de la cátedra (cantidades fijas / fechas variables, y al revés), agregá **qué dispara** el pedido (evento vs. tiempo) y una diferencia de costo (el periódico tiene más inventario promedio)."
+  },
+  {
+   "type": "glosario",
+   "title": "8. Glosario",
+   "intro": "",
+   "entries": [
+    {
+     "simbolo": "Modelo Q",
+     "nombre": "perpetuo",
+     "significado": "Cantidad fija, se pide al llegar a R"
+    },
+    {
+     "simbolo": "Modelo P",
+     "nombre": "periódico",
+     "significado": "Período fijo T, cantidad variable q"
+    },
+    {
+     "simbolo": "Posición del inventario",
+     "nombre": "",
+     "significado": "disponible + pedido − pendientes"
+    },
+    {
+     "simbolo": "M",
+     "nombre": "nivel máximo",
+     "significado": "Hasta dónde se repone en el periódico"
+    },
+    {
+     "simbolo": "I",
+     "nombre": "posición en la revisión",
+     "significado": "Lo que hay (más lo pedido) al revisar"
+    },
+    {
+     "simbolo": "q",
+     "nombre": "cantidad a pedir en el P",
+     "significado": "q = M − I"
+    }
+   ]
+  }
+ ],
+ "historias": [],
+ "block": "A",
+ "blockTitle": "Bloque A · Inventario y modelos determinísticos"
+}

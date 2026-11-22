@@ -327,14 +327,167 @@
       "kind": "Práctica + teoría",
       "classes": [
         {
-          "id": "u5-intro",
-          "title": "EOQ, stock, ABC",
-          "soon": true
+          "id": "u5c0",
+          "title": "Clase 0 · Mapa de la unidad",
+          "file": "u5/clase00.json",
+          "soon": false,
+          "visto": false,
+          "name": "Mapa de la unidad",
+          "short": "Mapa",
+          "emoji": "🗺️",
+          "block": "intro"
+        },
+        {
+          "id": "u5c1",
+          "title": "Clase 1 · Concepto de inventario",
+          "file": "u5/clase01.json",
+          "soon": false,
+          "visto": false,
+          "name": "Concepto de inventario",
+          "short": "Inventario",
+          "emoji": "1",
+          "block": "A"
+        },
+        {
+          "id": "u5c2",
+          "title": "Clase 2 · Lote económico (EOQ / LEC) y punto de pedido",
+          "file": "u5/clase02.json",
+          "soon": false,
+          "visto": false,
+          "name": "Lote económico y punto de pedido",
+          "short": "EOQ",
+          "emoji": "2",
+          "block": "A"
+        },
+        {
+          "id": "u5c3",
+          "title": "Clase 3 · EOQ con descuentos por cantidad",
+          "file": "u5/clase03.json",
+          "soon": false,
+          "visto": false,
+          "name": "EOQ con descuentos",
+          "short": "Descuentos",
+          "emoji": "3",
+          "block": "A"
+        },
+        {
+          "id": "u5c4",
+          "title": "Clase 4 · Perpetuo y periódico",
+          "file": "u5/clase04.json",
+          "soon": false,
+          "visto": false,
+          "name": "Perpetuo y periódico",
+          "short": "Q vs P",
+          "emoji": "4",
+          "block": "A"
+        },
+        {
+          "id": "u5c5",
+          "title": "Clase 5 · Stock de seguridad y nivel de servicio",
+          "file": "u5/clase05.json",
+          "soon": false,
+          "visto": false,
+          "name": "Stock de seguridad y nivel de servicio",
+          "short": "Seguridad",
+          "emoji": "5",
+          "block": "B"
+        },
+        {
+          "id": "u5c6",
+          "title": "Clase 6 · Período fijo, período único y rotación",
+          "file": "u5/clase06.json",
+          "soon": false,
+          "visto": false,
+          "name": "Período fijo, período único y rotación",
+          "short": "Período fijo",
+          "emoji": "6",
+          "block": "B"
+        },
+        {
+          "id": "u5c7",
+          "title": "Clase 7 · Clasificación ABC y conteo cíclico",
+          "file": "u5/clase07.json",
+          "soon": false,
+          "visto": false,
+          "name": "Clasificación ABC y conteo cíclico",
+          "short": "ABC",
+          "emoji": "7",
+          "block": "B"
+        },
+        {
+          "id": "u5c8",
+          "title": "Clase 8 · Compras y proveedores",
+          "file": "u5/clase08.json",
+          "soon": false,
+          "visto": false,
+          "name": "Compras y proveedores",
+          "short": "Compras",
+          "emoji": "8",
+          "block": "C"
+        },
+        {
+          "id": "u5c9",
+          "title": "Clase 9 · Almacenes, distribución y trazabilidad",
+          "file": "u5/clase09.json",
+          "soon": false,
+          "visto": false,
+          "name": "Almacenes, distribución y trazabilidad",
+          "short": "Almacenes",
+          "emoji": "9",
+          "block": "C"
+        },
+        {
+          "id": "u5c10",
+          "title": "Clase 10 · Cadena de suministro y ubicación de plantas",
+          "file": "u5/clase10.json",
+          "soon": false,
+          "visto": false,
+          "name": "Cadena de suministro y ubicación de plantas",
+          "short": "Cadena",
+          "emoji": "10",
+          "block": "C"
+        },
+        {
+          "id": "u5int",
+          "title": "Integrador · Ejercicios tipo examen",
+          "file": "u5/integrador.json",
+          "soon": false,
+          "visto": false,
+          "name": "Integrador de la U5",
+          "short": "Integrador",
+          "emoji": "🧩",
+          "block": "D"
         }
       ],
       "examen": [
         "Práctica · Inventarios 5/19 (26%)"
-      ]
+      ],
+      "lede": "Unidad 5 del programa: logística e inventarios. Arranca con la Clase 0 · Mapa de la unidad y sigue en tres bloques. Bloque A · Inventario y modelos determinísticos: concepto de inventario, lote económico (EOQ) y punto de pedido, descuentos por cantidad, perpetuo vs. periódico. Bloque B · Modelos estocásticos y control: stock de seguridad y nivel de servicio, período fijo, período único y rotación, ABC y conteo cíclico. Bloque C · Compras, almacenes y logística: compras y proveedores, almacenes, distribución (DRP) y trazabilidad, cadena de suministro y ubicación de plantas. Cierra con el Integrador de ejercicios tipo examen. Por ahora, teoría completa sin historias.",
+      "blocks": [
+        {
+          "id": "intro",
+          "title": "Introducción"
+        },
+        {
+          "id": "A",
+          "title": "Bloque A · Inventario y modelos determinísticos"
+        },
+        {
+          "id": "B",
+          "title": "Bloque B · Modelos estocásticos y control"
+        },
+        {
+          "id": "C",
+          "title": "Bloque C · Compras, almacenes y logística"
+        },
+        {
+          "id": "D",
+          "title": "Cierre · Integrador"
+        }
+      ],
+      "oldIds": {
+        "u5-intro": "u5c0"
+      }
     },
     {
       "id": "u6",

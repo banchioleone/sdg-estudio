@@ -1,0 +1,283 @@
+{
+ "unitId": "u5",
+ "unitLabel": "Unidad 5",
+ "unitTitle": "Logística",
+ "id": "u5c1",
+ "title": "Clase 1 · Concepto de inventario",
+ "name": "Concepto de inventario",
+ "lede": "Qué es un inventario, para qué se tiene, cuánto cuesta y qué demanda se gestiona con los modelos de esta unidad. Cierra con la mirada de TOC y los subsistemas que intervienen.",
+ "visto": false,
+ "source": [
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 17 «Control de inventarios» (Chase), págs. 258–285 del PDF del resumen",
+  "programa.md — Unidad 5 · Logística (programa 2008)",
+  "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 5 y Semana 7",
+  "texto/examenes/preguntasabastecimiento.txt (Examen 2005, respuestas de alumno)",
+  "texto/examenes/Preguntas SG1.txt (preguntas 16–17 y 31–33: datos de stock para el MRP)",
+  "texto/ocr/sg1_ppm/p-02.png — SG1.doc, resolución manuscrita (Final 1, subsistemas)",
+  "texto/ocr/efr_ppm/p-24.png — EjerciciosFinalesResueltos, resolución manuscrita (subsistemas)",
+  "texto/ocr/efr_ppm/p-13.png — EjerciciosFinalesResueltos, resolución manuscrita (subsistemas del plan de conteo)",
+  "texto/ocr/efr_ppm/p-34.png — EjerciciosFinalesResueltos, resolución manuscrita (Ingap SA, quién genera el pedido)",
+  "texto/programa/SG1Progr2008.txt (bibliografía: Goldratt, La Meta y Cadena Crítica)"
+ ],
+ "laminas": [],
+ "next": "Clase 2 · Lote económico (EOQ / LEC) y punto de pedido",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque A · Clase 1 · Concepto de inventario**"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**De dónde sale esta clase.** Definiciones, propósitos y costos: **Chase cap. 17** (Resumen V6). Materiales directos e indirectos y los subsistemas: el **banco de preguntas de abastecimiento** (Examen 2005, respuestas de alumno) y las preguntas de MRP del banco «Preguntas SG1». La **teoría de las restricciones** está en el programa, pero en el material descargado no hay texto de Goldratt sobre inventario: lo que digo de TOC está marcado como complemento."
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** el inventario es **dinero inmovilizado**. Sirve para desacoplar, cubrir incertidumbre y aprovechar escala, pero cuesta todos los años entre un cuarto y un tercio de lo que vale. Por eso el objetivo es tener **el inventario justo, en el lugar justo**."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Definición"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase abre el capítulo así: el inventario hay que visualizarlo como «un montón de dinero guardado en estantes y anaqueles, así como en camiones y aviones mientras se encuentra en tránsito. Eso es lo que el inventario es: dinero.»"
+  },
+  {
+   "type": "paragraph",
+   "text": "La definición formal (Chase, cap. 17): «**Inventario** son las existencias de una pieza o recurso utilizado en una organización. Un **sistema de inventario** es el conjunto de políticas y controles que vigilan los niveles del inventario y determinan aquellos a mantener, el momento en que es necesario reabastecerlo y qué tan grandes deben ser los pedidos.»"
+  },
+  {
+   "type": "paragraph",
+   "text": "El **propósito básico** del análisis de inventarios, en manufactura y en servicios, es especificar **1) cuándo** hay que pedir más piezas y **2) qué tan grandes** deben ser los pedidos. Con proveedores de largo plazo la pregunta cambia a «cuándo y cuánto **entregar**»."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Tipos de inventario"
+  },
+  {
+   "type": "paragraph",
+   "text": "En manufactura, el inventario «casi siempre se clasifica en **materia prima, productos terminados, partes componentes, suministros y trabajo en proceso**». En servicios se refiere a los bienes tangibles a vender y a los suministros para prestar el servicio."
+  },
+  {
+   "type": "paragraph",
+   "text": "La cátedra usa además otra división, la de **materiales directos e indirectos**, que aparece en el banco de preguntas de abastecimiento (Examen 2005). La respuesta de alumno que circula los asocia con la naturaleza de la demanda: los que dependen de un ítem padre se calculan con el **MRP** (PMCC, primera explosión); los de consumo (insumos, repuestos, materiales de oficina) se gestionan con un **sistema de control de base estadística**, que puede ser **perpetuo** o **periódico**."
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Cuidado con esa respuesta de alumno.** En la pregunta 1 dice «directos = demanda independiente» y en la 8 asigna la orden abierta al PRM de los indirectos: se contradice con sus propias respuestas 6 y 7 (directos → MRP; indirectos → base estadística). Quedate con la idea firme: **demanda dependiente → MRP (U6); demanda independiente o consumo → modelos de esta unidad.**"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Para qué se tiene inventario"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase da cinco razones; vale **también para las empresas justo a tiempo**:"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**Mantener la independencia entre las operaciones.** Un colchón en cada estación permite que los tiempos cortos compensen los largos y reduce la cantidad de preparaciones.",
+    "**Cubrir la variación en la demanda.** Si no se la conoce con precisión, hacen falta inventarios de seguridad o de amortiguación.",
+    "**Permitir flexibilidad en la programación de la producción.** Alivia la presión sobre el sistema y permite lotes más grandes cuando la preparación es cara.",
+    "**Protegerse contra la variación en el tiempo de entrega de la materia prima** (demoras normales, faltantes del proveedor, huelgas, pedidos perdidos o material defectuoso).",
+    "**Aprovechar los descuentos basados en el tamaño del pedido** (menos pedidos, flete unitario menor)."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase remata: por las razones 3, 4 y 5 hay que recordar que el inventario **es costoso** y que, por lo regular, **las grandes cantidades no son recomendables**."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Los cuatro costos"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Costo",
+    "Qué incluye (Chase)",
+    "Empuja hacia…"
+   ],
+   "rows": [
+    [
+     "**Mantenimiento** (o transporte)",
+     "instalaciones de almacenamiento, manejo, seguros, desperdicios y daños, obsolescencia, depreciación, impuestos, **costo de oportunidad del capital**",
+     "inventarios bajos, reposición frecuente"
+    ],
+    [
+     "**Configuración** (o cambio de producción)",
+     "obtener el material, preparar el equipo, papeleo, sacar las existencias anteriores",
+     "lotes grandes (la meta JIT es bajarlo)"
+    ],
+    [
+     "**Pedidos**",
+     "costos administrativos y de oficina de preparar la orden de compra o de producción; contar piezas, calcular cantidades, rastrear pedidos",
+     "pocos pedidos"
+    ],
+    [
+     "**Faltantes**",
+     "esperar el reabastecimiento o cancelar el pedido; ganancias perdidas, clientes perdidos, castigos por entregar tarde",
+     "más inventario"
+    ]
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Fijar la cantidad a pedir es buscar el **costo total mínimo** de esos cuatro efectos combinados. Chase da la magnitud: el costo de tener inventario es de **30 a 35% de su valor por año** al abrir el capítulo y de **25 a 35%** en la conclusión. Ejemplo del libro: con 20 millones de dólares en stock, mantenerlo cuesta más de 6 millones al año."
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo de Chase: Heineken (HOPS)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Heineken acortó el tiempo de pronóstico de sus pedidos. El sistema, llamado **HOPS**, bajó el inventario del sistema de **16–18 semanas a 4–6 semanas**. Los pronósticos se volvieron más exactos y, de yapa, los vendedores ganaron productividad porque dejaron de atender llamadas por faltantes y cambios de pedidos."
+    },
+    {
+     "type": "paragraph",
+     "text": "La lección que saca Chase: hacer cosas que **reduzcan el tiempo de los pedidos** y **aumenten la precisión de los pronósticos**, y reemplazar «mover masas de átomos» por el movimiento rápido de los electrones (información)."
+    }
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Demanda independiente y dependiente"
+  },
+  {
+   "type": "paragraph",
+   "text": "En la **demanda independiente** las demandas de las distintas piezas no están relacionadas entre sí; vienen de afuera y hay que **pronosticarlas** (U2). En la **demanda dependiente** la necesidad de una pieza «es un resultado directo de la necesidad de otra, casi siempre una pieza de nivel superior del que forma parte»: se **calcula** (U6, MRP)."
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo de Chase: autos y rines",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Si una automotriz planea producir **500 autos por día**, necesita **2000 rines y llantas** (más las de auxilio). Esa cantidad no se pronostica: sale del plan de autos. La demanda de autos, en cambio, es independiente."
+    }
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Este capítulo (y esta unidad) trata la **demanda independiente**: como es incierta, hay que manejar **unidades adicionales** y los modelos dicen cuántas pedir y cuántas de más tener para bajar el riesgo de faltante."
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase agrega dos variables que pesan al elegir la lógica de control: el **costo de las transacciones** (sistemas manuales vs. automatizados e integrados con el proveedor) y el **riesgo de obsolescencia** (piezas de uso esporádico o sensibles a la tecnología, como memorias y procesadores)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. Transacciones del inventario"
+  },
+  {
+   "type": "paragraph",
+   "text": "El programa pide «transacciones del inventario». En el material no hay un apunte de la cátedra con la lista; lo que sí está es lo que Chase pide al **sistema de inventario**: pedir y recibir los bienes, establecer el momento de los pedidos y «llevar un registro de lo que se pidió, la cantidad ordenada y a quién», y hacer seguimiento (¿el proveedor recibió el pedido?, ¿ya se envió?, ¿las fechas son correctas?, ¿hay procedimiento para devolver lo defectuoso?). En el modelo perpetuo, **cada retiro y cada adición** se registran y se compara el saldo con el punto de pedido."
+  },
+  {
+   "type": "paragraph",
+   "text": "**Complemento (no está en el material):** las transacciones típicas de un registro de stock son el **ingreso** (recepción de compra o de producción), el **egreso** (consumo, entrega a producción, venta), la **transferencia** entre depósitos o ubicaciones, la **devolución** (a proveedor o desde producción) y el **ajuste** por conteo físico. Cada una tiene un comprobante (remito, vale de salida, nota de devolución, acta de ajuste) y mueve el saldo disponible."
+  },
+  {
+   "type": "paragraph",
+   "text": "Las preguntas de MRP del banco «Preguntas SG1» muestran qué datos aporta el **archivo de gestión de stock** a la planificación: **saldos (existencias actuales), lote económico de compra y de fabricación (LEC, LEF) y lead time de compra y de fabricación (LTC, LTF)**. Ese es el puente con la U6."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "7. La mirada de la teoría de las restricciones"
+  },
+  {
+   "type": "paragraph",
+   "text": "El programa dice «concepto de inventario **según la teoría de las restricciones**». El Documento Maestro ubica TOC en la U4 (cuellos de botella, la meta, Goldratt) y la bibliografía del programa lista *La Meta* y *Cadena Crítica* de Goldratt y Cox. Esos libros no están en el material descargado."
+  },
+  {
+   "type": "paragraph",
+   "text": "**Complemento (no está en el material, es de La Meta):** Goldratt mide la empresa con tres indicadores: **throughput** (la velocidad a la que el sistema genera dinero a través de las ventas), **inventario** (todo el dinero que el sistema invierte en comprar cosas que pretende vender) y **gasto de operación** (el dinero que gasta para convertir el inventario en throughput). La meta es subir el throughput mientras se bajan el inventario y el gasto de operación. En esa lógica, el inventario se valúa **solo por lo que se pagó por los materiales**, sin agregarle valor de mano de obra, y sobra todo inventario que no protege a la **restricción** (el cuello de botella). Se conecta con lo de Chase: el inventario es dinero y hay que bajarlo, salvo el colchón que protege lo que limita al sistema."
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "Si en un final te preguntan «concepto de inventario según TOC», esto es lo que se espera, pero **no tengo una definición de la cátedra** para citar textual. Pedile a Emiliano (o buscá en Drive) un apunte de TOC de la cátedra para confirmar el enunciado."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "8. Subsistemas que intervienen"
+  },
+  {
+   "type": "paragraph",
+   "text": "Las resoluciones manuscritas responden así el ítem «indicar los subsistemas participantes» de los ejercicios de inventarios:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "**SG1 Lu, Final (1):** «Cuando las existencias alcanzan el PP, participa **Almacenes**, quien confecciona un pedido de reposición de mercaderías y se lo entrega a **Compras**, que realiza la orden de compra.»",
+    "**EFR p.24:** gestión de compras, gestión de stock, recepción y almacenaje de materiales («abastecimiento»), control de calidad y gestión contable-financiera.",
+    "**EFR p.13:** gestión de stock y almacén (para el plan de conteo).",
+    "**EFR p.34 (Ingap SA):** el pedido lo genera **gestión de stock**; el encargado de adquirirlo es **Compras** (almacén/compras)."
+   ]
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Para el examen:** cuando pidan subsistemas, nombrá **gestión de stock / almacenes** (detecta el PP y emite el pedido de reposición), **compras** (cotiza, asigna proveedor y coloca la orden), **recepción y control de calidad**, y **contable-financiero** (paga y valoriza)."
+  },
+  {
+   "type": "glosario",
+   "title": "9. Glosario",
+   "intro": "Términos de esta clase.",
+   "entries": [
+    {
+     "simbolo": "Inventario",
+     "nombre": "existencias",
+     "significado": "Existencias de una pieza o recurso usado en la organización (Chase)"
+    },
+    {
+     "simbolo": "Sistema de inventario",
+     "nombre": "políticas y controles",
+     "significado": "Vigilan niveles y deciden qué mantener, cuándo reabastecer y cuánto pedir"
+    },
+    {
+     "simbolo": "Demanda independiente",
+     "nombre": "externa",
+     "significado": "No depende de otro ítem; se pronostica"
+    },
+    {
+     "simbolo": "Demanda dependiente",
+     "nombre": "derivada",
+     "significado": "Sale del plan de un ítem padre; se calcula (MRP)"
+    },
+    {
+     "simbolo": "H",
+     "nombre": "costo de mantener",
+     "significado": "Por unidad y por año; suele ser un % del valor (i·C)"
+    },
+    {
+     "simbolo": "S",
+     "nombre": "costo de pedido o de preparación",
+     "significado": "Por pedido; en las resoluciones, L"
+    },
+    {
+     "simbolo": "Throughput (TOC)",
+     "nombre": "complemento",
+     "significado": "Dinero que genera el sistema a través de las ventas (Goldratt, no está en el material)"
+    }
+   ]
+  }
+ ],
+ "historias": [],
+ "block": "A",
+ "blockTitle": "Bloque A · Inventario y modelos determinísticos"
+}

@@ -1,0 +1,300 @@
+{
+ "unitId": "u5",
+ "unitLabel": "Unidad 5",
+ "unitTitle": "Logística",
+ "id": "u5c9",
+ "title": "Clase 9 · Almacenes, distribución y trazabilidad",
+ "name": "Almacenes, distribución y trazabilidad",
+ "lede": "Qué hace un almacén y cómo se mantiene exacto, cross-docking y centros de distribución, la planificación de la distribución con DRP (nota técnica de Morán), el nivel de servicio y una introducción a la trazabilidad.",
+ "visto": false,
+ "source": [
+  "texto/apuntes_nuevos/DRP.txt — Nota técnica «Planificación de la distribución», R. Morán (2000)",
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 11 «Logística y ubicación de instalaciones» (Chase)",
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 17 «Control de inventarios» (Chase), págs. 258–285 del PDF del resumen",
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 10 «Estrategia de la cadena de suministro» (Chase)",
+  "programa.md — Unidad 5 · Logística (programa 2008)",
+  "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 5 y Semana 7",
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 10 (rastreo de envíos: EDI, satélite, FedEx)"
+ ],
+ "laminas": [],
+ "next": "Clase 10 · Cadena de suministro y ubicación de plantas",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque C · Clase 9 · Almacenes, distribución y trazabilidad**"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**De dónde sale esta clase.** Almacenes y centros de distribución: **Chase cap. 11** (decisiones de logística, cross-docking, centros y derivaciones) y **cap. 17** (exactitud y control del almacén). Distribución: la **nota técnica DRP** de R. Morán (2000), que es el apunte de la U5 que hay en el Drive. **Trazabilidad**: el programa dice «introducción a la trazabilidad», pero **no hay material** sobre el tema; va como complemento."
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** el almacén no es un depósito pasivo: recibe, registra, guarda, cuenta y despacha, y su exactitud sostiene a todos los modelos de stock. Hacia afuera, la distribución se planifica igual que un MRP, pero para **productos terminados** en cada centro de distribución: el **DRP**."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Almacenes y centros de distribución"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase cap. 11: «Los centros de almacenamiento y distribución actuales, modernos y eficientes, son el **corazón de la logística**. Estos centros son cuidadosamente administrados y operados para garantizar el almacenamiento seguro y el flujo rápido de los bienes, los servicios y la información relacionada desde el punto de origen hasta el punto de consumo.» La logística es un gran negocio: **8 a 9% del PIB** de Estados Unidos."
+  },
+  {
+   "type": "paragraph",
+   "text": "Funciones del almacén que surgen del material (cap. 17 y respuestas de examen): **recepción** (control de cantidades y calidad), **registro** de cada ingreso y egreso, **guarda** en ubicaciones identificadas, **conteo** (cíclico, Clase 7), detección del **punto de pedido** y emisión del **pedido de reposición** a Compras, y **despacho**."
+  },
+  {
+   "type": "paragraph",
+   "text": "Reglas de Chase para la exactitud: almacén **cerrado con llave**, solo el personal del almacén accede, cada lugar de almacenamiento con un mecanismo de registro, «nadie podrá sacar piezas sin tener una transacción autorizada y registrada»."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Cross-docking y centros y derivaciones"
+  },
+  {
+   "type": "paragraph",
+   "text": "**Cross-docking** (Chase): en los almacenes de consolidación, los embarques grandes que llegan «se dividen en envíos más pequeños para la entrega local en un área. A menudo esto puede hacerse de manera coordinada a fin de que los bienes **nunca se almacenen como inventario**». Los minoristas reciben de muchos proveedores en su almacén regional y de inmediato arman las entregas a cada tienda."
+  },
+  {
+   "type": "paragraph",
+   "text": "**Sistemas de centros y derivaciones:** combinan consolidación y cross-docking. El almacén («centro») solo **clasifica** los bienes hacia áreas de consolidación con un destino cada una; se ubica cerca del centro geográfico de la región para minimizar distancias."
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase también cita la subcontratación del almacén: Hewlett-Packard entregó su almacén de materias primas de Vancouver a Roadway Logistics (140 empleados, 24 h, 7 días) y reportó **10% de ahorro** en costos de operación del almacenaje."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Planificación de la distribución (DRP)"
+  },
+  {
+   "type": "paragraph",
+   "text": "La nota técnica de Morán: las actividades de distribución se planifican con la información de la **administración de la demanda**. Una vez obtenido el pronóstico detallado, la planificación de los requerimientos de distribución coordina el reabastecimiento y consiste en:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Programar el **transporte a corto plazo**, con fechas de compromiso, reabastecimientos de stocks, etc.",
+    "Determinar los **requerimientos de capacidad de transporte y de almacenamiento**."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Se vincula con el **MPS**: los embarques son consumos que lo afectan (por ejemplo, las exportaciones obligan a agrupar pedidos) y el MPS fija las cantidades disponibles para distribuir. «Cuando se da una **fecha de entrega** se está estableciendo un **contrato con el cliente** y hay que cumplirlo.»"
+  },
+  {
+   "type": "paragraph",
+   "text": "El **DRP** (Distribution Requirements Planning) «es importante cuando se trabaja con **centros de distribución** (CD) para generar los requerimientos para el MPS». «Es un sistema muy similar al MRP en su funcionamiento básico, pero referido exclusivamente a **productos finales**.»"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "El horizonte de pronóstico debe ser **al menos igual al tiempo de abastecimiento** desde la fuente (por ejemplo, el almacén central). Sin CD, se planifica directo con el MPS y el horizonte debe cubrir el plazo de producción.",
+    "Permite **asignar centralizadamente** los recursos escasos a los CD; si cada CD pide por su cuenta, puede haber faltantes en unos y sobrantes en otros.",
+    "La demanda se pronostica y registra **por CD** y **para el ítem pedido** (no para el sustituto). Si un cliente cambia de CD, su historia se pasa al nuevo CD."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "**Técnicas.** Para las cantidades de cada CD se pueden usar los modelos de esta unidad (EOQ para demanda determinística; punto de pedido o periódico para demanda aleatoria). Con enfoque MRP se usa el **punto de pedido en fase de tiempo (TPOP, Time Phased Order Point)**: para cada período se calculan las cantidades necesarias para que las existencias menos la demanda pronosticada no queden por debajo del **stock de seguridad**, y se adelantan según el plazo de provisión."
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo de la nota DRP: registro básico de un producto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Producto A · LT = 2 · Stock de seguridad = 10 · Lote = 50. Existencia inicial 35."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Períodos",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "Total"
+     ],
+     "rows": [
+      [
+       "Pronóstico",
+       "20",
+       "20",
+       "20",
+       "20",
+       "25",
+       "25",
+       "25",
+       "25",
+       "180"
+      ],
+      [
+       "En tránsito",
+       "",
+       "50",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "50"
+      ],
+      [
+       "Existencias (35)",
+       "15",
+       "45",
+       "25",
+       "5",
+       "−20",
+       "−45",
+       "−70",
+       "−95",
+       ""
+      ],
+      [
+       "Req. planificados",
+       "0",
+       "50",
+       "0",
+       "50",
+       "0",
+       "50",
+       "0",
+       "0",
+       "150"
+      ],
+      [
+       "Req. acumulados",
+       "0",
+       "50",
+       "50",
+       "100",
+       "100",
+       "150",
+       "150",
+       "150",
+       ""
+      ]
+     ],
+     "caption": "Tabla transcripta de DRP.txt"
+    },
+    {
+     "type": "paragraph",
+     "text": "La fila de existencias proyecta sin los requerimientos planificados: en el período 4 quedarían 5 (debajo del SS de 10) y en el 5 faltarían 20. Por eso se planifican lotes de 50 **dos períodos antes** (LT = 2): en 2, 4 y 6. La consolidación de los requerimientos planificados de todos los CD es el **requerimiento bruto del almacén central**, que se trata en un registro igual al del MRP y pasa al MPS. *(Lectura propia de la tabla.)*"
+    }
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "**Stocks de seguridad en la red** (Morán): la variabilidad de la demanda consolidada es menor que la individual, así que el SS consolidado es menor que la suma de los individuales. Podría pensarse en tenerlo solo en el central si el abastecimiento a los CD es rápido, «sin embargo esto puede **desmejorar el servicio al cliente**»."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. El sistema de gestión en distribución"
+  },
+  {
+   "type": "paragraph",
+   "text": "Funciones principales según la nota de Morán:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Manejar **cada ítem en cada depósito** o ubicación.",
+    "Determinar el **nivel de servicio** al cliente con la demanda real y las entregas directas.",
+    "Determinar las cantidades a pedir con **técnicas JIT** (frecuencia de reparto, ciclo de producción, respuesta rápida) más que con el EOQ.",
+    "Pronosticar cada ítem combinando modelos cuantitativos y gerenciales.",
+    "Ajustar los pronósticos por promociones y cambios de precios.",
+    "Establecer **stocks de seguridad** para lograr un nivel de servicio especificado.",
+    "Actualizar los pronósticos en cada ciclo mensual o semanal.",
+    "Listar los ítems con **exceso o defecto** de existencias para la gerencia.",
+    "Asignar los recursos escasos a las ubicaciones múltiples.",
+    "Ser un sistema basado en computadora."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "«Un sistema de gestión para la distribución es mucho más que un sistema de administración de las existencias o de pronósticos solamente.»"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Satisfacción del cliente"
+  },
+  {
+   "type": "paragraph",
+   "text": "En los modelos de la unidad, la satisfacción del cliente se mide como **nivel de servicio**: la probabilidad de no quedarse sin stock en el ciclo (los finales hablan de «nivel de satisfacción del servicio al cliente estimado en el 85%»). La nota DRP pide medirlo con la **demanda real y las entregas**, y Chase muestra en Heineken y Campbell Soup que bajar inventario y mejorar el servicio pueden ir juntos."
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase (cap. 11) suma la **proximidad con los clientes** como criterio de ubicación: estar cerca ayuda a entregar rápido y a tomar en cuenta las necesidades del cliente en el desarrollo del producto."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. Introducción a la trazabilidad"
+  },
+  {
+   "type": "paragraph",
+   "text": "**Complemento (no está en el material):** trazabilidad es poder **reconstruir la historia** de un producto: de qué **lotes** de materia prima salió, en qué proceso, máquina y fecha se fabricó, dónde se almacenó y a qué cliente se entregó. Se apoya en la **codificación** de ítems y lotes (U3), en el **registro de cada transacción** del almacén y en el **seguimiento de los envíos**. Sirve para retirar del mercado un lote defectuoso sin retirar todo, para cumplir normas (alimentos, medicamentos) y para la garantía."
+  },
+  {
+   "type": "paragraph",
+   "text": "Del material, lo más cercano es el rastreo de envíos que describe Chase: los operadores logísticos vigilan la carga con **EDI y satélite** e informan dónde está cada chofer y cuándo entrega; **Federal Express** muestra en Internet cuándo se recogió el paquete, cuándo pasó entre centros de la red y cuándo se entregó."
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Faltante de material:** no hay apunte de la cátedra de almacenes ni de trazabilidad. Si cae en teoría, con esto podés armar una respuesta, pero conviene pedirle a Emiliano lo que haya en el Drive."
+  },
+  {
+   "type": "glosario",
+   "title": "7. Glosario",
+   "intro": "",
+   "entries": [
+    {
+     "simbolo": "CD",
+     "nombre": "centro de distribución",
+     "significado": "Almacén cercano al cliente que despacha productos finales"
+    },
+    {
+     "simbolo": "DRP",
+     "nombre": "Distribution Requirements Planning",
+     "significado": "Planificación de los requerimientos de distribución (como un MRP de productos finales por CD)"
+    },
+    {
+     "simbolo": "TPOP",
+     "nombre": "Time Phased Order Point",
+     "significado": "Punto de pedido en fase de tiempo: SS + demanda pronosticada, adelantado por el LT"
+    },
+    {
+     "simbolo": "Cross-docking",
+     "nombre": "",
+     "significado": "Dividir y reenviar los embarques sin guardarlos como inventario"
+    },
+    {
+     "simbolo": "Trazabilidad",
+     "nombre": "complemento",
+     "significado": "Reconstruir el origen, el recorrido y el destino de cada lote"
+    }
+   ]
+  }
+ ],
+ "historias": [],
+ "block": "C",
+ "blockTitle": "Bloque C · Compras, almacenes y logística"
+}

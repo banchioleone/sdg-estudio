@@ -1,0 +1,263 @@
+{
+ "unitId": "u5",
+ "unitLabel": "Unidad 5",
+ "unitTitle": "Logística",
+ "id": "u5c3",
+ "title": "Clase 3 · EOQ con descuentos por cantidad",
+ "name": "EOQ con descuentos",
+ "lede": "Cuando el precio baja por volumen: el procedimiento de dos pasos de Chase y el caso librería de los finales, resuelto y con sus variantes.",
+ "visto": false,
+ "source": [
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 17 «Control de inventarios» (Chase), págs. 258–285 del PDF del resumen",
+  "texto/examenes/SG!EVA.txt (compilado de finales 2002–2006)",
+  "texto/examenes/Ejercicios posibles.txt (librería)",
+  "texto/ocr/efr_ppm/p-03.png — EjerciciosFinalesResueltos, resolución manuscrita (librería)",
+  "texto/ocr/sg1_ppm/p-04.png — SG1.doc, resolución manuscrita (Final 2, librería)",
+  "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 5 y Semana 7",
+  "patrones_examenes.md (conteos de finales)"
+ ],
+ "laminas": [
+  "u5/img/u5_descuentos.svg"
+ ],
+ "next": "Clase 4 · Perpetuo y periódico",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque A · Clase 3 · EOQ con descuentos por cantidad**"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**De dónde sale esta clase.** El procedimiento: **Chase cap. 17, «Modelos de precio descontado»**. El ejercicio: el **caso librería**, que aparece varias veces en SG!EVA (con variantes) y tiene dos resoluciones manuscritas (EFR p.3 y SG1.doc Final 2). El Documento Maestro lo marca con ★."
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** si el precio baja al comprar más, ya no alcanza con $Q^*$. Hay que calcular el lote económico **con cada precio**, quedarse con los que caen dentro de su tramo, sumar los **puntos de quiebre** del precio y elegir el de **menor costo total, incluida la compra**."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. El problema"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase: «el precio de venta de una pieza varía según el tamaño del pedido. Se trata de un cambio **discreto** en lugar de unitario». Su ejemplo: tornillos para madera a 0,02 dólares cada uno de 1 a 99, 1,60 por 100 y 13,50 por 1000. El EOQ calculado con el precio de 1,60 podría dar 75 tornillos, pero 75 tornillos cuestan 0,02 cada uno: **no es factible**."
+  },
+  {
+   "type": "paragraph",
+   "text": "Ahora el costo de compra $D\\,C$ **sí depende de Q**, porque $C$ cambia con el tramo. Entonces se compara el costo total completo:"
+  },
+  {
+   "type": "formula",
+   "tex": "CT(Q) = D\\,C(Q) + \\frac{D}{Q}\\,S + \\frac{Q}{2}\\,i\\,C(Q)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Procedimiento de dos pasos (Chase)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Vale cuando el costo de mantener es un **porcentaje del precio** ($H = iC$), como en todos los ejercicios del libro y de la cátedra:"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**Paso 1.** Ordenar los precios del más bajo al más alto y, empezando por el más bajo, calcular el EOQ de cada precio **hasta encontrar uno factible** (que caiga dentro de su rango).",
+    "**Paso 2.** Si el primer EOQ factible es el del precio más bajo, ese es el óptimo. Si no, calcular el costo total de ese EOQ factible **y** el costo total en **cada cantidad de quiebre** de los precios más bajos (la cantidad mínima con la que se accede a cada descuento). La $Q$ óptima es la de menor costo."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase agrega una advertencia práctica: el descuento por volumen «casi siempre hace que resulte económico pedir cantidades superiores a $Q_{opt}$», así que hay que estimar bien la **obsolescencia** y los **costos de almacenamiento** antes de aceptar."
+  },
+  {
+   "type": "svg",
+   "file": "u5/img/u5_descuentos.svg",
+   "caption": "Caso librería: una curva por precio; el óptimo cae en el quiebre de 100 cajas (gráfico propio)"
+  },
+  {
+   "type": "ejercicio",
+   "title": "3. EJERCICIO — La librería (SG!EVA; EFR p.3; SG1 Lu Final 2)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Una librería pide un determinado ítem en cajas de 1000 unidades. La demanda anual es constante a lo largo del año, y se sabe con certeza que es de **600 cajas**, también se conoce con certeza que el tiempo de reaprovisionamiento es exactamente **un mes**. El costo de ordenar es de **\\$16** y los costos anuales de manejo son de **36%**. El mayorista ofrece este descuento por volumen:»"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Cant. de cajas",
+      "Precio / caja"
+     ],
+     "rows": [
+      [
+       "1 – 49",
+       "\\$7,50"
+      ],
+      [
+       "50 – 99",
+       "\\$7,35"
+      ],
+      [
+       "100 o más",
+       "\\$7,00"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "«2.1 Establecer una política económica (óptima) de abastecimiento.»"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Fuente:** resoluciones manuscritas de SG1.doc (Final 2) y EFR p.3, que llegan al mismo resultado. Repito el procedimiento y lo verifico (cálculo propio)."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Paso 1**, del precio más bajo al más alto:"
+    },
+    {
+     "type": "formula",
+     "tex": "Q_{7{,}00} = \\sqrt{\\frac{2\\cdot 600\\cdot 16}{7{,}00\\cdot 0{,}36}} \\approx 87{,}3 \\Rightarrow \\text{no factible (necesita } \\geq 100)"
+    },
+    {
+     "type": "formula",
+     "tex": "Q_{7{,}35} = \\sqrt{\\frac{19\\,200}{7{,}35\\cdot 0{,}36}} \\approx 85{,}2 \\Rightarrow \\text{factible (50–99)}"
+    },
+    {
+     "type": "paragraph",
+     "text": "(El de \\$7,50 da ≈ 84,3, tampoco factible; las hojas lo calculan igual.)"
+    },
+    {
+     "type": "paragraph",
+     "text": "**Paso 2.** Comparar el EOQ factible (85) con el quiebre del precio más bajo (100). Con el costo por caja de las hojas:"
+    },
+    {
+     "type": "formula",
+     "tex": "CT(85) = 7{,}35 + \\frac{16}{85} + \\frac{7{,}35\\cdot 0{,}36\\cdot 85}{2\\cdot 600} \\approx 7{,}73"
+    },
+    {
+     "type": "formula",
+     "tex": "CT(100) = 7{,}00 + \\frac{16}{100} + \\frac{7{,}00\\cdot 0{,}36\\cdot 100}{1200} = 7{,}37"
+    },
+    {
+     "type": "paragraph",
+     "text": "Las hojas calculan también $CT(49)$ al precio de \\$7,50 ≈ 7,94 (el máximo de ese tramo); no hace falta según el procedimiento de Chase, pero no cambia nada."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Alternativa",
+      "Precio",
+      "\\$/caja",
+      "\\$/año (×600, cálculo propio)"
+     ],
+     "rows": [
+      [
+       "Q = 49",
+       "\\$7,50",
+       "7,94",
+       "≈ 4762"
+      ],
+      [
+       "Q = 85",
+       "\\$7,35",
+       "7,73",
+       "≈ 4635"
+      ],
+      [
+       "**Q = 100**",
+       "**\\$7,00**",
+       "**7,37**",
+       "**4422**"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "**Política óptima: pedir 100 cajas por vez**, 6 pedidos al año (uno cada 2 meses). Como el reaprovisionamiento es de un mes y la demanda es cierta, el **punto de pedido** es la demanda de un mes: $600/12 = 50$ cajas (cálculo propio; las hojas no lo escriben)."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "4. VARIANTE B — librería con manejo TEA 20% (SG!EVA)",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "La misma librería (cajas de una gruesa, 600 cajas/año, reaprovisionamiento de un mes, \\$16 por orden, misma tabla de precios) pero con «costos anuales de manejo de **TEA 20%**»."
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Cálculo propio** (no hay resolución en el material)."
+    },
+    {
+     "type": "formula",
+     "tex": "Q_{7{,}00} = \\sqrt{\\frac{2\\cdot 600\\cdot 16}{7{,}00\\cdot 0{,}20}} \\approx 117 \\Rightarrow \\text{factible (100 o más)}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Es el precio más bajo y su EOQ es factible: el procedimiento **termina en el paso 1**. Política: **pedir 117 cajas** (≈5 pedidos al año), punto de pedido 50 cajas; costo total ≈ \\$4364/año. Con un manejo más barato conviene pedir más."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "5. VARIANTE A — librería con 95% de confianza (SG!EVA 27/02/2003)",
+   "estado": "para resolver",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Una librería pide un determinado cuaderno en cajas de **una gruesa**. La demanda anual es constante a lo largo del año, y se sabe con certeza que es de 600 cajas, también se conoce que el tiempo de reaprovisionamiento es de un mes, **durante este período se desea mantener un 95% de confianza en el suministro**. El costo de ordenar es de \\$16 y los costos anuales de manejo son de 36%.» Misma tabla (allí dice «precio / unidad»)."
+    }
+   ],
+   "nota": "Para resolver. El lote sale igual que en el ejercicio 3 (100 cajas). Para el 95% hace falta el desvío de la demanda en el mes de reaprovisionamiento, y el enunciado no lo da (dice que la demanda es «constante»). Con un σ, el punto de pedido sería 50 + 1,64·σ (Clase 5). Hay que confirmar con la cátedra qué dato falta."
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Cómo escribirlo en el examen:** 1) definir variables y la función de precio por tramos; 2) EOQ por precio, marcando factible / no factible; 3) costo total del EOQ factible y de los quiebres más baratos; 4) elegir y **enunciar la política** (cuánto pedir, cada cuánto, punto de pedido)."
+  },
+  {
+   "type": "glosario",
+   "title": "6. Glosario",
+   "intro": "",
+   "entries": [
+    {
+     "simbolo": "C(Q)",
+     "nombre": "precio por tramos",
+     "significado": "El precio depende de la cantidad pedida"
+    },
+    {
+     "simbolo": "Quiebre",
+     "nombre": "cantidad mínima del descuento",
+     "significado": "50 y 100 cajas en la librería"
+    },
+    {
+     "simbolo": "Factible",
+     "nombre": "Q dentro de su tramo",
+     "significado": "Un EOQ calculado con un precio que no le corresponde no sirve"
+    },
+    {
+     "simbolo": "Gruesa",
+     "nombre": "doce docenas",
+     "significado": "144 unidades (variante del enunciado)"
+    }
+   ]
+  }
+ ],
+ "historias": [],
+ "block": "A",
+ "blockTitle": "Bloque A · Inventario y modelos determinísticos"
+}

@@ -1,0 +1,633 @@
+{
+ "unitId": "u5",
+ "unitLabel": "Unidad 5",
+ "unitTitle": "Logística",
+ "id": "u5c7",
+ "title": "Clase 7 · Clasificación ABC y conteo cíclico",
+ "name": "Clasificación ABC y conteo cíclico",
+ "lede": "Pareto aplicado al inventario: cómo se clasifica, qué control lleva cada clase, la exactitud de los registros y el conteo cíclico. Con todos los ejercicios de conteo y el ABC por mano de obra de los finales.",
+ "visto": false,
+ "source": [
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 17 «Control de inventarios» (Chase), págs. 258–285 del PDF del resumen",
+  "texto/examenes/SG!EVA.txt (compilado de finales 2002–2006)",
+  "texto/examenes/bloques_eva/07_Evaluación_16_04_03.txt (EBS)",
+  "texto/examenes/Ejercicios posibles.txt (EBS)",
+  "texto/ocr/efr_ppm/p-04.png — EjerciciosFinalesResueltos, resolución manuscrita (EBS)",
+  "texto/ocr/efr_ppm/p-08.png — EjerciciosFinalesResueltos, resolución manuscrita (tabla ABC por mano de obra)",
+  "texto/ocr/efr_ppm/p-09.png — EjerciciosFinalesResueltos, resolución manuscrita (ABC por mano de obra)",
+  "texto/ocr/efr_ppm/p-13.png — EjerciciosFinalesResueltos, resolución manuscrita (plan de conteo 6300)",
+  "texto/ocr/efr_ppm/p-24.png — EjerciciosFinalesResueltos, resolución manuscrita (plan de conteo 6300 sin coeficientes)",
+  "texto/ocr/efr_ppm/p-30.png — EjerciciosFinalesResueltos, resolución manuscrita (conteo: veces de las A, 200 días)",
+  "texto/ocr/efr_ppm/p-34.png — EjerciciosFinalesResueltos, resolución manuscrita (conteo: veces de las A, 250 días)",
+  "texto/ocr/sg1_ppm/p-09.png — SG1.doc, resolución manuscrita (Final 6, EBS)",
+  "texto/ocr/sg1_ppm/p-10.png — SG1.doc, resolución manuscrita (Final 8, ABC por % de mano de obra)",
+  "texto/examenes/Preguntas de teoria del final de SG1.txt (final con ABC como único ejercicio)",
+  "patrones_examenes.md (conteos de finales)"
+ ],
+ "laminas": [
+  "u5/img/u5_pareto.svg"
+ ],
+ "next": "Clase 8 · Compras y proveedores",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque B · Clase 7 · Clasificación ABC y conteo cíclico**"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**De dónde sale esta clase.** Teoría: **Chase cap. 17** («Planeación de inventario ABC» y «Exactitud del inventario y conteo de ciclos»). Ejercicios: la familia **EBS** (6400 artículos) y la del **plan de conteo de 6300 elementos**, y el **ABC por incidencia de mano de obra**, con resoluciones manuscritas de EFR y SG1.doc. Un final sin fecha tuvo como **única práctica un ejercicio de clasificación ABC** (Preguntas de teoría del final de SG1)."
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** pocas piezas concentran casi todo el dinero. ABC separa lo importante (A) de lo que no lo es (C) para darle **más control** (más conteos, pedidos más frecuentes, registros más exactos) a lo que más pesa."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. El principio de Pareto"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase: en el siglo XIX, Vilfredo Pareto, estudiando la distribución de la riqueza en Milán, «descubrió que **20% de las personas controlaban 80% de la riqueza**». En inventarios: «unas pocas piezas representan la mayor parte de la inversión»."
+  },
+  {
+   "type": "paragraph",
+   "text": "Como no es práctico hacer un modelo para cada pieza, el ABC divide el inventario por **volumen de dólares** (uso anual × costo): **A** alto, **B** moderado, **C** bajo. «Una pieza de bajo costo pero de alto volumen puede ser más importante que una pieza cara pero de bajo volumen.»"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Cómo se clasifica"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "Calcular para cada ítem el **volumen anual en dinero** = demanda anual × costo unitario.",
+    "Ordenar de **mayor a menor**.",
+    "Calcular el **% acumulado** del dinero y de los ítems.",
+    "Cortar en grupos. Chase: A ≈ **15%** más alto de las piezas, B el **35%** siguiente, C el último **50%**; en su ejemplo, 20% / 30% / 50%. «El punto en el que las líneas se dividen realmente depende del inventario en cuestión y en la cantidad de tiempo del personal disponible.»"
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "«Observe que el **costo unitario** de las piezas **no tiene ninguna relación** con su clasificación.» Y una excepción: si una pieza es **crítica** (su ausencia provoca una pérdida significativa), se la puede poner en A o B aunque su volumen de dinero no lo justifique."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Clase",
+    "Control que sugiere Chase",
+    "Ejemplo: estación de servicio"
+   ],
+   "rows": [
+    [
+     "A",
+     "más controlada, pedidos semanales",
+     "gasolina (resurtido diario o semanal)"
+    ],
+    [
+     "B",
+     "pedidos cada dos semanas",
+     "llantas, baterías, aceite, líquido de transmisión (cada 2 a 4 semanas)"
+    ],
+    [
+     "C",
+     "cada uno o dos meses; se puede tolerar que se agote",
+     "válvulas, limpiaparabrisas, tapones de radiador, mangueras, bandas, aditivos, cera (cada 2 o 3 meses)"
+    ]
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Exactitud del inventario y conteo cíclico"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los registros casi siempre difieren del conteo físico. Causas que da Chase: áreas abiertas donde se retiran piezas sin registrar, piezas mal ubicadas, pedidos registrados como recibidos que nunca llegaron, devoluciones sin anular el egreso. Primera regla: **almacén cerrado con llave**, acceso solo del personal del almacén, y la precisión de los registros como medida de su desempeño."
+  },
+  {
+   "type": "paragraph",
+   "text": "**Conteo de ciclo:** «el inventario se cuenta con frecuencia en lugar de una o dos veces al año». La clave es decidir **qué piezas se cuentan, cuándo y por quién**. El sistema puede disparar un conteo:"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "cuando el registro muestra un saldo bajo o cero (es más fácil contar pocas piezas);",
+    "cuando hay saldo positivo pero se registró un pedido pendiente (discrepancia);",
+    "después de un nivel de actividad específico;",
+    "según la importancia de la pieza (ABC):"
+   ]
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Uso anual en dólares",
+    "Revisión"
+   ],
+   "rows": [
+    [
+     "\\$10.000 o más",
+     "30 días o menos"
+    ],
+    [
+     "\\$3.000 a \\$10.000",
+     "45 días o menos"
+    ],
+    [
+     "\\$250 a \\$3.000",
+     "90 días o menos"
+    ],
+    [
+     "menos de \\$250",
+     "180 días o menos"
+    ]
+   ],
+   "caption": "Chase cap. 17"
+  },
+  {
+   "type": "paragraph",
+   "text": "Tolerancia recomendada: **±0,2%** para las A, **±1%** para las B y **±5%** para las C. Mejor momento para contar: sin actividad (fines de semana, segundo o tercer turno). Hay empresas con **contadores de ciclo de tiempo completo**, que suelen salir más baratos que el inventario anual con la planta cerrada."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. El plan de conteo: cómo se calcula"
+  },
+  {
+   "type": "formula",
+   "tex": "\\text{ítems por día} = \\frac{\\sum (\\text{cantidad de ítems de la clase} \\times \\text{conteos por año})}{\\text{días hábiles por año}}"
+  },
+  {
+   "type": "ejercicio",
+   "title": "5. EJERCICIO — EBS (SG!EVA Evaluación 16/04/2003; EFR p.4; SG1 Lu Final 6)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«EBS tiene **6400** artículos en inventarios, **400** son clase A, **1000** son tipo B y **5000** son C. La compañía opera **250 días** al año y desea, en el año, contar **cinco** veces los tipo A, **dos** veces los B y solo **una** los C. Indicar la cantidad de artículos por día que debe contar EBS.» En EFR p.4 se agrega: «b) Si se dispone de **2 personas** trabajando un turno diario de **8 hs**, ¿se puede cumplir con el programa de conteo? El conteo demora **5 minutos**.»"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Fuente:** resoluciones manuscritas de SG1.doc (Final 6) y EFR p.4; coinciden."
+    },
+    {
+     "type": "formula",
+     "tex": "400\\cdot 5 + 1000\\cdot 2 + 5000\\cdot 1 = 9000 \\text{ conteos por año} \\qquad \\frac{9000}{250} = 36 \\text{ artículos por día}"
+    },
+    {
+     "type": "paragraph",
+     "text": "**b)** $36 \\cdot 5 \\text{ min} = 180$ min $= 3$ h por día. Con 2 personas × 8 h = 16 h disponibles, **se cumple** (la hoja: alcanza con **una persona**)."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "6. VARIANTE — despejar cuántas veces se cuentan las A (EFR p.30 y p.34)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Una empresa tiene en su depósito ítems de los cuales 400 son caracterizado tipo A, 1000 son B, y 5000 los C. Se cuentan **36 ítems por día**, se trabaja **200** días al año y los tipo C se cuentan sólo una vez al año, en cambio los del tipo B el doble. ¿Cuántas veces al año son contados los del tipo A?» (EFR p.34 trae la misma con **250 días**.)"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Fuente:** resoluciones manuscritas de EFR p.30 y p.34."
+    },
+    {
+     "type": "formula",
+     "tex": "36\\cdot 200 = 7200 = 5000\\cdot 1 + 1000\\cdot 2 + 400\\,m \\Rightarrow m = 0{,}5"
+    },
+    {
+     "type": "paragraph",
+     "text": "Con 200 días, las A se cuentan **media vez por año** (la hoja: «se demora 2 años para contar los 400 tipo A»). Con 250 días: $9000 = 7000 + 400m \\Rightarrow m = 5$ veces al año."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Comentario propio:** con 200 días el plan contradice el ABC (las A se contarían menos que las C). En el examen conviene decirlo."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "7. EJERCICIO — Plan de conteo de 6300 elementos con dos operarios (EFR p.13 y p.24)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Una empresa desea saber si puede cumplir con el plan de conteo de **6300** elementos. Trabaja **250** días al año, 2 operarios uno con un coeficiente global de actividad de **95%** y el otro de **80%**, **6 hs.** por día.»"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Elementos",
+      "Frecuencia conteo",
+      "Cantidad"
+     ],
+     "rows": [
+      [
+       "Tipo A",
+       "Mensual",
+       "900"
+      ],
+      [
+       "Tipo B",
+       "Trimestral",
+       "2100"
+      ],
+      [
+       "Tipo C",
+       "Anual",
+       "3300"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "«1.1 ¿Cuántos elementos se cuentan por día? 1.2 Indicar si se cumple con el programa y si existe tiempo ocioso. 1.3 De no poder cumplirse, ¿cuántos elementos se pueden llegar a contar? 1.4 ¿Qué subsistemas participan?» (EFR p.24 trae la versión sin coeficientes de actividad.)"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Fuente:** resolución manuscrita de EFR p.13. El enunciado **no da** el tiempo por conteo; la hoja **supone 5 minutos por unidad**. Con otro supuesto cambian 1.2 y 1.3."
+    },
+    {
+     "type": "formula",
+     "tex": "900\\cdot 12 + 2100\\cdot 4 + 3300\\cdot 1 = 22\\,500 \\qquad \\frac{22\\,500}{250} = 90 \\text{ elementos por día}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Tiempo efectivo: $6\\cdot 0{,}95 = 5{,}7$ h (342 min) y $6\\cdot 0{,}80 = 4{,}8$ h (288 min). Con 5 min por elemento: $342/5 \\approx 68$ y $288/5 \\approx 58$ → **126 por día ≥ 90: se cumple**."
+    },
+    {
+     "type": "formula",
+     "tex": "\\text{ocioso} = (5{,}7 + 4{,}8) - \\frac{90\\cdot 5}{60} = 10{,}5 - 7{,}5 = 3 \\text{ h por día}"
+    },
+    {
+     "type": "paragraph",
+     "text": "**1.3** no aplica (se cumple). **1.4** gestión de stock y almacén (la hoja). EFR p.24, sin coeficientes, lo resuelve al revés: $6\\cdot 60 = 360$ min; 45 elementos por empleado → hay **8 minutos** como máximo para contar cada uno."
+    }
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "8. ABC con otro criterio: mano de obra"
+  },
+  {
+   "type": "paragraph",
+   "text": "La clasificación no siempre es por volumen de dinero. Un final pide elegir qué vender del stock inmovilizado según la **incidencia de la mano de obra**."
+  },
+  {
+   "type": "ejercicio",
+   "title": "9. EJERCICIO — Vender el 50% del capital inmovilizado (SG!EVA; EFR p.8–9; SG1 Lu Final 8)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Una Empresa desea disponer de parte del material que tiene almacenado y sin movimiento (tabla adjunta). Para ello ha decidido vender el **50% del capital inmovilizado**, tomando los ítems que tienen **mayor incidencia de mano de obra**. Indicar cuáles son esos ítems a vender.»"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Ítem",
+      "Cantidad (TN)",
+      "Mano de obra (000\\$)",
+      "Materiales (000\\$)",
+      "Costo primo (000\\$)"
+     ],
+     "rows": [
+      [
+       "002",
+       "15",
+       "50",
+       "25",
+       "75"
+      ],
+      [
+       "004",
+       "20",
+       "43",
+       "12",
+       "55"
+      ],
+      [
+       "003",
+       "9",
+       "70",
+       "8",
+       "78"
+      ],
+      [
+       "001",
+       "15",
+       "22",
+       "30",
+       "52"
+      ],
+      [
+       "020",
+       "30",
+       "12",
+       "5",
+       "17"
+      ],
+      [
+       "033",
+       "40",
+       "16",
+       "20",
+       "36"
+      ],
+      [
+       "035",
+       "17",
+       "15",
+       "15",
+       "30"
+      ],
+      [
+       "037",
+       "23",
+       "20",
+       "22",
+       "42"
+      ],
+      [
+       "020",
+       "40",
+       "13",
+       "20",
+       "33"
+      ],
+      [
+       "021",
+       "13",
+       "25",
+       "17",
+       "42"
+      ],
+      [
+       "023",
+       "80",
+       "23",
+       "33",
+       "56"
+      ],
+      [
+       "040",
+       "16",
+       "78",
+       "50",
+       "128"
+      ],
+      [
+       "041",
+       "14",
+       "62",
+       "22",
+       "84"
+      ],
+      [
+       "042",
+       "31",
+       "36",
+       "40",
+       "76"
+      ],
+      [
+       "036",
+       "21",
+       "45",
+       "16",
+       "61"
+      ],
+      [
+       "037",
+       "14",
+       "19",
+       "28",
+       "47"
+      ],
+      [
+       "038",
+       "22",
+       "25",
+       "19",
+       "44"
+      ],
+      [
+       "051",
+       "32",
+       "52",
+       "24",
+       "76"
+      ],
+      [
+       "055",
+       "22",
+       "12",
+       "32",
+       "44"
+      ],
+      [
+       "060",
+       "31",
+       "17",
+       "19",
+       "36"
+      ]
+     ],
+     "caption": "Tabla transcripta de EFR p.8 (los ítems 020 y 037 aparecen dos veces en el original)"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Hay dos resoluciones manuscritas con criterios distintos.** EFR p.9 ordena por **MO / costo primo** y acumula el **capital** (cantidad × costo primo; total 26.482). SG1.doc Final 8 ordena por **% de la MO total** (MO del ítem / 655) y acumula ese %, llegando a «54% ítems a vender». La consigna habla de **capital inmovilizado**: la que responde lo pedido es la de **EFR**. Rehice las cuentas (cálculo propio)."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Orden",
+      "Ítem",
+      "MO / costo primo",
+      "Capital (cant. × CP)",
+      "% acumulado del capital"
+     ],
+     "rows": [
+      [
+       "1",
+       "003",
+       "0,90",
+       "702",
+       "2,7%"
+      ],
+      [
+       "2",
+       "004",
+       "0,78",
+       "1100",
+       "6,8%"
+      ],
+      [
+       "3",
+       "041",
+       "0,74",
+       "1176",
+       "11,2%"
+      ],
+      [
+       "4",
+       "036",
+       "0,74",
+       "1281",
+       "16,1%"
+      ],
+      [
+       "5",
+       "020 (30 TN)",
+       "0,71",
+       "510",
+       "18,0%"
+      ],
+      [
+       "6",
+       "051",
+       "0,68",
+       "2432",
+       "27,2%"
+      ],
+      [
+       "7",
+       "002",
+       "0,67",
+       "1125",
+       "31,4%"
+      ],
+      [
+       "8",
+       "040",
+       "0,61",
+       "2048",
+       "39,2%"
+      ],
+      [
+       "9",
+       "021",
+       "0,60",
+       "546",
+       "41,2%"
+      ],
+      [
+       "10",
+       "038",
+       "0,57",
+       "968",
+       "44,9%"
+      ],
+      [
+       "11",
+       "035",
+       "0,50",
+       "510",
+       "46,8%"
+      ],
+      [
+       "12",
+       "037 (23 TN)",
+       "0,48",
+       "966",
+       "**50,5%**"
+      ],
+      [
+       "13",
+       "042",
+       "0,47",
+       "2356",
+       "59,4%"
+      ],
+      [
+       "…",
+       "060, 033, 001, 023, 037, 020, 055",
+       "0,47 a 0,27",
+       "",
+       "hasta 100%"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "**Ítems a vender: 003, 004, 041, 036, 020 (el de 30 TN), 051, 002, 040, 021, 038, 035 y 037 (el de 23 TN).** Son 12 de 20 ítems y suman el **50,5%** del capital inmovilizado (13.364 de 26.482 miles de \\$)."
+    },
+    {
+     "type": "paragraph",
+     "text": "Con el criterio de SG1.doc (participación en la MO total) saldrían **040, 003, 041, 051, 002 y 036** (54,5% de la mano de obra), pero eso no es el 50% del capital."
+    }
+   ]
+  },
+  {
+   "type": "svg",
+   "file": "u5/img/u5_pareto.svg",
+   "caption": "Acumulado del capital de los ítems ordenados por incidencia de MO (gráfico propio)"
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Para el ABC de examen:** 1) definir el **criterio** (volumen anual en \\$, incidencia de MO, el que pida la consigna); 2) tabla ordenada con % y **% acumulado**; 3) cortar donde lo pide el enunciado (o en 15–20% / 30–35% / 50% de los ítems); 4) decir **qué control** lleva cada clase (frecuencia de pedido, de conteo, tolerancia)."
+  },
+  {
+   "type": "glosario",
+   "title": "10. Glosario",
+   "intro": "",
+   "entries": [
+    {
+     "simbolo": "Volumen en dinero",
+     "nombre": "uso anual × costo",
+     "significado": "Criterio estándar del ABC"
+    },
+    {
+     "simbolo": "A / B / C",
+     "nombre": "clases",
+     "significado": "Alto / moderado / bajo volumen en dinero"
+    },
+    {
+     "simbolo": "Conteo de ciclo",
+     "nombre": "conteo cíclico",
+     "significado": "Contar seguido una parte del inventario en vez de todo una vez al año"
+    },
+    {
+     "simbolo": "Exactitud",
+     "nombre": "precisión del inventario",
+     "significado": "Coincidencia entre el registro y lo físico"
+    },
+    {
+     "simbolo": "Coeficiente de actividad",
+     "nombre": "",
+     "significado": "Fracción efectiva de la jornada de un operario (95%, 80%)"
+    },
+    {
+     "simbolo": "Costo primo",
+     "nombre": "",
+     "significado": "Materiales + mano de obra directa"
+    }
+   ]
+  }
+ ],
+ "historias": [],
+ "block": "B",
+ "blockTitle": "Bloque B · Modelos estocásticos y control"
+}

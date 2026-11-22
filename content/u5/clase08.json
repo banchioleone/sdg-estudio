@@ -1,0 +1,313 @@
+{
+ "unitId": "u5",
+ "unitLabel": "Unidad 5",
+ "unitTitle": "Logística",
+ "id": "u5c8",
+ "title": "Clase 8 · Compras y proveedores",
+ "name": "Compras y proveedores",
+ "lede": "El sistema de compras de la cátedra (etapas, órdenes abiertas y cerradas, archivos, evaluación de proveedores), los procesos de adquisición y la subcontratación de Chase, y qué cambia con proveedores JIT.",
+ "visto": false,
+ "source": [
+  "texto/examenes/preguntasabastecimiento.txt (Examen 2005, respuestas de alumno)",
+  "programa.md — Unidad 5 · Logística (programa 2008)",
+  "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 5 y Semana 7",
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 10 «Estrategia de la cadena de suministro» (Chase)",
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 12 «Producción esbelta» (Chase: trabajo con los proveedores)",
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 9 (ISO 9000 y proveedores) y Cap. 13 (medidores para proveedores)",
+  "texto/examenes/Preguntas SG1.txt (preguntas 16–18)",
+  "texto/Preguntas_Frecuentes.txt (pregunta 30: comprar o fabricar)",
+  "INDEX.md (Drive: «Produccion JIT.pdf», no descargado)"
+ ],
+ "laminas": [],
+ "next": "Clase 9 · Almacenes, distribución y trazabilidad",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque C · Clase 8 · Compras y proveedores**"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**De dónde sale esta clase.** El circuito de compras (etapas, órdenes, archivos, evaluación de proveedores): el **banco de preguntas de abastecimiento** (Examen 2005, respuestas de alumno; el Documento Maestro lo marca con ★). Procesos de adquisición, subcontratación y proveedores JIT: **Chase caps. 10 y 12**. «Ingeniería de compra» figura en el programa pero **no hay material** que la desarrolle: va como complemento."
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** el modelo de stock dice **cuándo y cuánto**; Compras resuelve **a quién y en qué condiciones**. Empieza con el pedido de reposición que emite gestión de stock y termina cuando la orden se cumple y el proveedor queda evaluado."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Qué método de gestión según el tipo de material"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase: es común que Compras sea quien hace también la subcontratación; «Compras es responsable de desarrollar una estrategia para adquirir los artículos que necesita una empresa», y el proceso depende del **costo** de los artículos, el **volumen** requerido y la **escasez**."
+  },
+  {
+   "type": "paragraph",
+   "text": "El banco de la cátedra vincula el **origen del requerimiento** con el método:"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Material",
+    "Dónde se genera el requerimiento",
+    "Modelo de stock",
+    "Orden de compra"
+   ],
+   "rows": [
+    [
+     "Directo (forma parte del producto; demanda dependiente)",
+     "**MRP**, primera explosión: Plan Maestro de Componentes Compradas (PMCC)",
+     "Planificación de requerimientos (cantidades por período del horizonte del PMP)",
+     "**abierta** (vigente mientras el ítem siga siendo productivo)"
+    ],
+    [
+     "Indirecto / consumo (demanda independiente)",
+     "Gestión de stock al llegar al punto de pedido o a la revisión",
+     "Base estadística: **perpetuo** o **periódico**",
+     "**cerrada** (una compra, se cumple y se archiva)"
+    ]
+   ],
+   "caption": "Armado propio con las respuestas 3–9 del banco de abastecimiento (respuestas de alumno, ver aviso)"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "En la respuesta 8 del banco el alumno escribió «Abierta PRM (indirectos) y Cerrada sistema de base estadístico (directos)»: invirtió las etiquetas respecto de sus respuestas 6 y 7. La tabla de arriba sigue la lógica de las respuestas 6, 7 y 9 (la abierta va con el MRP)."
+  },
+  {
+   "type": "paragraph",
+   "text": "**Orden abierta y cerrada** (respuesta 9 del banco): «una vez cumplida la orden **cerrada** pasa a archivo histórico mientras que la **abierta** solo pasará a histórico cuando la componente deseada sea dada de baja y desaparezca como ítem productivo»."
+  },
+  {
+   "type": "paragraph",
+   "text": "Las preguntas de MRP del banco «Preguntas SG1» agregan el ritmo del PMCC: se revisa **cada tres meses** con un horizonte de **seis meses** (respuesta 16, de alumno)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Etapas de la gestión de compras"
+  },
+  {
+   "type": "paragraph",
+   "text": "Respuesta 10 del banco: «A partir de la recepción del pedido se emiten y distribuyen los **pedidos de cotización** a proveedores, luego se **analiza la oferta** (evaluación y negociación) para dar paso a la **asignación del proveedor** y la **colocación de la orden**.»"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "Recepción del **pedido de reposición** (lo emite gestión de stock / almacenes; en el MRP, el PMCC).",
+    "Emisión y distribución de **pedidos de cotización** a proveedores.",
+    "**Evaluación y negociación** de las ofertas.",
+    "**Asignación** del proveedor.",
+    "**Colocación de la orden de compra** (separadas para directos e indirectos si hace falta).",
+    "**Seguimiento, activación y cumplimiento** de las órdenes vigentes; recepción; cierre y evaluación del proveedor."
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Los archivos del subsistema"
+  },
+  {
+   "type": "paragraph",
+   "text": "Respuesta 11 del banco, qué información brinda Compras al subsistema de abastecimiento para el seguimiento:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Archivo de **proveedores**.",
+    "Archivo de **pedidos de reposición** de stock.",
+    "Archivo de **pedidos de cotización**.",
+    "Archivo de **órdenes de compra emitidas y pendientes** de cumplimiento (activas).",
+    "Archivo de **órdenes cumplidas** (histórico).",
+    "Archivo de **evaluación de desempeño del proveedor**."
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Evaluación de proveedores"
+  },
+  {
+   "type": "paragraph",
+   "text": "Respuesta 12 del banco: Compras evalúa a los proveedores bajo **tres aspectos**: «**precios**, **rapidez o estabilidad de la entrega** y **nivel de calidad** de sus productos»."
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase agrega que la certificación **ISO 9000** de un proveedor da información sobre cómo opera (cap. 9) y, en el cap. 13, los **medidores para proveedores**: tableros con métricas de desempeño graficadas y alarmas para ver cuándo un indicador clave se acerca a un problema."
+  },
+  {
+   "type": "paragraph",
+   "text": "**Complemento (no está en el material):** en la práctica se arma una **matriz de calificación ponderada**: cada criterio (precio, cumplimiento de plazos, calidad, servicio, condiciones de pago) con un peso, cada proveedor con un puntaje, y se elige el de mayor suma. Es el mismo mecanismo que el sistema de calificación de factores de la ubicación de plantas (Clase 10)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Procesos de adquisición (Chase, matriz del cap. 10)"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Proceso",
+    "Cuándo se usa"
+   ],
+   "rows": [
+    [
+     "**Solicitud de propuesta**",
+     "compras importantes con **pocos proveedores** posibles; se enumeran criterios y fechas y se firma contrato con el elegido (ej.: un consultor para ubicar un almacén nuevo)"
+    ],
+    [
+     "**Solicitud de oferta y concurso inverso**",
+     "artículos similares o relacionados; los **vendedores compiten** por el contrato, incluso en subastas en tiempo real por Internet"
+    ],
+    [
+     "**Catálogo electrónico**",
+     "relación más formal para muchos artículos de compra común; el cliente pide por un sitio privado y el proveedor entrega y factura (ej.: Staples)"
+    ],
+    [
+     "**Inventario administrado por el proveedor (VMI)**",
+     "el proveedor vigila el stock en el sitio del cliente y repone automáticamente entre un **mínimo y un máximo** que fija el cliente (sujetapapeles, adhesivos, combustibles)"
+    ]
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. Subcontratar o no"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase define la subcontratación como «el acto de trasladar parte de las actividades internas de una empresa y las responsabilidades sobre las decisiones a prestadores foráneos»: se transfieren también los **recursos** (gente, instalaciones, equipo, tecnología). Para decidir, una actividad se evalúa por:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "**Coordinación requerida:** lo incierto y con mucho intercambio de información no se subcontrata; lo uniforme y bien entendido, sí.",
+    "**Control estratégico:** cuánto se perdería si se corta la relación con el socio.",
+    "**Propiedad intelectual:** riesgo de perderla en la asociación."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Casos del libro: Intel conservó la manufactura porque el mejoramiento de procesos estaba ligado al de productos; Blaupunkt le dio a Panasonic su red de distribuidores al subcontratarle las videocaseteras. Consejo: controlar lo que es **diferenciador competitivo** y subcontratar el resto. La pregunta 30 de Preguntas Frecuentes resume la decisión de **comprar o fabricar**: la variable más importante es el **costo**."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "7. Proveedores para la fabricación JIT"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase cap. 12, «Trabajo con los proveedores»:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Compartir los **requerimientos futuros** con el proveedor le da un panorama de largo plazo; algunos están **vinculados en línea** con el programa de producción del cliente y pueden **nivelar** su producción.",
+    "La confianza en el compromiso de entrega permite **reducir los inventarios de seguridad**.",
+    "Mantener stocks esbeltos requiere **entregas frecuentes durante el día**; algunos proveedores entregan **directo en la línea** y no en el puerto de recepción.",
+    "Si el proveedor adopta prácticas de calidad, se pueden **eliminar las inspecciones de recepción**.",
+    "**Redes de proveedores:** asociación cooperativa de proveedores y clientes **a largo plazo** para beneficio mutuo."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Y los lineamientos de Womack y Jones para una cadena esbelta: definir el valor en conjunto con un **costo meta**, que todas las empresas de la cadena recuperen su inversión, y trabajar juntas para **eliminar la muda** (desperdicio)."
+  },
+  {
+   "type": "paragraph",
+   "text": "**Complemento (no está en el material):** la selección de proveedores JIT suele resumirse en **pocos proveedores** (a veces uno por ítem), **cercanos**, con **contratos de largo plazo**, **calidad certificada** (sin inspección de recepción), **lotes chicos y entregas frecuentes**, y comunicación electrónica (EDI o kanban de proveedor). El apunte «Produccion JIT.pdf» de la cátedra (U4) está en el Drive pero no se descargó."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "8. Ingeniería de compra"
+  },
+  {
+   "type": "paragraph",
+   "text": "**Complemento (no está en el material):** se llama así al trabajo técnico de Compras junto con Ingeniería: definir **especificaciones** de lo que se compra, buscar **materiales o proveedores alternativos**, analizar el **valor** (qué función cumple cada parte y si se puede lograr más barato), estandarizar ítems para comprar en mayor volumen y participar en el **diseño logístico** desde el inicio. Chase da un ejemplo de este último: si un componente viene en cajas de 50 y la producción usa 30, hay desperdicio; el empaque y el transporte deben pensarse al diseñar."
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Pedile a Emiliano** si la cátedra tiene un apunte de compras o de ingeniería de compra: con lo descargado no puedo dar una definición de la cátedra."
+  },
+  {
+   "type": "ejercicio",
+   "title": "9. EJERCICIO DE TEORÍA — Banco de preguntas de abastecimiento (Examen 2005)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Las doce preguntas del examen 2005: 1) ¿Qué se entiende por materiales directos e indirectos? 2) ¿Cómo participan en la determinación del costo del producto? 3) ¿En cuál de los subsistemas de la gestión de producción se generan los requerimientos de materiales directos e indirectos? 4) ¿En qué etapas del mismo? 5) ¿Qué características tienen esos requerimientos en cuanto a la cantidad de períodos previstos y cantidad de componentes solicitadas? 6) ¿Qué modelo de stock se aplica a los materiales directos? 7) ¿Y a los indirectos? 8) ¿Qué tipo de orden de compra se emite para cada uno? 9) ¿En qué se diferencian? 10) ¿Cuáles son las etapas de la gestión de compras a partir de la recepción del pedido de reposición? 11) ¿Qué información brinda el Dpto. Compras al subsistema de abastecimientos para el seguimiento, activación y cumplimiento de las órdenes? 12) ¿Bajo qué tres aspectos evalúa Compras a los proveedores?"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "Resumen de las respuestas de alumno que circulan, con las correcciones de esta clase. No es clave oficial."
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "**1–2.** Directos: forman parte del producto (costo variable); indirectos: consumo, no forman parte (el alumno los asocia a costo fijo).",
+      "**3–5.** Directos: en el MRP (PMCC en la primera explosión), mes a mes para el horizonte del PMP. Indirectos: gestión de stock con base estadística.",
+      "**6–7.** Directos: planificación de requerimientos. Indirectos: perpetuo (cantidad fija, fechas variables) o periódico (cantidades variables, períodos fijos).",
+      "**8–9.** Abierta (directos, vigente mientras el ítem sea productivo) y cerrada (indirectos, pasa al histórico al cumplirse).",
+      "**10.** Cotización → evaluación y negociación → asignación → colocación de la orden.",
+      "**11.** Los seis archivos de la sección 3.",
+      "**12.** Precio, rapidez o estabilidad de la entrega, calidad."
+     ]
+    }
+   ]
+  },
+  {
+   "type": "glosario",
+   "title": "10. Glosario",
+   "intro": "",
+   "entries": [
+    {
+     "simbolo": "PMCC",
+     "nombre": "Plan Maestro de Componentes Compradas",
+     "significado": "Salida del MRP que genera los requerimientos de compra"
+    },
+    {
+     "simbolo": "O.C. abierta",
+     "nombre": "",
+     "significado": "Vigente mientras el ítem sea productivo; entregas parciales"
+    },
+    {
+     "simbolo": "O.C. cerrada",
+     "nombre": "",
+     "significado": "Una compra; cumplida, pasa al histórico"
+    },
+    {
+     "simbolo": "VMI",
+     "nombre": "inventario administrado por el proveedor",
+     "significado": "El proveedor repone en el sitio del cliente entre mínimo y máximo"
+    },
+    {
+     "simbolo": "Concurso inverso",
+     "nombre": "",
+     "significado": "Los vendedores compiten por el contrato"
+    },
+    {
+     "simbolo": "Subcontratación",
+     "nombre": "outsourcing",
+     "significado": "Trasladar actividades, recursos y decisiones a un tercero"
+    }
+   ]
+  }
+ ],
+ "historias": [],
+ "block": "C",
+ "blockTitle": "Bloque C · Compras, almacenes y logística"
+}

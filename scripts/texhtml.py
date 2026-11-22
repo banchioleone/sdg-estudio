@@ -232,6 +232,7 @@ def inline_math(text: str) -> str:
     def subst_math(m):
         return tex_to_html(m.group(1), block=False)
 
+    s = s.replace("\\$", "\x00")  # \$ = signo pesos literal
     s = re.sub(r"\$\$(.+?)\$\$", lambda m: tex_to_html(m.group(1), True), s, flags=re.S)
     s = re.sub(r"(?<!\$)\$(?!\$)(.+?)\$", subst_math, s, flags=re.S)
 
@@ -252,7 +253,7 @@ def inline_math(text: str) -> str:
             out.append(ch)
         return "".join(out)
 
-    return md(s)
+    return md(s).replace("\x00", "$")
 
 
 if __name__ == "__main__":

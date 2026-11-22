@@ -1,0 +1,389 @@
+{
+ "unitId": "u5",
+ "unitLabel": "Unidad 5",
+ "unitTitle": "Logística",
+ "id": "u5c10",
+ "title": "Clase 10 · Cadena de suministro y ubicación de plantas",
+ "name": "Cadena de suministro y ubicación de plantas",
+ "lede": "La logística integral: medir la cadena, el efecto látigo, qué cadena le conviene a cada producto, modos de transporte, criterios y métodos para ubicar plantas y almacenes, y los formatos de distribución de planta.",
+ "visto": false,
+ "source": [
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 10 «Estrategia de la cadena de suministro» (Chase)",
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 11 «Logística y ubicación de instalaciones» (Chase)",
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 7 «Procesos de manufactura» (formatos de distribución)",
+  "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 12 «Producción esbelta» (Chase: trabajo con los proveedores)",
+  "programa.md — Unidad 5 · Logística (programa 2008)",
+  "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 5 y Semana 7",
+  "INDEX.md (Drive: «administracionOperaciones.pdf» Chase/Monks, no descargado)"
+ ],
+ "laminas": [
+  "u5/img/u5_latigo.svg"
+ ],
+ "next": "Integrador · Ejercicios tipo examen",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque C · Clase 10 · Cadena de suministro y ubicación de plantas**"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**De dónde sale esta clase.** **Chase cap. 10** (estrategia de la cadena de suministro) y **cap. 11** (logística y ubicación de instalaciones), más los formatos de distribución del **cap. 7**. El Documento Maestro asigna «almacenes, trazabilidad, ubicaciones y distribución de plantas, logística del abastecimiento, satisfacción del cliente» a Chase cap. 11 y a **Monks**; Monks no está en el material. Las fórmulas del centroide son imagen en el V6: las escribo en la forma estándar."
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** la **logística integral** mira toda la cadena, desde la materia prima hasta el cliente final, como un solo sistema. En cada eslabón hay inventario y cada eslabón le cuesta a la empresa: hay que **sincronizarlos**, ubicar bien las plantas y almacenes y elegir cómo transportar."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. La cadena de suministro y su medición"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase: el inventario «sirve como amortiguador, permitiendo que cada paso funcione de manera independiente de los demás», pero en cada etapa representa un costo, «por lo tanto, es importante que las operaciones estén sincronizadas para minimizar el tamaño de los inventarios de protección». La eficiencia de la cadena se mide por la **inversión en inventario** respecto del costo de lo que se suministra: **rotación** y **semanas de suministro** (fórmulas en la Clase 6)."
+  },
+  {
+   "type": "paragraph",
+   "text": "«El objetivo es tener la cantidad de inventario apropiada y en los lugares correctos de la cadena de suministro.»"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. El efecto látigo"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase muestra (pañales descartables de Procter & Gamble) que los pedidos del detallista al mayorista varían más que las ventas al consumidor y los del mayorista a sus proveedores son los más volátiles. «Este fenómeno del aumento de la variabilidad al moverse del cliente al productor en la cadena de suministro se conoce a menudo como **efecto látigo**.» Indica **falta de sincronía**: en unas etapas se acumula inventario y en otras hay demoras y escasez."
+  },
+  {
+   "type": "svg",
+   "file": "u5/img/u5_latigo.svg",
+   "caption": "Efecto látigo (esquema propio)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Una práctica que lo agrava: las **compras adelantadas** por promociones de precio (el detallista compra el suministro de un año en enero y la planta del proveedor hace horas extra desde octubre). Una que lo reduce: el **reabastecimiento continuo** de Campbell Soup: EDI con los detallistas, «precio bajo todos los días» sin promociones, reposición diaria entre límites de inventario pactados. Bajó el inventario del detallista de **4 a 2 semanas de suministro**; como al detallista mantener cuesta al menos 25% al año, ahorra ~1% de las ventas, sobre una ganancia típica de 2%."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Producto funcional o innovador, y la estrategia de la cadena"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "",
+    "Productos funcionales",
+    "Productos innovadores"
+   ],
+   "rows": [
+    [
+     "Ejemplos (Chase)",
+     "lo que se compra en supermercados y gasolinerías; necesidades básicas",
+     "ropa de moda, computadoras personales"
+    ],
+    [
+     "Demanda",
+     "estable y predecible",
+     "impredecible"
+    ],
+    [
+     "Ciclo de vida",
+     "largo",
+     "unos pocos meses"
+    ],
+    [
+     "Margen",
+     "bajo",
+     "más alto"
+    ]
+   ],
+   "caption": "Fisher, según Chase cap. 10"
+  },
+  {
+   "type": "paragraph",
+   "text": "Hau Lee agrega el lado del **suministro**: estable (tecnología madura, base de proveedores establecida) o evolutivo (tecnología temprana, proveedores poco confiables). Combinando demanda y suministro define cuatro estrategias:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "**Eficientes:** máxima eficiencia de costos, sin actividades que no agregan valor, economías de escala.",
+    "**Con riesgos compartidos:** reunir recursos y compartir, por ejemplo, el **inventario de seguridad** de un componente clave entre varias empresas o tiendas.",
+    "**Responsivas:** flexibles ante necesidades cambiantes; fabricación sobre pedido y personalización masiva.",
+    "**Ágiles:** responsivas y, a la vez, con riesgos compartidos."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Herramientas para la incertidumbre que trata el capítulo: **subcontratación** (Clase 8), subcontratación globalizada, **producción en masa personalizada** y **aplazamiento** (postergar la diferenciación del producto hasta el último punto de la red: HP adaptaba las impresoras DeskJet en su centro de distribución de Alemania y no en la fábrica de Singapur)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Decisiones de logística y transporte"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase cap. 11: decidir cómo transportar los bienes de las plantas a los clientes afecta el **costo**, la **velocidad de entrega** y la **flexibilidad**. Seis medios:"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Medio",
+    "Característica (Chase)"
+   ],
+   "rows": [
+    [
+     "Carretera (camión)",
+     "mucha flexibilidad; casi cualquier lugar no separado por agua"
+    ],
+    [
+     "Agua (barco)",
+     "capacidad muy alta, costo muy bajo, tránsito lento; voluminosos (petróleo, carbón, químicos)"
+    ],
+    [
+     "Aire",
+     "rápido pero costoso; artículos pequeños, livianos y caros"
+    ],
+    [
+     "Vías férreas",
+     "bajo costo, tránsito largo y variable; depende de la infraestructura"
+    ],
+    [
+     "Ductos",
+     "líquidos, gases y sólidos suaves; alto costo inicial, bajo costo por milla"
+    ],
+    [
+     "Entrega a mano",
+     "último paso; lento y caro por la mano de obra"
+    ]
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Lo común son las soluciones **multimodales** con contenedores estandarizados. Para elegir, Chase usa la **densidad de valor** (valor por unidad de peso): para Intel, el envío aéreo de microprocesadores se justifica si el ahorro en tiempo de tránsito y en inversión en inventario compensa el mayor flete."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Ubicación de plantas y almacenes: criterios"
+  },
+  {
+   "type": "paragraph",
+   "text": "Criterios que lista Chase para ubicar una planta o un almacén:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "**Proximidad con los clientes**.",
+    "**Clima de negocios** (empresas similares, legislación, apoyo del gobierno local).",
+    "**Costos totales**: regionales (terreno, construcción, mano de obra, impuestos, energía), de distribución interna y externa, y costos ocultos (mover material entre ubicaciones, perder capacidad de respuesta por lejanía).",
+    "**Infraestructura** (transporte, energía, telecomunicaciones).",
+    "**Calidad de la mano de obra**.",
+    "**Proveedores** competitivos y cercanos (apoyan la manufactura esbelta).",
+    "**Otras instalaciones** de la misma compañía.",
+    "**Zonas de libre comercio**.",
+    "**Riesgo político**.",
+    "**Barreras gubernamentales**.",
+    "**Bloques comerciales**.",
+    "**Regulaciones ambientales**.",
+    "**Comunidad anfitriona**.",
+    "**Ventaja competitiva** (dónde poner la sede de cada negocio, según Porter)."
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. Métodos de ubicación"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase presenta tres técnicas (y una cuarta para servicios):"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**Sistema de calificación de factores:** a cada factor se le asigna un rango de puntos, se califica cada sitio y se elige el de más puntos. Ejemplo de una refinería: combustibles en la región 0–330, energía 0–200, clima laboral 0–100, condiciones de vida 0–100, transportes 0–50, agua 0–10, clima 0–50, suministro 0–60, políticas y leyes fiscales 0–20. Problema: no refleja cuánto difieren los **costos** de un factor a otro; Chase sugiere ponderar con los desvíos estándar de los costos.",
+    "**Método de transporte de la programación lineal:** minimizar el costo de enviar n unidades a m destinos (o maximizar la utilidad). Se resuelve con Solver de Excel.",
+    "**Método del centroide:** ubica almacenes intermedios o de distribución (y torres de comunicación) considerando las instalaciones existentes, sus distancias y los volúmenes a enviar. Supone costos de entrada y salida iguales.",
+    "**Servicios:** se usan técnicas estadísticas (regresión múltiple) para maximizar el potencial de utilidades de cada sitio, no para minimizar costos."
+   ]
+  },
+  {
+   "type": "formula",
+   "tex": "C_x = \\frac{\\sum d_{ix}\\,V_i}{\\sum V_i} \\qquad C_y = \\frac{\\sum d_{iy}\\,V_i}{\\sum V_i}",
+   "caption": "centroide (Chase) · d = coordenada de la i-ésima ubicación · V = volumen enviado"
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo de centroide (cálculo propio, datos inventados para practicar)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Tres tiendas en una grilla: A (2, 8) con 300 envíos, B (6, 2) con 500 y C (9, 6) con 200."
+    },
+    {
+     "type": "formula",
+     "tex": "C_x = \\frac{2\\cdot 300 + 6\\cdot 500 + 9\\cdot 200}{1000} = 5{,}4 \\qquad C_y = \\frac{8\\cdot 300 + 2\\cdot 500 + 6\\cdot 200}{1000} = 4{,}6"
+    },
+    {
+     "type": "paragraph",
+     "text": "El almacén iría cerca de (5,4; 4,6): tira hacia B, que es la que más volumen recibe."
+    }
+   ]
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo de calificación de factores (cálculo propio, datos inventados)",
+   "blocks": [
+    {
+     "type": "table",
+     "headers": [
+      "Factor",
+      "Peso",
+      "Sitio 1 (0–10)",
+      "Sitio 2 (0–10)"
+     ],
+     "rows": [
+      [
+       "Costo total",
+       "0,40",
+       "6",
+       "8"
+      ],
+      [
+       "Proximidad a clientes",
+       "0,30",
+       "9",
+       "5"
+      ],
+      [
+       "Mano de obra",
+       "0,20",
+       "7",
+       "7"
+      ],
+      [
+       "Infraestructura",
+       "0,10",
+       "5",
+       "9"
+      ],
+      [
+       "**Total ponderado**",
+       "",
+       "**7,0**",
+       "**7,0**"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "Empatan: hace falta un criterio de desempate o revisar los pesos. Es la debilidad que señala Chase: los puntos no dicen cuánta plata hay detrás de cada factor."
+    }
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "7. Distribución de planta (formatos)"
+  },
+  {
+   "type": "paragraph",
+   "text": "La distribución **dentro** de la instalación la define el patrón de flujo del trabajo. Chase (cap. 7) da cinco estructuras básicas:"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Formato",
+    "Cómo es (Chase)",
+    "Ejemplos"
+   ],
+   "rows": [
+    [
+     "**Proyecto** (posición fija)",
+     "el producto queda fijo por su volumen o peso; el equipo va al producto",
+     "obras, casas, caminos, sets de filmación"
+    ],
+    [
+     "**Centro de trabajo** (taller, por proceso)",
+     "se agrupan equipos o funciones similares; la pieza pasa de un centro a otro",
+     "todas las perforadoras en un área, las troqueladoras en otra"
+    ],
+    [
+     "**Celda de manufactura**",
+     "área dedicada a productos con procesamiento similar; produce «conforme se necesita»",
+     "familias de piezas"
+    ],
+    [
+     "**Línea de ensamble** (por producto)",
+     "procesos ordenados según los pasos sucesivos; ritmo controlado",
+     "juguetes, electrodomésticos, autos"
+    ],
+    [
+     "**Proceso continuo**",
+     "como una línea pero con flujo continuo; muy automatizado, 24 horas",
+     "petróleo, químicos, fármacos"
+    ]
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Se eligen con la **matriz producto-proceso** (volumen y estandarización). El balanceo de líneas (estaciones en paralelo, tiempo ocioso) se ve en la U4."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "8. Logística del abastecimiento y logística integral"
+  },
+  {
+   "type": "paragraph",
+   "text": "**Complemento (síntesis propia del material):** la **logística del abastecimiento** (o de entrada) cubre lo que va del proveedor a la planta: compras, transporte de entrada, recepción, almacén de materias primas y la reposición con los modelos de stock. La **logística interna** mueve el material dentro de la planta (distribución en planta, WIP). La **logística de distribución** (de salida) va de la planta al cliente: almacenes, CD, DRP y transporte. La **logística integral** las trata como un único sistema, que es lo que pide el objetivo del programa."
+  },
+  {
+   "type": "glosario",
+   "title": "9. Glosario",
+   "intro": "",
+   "entries": [
+    {
+     "simbolo": "Efecto látigo",
+     "nombre": "",
+     "significado": "Aumento de la variabilidad de los pedidos aguas arriba de la cadena"
+    },
+    {
+     "simbolo": "Semanas de suministro",
+     "nombre": "",
+     "significado": "Inventario promedio / costo de lo vendido × 52"
+    },
+    {
+     "simbolo": "Aplazamiento",
+     "nombre": "",
+     "significado": "Diferenciar el producto lo más tarde posible en la red"
+    },
+    {
+     "simbolo": "Densidad de valor",
+     "nombre": "",
+     "significado": "Valor por unidad de peso; guía el modo de transporte"
+    },
+    {
+     "simbolo": "Centroide",
+     "nombre": "",
+     "significado": "Ubicación que minimiza el costo de transporte ponderado por volumen"
+    },
+    {
+     "simbolo": "Matriz producto-proceso",
+     "nombre": "",
+     "significado": "Relaciona volumen y estandarización con el formato de distribución"
+    }
+   ]
+  }
+ ],
+ "historias": [],
+ "block": "C",
+ "blockTitle": "Bloque C · Compras, almacenes y logística"
+}

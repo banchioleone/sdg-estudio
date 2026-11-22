@@ -1,0 +1,162 @@
+from u5lib import *
+
+def c6():
+    t = [
+        P("**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque B · Clase 6 · Período fijo, período único y rotación**"),
+        AVISO("**De dónde sale esta clase.** Todo de **Chase cap. 17** (ecuaciones [17.1], [17.10] y [17.11], rotación de inventarios, control en servicios) y **cap. 10** (rotación y semanas de suministro, [10.2]). En el V6 las fórmulas son imagen; las escribo en notación de Chase con las definiciones del texto. **No hay ejercicios de final de esta clase en el material**: los ejemplos numéricos con datos de finales son cálculo propio."),
+        IDEA("**Idea central:** en el periódico el riesgo dura **T + L** (el período de revisión más la entrega), por eso necesita más stock de seguridad. Cuando la compra es **única**, el modelo cambia: se elige la cantidad que equilibra el costo de que sobre con el de que falte."),
+        H("1. Período fijo con stock de seguridad"),
+        P("En el periódico se cuenta solo en la revisión. «Es posible que una demanda alta haga que el inventario llegue a cero justo después de hacer el pedido. Esta condición pasará inadvertida hasta el siguiente periodo de revisión; además, el nuevo pedido tardará en llegar.» Por eso el SS protege «durante todo el periodo de revisión, T, y el tiempo de entrega, L» (Chase)."),
+        F("SS = z\\,\\sigma_{T+L}", "[17.10] Chase"),
+        F("q = \\bar d\\,(T+L) + z\\,\\sigma_{T+L} - I", "[17.11] · cantidad = demanda en el período vulnerable + SS − existencias (más lo pedido)"),
+        F("\\sigma_{T+L} = \\sqrt{\\sum_{i=1}^{T+L}\\sigma_d^2} = \\sigma_d\\sqrt{T+L}"),
+        P("Chase: «La demanda, el tiempo de entrega, el periodo de revisión, etc., pueden estar en cualquier unidad de tiempo como días, semanas o años, siempre y cuando sean **consistentes** en toda la ecuación.» La demanda se puede pronosticar en cada revisión o tomar el promedio anual."),
+        EJ("Ejemplo con datos de la Clase 5 (cálculo propio)", [
+            P("Mismo ítem del final: $\\bar d = 50$ cajas/día, $\\sigma_d = 10$, $L = 3$ días, nivel de servicio 85%. Supongamos que se revisa **cada 10 días** y al revisar hay **300 cajas** (incluido lo pedido)."),
+            F("\\sigma_{T+L} = 10\\sqrt{13} \\approx 36{,}1 \\qquad SS = 1{,}04\\cdot 36{,}1 \\approx 37"),
+            F("q = 50\\cdot 13 + 37 - 300 = 387 \\text{ cajas}"),
+            P("Compará: en el perpetuo el SS era **18**; en el periódico, **37**. Es la diferencia que menciona Chase: el período fijo tiene un inventario promedio más grande."),
+        ]),
+        H("2. Modelo de período único (el «voceador»)"),
+        P("Sirve cuando se compra **una sola vez** para un período y lo que sobra pierde valor: diarios, playeras de un partido, artículos de moda. Chase lo resuelve con **análisis marginal**: conviene seguir agregando unidades mientras el beneficio esperado de la siguiente sea mayor que su costo esperado."),
+        F("P \\leq \\frac{C_u}{C_o + C_u}", "[17.1] · P = probabilidad de que la unidad NO se venda"),
+        L(["$C_o$: costo por unidad de **sobrestimar** la demanda (sobra: lo que se pagó y no se recupera).",
+           "$C_u$: costo por unidad de **subestimar** la demanda (falta: la ganancia que se pierde)."]),
+        P("Se pide hasta el punto en que la probabilidad acumulada de la demanda alcanza $C_u/(C_o + C_u)$."),
+        EJ("Ejemplo de Chase: el voceador", [
+            P("Un voceador vende en promedio **90 diarios** cada lunes, con desvío **10**. Si coloca 90, el riesgo de quedarse sin diarios es 50%. Para estar **80%** seguro necesita unas **0,85** desviaciones estándar más."),
+            P("Con costos: paga **20 centavos** y vende a **50**. Sobrestimar cuesta $C_o = 0{,}20$; subestimar, $C_u = 0{,}50 - 0{,}20 = 0{,}30$."),
+            F("\\frac{C_u}{C_o + C_u} = \\frac{0{,}30}{0{,}20 + 0{,}30} = 0{,}6 \\Rightarrow z \\approx 0{,}25 \\Rightarrow 90 + 0{,}25\\cdot 10 \\approx 93"),
+            P("Chase: «el número total de periódicos para el puesto cada lunes por la mañana debe ser de **93 periódicos**»."),
+        ]),
+        P("Aplicaciones que da Chase: **sobreventa de vuelos** (subestimar cancelaciones = asiento vacío; sobrestimar = compensar al pasajero que no sube), **pedidos de artículos de moda** (un solo pedido por temporada) y **cualquier pedido único** (camisetas para un evento, mapas que se vuelven obsoletos)."),
+        H("3. Rotación de inventarios y semanas de suministro"),
+        P("Las dos medidas que da Chase para evaluar la eficiencia (cap. 10); «matemáticamente son inversas entre sí»:"),
+        F("\\text{Rotación} = \\frac{\\text{Costo de los bienes vendidos}}{\\text{Valor promedio del inventario agregado}}"),
+        F("\\text{Semanas de suministro} = \\frac{\\text{Valor promedio del inventario agregado}}{\\text{Costo de los bienes vendidos}} \\times 52", "[10.2]"),
+        P("Valores típicos (Chase): un supermercado puede rotar **más de 100 veces al año**; en manufactura son típicos **6 a 7**. Cuando domina el inventario de distribución se prefieren las semanas de suministro; con inventarios muy bajos, días u horas."),
+        P("Para **una pieza** (cap. 17): el costo de lo vendido es $D\\,C$ y el inventario promedio, con stock de seguridad, es $Q/2 + SS$:"),
+        F("\\text{Rotación de una pieza} = \\frac{D\\,C}{(Q/2 + SS)\\,C} = \\frac{D}{Q/2 + SS}"),
+        EJ("Ejemplo con el ítem N(50,10) (cálculo propio)", [
+            F("\\frac{10\\,000}{707/2 + 18} \\approx 27 \\text{ veces por año} \\qquad \\frac{52}{27} \\approx 1{,}9 \\text{ semanas de suministro}"),
+        ]),
+        H("4. Inventarios en los servicios (Chase)"),
+        P("**Tienda departamental.** Cada pieza se identifica con una **SKU** (unidad inventariada: pieza, fabricante y costo). Un departamento de artículos para el hogar maneja 3000 a 4000 SKU: no se calcula un EOQ por ítem. Se compra a un **distribuidor** cuyo vendedor visita cada semana, cuenta y pide según el nivel de resurtido (entrega de 2 a 3 días, SS muy bajo). El control es por **dinero**: cada departamento tiene un valor mensual planificado y la cifra **«abierta para comprar»** es la parte del presupuesto que no se gastó."),
+        P("**Servicio automotriz.** Una agencia mediana tiene unos 500.000 dólares en repuestos y altos costos de oportunidad. Se usa **ABC**: lo caro y de rotación alta se cuenta y pide seguido; lo barato, en grandes cantidades y poco seguido."),
+        EJ("Ejemplo de Chase: repuestos con promedio ponderado", [
+            P("Uso de una pieza en enero–abril: **17, 19, 11 y 23**, con ponderaciones **0,10, 0,20, 0,30 y 0,40**:"),
+            F("0{,}10\\cdot 17 + 0{,}20\\cdot 19 + 0{,}30\\cdot 11 + 0{,}40\\cdot 23 = 18 \\text{ por mes}"),
+            P("Con un stock de seguridad igual a la demanda de un mes, «se pedirían **36 unidades** (la demanda de un mes más el número de unidades en el inventario de seguridad de un mes) menos las piezas disponibles». Es un periódico mensual con pronóstico de la U2."),
+        ]),
+        H("5. Herramientas informatizadas de cálculo"),
+        P("El programa incluye «herramientas informatizadas de cálculo». En el material:"),
+        L(["Chase usa **Excel**: NORMSINV(probabilidad) para obtener $z$ y NORMSDIST($z$) para la probabilidad (hoy DISTR.NORM.ESTAND.INV y DISTR.NORM.ESTAND.N).",
+           "El índice del Drive lista archivos de **WinQSB** de los ejercicios de MRP del cap. 18 (INVENT.MRP, INVENTA.MRP, INVENTOR.MRP: el archivo de inventarios —saldos, lotes, lead times— que usa el MRP). Son binarios y no están transcriptos; se ven en la U6.",
+           "Chase: los sistemas computarizados emiten automáticamente las notificaciones de **conteo cíclico** y calculan el **índice de uso** de cada pieza (Clase 7)."]),
+        AVISO("**Faltante de material:** no hay un apunte de la cátedra sobre el uso de WinQSB u otro software de inventarios. Si se toma, se pide en clase práctica."),
+        G("6. Glosario", "", [
+            ["T", "período de revisión", "Cada cuánto se cuenta en el periódico"], ["σT+L", "desvío en T + L", "σd·√(T+L)"],
+            ["I", "posición en la revisión", "Existencias más lo pedido"], ["Co", "costo de sobrar", "Por unidad que no se vende"],
+            ["Cu", "costo de faltar", "Ganancia perdida por unidad"], ["Rotación", "", "Costo de lo vendido / inventario promedio"],
+            ["SKU", "unidad inventariada", "Código de cada pieza en un comercio"], ["Abierta para comprar", "", "Presupuesto de compra no gastado del mes"],
+        ]),
+    ]
+    src = [V6, "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 10 (medición del desempeño de la cadena, [10.2])", DM,
+           "INDEX.md (índice del Drive: archivos WinQSB INVENT, no descargados)"]
+    return clase("u5c6", "Clase 6 · Período fijo, período único y rotación", "Período fijo, período único y rotación", "B",
+                 "El stock de seguridad en el sistema periódico, el modelo de período único del voceador, la rotación y las semanas de suministro, y cómo controlan el inventario los servicios.",
+                 src, t, "Clase 7 · Clasificación ABC y conteo cíclico")
+
+
+def c7():
+    t = [
+        P("**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque B · Clase 7 · Clasificación ABC y conteo cíclico**"),
+        AVISO("**De dónde sale esta clase.** Teoría: **Chase cap. 17** («Planeación de inventario ABC» y «Exactitud del inventario y conteo de ciclos»). Ejercicios: la familia **EBS** (6400 artículos) y la del **plan de conteo de 6300 elementos**, y el **ABC por incidencia de mano de obra**, con resoluciones manuscritas de EFR y SG1.doc. Un final sin fecha tuvo como **única práctica un ejercicio de clasificación ABC** (Preguntas de teoría del final de SG1)."),
+        IDEA("**Idea central:** pocas piezas concentran casi todo el dinero. ABC separa lo importante (A) de lo que no lo es (C) para darle **más control** (más conteos, pedidos más frecuentes, registros más exactos) a lo que más pesa."),
+        H("1. El principio de Pareto"),
+        P("Chase: en el siglo XIX, Vilfredo Pareto, estudiando la distribución de la riqueza en Milán, «descubrió que **20% de las personas controlaban 80% de la riqueza**». En inventarios: «unas pocas piezas representan la mayor parte de la inversión»."),
+        P("Como no es práctico hacer un modelo para cada pieza, el ABC divide el inventario por **volumen de dólares** (uso anual × costo): **A** alto, **B** moderado, **C** bajo. «Una pieza de bajo costo pero de alto volumen puede ser más importante que una pieza cara pero de bajo volumen.»"),
+        H("2. Cómo se clasifica"),
+        L(["Calcular para cada ítem el **volumen anual en dinero** = demanda anual × costo unitario.",
+           "Ordenar de **mayor a menor**.", "Calcular el **% acumulado** del dinero y de los ítems.",
+           "Cortar en grupos. Chase: A ≈ **15%** más alto de las piezas, B el **35%** siguiente, C el último **50%**; en su ejemplo, 20% / 30% / 50%. «El punto en el que las líneas se dividen realmente depende del inventario en cuestión y en la cantidad de tiempo del personal disponible.»"], True),
+        P("«Observe que el **costo unitario** de las piezas **no tiene ninguna relación** con su clasificación.» Y una excepción: si una pieza es **crítica** (su ausencia provoca una pérdida significativa), se la puede poner en A o B aunque su volumen de dinero no lo justifique."),
+        T(["Clase", "Control que sugiere Chase", "Ejemplo: estación de servicio"], [
+            ["A", "más controlada, pedidos semanales", "gasolina (resurtido diario o semanal)"],
+            ["B", "pedidos cada dos semanas", "llantas, baterías, aceite, líquido de transmisión (cada 2 a 4 semanas)"],
+            ["C", "cada uno o dos meses; se puede tolerar que se agote", "válvulas, limpiaparabrisas, tapones de radiador, mangueras, bandas, aditivos, cera (cada 2 o 3 meses)"]]),
+        H("3. Exactitud del inventario y conteo cíclico"),
+        P("Los registros casi siempre difieren del conteo físico. Causas que da Chase: áreas abiertas donde se retiran piezas sin registrar, piezas mal ubicadas, pedidos registrados como recibidos que nunca llegaron, devoluciones sin anular el egreso. Primera regla: **almacén cerrado con llave**, acceso solo del personal del almacén, y la precisión de los registros como medida de su desempeño."),
+        P("**Conteo de ciclo:** «el inventario se cuenta con frecuencia en lugar de una o dos veces al año». La clave es decidir **qué piezas se cuentan, cuándo y por quién**. El sistema puede disparar un conteo:"),
+        L(["cuando el registro muestra un saldo bajo o cero (es más fácil contar pocas piezas);",
+           "cuando hay saldo positivo pero se registró un pedido pendiente (discrepancia);", "después de un nivel de actividad específico;",
+           "según la importancia de la pieza (ABC):"], True),
+        T(["Uso anual en dólares", "Revisión"], [["$10.000 o más", "30 días o menos"], ["$3.000 a $10.000", "45 días o menos"], ["$250 a $3.000", "90 días o menos"], ["menos de $250", "180 días o menos"]], "Chase cap. 17"),
+        P("Tolerancia recomendada: **±0,2%** para las A, **±1%** para las B y **±5%** para las C. Mejor momento para contar: sin actividad (fines de semana, segundo o tercer turno). Hay empresas con **contadores de ciclo de tiempo completo**, que suelen salir más baratos que el inventario anual con la planta cerrada."),
+        H("4. El plan de conteo: cómo se calcula"),
+        F("\\text{ítems por día} = \\frac{\\sum (\\text{cantidad de ítems de la clase} \\times \\text{conteos por año})}{\\text{días hábiles por año}}"),
+        EX("5. EJERCICIO — EBS (SG!EVA Evaluación 16/04/2003; EFR p.4; SG1 Lu Final 6)", [
+            P("«EBS tiene **6400** artículos en inventarios, **400** son clase A, **1000** son tipo B y **5000** son C. La compañía opera **250 días** al año y desea, en el año, contar **cinco** veces los tipo A, **dos** veces los B y solo **una** los C. Indicar la cantidad de artículos por día que debe contar EBS.» En EFR p.4 se agrega: «b) Si se dispone de **2 personas** trabajando un turno diario de **8 hs**, ¿se puede cumplir con el programa de conteo? El conteo demora **5 minutos**.»"),
+        ], [
+            AVISO("**Fuente:** resoluciones manuscritas de SG1.doc (Final 6) y EFR p.4; coinciden."),
+            F("400\\cdot 5 + 1000\\cdot 2 + 5000\\cdot 1 = 9000 \\text{ conteos por año} \\qquad \\frac{9000}{250} = 36 \\text{ artículos por día}"),
+            P("**b)** $36 \\cdot 5 \\text{ min} = 180$ min $= 3$ h por día. Con 2 personas × 8 h = 16 h disponibles, **se cumple** (la hoja: alcanza con **una persona**)."),
+        ]),
+        EX("6. VARIANTE — despejar cuántas veces se cuentan las A (EFR p.30 y p.34)", [
+            P("«Una empresa tiene en su depósito ítems de los cuales 400 son caracterizado tipo A, 1000 son B, y 5000 los C. Se cuentan **36 ítems por día**, se trabaja **200** días al año y los tipo C se cuentan sólo una vez al año, en cambio los del tipo B el doble. ¿Cuántas veces al año son contados los del tipo A?» (EFR p.34 trae la misma con **250 días**.)"),
+        ], [
+            AVISO("**Fuente:** resoluciones manuscritas de EFR p.30 y p.34."),
+            F("36\\cdot 200 = 7200 = 5000\\cdot 1 + 1000\\cdot 2 + 400\\,m \\Rightarrow m = 0{,}5"),
+            P("Con 200 días, las A se cuentan **media vez por año** (la hoja: «se demora 2 años para contar los 400 tipo A»). Con 250 días: $9000 = 7000 + 400m \\Rightarrow m = 5$ veces al año."),
+            P("**Comentario propio:** con 200 días el plan contradice el ABC (las A se contarían menos que las C). En el examen conviene decirlo."),
+        ]),
+        EX("7. EJERCICIO — Plan de conteo de 6300 elementos con dos operarios (EFR p.13 y p.24)", [
+            P("«Una empresa desea saber si puede cumplir con el plan de conteo de **6300** elementos. Trabaja **250** días al año, 2 operarios uno con un coeficiente global de actividad de **95%** y el otro de **80%**, **6 hs.** por día.»"),
+            T(["Elementos", "Frecuencia conteo", "Cantidad"], [["Tipo A", "Mensual", "900"], ["Tipo B", "Trimestral", "2100"], ["Tipo C", "Anual", "3300"]]),
+            P("«1.1 ¿Cuántos elementos se cuentan por día? 1.2 Indicar si se cumple con el programa y si existe tiempo ocioso. 1.3 De no poder cumplirse, ¿cuántos elementos se pueden llegar a contar? 1.4 ¿Qué subsistemas participan?» (EFR p.24 trae la versión sin coeficientes de actividad.)"),
+        ], [
+            AVISO("**Fuente:** resolución manuscrita de EFR p.13. El enunciado **no da** el tiempo por conteo; la hoja **supone 5 minutos por unidad**. Con otro supuesto cambian 1.2 y 1.3."),
+            F("900\\cdot 12 + 2100\\cdot 4 + 3300\\cdot 1 = 22\\,500 \\qquad \\frac{22\\,500}{250} = 90 \\text{ elementos por día}"),
+            P("Tiempo efectivo: $6\\cdot 0{,}95 = 5{,}7$ h (342 min) y $6\\cdot 0{,}80 = 4{,}8$ h (288 min). Con 5 min por elemento: $342/5 \\approx 68$ y $288/5 \\approx 58$ → **126 por día ≥ 90: se cumple**."),
+            F("\\text{ocioso} = (5{,}7 + 4{,}8) - \\frac{90\\cdot 5}{60} = 10{,}5 - 7{,}5 = 3 \\text{ h por día}"),
+            P("**1.3** no aplica (se cumple). **1.4** gestión de stock y almacén (la hoja). EFR p.24, sin coeficientes, lo resuelve al revés: $6\\cdot 60 = 360$ min; 45 elementos por empleado → hay **8 minutos** como máximo para contar cada uno."),
+        ]),
+        H("8. ABC con otro criterio: mano de obra"),
+        P("La clasificación no siempre es por volumen de dinero. Un final pide elegir qué vender del stock inmovilizado según la **incidencia de la mano de obra**."),
+        EX("9. EJERCICIO — Vender el 50% del capital inmovilizado (SG!EVA; EFR p.8–9; SG1 Lu Final 8)", [
+            P("«Una Empresa desea disponer de parte del material que tiene almacenado y sin movimiento (tabla adjunta). Para ello ha decidido vender el **50% del capital inmovilizado**, tomando los ítems que tienen **mayor incidencia de mano de obra**. Indicar cuáles son esos ítems a vender.»"),
+            T(["Ítem", "Cantidad (TN)", "Mano de obra (000$)", "Materiales (000$)", "Costo primo (000$)"], [
+                ["002", "15", "50", "25", "75"], ["004", "20", "43", "12", "55"], ["003", "9", "70", "8", "78"], ["001", "15", "22", "30", "52"],
+                ["020", "30", "12", "5", "17"], ["033", "40", "16", "20", "36"], ["035", "17", "15", "15", "30"], ["037", "23", "20", "22", "42"],
+                ["020", "40", "13", "20", "33"], ["021", "13", "25", "17", "42"], ["023", "80", "23", "33", "56"], ["040", "16", "78", "50", "128"],
+                ["041", "14", "62", "22", "84"], ["042", "31", "36", "40", "76"], ["036", "21", "45", "16", "61"], ["037", "14", "19", "28", "47"],
+                ["038", "22", "25", "19", "44"], ["051", "32", "52", "24", "76"], ["055", "22", "12", "32", "44"], ["060", "31", "17", "19", "36"]],
+              "Tabla transcripta de EFR p.8 (los ítems 020 y 037 aparecen dos veces en el original)"),
+        ], [
+            AVISO("**Hay dos resoluciones manuscritas con criterios distintos.** EFR p.9 ordena por **MO / costo primo** y acumula el **capital** (cantidad × costo primo; total 26.482). SG1.doc Final 8 ordena por **% de la MO total** (MO del ítem / 655) y acumula ese %, llegando a «54% ítems a vender». La consigna habla de **capital inmovilizado**: la que responde lo pedido es la de **EFR**. Rehice las cuentas (cálculo propio)."),
+            T(["Orden", "Ítem", "MO / costo primo", "Capital (cant. × CP)", "% acumulado del capital"], [
+                ["1", "003", "0,90", "702", "2,7%"], ["2", "004", "0,78", "1100", "6,8%"], ["3", "041", "0,74", "1176", "11,2%"],
+                ["4", "036", "0,74", "1281", "16,1%"], ["5", "020 (30 TN)", "0,71", "510", "18,0%"], ["6", "051", "0,68", "2432", "27,2%"],
+                ["7", "002", "0,67", "1125", "31,4%"], ["8", "040", "0,61", "2048", "39,2%"], ["9", "021", "0,60", "546", "41,2%"],
+                ["10", "038", "0,57", "968", "44,9%"], ["11", "035", "0,50", "510", "46,8%"], ["12", "037 (23 TN)", "0,48", "966", "**50,5%**"],
+                ["13", "042", "0,47", "2356", "59,4%"], ["…", "060, 033, 001, 023, 037, 020, 055", "0,47 a 0,27", "", "hasta 100%"]]),
+            P("**Ítems a vender: 003, 004, 041, 036, 020 (el de 30 TN), 051, 002, 040, 021, 038, 035 y 037 (el de 23 TN).** Son 12 de 20 ítems y suman el **50,5%** del capital inmovilizado (13.364 de 26.482 miles de $)."),
+            P("Con el criterio de SG1.doc (participación en la MO total) saldrían **040, 003, 041, 051, 002 y 036** (54,5% de la mano de obra), pero eso no es el 50% del capital."),
+        ]),
+        S("u5_pareto.svg", "Acumulado del capital de los ítems ordenados por incidencia de MO (gráfico propio)"),
+        EXAM("**Para el ABC de examen:** 1) definir el **criterio** (volumen anual en $, incidencia de MO, el que pida la consigna); 2) tabla ordenada con % y **% acumulado**; 3) cortar donde lo pide el enunciado (o en 15–20% / 30–35% / 50% de los ítems); 4) decir **qué control** lleva cada clase (frecuencia de pedido, de conteo, tolerancia)."),
+        G("10. Glosario", "", [
+            ["Volumen en dinero", "uso anual × costo", "Criterio estándar del ABC"], ["A / B / C", "clases", "Alto / moderado / bajo volumen en dinero"],
+            ["Conteo de ciclo", "conteo cíclico", "Contar seguido una parte del inventario en vez de todo una vez al año"],
+            ["Exactitud", "precisión del inventario", "Coincidencia entre el registro y lo físico"],
+            ["Coeficiente de actividad", "", "Fracción efectiva de la jornada de un operario (95%, 80%)"],
+            ["Costo primo", "", "Materiales + mano de obra directa"],
+        ]),
+    ]
+    src = [V6, EVA, "texto/examenes/bloques_eva/07_Evaluación_16_04_03.txt (EBS)", "texto/examenes/Ejercicios posibles.txt (EBS)",
+           EFR(4, "EBS"), EFR(8, "tabla ABC por mano de obra"), EFR(9, "ABC por mano de obra"), EFR(13, "plan de conteo 6300"),
+           EFR(24, "plan de conteo 6300 sin coeficientes"), EFR(30, "conteo: veces de las A, 200 días"), EFR(34, "conteo: veces de las A, 250 días"),
+           LU(9, "Final 6, EBS"), LU(10, "Final 8, ABC por % de mano de obra"), "texto/examenes/Preguntas de teoria del final de SG1.txt (final con ABC como único ejercicio)", PAT]
+    return clase("u5c7", "Clase 7 · Clasificación ABC y conteo cíclico", "Clasificación ABC y conteo cíclico", "B",
+                 "Pareto aplicado al inventario: cómo se clasifica, qué control lleva cada clase, la exactitud de los registros y el conteo cíclico. Con todos los ejercicios de conteo y el ABC por mano de obra de los finales.",
+                 src, t, "Clase 8 · Compras y proveedores", ["u5/img/u5_pareto.svg"])

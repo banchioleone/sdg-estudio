@@ -1,0 +1,322 @@
+{
+ "unitId": "u5",
+ "unitLabel": "Unidad 5",
+ "unitTitle": "Logística",
+ "id": "u5int",
+ "title": "Integrador · Ejercicios tipo examen",
+ "name": "Integrador de la U5",
+ "lede": "Todas las familias de ejercicios de inventarios que cayeron en finales, con la consigna, el camino de resolución, los resultados y la clase donde está desarrollado cada uno.",
+ "visto": false,
+ "source": [
+  "texto/examenes/SG!EVA.txt (compilado de finales 2002–2006)",
+  "patrones_examenes.md (conteos de finales)",
+  "texto/ocr/INVENTARIO_OCR.md",
+  "texto/examenes/preguntasabastecimiento.txt (Examen 2005, respuestas de alumno)",
+  "texto/examenes/Examen SG1 mult choice.txt y texto/Preguntas_Frecuentes.txt (multiple choice con marcas de alumno)",
+  "texto/examenes/SG-PreguntasTeoria-V1.0.txt",
+  "texto/ocr/efr_ppm/p-36.png — EjerciciosFinalesResueltos, resolución manuscrita (examen tipeado)"
+ ],
+ "laminas": [],
+ "next": null,
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Cierre · Integrador · Ejercicios tipo examen**"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Qué es esta página.** Una guía para practicar: **todas las familias de ejercicios de inventarios** que aparecen en el material, con la consigna resumida, el **camino de resolución** y dónde está resuelta en estas clases. Los resultados son los verificados en cada clase (resoluciones manuscritas corregidas o cálculo propio, según se indica allí)."
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** casi todo ejercicio de inventarios se resuelve con cinco preguntas: **¿qué modelo?** (perpetuo/periódico, con o sin incertidumbre, con o sin descuento), **¿cuánto pedir?** ($Q^*$), **¿cuándo?** (PP o T), **¿cuánto de seguridad?** (z·σ) y **¿quién lo hace?** (subsistemas)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Mapa de decisión"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Si el enunciado dice…",
+    "Usá",
+    "Clase"
+   ],
+   "rows": [
+    [
+     "demanda anual constante y entrega cierta",
+     "EOQ $Q^* = \\sqrt{2DS/H}$ y $R = \\bar d L$",
+     "2"
+    ],
+    [
+     "«ordena X unidades… porcentaje de variación respecto de la óptima»",
+     "EOQ + comparar costos de pedir y mantener",
+     "2"
+    ],
+    [
+     "tabla de precios por cantidad",
+     "EOQ por precio + factibilidad + quiebres",
+     "3"
+    ],
+    [
+     "demanda diaria normal N(μ, σ), nivel de servicio",
+     "perpetuo con SS: $R = \\bar d L + z\\sigma_d\\sqrt L$",
+     "5"
+    ],
+    [
+     "«se revisa cada…», «cada T días»",
+     "periódico: $q = \\bar d (T+L) + z\\sigma_{T+L} - I$",
+     "6"
+    ],
+    [
+     "compra única, costo de sobrar y de faltar",
+     "período único: $P \\leq C_u/(C_o+C_u)$",
+     "6"
+    ],
+    [
+     "clases A/B/C y frecuencias de conteo",
+     "plan de conteo: Σ(ítems × veces)/días",
+     "7"
+    ],
+    [
+     "«mayor incidencia de…», «X% del capital»",
+     "ABC con el criterio pedido y % acumulado",
+     "7"
+    ],
+    [
+     "«indicar subsistemas participantes»",
+     "gestión de stock / almacenes, compras, recepción, calidad, contable",
+     "1 y 5"
+    ]
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Familias de práctica"
+  },
+  {
+   "type": "ejercicio",
+   "title": "A · Sistema perpetuo con stock de seguridad (el más tomado)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Demanda diaria N(50,10), LT 3 días, \\$6 por pedido, 20% TEA, \\$1,2, NS 85%, 200 días (variantes: N(60,10) 90% 200 días; N(85,10) 85% 240 días). «Definir, confeccionar y calcular» + subsistemas."
+    }
+   ],
+   "solucion": [
+    {
+     "type": "table",
+     "headers": [
+      "Variante",
+      "Q*",
+      "z (tabla)",
+      "SS",
+      "PP"
+     ],
+     "rows": [
+      [
+       "N(50,10), 85%, 200 d",
+       "≈707",
+       "1,04",
+       "18",
+       "168"
+      ],
+      [
+       "N(60,10), 90%, 200 d",
+       "≈775",
+       "1,28",
+       "22",
+       "202"
+      ],
+      [
+       "N(85,10), 85%, 240 d",
+       "≈1010",
+       "1,04",
+       "18",
+       "273"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "Desarrollo completo y comparación con las hojas en la **Clase 5** (ojo con el error de unidades de algunas hojas en $Q^*$)."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "B · EOQ con descuentos (librería)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "600 cajas/año, \\$16 por orden, 36% anual, precios \\$7,50 / \\$7,35 / \\$7,00 con quiebres en 50 y 100."
+    }
+   ],
+   "solucion": [
+    {
+     "type": "paragraph",
+     "text": "Óptimo en el quiebre: **Q = 100 cajas**, CT ≈ \\$7,37 por caja; PP = 50 cajas. Variante con 20%: Q ≈ 117. Desarrollo en la **Clase 3**."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "C · Variación respecto del óptimo (IMBA / TT)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "150.000 ítems/año, pide 40.000, \\$40 por pedido, 20% de \\$0,15."
+    }
+   ],
+   "solucion": [
+    {
+     "type": "paragraph",
+     "text": "$Q^* = 20.000$; pide el doble (+100%); cuesta **\\$150/año más** (+25%). **Clase 2**."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "D · Política de abastecimiento (BIT-Kaffee, bar, hospital, Ingap)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Datos de consumo anual, costo de orden, % de manejo, precio y demora de entrega."
+    }
+   ],
+   "solucion": [
+    {
+     "type": "table",
+     "headers": [
+      "Caso",
+      "Q*",
+      "PP",
+      "Otro"
+     ],
+     "rows": [
+      [
+       "BIT-Kaffee (7500 cajas)",
+       "250",
+       "150",
+       "T ≈ 8 días"
+      ],
+      [
+       "Bar (730 cajas)",
+       "78",
+       "15",
+       ""
+      ],
+      [
+       "Hospital (500 kg)",
+       "200 kg",
+       "—",
+       "precio ≈ \\$2,08/kg"
+      ],
+      [
+       "Ingap SA (120 vasos/día)",
+       "≈1018",
+       "240",
+       "ahorro ≈ \\$386/año vs. comprar cada 30 días"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "Desarrollo en la **Clase 2**."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "E · EOQ con faltantes",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "1000 u/año, \\$10 por orden, \\$10 mantener, \\$40 por faltante. ¿Qué existencia está justificada?"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "paragraph",
+     "text": "Con el modelo de pedidos pendientes (complemento): Q = 50, **existencia máxima 40**. **Clase 2**."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "F · Plan de conteo ABC",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "EBS 6400 artículos (400 A ×5, 1000 B ×2, 5000 C ×1, 250 días); plan de 6300 elementos con dos operarios (95% y 80%, 6 h); despejar las veces de las A."
+    }
+   ],
+   "solucion": [
+    {
+     "type": "paragraph",
+     "text": "EBS: **36 artículos/día** (3 h con 5 min c/u). Plan 6300: **90/día**, capacidad 126/día, **3 h ociosas**. Veces de las A con 36/día y 200 días: **0,5 por año**. **Clase 7**."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "G · ABC por incidencia de mano de obra",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Vender el 50% del capital inmovilizado tomando los ítems de mayor incidencia de MO (tabla de 20 ítems)."
+    }
+   ],
+   "solucion": [
+    {
+     "type": "paragraph",
+     "text": "Ordenar por MO/costo primo y acumular cantidad × costo primo: **12 ítems** (003, 004, 041, 036, 020, 051, 002, 040, 021, 038, 035, 037) = 50,5%. **Clase 7**."
+    }
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Teoría y multiple choice"
+  },
+  {
+   "type": "ejercicio",
+   "title": "H · Preguntas de teoría que circulan",
+   "estado": "ver clases",
+   "blocks": [
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "«Analice la aplicación de un sistema de gestión de inventarios periódicos y ejemplifique» (EFR p.36) → **Clase 4**.",
+      "Tipo de control para alimentos frescos, diario, combustible, medicamentos, papel moneda (multiple choice) → **Clase 4**.",
+      "«Cada tipo de material requiere un método de gestión…» (independientes con MRP / indirectos solo perpetuo / críticos con periódico / consumibles con orden abierta) → **Clase 4** (ojo con la marca que circula).",
+      "Materiales directos e indirectos, órdenes abiertas y cerradas, etapas de compras, archivos, evaluación de proveedores (Examen 2005) → **Clase 8**.",
+      "«EOQ en multiple choice» (SG-PreguntasTeoria-V1.0: «3 Múltiple Choice, uno sobre EOQ otro sobre BOM y otro sobre JIT»): no está el enunciado; repasá supuestos y fórmula → **Clase 2**.",
+      "Concepto de inventario según TOC → **Clase 1** (sin definición de la cátedra en el material)."
+     ]
+    }
+   ],
+   "nota": "Las respuestas están desarrolladas en las clases indicadas. No hay claves oficiales en el material."
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Cómo se presenta un ejercicio de inventarios en el final:** 1) datos y supuestos (unidades: días/año, i anual); 2) modelo elegido y por qué; 3) cálculos con fórmula escrita; 4) **política** en una frase («pedir Q cuando la posición llegue a R»); 5) subsistemas y qué hace cada uno. Las hojas resueltas de la cátedra siguen ese orden."
+  }
+ ],
+ "historias": [],
+ "block": "D",
+ "blockTitle": "Cierre · Integrador"
+}
