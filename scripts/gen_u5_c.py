@@ -74,7 +74,7 @@ def c4():
 def c5():
     t = [
         P("**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque B · Clase 5 · Stock de seguridad y nivel de servicio**"),
-        AVISO("**De dónde sale esta clase.** El enfoque de probabilidad y el modelo de cantidad fija con inventario de seguridad: **Chase cap. 17**. Los ejercicios: la familia «demanda normal» de los finales (SG!EVA 2002–2004) con tres resoluciones manuscritas que **no coinciden entre sí**; las comparo y doy la resolución que se puede defender. La tabla normal y el cálculo de $z$ están en la **U2, Clase 1.b**."),
+        AVISO("**De dónde sale esta clase.** El enfoque de probabilidad y el modelo de cantidad fija con inventario de seguridad: **Chase cap. 17**. Los ejercicios: la familia «demanda normal» de los finales (SG!EVA 2002–2004) con tres resoluciones manuscritas que **no coinciden entre sí**; las comparo y doy la resolución que se puede defender. Los ejemplos 17.3 y 17.4 y el cálculo de $\\sigma_L$ están verificados contra el **libro completo** (Chase 12a ed., del Drive). La **tabla z de la cátedra** es el anexo de `practica_1.pdf` (sección 3). La tabla normal y el cálculo de $z$ están en la **U2, Clase 1.b**."),
         IDEA("**Idea central:** si la demanda varía, el peligro de faltante está **solo durante el tiempo de entrega**. Se pide antes: $R = \\bar d\\,L + z\\,\\sigma_L$. El lote $Q$ se sigue calculando con el EOQ; lo que cambia es el **punto de pedido**."),
         H("1. Stock de seguridad"),
         P("Chase: «El inventario de seguridad se define como las existencias que se manejan **además de la demanda esperada**. En una distribución normal, ésta sería la media.» Ejemplo del libro: demanda mensual promedio 100; si se manejan 120, hay 20 de inventario de seguridad."),
@@ -88,14 +88,32 @@ def c5():
         P("El sistema perpetuo vigila el stock y pide al llegar a R. «El peligro de tener faltantes en ese modelo ocurre **sólo durante el tiempo de entrega**.» (Chase)"),
         F("R = \\bar d\\,L + z\\,\\sigma_L", "punto de pedido con SS (Chase)"),
         F("SS = z\\,\\sigma_L \\qquad \\sigma_L = \\sqrt{\\sum_{i=1}^{L}\\sigma_{d}^2} = \\sigma_d\\sqrt{L}", "días independientes con el mismo desvío"),
-        P("Chase: la desviación estándar de una serie de ocurrencias independientes «es igual a la raíz cuadrada de la suma de las varianzas». Su ejemplo: σ = 10 unidades por día y entrega de 5 días: $\\sigma_L = \\sqrt{5\\cdot 10^2} = \\sqrt{500} \\approx 22{,}4$; para 95%, $z = 1{,}64$ y $SS = 1{,}64\\cdot 22{,}4 \\approx 37$ (cuenta propia con los datos del texto; el resultado es imagen en el V6)."),
+        P("Chase: la desviación estándar de una serie de ocurrencias independientes «es igual a la raíz cuadrada de la suma de las varianzas». Su ejemplo: σ = 10 unidades por día y entrega de 5 días: $\\sigma_L = \\sqrt{5\\cdot 10^2} = \\sqrt{500} \\approx 22{,}4$; para 95%, $z = 1{,}64$ y $SS = 1{,}64\\cdot 22{,}4 \\approx 37$. En el libro (p. 561): «σ5 = 22,36», «SS = zσL = 1,64 × 22,36 = **36,67**» [17.9]."),
         P("La cantidad a pedir es la misma que sin incertidumbre: «la diferencia clave … radica en el cálculo del punto de volver a pedir. **La cantidad del pedido es la misma en ambos casos**.»"),
+        EJ("Ejemplo del libro · Chase, Ejemplo 17.3 (p. 561): el desvío ya viene para todo el lead time", [
+            P("Demanda anual **D = 1000**, cantidad económica **Q = 200**, probabilidad deseada de no agotarse **P = 0,95**, desvío de la demanda durante el tiempo de entrega **σL = 25** unidades, tiempo de entrega **L = 15 días**, año de **250 días hábiles**."),
+            F("\\bar d = \\frac{1000}{250} = 4 \\qquad R = \\bar d L + z\\sigma_L = 4\\cdot 15 + 1{,}64\\cdot 25 = 60 + 41 = 101 \\text{ unidades}"),
+            P("«Cuando el inventario disponible baje a **101** unidades, es necesario pedir **200** más.» Acá **no** se multiplica por √L: el dato ya es σL."),
+        ]),
+        EJ("Ejemplo del libro · Chase, Ejemplo 17.4 (p. 562): el desvío viene por día", [
+            P("Demanda diaria normal con media **60** y desvío **7**; entrega constante de **6 días**; costo de pedido **10 dólares**; mantenimiento **0,50 dólares** por unidad al año; ventas los **365 días**; probabilidad de **95%** de no agotarse en el tiempo de entrega."),
+            F("Q_{opt} = \\sqrt{\\frac{2\\cdot 60\\cdot 365\\cdot 10}{0{,}50}} = \\sqrt{876\\,000} = 936 \\text{ unidades}"),
+            F("\\sigma_L = \\sqrt{6\\cdot 7^2} = 17{,}15 \\qquad R = 60\\cdot 6 + 1{,}64\\cdot 17{,}15 = 388 \\text{ unidades}"),
+            P("Política de Chase: «se hace un pedido de **936** unidades siempre que el número de unidades restantes en el inventario baja a **388**». Es el mismo molde que el ejercicio de final: **D anual con H anual** para Q, y días para R."),
+        ]),
         S("u5_normal.svg", "SS = z·σL con los datos del final N(50,10), 85% (gráfico propio)"),
         H("3. Cómo sale z"),
-        T(["Nivel de servicio", "z (tabla normal, una cola)", "Lo que usan las hojas resueltas"], [
-            ["80%", "0,84", ""], ["84,13%", "1,00", "**Lu Final 1 usa z = 1 para 85%**"], ["85%", "**1,04**", "EFR p.10 usa 1,15 para 85%"],
-            ["90%", "**1,28**", "Lu Final 9 y EFR p.10 usan 1,25"], ["95%", "**1,64** (1,645)", "Chase usa 1,64"], ["97,5%", "1,96", ""], ["99%", "2,33", ""]]),
-        AVISO("**Las hojas resueltas redondean z de distintas maneras** (1 o 1,15 para 85%; 1,25 para 90%). Con la tabla, **85% → z ≈ 1,04 y 90% → z ≈ 1,28**. En estos ejercicios la diferencia en el SS es de 1 caja, pero escribí el valor de tabla y cómo lo buscaste (área 0,85 → z = 1,04)."),
+        P("**La tabla de la cátedra** es el Anexo de la práctica «Repaso de conceptos estadísticos básicos» (`practica_1.pdf`, 2017): «Áreas para la distribución de probabilidad normal estándar». Da el **área entre 0 y z** (media tabla), no la acumulada desde −∞ que trae el Apéndice E de Chase. Por eso hay que restar la mitad:"),
+        F("\\text{nivel de servicio } N\\% \\;\\Rightarrow\\; \\text{área buscada} = \\frac{N - 50}{100} \\;\\Rightarrow\\; z", "regla para la tabla de 0 a z"),
+        T(["Nivel de servicio", "Área buscada (0 a z)", "En la tabla de la cátedra", "z", "Lo que usan las hojas resueltas"], [
+            ["80%", "0,30", "0,2995 en 0,84", "0,84", ""],
+            ["85%", "0,35", "0,3485 en 1,03 · **0,3508 en 1,04**", "**1,04**", "Lu Final 1 usa 1 (= 84,13%) · EFR p.10 usa 1,15 (= 87,5%)"],
+            ["90%", "0,40", "**0,3997 en 1,28**", "**1,28**", "Lu Final 9 y EFR p.10 usan **1,25 (error: 0,3944 = 89,4%)**"],
+            ["95%", "0,45", "0,4495 en 1,64 · 0,4505 en 1,65", "**1,64 o 1,65**", "Chase usa 1,64"],
+            ["97,5%", "0,475", "0,4750 en 1,96", "1,96", ""],
+            ["98%", "0,48", "0,4798 en 2,05", "2,05", "Chase usa 2,05 (Ejemplo 17.5)"],
+            ["99%", "0,49", "0,4901 en 2,33", "2,33", "Chase usa 2,33 (Problema resuelto 3)"]], "z con la tabla de practica_1.pdf (lectura propia de la tabla)"),
+        AVISO("**Las hojas resueltas redondean mal z.** Con la tabla de la cátedra: **85% → 1,04** y **90% → 1,28**. El **1,25 para 90% es un error de lectura** (1,25 deja un área de 0,3944, o sea 89,4%); el 1,15 para 85% corresponde a 87,5%, y z = 1 a 84,13%. En estos ejercicios cambia el SS en una caja, pero en el examen escribí el área que buscaste y el z de tabla (por ejemplo: 85% → área 0,35 → z = 1,04)."),
         H("4. El ejercicio que más se repite"),
         EX("5. EJERCICIO — «Definir, confeccionar y calcular un sistema de gestión de inventarios» (SG!EVA; EFR p.24; SG1 Lu Final 1)", [
             P("«La demanda diaria de un producto indirecto está distribuida normalmente por una media diaria de **50 cajas** con una desviación estándar de **10 cajas**. El abastecimiento es prácticamente seguro, con un tiempo de espera de **tres días**. El costo de colocación de un pedido es de **$6** y el interés perdido por mantenimiento de stock es de **20% TEA**, el precio unitario de la componente es de **$1,2**. Se desea un nivel de satisfacción del servicio al cliente estimado en el **85%**, inclusive cuando demanden el producto en el período de reabastecimiento. Nota: pueden haber pedidos no surtidos, cuando la existencia es nula, que se cumplirán posteriormente. Se trabaja **200 días** al año.»"),
@@ -118,7 +136,7 @@ def c5():
             AVISO("**Fuentes:** EFR p.10 (segunda mitad) y SG1.doc Final 9. EFR usa bien las unidades: $Q^* = \\sqrt{2\\cdot 60\\cdot 6/(1{,}2\\cdot 0{,}2/200)} = 775$. Lu repite el error de unidades y da 55. Me quedo con EFR."),
             F("D = 12\\,000 \\qquad Q^* = \\sqrt{\\frac{2\\cdot 12\\,000\\cdot 6}{0{,}24}} \\approx 775 \\text{ cajas}"),
             F("SS = 1{,}28\\cdot 17{,}3 \\approx 22 \\qquad R = 180 + 22 = 202 \\text{ cajas}"),
-            P("Las dos hojas: **SS = 22 y PP = 202** (con z = 1,25). EFR cierra: «cada vez que el nivel de existencias alcance las 202 cajas, se deberá realizar un pedido de 775 u los cuales arribarán en 3 días»."),
+            P("Las dos hojas: **SS = 22 y PP = 202** (con z = 1,25, que es un **error de lectura** de la tabla: para 90% va **1,28**; acá el redondeo da igual 22). EFR cierra: «cada vez que el nivel de existencias alcance las 202 cajas, se deberá realizar un pedido de 775 u los cuales arribarán en 3 días»."),
         ]),
         EX("7. VARIANTE — N(85,10), 85%, 240 días (SG!EVA 18/07/2002; EFR p.9–10)", [
             P("«La demanda diaria para una componente de un determinado producto, está distribuida normalmente por una media diaria de **85 cajas** con una desviación estándar de 10 cajas … tiempo de espera de tres días … $6 … 20% TEA … $1,2 … **85%** … Se trabaja **240 días** al año. Definir, Confeccionar y Calcular un sistema de gestión de inventarios.»"),
@@ -131,14 +149,20 @@ def c5():
         EXAM("**Checklist del ejercicio tipo:** 1) **definir** el modelo (perpetuo con SS, demanda normal, se admiten pendientes); 2) pasar todo a las **mismas unidades** (D anual con i anual); 3) $Q^*$; 4) $\\bar d L$, $\\sigma_L = \\sigma_d\\sqrt L$, $z$ de tabla, SS y PP; 5) enunciar la **política** con números; 6) **subsistemas** y qué hace cada uno."),
         H("8. Otro uso del mismo razonamiento"),
         P("En una mesa especial de octubre (sin fecha) la práctica de pronósticos terminaba pidiendo «la tasa de capacidad de producción para que, con un **95%** de probabilidad, no haya faltantes en la línea de producción». Es la misma idea: **pronóstico medio + 1,64 desvíos del error**. No tengo los datos de esa mesa."),
-        G("9. Glosario", "", [
+        H("9. Otra forma de fijar el stock de seguridad: el coeficiente de política de stocks (Morán)"),
+        P("En el apunte **«Producción Justo a Tiempo»** (R. Morán, UNR 2012, del Drive), para calcular cuántos kanban (contenedores) hacen falta entre dos centros de trabajo, el punto de pedido es «la demanda media durante el tiempo de producción más el stock de seguridad». Como en planta es «prácticamente imposible» estimar la distribución de la demanda en ese tiempo, el SS se estima **como una fracción de la demanda media en el lead time**:"),
+        F("SS = \\alpha\\,D\\,L \\qquad K = \\frac{D\\,L}{a}\\,(1+\\alpha)", "Morán · D = tasa de demanda (u/día) · L = tiempo medio de producción (días) · a = capacidad del contenedor · α = coeficiente de política de stocks (0 ≤ α < 1) · K entero, mínimo 1"),
+        P("La justificación del apunte: si el tiempo de reposición se toma como $L + h\\,\\sigma_L$ («el límite superior del intervalo de confianza», con $h$ elegido para cierto nivel de confianza), la demanda en ese tiempo es $DL + DL\\,(h\\sigma_L/L)$: el segundo término es el SS, con $\\alpha = h\\,\\sigma_L/L$. En la práctica «no se calcula α … sino que se lo fija directamente … y luego se lo ajusta empíricamente» (el apunte da como ejemplo α = 0,10)."),
+        P("**Diferencia con Chase:** acá la incertidumbre está en el **tiempo** de reposición y se fija con un coeficiente; en Chase está en la **demanda** y se calcula con z·σL. El apunte remite a otro de Morán, «Gestión de las Existencias (Stocks)» (UNR 2007, págs. 46–54), que **no está en el Drive**."),
+        G("10. Glosario", "", [
             ["SS", "stock de seguridad", "Existencias por encima de la demanda esperada en el lead time"],
             ["z", "desvíos", "De la tabla normal según el nivel de servicio"], ["σd", "desvío diario", "De la demanda por día"],
             ["σL", "desvío en el lead time", "σd·√L si los días son independientes"], ["d̄L (D_LT)", "demanda media en el lead time", ""],
             ["R = d̄L + zσL", "punto de pedido", "PP en las hojas"], ["NS (NSF, EF)", "nivel de servicio", "Probabilidad de no faltar en el ciclo"],
+            ["α", "coeficiente de política de stocks", "Morán: SS = α·D·L, fijado y ajustado empíricamente"],
         ]),
     ]
-    src = [V6, EVA, EFR(9, "enunciado N(85,10)"), EFR(10, "N(85,10) y N(60,10)"), EFR(24, "N(50,10) y subsistemas"),
+    src = [V6, CH(17, "561–562", "σL, Ejemplos 17.3 y 17.4"), TZ, JIT + ", págs. 6–7 (cálculo del número de kanban)", EVA, EFR(9, "enunciado N(85,10)"), EFR(10, "N(85,10) y N(60,10)"), EFR(24, "N(50,10) y subsistemas"),
            LU(2, "Final 1, N(50,10)"), LU(11, "Final 9, N(60,10)"), "texto/examenes/mesa_especial_oct.txt", PAT,
            "content/u2/clase01b.json (tabla Z, U2 Clase 1.b)"]
     return clase("u5c5", "Clase 5 · Stock de seguridad y nivel de servicio", "Stock de seguridad y nivel de servicio", "B",

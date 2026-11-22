@@ -9,6 +9,8 @@
  "visto": false,
  "source": [
   "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 17 «Control de inventarios» (Chase), págs. 258–285 del PDF del resumen",
+  "Chase 12a ed., cap. 17, p. 558 — Ejemplo 17.2 (drive_u5/txt/cap17_chase12.txt)",
+  "Chase 12a ed., cap. 17, p. 577 — Problema resuelto 2 (drive_u5/txt/cap17_chase12.txt)",
   "texto/examenes/SG!EVA.txt (compilado de finales 2002–2006)",
   "texto/ocr/efr_ppm/p-02.png — EjerciciosFinalesResueltos, resolución manuscrita (TT/IMBA)",
   "texto/ocr/efr_ppm/p-16.png — EjerciciosFinalesResueltos, resolución manuscrita (BIT-Kaffee)",
@@ -31,7 +33,7 @@
   {
    "type": "callout",
    "kind": "aviso",
-   "text": "**De dónde sale esta clase.** El modelo y sus supuestos: **Chase cap. 17**, ecuaciones [17.2] a [17.4]. En el Resumen V6 las fórmulas son imagen y no se leen; las escribo en la notación estándar de Chase con las definiciones que sí están en el texto. Los ejercicios son de finales (SG!EVA, EjerciciosFinalesResueltos, SG1.doc). **Las resoluciones con la etiqueta «cálculo propio» son mías**; cuando hay hoja manuscrita, lo digo y comparo."
+   "text": "**De dónde sale esta clase.** El modelo y sus supuestos: **Chase cap. 17**, ecuaciones [17.2] a [17.4]. En el Resumen V6 las fórmulas son imagen y no se leen; las escribo en la notación estándar de Chase con las definiciones que sí están en el texto; ahora además están **verificadas contra el libro completo** (Chase 12a ed., bajado del Drive), del que salen el Ejemplo 17.2 y el Problema resuelto 2. Los ejercicios son de finales (SG!EVA, EjerciciosFinalesResueltos, SG1.doc). **Las resoluciones con la etiqueta «cálculo propio» son mías**; cuando hay hoja manuscrita, lo digo y comparo."
   },
   {
    "type": "callout",
@@ -159,6 +161,54 @@
    "type": "heading",
    "level": 2,
    "text": "6. Ejemplos resueltos"
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo del libro · Chase, Ejemplo 17.2 (p. 558)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Encuentre la cantidad económica de pedidos y el punto de volver a pedir, dados»: demanda anual **D = 1000** unidades; demanda diaria promedio $\\bar d = 1000/365$; costo de pedido **S = 5 dólares**; costo de mantenimiento **H = 1,25 dólares** por unidad al año; tiempo de entrega **L = 5 días**; costo por unidad **C = 12,50 dólares**."
+    },
+    {
+     "type": "formula",
+     "tex": "Q_{opt} = \\sqrt{\\frac{2DS}{H}} = \\sqrt{\\frac{2\\cdot 1000\\cdot 5}{1{,}25}} = \\sqrt{8000} = 89{,}4 \\text{ unidades}"
+    },
+    {
+     "type": "formula",
+     "tex": "R = \\bar d\\,L = \\frac{1000}{365}\\cdot 5 = 13{,}7 \\text{ unidades}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Chase redondea y enuncia la política: «cuando la posición del inventario baja a **14**, hacer un pedido de **89** piezas más»."
+    },
+    {
+     "type": "formula",
+     "tex": "CT = DC + \\frac{D}{Q}S + \\frac{Q}{2}H = 1000\\cdot 12{,}50 + \\frac{1000}{89}\\cdot 5 + \\frac{89}{2}\\cdot 1{,}25 = 12\\,611{,}81 \\text{ dólares}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Fijate que en el óptimo pedir (≈ 56,18) y mantener (≈ 55,63) casi se igualan: la diferencia es solo por redondear Q a 89 *(desglose: cálculo propio)*."
+    }
+   ]
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo del libro · Chase, Problema resuelto 2 (p. 577)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Las piezas compradas a un distribuidor cuestan 20 dólares cada una, y el pronóstico de la demanda para el próximo año es de 1000 unidades. Si cada vez que se hace un pedido de más unidades el costo es de 5 dólares y el costo de almacenamiento es de 4 dólares por unidad al año, ¿qué cantidad se debe pedir en cada ocasión? a) ¿Cuál es el costo total de pedido para ese año? b) ¿Cuál es el costo total de almacenamiento para ese año?»"
+    },
+    {
+     "type": "formula",
+     "tex": "Q = \\sqrt{\\frac{2\\cdot 1000\\cdot 5}{4}} = 50 \\text{ unidades} \\qquad \\frac{D}{Q}S = \\frac{1000}{50}\\cdot 5 = 100 \\qquad \\frac{Q}{2}H = \\frac{50}{2}\\cdot 4 = 100"
+    },
+    {
+     "type": "paragraph",
+     "text": "Costo de pedido **100 dólares** y de almacenamiento **100 dólares** al año (Chase). Otra vez, en $Q^*$ los dos costos son iguales."
+    }
+   ]
   },
   {
    "type": "ejemplo",

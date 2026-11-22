@@ -14,7 +14,10 @@
   "texto/examenes/preguntasabastecimiento.txt (Examen 2005, respuestas de alumno)",
   "texto/examenes/Examen SG1 mult choice.txt y texto/Preguntas_Frecuentes.txt (multiple choice con marcas de alumno)",
   "texto/examenes/SG-PreguntasTeoria-V1.0.txt",
-  "texto/ocr/efr_ppm/p-36.png — EjerciciosFinalesResueltos, resolución manuscrita (examen tipeado)"
+  "texto/examenes/Preguntas de teoria del final de SG1.txt (final de Feraboli del 14/03/2013)",
+  "texto/ocr/efr_ppm/p-36.png — EjerciciosFinalesResueltos, resolución manuscrita (examen tipeado)",
+  "Chase 12a ed., cap. 17, p. 578–587 — preguntas de repaso y problemas (drive_u5/txt/cap17_chase12.txt)",
+  "drive_u5/txt/administracionOperaciones.txt — Apéndice A, p. 739 (respuestas a problemas seleccionados del cap. 17)"
  ],
  "laminas": [],
  "next": null,
@@ -300,7 +303,7 @@
      "ordered": false,
      "items": [
       "«Analice la aplicación de un sistema de gestión de inventarios periódicos y ejemplifique» (EFR p.36) → **Clase 4**.",
-      "Tipo de control para alimentos frescos, diario, combustible, medicamentos, papel moneda (multiple choice) → **Clase 4**.",
+      "Tipo de control para alimentos frescos, diario, combustible, medicamentos, papel moneda (multiple choice; lo tomó Feraboli el 14/03/2013) → **Clase 4**. Es casi igual a la **pregunta de repaso 9 de Chase** (ejercicio I).",
       "«Cada tipo de material requiere un método de gestión…» (independientes con MRP / indirectos solo perpetuo / críticos con periódico / consumibles con orden abierta) → **Clase 4** (ojo con la marca que circula).",
       "Materiales directos e indirectos, órdenes abiertas y cerradas, etapas de compras, archivos, evaluación de proveedores (Examen 2005) → **Clase 8**.",
       "«EOQ en multiple choice» (SG-PreguntasTeoria-V1.0: «3 Múltiple Choice, uno sobre EOQ otro sobre BOM y otro sobre JIT»): no está el enunciado; repasá supuestos y fórmula → **Clase 2**.",
@@ -309,6 +312,125 @@
     }
    ],
    "nota": "Las respuestas están desarrolladas en las clases indicadas. No hay claves oficiales en el material."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Práctica extra con el libro (Chase cap. 17, p. 578–587)"
+  },
+  {
+   "type": "paragraph",
+   "text": "El libro completo (Chase 12a ed., del Drive) trae **11 preguntas de repaso** y **33 problemas** al final del capítulo de inventarios. No son de la cátedra, pero sirven para practicar los mismos modelos. Los que más se parecen a lo que se tomó: la **pregunta 9** y los **problemas 9 y 18**."
+  },
+  {
+   "type": "ejercicio",
+   "title": "I · ★ Pregunta de repaso 9 (es el multiple choice de la cátedra)",
+   "estado": "para resolver",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«¿Qué tipo de sistema de inventarios utilizaría en las situaciones siguientes? a) Abastecer su cocina con alimentos frescos. b) Obtener un periódico todos los días. c) Comprar gasolina para su auto. ¿A cuál de estas piezas le asigna el costo de faltantes más elevado?»"
+    }
+   ],
+   "nota": "Es casi la misma consigna del multiple choice de «tipo de control» que tomó Feraboli (14/03/2013). Resolvelo con la Clase 4 (perpetuo o periódico, y por qué) y la Clase 6 (período único para el diario). El libro no da la respuesta."
+  },
+  {
+   "type": "ejercicio",
+   "title": "J · Las otras preguntas de repaso (p. 578)",
+   "estado": "para resolver",
+   "blocks": [
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "1. Demanda dependiente e independiente en un McDonald's, un fabricante de copiadoras y una compañía de suministros farmacéuticos → Clase 1.",
+      "2. Inventario en proceso, de seguridad y estacional → Clases 1 y 5.",
+      "3. Naturaleza de los costos que afectan el tamaño del inventario → Clases 1 y 2.",
+      "4. ¿Cuándo elegir cantidad fija en lugar de período fijo? Desventajas del período fijo → Clase 4.",
+      "5. Procedimiento con reducciones de precio; ¿cambia si el costo de mantener es un porcentaje del precio? → Clase 3.",
+      "6. Preguntas básicas que responde una regla de decisión de inventarios → Clase 0 (cuándo y cuánto pedir).",
+      "7. Supuestos de los costos de preparación, pedido y manejo; ¿qué tan válidos son? → Clase 2.",
+      "8. «Lo bueno de los modelos de inventarios es que puede tomar uno predeterminado y aplicarlo siempre…» Comente → Clases 2 y 4.",
+      "10. ¿Por qué clasificar en grupos, como en el ABC? → Clase 7.",
+      "11. Política para mejorar los inventarios de una tienda departamental → Clase 6 (servicios)."
+     ]
+    }
+   ],
+   "nota": "Respuestas en las clases indicadas; el libro no trae clave."
+  },
+  {
+   "type": "ejercicio",
+   "title": "K · ★ Problema 9: EOQ y descuento por pedido (p. 579–580)",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«La demanda de una pieza es de 1000 unidades al año. Cada pedido hecho cuesta 10 dólares; el costo anual de manejar las piezas en el inventario es de 2 dólares cada uno. a) ¿Qué cantidad se debe pedir? b) Suponiendo que hay un descuento de 100 dólares por pedido si se piden 500 unidades o más. ¿Se deben hacer pedidos de 500 piezas o es necesario apegarse a la decisión tomada en a)?»"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Cálculo propio** (el libro no publica la respuesta). Interpreto el descuento como 100 dólares menos **por cada pedido** de 500 o más."
+    },
+    {
+     "type": "formula",
+     "tex": "a)\\; Q^* = \\sqrt{\\frac{2\\cdot 1000\\cdot 10}{2}} = 100 \\qquad \\frac{1000}{100}\\cdot 10 + \\frac{100}{2}\\cdot 2 = 100 + 100 = 200 \\text{ dólares/año}"
+    },
+    {
+     "type": "formula",
+     "tex": "b)\\; Q = 500:\\; \\frac{1000}{500}\\cdot 10 + \\frac{500}{2}\\cdot 2 - 2\\cdot 100 = 20 + 500 - 200 = 320 \\text{ dólares/año}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Pedir 500 cuesta más (320 contra 200): **conviene seguir pidiendo 100**. Es el mismo razonamiento que la familia IMBA (Clase 2) y la librería (Clase 3): comparar costos totales del óptimo y de la alternativa."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "L · ★ Problema 18: período fijo con 98% (p. 581)",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«La demanda diaria de un producto es de 60 unidades con una desviación estándar de 10 unidades. El periodo de revisión es de 10 días y el tiempo de entrega de dos días. En el momento de la revisión, hay 100 unidades en existencia. Si se desea una probabilidad de servicio de 98%, ¿cuántas unidades hay que pedir?»"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Cálculo propio** (el libro no publica la respuesta)."
+    },
+    {
+     "type": "formula",
+     "tex": "\\sigma_{T+L} = 10\\sqrt{12} = 34{,}64 \\qquad z_{98\\%} = 2{,}05 \\qquad q = 60\\cdot 12 + 2{,}05\\cdot 34{,}64 - 100 \\approx 691 \\text{ unidades}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Es la familia «demanda normal» de los finales (Clase 5) pero con revisión periódica (Clase 6): misma media diaria de 60 y desvío de 10 que la variante N(60,10)."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "M · Otros problemas del capítulo con respuesta en el libro (Apéndice A, p. 739)",
+   "estado": "para resolver",
+   "blocks": [
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "**5.** Charlie's Pizza: pedido cada 4 semanas, entrega 3 semanas, 150 libras/semana con desvío 30, 98%, hay 500 libras → respuesta del libro: **q = 713**.",
+      "**8.** Jill's Job Shop: Tegdiws por punto de pedido y Widgets cada 3 semanas → respuestas del libro: **a) Q = 1225, R = 824; b) q = 390 − existencias en inventario**.",
+      "**12.** Elemento X: 2000 unidades/año, 25 dólares cada una, almacenamiento 5 dólares por unidad, pedido 10 dólares → respuestas del libro: **a) Q = 89; b) 224,72 dólares; c) 222,50 dólares**.",
+      "**14.** Materia prima a 20, 19 o 18 dólares por libra (menos de 100, 100 a 1000, más de 1000), pedido 40 dólares, demanda 3000, manejo 25% → descuentos, Clase 3 (sin respuesta en el libro)."
+     ]
+    }
+   ],
+   "nota": "Usá las respuestas del libro para autocorregirte. Los enunciados completos están en drive_u5/txt/cap17_chase12.txt."
   },
   {
    "type": "callout",

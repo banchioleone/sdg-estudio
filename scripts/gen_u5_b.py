@@ -3,7 +3,7 @@ from u5lib import *
 def c2():
     t = [
         P("**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque A · Clase 2 · Lote económico (EOQ / LEC) y punto de pedido**"),
-        AVISO("**De dónde sale esta clase.** El modelo y sus supuestos: **Chase cap. 17**, ecuaciones [17.2] a [17.4]. En el Resumen V6 las fórmulas son imagen y no se leen; las escribo en la notación estándar de Chase con las definiciones que sí están en el texto. Los ejercicios son de finales (SG!EVA, EjerciciosFinalesResueltos, SG1.doc). **Las resoluciones con la etiqueta «cálculo propio» son mías**; cuando hay hoja manuscrita, lo digo y comparo."),
+        AVISO("**De dónde sale esta clase.** El modelo y sus supuestos: **Chase cap. 17**, ecuaciones [17.2] a [17.4]. En el Resumen V6 las fórmulas son imagen y no se leen; las escribo en la notación estándar de Chase con las definiciones que sí están en el texto; ahora además están **verificadas contra el libro completo** (Chase 12a ed., bajado del Drive), del que salen el Ejemplo 17.2 y el Problema resuelto 2. Los ejercicios son de finales (SG!EVA, EjerciciosFinalesResueltos, SG1.doc). **Las resoluciones con la etiqueta «cálculo propio» son mías**; cuando hay hoja manuscrita, lo digo y comparo."),
         IDEA("**Idea central:** pedir mucho de una vez baja el costo de pedir y sube el de mantener. El **lote económico** $Q^*$ es el tamaño que hace mínima la suma. Con demanda y entrega ciertas, se pide $Q^*$ cada vez que el stock baja al **punto de pedido** $R = \\bar d \\cdot L$."),
         H("1. Supuestos del modelo básico"),
         P("Chase los da como «irreales, pero representan un punto de partida»:"),
@@ -34,6 +34,19 @@ def c2():
         F("CT(Q) = c + \\frac{L}{Q} + \\frac{c\\,i\\,Q}{2D}", "por unidad · SG1 Lu Final 2; EFR p.2, 3 y 16"),
         P("Da el mismo óptimo y ordena igual las alternativas. Para pasar a pesos por año, multiplicás por $D$."),
         H("6. Ejemplos resueltos"),
+        EJ("Ejemplo del libro · Chase, Ejemplo 17.2 (p. 558)", [
+            P("«Encuentre la cantidad económica de pedidos y el punto de volver a pedir, dados»: demanda anual **D = 1000** unidades; demanda diaria promedio $\\bar d = 1000/365$; costo de pedido **S = 5 dólares**; costo de mantenimiento **H = 1,25 dólares** por unidad al año; tiempo de entrega **L = 5 días**; costo por unidad **C = 12,50 dólares**."),
+            F("Q_{opt} = \\sqrt{\\frac{2DS}{H}} = \\sqrt{\\frac{2\\cdot 1000\\cdot 5}{1{,}25}} = \\sqrt{8000} = 89{,}4 \\text{ unidades}"),
+            F("R = \\bar d\\,L = \\frac{1000}{365}\\cdot 5 = 13{,}7 \\text{ unidades}"),
+            P("Chase redondea y enuncia la política: «cuando la posición del inventario baja a **14**, hacer un pedido de **89** piezas más»."),
+            F("CT = DC + \\frac{D}{Q}S + \\frac{Q}{2}H = 1000\\cdot 12{,}50 + \\frac{1000}{89}\\cdot 5 + \\frac{89}{2}\\cdot 1{,}25 = 12\\,611{,}81 \\text{ dólares}"),
+            P("Fijate que en el óptimo pedir (≈ 56,18) y mantener (≈ 55,63) casi se igualan: la diferencia es solo por redondear Q a 89 *(desglose: cálculo propio)*."),
+        ]),
+        EJ("Ejemplo del libro · Chase, Problema resuelto 2 (p. 577)", [
+            P("«Las piezas compradas a un distribuidor cuestan 20 dólares cada una, y el pronóstico de la demanda para el próximo año es de 1000 unidades. Si cada vez que se hace un pedido de más unidades el costo es de 5 dólares y el costo de almacenamiento es de 4 dólares por unidad al año, ¿qué cantidad se debe pedir en cada ocasión? a) ¿Cuál es el costo total de pedido para ese año? b) ¿Cuál es el costo total de almacenamiento para ese año?»"),
+            F("Q = \\sqrt{\\frac{2\\cdot 1000\\cdot 5}{4}} = 50 \\text{ unidades} \\qquad \\frac{D}{Q}S = \\frac{1000}{50}\\cdot 5 = 100 \\qquad \\frac{Q}{2}H = \\frac{50}{2}\\cdot 4 = 100"),
+            P("Costo de pedido **100 dólares** y de almacenamiento **100 dólares** al año (Chase). Otra vez, en $Q^*$ los dos costos son iguales."),
+        ]),
         EJ("Ejemplo 1 · BIT-Kaffee (final, EFR p.16)", [
             P("«BIT-Kaffee consume anualmente **7500 cajas** de vasos descartables de 100cc. Los costos de ordenar son de **$15** y el anual de manejo (almacenamiento, etc.) **30%** del precio de compra. Cada caja cuesta **$12**, y se sabe que el tiempo de demora de la entrega es de **5 días**. Establezca una política y programa de abastecimiento óptimo.» La hoja toma **250 días hábiles** por año."),
             F("H = 0{,}30 \\cdot 12 = 3{,}6 \\qquad Q^* = \\sqrt{\\frac{2 \\cdot 7500 \\cdot 15}{3{,}6}} = \\sqrt{62\\,500} = 250 \\text{ cajas}"),
@@ -95,7 +108,7 @@ def c2():
             ["T = Q*/d̄", "tiempo entre pedidos", "En días si d̄ es diaria"], ["B", "costo de faltante", "Complemento: $ por unidad pendiente y por año"],
         ]),
     ]
-    src = [V6, EVA, EFR(2, "TT/IMBA"), EFR(16, "BIT-Kaffee"), EFR(17, "bar 730 cajas"), EFR(30, "hospital algodón; EOQ con faltantes"),
+    src = [V6, CH(17, "558", "Ejemplo 17.2"), CH(17, "577", "Problema resuelto 2"), EVA, EFR(2, "TT/IMBA"), EFR(16, "BIT-Kaffee"), EFR(17, "bar 730 cajas"), EFR(30, "hospital algodón; EOQ con faltantes"),
            EFR(34, "Ingap SA"), LU(16, "Final 14, IMBA"), PAT]
     return clase("u5c2", "Clase 2 · Lote económico (EOQ / LEC) y punto de pedido", "Lote económico y punto de pedido", "A",
                  "El modelo básico de cantidad fija: supuestos, costo total, la fórmula del lote económico y el punto de pedido. Con los ejercicios de final BIT-Kaffee, el bar, el hospital, IMBA e Ingap.",
@@ -117,6 +130,16 @@ def c3():
            "**Paso 2.** Si el primer EOQ factible es el del precio más bajo, ese es el óptimo. Si no, calcular el costo total de ese EOQ factible **y** el costo total en **cada cantidad de quiebre** de los precios más bajos (la cantidad mínima con la que se accede a cada descuento). La $Q$ óptima es la de menor costo."], True),
         P("Chase agrega una advertencia práctica: el descuento por volumen «casi siempre hace que resulte económico pedir cantidades superiores a $Q_{opt}$», así que hay que estimar bien la **obsolescencia** y los **costos de almacenamiento** antes de aceptar."),
         S("u5_descuentos.svg", "Caso librería: una curva por precio; el óptimo cae en el quiebre de 100 cajas (gráfico propio)"),
+        EJ("Ejemplo del libro · Chase, Ejemplo 17.8 «Precio descontado» (p. 566–567)", [
+            P("Datos: **D = 10 000** unidades al año; **S = 20 dólares** por pedido; **i = 20%** del costo (manejo anual, almacenamiento, interés, obsolescencia). Precio: de 0 a 499 unidades, **5 dólares**; de 500 a 999, **4,50**; 1000 o más, **3,90**."),
+            F("CT = DC + \\frac{D}{Q}S + \\frac{Q}{2}iC \\qquad Q = \\sqrt{\\frac{2DS}{iC}}", "[17.15] Chase"),
+            T(["Precio", "Q", "¿Factible?", "Costo total"], [
+                ["3,90", "716", "no (necesita 1000 o más)", "—"],
+                ["4,50", "667", "sí (500–999)", "45 600 dólares"],
+                ["3,90 en el quiebre", "**1000**", "sí", "**39 590 dólares** ← óptimo"]], "Chase, Ejemplo 17.8"),
+            P("Chase lo explica así: con 5 dólares el EOQ daría 633 unidades, pero 633 unidades ya se pagan 4,50; y el EOQ de 716 a 3,90 tampoco existe, porque ese precio exige 1000. **La cantidad de pedido óptima es 1000 unidades.** Es el mismo esquema que la librería: el óptimo cae en el quiebre."),
+            P("*Verificación (cálculo propio):* $CT(667) = 45\\,000 + 299{,}85 + 300{,}15 = 45\\,600$; $CT(1000) = 39\\,000 + 200 + 390 = 39\\,590$."),
+        ]),
         EX("3. EJERCICIO — La librería (SG!EVA; EFR p.3; SG1 Lu Final 2)", [
             P("«Una librería pide un determinado ítem en cajas de 1000 unidades. La demanda anual es constante a lo largo del año, y se sabe con certeza que es de **600 cajas**, también se conoce con certeza que el tiempo de reaprovisionamiento es exactamente **un mes**. El costo de ordenar es de **$16** y los costos anuales de manejo son de **36%**. El mayorista ofrece este descuento por volumen:»"),
             T(["Cant. de cajas", "Precio / caja"], [["1 – 49", "$7,50"], ["50 – 99", "$7,35"], ["100 o más", "$7,00"]]),
@@ -153,7 +176,7 @@ def c3():
             ["Gruesa", "doce docenas", "144 unidades (variante del enunciado)"],
         ]),
     ]
-    src = [V6, EVA, "texto/examenes/Ejercicios posibles.txt (librería)", EFR(3, "librería"), LU(4, "Final 2, librería"), DM, PAT]
+    src = [V6, CH(17, "566–567", "Ejemplo 17.8 precio descontado"), EVA, "texto/examenes/Ejercicios posibles.txt (librería)", EFR(3, "librería"), LU(4, "Final 2, librería"), DM, PAT]
     return clase("u5c3", "Clase 3 · EOQ con descuentos por cantidad", "EOQ con descuentos", "A",
                  "Cuando el precio baja por volumen: el procedimiento de dos pasos de Chase y el caso librería de los finales, resuelto y con sus variantes.",
                  src, t, "Clase 4 · Perpetuo y periódico", ["u5/img/u5_descuentos.svg"])

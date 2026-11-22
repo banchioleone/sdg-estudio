@@ -9,6 +9,9 @@
  "visto": false,
  "source": [
   "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 17 «Control de inventarios» (Chase), págs. 258–285 del PDF del resumen",
+  "Chase 12a ed., cap. 17, p. 551–553, 563–565, 576–577 — voceador, Ejemplos 17.1, 17.5–17.7, Problemas resueltos 1, 3 y 4 (drive_u5/txt/cap17_chase12.txt)",
+  "Chase 12a ed., cap. 10, p. 360–361 — Ejemplo 10.1 Dell (drive_u5/txt/cap10_chase12.txt)",
+  "drive_u5/Odoo_Tutorial03_Venta_Fabricacion_Abastecimiento.pdf — Tutorial MRP Odoo 03 (2015), carpeta 02_Producto del Drive",
   "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 10 (medición del desempeño de la cadena, [10.2])",
   "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 5 y Semana 7",
   "INDEX.md (índice del Drive: archivos WinQSB INVENT, no descargados)"
@@ -23,7 +26,7 @@
   {
    "type": "callout",
    "kind": "aviso",
-   "text": "**De dónde sale esta clase.** Todo de **Chase cap. 17** (ecuaciones [17.1], [17.10] y [17.11], rotación de inventarios, control en servicios) y **cap. 10** (rotación y semanas de suministro, [10.2]). En el V6 las fórmulas son imagen; las escribo en notación de Chase con las definiciones del texto. **No hay ejercicios de final de esta clase en el material**: los ejemplos numéricos con datos de finales son cálculo propio."
+   "text": "**De dónde sale esta clase.** Todo de **Chase cap. 17** (ecuaciones [17.1], [17.10] y [17.11], rotación de inventarios, control en servicios) y **cap. 10** (rotación y semanas de suministro, [10.2]). Las fórmulas y los ejemplos numéricos están **verificados contra el libro completo** (Chase 12a ed., del Drive): Ejemplos 17.1, 17.5, 17.6, 17.7 y 10.1 y Problemas resueltos 1, 3 y 4. **No hay ejercicios de final de esta clase en el material**; el único cálculo con datos de finales (rotación del ítem N(50,10)) es cálculo propio y está marcado."
   },
   {
    "type": "callout",
@@ -59,23 +62,64 @@
   },
   {
    "type": "ejemplo",
-   "title": "Ejemplo con datos de la Clase 5 (cálculo propio)",
+   "title": "Ejemplo del libro · Chase, Ejemplo 17.5 «Cantidad que se va a pedir» (p. 563–564)",
    "blocks": [
     {
      "type": "paragraph",
-     "text": "Mismo ítem del final: $\\bar d = 50$ cajas/día, $\\sigma_d = 10$, $L = 3$ días, nivel de servicio 85%. Supongamos que se revisa **cada 10 días** y al revisar hay **300 cajas** (incluido lo pedido)."
+     "text": "«La demanda diaria de un producto es de **10** unidades con una desviación estándar de **3** unidades. El periodo de revisión es de **30 días** y el tiempo de entrega de **14 días**. La gerencia estableció la política de cubrir **98%** de la demanda con las existencias. Al principio de este periodo de revisión, hay **150** unidades en el inventario. ¿Cuántas unidades se deben pedir?»"
     },
     {
      "type": "formula",
-     "tex": "\\sigma_{T+L} = 10\\sqrt{13} \\approx 36{,}1 \\qquad SS = 1{,}04\\cdot 36{,}1 \\approx 37"
+     "tex": "\\sigma_{T+L} = \\sqrt{(30+14)\\cdot 3^2} = 19{,}90 \\qquad z_{98\\%} = 2{,}05",
+     "caption": "[17.12] Chase"
     },
     {
      "type": "formula",
-     "tex": "q = 50\\cdot 13 + 37 - 300 = 387 \\text{ cajas}"
+     "tex": "q = 10\\,(30+14) + 2{,}05\\cdot 19{,}90 - 150 = 331 \\text{ unidades}"
     },
     {
      "type": "paragraph",
-     "text": "Compará: en el perpetuo el SS era **18**; en el periódico, **37**. Es la diferencia que menciona Chase: el período fijo tiene un inventario promedio más grande."
+     "text": "«Para garantizar una probabilidad de 98% de que el inventario no se va a agotar, es necesario pedir **331** unidades en este periodo de revisión.» Con la tabla de la cátedra, 98% → área 0,48 → z = 2,05 (Clase 5)."
+    }
+   ]
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo del libro · Chase, Problema resuelto 3 (p. 577)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Demanda diaria **120** unidades, desvío **30**; período de revisión **14 días**, entrega **7 días**; en la revisión hay **130** unidades; solo se acepta un **1%** de riesgo de faltante."
+    },
+    {
+     "type": "formula",
+     "tex": "\\sigma_{T+L} = \\sqrt{(14+7)\\cdot 30^2} = \\sqrt{18\\,900} = 137{,}5 \\qquad z = 2{,}33"
+    },
+    {
+     "type": "formula",
+     "tex": "q = 120\\,(14+7) + 2{,}33\\cdot 137{,}5 - 130 = 2710 \\text{ unidades}"
+    }
+   ]
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo del libro · Chase, Problema resuelto 4 (p. 577)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Hay 200 unidades y se pide **cada dos semanas** cuando visita el vendedor. Demanda **20** por día con desvío **5**; entrega **7 días**; meta **95%**. El vendedor llega esta tarde, cuando queden **180** unidades."
+    },
+    {
+     "type": "formula",
+     "tex": "I = 180,\\; T = 14,\\; L = 7 \\qquad \\sigma_{T+L} = \\sqrt{21\\cdot 5^2} = 23 \\qquad z = 1{,}64"
+    },
+    {
+     "type": "formula",
+     "tex": "q = 20\\,(14+7) + 1{,}64\\cdot 23 - 180 = 278 \\text{ unidades}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Fijate que **I es lo que habrá al momento de pedir** (180), no lo que hay ahora (200)."
     }
    ]
   },
@@ -128,6 +172,80 @@
    ]
   },
   {
+   "type": "ejemplo",
+   "title": "Ejemplo del libro · Chase, Ejemplo 17.1 «Reservaciones de hotel» (p. 552–553)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Un hotel cerca de una universidad se llena la noche anterior a cada partido. Las cancelaciones de último momento tienen media **5** y desvío **3**. La tarifa promedio es **80 dólares**; si un cliente con reserva no tiene lugar, el hotel le paga otro cercano, lo que cuesta unos **200 dólares**. ¿Cuántas reservas de más conviene tomar?"
+    },
+    {
+     "type": "paragraph",
+     "text": "Subestimar las cancelaciones cuesta $C_u = 80$ (una habitación vacía); sobrestimarlas, $C_o = 200$."
+    },
+    {
+     "type": "formula",
+     "tex": "P \\leq \\frac{C_u}{C_o + C_u} = \\frac{80}{200 + 80} = 0{,}2857 \\;\\Rightarrow\\; z = -0{,}566 \\;\\Rightarrow\\; 5 - 0{,}566\\cdot 3 = 5 - 1{,}7 \\approx 3"
+    },
+    {
+     "type": "paragraph",
+     "text": "El z negativo indica que hay que reservar **menos** que el promedio de cancelaciones: «el hotel debe hacer **tres** reservaciones adicionales». Chase obtiene z con NORMSINV(0,2857) de Excel; con la tabla de la cátedra, 0,5 − 0,2857 = 0,2143 → z ≈ 0,57 hacia la izquierda."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Con datos discretos** (análisis marginal): con la distribución histórica de cancelaciones (0 a 10, probabilidades 0,05 · 0,08 · 0,10 · 0,15 · 0,20 · 0,15 · 0,11 · 0,06 · 0,05 · 0,04 · 0,01) se calcula el costo esperado de cada cantidad de reservas extra:"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Reservas extra",
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     "rows": [
+      [
+       "Costo total esperado (dólares)",
+       "337,6",
+       "271,6",
+       "228",
+       "**212,4**",
+       "238,8",
+       "321,2",
+       "445,6"
+      ]
+     ],
+     "caption": "Chase, Ejemplo 17.1 (sigue hasta 10: 600,8 · 772,8 · 958,8 · 1156)"
+    },
+    {
+     "type": "paragraph",
+     "text": "El mínimo vuelve a estar en **3 reservas adicionales**."
+    }
+   ]
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo del libro · Chase, Problema resuelto 1 (p. 576)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Precio de venta **100 dólares**, costo **70**, valor de recuperación de lo que sobra **20**. La demanda va de 35 a 40 unidades con probabilidades 0,10 · 0,15 · 0,25 · 0,25 · 0,15 · 0,10 (acumuladas 0,10 · 0,25 · 0,50 · 0,75 · 0,90 · 1,00)."
+    },
+    {
+     "type": "formula",
+     "tex": "C_u = 100 - 70 = 30 \\qquad C_o = 70 - 20 = 50 \\qquad P \\leq \\frac{30}{50+30} = 0{,}375"
+    },
+    {
+     "type": "paragraph",
+     "text": "«A partir de los datos de distribución anteriores, esto corresponde a la **37a.** unidad.» El análisis marginal completo da costos totales de 75 · 53 · **43** · 53 · 83 · 125 para comprar 35 a 40: el mínimo es **37 unidades**."
+    }
+   ]
+  },
+  {
    "type": "paragraph",
    "text": "Aplicaciones que da Chase: **sobreventa de vuelos** (subestimar cancelaciones = asiento vacío; sobrestimar = compensar al pasajero que no sube), **pedidos de artículos de moda** (un solo pedido por temporada) y **cualquier pedido único** (camisetas para un evento, mapas que se vuelven obsoletos)."
   },
@@ -160,6 +278,52 @@
   {
    "type": "formula",
    "tex": "\\text{Rotación de una pieza} = \\frac{D\\,C}{(Q/2 + SS)\\,C} = \\frac{D}{Q/2 + SS}"
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo del libro · Chase, Ejemplo 17.6: cantidad de pedido fija (p. 565)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "D = 1000 unidades al año, Q = 300, SS = 40."
+    },
+    {
+     "type": "formula",
+     "tex": "\\text{Inventario promedio} = \\frac{Q}{2} + SS = 150 + 40 = 190 \\qquad \\text{Rotación} = \\frac{1000}{190} = 5{,}263 \\text{ por año}"
+    }
+   ]
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo del libro · Chase, Ejemplo 17.7: período fijo (p. 565)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Demanda semanal d = 50, ciclo de revisión T = 3 semanas, SS = 30. En cada ciclo se espera pedir lo que se demanda en él, $dT$."
+    },
+    {
+     "type": "formula",
+     "tex": "\\text{Inventario promedio} = \\frac{dT}{2} + SS = \\frac{50\\cdot 3}{2} + 30 = 105 \\qquad \\text{Rotación} = \\frac{52\\,d}{dT/2 + SS} = \\frac{2600}{105} = 24{,}8"
+    }
+   ]
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo del libro · Chase, Ejemplo 10.1: Dell Computer (cap. 10, p. 360–361)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Informe anual 2006 de Dell, en millones de dólares: costo de los bienes vendidos («costo de las ganancias») **45 958**; materiales de producción **327**; trabajo en proceso y bienes terminados **247**."
+    },
+    {
+     "type": "formula",
+     "tex": "\\text{Rotación} = \\frac{45\\,958}{327 + 247} = 80{,}07 \\text{ por año} \\qquad \\text{Semanas de suministro} = \\frac{327 + 247}{45\\,958}\\times 52 = 0{,}65"
+    },
+    {
+     "type": "paragraph",
+     "text": "Chase: «un desempeño sorprendente para una compañía de alta tecnología». Compará con los 6 a 7 típicos de manufactura."
+    }
+   ]
   },
   {
    "type": "ejemplo",
@@ -217,13 +381,14 @@
    "items": [
     "Chase usa **Excel**: NORMSINV(probabilidad) para obtener $z$ y NORMSDIST($z$) para la probabilidad (hoy DISTR.NORM.ESTAND.INV y DISTR.NORM.ESTAND.N).",
     "El índice del Drive lista archivos de **WinQSB** de los ejercicios de MRP del cap. 18 (INVENT.MRP, INVENTA.MRP, INVENTOR.MRP: el archivo de inventarios —saldos, lotes, lead times— que usa el MRP). Son binarios y no están transcriptos; se ven en la U6.",
-    "Chase: los sistemas computarizados emiten automáticamente las notificaciones de **conteo cíclico** y calculan el **índice de uso** de cada pieza (Clase 7)."
+    "Chase: los sistemas computarizados emiten automáticamente las notificaciones de **conteo cíclico** y calculan el **índice de uso** de cada pieza (Clase 7).",
+    "**Odoo** (tutorial de la cátedra «Venta, Fabricación y Abastecimiento», 2015, del Drive): el ERP distingue **stock real** y **stock virtual** («diferencias … debido a entradas o salidas en proceso, órdenes de venta, órdenes de compra»; es la *posición del inventario* de Chase), y genera solo los presupuestos a proveedores «si los productos en cuestión tienen definido el **Punto de Pedido**», corriendo los planificadores con la opción «**Regla de stock mínimo automática**». Es el modelo perpetuo de las Clases 2 y 5 hecho software."
    ]
   },
   {
    "type": "callout",
    "kind": "aviso",
-   "text": "**Faltante de material:** no hay un apunte de la cátedra sobre el uso de WinQSB u otro software de inventarios. Si se toma, se pide en clase práctica."
+   "text": "**Faltante de material:** no hay un apunte de la cátedra sobre WinQSB. Del software, lo único que hay en el Drive son los tutoriales de Odoo (2015)."
   },
   {
    "type": "glosario",

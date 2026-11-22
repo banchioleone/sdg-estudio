@@ -7,7 +7,7 @@ V7 = "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 7 «Procesos de manuf
 def c8():
     t = [
         P("**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque C · Clase 8 · Compras y proveedores**"),
-        AVISO("**De dónde sale esta clase.** El circuito de compras (etapas, órdenes, archivos, evaluación de proveedores): el **banco de preguntas de abastecimiento** (Examen 2005, respuestas de alumno; el Documento Maestro lo marca con ★). Procesos de adquisición, subcontratación y proveedores JIT: **Chase caps. 10 y 12**. «Ingeniería de compra» figura en el programa pero **no hay material** que la desarrolle: va como complemento."),
+        AVISO("**De dónde sale esta clase.** El circuito de compras (etapas, órdenes, archivos, evaluación de proveedores): el **banco de preguntas de abastecimiento** (Examen 2005, respuestas de alumno; el Documento Maestro lo marca con ★). Procesos de adquisición, subcontratación y proveedores JIT: **Chase caps. 10 y 12** y el apunte **«Producción Justo a Tiempo» de R. Morán** (UNR 2012, del Drive). El circuito en un ERP: el **tutorial de Odoo** de la cátedra (2015). «Ingeniería de compra» figura en el programa pero **no hay material** que la desarrolle: va como complemento."),
         IDEA("**Idea central:** el modelo de stock dice **cuándo y cuánto**; Compras resuelve **a quién y en qué condiciones**. Empieza con el pedido de reposición que emite gestión de stock y termina cuando la orden se cumple y el proveedor queda evaluado."),
         H("1. Qué método de gestión según el tipo de material"),
         P("Chase: es común que Compras sea quien hace también la subcontratación; «Compras es responsable de desarrollar una estrategia para adquirir los artículos que necesita una empresa», y el proceso depende del **costo** de los artículos, el **volumen** requerido y la **escasez**."),
@@ -25,6 +25,12 @@ def c8():
            "Emisión y distribución de **pedidos de cotización** a proveedores.", "**Evaluación y negociación** de las ofertas.",
            "**Asignación** del proveedor.", "**Colocación de la orden de compra** (separadas para directos e indirectos si hace falta).",
            "**Seguimiento, activación y cumplimiento** de las órdenes vigentes; recepción; cierre y evaluación del proveedor."], True),
+        P("**El mismo circuito en un ERP** (tutorial de Odoo de la cátedra, «Venta, Fabricación y Abastecimiento», 2015):"),
+        L(["**Depósito › Ejecutar planificadores** con la opción «Regla de stock mínimo automática», que «procese las reglas de abastecimiento en base a los puntos de pedido definidos»: el sistema detecta qué ítems llegaron al punto de pedido (el **pedido de reposición**).",
+           "Se generan **presupuestos** en Compras › Presupuestos: «el presupuesto es en realidad una orden de compra en estado borrador».",
+           "**Confirmar pedido**: el presupuesto pasa a **Órdenes de Compra** (la colocación de la orden).",
+           "**Compras › Albaranes de entrada**: «El Albarán es más conocido como el Remito, y es el documento que acredita la entrada de mercadería»; se generan solos al confirmar la orden, en estado «Listo para recibir», y al **Recibir** quedan «Recibido» (la **recepción**)."], True),
+        P("En el diagrama del tutorial, las líneas rojas marcan «las situaciones en las que el sistema falló por falta de planeación, ya que el inventario llegó a cero»: por eso hay que definir el punto de pedido de cada componente."),
         H("3. Los archivos del subsistema"),
         P("Respuesta 11 del banco, qué información brinda Compras al subsistema de abastecimiento para el seguimiento:"),
         L(["Archivo de **proveedores**.", "Archivo de **pedidos de reposición** de stock.", "Archivo de **pedidos de cotización**.",
@@ -52,7 +58,11 @@ def c8():
            "Si el proveedor adopta prácticas de calidad, se pueden **eliminar las inspecciones de recepción**.",
            "**Redes de proveedores:** asociación cooperativa de proveedores y clientes **a largo plazo** para beneficio mutuo."]),
         P("Y los lineamientos de Womack y Jones para una cadena esbelta: definir el valor en conjunto con un **costo meta**, que todas las empresas de la cadena recuperen su inversión, y trabajar juntas para **eliminar la muda** (desperdicio)."),
-        P("**Complemento (no está en el material):** la selección de proveedores JIT suele resumirse en **pocos proveedores** (a veces uno por ítem), **cercanos**, con **contratos de largo plazo**, **calidad certificada** (sin inspección de recepción), **lotes chicos y entregas frecuentes**, y comunicación electrónica (EDI o kanban de proveedor). El apunte «Produccion JIT.pdf» de la cátedra (U4) está en el Drive pero no se descargó."),
+        P("**Pedidos a los proveedores en JIT (Morán, «Producción Justo a Tiempo», punto 3.3).** Al proveedor se le dan dos tipos de información:"),
+        L(["«Una **planificación mensual previa**, para que puedan determinar los ciclos de sus procesos de producción, las rutas estándar de las operaciones, las cantidades de materias primas necesarias, etc.»",
+           "«El **requerimiento diario** de unidades a entregar», de dos formas: **reposición mediante kanban de proveedor** («en intervalos regulares de tiempo los contenedores vacíos se llevan al proveedor, junto con sus kanban, y se recogen contenedores llenos») o **reposición mediante tabla de secuencia prevista** (se le transmite cada día «la secuencia de armado para recoger los componentes en el mismo orden»)."]),
+        P("Morán advierte que la tabla de secuencia «requiere proveedores con sistemas de producción tan perfeccionados como el de la empresa cliente». Y en el cálculo de kanban señala que el modelo de **tiempo entre lotes constante** (período fijo) se usa «esencialmente» con los **proveedores externos**, «debido principalmente a las distancias»; el de cantidad constante, para la producción propia."),
+        P("**Complemento (no está en el material):** la selección de proveedores JIT suele resumirse en **pocos proveedores** (a veces uno por ítem), **cercanos**, con **contratos de largo plazo**, **calidad certificada** (sin inspección de recepción), **lotes chicos y entregas frecuentes**, y comunicación electrónica (EDI o kanban de proveedor)."),
         H("8. Ingeniería de compra"),
         P("**Complemento (no está en el material):** se llama así al trabajo técnico de Compras junto con Ingeniería: definir **especificaciones** de lo que se compra, buscar **materiales o proveedores alternativos**, analizar el **valor** (qué función cumple cada parte y si se puede lograr más barato), estandarizar ítems para comprar en mayor volumen y participar en el **diseño logístico** desde el inicio. Chase da un ejemplo de este último: si un componente viene en cajas de 50 y la producción usa 30, hay desperdicio; el empaque y el transporte deben pensarse al diseñar."),
         AVISO("**Pedile a Emiliano** si la cátedra tiene un apunte de compras o de ingeniería de compra: con lo descargado no puedo dar una definición de la cátedra."),
@@ -76,7 +86,7 @@ def c8():
     ]
     src = [PA, PROG, DM, V10, V12, "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 9 (ISO 9000 y proveedores) y Cap. 13 (medidores para proveedores)",
            "texto/examenes/Preguntas SG1.txt (preguntas 16–18)", "texto/Preguntas_Frecuentes.txt (pregunta 30: comprar o fabricar)",
-           "INDEX.md (Drive: «Produccion JIT.pdf», no descargado)"]
+           JIT + ", punto 3.3 «Pedidos a los proveedores» y 2.1–2.2", ODOO]
     return clase("u5c8", "Clase 8 · Compras y proveedores", "Compras y proveedores", "C",
                  "El sistema de compras de la cátedra (etapas, órdenes abiertas y cerradas, archivos, evaluación de proveedores), los procesos de adquisición y la subcontratación de Chase, y qué cambia con proveedores JIT.",
                  src, t, "Clase 9 · Almacenes, distribución y trazabilidad")

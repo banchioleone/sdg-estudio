@@ -8,13 +8,14 @@
  "lede": "La logística integral: medir la cadena, el efecto látigo, qué cadena le conviene a cada producto, modos de transporte, criterios y métodos para ubicar plantas y almacenes, y los formatos de distribución de planta.",
  "visto": false,
  "source": [
+  "Chase 12a ed., cap. 10, p. 360–372 — medición, Fisher y Lee, densidad de valor, Ejemplo 10.2 (drive_u5/txt/cap10_chase12.txt)",
+  "Chase 12a ed., cap. 11, p. 385–396 — modos de transporte, métodos de ubicación, Ejemplos 11.1–11.3 (drive_u5/txt/cap11_chase12.txt)",
   "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 10 «Estrategia de la cadena de suministro» (Chase)",
   "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 11 «Logística y ubicación de instalaciones» (Chase)",
   "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 7 «Procesos de manufactura» (formatos de distribución)",
   "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 12 «Producción esbelta» (Chase: trabajo con los proveedores)",
   "programa.md — Unidad 5 · Logística (programa 2008)",
-  "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 5 y Semana 7",
-  "INDEX.md (Drive: «administracionOperaciones.pdf» Chase/Monks, no descargado)"
+  "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 5 y Semana 7"
  ],
  "laminas": [
   "u5/img/u5_latigo.svg"
@@ -28,7 +29,7 @@
   {
    "type": "callout",
    "kind": "aviso",
-   "text": "**De dónde sale esta clase.** **Chase cap. 10** (estrategia de la cadena de suministro) y **cap. 11** (logística y ubicación de instalaciones), más los formatos de distribución del **cap. 7**. El Documento Maestro asigna «almacenes, trazabilidad, ubicaciones y distribución de plantas, logística del abastecimiento, satisfacción del cliente» a Chase cap. 11 y a **Monks**; Monks no está en el material. Las fórmulas del centroide son imagen en el V6: las escribo en la forma estándar."
+   "text": "**De dónde sale esta clase.** **Chase cap. 10** (estrategia de la cadena de suministro) y **cap. 11** (logística y ubicación de instalaciones), más los formatos de distribución del **cap. 7**. El Documento Maestro asigna «almacenes, trazabilidad, ubicaciones y distribución de plantas, logística del abastecimiento, satisfacción del cliente» a Chase cap. 11 y a **Monks**; Monks no está en el material. Todo está **verificado contra el libro completo** (Chase 12a ed., del Drive), del que salen la fórmula del centroide (ilegible en el V6) y los Ejemplos 10.2, 11.1, 11.2 y 11.3. **No hay ejemplos con datos inventados.**"
   },
   {
    "type": "callout",
@@ -127,7 +128,7 @@
   },
   {
    "type": "paragraph",
-   "text": "Chase cap. 11: decidir cómo transportar los bienes de las plantas a los clientes afecta el **costo**, la **velocidad de entrega** y la **flexibilidad**. Seis medios:"
+   "text": "Chase cap. 11 (p. 385): decidir cómo transportar los bienes de las plantas a los clientes afecta el **costo**, la **velocidad de entrega** y la **flexibilidad**. Ahí da **seis** medios:"
   },
   {
    "type": "table",
@@ -163,8 +164,70 @@
    ]
   },
   {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**¿Cinco o seis modos?** El mismo libro cuenta distinto: en el **cap. 10** (p. 370) dice «Hay **cinco** modos básicos de transporte: carretera, ferrocarril, agua, tubería y aire»; en el **cap. 11** (p. 385) suma la **entrega a mano** («el último paso en muchas cadenas de suministro») y son **seis**. Si te lo preguntan, nombrá los cinco y aclará que Chase agrega la entrega a mano como sexto."
+  },
+  {
    "type": "paragraph",
    "text": "Lo común son las soluciones **multimodales** con contenedores estandarizados. Para elegir, Chase usa la **densidad de valor** (valor por unidad de peso): para Intel, el envío aéreo de microprocesadores se justifica si el ahorro en tiempo de tránsito y en inversión en inventario compensa el mayor flete."
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo del libro · Chase, Ejemplo 10.2: ¿aéreo o terrestre? (cap. 10, p. 371–372)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Envío de Bloomington (Indiana) a Littleton (Massachusetts). Costo de tener inventario: **30% al año** del valor del producto. **UPS terrestre tarda 8 días** y **FedEx aéreo, 2**: el aéreo ahorra **6 días** de inventario en tránsito."
+    },
+    {
+     "type": "formula",
+     "tex": "\\text{Ahorro costo embarque} = \\text{Costo aéreo} - \\text{Costo terrestre} = \\frac{\\text{Valor artículo}\\times 0{,}30\\times 6}{365} \\;\\Rightarrow\\; \\text{Valor artículo} = \\frac{365\\times\\text{Ahorro}}{0{,}30\\times 6}",
+     "caption": "punto de equilibrio (Chase)"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Peso (libras)",
+      "UPS 8 días",
+      "FedEx 2 días",
+      "Ahorro con UPS",
+      "Valor de equilibrio",
+      "Por libra"
+     ],
+     "rows": [
+      [
+       "1",
+       "3,30",
+       "18,25",
+       "14,95",
+       "3031,53",
+       "3031,53"
+      ],
+      [
+       "5",
+       "4,30",
+       "26,75",
+       "22,45",
+       "4552,36",
+       "910,47"
+      ],
+      [
+       "10",
+       "5,00",
+       "36,75",
+       "31,75",
+       "6438,19",
+       "643,82"
+      ]
+     ],
+     "caption": "Chase, ilustración 10.10 (filas 1, 5 y 10 de 1 a 10 libras; dólares)"
+    },
+    {
+     "type": "paragraph",
+     "text": "Lectura: un paquete de 1 libra conviene mandarlo por aire si vale más de **3031,53 dólares**; uno de 10 libras, si vale más de 643,82 por libra. «Los artículos caros se envían por vía aérea … mientras que los de poco valor se mandan con el servicio más barato de vía terrestre.»"
+    }
+   ]
   },
   {
    "type": "heading",
@@ -220,71 +283,166 @@
    "caption": "centroide (Chase) · d = coordenada de la i-ésima ubicación · V = volumen enviado"
   },
   {
+   "type": "paragraph",
+   "text": "Donde (Chase, p. 394): $C_x$, $C_y$ = coordenadas del centroide; $d_{ix}$, $d_{iy}$ = coordenadas de la i-ésima ubicación; $V_i$ = «volumen de los bienes movidos a o de la i-ésima ubicación»."
+  },
+  {
    "type": "ejemplo",
-   "title": "Ejemplo de centroide (cálculo propio, datos inventados para practicar)",
+   "title": "Ejemplo del libro · Chase, Ejemplo 11.2: HiOctane Refining Company (p. 394)",
    "blocks": [
     {
      "type": "paragraph",
-     "text": "Tres tiendas en una grilla: A (2, 8) con 300 envíos, B (6, 2) con 500 y C (9, 6) con 200."
+     "text": "HiOctane necesita ubicar una instalación intermedia entre su refinería de **Long Beach** y sus principales distribuidores. Coordenadas y volumen enviado (millones de galones de gasolina al mes):"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Ubicación",
+      "x",
+      "y",
+      "V"
+     ],
+     "rows": [
+      [
+       "Long Beach (planta)",
+       "325",
+       "75",
+       "1500"
+      ],
+      [
+       "Anaheim",
+       "400",
+       "150",
+       "250"
+      ],
+      [
+       "La Habra",
+       "450",
+       "350",
+       "450"
+      ],
+      [
+       "Glendale",
+       "350",
+       "400",
+       "350"
+      ],
+      [
+       "Thousand Oaks",
+       "25",
+       "450",
+       "450"
+      ]
+     ],
+     "caption": "Chase, ilustración 11.5"
     },
     {
      "type": "formula",
-     "tex": "C_x = \\frac{2\\cdot 300 + 6\\cdot 500 + 9\\cdot 200}{1000} = 5{,}4 \\qquad C_y = \\frac{8\\cdot 300 + 2\\cdot 500 + 6\\cdot 200}{1000} = 4{,}6"
+     "tex": "C_x = \\frac{325\\cdot 1500 + 400\\cdot 250 + 450\\cdot 450 + 350\\cdot 350 + 25\\cdot 450}{3000} = \\frac{923\\,750}{3000} = 307{,}9"
+    },
+    {
+     "type": "formula",
+     "tex": "C_y = \\frac{75\\cdot 1500 + 150\\cdot 250 + 350\\cdot 450 + 400\\cdot 350 + 450\\cdot 450}{3000} = \\frac{650\\,000}{3000} = 216{,}7"
     },
     {
      "type": "paragraph",
-     "text": "El almacén iría cerca de (5,4; 4,6): tira hacia B, que es la que más volumen recibe."
+     "text": "El centroide queda cerca de **(308, 217)**: «un punto de inicio para buscar un nuevo sitio». Chase agrega que quizá convenga enviar directo de Long Beach a Anaheim y recalcular el centroide sin Anaheim."
+    },
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "En la tabla de la ilustración 11.5 el volumen de Thousand Oaks figura como **45**, pero la cuenta del libro usa **450** (por eso el total es 3000). Me quedo con 450, que es lo que cierra."
     }
    ]
   },
   {
    "type": "ejemplo",
-   "title": "Ejemplo de calificación de factores (cálculo propio, datos inventados)",
+   "title": "Ejemplo del libro · Chase, Ejemplo 11.1: U. S. Pharmaceutical, método de transporte (p. 390–392)",
    "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Cuatro fábricas surten los almacenes de cuatro clientes; se busca el programa de envíos de **costo mínimo** para la producción mensual. Costo de envío por caja (dólares), suministro y demanda:"
+    },
     {
      "type": "table",
      "headers": [
-      "Factor",
-      "Peso",
-      "Sitio 1 (0–10)",
-      "Sitio 2 (0–10)"
+      "De / A",
+      "Columbus",
+      "St. Louis",
+      "Denver",
+      "Los Ángeles",
+      "Suministro"
      ],
      "rows": [
       [
-       "Costo total",
-       "0,40",
-       "6",
-       "8"
+       "Indianápolis",
+       "25",
+       "35",
+       "36",
+       "60",
+       "15"
       ],
       [
-       "Proximidad a clientes",
-       "0,30",
+       "Phoenix",
+       "55",
+       "30",
+       "25",
+       "25",
+       "6"
+      ],
+      [
+       "Nueva York",
+       "40",
+       "50",
+       "80",
+       "90",
+       "14"
+      ],
+      [
+       "Atlanta",
+       "30",
+       "40",
+       "66",
+       "75",
+       "11"
+      ],
+      [
+       "Demanda",
+       "10",
+       "12",
+       "15",
        "9",
-       "5"
-      ],
-      [
-       "Mano de obra",
-       "0,20",
-       "7",
-       "7"
-      ],
-      [
-       "Infraestructura",
-       "0,10",
-       "5",
-       "9"
-      ],
-      [
-       "**Total ponderado**",
-       "",
-       "**7,0**",
-       "**7,0**"
+       "46"
       ]
-     ]
+     ],
+     "caption": "Chase, ilustraciones 11.2 y 11.3"
     },
     {
      "type": "paragraph",
-     "text": "Empatan: hace falta un criterio de desempate o revisar los pesos. Es la debilidad que señala Chase: los puntos no dicen cuánta plata hay detrás de cada factor."
+     "text": "Chase lo plantea en una hoja de cálculo y lo resuelve con **Solver**: celda objetivo = costo total (**mínimo**); celdas cambiantes = cantidades enviadas; restricciones: lo enviado a cada cliente **=** su demanda y lo enviado desde cada fábrica **≤** su capacidad."
+    },
+    {
+     "type": "paragraph",
+     "text": "*Solución (cálculo propio; en el libro el resultado está en una pantalla de Excel que no se lee en el texto):* Indianápolis → Denver 15; Phoenix → Los Ángeles 6; Nueva York → Columbus 9 y St. Louis 5; Atlanta → Columbus 1, St. Louis 7 y Los Ángeles 3. **Costo mínimo: 1835 dólares** (puede haber otra asignación con el mismo costo)."
+    }
+   ]
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo del libro · Chase, Ejemplo 11.3: ubicar hoteles con regresión (p. 395–396)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Una cadena hotelera juntó datos de **57 sitios existentes** y buscó qué variables se correlacionan con la utilidad operativa a dos años. El modelo de regresión final:"
+    },
+    {
+     "type": "formula",
+     "tex": "\\text{Utilidad} = 39{,}05 - 5{,}41\\,(\\text{población del estado por hotel}) + 5{,}86\\,(\\text{precio del hotel}) - 3{,}91\\,\\sqrt{\\text{ingreso mediano del área}} + 1{,}75\\,(\\text{universitarios a cuatro millas})",
+     "caption": "Chase, Ejemplo 11.3 (población e ingreso en miles)"
+    },
+    {
+     "type": "paragraph",
+     "text": "Lectura de Chase: la utilidad baja con la **penetración de mercado**, sube con el **precio**, baja con **ingresos altos** («los hoteles funcionan mejor en áreas con ingresos medianos bajos») y sube con **universidades cercanas**. Es la **regresión múltiple de la U2** aplicada a ubicación: en servicios se maximiza la utilidad del sitio, no se minimiza el costo."
     }
    ]
   },

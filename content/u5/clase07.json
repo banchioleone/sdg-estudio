@@ -9,6 +9,7 @@
  "visto": false,
  "source": [
   "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 17 «Control de inventarios» (Chase), págs. 258–285 del PDF del resumen",
+  "Chase 12a ed., cap. 17, p. 569–572 — ABC, exactitud del inventario y conteo de ciclos (drive_u5/txt/cap17_chase12.txt)",
   "texto/examenes/SG!EVA.txt (compilado de finales 2002–2006)",
   "texto/examenes/bloques_eva/07_Evaluación_16_04_03.txt (EBS)",
   "texto/examenes/Ejercicios posibles.txt (EBS)",
@@ -36,7 +37,7 @@
   {
    "type": "callout",
    "kind": "aviso",
-   "text": "**De dónde sale esta clase.** Teoría: **Chase cap. 17** («Planeación de inventario ABC» y «Exactitud del inventario y conteo de ciclos»). Ejercicios: la familia **EBS** (6400 artículos) y la del **plan de conteo de 6300 elementos**, y el **ABC por incidencia de mano de obra**, con resoluciones manuscritas de EFR y SG1.doc. Un final sin fecha tuvo como **única práctica un ejercicio de clasificación ABC** (Preguntas de teoría del final de SG1)."
+   "text": "**De dónde sale esta clase.** Teoría: **Chase cap. 17** («Planeación de inventario ABC», p. 569–570, y «Exactitud del inventario y conteo de ciclos», p. 571–572 de la 12a ed., verificado contra el libro completo del Drive). Ejercicios: la familia **EBS** (6400 artículos) y la del **plan de conteo de 6300 elementos**, y el **ABC por incidencia de mano de obra**, con resoluciones manuscritas de EFR y SG1.doc. Un final sin fecha tuvo como **única práctica un ejercicio de clasificación ABC** (Preguntas de teoría del final de SG1)."
   },
   {
    "type": "callout",
@@ -50,7 +51,7 @@
   },
   {
    "type": "paragraph",
-   "text": "Chase: en el siglo XIX, Vilfredo Pareto, estudiando la distribución de la riqueza en Milán, «descubrió que **20% de las personas controlaban 80% de la riqueza**». En inventarios: «unas pocas piezas representan la mayor parte de la inversión»."
+   "text": "Chase (p. 569): en el siglo XIX, Vilfredo Pareto, estudiando la distribución de la riqueza en Milán, «descubrió que **20% de las personas controlaban 80% de la riqueza**». En inventarios: «unas pocas piezas representan la mayor parte de la inversión»."
   },
   {
    "type": "paragraph",
@@ -68,7 +69,7 @@
     "Calcular para cada ítem el **volumen anual en dinero** = demanda anual × costo unitario.",
     "Ordenar de **mayor a menor**.",
     "Calcular el **% acumulado** del dinero y de los ítems.",
-    "Cortar en grupos. Chase: A ≈ **15%** más alto de las piezas, B el **35%** siguiente, C el último **50%**; en su ejemplo, 20% / 30% / 50%. «El punto en el que las líneas se dividen realmente depende del inventario en cuestión y en la cantidad de tiempo del personal disponible.»"
+    "Cortar en grupos. Chase (p. 569–570): A ≈ **15%** más alto de las piezas, B el **35%** siguiente, C el último **50%**; en su ejemplo, 20% / 30% / 50%. «El punto en el que las líneas se dividen realmente depende del inventario en cuestión y en la cantidad de tiempo del personal disponible.»"
    ]
   },
   {
@@ -147,11 +148,11 @@
      "180 días o menos"
     ]
    ],
-   "caption": "Chase cap. 17"
+   "caption": "Chase cap. 17, p. 571"
   },
   {
    "type": "paragraph",
-   "text": "Tolerancia recomendada: **±0,2%** para las A, **±1%** para las B y **±5%** para las C. Mejor momento para contar: sin actividad (fines de semana, segundo o tercer turno). Hay empresas con **contadores de ciclo de tiempo completo**, que suelen salir más baratos que el inventario anual con la planta cerrada."
+   "text": "Tolerancia recomendada: **±0,2%** (Chase, p. 571–572) para las A, **±1%** para las B y **±5%** para las C. Mejor momento para contar: sin actividad (fines de semana, segundo o tercer turno). Hay empresas con **contadores de ciclo de tiempo completo**, que suelen salir más baratos que el inventario anual con la planta cerrada."
   },
   {
    "type": "heading",

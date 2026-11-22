@@ -3,7 +3,7 @@ from u5lib import *
 def c0():
     t = [
         P("**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Introducción · Clase 0 · Mapa de la unidad**"),
-        AVISO("**De dónde sale esta clase.** No hay un apunte de la cátedra con el plan de la U5. El orden sale del **programa 2008** (temas de la Unidad 5), del **Documento Maestro v2** (qué es teoría [T] y qué es práctica [P], y la Semana 7 de inventarios) y de lo que efectivamente cayó en finales (`patrones_examenes.md`). La teoría de inventarios viene de **Chase, cap. 17** (en el Resumen V6); la de cadena, logística y ubicación, de **Chase caps. 10–12**; la distribución, de la nota técnica **DRP** de R. Morán."),
+        AVISO("**De dónde sale esta clase.** No hay un apunte de la cátedra con el plan de la U5. El orden sale del **programa 2008** (temas de la Unidad 5), del **Documento Maestro v2** (qué es teoría [T] y qué es práctica [P], y la Semana 7 de inventarios) y de lo que efectivamente cayó en finales (`patrones_examenes.md`). La teoría de inventarios viene de **Chase, cap. 17** (en el Resumen V6); la de cadena, logística y ubicación, de **Chase caps. 10–12**; la distribución, de la nota técnica **DRP** de R. Morán. **Bibliografía real** (bajada del Drive el 22/11/2026): el libro de la carpeta `01_Libros` es **Chase, Jacobs y Aquilano, 12a ed.** (no Monks); ver sección 4."),
         IDEA("**Idea central:** la U5 contesta dos preguntas para cada ítem que no sale de un MRP: **cuándo pedir** y **cuánto pedir**. Y después, quién lo pide (Compras), a quién (proveedores), dónde se guarda y se cuenta (almacenes) y cómo llega al cliente (distribución)."),
         H("1. Qué dice el programa"),
         P("El **objetivo** de la unidad, tal cual el programa 2008: «Que los alumnos comprendan y apliquen el concepto de logística, integral e interna. Que logren determinar y aplicar el modelo de gestión de inventarios adecuado para cada proceso de producción. Definir las estructuras de información con que se definen y producen.»"),
@@ -34,6 +34,13 @@ def c0():
         ]),
         H("3. Cómo se toma en el final"),
         P("Según `patrones_examenes.md`: **inventarios (EOQ, descuentos, SS, ABC) apareció como práctica en 5 de 19 finales fechados (26%)**, casi todos entre 2002 y 2006. En los 7 finales fechados 2011–2018 no aparece como práctica fechada; sí aparece un final **sin fecha** cuya práctica fue «un solo ejercicio de Clasificación ABC», y en teoría circula el multiple choice de **periódico vs. perpetuo**."),
+        P("**¿Sigue vigente?** No hay ningún documento de la cátedra actual que lo diga. Lo más nuevo del material:"),
+        L(["Final de Feraboli del **14/03/2013**: en teoría tomó «un Multiple choice … uno para poner el tipo de control de inventario en cada opcion (periodico o perpetuo)» (Preguntas de teoría del final de SG1).",
+           "`SG-PreguntasTeoria-V1.0`: «3 Múltiple Choice, uno sobre **EOQ** otro sobre BOM y otro sobre JIT».",
+           "`Ejercicios posibles.docx` incluye la **librería** (EOQ con descuentos) como ejercicio posible.",
+           "Final del **03/12/2015**: el MRP trae una columna **LEC** (lote económico) para cada componente: el EOQ aparece como regla de lote dentro de la U6.",
+           "Un alumno, sobre el final del 13/12/2012: «la teoría está toda en el **Monks**» (el libro de Monks no está en el Drive; ver sección 4)."]),
+        EXAM("**Conclusión para priorizar:** la **teoría** de inventarios está **vigente** (perpetuo/periódico y EOQ aparecen hasta 2013). La **práctica** de inventarios es **poco probable** (ningún final fechado desde 2006) **pero posible** (sigue en «Ejercicios posibles» y en el programa). Solo la cátedra lo puede confirmar."),
         T(["Familia de ejercicio", "Dónde está", "Clase"], [
             ["EOQ + stock de seguridad con demanda normal («Definir, confeccionar y calcular un sistema de gestión de inventarios» + subsistemas)", "SG!EVA 23/05/2002, 18/07/2002, 06/05/2004; EFR p.9–10 y 24; SG1 Lu Finales 1 y 9", "5"],
             ["EOQ con descuentos por volumen (librería)", "SG!EVA (varias), 27/02/2003; EFR p.3; SG1 Lu Final 2", "3"],
@@ -45,12 +52,19 @@ def c0():
             ["Teoría: periódico vs. perpetuo, tipo de control, compras", "multiple choice; preguntasabastecimiento (2005); EFR p.36", "4 y 8"],
         ]),
         EXAM("**El molde que más se repite:** «Definir, confeccionar y calcular un sistema de gestión de inventarios» con demanda diaria normal, tiempo de espera de 3 días, costo de pedido $6, interés 20% TEA, precio $1,2 y un nivel de servicio (85% o 90%), más «indicar los subsistemas participantes». Se resuelve en la Clase 5 y se repasa en el Integrador."),
-        H("4. Notación: la del libro y la de las resoluciones"),
-        AVISO("**Ojo con la letra L.** En Chase, **L es el tiempo de entrega** (lead time) y **S el costo de preparar un pedido**. En las **resoluciones manuscritas** de los finales (EjerciciosFinalesResueltos y SG1.doc), **L es el costo de colocación del pedido** y el tiempo de entrega se escribe **LT**. En el examen podés usar cualquiera de las dos, pero definí las letras al principio."),
-        G("5. Glosario de símbolos de la unidad", "Las dos notaciones lado a lado. En estas clases uso la de Chase y, cuando transcribo una resolución, la de la hoja.", [
+        H("4. Bibliografía de la unidad (lo que hay en el Drive)"),
+        T(["Material", "Qué es", "Para qué clases"], [
+            ["**Chase, Jacobs y Aquilano**, «Administración de operaciones. Producción y cadena de suministros», **12a ed.** (`01_Libros/administracionOperaciones.pdf`)", "El libro completo. El índice del Drive lo listaba como «Monks/Chase»: es **Chase**. Cap. 17 (control de inventarios, p. 544–587), cap. 10 (cadena de suministro), cap. 11 (logística y ubicación), cap. 12 (manufactura esbelta). Antes solo teníamos su resumen (V6), con las fórmulas como imagen", "todas"],
+            ["Monks, «Administración de operaciones»", "**No está en el Drive.** El «Resumen Monks» de alumnos tiene los caps. 11 (compra y adquisición de inventarios) y 12 (control de inventarios, existencias de seguridad, puntos de reorden y niveles de servicio) **solo con el título, vacíos**", "—"],
+            ["R. Morán, «Planificación de la distribución» (2000) y «Producción Justo a Tiempo» (2012)", "Apuntes de la cátedra (UNR). El de JIT cita un tercero, «Gestión de las Existencias (Stocks)» (2007), que **no está en el Drive**", "5, 8, 9"],
+            ["Práctica «Repaso de conceptos estadísticos básicos» (`practica_1.pdf`)", "Su anexo es la **tabla normal de la cátedra** (área de 0 a z)", "5, 6"],
+            ["Tutorial MRP Odoo 03 «Venta, Fabricación y Abastecimiento» (2015)", "Punto de pedido, stock real y virtual, órdenes de compra y recepción en un ERP", "6, 8"]]),
+        H("5. Notación: la del libro y la de las resoluciones"),
+        AVISO("**Ojo con la letra L.** En Chase, **L es el tiempo de entrega** (lead time) y **S el costo de preparar un pedido**. En las **resoluciones manuscritas** de los finales (EjerciciosFinalesResueltos y SG1.doc), **L es el costo de colocación del pedido** y el tiempo de entrega se escribe **LT**. El apunte de **Morán** (JIT) usa la notación del libro: $Q = \\sqrt{2DS/(Ci)}$, con **S = costo de puesta a punto**, C = costo unitario e **i = tasa de mantenimiento «en la misma base de tiempo que la demanda»**. En el examen podés usar cualquiera, pero definí las letras al principio."),
+        G("6. Glosario de símbolos de la unidad", "Las dos notaciones lado a lado. En estas clases uso la de Chase y, cuando transcribo una resolución, la de la hoja.", [
             ["D", "demanda", "Demanda anual (unidades/año). En las hojas: D"],
             ["d̄ · σd", "demanda diaria", "Media y desvío de la demanda por día (o por período)"],
-            ["S (Chase) · L (resoluciones)", "costo de pedido", "Costo de colocar un pedido o de preparar un lote ($/pedido)"],
+            ["S (Chase, Morán) · L (resoluciones)", "costo de pedido", "Costo de colocar un pedido o de preparar un lote ($/pedido)"],
             ["C (Chase) · c (resoluciones)", "costo unitario", "Precio o costo de una unidad"],
             ["i", "tasa de mantenimiento", "Porcentaje anual del valor del ítem que cuesta tenerlo (TEA, «costo de manejo»)"],
             ["H = iC", "costo de mantener", "Costo anual de mantener una unidad en stock"],
@@ -66,7 +80,9 @@ def c0():
         ]),
         P("Sigue la Clase 1: qué es un inventario y por qué cuesta tenerlo."),
     ]
-    src = [PROG, DM, PAT, "clases_previas/conversacion_previa_notas.md", V6, EVA,
+    src = [PROG, DM, PAT, "clases_previas/conversacion_previa_notas.md", CH12, JIT, TZ, ODOO,
+           "drive_u5/Resumen_Monks.docx — resumen de alumnos de Monks (caps. 11 y 12 vacíos)", "drive_u5/HALLAZGOS_U5.md (relevamiento del Drive)",
+           "texto/examenes/Preguntas de teoria del final de SG1.txt (finales 13/12/2012 y 14/03/2013)", "texto/examenes/SG-PreguntasTeoria-V1.0.txt", "texto/examenes/final03-12-15.txt", "texto/examenes/Ejercicios posibles.txt", V6, EVA,
            "texto/ocr/INVENTARIO_OCR.md (índice de resoluciones manuscritas de inventarios)"]
     return clase("u5c0", "Clase 0 · Mapa de la unidad", "Mapa de la unidad", "intro",
                  "Qué entra en la U5 (Logística), en qué orden la vemos, cómo se tomó en los finales y la notación que vas a encontrar en el libro y en las resoluciones.",

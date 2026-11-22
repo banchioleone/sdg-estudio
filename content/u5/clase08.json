@@ -16,7 +16,8 @@
   "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 9 (ISO 9000 y proveedores) y Cap. 13 (medidores para proveedores)",
   "texto/examenes/Preguntas SG1.txt (preguntas 16–18)",
   "texto/Preguntas_Frecuentes.txt (pregunta 30: comprar o fabricar)",
-  "INDEX.md (Drive: «Produccion JIT.pdf», no descargado)"
+  "drive_u5/Produccion_JIT.pdf — R. Morán, «Producción Justo a Tiempo» (UNR, 2012), apunte del Drive (03_El proceso de Producción), punto 3.3 «Pedidos a los proveedores» y 2.1–2.2",
+  "drive_u5/Odoo_Tutorial03_Venta_Fabricacion_Abastecimiento.pdf — Tutorial MRP Odoo 03 (2015), carpeta 02_Producto del Drive"
  ],
  "laminas": [],
  "next": "Clase 9 · Almacenes, distribución y trazabilidad",
@@ -28,7 +29,7 @@
   {
    "type": "callout",
    "kind": "aviso",
-   "text": "**De dónde sale esta clase.** El circuito de compras (etapas, órdenes, archivos, evaluación de proveedores): el **banco de preguntas de abastecimiento** (Examen 2005, respuestas de alumno; el Documento Maestro lo marca con ★). Procesos de adquisición, subcontratación y proveedores JIT: **Chase caps. 10 y 12**. «Ingeniería de compra» figura en el programa pero **no hay material** que la desarrolle: va como complemento."
+   "text": "**De dónde sale esta clase.** El circuito de compras (etapas, órdenes, archivos, evaluación de proveedores): el **banco de preguntas de abastecimiento** (Examen 2005, respuestas de alumno; el Documento Maestro lo marca con ★). Procesos de adquisición, subcontratación y proveedores JIT: **Chase caps. 10 y 12** y el apunte **«Producción Justo a Tiempo» de R. Morán** (UNR 2012, del Drive). El circuito en un ERP: el **tutorial de Odoo** de la cátedra (2015). «Ingeniería de compra» figura en el programa pero **no hay material** que la desarrolle: va como complemento."
   },
   {
    "type": "callout",
@@ -105,6 +106,24 @@
     "**Colocación de la orden de compra** (separadas para directos e indirectos si hace falta).",
     "**Seguimiento, activación y cumplimiento** de las órdenes vigentes; recepción; cierre y evaluación del proveedor."
    ]
+  },
+  {
+   "type": "paragraph",
+   "text": "**El mismo circuito en un ERP** (tutorial de Odoo de la cátedra, «Venta, Fabricación y Abastecimiento», 2015):"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**Depósito › Ejecutar planificadores** con la opción «Regla de stock mínimo automática», que «procese las reglas de abastecimiento en base a los puntos de pedido definidos»: el sistema detecta qué ítems llegaron al punto de pedido (el **pedido de reposición**).",
+    "Se generan **presupuestos** en Compras › Presupuestos: «el presupuesto es en realidad una orden de compra en estado borrador».",
+    "**Confirmar pedido**: el presupuesto pasa a **Órdenes de Compra** (la colocación de la orden).",
+    "**Compras › Albaranes de entrada**: «El Albarán es más conocido como el Remito, y es el documento que acredita la entrada de mercadería»; se generan solos al confirmar la orden, en estado «Listo para recibir», y al **Recibir** quedan «Recibido» (la **recepción**)."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "En el diagrama del tutorial, las líneas rojas marcan «las situaciones en las que el sistema falló por falta de planeación, ya que el inventario llegó a cero»: por eso hay que definir el punto de pedido de cada componente."
   },
   {
    "type": "heading",
@@ -222,7 +241,23 @@
   },
   {
    "type": "paragraph",
-   "text": "**Complemento (no está en el material):** la selección de proveedores JIT suele resumirse en **pocos proveedores** (a veces uno por ítem), **cercanos**, con **contratos de largo plazo**, **calidad certificada** (sin inspección de recepción), **lotes chicos y entregas frecuentes**, y comunicación electrónica (EDI o kanban de proveedor). El apunte «Produccion JIT.pdf» de la cátedra (U4) está en el Drive pero no se descargó."
+   "text": "**Pedidos a los proveedores en JIT (Morán, «Producción Justo a Tiempo», punto 3.3).** Al proveedor se le dan dos tipos de información:"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "«Una **planificación mensual previa**, para que puedan determinar los ciclos de sus procesos de producción, las rutas estándar de las operaciones, las cantidades de materias primas necesarias, etc.»",
+    "«El **requerimiento diario** de unidades a entregar», de dos formas: **reposición mediante kanban de proveedor** («en intervalos regulares de tiempo los contenedores vacíos se llevan al proveedor, junto con sus kanban, y se recogen contenedores llenos») o **reposición mediante tabla de secuencia prevista** (se le transmite cada día «la secuencia de armado para recoger los componentes en el mismo orden»)."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Morán advierte que la tabla de secuencia «requiere proveedores con sistemas de producción tan perfeccionados como el de la empresa cliente». Y en el cálculo de kanban señala que el modelo de **tiempo entre lotes constante** (período fijo) se usa «esencialmente» con los **proveedores externos**, «debido principalmente a las distancias»; el de cantidad constante, para la producción propia."
+  },
+  {
+   "type": "paragraph",
+   "text": "**Complemento (no está en el material):** la selección de proveedores JIT suele resumirse en **pocos proveedores** (a veces uno por ítem), **cercanos**, con **contratos de largo plazo**, **calidad certificada** (sin inspección de recepción), **lotes chicos y entregas frecuentes**, y comunicación electrónica (EDI o kanban de proveedor)."
   },
   {
    "type": "heading",

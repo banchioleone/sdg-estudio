@@ -3,7 +3,7 @@ from u5lib import *
 def c6():
     t = [
         P("**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque B · Clase 6 · Período fijo, período único y rotación**"),
-        AVISO("**De dónde sale esta clase.** Todo de **Chase cap. 17** (ecuaciones [17.1], [17.10] y [17.11], rotación de inventarios, control en servicios) y **cap. 10** (rotación y semanas de suministro, [10.2]). En el V6 las fórmulas son imagen; las escribo en notación de Chase con las definiciones del texto. **No hay ejercicios de final de esta clase en el material**: los ejemplos numéricos con datos de finales son cálculo propio."),
+        AVISO("**De dónde sale esta clase.** Todo de **Chase cap. 17** (ecuaciones [17.1], [17.10] y [17.11], rotación de inventarios, control en servicios) y **cap. 10** (rotación y semanas de suministro, [10.2]). Las fórmulas y los ejemplos numéricos están **verificados contra el libro completo** (Chase 12a ed., del Drive): Ejemplos 17.1, 17.5, 17.6, 17.7 y 10.1 y Problemas resueltos 1, 3 y 4. **No hay ejercicios de final de esta clase en el material**; el único cálculo con datos de finales (rotación del ítem N(50,10)) es cálculo propio y está marcado."),
         IDEA("**Idea central:** en el periódico el riesgo dura **T + L** (el período de revisión más la entrega), por eso necesita más stock de seguridad. Cuando la compra es **única**, el modelo cambia: se elige la cantidad que equilibra el costo de que sobre con el de que falte."),
         H("1. Período fijo con stock de seguridad"),
         P("En el periódico se cuenta solo en la revisión. «Es posible que una demanda alta haga que el inventario llegue a cero justo después de hacer el pedido. Esta condición pasará inadvertida hasta el siguiente periodo de revisión; además, el nuevo pedido tardará en llegar.» Por eso el SS protege «durante todo el periodo de revisión, T, y el tiempo de entrega, L» (Chase)."),
@@ -11,11 +11,22 @@ def c6():
         F("q = \\bar d\\,(T+L) + z\\,\\sigma_{T+L} - I", "[17.11] · cantidad = demanda en el período vulnerable + SS − existencias (más lo pedido)"),
         F("\\sigma_{T+L} = \\sqrt{\\sum_{i=1}^{T+L}\\sigma_d^2} = \\sigma_d\\sqrt{T+L}"),
         P("Chase: «La demanda, el tiempo de entrega, el periodo de revisión, etc., pueden estar en cualquier unidad de tiempo como días, semanas o años, siempre y cuando sean **consistentes** en toda la ecuación.» La demanda se puede pronosticar en cada revisión o tomar el promedio anual."),
-        EJ("Ejemplo con datos de la Clase 5 (cálculo propio)", [
-            P("Mismo ítem del final: $\\bar d = 50$ cajas/día, $\\sigma_d = 10$, $L = 3$ días, nivel de servicio 85%. Supongamos que se revisa **cada 10 días** y al revisar hay **300 cajas** (incluido lo pedido)."),
-            F("\\sigma_{T+L} = 10\\sqrt{13} \\approx 36{,}1 \\qquad SS = 1{,}04\\cdot 36{,}1 \\approx 37"),
-            F("q = 50\\cdot 13 + 37 - 300 = 387 \\text{ cajas}"),
-            P("Compará: en el perpetuo el SS era **18**; en el periódico, **37**. Es la diferencia que menciona Chase: el período fijo tiene un inventario promedio más grande."),
+        EJ("Ejemplo del libro · Chase, Ejemplo 17.5 «Cantidad que se va a pedir» (p. 563–564)", [
+            P("«La demanda diaria de un producto es de **10** unidades con una desviación estándar de **3** unidades. El periodo de revisión es de **30 días** y el tiempo de entrega de **14 días**. La gerencia estableció la política de cubrir **98%** de la demanda con las existencias. Al principio de este periodo de revisión, hay **150** unidades en el inventario. ¿Cuántas unidades se deben pedir?»"),
+            F("\\sigma_{T+L} = \\sqrt{(30+14)\\cdot 3^2} = 19{,}90 \\qquad z_{98\\%} = 2{,}05", "[17.12] Chase"),
+            F("q = 10\\,(30+14) + 2{,}05\\cdot 19{,}90 - 150 = 331 \\text{ unidades}"),
+            P("«Para garantizar una probabilidad de 98% de que el inventario no se va a agotar, es necesario pedir **331** unidades en este periodo de revisión.» Con la tabla de la cátedra, 98% → área 0,48 → z = 2,05 (Clase 5)."),
+        ]),
+        EJ("Ejemplo del libro · Chase, Problema resuelto 3 (p. 577)", [
+            P("Demanda diaria **120** unidades, desvío **30**; período de revisión **14 días**, entrega **7 días**; en la revisión hay **130** unidades; solo se acepta un **1%** de riesgo de faltante."),
+            F("\\sigma_{T+L} = \\sqrt{(14+7)\\cdot 30^2} = \\sqrt{18\\,900} = 137{,}5 \\qquad z = 2{,}33"),
+            F("q = 120\\,(14+7) + 2{,}33\\cdot 137{,}5 - 130 = 2710 \\text{ unidades}"),
+        ]),
+        EJ("Ejemplo del libro · Chase, Problema resuelto 4 (p. 577)", [
+            P("Hay 200 unidades y se pide **cada dos semanas** cuando visita el vendedor. Demanda **20** por día con desvío **5**; entrega **7 días**; meta **95%**. El vendedor llega esta tarde, cuando queden **180** unidades."),
+            F("I = 180,\\; T = 14,\\; L = 7 \\qquad \\sigma_{T+L} = \\sqrt{21\\cdot 5^2} = 23 \\qquad z = 1{,}64"),
+            F("q = 20\\,(14+7) + 1{,}64\\cdot 23 - 180 = 278 \\text{ unidades}"),
+            P("Fijate que **I es lo que habrá al momento de pedir** (180), no lo que hay ahora (200)."),
         ]),
         H("2. Modelo de período único (el «voceador»)"),
         P("Sirve cuando se compra **una sola vez** para un período y lo que sobra pierde valor: diarios, playeras de un partido, artículos de moda. Chase lo resuelve con **análisis marginal**: conviene seguir agregando unidades mientras el beneficio esperado de la siguiente sea mayor que su costo esperado."),
@@ -29,6 +40,20 @@ def c6():
             F("\\frac{C_u}{C_o + C_u} = \\frac{0{,}30}{0{,}20 + 0{,}30} = 0{,}6 \\Rightarrow z \\approx 0{,}25 \\Rightarrow 90 + 0{,}25\\cdot 10 \\approx 93"),
             P("Chase: «el número total de periódicos para el puesto cada lunes por la mañana debe ser de **93 periódicos**»."),
         ]),
+        EJ("Ejemplo del libro · Chase, Ejemplo 17.1 «Reservaciones de hotel» (p. 552–553)", [
+            P("Un hotel cerca de una universidad se llena la noche anterior a cada partido. Las cancelaciones de último momento tienen media **5** y desvío **3**. La tarifa promedio es **80 dólares**; si un cliente con reserva no tiene lugar, el hotel le paga otro cercano, lo que cuesta unos **200 dólares**. ¿Cuántas reservas de más conviene tomar?"),
+            P("Subestimar las cancelaciones cuesta $C_u = 80$ (una habitación vacía); sobrestimarlas, $C_o = 200$."),
+            F("P \\leq \\frac{C_u}{C_o + C_u} = \\frac{80}{200 + 80} = 0{,}2857 \\;\\Rightarrow\\; z = -0{,}566 \\;\\Rightarrow\\; 5 - 0{,}566\\cdot 3 = 5 - 1{,}7 \\approx 3"),
+            P("El z negativo indica que hay que reservar **menos** que el promedio de cancelaciones: «el hotel debe hacer **tres** reservaciones adicionales». Chase obtiene z con NORMSINV(0,2857) de Excel; con la tabla de la cátedra, 0,5 − 0,2857 = 0,2143 → z ≈ 0,57 hacia la izquierda."),
+            P("**Con datos discretos** (análisis marginal): con la distribución histórica de cancelaciones (0 a 10, probabilidades 0,05 · 0,08 · 0,10 · 0,15 · 0,20 · 0,15 · 0,11 · 0,06 · 0,05 · 0,04 · 0,01) se calcula el costo esperado de cada cantidad de reservas extra:"),
+            T(["Reservas extra", "0", "1", "2", "3", "4", "5", "6"], [["Costo total esperado (dólares)", "337,6", "271,6", "228", "**212,4**", "238,8", "321,2", "445,6"]], "Chase, Ejemplo 17.1 (sigue hasta 10: 600,8 · 772,8 · 958,8 · 1156)"),
+            P("El mínimo vuelve a estar en **3 reservas adicionales**."),
+        ]),
+        EJ("Ejemplo del libro · Chase, Problema resuelto 1 (p. 576)", [
+            P("Precio de venta **100 dólares**, costo **70**, valor de recuperación de lo que sobra **20**. La demanda va de 35 a 40 unidades con probabilidades 0,10 · 0,15 · 0,25 · 0,25 · 0,15 · 0,10 (acumuladas 0,10 · 0,25 · 0,50 · 0,75 · 0,90 · 1,00)."),
+            F("C_u = 100 - 70 = 30 \\qquad C_o = 70 - 20 = 50 \\qquad P \\leq \\frac{30}{50+30} = 0{,}375"),
+            P("«A partir de los datos de distribución anteriores, esto corresponde a la **37a.** unidad.» El análisis marginal completo da costos totales de 75 · 53 · **43** · 53 · 83 · 125 para comprar 35 a 40: el mínimo es **37 unidades**."),
+        ]),
         P("Aplicaciones que da Chase: **sobreventa de vuelos** (subestimar cancelaciones = asiento vacío; sobrestimar = compensar al pasajero que no sube), **pedidos de artículos de moda** (un solo pedido por temporada) y **cualquier pedido único** (camisetas para un evento, mapas que se vuelven obsoletos)."),
         H("3. Rotación de inventarios y semanas de suministro"),
         P("Las dos medidas que da Chase para evaluar la eficiencia (cap. 10); «matemáticamente son inversas entre sí»:"),
@@ -37,6 +62,19 @@ def c6():
         P("Valores típicos (Chase): un supermercado puede rotar **más de 100 veces al año**; en manufactura son típicos **6 a 7**. Cuando domina el inventario de distribución se prefieren las semanas de suministro; con inventarios muy bajos, días u horas."),
         P("Para **una pieza** (cap. 17): el costo de lo vendido es $D\\,C$ y el inventario promedio, con stock de seguridad, es $Q/2 + SS$:"),
         F("\\text{Rotación de una pieza} = \\frac{D\\,C}{(Q/2 + SS)\\,C} = \\frac{D}{Q/2 + SS}"),
+        EJ("Ejemplo del libro · Chase, Ejemplo 17.6: cantidad de pedido fija (p. 565)", [
+            P("D = 1000 unidades al año, Q = 300, SS = 40."),
+            F("\\text{Inventario promedio} = \\frac{Q}{2} + SS = 150 + 40 = 190 \\qquad \\text{Rotación} = \\frac{1000}{190} = 5{,}263 \\text{ por año}"),
+        ]),
+        EJ("Ejemplo del libro · Chase, Ejemplo 17.7: período fijo (p. 565)", [
+            P("Demanda semanal d = 50, ciclo de revisión T = 3 semanas, SS = 30. En cada ciclo se espera pedir lo que se demanda en él, $dT$."),
+            F("\\text{Inventario promedio} = \\frac{dT}{2} + SS = \\frac{50\\cdot 3}{2} + 30 = 105 \\qquad \\text{Rotación} = \\frac{52\\,d}{dT/2 + SS} = \\frac{2600}{105} = 24{,}8"),
+        ]),
+        EJ("Ejemplo del libro · Chase, Ejemplo 10.1: Dell Computer (cap. 10, p. 360–361)", [
+            P("Informe anual 2006 de Dell, en millones de dólares: costo de los bienes vendidos («costo de las ganancias») **45 958**; materiales de producción **327**; trabajo en proceso y bienes terminados **247**."),
+            F("\\text{Rotación} = \\frac{45\\,958}{327 + 247} = 80{,}07 \\text{ por año} \\qquad \\text{Semanas de suministro} = \\frac{327 + 247}{45\\,958}\\times 52 = 0{,}65"),
+            P("Chase: «un desempeño sorprendente para una compañía de alta tecnología». Compará con los 6 a 7 típicos de manufactura."),
+        ]),
         EJ("Ejemplo con el ítem N(50,10) (cálculo propio)", [
             F("\\frac{10\\,000}{707/2 + 18} \\approx 27 \\text{ veces por año} \\qquad \\frac{52}{27} \\approx 1{,}9 \\text{ semanas de suministro}"),
         ]),
@@ -52,8 +90,9 @@ def c6():
         P("El programa incluye «herramientas informatizadas de cálculo». En el material:"),
         L(["Chase usa **Excel**: NORMSINV(probabilidad) para obtener $z$ y NORMSDIST($z$) para la probabilidad (hoy DISTR.NORM.ESTAND.INV y DISTR.NORM.ESTAND.N).",
            "El índice del Drive lista archivos de **WinQSB** de los ejercicios de MRP del cap. 18 (INVENT.MRP, INVENTA.MRP, INVENTOR.MRP: el archivo de inventarios —saldos, lotes, lead times— que usa el MRP). Son binarios y no están transcriptos; se ven en la U6.",
-           "Chase: los sistemas computarizados emiten automáticamente las notificaciones de **conteo cíclico** y calculan el **índice de uso** de cada pieza (Clase 7)."]),
-        AVISO("**Faltante de material:** no hay un apunte de la cátedra sobre el uso de WinQSB u otro software de inventarios. Si se toma, se pide en clase práctica."),
+           "Chase: los sistemas computarizados emiten automáticamente las notificaciones de **conteo cíclico** y calculan el **índice de uso** de cada pieza (Clase 7).",
+           "**Odoo** (tutorial de la cátedra «Venta, Fabricación y Abastecimiento», 2015, del Drive): el ERP distingue **stock real** y **stock virtual** («diferencias … debido a entradas o salidas en proceso, órdenes de venta, órdenes de compra»; es la *posición del inventario* de Chase), y genera solo los presupuestos a proveedores «si los productos en cuestión tienen definido el **Punto de Pedido**», corriendo los planificadores con la opción «**Regla de stock mínimo automática**». Es el modelo perpetuo de las Clases 2 y 5 hecho software."]),
+        AVISO("**Faltante de material:** no hay un apunte de la cátedra sobre WinQSB. Del software, lo único que hay en el Drive son los tutoriales de Odoo (2015)."),
         G("6. Glosario", "", [
             ["T", "período de revisión", "Cada cuánto se cuenta en el periódico"], ["σT+L", "desvío en T + L", "σd·√(T+L)"],
             ["I", "posición en la revisión", "Existencias más lo pedido"], ["Co", "costo de sobrar", "Por unidad que no se vende"],
@@ -61,7 +100,8 @@ def c6():
             ["SKU", "unidad inventariada", "Código de cada pieza en un comercio"], ["Abierta para comprar", "", "Presupuesto de compra no gastado del mes"],
         ]),
     ]
-    src = [V6, "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 10 (medición del desempeño de la cadena, [10.2])", DM,
+    src = [V6, CH(17, "551–553, 563–565, 576–577", "voceador, Ejemplos 17.1, 17.5–17.7, Problemas resueltos 1, 3 y 4"), CH(10, "360–361", "Ejemplo 10.1 Dell"), ODOO,
+           "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 10 (medición del desempeño de la cadena, [10.2])", DM,
            "INDEX.md (índice del Drive: archivos WinQSB INVENT, no descargados)"]
     return clase("u5c6", "Clase 6 · Período fijo, período único y rotación", "Período fijo, período único y rotación", "B",
                  "El stock de seguridad en el sistema periódico, el modelo de período único del voceador, la rotación y las semanas de suministro, y cómo controlan el inventario los servicios.",
@@ -71,15 +111,15 @@ def c6():
 def c7():
     t = [
         P("**Sistemas de Gestión (UTN FRRo) · Unidad 5 · Bloque B · Clase 7 · Clasificación ABC y conteo cíclico**"),
-        AVISO("**De dónde sale esta clase.** Teoría: **Chase cap. 17** («Planeación de inventario ABC» y «Exactitud del inventario y conteo de ciclos»). Ejercicios: la familia **EBS** (6400 artículos) y la del **plan de conteo de 6300 elementos**, y el **ABC por incidencia de mano de obra**, con resoluciones manuscritas de EFR y SG1.doc. Un final sin fecha tuvo como **única práctica un ejercicio de clasificación ABC** (Preguntas de teoría del final de SG1)."),
+        AVISO("**De dónde sale esta clase.** Teoría: **Chase cap. 17** («Planeación de inventario ABC», p. 569–570, y «Exactitud del inventario y conteo de ciclos», p. 571–572 de la 12a ed., verificado contra el libro completo del Drive). Ejercicios: la familia **EBS** (6400 artículos) y la del **plan de conteo de 6300 elementos**, y el **ABC por incidencia de mano de obra**, con resoluciones manuscritas de EFR y SG1.doc. Un final sin fecha tuvo como **única práctica un ejercicio de clasificación ABC** (Preguntas de teoría del final de SG1)."),
         IDEA("**Idea central:** pocas piezas concentran casi todo el dinero. ABC separa lo importante (A) de lo que no lo es (C) para darle **más control** (más conteos, pedidos más frecuentes, registros más exactos) a lo que más pesa."),
         H("1. El principio de Pareto"),
-        P("Chase: en el siglo XIX, Vilfredo Pareto, estudiando la distribución de la riqueza en Milán, «descubrió que **20% de las personas controlaban 80% de la riqueza**». En inventarios: «unas pocas piezas representan la mayor parte de la inversión»."),
+        P("Chase (p. 569): en el siglo XIX, Vilfredo Pareto, estudiando la distribución de la riqueza en Milán, «descubrió que **20% de las personas controlaban 80% de la riqueza**». En inventarios: «unas pocas piezas representan la mayor parte de la inversión»."),
         P("Como no es práctico hacer un modelo para cada pieza, el ABC divide el inventario por **volumen de dólares** (uso anual × costo): **A** alto, **B** moderado, **C** bajo. «Una pieza de bajo costo pero de alto volumen puede ser más importante que una pieza cara pero de bajo volumen.»"),
         H("2. Cómo se clasifica"),
         L(["Calcular para cada ítem el **volumen anual en dinero** = demanda anual × costo unitario.",
            "Ordenar de **mayor a menor**.", "Calcular el **% acumulado** del dinero y de los ítems.",
-           "Cortar en grupos. Chase: A ≈ **15%** más alto de las piezas, B el **35%** siguiente, C el último **50%**; en su ejemplo, 20% / 30% / 50%. «El punto en el que las líneas se dividen realmente depende del inventario en cuestión y en la cantidad de tiempo del personal disponible.»"], True),
+           "Cortar en grupos. Chase (p. 569–570): A ≈ **15%** más alto de las piezas, B el **35%** siguiente, C el último **50%**; en su ejemplo, 20% / 30% / 50%. «El punto en el que las líneas se dividen realmente depende del inventario en cuestión y en la cantidad de tiempo del personal disponible.»"], True),
         P("«Observe que el **costo unitario** de las piezas **no tiene ninguna relación** con su clasificación.» Y una excepción: si una pieza es **crítica** (su ausencia provoca una pérdida significativa), se la puede poner en A o B aunque su volumen de dinero no lo justifique."),
         T(["Clase", "Control que sugiere Chase", "Ejemplo: estación de servicio"], [
             ["A", "más controlada, pedidos semanales", "gasolina (resurtido diario o semanal)"],
@@ -91,8 +131,8 @@ def c7():
         L(["cuando el registro muestra un saldo bajo o cero (es más fácil contar pocas piezas);",
            "cuando hay saldo positivo pero se registró un pedido pendiente (discrepancia);", "después de un nivel de actividad específico;",
            "según la importancia de la pieza (ABC):"], True),
-        T(["Uso anual en dólares", "Revisión"], [["$10.000 o más", "30 días o menos"], ["$3.000 a $10.000", "45 días o menos"], ["$250 a $3.000", "90 días o menos"], ["menos de $250", "180 días o menos"]], "Chase cap. 17"),
-        P("Tolerancia recomendada: **±0,2%** para las A, **±1%** para las B y **±5%** para las C. Mejor momento para contar: sin actividad (fines de semana, segundo o tercer turno). Hay empresas con **contadores de ciclo de tiempo completo**, que suelen salir más baratos que el inventario anual con la planta cerrada."),
+        T(["Uso anual en dólares", "Revisión"], [["$10.000 o más", "30 días o menos"], ["$3.000 a $10.000", "45 días o menos"], ["$250 a $3.000", "90 días o menos"], ["menos de $250", "180 días o menos"]], "Chase cap. 17, p. 571"),
+        P("Tolerancia recomendada: **±0,2%** (Chase, p. 571–572) para las A, **±1%** para las B y **±5%** para las C. Mejor momento para contar: sin actividad (fines de semana, segundo o tercer turno). Hay empresas con **contadores de ciclo de tiempo completo**, que suelen salir más baratos que el inventario anual con la planta cerrada."),
         H("4. El plan de conteo: cómo se calcula"),
         F("\\text{ítems por día} = \\frac{\\sum (\\text{cantidad de ítems de la clase} \\times \\text{conteos por año})}{\\text{días hábiles por año}}"),
         EX("5. EJERCICIO — EBS (SG!EVA Evaluación 16/04/2003; EFR p.4; SG1 Lu Final 6)", [
@@ -153,7 +193,7 @@ def c7():
             ["Costo primo", "", "Materiales + mano de obra directa"],
         ]),
     ]
-    src = [V6, EVA, "texto/examenes/bloques_eva/07_Evaluación_16_04_03.txt (EBS)", "texto/examenes/Ejercicios posibles.txt (EBS)",
+    src = [V6, CH(17, "569–572", "ABC, exactitud del inventario y conteo de ciclos"), EVA, "texto/examenes/bloques_eva/07_Evaluación_16_04_03.txt (EBS)", "texto/examenes/Ejercicios posibles.txt (EBS)",
            EFR(4, "EBS"), EFR(8, "tabla ABC por mano de obra"), EFR(9, "ABC por mano de obra"), EFR(13, "plan de conteo 6300"),
            EFR(24, "plan de conteo 6300 sin coeficientes"), EFR(30, "conteo: veces de las A, 200 días"), EFR(34, "conteo: veces de las A, 250 días"),
            LU(9, "Final 6, EBS"), LU(10, "Final 8, ABC por % de mano de obra"), "texto/examenes/Preguntas de teoria del final de SG1.txt (final con ABC como único ejercicio)", PAT]

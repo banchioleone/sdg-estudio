@@ -9,6 +9,7 @@
  "visto": false,
  "source": [
   "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 17 «Control de inventarios» (Chase), págs. 258–285 del PDF del resumen",
+  "Chase 12a ed., cap. 17, p. 566–567 — Ejemplo 17.8 precio descontado (drive_u5/txt/cap17_chase12.txt)",
   "texto/examenes/SG!EVA.txt (compilado de finales 2002–2006)",
   "texto/examenes/Ejercicios posibles.txt (librería)",
   "texto/ocr/efr_ppm/p-03.png — EjerciciosFinalesResueltos, resolución manuscrita (librería)",
@@ -77,6 +78,59 @@
    "type": "svg",
    "file": "u5/img/u5_descuentos.svg",
    "caption": "Caso librería: una curva por precio; el óptimo cae en el quiebre de 100 cajas (gráfico propio)"
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo del libro · Chase, Ejemplo 17.8 «Precio descontado» (p. 566–567)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Datos: **D = 10 000** unidades al año; **S = 20 dólares** por pedido; **i = 20%** del costo (manejo anual, almacenamiento, interés, obsolescencia). Precio: de 0 a 499 unidades, **5 dólares**; de 500 a 999, **4,50**; 1000 o más, **3,90**."
+    },
+    {
+     "type": "formula",
+     "tex": "CT = DC + \\frac{D}{Q}S + \\frac{Q}{2}iC \\qquad Q = \\sqrt{\\frac{2DS}{iC}}",
+     "caption": "[17.15] Chase"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Precio",
+      "Q",
+      "¿Factible?",
+      "Costo total"
+     ],
+     "rows": [
+      [
+       "3,90",
+       "716",
+       "no (necesita 1000 o más)",
+       "—"
+      ],
+      [
+       "4,50",
+       "667",
+       "sí (500–999)",
+       "45 600 dólares"
+      ],
+      [
+       "3,90 en el quiebre",
+       "**1000**",
+       "sí",
+       "**39 590 dólares** ← óptimo"
+      ]
+     ],
+     "caption": "Chase, Ejemplo 17.8"
+    },
+    {
+     "type": "paragraph",
+     "text": "Chase lo explica así: con 5 dólares el EOQ daría 633 unidades, pero 633 unidades ya se pagan 4,50; y el EOQ de 716 a 3,90 tampoco existe, porque ese precio exige 1000. **La cantidad de pedido óptima es 1000 unidades.** Es el mismo esquema que la librería: el óptimo cae en el quiebre."
+    },
+    {
+     "type": "paragraph",
+     "text": "*Verificación (cálculo propio):* $CT(667) = 45\\,000 + 299{,}85 + 300{,}15 = 45\\,600$; $CT(1000) = 39\\,000 + 200 + 390 = 39\\,590$."
+    }
+   ]
   },
   {
    "type": "ejercicio",

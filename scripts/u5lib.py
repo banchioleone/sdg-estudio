@@ -96,3 +96,11 @@ def _fix(o, key=None):
     if isinstance(o, str) and "$" in o:
         return _pesos(o)
     return o
+
+
+# --- Chase 12a ed. completo (bajado del Drive el 22/11/2026: 01_Libros/administracionOperaciones.pdf)
+CH12 = "drive_u5/administracionOperaciones.pdf — Chase, Jacobs y Aquilano, «Administración de operaciones. Producción y cadena de suministros», 12a ed. (McGraw-Hill); texto en drive_u5/txt/"
+def CH(cap, p, what): return f"Chase 12a ed., cap. {cap}, p. {p} — {what} (drive_u5/txt/cap{cap}_chase12.txt)"
+JIT = "drive_u5/Produccion_JIT.pdf — R. Morán, «Producción Justo a Tiempo» (UNR, 2012), apunte del Drive (03_El proceso de Producción)"
+ODOO = "drive_u5/Odoo_Tutorial03_Venta_Fabricacion_Abastecimiento.pdf — Tutorial MRP Odoo 03 (2015), carpeta 02_Producto del Drive"
+TZ = "drive_u5/practica_1.pdf — Práctica «Repaso de conceptos estadísticos básicos» (cátedra, 2017), Anexo: áreas de la normal estándar (de 0 a z)"
