@@ -14,7 +14,8 @@
   "drive_u5/Odoo_Tutorial03_Venta_Fabricacion_Abastecimiento.pdf — Tutorial MRP Odoo 03 (2015), carpeta 02_Producto del Drive",
   "texto/resumenes/ResumenSG-Final-V6_345p.txt — Cap. 10 (medición del desempeño de la cadena, [10.2])",
   "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 5 y Semana 7",
-  "INDEX.md (índice del Drive: archivos WinQSB INVENT, no descargados)"
+  "INDEX.md (índice del Drive: archivos WinQSB INVENT, no descargados)",
+  "Fuente externa: Y. Reyes Fernández, «Inventarios de demanda aleatoria», Apunte docente, Esc. de Ingeniería Comercial, PUCV (Chile), https://www.ucv.cl/uuaa/site/docs/20181123/20181123195708/apuntedocenteinventariosdedemandaaleatoriayr.pdf"
  ],
  "laminas": [],
  "next": "Clase 7 · Clasificación ABC y conteo cíclico",
@@ -391,8 +392,66 @@
    "text": "**Faltante de material:** no hay un apunte de la cátedra sobre WinQSB. Del software, lo único que hay en el Drive son los tutoriales de Odoo (2015)."
   },
   {
+   "type": "heading",
+   "level": 2,
+   "text": "6. Período único con matriz de valor esperado (fuente externa)"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Fuente externa, no es de la cátedra:** Y. Reyes Fernández, «Inventarios de demanda aleatoria», PUCV, https://www.ucv.cl/uuaa/site/docs/20181123/20181123195708/apuntedocenteinventariosdedemandaaleatoriayr.pdf. En el Drive el período único se resuelve con el análisis marginal de Chase (sección 2). Esta es otra forma de plantearlo, con una tabla."
+  },
+  {
+   "type": "paragraph",
+   "text": "El método del **valor esperado** arma una matriz **inventario × demanda**, calcula la ganancia de cada celda y elige la alternativa de mayor beneficio esperado (fórmula de abajo). Distingue el **costo por exceso** (unidades que sobran: el apunte lo valúa con el costo de capital) y el **costo por defecto** (unidades que faltan: la utilidad que se pierde)."
+  },
+  {
+   "type": "formula",
+   "tex": "VE(A_i) = \\sum_{j} x_{ij} \\cdot p_j",
+   "caption": "x: resultado de cada alternativa con cada demanda; p: probabilidad de esa demanda"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Stock / demanda",
+    "D = 20 (p 0,40)",
+    "D = 30 (p 0,30)",
+    "D = 40 (p 0,30)",
+    "Beneficio esperado"
+   ],
+   "rows": [
+    [
+     "30",
+     "45",
+     "150",
+     "100",
+     "**93**"
+    ],
+    [
+     "40",
+     "−10",
+     "95",
+     "200",
+     "84,5"
+    ],
+    [
+     "50",
+     "−65",
+     "40",
+     "145",
+     "29,5"
+    ]
+   ],
+   "caption": "Matriz de beneficios del ejemplo del apunte (compra 5, venta 10, costo de capital 10 %). Se elige 30 unidades"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Ojo (cálculo propio):** el apunte, además de no registrar la venta que se pierde, resta el costo por defecto. Por eso sus ganancias con faltante son menores que ingreso − costo de compra: con 30 en stock y demanda 40, el apunte da 100, y la ganancia directa sería 300 − 150 = 150. En el final usá el **análisis marginal** de la cátedra y de Chase. La matriz sirve para ver el razonamiento."
+  },
+  {
    "type": "glosario",
-   "title": "6. Glosario",
+   "title": "7. Glosario",
    "intro": "",
    "entries": [
     {
@@ -533,6 +592,12 @@
    "k": "Servicios",
    "title": "Miles de SKU, sin un EOQ por ítem.",
    "text": "Una tienda departamental maneja 3000 a 4000 SKU por departamento. Un taller de autos usa ABC y promedios ponderados: con usos 17, 19, 11 y 23 y pesos 0,1 a 0,4, la demanda estimada es 18 por mes."
+  },
+  {
+   "type": "concepto",
+   "k": "Fuente externa · PUCV",
+   "title": "Período único con una matriz.",
+   "text": "Apunte de Reyes (PUCV): inventario × demanda, ganancia por celda y elegir el mayor valor esperado. En su ejemplo gana stockear 30 (93 contra 84,5 y 29,5). En el final, el método es el marginal de Chase."
   },
   {
    "type": "cierre",

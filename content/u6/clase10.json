@@ -7,7 +7,7 @@
  "name": "MRP II y ERP",
  "lede": "El planificador, señalamiento y órdenes en firme; MRP de ciclo cerrado, MRP II y ERP; el subsistema MRP de la cátedra en cinco etapas; MRP y JIT; y la programación por armado final.",
  "visto": false,
- "source": "drive_u6/12-Planificación de los Requerimientos de Materiales (MRP).pdf — Nota técnica de R. Morán (© 2000), apunte de la cátedra (mismo texto que «MRP- Planiificación de Requerimientos de Materiales.pdf») §3–§5; drive_u6/Planificacion de la Capacidad.pdf — Nota técnica «Planificación de la capacidad de producción», R. Morán (© 2001) §4; Chase, Jacobs y Aquilano 12a ed., cap. 18, p. 604–607 — MRP de ciclo cerrado, MRP II, manufactura de flujo (drive_u6/txt/cap18_chase12.txt); texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — preguntas 1–4, 13, 15, 19, 28, 43; drive_u6/2015 - TP N 7 - MRP ODOO.pdf y Tutoriales MRP Odoo 01–02 (UTN FRRo, 2015); texto/examenes/examen_2018_transcripcion.md (teoría 2)",
+ "source": "drive_u6/12-Planificación de los Requerimientos de Materiales (MRP).pdf — Nota técnica de R. Morán (© 2000), apunte de la cátedra (mismo texto que «MRP- Planiificación de Requerimientos de Materiales.pdf») §3–§5; drive_u6/Planificacion de la Capacidad.pdf — Nota técnica «Planificación de la capacidad de producción», R. Morán (© 2001) §4; Chase, Jacobs y Aquilano 12a ed., cap. 18, p. 604–607 — MRP de ciclo cerrado, MRP II, manufactura de flujo (drive_u6/txt/cap18_chase12.txt); texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — preguntas 1–4, 13, 15, 19, 28, 43; drive_u6/2015 - TP N 7 - MRP ODOO.pdf y Tutoriales MRP Odoo 01–02 (UTN FRRo, 2015); texto/examenes/examen_2018_transcripcion.md (teoría 2); drive_u5/Resumen_Monks.docx — resumen de alumnos de Monks, «Administración de operaciones» (material del Drive; no es el libro), cap. 13; Fuente externa: UNICEN, Fac. de Ciencias Exactas, cátedra «Sistemas de información para administración de operaciones», «Planificación y Control de la Producción: Planificación Agregada, MPS, MRP-I, MRP-II» (láminas, 2003), https://users.exa.unicen.edu.ar/catedras/modemp/12_MRP.pdf; Fuente externa: Vollmann, Berry y Whybark, «Sistemas de planificación y control de la fabricación» (Irwin, 1994, ISBN 84-8086-195-9), índice del catálogo de la Biblioteca UNDEF, http://koha.undef.edu.ar/cgi-bin/koha/opac-detail.pl?biblionumber=23682; Fuente externa: TIC Portal, glosario, «Planificación de capacidad de máquinas (MCP)», https://www.ticportal.es/glosario-tic/planificacion-capacidad-maquinas-mcp",
  "laminas": [
   "u6/img/u6_ciclo_cerrado.svg"
  ],
@@ -106,7 +106,7 @@
   {
    "type": "callout",
    "kind": "aviso",
-   "text": "**«MCP» en el final 13/12/2012** («Qué es MRP, MCP, ERP»): no aparece definido en el material del Drive. No lo invento: si te lo toman, aclará que no lo encontraste en la bibliografía y respondé MRP y ERP."
+   "text": "**«MCP»:** ver la sección «La sigla MCP» al final de esta clase (hipótesis, fuente externa)."
   },
   {
    "type": "heading",
@@ -187,6 +187,66 @@
    "type": "callout",
    "kind": "aviso",
    "text": "**Complemento (no está en el material):** el programa lo nombra, pero no hay apunte de la cátedra. Lo que sí está: Morán dice que el MPS fija los productos finales «o los conjuntos mayores en el caso de producción para armado sobre pedido», y Chase marca que el MRP da beneficios grandes en **ensamble a pedidos** (ilustración 18.3). La idea general (Vollmann, citado en la bibliografía de Morán, no está en el Drive): en el **armado sobre pedido** el MPS se hace a nivel de **módulos u opciones** (que se fabrican para stock con el MRP) y un **programa de armado final** (FAS) arma el producto específico cuando llega el pedido, con un horizonte corto. Usalo así, aclarando que es complemento."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. PRM II, regenerativo y cambio neto (resumen de Monks, Drive)"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Qué es este material:** el Drive no tiene el libro de Monks, pero sí un **resumen de alumnos** (`Resumen_Monks.docx`). Lo que sigue sale de ese resumen, con sus palabras entre comillas. Monks usa siglas en castellano: **PRM** = MRP, **PRC** = CRP, **PMP** = MPS, **LDM** = lista de materiales (BOM)."
+  },
+  {
+   "type": "paragraph",
+   "text": "**PRM II** (MRP II): «una extensión de los conceptos de PRM que incluye información de costos del producto que proporcionará reportes financieros, así como de capacidad y proveedores». El circuito incluye retroalimentación de operaciones internas y de órdenes a proveedores. El sistema crece con LDM planeadas, órdenes planeadas por la empresa y la capacidad de identificar y reprogramar."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Sistema",
+    "Cómo procesa (resumen de Monks)"
+   ],
+   "rows": [
+    [
+     "**Regenerativo**",
+     "procesamiento intermitente: replanea el sistema total (explosión completa de todos los artículos) sobre una base regular, por ejemplo semanal"
+    ],
+    [
+     "**Cambio neto**",
+     "en línea: reacciona continuamente a cambios en el programa maestro, los inventarios y otras transacciones"
+    ]
+   ],
+   "caption": "drive_u5/Resumen_Monks.docx, cap. 13"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "7. MRP II como lazo cerrado (fuente externa: láminas de UNICEN)"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Fuente externa, no es de la cátedra:** láminas de UNICEN (2003), https://users.exa.unicen.edu.ar/catedras/modemp/12_MRP.pdf. Se suman porque ordenan en un solo esquema lo que el Drive explica por partes."
+  },
+  {
+   "type": "paragraph",
+   "text": "Las láminas definen MRP II como «una extensión natural del concepto del MRP, incorporando a las funciones de planeamiento funciones de control y de planificación de recursos, así como de planeamiento de capacidad (CRP)», y dicen que «administra el proceso de producción como un sistema con lazo cerrado». El esquema de funciones va en tres niveles: **planeamiento** (de negocios, de ventas, de producto y de producción), **operaciones** (MPS, MRP y CRP) y **control** (compras, piso de producción, inventario y distribución). Si no hay material o no hay capacidad «económicamente», se modifica el MPS."
+  },
+  {
+   "type": "paragraph",
+   "text": "También dicen que un software MRP II tiene dos grandes componentes. Uno **describe el proceso de manufactura** (BOM, rutas, capacidades de máquinas, tiempos de respuesta de proveedores). El otro **incorpora funciones de control** del proceso de producción."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "8. La sigla «MCP»"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**«MCP» en el final 13/12/2012** («Qué es MRP, MCP, ERP»). **No es una definición de la cátedra:** MCP no aparece definido en ningún material del Drive (notas de Morán, Chase, resumen de Monks, OCR de exámenes). **Hipótesis (fuente externa, confianza media-baja):** lo más probable es que se refiera a **MPC, Planificación y Control de la Fabricación (o de la Manufactura)**. Ese es el marco del libro de **Vollmann, Berry y Whybark**, que está en la bibliografía del programa. Su índice (catálogo UNDEF, http://koha.undef.edu.ar/cgi-bin/koha/opac-detail.pl?biblionumber=23682) arma todo alrededor del «sistema MPC»: administración de la demanda, planificación de la producción, MPS, MRP, planificación de capacidad, control de la actividad de producción, JIT y DRP, más capítulos de «Sistemas MPC integrados» y «Límites del sistema MPC». «MCP» sería el orden en castellano de la sigla o una inversión, y encaja en la secuencia **MRP → MRP II / sistema MPC → ERP**. Otra lectura posible, menos probable para 2012: «Machine Capacity Planning» (planificación de capacidad de máquinas), que solo aparece en glosarios actuales de ERP (https://www.ticportal.es/glosario-tic/planificacion-capacidad-maquinas-mcp). **Si te lo toman:** aclarás que no figura definido en el material, decís que lo interpretás como MPC (Vollmann) y respondés MRP, MPC y ERP como una evolución."
   }
  ],
  "historias": [
@@ -244,9 +304,10 @@
   },
   {
    "type": "concepto",
-   "k": "Ojo",
-   "title": "«MCP» no está definido.",
-   "text": "El final 13/12/2012 pregunta «Qué es MRP, MCP, ERP». MCP no aparece en el material del Drive: si te lo toman, aclaralo y respondé MRP y ERP."
+   "k": "Hipótesis · fuente externa",
+   "title": "«MCP»: probablemente MPC.",
+   "text": "No está definido en el Drive ni en ningún apunte de la cátedra. Lo más probable (confianza media-baja) es que sea MPC, Planificación y Control de la Fabricación, el sistema del libro de Vollmann, que está en la bibliografía. Si te lo toman, aclaralo y respondé MRP → MPC → ERP.",
+   "ejemplo": "Fuente externa: índice del Vollmann en el catálogo de la UNDEF. No es una definición de la cátedra."
   },
   {
    "type": "pregunta",
@@ -259,6 +320,20 @@
    ],
    "correct": 1,
    "feedback": "El MRP planifica materiales a mediano plazo; la ejecución diaria puede seguir JIT. Es el sistema híbrido de la teoría."
+  },
+  {
+   "type": "concepto",
+   "k": "Monks",
+   "title": "Regenerativo o cambio neto.",
+   "text": "Resumen de Monks del Drive: el regenerativo replanea todo, con explosión completa, en forma periódica (por ejemplo, semanal). El de cambio neto está en línea y reacciona a cada cambio del MPS o del inventario."
+  },
+  {
+   "type": "concepto",
+   "k": "Fuente externa · UNICEN",
+   "title": "MRP II es un lazo cerrado.",
+   "text": "Láminas de UNICEN (2003): planeamiento de negocios y ventas, después MPS, MRP y CRP, y control de compras y planta. Si falta material o capacidad, se vuelve a modificar el MPS.",
+   "svg": "<svg viewBox=\"0 0 280 142\" width=\"100%\" height=\"142\" role=\"img\" aria-label=\"MRP II a lazo cerrado\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">MRP II a lazo cerrado</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. Planeamiento</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">negocios, ventas, producción</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. MPS → MRP → CRP</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">operaciones</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. ¿Material y capacidad?</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">no → modificar MPS</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">4. Control</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">compras, planta, inventario</text></svg>",
+   "chartLabel": "Fuente externa: UNICEN, 12_MRP.pdf"
   },
   {
    "type": "cierre",

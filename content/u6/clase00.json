@@ -7,7 +7,7 @@
  "name": "Mapa de la Unidad 6",
  "lede": "Qué entra en la U6, en qué orden se estudia, qué se toma en el final y qué material hay en el Drive.",
  "visto": false,
- "source": "programa.md — Unidad 6 · Planificación y control (programa 2008); clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 6 y Semanas 6, 8, 9 y 10; patrones_examenes.md (conteos de finales); drive_u6/Planificacion Agregada.pdf — «Planificación agregada de la producción», R. Morán (UNR, 2012); drive_u6/12-Planificación de los Requerimientos de Materiales (MRP).pdf — Nota técnica de R. Morán (© 2000), apunte de la cátedra (mismo texto que «MRP- Planiificación de Requerimientos de Materiales.pdf»); drive_u6/Planificacion de la Capacidad.pdf — Nota técnica «Planificación de la capacidad de producción», R. Morán (© 2001); drive_u6/PAC.pdf — Nota técnica «Control de las actividades de producción», R. Morán (© 2001)",
+ "source": "programa.md — Unidad 6 · Planificación y control (programa 2008); clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 6 y Semanas 6, 8, 9 y 10; patrones_examenes.md (conteos de finales); drive_u6/Planificacion Agregada.pdf — «Planificación agregada de la producción», R. Morán (UNR, 2012); drive_u6/12-Planificación de los Requerimientos de Materiales (MRP).pdf — Nota técnica de R. Morán (© 2000), apunte de la cátedra (mismo texto que «MRP- Planiificación de Requerimientos de Materiales.pdf»); drive_u6/Planificacion de la Capacidad.pdf — Nota técnica «Planificación de la capacidad de producción», R. Morán (© 2001); drive_u6/PAC.pdf — Nota técnica «Control de las actividades de producción», R. Morán (© 2001); drive_u5/Resumen_Monks.docx — resumen de alumnos de Monks, «Administración de operaciones» (material del Drive; no es el libro)",
  "laminas": [
   "u6/img/u6_mapa.svg"
  ],
@@ -333,7 +333,12 @@
   {
    "type": "callout",
    "kind": "aviso",
-   "text": "**Lo que no está en el Drive:** Monks (el programa lo cita y los alumnos dicen que el hombre–máquina sale de ahí), las notas técnicas de Sessa, APICS y Vollmann. Tampoco hay un apunte de la cátedra sobre **programación por armado final** ni sobre **automatización**: lo que se diga de eso en las Clases 1 y 10 se marca como complemento."
+   "text": "**Lo que no está en el Drive:** el libro de Monks (el programa lo cita y los alumnos dicen que el hombre–máquina sale de ahí; sí está el resumen de alumnos), las notas técnicas de Sessa, APICS y Vollmann. Tampoco hay un apunte de la cátedra sobre **programación por armado final** ni sobre **automatización**: lo que se diga de eso en las Clases 1 y 10 se marca como complemento."
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Actualización (Drive + internet):** el libro de Monks no está en el Drive, pero sí el **resumen de alumnos de Monks** (`drive_u5/Resumen_Monks.docx`, caps. 5, 6, 7, 9, 10 y 13). Ahora se usa en las Clases 2, 4, 5, 6, 7, 10 y 11. Lo que se buscó en internet (Vollmann, láminas de UNICEN, la sigla «MCP») entra solo como **fuente externa**, con la fuente y la URL, y nunca reemplaza al material del Drive. El detalle está en el Integrador, sección 4."
   },
   {
    "type": "glosario",
@@ -450,13 +455,13 @@
    "k": "Los libros",
    "title": "Chase y las notas de Morán.",
    "text": "El libro grande del Drive es Chase, Jacobs y Aquilano, 12a edición (caps. 7, 7A, 16, 18 y 19). La cátedra usa además las notas técnicas de Morán: plan agregado, capacidad, MRP y PAC.",
-   "ejemplo": "Monks, Vollmann y Sessa no están en el Drive. La unidad se arma sin ellos."
+   "ejemplo": "El libro de Monks no está, pero sí un resumen de alumnos (caps. 5, 10 y 13). Vollmann y Sessa no están. Lo de internet entra solo como fuente externa."
   },
   {
    "type": "concepto",
    "k": "Lo que falta",
    "title": "Huecos del material.",
-   "text": "Casi no hay resoluciones oficiales: la mayoría de los ejercicios están sin resolver o con una hoja manuscrita parcial. La tabla del final de las cédulas de manejo no está. «MCP» no aparece definido.",
+   "text": "Casi no hay resoluciones oficiales: la mayoría de los ejercicios están sin resolver o con una hoja manuscrita parcial. La tabla del final de las cédulas de manejo no está. «MCP» no aparece definido (en la Clase 10 está la hipótesis, como fuente externa).",
    "ejemplo": "Por eso en la teoría cada resolución dice si es del material o cálculo propio."
   },
   {

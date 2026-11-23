@@ -23,7 +23,8 @@
   "texto/ocr/sg1_ppm/p-09.png — SG1.doc, resolución manuscrita (Final 6, EBS)",
   "texto/ocr/sg1_ppm/p-10.png — SG1.doc, resolución manuscrita (Final 8, ABC por % de mano de obra)",
   "texto/examenes/Preguntas de teoria del final de SG1.txt (final con ABC como único ejercicio)",
-  "patrones_examenes.md (conteos de finales)"
+  "patrones_examenes.md (conteos de finales)",
+  "Fuente externa: Y. Reyes Fernández, «Control de inventarios», Apunte docente, Esc. de Ingeniería Comercial, PUCV (Chile), https://www.ucv.cl/uuaa/site/docs/20181123/20181123195708/apuntedocentecontroldeinventariosyr.pdf"
  ],
  "laminas": [
   "u5/img/u5_pareto.svg"
@@ -591,8 +592,48 @@
    "text": "**Para el ABC de examen:** 1) definir el **criterio** (volumen anual en \\$, incidencia de MO, el que pida la consigna); 2) tabla ordenada con % y **% acumulado**; 3) cortar donde lo pide el enunciado (o en 15–20% / 30–35% / 50% de los ítems); 4) decir **qué control** lleva cada clase (frecuencia de pedido, de conteo, tolerancia)."
   },
   {
+   "type": "heading",
+   "level": 2,
+   "text": "10. Otro criterio de ABC y políticas por clase (fuente externa)"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Fuente externa, no es de la cátedra:** Y. Reyes Fernández, «Control de inventarios», PUCV, https://www.ucv.cl/uuaa/site/docs/20181123/20181123195708/apuntedocentecontroldeinventariosyr.pdf. El criterio del Drive y de Chase es el valor de uso anual (sección 2). Esto suma **qué hacer** con cada clase."
+  },
+  {
+   "type": "paragraph",
+   "text": "El apunte ordena 10 artículos por valor de consumo (cantidad × costo unitario) y llega a: **A** = 7 % de las unidades y 74 % del valor; **B** = 44 % y 19 %; **C** = 49 % y 7 %. Para fijar los cortes usa también el **costo unitario** («costo unitario de 25 o más, o consumo anual superior a 20.000» para la clase A, en la moneda del ejemplo). Fijate que mide el porcentaje sobre las **unidades usadas**, no sobre la cantidad de ítems."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Clase",
+    "Política de compra según el apunte"
+   ],
+   "rows": [
+    [
+     "A",
+     "existencias al mínimo; no recomienda stock de seguridad (sin arriesgar faltantes); la compra la aprueba algún nivel ejecutivo"
+    ],
+    [
+     "B",
+     "depende de su peso: si son ~20 % del consumo, políticas de C; si son ~40 %, políticas de A con controles menos estrictos"
+    ],
+    [
+     "C",
+     "procedimientos sencillos y rutinarios, reservas de emergencia; solo autoriza el jefe de compras"
+    ]
+   ],
+   "caption": "Políticas por clase (Reyes, PUCV)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Las ventajas que da el apunte: economía de personal de planificación y control, menos faltantes por fallas internas y más eficiencia en el manejo de existencias."
+  },
+  {
    "type": "glosario",
-   "title": "10. Glosario",
+   "title": "11. Glosario",
    "intro": "",
    "entries": [
     {
@@ -722,6 +763,13 @@
    ],
    "correct": 0,
    "feedback": "Primero el criterio (volumen en dinero, incidencia de MO o el que pida la consigna). Después la tabla ordenada con % acumulado y el corte."
+  },
+  {
+   "type": "concepto",
+   "k": "Fuente externa · PUCV",
+   "title": "Qué hacer con cada clase.",
+   "text": "Apunte de Reyes (PUCV): A, mínimo stock y compra aprobada por un ejecutivo; B, según su peso; C, compra rutinaria con reservas de emergencia y firma del jefe de compras.",
+   "ejemplo": "En su ejemplo: A = 7 % de las unidades y 74 % del valor."
   },
   {
    "type": "cierre",

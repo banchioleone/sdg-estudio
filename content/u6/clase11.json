@@ -7,7 +7,7 @@
  "name": "Balanceo de línea",
  "lede": "Tiempo de ciclo, estaciones mínimas, eficiencia y reglas de asignación con la camioneta J de Chase; tareas más largas que el ciclo; y los ejercicios de final: montaje en paralelo, ventanas y cédulas.",
  "visto": false,
- "source": "Chase, Jacobs y Aquilano 12a ed., cap. 7A, p. 228–232 — balanceo de la línea de ensamble, ejemplo 7A.1 (drive_u6/txt/cap7A_chase12.txt); texto/examenes/Ejercicios posibles.txt (Ejercicios posibles.docx del Drive); texto/examenes/SG!EVA.txt y bloques_eva/ (compilado de finales 2002–2006) — 22/05/2003, 06/05/2004, 09/03/2006; texto/ocr/efr_ppm/p-19.png — EjerciciosFinalesResueltos, resolución manuscrita (ventanas: ciclo 90 s, 84,44%); texto/examenes/Preguntas de teoria del final de SG1.txt (14/03/2013, cédulas)",
+ "source": "Chase, Jacobs y Aquilano 12a ed., cap. 7A, p. 228–232 — balanceo de la línea de ensamble, ejemplo 7A.1 (drive_u6/txt/cap7A_chase12.txt); texto/examenes/Ejercicios posibles.txt (Ejercicios posibles.docx del Drive); texto/examenes/SG!EVA.txt y bloques_eva/ (compilado de finales 2002–2006) — 22/05/2003, 06/05/2004, 09/03/2006; texto/ocr/efr_ppm/p-19.png — EjerciciosFinalesResueltos, resolución manuscrita (ventanas: ciclo 90 s, 84,44%); texto/examenes/Preguntas de teoria del final de SG1.txt (14/03/2013, cédulas); drive_u5/Resumen_Monks.docx — resumen de alumnos de Monks, «Administración de operaciones» (material del Drive; no es el libro), cap. 5",
  "laminas": [
   "u6/img/u6_precedencias_j.svg",
   "u6/img/u6_ventanas.svg"
@@ -488,6 +488,63 @@
    "type": "callout",
    "kind": "aviso",
    "text": "**Hombre–máquina:** los finales del 01/08/2002 y del 13/12/2012 traen un ejercicio de gráfica hombre–máquina (ciclo, tiempo ocioso, eficiencia y costo horario). Según la transcripción del alumno es «la misma que está en la página 129 del Monks», y Monks no está en el Drive. No es tema de esta unidad en el material de la U6; acá solo lo dejamos anotado."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Las fórmulas de balanceo en el resumen de Monks (Drive)"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Qué es este material:** el Drive no tiene el libro de Monks, pero sí un **resumen de alumnos** (`Resumen_Monks.docx`). Lo que sigue sale de ese resumen, con sus palabras entre comillas. Monks usa siglas en castellano: **PRM** = MRP, **PRC** = CRP, **PMP** = MPS, **LDM** = lista de materiales (BOM)."
+  },
+  {
+   "type": "paragraph",
+   "text": "Balanceo de línea: «una distribución de las actividades secuenciales de trabajo para lograr el máximo aprovechamiento posible de la mano de obra y del equipo y de este modo reducir o eliminar el tiempo ocioso»."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Fórmula (resumen de Monks)",
+    "Equivale en Chase (sección 1)"
+   ],
+   "rows": [
+    [
+     "Ciclo de tiempo CT = tiempo disponible por período / producción requerida por período",
+     "C"
+    ],
+    [
+     "Número mínimo teórico de trabajadores = ∑t / CT",
+     "N_t"
+    ],
+    [
+     "Eficiencia del balance = ∑t / (CT · n), con n = estaciones reales; o mínimo teórico / número real de trabajadores",
+     "E"
+    ],
+    [
+     "Ciclo de tiempo meta CTm = ∑t / n; debe ser ≥ que la actividad más larga",
+     "—"
+    ],
+    [
+     "Producción = tiempo total de trabajo / cadencia (tiempo de la estación más lenta)",
+     "—"
+    ],
+    [
+     "Número de estaciones = capacidad requerida / capacidad por estación",
+     "—"
+    ]
+   ],
+   "caption": "drive_u5/Resumen_Monks.docx, cap. 5"
+  },
+  {
+   "type": "paragraph",
+   "text": "**Regla heurística** del resumen: moverse hacia abajo en el diagrama de red y elegir primero las tareas con **mayor tiempo** que entren en el ciclo de la estación, respetando las precedencias. Es la misma regla del tiempo más largo que usa Chase. Además: «Si el tiempo requerido en cualquier estación > CT → agregar trabajador»."
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "La **cadencia** (la estación más lenta) fija el ritmo de la línea. Por eso la producción por día es el tiempo de trabajo sobre la cadencia. Es la misma idea que la capacidad del sistema de la Clase 5."
   }
  ],
  "historias": [
@@ -576,6 +633,13 @@
    "k": "Cédulas (14/03/2013)",
    "title": "Solo el arranque.",
    "text": "50 números por día de 8 a 16: C = 480 / 50 = 9,6 min. Con unos 36 min de tareas, al menos 4 estaciones. La tabla de las 10 actividades no está en el Drive."
+  },
+  {
+   "type": "concepto",
+   "k": "Monks",
+   "title": "La cadencia manda.",
+   "text": "Resumen de Monks del Drive: producción = tiempo total de trabajo / cadencia, donde la cadencia es el tiempo de la estación más lenta. El ciclo meta, suma de tareas / estaciones, no puede ser menor que la tarea más larga.",
+   "formula": "\\text{Producción} = \\frac{\\text{tiempo total de trabajo}}{\\text{cadencia}} \\qquad CT_m = \\frac{\\sum t}{n}"
   },
   {
    "type": "cierre",

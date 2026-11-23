@@ -7,7 +7,7 @@
  "name": "MRP básico",
  "lede": "Qué es el MRP, la estructura del producto, el registro (brutos, ingresos, disponible, netos, órdenes), sus fórmulas y dos ejemplos resueltos: el producto X de Morán y los focos de Juno de Chase.",
  "visto": false,
- "source": "drive_u6/12-Planificación de los Requerimientos de Materiales (MRP).pdf — Nota técnica de R. Morán (© 2000), apunte de la cátedra (mismo texto que «MRP- Planiificación de Requerimientos de Materiales.pdf») §1–§2; Chase, Jacobs y Aquilano 12a ed., cap. 18, p. 593–603 — ejemplo 18.1 Juno Lighting (drive_u6/txt/cap18_chase12.txt); patrones_examenes.md (conteos de finales) (mesa especial de octubre, 2012, 2014, Lu, EFR p.36)",
+ "source": "drive_u6/12-Planificación de los Requerimientos de Materiales (MRP).pdf — Nota técnica de R. Morán (© 2000), apunte de la cátedra (mismo texto que «MRP- Planiificación de Requerimientos de Materiales.pdf») §1–§2; Chase, Jacobs y Aquilano 12a ed., cap. 18, p. 593–603 — ejemplo 18.1 Juno Lighting (drive_u6/txt/cap18_chase12.txt); patrones_examenes.md (conteos de finales) (mesa especial de octubre, 2012, 2014, Lu, EFR p.36); drive_u5/Resumen_Monks.docx — resumen de alumnos de Monks, «Administración de operaciones» (material del Drive; no es el libro), cap. 13",
  "laminas": [
   "u6/img/u6_bom_x.svg",
   "u6/img/u6_registro_mrp.svg"
@@ -586,6 +586,61 @@
    "type": "callout",
    "kind": "examen",
    "text": "**Teoría que se toma con esto:** «Sintetizar el algoritmo de cálculo de MRP» (mesa especial de octubre); «Qué es y para qué se usa la Estructura del Producto» (13/12/2012); «En ERP, qué información tiene la BOM» (17/02/2014); «Cómo se utiliza la BOM» (EFR p. 36); «Explosión sumarizada vs. indentada» y «componentes alternativos vs. accesorios» (el final de Lu). La estructura del producto es U3 (datos de ingeniería): acá la usás."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. PRM: el MRP según el resumen de Monks (Drive)"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Qué es este material:** el Drive no tiene el libro de Monks, pero sí un **resumen de alumnos** (`Resumen_Monks.docx`). Lo que sigue sale de ese resumen, con sus palabras entre comillas. Monks usa siglas en castellano: **PRM** = MRP, **PRC** = CRP, **PMP** = MPS, **LDM** = lista de materiales (BOM)."
+  },
+  {
+   "type": "paragraph",
+   "text": "**PRM** (planeación de requerimiento de materiales): «una técnica para determinar la cantidad y periodicidad para la adquisición de artículos dependientes de la demanda necesaria para satisfacer los requerimientos de la Programación Maestra». Al identificar qué, cuánto y cuándo, permite reducir costos de inventarios, mejorar la efectividad de la programación y responder rápido a cambios del mercado."
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "**LDM** (lista de materiales): todos los materiales y componentes para una unidad de producto final. Se describe con el **árbol de estructura del producto** o con la **LDM desglosada**. También existen LDM ficticias o artificiales, que se crean para facilitar la planeación.",
+    "**Requerimientos brutos**: las necesidades totales. **Netos**: lo que queda después de usar el inventario disponible.",
+    "**Explosión de materiales**: descomponer los artículos en sus partes para planearlas y programarlas por separado.",
+    "**Fase de tiempo**: producir o recibir el material para que esté disponible cuando se necesite, «no antes ni después»."
+   ]
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Entradas de PRM",
+    "Salidas de PRM"
+   ],
+   "rows": [
+    [
+     "PMP de artículos finales requeridos",
+     "Datos de programación de órdenes para los perfiles de carga de PRC"
+    ],
+    [
+     "Registros de estado de inventarios: disponible, tamaño de lotes, tiempos de entrega",
+     "Órdenes de compra y de producción interna"
+    ],
+    [
+     "Registro de estructura del producto (LDM)",
+     "Reprogramación del PMP"
+    ],
+    [
+     "",
+     "Reportes administrativos y actualización del inventario"
+    ]
+   ],
+   "caption": "Entrada–salida de PRM (drive_u5/Resumen_Monks.docx, cap. 13)"
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "Estas son las tres entradas de Morán y Chase con otros nombres: MPS, registro de inventarios y BOM. Si un enunciado viejo dice **PRM** o **LDM**, es MRP y BOM."
   }
  ],
  "historias": [
@@ -664,6 +719,14 @@
    "k": "Horizonte",
    "title": "Al menos el plazo acumulado.",
    "text": "El horizonte del MRP tiene que cubrir por lo menos el lead time acumulado del artículo que más tarda. Y se actualiza con horizonte deslizante."
+  },
+  {
+   "type": "concepto",
+   "k": "Siglas de Monks",
+   "title": "PRM, PRC, PMP, LDM.",
+   "text": "Si ves esas siglas en un final viejo, son MRP, CRP, MPS y BOM. Así figuran en el resumen de Monks del Drive. Las entradas del PRM son el PMP, el estado de inventarios y la LDM.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Entradas del PRM\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Entradas del PRM</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">PMP</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">MPS</text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">LDM</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">BOM</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Inventarios</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">estado</text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">PRM</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">MRP</text></svg>",
+   "chartLabel": "Esquema propio con el resumen de Monks (Drive)"
   },
   {
    "type": "cierre",

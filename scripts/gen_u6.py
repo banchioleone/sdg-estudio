@@ -1,5 +1,6 @@
 """Arma las clases de la U6 (content/u6/*.json) y actualiza content/index.json."""
 import json
+from ps12_extras import apply, apply_hist
 from u6lib import ROOT, BLOCKS, write
 from gen_u6_a import c0, c1, c2, c3, c4
 from gen_u6_b import c5, c6
@@ -33,7 +34,8 @@ def main():
         c["next"] = classes[i + 1]["title"] if i + 1 < len(classes) else None
         if not c["laminas"]:
             c["laminas"] = list(dict.fromkeys(svgs(c["teoria"])))
-        h = HIST[c["id"]]
+        apply(c)
+        h = apply_hist(c["id"], HIST[c["id"]])
         assert 9 <= len(h) <= 16 and h[-1]["type"] == "cierre", c["id"]
         for card in h:
             assert "$" not in str(card), (c["id"], card.get("title"))

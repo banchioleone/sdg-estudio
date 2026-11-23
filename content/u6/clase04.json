@@ -7,7 +7,7 @@
  "name": "Programa maestro (MPS)",
  "lede": "Del plan agregado al MPS: qué contiene, de dónde sale su demanda (cátedra y Chase), restricciones de tiempo, disponible para prometer y el MPS del final 2018.",
  "visto": false,
- "source": "Chase, Jacobs y Aquilano 12a ed., cap. 18, p. 590–592 y 598–599 — MPS, restricciones de tiempo, ATP, ejemplo Ampere (drive_u6/txt/cap18_chase12.txt); texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — preguntas 40 a 42 y 38; drive_u6/Planificacion Agregada.pdf — «Planificación agregada de la producción», R. Morán (UNR, 2012) §1 y §4.2; texto/examenes/examen_2018_transcripcion.md (foto del final 2018); texto/ocr/efr_ppm/p-22.png — EjerciciosFinalesResueltos, resolución manuscrita (versión 1999/2000, ilegible en parte)",
+ "source": "Chase, Jacobs y Aquilano 12a ed., cap. 18, p. 590–592 y 598–599 — MPS, restricciones de tiempo, ATP, ejemplo Ampere (drive_u6/txt/cap18_chase12.txt); texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — preguntas 40 a 42 y 38; drive_u6/Planificacion Agregada.pdf — «Planificación agregada de la producción», R. Morán (UNR, 2012) §1 y §4.2; texto/examenes/examen_2018_transcripcion.md (foto del final 2018); texto/ocr/efr_ppm/p-22.png — EjerciciosFinalesResueltos, resolución manuscrita (versión 1999/2000, ilegible en parte); drive_u5/Resumen_Monks.docx — resumen de alumnos de Monks, «Administración de operaciones» (material del Drive; no es el libro), cap. 10",
  "laminas": [
   "u6/img/u6_time_fences.svg"
  ],
@@ -322,6 +322,53 @@
    "type": "callout",
    "kind": "examen",
    "text": "**Teoría que se pregunta con esto:** «¿Cómo se calcula la demanda del MPS?», «¿Con qué frecuencia se revisa el PMP y cómo se ajustan los desvíos?» (bancos) y, en el final 2018, la misma mesa pide «hipótesis implícitas en la planificación de la capacidad usando listas de capacidad y perfiles de recursos» (Clase 6), que es justamente el control del MPS."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. El PMP según el resumen de Monks (Drive)"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Qué es este material:** el Drive no tiene el libro de Monks, pero sí un **resumen de alumnos** (`Resumen_Monks.docx`). Lo que sigue sale de ese resumen, con sus palabras entre comillas. Monks usa siglas en castellano: **PRM** = MRP, **PRC** = CRP, **PMP** = MPS, **LDM** = lista de materiales (BOM)."
+  },
+  {
+   "type": "paragraph",
+   "text": "La programación maestra «sigue a la planeación total y expresa el plan global en términos de artículos finales específicos, a los cuales pueden asignarse prioridades». El resumen lo dice así: «la planeación total sería los requerimientos de demanda a satisfacer y la programación maestra sería cómo utilizo los recursos para cumplir con esa demanda»."
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "Generar requerimientos de materiales.",
+    "Generar requerimientos de capacidad.",
+    "Generar requerimientos de información.",
+    "Evaluar alternativas de programación.",
+    "Usar la capacidad con efectividad."
+   ]
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Tipo de manufactura",
+    "Por dónde empieza el PMP (resumen de Monks)"
+   ],
+   "rows": [
+    [
+     "**Ensamble directo** (muchas materias primas y componentes que se combinan)",
+     "por los **artículos finales** y va hacia atrás, hacia materias primas y componentes"
+    ],
+    [
+     "**Proceso industrial** (poca materia prima que se transforma en muchos productos)",
+     "por la **materia prima** y va hacia los productos finales"
+    ]
+   ],
+   "caption": "Dirección del PMP según el tipo de manufactura (drive_u5/Resumen_Monks.docx, cap. 10)"
+  },
+  {
+   "type": "paragraph",
+   "text": "**Insumos:** pronósticos y pedidos de clientes. Los pronósticos «constituyen el impulso principal», y los pedidos «reducen la incertidumbre en empresas que trabajan bajo pedido». Es lo mismo que la regla de la cátedra: demanda = pedidos + pronóstico (sección 2). **Horizonte:** «depende del tipo de producto, el volumen de producción y los tiempos de entrega de los componentes»."
   }
  ],
  "historias": [
@@ -399,6 +446,26 @@
    "k": "Morán",
    "title": "La desagregada en un taller.",
    "text": "Para producción por procesos, Morán dice que la desagregación «es muy simple» y que «el problema principal es la programación de la producción desagregada»."
+  },
+  {
+   "type": "concepto",
+   "k": "Monks",
+   "title": "Las cinco funciones del PMP.",
+   "text": "Resumen de Monks del Drive: generar requerimientos de materiales, de capacidad y de información; evaluar alternativas de programación; usar la capacidad con efectividad. Sus insumos son pronósticos y pedidos de clientes.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Insumos y salidas del PMP\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Insumos y salidas del PMP</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Pronósticos</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Pedidos</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">PMP</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">artículos finales</text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Salidas</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">requerimientos</text></svg>",
+   "chartLabel": "Esquema propio con el resumen de Monks (Drive)"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Según el resumen de Monks, en una manufactura de proceso industrial, ¿por dónde empieza el PMP?",
+   "options": [
+    "Por los artículos finales",
+    "Por la materia prima, hacia los productos finales",
+    "Por la capacidad de planta"
+   ],
+   "correct": 1,
+   "feedback": "En ensamble directo se parte de los artículos finales y se va hacia atrás. En proceso industrial, poca materia prima se transforma en muchos productos, así que se parte de la materia prima."
   },
   {
    "type": "cierre",

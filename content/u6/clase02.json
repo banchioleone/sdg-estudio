@@ -7,7 +7,7 @@
  "name": "Plan agregado: estrategias y costos",
  "lede": "Qué es la planeación agregada de ventas y operaciones, cómo se define el producto agregado, las estrategias de ajuste, nivel y mixta, los cuatro costos y el modelo de Morán.",
  "visto": false,
- "source": "drive_u6/Planificacion Agregada.pdf — «Planificación agregada de la producción», R. Morán (UNR, 2012) §1–§3; Chase, Jacobs y Aquilano 12a ed., cap. 16, p. 514–521 — planeación agregada, estrategias y costos (drive_u6/txt/cap16_chase12.txt); drive_u6/Planeacion agregada de vtas y operaciones.pptx — láminas «Planeación agregada», Ing. Cristian G. Bigatti (UTN FRRo, 2015), y su ejercicio JC Company (.docx); texto/ocr/efr_ppm/p-20.png — EjerciciosFinalesResueltos, resolución manuscrita (subsistemas del plan agregado)",
+ "source": "drive_u6/Planificacion Agregada.pdf — «Planificación agregada de la producción», R. Morán (UNR, 2012) §1–§3; Chase, Jacobs y Aquilano 12a ed., cap. 16, p. 514–521 — planeación agregada, estrategias y costos (drive_u6/txt/cap16_chase12.txt); drive_u6/Planeacion agregada de vtas y operaciones.pptx — láminas «Planeación agregada», Ing. Cristian G. Bigatti (UTN FRRo, 2015), y su ejercicio JC Company (.docx); texto/ocr/efr_ppm/p-20.png — EjerciciosFinalesResueltos, resolución manuscrita (subsistemas del plan agregado); drive_u5/Resumen_Monks.docx — resumen de alumnos de Monks, «Administración de operaciones» (material del Drive; no es el libro), cap. 10",
  "laminas": [
   "u6/img/u6_ajuste_nivel.svg"
  ],
@@ -218,6 +218,66 @@
    "type": "callout",
    "kind": "examen",
    "text": "**La segunda pregunta del ejercicio de final:** «Como se genera la información precedente (indicar los subsistemas participantes)». La resolución manuscrita del EFR (p. 20) contesta: la demanda se obtiene del plan maestro con la información del **subsistema de pronósticos**; **gestión de stocks** provee el stock inicial y el costo de inventario; **datos de ingeniería** da la capacidad de producción y el costo en tiempo extra; y el plan «es generado a nivel de producción en el área de comercialización a partir de los datos provenientes de los pronósticos y los pedidos de clientes»."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. Lo que agrega el resumen de Monks (Drive)"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Qué es este material:** el Drive no tiene el libro de Monks, pero sí un **resumen de alumnos** (`Resumen_Monks.docx`). Lo que sigue sale de ese resumen, con sus palabras entre comillas. Monks usa siglas en castellano: **PRM** = MRP, **PRC** = CRP, **PMP** = MPS, **LDM** = lista de materiales (BOM)."
+  },
+  {
+   "type": "paragraph",
+   "text": "Monks llama **planeación total** a lo que Chase y Morán llaman plan agregado: «el proceso de la planeación de la cantidad y cronología de la producción sobre un rango intermedio de tiempo ajustando la tasa de producción, empleo, inventarios y otras variables controlables». Su objetivo: «responder a las demandas irregulares de mercado mediante la utilización efectiva de los recursos de la organización»."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Estrategias (cursos de acción) según el resumen de Monks",
+    "Equivalente en esta clase"
+   ],
+   "rows": [
+    [
+     "Variación en la fuerza de trabajo",
+     "contratar y despedir (Chase)"
+    ],
+    [
+     "Tiempo extra y tiempo ocioso",
+     "horas extra / capacidad ociosa"
+    ],
+    [
+     "Variación en los niveles de inventarios",
+     "acumular stock (plan nivelado)"
+    ],
+    [
+     "Aceptación de reproceso",
+     "así figura en el resumen; no está explicado. Lo más cercano en esta clase son los pedidos pendientes (Chase): tomalo con cuidado"
+    ],
+    [
+     "Subcontratación",
+     "subcontratar"
+    ],
+    [
+     "Utilización de la capacidad",
+     "usar la capacidad disponible"
+    ]
+   ],
+   "caption": "Estrategias de la planeación total según drive_u5/Resumen_Monks.docx, cap. 10"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "Lineamientos de la planeación total (resumen de Monks): «usar un buen pronóstico como base de planeación», «mantener el control necesario sobre los inventarios» y «responder a la demanda en forma controlada»."
+   ]
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "Si en el final te preguntan por la **planeación total**, es el plan agregado. Contestá con la definición de Monks y las estrategias de Chase."
   }
  ],
  "historias": [
@@ -293,6 +353,13 @@
    "k": "En el final",
    "title": "No piden programación lineal.",
    "text": "El modelo de Morán sirve para entender qué se minimiza. Los planes de final (2003) se resuelven con la planilla de la Clase 3, y piden además qué subsistemas generan los datos."
+  },
+  {
+   "type": "concepto",
+   "k": "Monks",
+   "title": "Planeación total = plan agregado.",
+   "text": "Según el resumen de Monks del Drive: planear cantidad y cronología de la producción a mediano plazo, ajustando tasa de producción, empleo e inventarios. Estrategias: fuerza de trabajo, tiempo extra u ocioso, inventarios, subcontratación y uso de la capacidad.",
+   "ejemplo": "Lineamientos: un buen pronóstico, control de inventarios y responder a la demanda en forma controlada."
   },
   {
    "type": "cierre",

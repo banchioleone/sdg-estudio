@@ -17,7 +17,10 @@
   "texto/examenes/Preguntas de teoria del final de SG1.txt (final de Feraboli del 14/03/2013)",
   "texto/ocr/efr_ppm/p-36.png — EjerciciosFinalesResueltos, resolución manuscrita (examen tipeado)",
   "Chase 12a ed., cap. 17, p. 578–587 — preguntas de repaso y problemas (drive_u5/txt/cap17_chase12.txt)",
-  "drive_u5/txt/administracionOperaciones.txt — Apéndice A, p. 739 (respuestas a problemas seleccionados del cap. 17)"
+  "drive_u5/txt/administracionOperaciones.txt — Apéndice A, p. 739 (respuestas a problemas seleccionados del cap. 17)",
+  "Fuente externa: Y. Reyes Fernández, «Control de inventarios», Apunte docente, Esc. de Ingeniería Comercial, PUCV (Chile), https://www.ucv.cl/uuaa/site/docs/20181123/20181123195708/apuntedocentecontroldeinventariosyr.pdf",
+  "Fuente externa: Y. Reyes Fernández, «Inventarios de demanda aleatoria», Apunte docente, Esc. de Ingeniería Comercial, PUCV (Chile), https://www.ucv.cl/uuaa/site/docs/20181123/20181123195708/apuntedocenteinventariosdedemandaaleatoriayr.pdf",
+  "/workspace/sdg/web_gaps/HALLAZGOS_WEB.md (relevamiento web PS-11, 23/11/2026)"
  ],
  "laminas": [],
  "next": null,
@@ -436,6 +439,86 @@
    "type": "callout",
    "kind": "examen",
    "text": "**Cómo se presenta un ejercicio de inventarios en el final:** 1) datos y supuestos (unidades: días/año, i anual); 2) modelo elegido y por qué; 3) cálculos con fórmula escrita; 4) **política** en una frase («pedir Q cuando la posición llegue a R»); 5) subsistemas y qué hace cada uno. Las hojas resueltas de la cátedra siguen ese orden."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Fuentes y bibliografía de la U5"
+  },
+  {
+   "type": "paragraph",
+   "text": "**Prioridad: el material del Drive.** Lo de internet solo complementa y va marcado como fuente externa."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Material",
+    "Dónde está",
+    "Clases"
+   ],
+   "rows": [
+    [
+     "Chase, Jacobs y Aquilano, 12a ed. (caps. 10, 11, 12, 17)",
+     "Drive",
+     "1–10"
+    ],
+    [
+     "R. Morán: «Planificación de la distribución» (2000) y «Producción Justo a Tiempo» (2012)",
+     "Drive (cátedra)",
+     "5, 8, 9"
+    ],
+    [
+     "Práctica «Repaso de conceptos estadísticos básicos» (tabla z de la cátedra)",
+     "Drive (cátedra)",
+     "5, 6"
+    ],
+    [
+     "Y. Reyes, «Control de inventarios» (PUCV)",
+     "**Fuente externa:** https://www.ucv.cl/uuaa/site/docs/20181123/20181123195708/apuntedocentecontroldeinventariosyr.pdf",
+     "3 (descuentos), 7 (ABC)"
+    ],
+    [
+     "Y. Reyes, «Inventarios de demanda aleatoria» (PUCV)",
+     "**Fuente externa:** https://www.ucv.cl/uuaa/site/docs/20181123/20181123195708/apuntedocenteinventariosdedemandaaleatoriayr.pdf",
+     "6 (período único)"
+    ]
+   ],
+   "caption": "Qué se usó en la unidad"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Lo que falta",
+    "Estado y cómo conseguirlo"
+   ],
+   "rows": [
+    [
+     "Monks, «Administración de operaciones» (McGraw-Hill)",
+     "**No está en el Drive**, solo el resumen de alumnos. En castellano hay fichas de biblioteca (Serie Schaum, México 1991, ISBN 968-422-886-4: https://biblioteca-fceco.uner.edu.ar/bib/14899). En inglés se puede pedir en **préstamo gratuito en archive.org**, con cuenta propia: https://archive.org/details/operationsmanage0002monk (1982) y https://archive.org/details/operationsmanage0003monk (1987)"
+    ],
+    [
+     "Vollmann, Berry y Whybark, «Sistemas de planificación y control de la fabricación»",
+     "**No está en el Drive.** Ficha e índice en castellano (Irwin 1994): http://koha.undef.edu.ar/cgi-bin/koha/opac-detail.pl?biblionumber=23682. En inglés, 2.ª ed. (1988), en **préstamo en archive.org**: https://archive.org/details/manufacturingpla00voll"
+    ],
+    [
+     "Sessa, «Notas técnicas de cátedra» y apunte de Codificación",
+     "**No está en el Drive ni online.** Pedirlo a la cátedra"
+    ],
+    [
+     "R. Morán, apunte de stocks («Elementos de Gestión de las Existencias (Stocks)», 2007, citado en su apunte de JIT)",
+     "**No está en el Drive.** Solo aparece en un sitio de terceros y el autor prohíbe reproducirlo. Pedirlo a la cátedra o a la Escuela de Ingeniería Industrial (FCEIA-UNR)"
+    ],
+    [
+     "APICS",
+     "No está en el Drive"
+    ]
+   ],
+   "caption": "Bibliografía del programa que no está en el Drive"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "El resumen de Monks del Drive tiene los caps. 11 y 12 (compras y control de inventarios) **solo con el título**, así que para la U5 no aporta. **Resoluciones oficiales:** no hay, ni en el Drive ni online. Relevamiento completo: /workspace/sdg/web_gaps/HALLAZGOS_WEB.md (relevamiento web PS-11, 23/11/2026)."
   }
  ],
  "historias": [
@@ -536,6 +619,13 @@
    ],
    "correct": 0,
    "feedback": "El Apéndice A trae respuestas de los problemas 5 (q = 713), 8 y 12. Resolvelos y compará."
+  },
+  {
+   "type": "concepto",
+   "k": "Fuentes",
+   "title": "Primero el Drive.",
+   "text": "Chase, Morán y la tabla z de la cátedra son del Drive. Los apuntes de PUCV entran solo como fuente externa, en descuentos, período único y ABC.",
+   "ejemplo": "Falta el apunte de stocks de Morán: pedilo a la cátedra. Monks y Vollmann en inglés: préstamo en archive.org."
   },
   {
    "type": "cierre",

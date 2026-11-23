@@ -1,5 +1,6 @@
 """Arma las clases de la U5 (content/u5/*.json) y actualiza content/index.json."""
 import json
+from ps12_extras import apply, apply_hist
 from u5lib import ROOT, BLOCKS, write
 from gen_u5_a import c0, c1
 from gen_u5_b import c2, c3
@@ -18,7 +19,8 @@ def main():
     entries = []
     for i, c in enumerate(classes):
         fname = "integrador.json" if c["id"] == "u5int" else f"clase{i:02d}.json"
-        h = HIST[c["id"]]
+        apply(c)
+        h = apply_hist(c["id"], HIST[c["id"]])
         assert 9 <= len(h) <= 16 and h[-1]["type"] == "cierre", c["id"]
         for card in h:
             assert "$" not in str(card), (c["id"], card.get("title"))

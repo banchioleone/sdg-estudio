@@ -15,7 +15,8 @@
   "texto/ocr/efr_ppm/p-03.png — EjerciciosFinalesResueltos, resolución manuscrita (librería)",
   "texto/ocr/sg1_ppm/p-04.png — SG1.doc, resolución manuscrita (Final 2, librería)",
   "clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 5 y Semana 7",
-  "patrones_examenes.md (conteos de finales)"
+  "patrones_examenes.md (conteos de finales)",
+  "Fuente externa: Y. Reyes Fernández, «Control de inventarios», Apunte docente, Esc. de Ingeniería Comercial, PUCV (Chile), https://www.ucv.cl/uuaa/site/docs/20181123/20181123195708/apuntedocentecontroldeinventariosyr.pdf"
  ],
  "laminas": [
   "u5/img/u5_descuentos.svg"
@@ -284,8 +285,50 @@
    "text": "**Cómo escribirlo en el examen:** 1) definir variables y la función de precio por tramos; 2) EOQ por precio, marcando factible / no factible; 3) costo total del EOQ factible y de los quiebres más baratos; 4) elegir y **enunciar la política** (cuánto pedir, cada cuánto, punto de pedido)."
   },
   {
+   "type": "heading",
+   "level": 2,
+   "text": "6. Otra forma de evaluar un descuento (fuente externa)"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Fuente externa, no es de la cátedra:** Y. Reyes Fernández, apunte docente PUCV, https://www.ucv.cl/uuaa/site/docs/20181123/20181123195708/apuntedocentecontroldeinventariosyr.pdf. El método de la cátedra y de Chase es el de la sección 2. Este sirve como control rápido."
+  },
+  {
+   "type": "paragraph",
+   "text": "El apunte dice que el descuento produce **tres efectos**: (1) una economía en el precio, igual a la reducción por unidad × el consumo del período; (2) menos pedidos por período, o sea, ahorro en costo de pedir; (3) más costo de mantener, porque el pedido es más grande. **Conviene aceptar si:** economía en precio + economía en pedidos − costo adicional de mantener > 0."
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo del apunte (Reyes): D = 2.000 u en 100 días, S = 100 por pedido, H = 10 por unidad en los 100 días",
+   "blocks": [
+    {
+     "type": "formula",
+     "tex": "Q^* = \\sqrt{\\frac{2 \\cdot 2.000 \\cdot 100}{10}} = 200"
+    },
+    {
+     "type": "paragraph",
+     "text": "Descuento del 10 % si se piden 250 (precio unitario 1)."
+    },
+    {
+     "type": "list",
+     "ordered": false,
+     "items": [
+      "Economía en precio: 0,10 × 2.000 = 200.",
+      "Economía en pedidos: 2.000·100/200 − 2.000·100/250 = 1.000 − 800 = 200.",
+      "Costo adicional de mantener: (250 − 200)/2 × 10 = 250.",
+      "Neto: 200 + 200 − 250 = **150 > 0** → conviene el descuento."
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "Verificación (cálculo propio) con el costo total de Chase: CT(200) = 2.000·1 + 1.000 + 1.000 = 4.000 y CT(250) = 2.000·0,9 + 800 + 1.250 = 3.850. La diferencia es la misma: 150."
+    }
+   ]
+  },
+  {
    "type": "glosario",
-   "title": "6. Glosario",
+   "title": "7. Glosario",
    "intro": "",
    "entries": [
     {
@@ -404,6 +447,13 @@
    ],
    "correct": 0,
    "feedback": "Es el paso 2 de Chase: si el primer EOQ factible es el del precio más bajo, ese es el óptimo. Vale cuando H es un porcentaje del precio."
+  },
+  {
+   "type": "concepto",
+   "k": "Fuente externa · PUCV",
+   "title": "Los tres efectos del descuento.",
+   "text": "Apunte de Reyes (PUCV): el descuento ahorra en precio y en cantidad de pedidos, pero aumenta el costo de mantener. Si la suma da positiva, conviene. Da lo mismo que comparar costos totales como en Chase.",
+   "ejemplo": "Ejemplo del apunte: 200 + 200 − 250 = 150 a favor del descuento."
   },
   {
    "type": "cierre",

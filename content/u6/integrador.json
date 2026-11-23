@@ -7,7 +7,7 @@
  "name": "Integrador",
  "lede": "Las cinco familias de práctica de la U6 con su molde de resolución, el chequeo rápido, ejercicios de final para practicar y la teoría que cayó.",
  "visto": false,
- "source": "patrones_examenes.md (conteos de finales); texto/examenes/SG!EVA.txt y bloques_eva/ (compilado de finales 2002–2006); texto/examenes/Ejercicios posibles.txt (Ejercicios posibles.docx del Drive); texto/ocr/efr_ppm/p-36.png — EjerciciosFinalesResueltos, resolución manuscrita (examen tipeado sin fecha); texto/examenes/examen_2018_transcripcion.md",
+ "source": "patrones_examenes.md (conteos de finales); texto/examenes/SG!EVA.txt y bloques_eva/ (compilado de finales 2002–2006); texto/examenes/Ejercicios posibles.txt (Ejercicios posibles.docx del Drive); texto/ocr/efr_ppm/p-36.png — EjerciciosFinalesResueltos, resolución manuscrita (examen tipeado sin fecha); texto/examenes/examen_2018_transcripcion.md; drive_u5/Resumen_Monks.docx — resumen de alumnos de Monks, «Administración de operaciones» (material del Drive; no es el libro); Fuente externa: UNICEN, Fac. de Ciencias Exactas, cátedra «Sistemas de información para administración de operaciones», «Planificación y Control de la Producción: Planificación Agregada, MPS, MRP-I, MRP-II» (láminas, 2003), https://users.exa.unicen.edu.ar/catedras/modemp/12_MRP.pdf; Fuente externa: Vollmann, Berry y Whybark, «Sistemas de planificación y control de la fabricación» (Irwin, 1994, ISBN 84-8086-195-9), índice del catálogo de la Biblioteca UNDEF, http://koha.undef.edu.ar/cgi-bin/koha/opac-detail.pl?biblionumber=23682; /workspace/sdg/web_gaps/HALLAZGOS_WEB.md (relevamiento web PS-11, 23/11/2026)",
  "laminas": [
   "u6/img/u6_familias.svg"
  ],
@@ -408,6 +408,91 @@
    "type": "callout",
    "kind": "examen",
    "text": "**Para el día del examen:** el MRP es lo más probable (42% de los finales con fecha y vigente en 2013 y 2015). Practicá con tiempo: la consigna 2018 da 40 minutos para el ejercicio. Si te falta un dato o el enunciado es ambiguo (scrap, LEC, una cantidad negativa), **escribí el supuesto** y seguí."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Fuentes y bibliografía de la U6"
+  },
+  {
+   "type": "paragraph",
+   "text": "**Prioridad: el material del Drive.** Lo de internet solo complementa y va marcado como fuente externa."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Material",
+    "Dónde está",
+    "Clases"
+   ],
+   "rows": [
+    [
+     "Chase, Jacobs y Aquilano, 12a ed. (caps. 7, 7A, 16, 18, 19)",
+     "Drive",
+     "1–12"
+    ],
+    [
+     "Notas técnicas de R. Morán: plan agregado, capacidad, MRP, PAC, JIT",
+     "Drive (cátedra)",
+     "2, 3, 5–10, 12"
+    ],
+    [
+     "Resumen de alumnos de Monks (caps. 5, 10, 13)",
+     "Drive (`Resumen_Monks.docx`)",
+     "2, 4, 5, 6, 7, 10, 11"
+    ],
+    [
+     "Láminas de Bigatti (UTN FRRo, 2015) y TP 7 Odoo",
+     "Drive (cátedra)",
+     "2, 3, 10"
+    ],
+    [
+     "Láminas UNICEN «Planificación y Control de la Producción» (2003)",
+     "**Fuente externa:** https://users.exa.unicen.edu.ar/catedras/modemp/12_MRP.pdf",
+     "10"
+    ],
+    [
+     "Índice del Vollmann (catálogo UNDEF)",
+     "**Fuente externa:** http://koha.undef.edu.ar/cgi-bin/koha/opac-detail.pl?biblionumber=23682",
+     "10 (hipótesis MCP)"
+    ]
+   ],
+   "caption": "Qué se usó en la unidad"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Lo que falta",
+    "Estado y cómo conseguirlo"
+   ],
+   "rows": [
+    [
+     "Monks, «Administración de operaciones» (McGraw-Hill)",
+     "**No está en el Drive**, solo el resumen de alumnos. En castellano hay fichas de biblioteca (Serie Schaum, México 1991, ISBN 968-422-886-4: https://biblioteca-fceco.uner.edu.ar/bib/14899). En inglés se puede pedir en **préstamo gratuito en archive.org**, con cuenta propia: https://archive.org/details/operationsmanage0002monk (1982) y https://archive.org/details/operationsmanage0003monk (1987)"
+    ],
+    [
+     "Vollmann, Berry y Whybark, «Sistemas de planificación y control de la fabricación»",
+     "**No está en el Drive.** Ficha e índice en castellano (Irwin 1994): http://koha.undef.edu.ar/cgi-bin/koha/opac-detail.pl?biblionumber=23682. En inglés, 2.ª ed. (1988), en **préstamo en archive.org**: https://archive.org/details/manufacturingpla00voll"
+    ],
+    [
+     "Sessa, «Notas técnicas de cátedra» y apunte de Codificación",
+     "**No está en el Drive ni online.** Pedirlo a la cátedra"
+    ],
+    [
+     "R. Morán, apunte de stocks («Elementos de Gestión de las Existencias (Stocks)», 2007, citado en su apunte de JIT)",
+     "**No está en el Drive.** Solo aparece en un sitio de terceros y el autor prohíbe reproducirlo. Pedirlo a la cátedra o a la Escuela de Ingeniería Industrial (FCEIA-UNR)"
+    ],
+    [
+     "APICS",
+     "No está en el Drive"
+    ]
+   ],
+   "caption": "Bibliografía del programa que no está en el Drive"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Resoluciones oficiales:** no hay, ni en el Drive ni online. Las resoluciones de esta unidad son del material cuando así se indica, y si no, **cálculo propio**. Los enunciados ilegibles (cédulas de manejo) tampoco aparecieron en internet. Relevamiento completo: /workspace/sdg/web_gaps/HALLAZGOS_WEB.md (relevamiento web PS-11, 23/11/2026)."
   }
  ],
  "historias": [
@@ -488,6 +573,13 @@
    "k": "Chequeo final",
    "title": "Antes de entregar.",
    "text": "¿Sumaste la demanda independiente? ¿El común se neteó una vez? ¿Redondeaste las estaciones hacia arriba? ¿Escribiste los supuestos? ¿Interpretaste el resultado?"
+  },
+  {
+   "type": "concepto",
+   "k": "Fuentes",
+   "title": "Primero el Drive.",
+   "text": "Chase, las notas de Morán y el resumen de Monks son del Drive. Lo de internet (láminas de UNICEN, índice del Vollmann) solo complementa y va marcado como fuente externa.",
+   "ejemplo": "Monks y Vollmann en inglés: préstamo gratis en archive.org con cuenta propia. Sessa y el apunte de stocks de Morán: pedirlos a la cátedra."
   },
   {
    "type": "cierre",

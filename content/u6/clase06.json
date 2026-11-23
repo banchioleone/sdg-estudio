@@ -7,7 +7,7 @@
  "name": "Planificación de la capacidad",
  "lede": "RRP, factores globales, listas de capacidad y perfiles de recursos con el ejemplo de Morán; sus hipótesis (final 2018); CRP, carga finita e infinita, nivelación, control de entradas/salidas y JIT.",
  "visto": false,
- "source": "drive_u6/Planificacion de la Capacidad.pdf — Nota técnica «Planificación de la capacidad de producción», R. Morán (© 2001) §2–§4; texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — preguntas 17, 18 y 20; texto/examenes/examen_2018_transcripcion.md (teoría 1)",
+ "source": "drive_u6/Planificacion de la Capacidad.pdf — Nota técnica «Planificación de la capacidad de producción», R. Morán (© 2001) §2–§4; texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — preguntas 17, 18 y 20; texto/examenes/examen_2018_transcripcion.md (teoría 1); drive_u5/Resumen_Monks.docx — resumen de alumnos de Monks, «Administración de operaciones» (material del Drive; no es el libro), cap. 13",
  "laminas": [
   "u6/img/u6_perfil_carga.svg"
  ],
@@ -466,6 +466,67 @@
   {
    "type": "paragraph",
    "text": "**Con JIT** (Morán §4): las técnicas globales sirven para estimar el impacto de un cambio del MPS; CB tiene ventaja sobre CPOF porque considera la mezcla. «En JIT no se justifica RP, la fase de tiempo la maneja JIT. CRP es innecesaria en JIT (ni siquiera hay órdenes de producción). CRP sólo se justifica si se usa MRP.» El control de entradas/salidas tampoco hace falta."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. PRC, cargas infinitas y finitas (resumen de Monks, Drive)"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Qué es este material:** el Drive no tiene el libro de Monks, pero sí un **resumen de alumnos** (`Resumen_Monks.docx`). Lo que sigue sale de ese resumen, con sus palabras entre comillas. Monks usa siglas en castellano: **PRM** = MRP, **PRC** = CRP, **PMP** = MPS, **LDM** = lista de materiales (BOM)."
+  },
+  {
+   "type": "paragraph",
+   "text": "**PRC** (planeación de requerimiento de capacidad, el CRP): «una técnica para determinar qué capacidades de personal y equipo son necesarias para cumplir los objetivos de producción incorporados en la Programación Maestra y el plan de requerimientos de materiales». El resumen remarca: «PRM se enfoca sobre las prioridades de los materiales, la PRC está interesada en el tiempo»."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "",
+    "Carga infinita",
+    "Carga finita"
+   ],
+   "rows": [
+    [
+     "Qué hace",
+     "satura los centros con todas las cargas cuando son requeridas, «sin importar la capacidad actual»",
+     "limita la carga de un centro «a la capacidad máxima de éste»"
+    ],
+    [
+     "Cuándo se usa",
+     "al principio, para medir la carga que propone el PMP y decidir tiempo extra, rutas alternativas, etc.",
+     "en la asignación final de trabajo a los centros, después de los ajustes hechos con carga infinita"
+    ]
+   ],
+   "caption": "Cargas infinitas y finitas según drive_u5/Resumen_Monks.docx, cap. 13"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Entradas de PRC",
+    "Salidas de PRC"
+   ],
+   "rows": [
+    [
+     "Planeación y programación de órdenes del sistema PRM",
+     "Reportes de carga de órdenes planeadas y programadas en los centros de trabajo clave"
+    ],
+    [
+     "Capacidades de carga de los centros de trabajo",
+     "Verificación de reportes del sistema PRM"
+    ],
+    [
+     "Datos de ruteo",
+     "Datos de modificación de capacidades"
+    ],
+    [
+     "Cambios que modifiquen capacidades u órdenes planeadas",
+     "Reprogramación de datos a PMP"
+    ]
+   ],
+   "caption": "Entrada–salida de PRC (drive_u5/Resumen_Monks.docx, cap. 13)"
   }
  ],
  "historias": [
@@ -548,6 +609,26 @@
    "k": "Control de entradas y salidas",
    "title": "El seguimiento del plan.",
    "text": "Se comparan horas planificadas y reales que entran y salen de cada centro. La salida planificada considera el rendimiento: 8 h al 80% son 6,40 h."
+  },
+  {
+   "type": "concepto",
+   "k": "Monks",
+   "title": "Primero infinita, después finita.",
+   "text": "Resumen de Monks del Drive: la carga infinita sirve para medir la carga del PMP y decidir tiempo extra o rutas alternativas. La finita se usa en la asignación final, después de esos ajustes.",
+   "svg": "<svg viewBox=\"0 0 280 142\" width=\"100%\" height=\"142\" role=\"img\" aria-label=\"El orden de Monks\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">El orden de Monks</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. PMP + PRM</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">órdenes</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. Carga infinita</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">medir</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. Ajustes</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">extra, rutas</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">4. Carga finita</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">asignación final</text></svg>",
+   "chartLabel": "Esquema propio con el resumen de Monks (Drive)"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Según el resumen de Monks, ¿en qué se diferencian PRM y PRC?",
+   "options": [
+    "PRM mira prioridades de materiales; PRC, el tiempo (horas de capacidad)",
+    "Son lo mismo con otro nombre",
+    "PRC calcula el lote económico"
+   ],
+   "correct": 0,
+   "feedback": "PRC traslada las decisiones de PRM a horas de capacidad requeridas en cada centro."
   },
   {
    "type": "cierre",

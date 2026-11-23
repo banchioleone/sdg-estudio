@@ -7,7 +7,7 @@
  "name": "Capacidad: medida y rendimiento",
  "lede": "Qué es la capacidad, cómo se mide, el RGE de Morán, las fórmulas CDT y CDR de la cátedra, utilización y colchón de Chase, y el ejercicio de dos máquinas con scrap.",
  "visto": false,
- "source": "drive_u6/Planificacion de la Capacidad.pdf — Nota técnica «Planificación de la capacidad de producción», R. Morán (© 2001) §1; texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — pregunta 17; texto/examenes/Preguntas Frecuentes (Juanje).txt — pregunta 13; Chase, Jacobs y Aquilano 12a ed., cap. 5, p. 124–131 — mejor nivel de operación, utilización, colchón (drive_u6/txt/cap5_chase12.txt); texto/examenes/SG!EVA.txt y bloques_eva/ (compilado de finales 2002–2006) — esquema M1/M2 y 09/03/2006; texto/examenes/Ejercicios posibles.txt (Ejercicios posibles.docx del Drive); texto/ocr/efr_ppm/p-20.png — EjerciciosFinalesResueltos, resolución manuscrita (máquinas con scrap, primer paso)",
+ "source": "drive_u6/Planificacion de la Capacidad.pdf — Nota técnica «Planificación de la capacidad de producción», R. Morán (© 2001) §1; texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — pregunta 17; texto/examenes/Preguntas Frecuentes (Juanje).txt — pregunta 13; Chase, Jacobs y Aquilano 12a ed., cap. 5, p. 124–131 — mejor nivel de operación, utilización, colchón (drive_u6/txt/cap5_chase12.txt); texto/examenes/SG!EVA.txt y bloques_eva/ (compilado de finales 2002–2006) — esquema M1/M2 y 09/03/2006; texto/examenes/Ejercicios posibles.txt (Ejercicios posibles.docx del Drive); texto/ocr/efr_ppm/p-20.png — EjerciciosFinalesResueltos, resolución manuscrita (máquinas con scrap, primer paso); drive_u5/Resumen_Monks.docx — resumen de alumnos de Monks, «Administración de operaciones» (material del Drive; no es el libro), cap. 5",
  "laminas": [
   "u6/img/u6_maquinas.svg"
  ],
@@ -277,6 +277,52 @@
    "type": "svg",
    "file": "u6/img/u6_maquinas.svg",
    "caption": "Resumen del ejercicio de dos máquinas en serie (datos de EFR p. 20; cálculo propio)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "7. Capacidad de diseño, del sistema y eficiencia (resumen de Monks, Drive)"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Qué es este material:** el Drive no tiene el libro de Monks, pero sí un **resumen de alumnos** (`Resumen_Monks.docx`). Lo que sigue sale de ese resumen, con sus palabras entre comillas. Monks usa siglas en castellano: **PRM** = MRP, **PRC** = CRP, **PMP** = MPS, **LDM** = lista de materiales (BOM)."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Concepto",
+    "Definición del resumen de Monks"
+   ],
+   "rows": [
+    [
+     "Capacidad de diseño",
+     "«la tasa de salida de productos estandarizados en condiciones de operación normal»; se deriva de conocer la demanda y fijar una política para satisfacerla"
+    ],
+    [
+     "Capacidad del sistema",
+     "«la máxima producción de un producto que se genera». «Es la capacidad de la estación que menos produce»"
+    ],
+    [
+     "Eficiencia del sistema (ES)",
+     "«una medida de la producción real de bienes y servicios como porcentaje de la capacidad del sistema»"
+    ],
+    [
+     "Capacidad por estación",
+     "tiempo total de trabajo (por ejemplo, 7 h/día) dividido por el tiempo que insume la tarea"
+    ]
+   ],
+   "caption": "drive_u5/Resumen_Monks.docx, cap. 5"
+  },
+  {
+   "type": "formula",
+   "tex": "ES = \\frac{\\text{producción real}}{\\text{capacidad del sistema}} \\qquad \\text{Capacidad por estación} = \\frac{\\text{tiempo total de trabajo}}{\\text{tiempo que insume la tarea}}",
+   "caption": "Fórmulas del resumen de Monks (Drive)"
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "Esto suma a la pregunta más repetida de los finales 2011–2018, la **capacidad de una estación de trabajo**. La fórmula de la cátedra (sección 4) sigue siendo la principal. La de Monks es la versión simple (tiempo disponible / tiempo por unidad) y sirve para explicar el **cuello de botella**: la capacidad del sistema es la de la estación que menos produce."
   }
  ],
  "historias": [
@@ -352,6 +398,13 @@
    ],
    "correct": 1,
    "feedback": "M1 entrega más rápido de lo que M2 consume, así que el semielaborado se acumula: unas 272 piezas cuando M1 termina. M2 fija el tiempo total, unas 11 h 32 min."
+  },
+  {
+   "type": "concepto",
+   "k": "Monks",
+   "title": "El sistema rinde lo que su estación más lenta.",
+   "text": "Resumen de Monks del Drive: la capacidad del sistema «es la capacidad de la estación que menos produce». La eficiencia del sistema es la producción real sobre esa capacidad.",
+   "formula": "ES = \\frac{\\text{producción real}}{\\text{capacidad del sistema}}"
   },
   {
    "type": "cierre",
