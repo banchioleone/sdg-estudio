@@ -1,0 +1,365 @@
+{
+ "unitId": "u6",
+ "unitLabel": "Unidad 6",
+ "unitTitle": "Planificación y control",
+ "id": "u6c5",
+ "title": "Clase 5 · Capacidad: medida, disponibilidad y rendimiento global",
+ "name": "Capacidad: medida y rendimiento",
+ "lede": "Qué es la capacidad, cómo se mide, el RGE de Morán, las fórmulas CDT y CDR de la cátedra, utilización y colchón de Chase, y el ejercicio de dos máquinas con scrap.",
+ "visto": false,
+ "source": "drive_u6/Planificacion de la Capacidad.pdf — Nota técnica «Planificación de la capacidad de producción», R. Morán (© 2001) §1; texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — pregunta 17; texto/examenes/Preguntas Frecuentes (Juanje).txt — pregunta 13; Chase, Jacobs y Aquilano 12a ed., cap. 5, p. 124–131 — mejor nivel de operación, utilización, colchón (drive_u6/txt/cap5_chase12.txt); texto/examenes/SG!EVA.txt y bloques_eva/ (compilado de finales 2002–2006) — esquema M1/M2 y 09/03/2006; texto/examenes/Ejercicios posibles.txt (Ejercicios posibles.docx del Drive); texto/ocr/efr_ppm/p-20.png — EjerciciosFinalesResueltos, resolución manuscrita (máquinas con scrap, primer paso)",
+ "laminas": [
+  "u6/img/u6_maquinas.svg"
+ ],
+ "next": "Clase 6 · Planificación de la capacidad: de RRP a CRP",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Unidad 6 · Bloque B · Clase 5 · Capacidad: medida, disponibilidad y rendimiento global**"
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** la capacidad **disponible real** nunca es el reloj: es el tiempo de carga multiplicado por los rendimientos (disponibilidad, eficiencia, calidad, presentismo). Para planificar hay que elegir **una unidad de medida** basada en el recurso clave y llevar todo a esa unidad."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Qué es la capacidad"
+  },
+  {
+   "type": "paragraph",
+   "text": "Morán: «La capacidad es la cantidad de producto o servicio que puede ser obtenido por una determinada unidad productiva durante un cierto período de tiempo.» La **planificación de la capacidad** es «la determinación de las necesidades de capacidad para llevar a la práctica un plan de producción determinado». En el largo plazo es parte de la estrategia (inversiones, tecnología); en el mediano y corto, son ajustes dentro de la capacidad instalada: horas extras, personal temporario, subcontratación."
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Ojo:** «un plan de capacidad perfectamente balanceado con el de producción no deja flexibilidad para afrontar situaciones imprevistas, como pedidos extras. Hace falta una cierta capacidad extra» (Morán). Chase lo llama **colchón de capacidad** (sección 5)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Medida de la capacidad"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Desde la salida (productos)",
+    "Desde la entrada (recursos)"
+   ],
+   "rows": [
+    [
+     "unidades de producto agregado por unidad de tiempo, para la mezcla habitual: toneladas de acero/mes, barriles de cerveza/semana, coches/mes, o un monto en unidades monetarias (unidad universal)",
+     "tradicionalmente, la **hora de mano de obra directa (MOD)**; hoy, la hora del **recurso clave** (horas de centro de trabajo, horas máquina, horas hombre)"
+    ]
+   ],
+   "caption": "Morán, Capacidad §1.1"
+  },
+  {
+   "type": "paragraph",
+   "text": "Por qué la hora MOD perdió peso: automatización, más componentes comprados (outsourcing) y equipos cada vez más caros. Para elegir el **recurso clave**, Morán propone preguntar si el recurso implica gran inversión, alimenta a otros centros, forma **cuellos de botella**, tarda en ampliarse, requiere mano de obra especializada o estabilidad en el empleo. «Cuanto más afirmativas sean las respuestas a estas preguntas, más importante es que el recurso sea considerado en la planificación de la capacidad.»"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Rendimiento global del equipamiento (RGE)"
+  },
+  {
+   "type": "paragraph",
+   "text": "«Ningún equipo ni persona produce durante la totalidad del tiempo disponible.» La **capacidad disponible** es el **tiempo de carga** (TC, las horas teóricas disponibles, por ejemplo 8 h por turno) multiplicado por el RGE:"
+  },
+  {
+   "type": "formula",
+   "tex": "CD = TC \\times RGE",
+   "caption": "Capacidad disponible (Morán)"
+  },
+  {
+   "type": "formula",
+   "tex": "RGE = D \\times EP \\times TPA = \\frac{TM}{TC} \\times \\frac{TTC \\times P}{TM} \\times \\frac{P - R}{P} = \\frac{TTC \\times PN}{TC}",
+   "caption": "D = disponibilidad; EP = eficiencia de performance; TPA = tasa de producción aceptada"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Factor",
+    "Definición (Morán)",
+    "Qué pérdidas mide"
+   ],
+   "rows": [
+    [
+     "**D** disponibilidad",
+     "(tiempo de carga − tiempo de pérdidas por paradas) / tiempo de carga = TM / TC",
+     "paradas: fallas, puestas a punto, faltas de material"
+    ],
+    [
+     "**EP** eficiencia de performance",
+     "tiempo teórico del ciclo × cantidad producida / tiempo de marcha",
+     "marcha a menor velocidad, microparadas"
+    ],
+    [
+     "**TPA** tasa de producción aceptada",
+     "(cantidad producida − rechazada) / cantidad producida = PN / P",
+     "calidad: piezas rechazadas"
+    ]
+   ]
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo de Morán",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Un equipo trabaja un turno de 8 horas con RGE = 0,45:"
+    },
+    {
+     "type": "formula",
+     "tex": "CD = 480 \\text{ min/día} \\times 0{,}45 = 216 \\text{ min/día} = 3{,}6 \\text{ h/día}"
+    },
+    {
+     "type": "paragraph",
+     "text": "De 8 horas de reloj, el equipo rinde 3,6 horas de producción buena. Por eso «toda mejora de este rendimiento a través de la mejora de procesos (mejora continua, TQM, etc.) produce un aumento de la capacidad disponible sin necesidad de inversión en equipos nuevos»."
+    }
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "En operaciones **puramente manuales** se usa la **eficiencia de la mano de obra directa**:"
+  },
+  {
+   "type": "formula",
+   "tex": "EMO = \\frac{TE}{TR} \\qquad TR = \\frac{1}{N}\\sum_{i=1}^{N} \\frac{\\text{tiempo real del lote } i}{\\text{piezas buenas del lote } i}",
+   "caption": "TE = tiempo estándar de la operación; TR = tiempo real promedio sobre N lotes"
+  },
+  {
+   "type": "paragraph",
+   "text": "Para el mediano plazo, el RGE y la EMO se calculan **por período de planificación** (el mes, el año), sumando sobre productos y operaciones: RGE = Σ(tiempo teórico del ciclo × producción neta del mes) / tiempo de carga del mes."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. La capacidad de una estación de trabajo según la cátedra"
+  },
+  {
+   "type": "paragraph",
+   "text": "El banco de preguntas de la cátedra (pregunta 17, nivelación de horas máquina) da estas dos fórmulas:"
+  },
+  {
+   "type": "formula",
+   "tex": "CDT = n \\cdot h \\cdot d",
+   "caption": "Capacidad disponible teórica. n = máquinas de un grupo u operarios de una categoría; h = horas por día; d = días del período"
+  },
+  {
+   "type": "formula",
+   "tex": "CDR = CDT \\cdot F_p \\cdot F_r \\cdot E",
+   "caption": "Capacidad disponible real. F_p = presentismo = 1 − F_a (ausentismo); F_r = rendimiento de máquina = 1 − FMP; E = eficiencia de mano de obra = hs devengadas / hs reales"
+  },
+  {
+   "type": "paragraph",
+   "text": "Las «horas devengadas» son «cantidad de piezas producidas × hs. std / 1000 piezas»: las horas estándar que vale lo que realmente se produjo."
+  },
+  {
+   "type": "ejemplo",
+   "title": "Ejemplo numérico (cálculo propio, datos supuestos)",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Un grupo de **4 tornos**, 8 h/día, 22 días al mes. Ausentismo 5%, fuera de máquina por mantenimiento (FMP) 10%, eficiencia de la mano de obra 90%."
+    },
+    {
+     "type": "formula",
+     "tex": "CDT = 4 \\cdot 8 \\cdot 22 = 704 \\text{ h/mes} \\qquad CDR = 704 \\cdot 0{,}95 \\cdot 0{,}90 \\cdot 0{,}90 \\approx 541{,}7 \\text{ h/mes}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Si el MRP pide 600 horas de torno ese mes, hay **sobrecarga de unas 58 h**: se pasa a las opciones de la Clase 6."
+    }
+   ]
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Así se pregunta** (5 de 7 finales 2011–2018): «Definir mediante una fórmula matemática, la capacidad de una estación de trabajo» (17/03/2011); «Cómo se calcula la capacidad de una estación de trabajo» (17/02/2014); «Enuncie las variables que definen la capacidad de producción (tangible) de un sistema» (03/12/2015; también 08/08/2013). **Respuesta armada:** CDT = n·h·d y CDR = CDT·Fp·Fr·E (cátedra), y la versión de Morán CD = TC × RGE con RGE = D × EP × TPA. Las variables: cantidad de recursos (n), tiempo de carga (h, d, turnos), disponibilidad, eficiencia, calidad (rechazos) y presentismo. Un apunte de alumnos (Preguntas Frecuentes) contesta con TC y RGE y agrega que la capacidad total es la suma de las de las estaciones; ojo: en una línea manda el **cuello de botella**, no la suma."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Utilización, mejor nivel de operación y colchón (Chase cap. 5)"
+  },
+  {
+   "type": "paragraph",
+   "text": "El **mejor nivel de operación** es «el nivel de capacidad para el que se ha diseñado el proceso», donde se minimiza el costo promedio por unidad."
+  },
+  {
+   "type": "formula",
+   "tex": "\\text{Índice de utilización} = \\frac{\\text{capacidad utilizada}}{\\text{mejor nivel de operación}} = \\frac{480}{500} = 0{,}96",
+   "caption": "Ejemplo de Chase: planta diseñada para 500 autos/día que produce 480"
+  },
+  {
+   "type": "paragraph",
+   "text": "El **colchón de capacidad** es «la cantidad de capacidad que excede a la demanda esperada»: demanda 10 millones, capacidad de diseño 12 millones → colchón de 20%, que equivale a una utilización de 83% (100%/120%). Si la capacidad es menor que la demanda, el colchón es **negativo**."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. Ejercicio de final: dos máquinas en serie con scrap"
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — Esquema M1 → depósito D1-2 → M2 (SG!EVA, sin fecha; Ejercicios posibles; EFR p. 20; 09/03/2006 con otros datos)",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Dado el siguiente esquema de producción de un item:» M1 → depósito D1-2 → M2. «Indicar con los datos adjuntos: 1- La cantidad máxima de semielaborados que se encontrarían en el depósito D1-2, si se necesitan entregar 1000 item´s. 2- La cantidad máxima de diseño prevista para el depósito. 3- El tiempo de entrega para las 1000 unidades.»"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Información",
+      "Máquina 01",
+      "Máquina 02"
+     ],
+     "rows": [
+      [
+       "Factor combinado de actividad",
+       "0,80",
+       "0,75"
+      ],
+      [
+       "Tiempo de fabricación standard",
+       "23\"",
+       "30\""
+      ],
+      [
+       "Scrap",
+       "2,5%",
+       "3,5%"
+      ]
+     ],
+     "caption": "Datos de la versión resuelta a mano en EFR p. 20. «Ejercicios posibles» trae 0,80 / 0,78 y 23\" / 21\"; el 09/03/2006 trae 0,80 / 0,80, 19\" / 15\", 3000 ítems y pide además diseñar la línea para 5000 u/día en un turno"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Qué está en la hoja y qué es propio.** La resolución manuscrita (EFR p. 20) hace solo el primer paso: 1000 / (1 − 0,035) → **1037** que deben salir de M1, y 1037 / (1 − 0,025) → **1064** que deben entrar a M1; y calcula el tiempo efectivo dividiendo el estándar por el factor de actividad (x · 0,78 = 21\" → x ≈ 26,92\", con los datos de la otra versión). Lo demás es **cálculo propio** y supone que las piezas pasan de a una (lote de transferencia unitario)."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Paso 1. Cantidades (hacia atrás, por el scrap):** M2 debe procesar 1000 / 0,965 = 1036,3 → **1037**; M1 debe procesar 1037 / 0,975 = 1063,6 → **1064**."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Paso 2. Tiempos efectivos:** M1 = 23\" / 0,80 = **28,75 s**; M2 = 30\" / 0,75 = **40 s**. M2 es más lenta: el semielaborado se acumula en el depósito."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Paso 3. Máximo en el depósito.** M1 termina las 1064 en 1064 × 28,75 = 30.590 s y entrega 1037 buenas. En ese tiempo M2 consumió unas 30.590 / 40 ≈ 765. Quedan en el depósito ≈ 1037 − 765 ≈ **272 piezas** (≈ 273 según cómo redondees el arranque)."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Paso 4. Máximo de diseño.** Si M2 no arranca hasta que M1 termina el lote (lote de transferencia = lote completo), el depósito tiene que poder recibir las **1037** piezas. Ese es el máximo que conviene prever para el diseño; con transferencia unitaria alcanza con ≈ 273."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Paso 5. Tiempo de entrega:** M2 arranca con la primera pieza (≈ 29 s) y procesa 1037 × 40 = 41.480 s. Total ≈ 41.509 s ≈ **11 h 32 min** de máquina. Con un turno de 8 h son 1,44 turnos."
+    },
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Con los datos de «Ejercicios posibles»** (0,78 y 21\"): M2 = 26,92 s es **más rápida** que M1 (28,75 s), así que con transferencia unitaria el depósito casi no acumula (1 pieza) y el tiempo lo fija M1: 1064 × 28,75 ≈ 30.590 s ≈ 8 h 30 min, más la última pieza en M2. Lo importante es **identificar cuál máquina es el cuello de botella**."
+    }
+   ],
+   "nota": "Solo el paso 1 está en la hoja manuscrita"
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_maquinas.svg",
+   "caption": "Resumen del ejercicio de dos máquinas en serie (datos de EFR p. 20; cálculo propio)"
+  }
+ ],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "Morán",
+   "title": "Qué es la capacidad.",
+   "text": "La cantidad máxima que un sistema puede producir en un período. Se mide en unidades de producto o en horas del recurso clave."
+  },
+  {
+   "type": "concepto",
+   "k": "Ningún equipo rinde 100%",
+   "title": "El RGE.",
+   "text": "La capacidad disponible es el tiempo de carga por el rendimiento global del equipamiento: disponibilidad × eficiencia de performance × tasa de producción aceptada.",
+   "formula": "CD = TC \\times RGE \\qquad RGE = D \\times EP \\times TPA"
+  },
+  {
+   "type": "concepto",
+   "k": "Ejemplo de Morán",
+   "title": "Un turno con RGE 0,45.",
+   "text": "8 horas son 480 minutos. Con RGE 0,45 quedan 216 minutos útiles: 3,6 horas.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Minutos por turno\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Minutos por turno</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"59.0\" y=\"38.9\" width=\"34.0\" height=\"71.1\" rx=\"3\" fill=\"#b7c0c8\" opacity=\".9\"/><text x=\"76.0\" y=\"34.9\" font-size=\"8\" fill=\"#b7c0c8\" text-anchor=\"middle\" font-weight=\"700\">480</text><text x=\"76.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Tiempo</text><text x=\"76.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">de carga</text><rect x=\"187.0\" y=\"78.0\" width=\"34.0\" height=\"32.0\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"204.0\" y=\"74.0\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">216</text><text x=\"204.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Capacidad</text><text x=\"204.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">disponible</text></svg>",
+   "chartLabel": "Morán, Planificación de la capacidad §3"
+  },
+  {
+   "type": "concepto",
+   "k": "La fórmula de la cátedra",
+   "title": "CDT y CDR.",
+   "text": "Capacidad teórica = máquinas × horas por turno × días. Capacidad real = teórica × factor de presencia × factor de rendimiento × eficiencia.",
+   "formula": "CDT = n \\cdot h \\cdot d \\qquad CDR = CDT \\cdot F_p \\cdot F_r \\cdot E"
+  },
+  {
+   "type": "concepto",
+   "k": "Con números",
+   "title": "Cuatro tornos, un mes.",
+   "text": "4 × 8 × 22 = 704 h teóricas. Con 0,95, 0,90 y 0,90 quedan unas 541,7 h. Si el MRP pide 600, hay unas 58 h de sobrecarga.",
+   "ejemplo": "Ejemplo propio para practicar la fórmula."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "La pregunta de teoría más repetida (5 de 7 finales). ¿Cuál es?",
+   "options": [
+    "Definir con una fórmula la capacidad de una estación de trabajo",
+    "Historia del ERP",
+    "Qué es un proyecto"
+   ],
+   "correct": 0,
+   "feedback": "2011, 2014, 2013 y 2015 la piden así o como «variables que definen la capacidad». Respondé con CDT y CDR y con el RGE de Morán."
+  },
+  {
+   "type": "concepto",
+   "k": "Chase",
+   "title": "Utilización y colchón.",
+   "text": "Utilización = capacidad usada / mejor nivel de operación: 480 de 500 autos es 96%. Colchón = capacidad que excede la demanda: 12 millones para 10 es 20%, una utilización de 83%."
+  },
+  {
+   "type": "concepto",
+   "k": "El ejercicio de dos máquinas",
+   "title": "Hacia atrás por el scrap.",
+   "text": "Para 1000 buenas: M2 procesa 1000 / 0,965 = 1037 y M1 1037 / 0,975 = 1064. Tiempos reales: 23 / 0,80 = 28,75 s y 30 / 0,75 = 40 s.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"M1 → depósito → M2\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">M1 → depósito → M2</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">1064</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">entran a M1</text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">28,75 s</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">M1</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">≈ 272</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">depósito</text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">40 s</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">M2 → 1000</text></svg>",
+   "chartLabel": "Datos de EFR p. 20; depósito y tiempos: cálculo propio"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "M1 tarda 28,75 s reales y M2 40 s. ¿Qué pasa en el depósito entre las dos?",
+   "options": [
+    "Se vacía: M2 espera",
+    "Se acumula: M2 es más lenta",
+    "Siempre queda en cero"
+   ],
+   "correct": 1,
+   "feedback": "M1 entrega más rápido de lo que M2 consume, así que el semielaborado se acumula: unas 272 piezas cuando M1 termina. M2 fija el tiempo total, unas 11 h 32 min."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 5.",
+   "text": "CD = TC × RGE; CDT = n·h·d y CDR = CDT·Fp·Fr·E. Utilización y colchón de Chase. Y en máquinas en serie: cantidades hacia atrás por scrap, tiempo real = estándar / factor, la más lenta manda."
+  }
+ ],
+ "block": "B",
+ "blockTitle": "Bloque B · Capacidad"
+}

@@ -1,0 +1,968 @@
+{
+ "unitId": "u6",
+ "unitLabel": "Unidad 6",
+ "unitTitle": "Planificación y control",
+ "id": "u6c3",
+ "title": "Clase 3 · Plan agregado: la planilla período a período",
+ "name": "Plan agregado: la planilla",
+ "lede": "Cómo se arma y se valoriza un plan agregado: los cuatro planes de JC Company (Chase) y los dos ejercicios de final «stock final nulo».",
+ "visto": false,
+ "source": "Chase, Jacobs y Aquilano 12a ed., cap. 16, p. 522–526 — ejemplo 16.1 JC Company, ilustraciones 16.3 a 16.5 (drive_u6/txt/cap16_chase12.txt); drive_u6/Planeacion agregada de vtas y operaciones.pptx — láminas «Planeación agregada», Ing. Cristian G. Bigatti (UTN FRRo, 2015), y su ejercicio JC Company (.docx); texto/examenes/SG!EVA.txt y bloques_eva/ (compilado de finales 2002–2006) — Examen 30/4/03 y 18/12/03; texto/examenes/Ejercicios posibles.txt (Ejercicios posibles.docx del Drive); texto/ocr/efr_ppm/p-20.png — EjerciciosFinalesResueltos, resolución manuscrita (plan agregado: costos y subsistemas); texto/ocr/efr_ppm/p-29.png — EjerciciosFinalesResueltos, resolución manuscrita (tercera versión, tabla ilegible)",
+ "laminas": [
+  "u6/img/u6_estrategias.svg"
+ ],
+ "next": "Clase 4 · Programa maestro y planificación desagregada",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Unidad 6 · Bloque A · Clase 3 · Plan agregado: la planilla período a período**"
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** un plan agregado de examen se resuelve con una **planilla** de una columna por período: stock inicial + producción − demanda = stock final. Cada estrategia cambia qué fila se mueve (gente, horas extras, subcontrato, stock, pendientes), y se suma el costo de cada fila."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. El procedimiento"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "Pasá la demanda pronosticada a **requerimientos de producción**: requerimiento = demanda + stock de seguridad − stock inicial (Chase, ilustración 16.3).",
+    "Elegí la estrategia: ajuste (producción = requerimiento), nivel (tasa constante), mixta.",
+    "Armá la planilla período a período y llevá el **stock final** a la columna siguiente. Si queda negativo, son **pendientes** (pedidos atrasados).",
+    "Valorizá: horas normales, horas extras, contratación/despido, mantenimiento del stock, faltantes, subcontrato.",
+    "Compará planes por **costo total** y verificá la condición de cierre (por ejemplo, stock final nulo)."
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Ejemplo resuelto del libro: JC Company (Chase, ejemplo 16.1)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Es el ejemplo que usa la cátedra en las láminas de Bigatti (2015). Los datos, tal cual Chase:"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "",
+    "Ene",
+    "Feb",
+    "Mar",
+    "Abr",
+    "May",
+    "Jun",
+    "Total"
+   ],
+   "rows": [
+    [
+     "Pronóstico de la demanda",
+     "1.800",
+     "1.500",
+     "1.100",
+     "900",
+     "1.100",
+     "1.600",
+     "8.000"
+    ],
+    [
+     "Días hábiles",
+     "22",
+     "19",
+     "21",
+     "21",
+     "22",
+     "20",
+     "125"
+    ]
+   ]
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Costo",
+    "Valor"
+   ],
+   "rows": [
+    [
+     "Mantenimiento del inventario",
+     "1,50 \\$/u·mes"
+    ],
+    [
+     "Inventario agotado (faltante)",
+     "5 \\$/u·mes"
+    ],
+    [
+     "Subcontratación marginal",
+     "20 \\$/u (120 \\$ del subcontrato − 100 \\$ de material que se ahorra)"
+    ],
+    [
+     "Contratación y capacitación",
+     "200 \\$/trabajador"
+    ],
+    [
+     "Despido",
+     "250 \\$/trabajador"
+    ],
+    [
+     "Horas requeridas",
+     "5 h/u"
+    ],
+    [
+     "Hora regular (8 h/día)",
+     "4 \\$/h"
+    ],
+    [
+     "Hora extra (tiempo y medio)",
+     "6 \\$/h"
+    ],
+    [
+     "Inventario inicial",
+     "400 u"
+    ],
+    [
+     "Inventario de seguridad",
+     "25% de la demanda del mes"
+    ]
+   ],
+   "caption": "Chase 12a ed., ejemplo 16.1, p. 522–523. El costo del material (100 dólares por unidad) se excluye porque es común a todos los planes"
+  },
+  {
+   "type": "paragraph",
+   "text": "**Paso 1. Requerimientos de producción** (Chase, ilustración 16.3). Enero: 1.800 + 450 − 400 = 1.850. El stock de seguridad de cada mes queda como stock final de ese mes."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "",
+    "Ene",
+    "Feb",
+    "Mar",
+    "Abr",
+    "May",
+    "Jun"
+   ],
+   "rows": [
+    [
+     "Inventario inicial",
+     "400",
+     "450",
+     "375",
+     "275",
+     "225",
+     "275"
+    ],
+    [
+     "Stock de seguridad (0,25 × demanda)",
+     "450",
+     "375",
+     "275",
+     "225",
+     "275",
+     "400"
+    ],
+    [
+     "**Requerimiento de producción**",
+     "1.850",
+     "1.425",
+     "1.000",
+     "850",
+     "1.150",
+     "1.725"
+    ]
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "**Paso 2. Los cuatro planes** (Chase, ilustración 16.4)."
+  },
+  {
+   "type": "ejemplo",
+   "title": "Plan 1 · Ajuste: producción exacta con fuerza de trabajo variable",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Horas requeridas = requerimiento × 5; horas por trabajador = días × 8; trabajadores = horas requeridas / horas por trabajador."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun",
+      "Total"
+     ],
+     "rows": [
+      [
+       "Horas requeridas",
+       "9.250",
+       "7.125",
+       "5.000",
+       "4.250",
+       "5.750",
+       "8.625",
+       "40.000"
+      ],
+      [
+       "Horas por trabajador",
+       "176",
+       "152",
+       "168",
+       "168",
+       "176",
+       "160",
+       ""
+      ],
+      [
+       "Trabajadores",
+       "53",
+       "47",
+       "30",
+       "25",
+       "33",
+       "54",
+       ""
+      ],
+      [
+       "Contratados",
+       "0",
+       "0",
+       "0",
+       "0",
+       "8",
+       "21",
+       "\\$5.800"
+      ],
+      [
+       "Despedidos",
+       "0",
+       "6",
+       "17",
+       "5",
+       "0",
+       "0",
+       "\\$7.000"
+      ],
+      [
+       "Tiempo regular (horas × 4)",
+       "\\$37.000",
+       "\\$28.500",
+       "\\$20.000",
+       "\\$17.000",
+       "\\$23.000",
+       "\\$34.500",
+       "\\$160.000"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "**Costo total: \\$172.800** (se supone que la fuerza inicial ya es de 53 trabajadores)."
+    }
+   ]
+  },
+  {
+   "type": "ejemplo",
+   "title": "Plan 2 · Nivel: 40 trabajadores constantes, varían stock y faltantes",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Trabajadores = (8.000 u × 5 h) / (125 días × 8 h) = **40**. Producción = días × 8 × 40 / 5."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun",
+      "Total"
+     ],
+     "rows": [
+      [
+       "Inventario inicial",
+       "400",
+       "8",
+       "−276",
+       "−32",
+       "412",
+       "720",
+       ""
+      ],
+      [
+       "Producción real",
+       "1.408",
+       "1.216",
+       "1.344",
+       "1.344",
+       "1.408",
+       "1.280",
+       "8.000"
+      ],
+      [
+       "Demanda",
+       "1.800",
+       "1.500",
+       "1.100",
+       "900",
+       "1.100",
+       "1.600",
+       ""
+      ],
+      [
+       "Inventario final",
+       "8",
+       "−276",
+       "−32",
+       "412",
+       "720",
+       "400",
+       ""
+      ],
+      [
+       "Faltante × 5",
+       "\\$0",
+       "\\$1.380",
+       "\\$160",
+       "\\$0",
+       "\\$0",
+       "\\$0",
+       "\\$1.540"
+      ],
+      [
+       "Exceso sobre el SS (si es positivo)",
+       "0",
+       "0",
+       "0",
+       "187",
+       "445",
+       "0",
+       ""
+      ],
+      [
+       "Exceso × 1,50",
+       "\\$0",
+       "\\$0",
+       "\\$0",
+       "\\$281",
+       "\\$668",
+       "\\$0",
+       "\\$948"
+      ],
+      [
+       "Tiempo regular",
+       "\\$28.160",
+       "\\$24.320",
+       "\\$26.880",
+       "\\$26.880",
+       "\\$28.160",
+       "\\$25.600",
+       "\\$160.000"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "**Costo total: \\$162.488**. Fijate que Chase cobra mantenimiento solo sobre lo que excede al stock de seguridad, y faltante sobre el stock final negativo. (En la ilustración 16.4 la demanda de mayo figura «110»: es una errata de impresión, el cálculo usa 1.100.)"
+    }
+   ]
+  },
+  {
+   "type": "ejemplo",
+   "title": "Plan 3 · 25 trabajadores constantes + subcontratación",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Trabajadores para el mes mínimo (abril): (850 × 5) / (21 × 8) = 25,3 → **25**. Lo que falta se subcontrata."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun",
+      "Total"
+     ],
+     "rows": [
+      [
+       "Producción real",
+       "880",
+       "760",
+       "840",
+       "840",
+       "880",
+       "800",
+       "5.000"
+      ],
+      [
+       "Subcontratadas (requerimiento − producción)",
+       "970",
+       "665",
+       "160",
+       "10",
+       "270",
+       "925",
+       "3.000"
+      ],
+      [
+       "Subcontrato × 20",
+       "\\$19.400",
+       "\\$13.300",
+       "\\$3.200",
+       "\\$200",
+       "\\$5.400",
+       "\\$18.500",
+       "\\$60.000"
+      ],
+      [
+       "Tiempo regular",
+       "\\$17.600",
+       "\\$15.200",
+       "\\$16.800",
+       "\\$16.800",
+       "\\$17.600",
+       "\\$16.000",
+       "\\$100.000"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "**Costo total: \\$160.000** (el más bajo de los cuatro)."
+    }
+   ]
+  },
+  {
+   "type": "ejemplo",
+   "title": "Plan 4 · 38 trabajadores constantes + horas extras",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "38 trabajadores sale «mediante las pruebas»: es la fuerza que deja junio lo más cerca posible del stock de seguridad. Unidades disponibles antes del tiempo extra = stock inicial + producción regular − demanda; si es negativo, se cubre con horas extras."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "",
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun",
+      "Total"
+     ],
+     "rows": [
+      [
+       "Inventario inicial",
+       "400",
+       "0",
+       "0",
+       "177",
+       "554",
+       "792",
+       ""
+      ],
+      [
+       "Producción regular",
+       "1.338",
+       "1.155",
+       "1.277",
+       "1.277",
+       "1.338",
+       "1.216",
+       ""
+      ],
+      [
+       "Disponibles antes de extras",
+       "−62",
+       "−345",
+       "177",
+       "554",
+       "792",
+       "408",
+       ""
+      ],
+      [
+       "Unidades en tiempo extra",
+       "62",
+       "345",
+       "0",
+       "0",
+       "0",
+       "0",
+       ""
+      ],
+      [
+       "Extra × 5 h × 6 \\$",
+       "\\$1.860",
+       "\\$10.350",
+       "\\$0",
+       "\\$0",
+       "\\$0",
+       "\\$0",
+       "\\$12.210"
+      ],
+      [
+       "Exceso sobre el SS",
+       "0",
+       "0",
+       "0",
+       "329",
+       "517",
+       "8",
+       ""
+      ],
+      [
+       "Exceso × 1,50",
+       "\\$0",
+       "\\$0",
+       "\\$0",
+       "\\$494",
+       "\\$776",
+       "\\$12",
+       "\\$1.281"
+      ],
+      [
+       "Tiempo regular",
+       "\\$26.752",
+       "\\$23.104",
+       "\\$25.536",
+       "\\$25.536",
+       "\\$26.752",
+       "\\$24.320",
+       "\\$152.000"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "**Costo total: \\$165.491**."
+    },
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Dos erratas del libro, corregidas acá:** en la fila de tiempo extra Chase imprime **375** en febrero, pero el costo que imprime (\\$10.350 = 345 × 5 × 6) y el faltante (−345) dicen que son **345**. Y el exceso de junio figura «80», pero 408 − 400 = **8**, que es lo que da \\$12 (cálculo propio de verificación)."
+    }
+   ]
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Costo",
+    "Plan 1 (ajuste)",
+    "Plan 2 (nivel)",
+    "Plan 3 (subcontrato)",
+    "Plan 4 (horas extras)"
+   ],
+   "rows": [
+    [
+     "Contratación",
+     "\\$5.800",
+     "\\$0",
+     "\\$0",
+     "\\$0"
+    ],
+    [
+     "Despidos",
+     "\\$7.000",
+     "\\$0",
+     "\\$0",
+     "\\$0"
+    ],
+    [
+     "Inventario en exceso",
+     "\\$0",
+     "\\$948",
+     "\\$0",
+     "\\$1.281"
+    ],
+    [
+     "Escasez",
+     "\\$0",
+     "\\$1.540",
+     "\\$0",
+     "\\$0"
+    ],
+    [
+     "Subcontratación",
+     "\\$0",
+     "\\$0",
+     "\\$60.000",
+     "\\$0"
+    ],
+    [
+     "Tiempo extra",
+     "\\$0",
+     "\\$0",
+     "\\$0",
+     "\\$12.210"
+    ],
+    [
+     "Tiempo regular",
+     "\\$160.000",
+     "\\$160.000",
+     "\\$100.000",
+     "\\$152.000"
+    ],
+    [
+     "**Total**",
+     "**\\$172.800**",
+     "**\\$162.488**",
+     "**\\$160.000**",
+     "**\\$165.491**"
+    ]
+   ],
+   "caption": "Chase, ilustración 16.5"
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_estrategias.svg",
+   "caption": "Costo total de los cuatro planes de JC Company (Chase, ilustración 16.5; gráfico propio)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase advierte que «los primeros tres son estrategias puras simples» y que hay muchos otros planes factibles, algunos combinando estrategias. También aclara una hipótesis: el plan arranca con el número de trabajadores que necesita, sin costo de contratación ni despido inicial."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. El ejercicio de final: «stock final nulo» (30/04/2003 y 18/12/2003)"
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — Plan con stock final nulo (SG!EVA, Examen 30/4/03; repetido el 18/12/2003)",
+   "estado": "resuelto",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Un empresa debe elaborar un plan de producción que arroje un **stock final nulo** al cierre del período nº4.»"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Período",
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "rows": [
+      [
+       "Demanda estimada",
+       "2000",
+       "3200",
+       "4000",
+       "2800"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "«Capacidad de producción en tiempo normal = **2600 u/período**. Costos de producción en tiempo extra = **11 \\$/u**. Costos de inventarios = **2 \\$/u. período**. Costos de pedidos pendientes = **6 \\$/u. período**. Stock inicial = **400 u**. ¿Cuáles son los costos que resultan de aplicar ese plan? ¿Cómo se genera la información precedente? (indicar los subsistemas participantes).»"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**De dónde sale la solución.** La resolución manuscrita de EjerciciosFinalesResueltos (p. 20) anota «Costo inv. = 2.800» y «Costo T.E. = 13.200», que coincide con el plan óptimo de abajo; también anota «Costo PP = 1000·6 + 200·6 = 7.200», que es la comparación con llevar esas 1.200 unidades como pendientes (al lado dice «no sumo porque es más caro producir que llevar pendiente»); con stock final nulo ese costo no reemplaza a las extras, así que no entra en el total. El análisis completo y el chequeo de alternativas es **cálculo propio** (probé todas las distribuciones de horas extras en múltiplos de 100)."
+    },
+    {
+     "type": "paragraph",
+     "text": "**1. ¿Cuántas horas extras hacen falta sí o sí?** Demanda total 12.000; disponible sin extras 400 + 4 × 2.600 = 10.800. Como el stock final debe ser nulo (y no puede quedar nada pendiente), hay que producir **1.200 u en tiempo extra**. La pregunta es **cuándo**."
+    },
+    {
+     "type": "paragraph",
+     "text": "**2. Regla de decisión.** Una unidad extra producida justo en el período en que falta cuesta 11. Si se produce un período antes cuesta 11 + 2 = 13; si se atrasa un período y se recupera después, 6 + 11 = 17. Conviene hacer las extras **en el período en que faltan**."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Período",
+      "1",
+      "2",
+      "3",
+      "4",
+      "Total"
+     ],
+     "rows": [
+      [
+       "Stock inicial",
+       "400",
+       "1.000",
+       "400",
+       "0",
+       ""
+      ],
+      [
+       "Producción normal",
+       "2.600",
+       "2.600",
+       "2.600",
+       "2.600",
+       "10.400"
+      ],
+      [
+       "Producción en tiempo extra",
+       "0",
+       "0",
+       "1.000",
+       "200",
+       "1.200"
+      ],
+      [
+       "Demanda",
+       "2.000",
+       "3.200",
+       "4.000",
+       "2.800",
+       "12.000"
+      ],
+      [
+       "**Stock final**",
+       "1.000",
+       "400",
+       "0",
+       "0",
+       ""
+      ],
+      [
+       "Costo de inventario (× 2)",
+       "2.000",
+       "800",
+       "0",
+       "0",
+       "**2.800**"
+      ],
+      [
+       "Costo tiempo extra (× 11)",
+       "0",
+       "0",
+       "11.000",
+       "2.200",
+       "**13.200**"
+      ]
+     ],
+     "caption": "Plan óptimo (cálculo propio; coincide con la hoja manuscrita del EFR)"
+    },
+    {
+     "type": "paragraph",
+     "text": "**Costo total = 2.800 + 13.200 = \\$16.000.**"
+    },
+    {
+     "type": "paragraph",
+     "text": "**Alternativa que conviene mostrar para justificar:** no hacer extras en el período 3 y dejar 1.000 pendientes, que se recuperan en el 4 con 1.200 extras: inventario 2.800 + pendientes 1.000 × 6 = 6.000 + extras 13.200 = **\\$22.000**. Es \\$6.000 más caro: el pendiente no ahorra extras porque, con stock final nulo, igual hay que producirlas."
+    },
+    {
+     "type": "paragraph",
+     "text": "**3. Subsistemas que participan** (respuesta manuscrita del EFR p. 20): la **demanda** surge del plan maestro con la información del **subsistema de pronósticos** (y los pedidos de clientes); **gestión de stocks** da el stock inicial y el costo de inventario; **datos de ingeniería** da la capacidad de producción y el costo en tiempo extra. Agregá, para completar: costos (cálculo de los costos unitarios) es un **complemento** razonable, no está en la hoja."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — Misma consigna con la demanda invertida (Ejercicios posibles)",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Capacidad de producción en tiempo normal = **2600 u/período**. Costos de producción en tiempo extra = **12 \\$/u**. Costos de inventarios = **2 \\$/u. período**. Costos de pedidos pendientes = **5 \\$/u. período**. Stock inicial = **400 u**.» Demanda: **4000, 3200, 2000, 2800**. «Elaborar un plan de producción que arroje un stock final nulo al cierre del período nº4.»"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "paragraph",
+     "text": "**Cálculo propio** (no hay resolución en el material). Otra vez faltan 12.000 − 10.800 = **1.200 u extras**. Ahora la demanda alta está **al principio**: no hay stock previo para cubrirla."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Período",
+      "1",
+      "2",
+      "3",
+      "4",
+      "Total"
+     ],
+     "rows": [
+      [
+       "Stock inicial",
+       "400",
+       "0",
+       "−400",
+       "200",
+       ""
+      ],
+      [
+       "Producción normal",
+       "2.600",
+       "2.600",
+       "2.600",
+       "2.600",
+       "10.400"
+      ],
+      [
+       "Tiempo extra",
+       "1.000",
+       "200",
+       "0",
+       "0",
+       "1.200"
+      ],
+      [
+       "Demanda",
+       "4.000",
+       "3.200",
+       "2.000",
+       "2.800",
+       "12.000"
+      ],
+      [
+       "**Stock final**",
+       "0",
+       "−400",
+       "200",
+       "0",
+       ""
+      ],
+      [
+       "Costo",
+       "TE 12.000",
+       "TE 2.400 + PP 2.000",
+       "Inv. 400",
+       "0",
+       "**16.800**"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "Lo que cambia: en el período 2 faltan 600; hacer las 600 en extras costaría 12 cada una, pero si se dejan **400 pendientes** (5 \\$) se cubren en el período 3 con la capacidad normal que sobra (en el 3 sobran 600). Así se hacen solo 1.200 extras en total en lugar de 1.600. Las 200 restantes del período 2 se hacen en extras porque en el período 4 no sobra capacidad. **Costo total \\$16.800**, el mínimo de todas las combinaciones (chequeo por fuerza bruta)."
+    },
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Ojo con el razonamiento:** pendiente (5) es más barato que extra (12) **solo si** después hay capacidad normal ociosa para recuperarlo. Si no la hay, el pendiente se suma a la extra (5 + 12)."
+    }
+   ]
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Hay una tercera versión** en EjerciciosFinalesResueltos (p. 29: tiempo extra 10 \\$/u, inventario 3 \\$/u·período, pendientes 5 \\$/u·período, stock inicial 400, capacidad 2600), pero la tabla de demanda del escaneo es ilegible. Si te la toman, el procedimiento es el mismo."
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Cómo se corrige** (criterios del examen 2018, que valen para todos): «interpretación de los resultados obtenidos» y «fundamentación de las respuestas». En el plan agregado eso es: decir **cuántas unidades extras son inevitables**, **por qué** se ubican en ese período (comparar 11 vs. 13 vs. 17) y contestar la segunda consigna (subsistemas)."
+  }
+ ],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "El procedimiento",
+   "title": "Requerimientos primero.",
+   "text": "Chase arranca cada plan con los requerimientos de producción: pronóstico + stock de seguridad − stock inicial. Enero de JC Company: 1.800 + 450 − 400 = 1.850.",
+   "formula": "\\text{req.} = \\text{pronóstico} + SS - \\text{stock inicial}"
+  },
+  {
+   "type": "concepto",
+   "k": "JC Company",
+   "title": "Cuatro planes, cuatro costos.",
+   "text": "Ajuste 172.800; nivel 162.488; 25 trabajadores más subcontrato 160.000; 38 trabajadores más horas extra 165.491. El más barato es el subcontrato.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Costo total de 6 meses\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Costo total de 6 meses</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"27.0\" y=\"37.2\" width=\"34.0\" height=\"72.8\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"44.0\" y=\"33.2\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">172,8 mil</text><text x=\"44.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Ajuste</text><rect x=\"91.0\" y=\"41.6\" width=\"34.0\" height=\"68.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"108.0\" y=\"37.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">162,5 mil</text><text x=\"108.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Nivel</text><rect x=\"155.0\" y=\"42.6\" width=\"34.0\" height=\"67.4\" rx=\"3\" fill=\"#7cc49a\" opacity=\".9\"/><text x=\"172.0\" y=\"38.6\" font-size=\"8\" fill=\"#7cc49a\" text-anchor=\"middle\" font-weight=\"700\">160,0 mil</text><text x=\"172.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Subcontrato</text><rect x=\"219.0\" y=\"40.3\" width=\"34.0\" height=\"69.7\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"236.0\" y=\"36.3\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">165,5 mil</text><text x=\"236.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Horas</text><text x=\"236.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">extra</text></svg>",
+   "chartLabel": "Chase, ejemplo 16.1, ilustración 16.5"
+  },
+  {
+   "type": "concepto",
+   "k": "Ojo con el libro",
+   "title": "Dos erratas en el Plan 4.",
+   "text": "Chase imprime 375 horas extra en febrero, pero el costo y el faltante dicen 345. Y el exceso de junio figura 80, cuando 408 − 400 = 8.",
+   "ejemplo": "Verificación propia; en la teoría están corregidas."
+  },
+  {
+   "type": "concepto",
+   "k": "Final 30/04/2003",
+   "title": "Stock final nulo.",
+   "text": "Demanda 2000, 3200, 4000, 2800. Capacidad normal 2600 por período. Extra 11, inventario 2, pendiente 6 por unidad y período. Stock inicial 400.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Demanda por período (capacidad normal 2600)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Demanda por período (capacidad normal 2600)</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"27.0\" y=\"74.4\" width=\"34.0\" height=\"35.6\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"44.0\" y=\"70.4\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">2000</text><text x=\"44.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">P1</text><rect x=\"91.0\" y=\"53.1\" width=\"34.0\" height=\"56.9\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"108.0\" y=\"49.1\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">3200</text><text x=\"108.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">P2</text><rect x=\"155.0\" y=\"38.9\" width=\"34.0\" height=\"71.1\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"172.0\" y=\"34.9\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">4000</text><text x=\"172.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">P3</text><rect x=\"219.0\" y=\"60.2\" width=\"34.0\" height=\"49.8\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"236.0\" y=\"56.2\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">2800</text><text x=\"236.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">P4</text></svg>",
+   "chartLabel": "SG!EVA, Examen 30/4/03"
+  },
+  {
+   "type": "concepto",
+   "k": "Paso 1",
+   "title": "¿Cuántas extras sí o sí?",
+   "text": "Demanda total 12.000. Sin extras hay 400 + 4 × 2600 = 10.800. Con stock final nulo faltan 1.200 que van en tiempo extra. La pregunta es cuándo."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Una unidad extra cuesta 11 en el período en que falta. ¿Cuánto cuesta hacerla un período antes?",
+   "options": [
+    "11",
+    "13",
+    "17"
+   ],
+   "correct": 1,
+   "feedback": "11 de la extra más 2 de guardarla un período. Atrasarla y recuperarla después cuesta 6 + 11 = 17. Conviene hacerla en el período en que falta."
+  },
+  {
+   "type": "concepto",
+   "k": "El plan óptimo",
+   "title": "1.000 extras en P3 y 200 en P4.",
+   "text": "Inventario 1.000 + 400 = 1.400 unidades-período × 2 = 2.800. Extras 1.200 × 11 = 13.200. Total 16.000, el mismo que anota la hoja manuscrita.",
+   "svg": "<svg viewBox=\"0 0 280 121\" width=\"100%\" height=\"121\" role=\"img\" aria-label=\"Planilla del plan óptimo\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Planilla del plan óptimo</text><rect x=\"8\" y=\"22\" width=\"264\" height=\"16\" fill=\"#8cb4d6\"/><text x=\"105.8\" y=\"33.5\" font-size=\"7.2\" fill=\"#fff\" text-anchor=\"middle\" font-weight=\"700\">P1</text><text x=\"153.2\" y=\"33.5\" font-size=\"7.2\" fill=\"#fff\" text-anchor=\"middle\" font-weight=\"700\">P2</text><text x=\"200.8\" y=\"33.5\" font-size=\"7.2\" fill=\"#fff\" text-anchor=\"middle\" font-weight=\"700\">P3</text><text x=\"248.2\" y=\"33.5\" font-size=\"7.2\" fill=\"#fff\" text-anchor=\"middle\" font-weight=\"700\">P4</text><rect x=\"8\" y=\"39\" width=\"264\" height=\"17\" fill=\"#fff\"/><text x=\"12.0\" y=\"51.0\" font-size=\"7\" fill=\"#222\" text-anchor=\"start\">Normal</text><text x=\"105.8\" y=\"51.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">2600</text><text x=\"153.2\" y=\"51.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">2600</text><text x=\"200.8\" y=\"51.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">2600</text><text x=\"248.2\" y=\"51.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">2600</text><rect x=\"8\" y=\"56\" width=\"264\" height=\"17\" fill=\"#FFF3E8\"/><text x=\"12.0\" y=\"68.0\" font-size=\"7\" fill=\"#222\" text-anchor=\"start\" font-weight=\"700\">Extra</text><text x=\"105.8\" y=\"68.0\" font-size=\"7.2\" fill=\"#9a5b00\" text-anchor=\"middle\" font-weight=\"700\">0</text><text x=\"153.2\" y=\"68.0\" font-size=\"7.2\" fill=\"#9a5b00\" text-anchor=\"middle\" font-weight=\"700\">0</text><text x=\"200.8\" y=\"68.0\" font-size=\"7.2\" fill=\"#9a5b00\" text-anchor=\"middle\" font-weight=\"700\">1000</text><text x=\"248.2\" y=\"68.0\" font-size=\"7.2\" fill=\"#9a5b00\" text-anchor=\"middle\" font-weight=\"700\">200</text><rect x=\"8\" y=\"73\" width=\"264\" height=\"17\" fill=\"#fff\"/><text x=\"12.0\" y=\"85.0\" font-size=\"7\" fill=\"#222\" text-anchor=\"start\">Demanda</text><text x=\"105.8\" y=\"85.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">2000</text><text x=\"153.2\" y=\"85.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">3200</text><text x=\"200.8\" y=\"85.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">4000</text><text x=\"248.2\" y=\"85.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">2800</text><rect x=\"8\" y=\"90\" width=\"264\" height=\"17\" fill=\"#F4F6F8\"/><text x=\"12.0\" y=\"102.0\" font-size=\"7\" fill=\"#222\" text-anchor=\"start\">Stock final</text><text x=\"105.8\" y=\"102.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">1000</text><text x=\"153.2\" y=\"102.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">400</text><text x=\"200.8\" y=\"102.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">0</text><text x=\"248.2\" y=\"102.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">0</text></svg>",
+   "chartLabel": "Cálculo propio; coincide con EFR p. 20"
+  },
+  {
+   "type": "concepto",
+   "k": "La alternativa",
+   "title": "Atrasar sale más caro.",
+   "text": "Dejar 1.000 pendientes en P3 y recuperarlos con extras en P4: inventario 2.800 + pendientes 6.000 + extras 13.200 = 22.000. El pendiente no ahorra extras."
+  },
+  {
+   "type": "concepto",
+   "k": "La variante",
+   "title": "Demanda invertida: 4000, 3200, 2000, 2800.",
+   "text": "Con extra 12 y pendiente 5: 1.000 extras en P1, 200 extras y 400 pendientes en P2, que se recuperan en P3 con la capacidad que sobra. Total 16.800.",
+   "ejemplo": "Cálculo propio. El pendiente conviene solo si después hay capacidad normal ociosa para recuperarlo."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "El final pide además «cómo se genera la información». ¿Qué subsistema da la capacidad y el costo de la extra?",
+   "options": [
+    "Pronósticos",
+    "Gestión de stocks",
+    "Datos de ingeniería"
+   ],
+   "correct": 2,
+   "feedback": "Según la hoja manuscrita: la demanda viene del plan maestro con pronósticos; stocks da el stock inicial y el costo de inventario; ingeniería, la capacidad y el costo en tiempo extra."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 3.",
+   "text": "Unidades extra inevitables = demanda − (stock inicial + capacidad normal). Ubicalas comparando 11, 13 y 17. Valorizá la planilla. Y contestá los subsistemas."
+  }
+ ],
+ "block": "A",
+ "blockTitle": "Bloque A · Plan agregado y programa maestro"
+}

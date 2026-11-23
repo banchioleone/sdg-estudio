@@ -1,0 +1,306 @@
+{
+ "unitId": "u6",
+ "unitLabel": "Unidad 6",
+ "unitTitle": "Planificación y control",
+ "id": "u6c2",
+ "title": "Clase 2 · Plan agregado: estrategias y costos",
+ "name": "Plan agregado: estrategias y costos",
+ "lede": "Qué es la planeación agregada de ventas y operaciones, cómo se define el producto agregado, las estrategias de ajuste, nivel y mixta, los cuatro costos y el modelo de Morán.",
+ "visto": false,
+ "source": "drive_u6/Planificacion Agregada.pdf — «Planificación agregada de la producción», R. Morán (UNR, 2012) §1–§3; Chase, Jacobs y Aquilano 12a ed., cap. 16, p. 514–521 — planeación agregada, estrategias y costos (drive_u6/txt/cap16_chase12.txt); drive_u6/Planeacion agregada de vtas y operaciones.pptx — láminas «Planeación agregada», Ing. Cristian G. Bigatti (UTN FRRo, 2015), y su ejercicio JC Company (.docx); texto/ocr/efr_ppm/p-20.png — EjerciciosFinalesResueltos, resolución manuscrita (subsistemas del plan agregado)",
+ "laminas": [
+  "u6/img/u6_ajuste_nivel.svg"
+ ],
+ "next": "Clase 3 · Plan agregado: la planilla período a período",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Unidad 6 · Bloque A · Clase 2 · Plan agregado: estrategias y costos**"
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** el plan agregado decide, para los próximos meses y con **un solo producto «promedio»**, cuánto producir, con cuánta gente, cuántas horas extras, cuánto stock y cuánto atraso, de modo que se cubra la demanda pronosticada **al menor costo**."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Qué es y para qué sirve"
+  },
+  {
+   "type": "paragraph",
+   "text": "Morán: «la APP es una planificación global utilizada para determinar la capacidad de los recursos de producción que la empresa necesita para alcanzar sus expectativas de demanda». En manufactura se enfoca en «las tasas de producción y las existencias resultantes»; en servicios «es básicamente un plan de personal». Se hace casi en simultáneo con la **Planificación de los Requerimientos de Recursos (RRP)**."
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase: el plan agregado «se ocupa de establecer los índices de producción por grupo de productos u otras categorías a mediano plazo (3 a 18 meses)» y su propósito principal es «especificar la combinación óptima de índice de producción, nivel de la fuerza de trabajo e inventario a la mano». Las láminas de Bigatti (2015) dan para el mediano plazo de 6 a 18 meses."
+  },
+  {
+   "type": "paragraph",
+   "text": "Por qué se llama «**de ventas y operaciones**» (Morán): porque las decisiones posibles se dividen en dos grupos."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Decisiones que modifican la **demanda**",
+    "Decisiones que modifican la **oferta**"
+   ],
+   "rows": [
+    [
+     "modificación de precios",
+     "variación de la tasa de producción (horas extras, tiempo ocioso)"
+    ],
+    [
+     "publicidad y promociones",
+     "variación de la cantidad de recursos (contratar, despedir)"
+    ],
+    [
+     "políticas comerciales: entregas diferidas o pedidos adelantados",
+     "variación de existencias, incluso entregas con retraso o faltantes"
+    ],
+    [
+     "artículos complementarios que compensen la estacionalidad",
+     "subcontratación parcial de la producción"
+    ]
+   ],
+   "caption": "Morán, Planificación agregada §1"
+  },
+  {
+   "type": "paragraph",
+   "text": "Si se pueden mover demanda y oferta, el modelo **maximiza la contribución marginal**; si la demanda y los precios están dados, el ingreso es constante y alcanza con **minimizar los costos variables**. «En la mayoría de los casos se supone que la demanda está fijada y los modelos son de minimización de costos.»"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. El producto agregado"
+  },
+  {
+   "type": "paragraph",
+   "text": "Es «la unidad con la que se mide la producción total». En una línea de autos, «el automóvil (sin ninguna particularización)»; en pinturas o cerveza, el hectolitro; en una fábrica de una gran variedad de pulóveres, el pulóver; en siderurgia, la tonelada de acero. Para planificar hace falta además su **requerimiento de capacidad** por unidad y su **costo variable**."
+  },
+  {
+   "type": "formula",
+   "tex": "h_a = \\frac{P}{Q}",
+   "caption": "Tiempo de producción de una unidad de producto agregado (Morán, ec. 1). P = horas totales usadas en el año; Q = unidades de todos los artículos producidas en esas horas"
+  },
+  {
+   "type": "paragraph",
+   "text": "P incluye puestas a punto, factores personales y defectuosos, **pero no** las paradas por fallas y reparaciones. Ejemplo de Morán: un turno de 8 h × 250 días = 2.000 h, con 200 h de fallas, da P = 1.800 h/año y una **disponibilidad** η = 1.800 / 2.000 = 0,9. El recíproco de $h_a$ es la **productividad agregada**. En trabajo manual se mide en horas-hombre: 30 operarios × 8 h × 250 días = **60.000 HH/año**."
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Ojo:** $h_a$ vale para la **mezcla habitual** de productos. Si cambia la mezcla, cambia $h_a$. Y como incluye ineficiencias reales, «debe ser revisada periódicamente»."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Las estrategias (Chase)"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Estrategia",
+    "Qué varía",
+    "Qué absorbe la fluctuación",
+    "A favor / en contra"
+   ],
+   "rows": [
+    [
+     "**De ajuste** (persecución)",
+     "el tamaño de la fuerza de trabajo",
+     "contrataciones y despidos; la producción iguala a los pedidos",
+     "sin stock; depende de tener candidatos capacitables y tiene costos humanos"
+    ],
+    [
+     "**Fuerza de trabajo estable, horas variables**",
+     "las horas trabajadas",
+     "horas extras o tiempo ocioso, horarios flexibles",
+     "da continuidad al personal"
+    ],
+    [
+     "**De nivel**",
+     "nada: tasa constante",
+     "inventario, pedidos acumulados y ventas perdidas",
+     "horario estable; más inventario, riesgo de obsolescencia y peor servicio"
+    ],
+    [
+     "**Subcontratación**",
+     "lo que se compra afuera",
+     "el subcontratista",
+     "«una subcontratación excesiva se considera una estrategia de alto riesgo»"
+    ]
+   ],
+   "caption": "Chase 12a ed., cap. 16, p. 520"
+  },
+  {
+   "type": "paragraph",
+   "text": "«Cuando sólo se utiliza una de estas variables para absorber las fluctuaciones de la demanda, se conoce como una **estrategia pura**; dos o más estrategias utilizadas en combinación constituyen una **estrategia mixta**», que es la que más se aplica en la industria."
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_ajuste_nivel.svg",
+   "caption": "Estrategia de ajuste vs. de nivel sobre los requerimientos de JC Company (Chase, ilustración 16.3; nivel = cálculo propio)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Los costos relevantes"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Costo (Chase)",
+    "Qué incluye",
+    "Cómo aparece en la planilla"
+   ],
+   "rows": [
+    [
+     "Producción básica",
+     "mano de obra directa e indirecta, tiempo regular y extra",
+     "horas × costo de la hora normal o extra"
+    ],
+    [
+     "Cambio en el índice de producción",
+     "contratación, capacitación, despido",
+     "trabajadores contratados × costo; despedidos × costo"
+    ],
+    [
+     "Mantenimiento de inventario",
+     "capital inmovilizado, almacenamiento, seguros, impuestos, desperdicio, obsolescencia",
+     "unidades en stock al final del período × costo por unidad y período"
+    ],
+    [
+     "Faltantes",
+     "expedición, pérdida de buena voluntad, ventas perdidas",
+     "unidades pendientes × costo por unidad y período"
+    ]
+   ],
+   "caption": "Chase 12a ed., cap. 16, p. 520–521"
+  },
+  {
+   "type": "paragraph",
+   "text": "Morán discute qué es **variable** de verdad: con planta de personal estable, el costo de la hora normal **no** es variable; las **horas extras sí**. Por eso modela recursos distintos según su costo: horas normales, horas extras, turnos con distinto costo y producción subcontratada son «recursos» diferentes."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. El modelo de Morán (programación lineal)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Morán plantea la APP como un problema de minimización. Con $z_t$ = cantidad a producir, $d_t$ = demanda, $s_t$ = stock al final del período, $c_{p,t}$ = costo variable unitario y $c_{s,t} = i \\cdot c_{p,t}$ = costo de mantener:"
+  },
+  {
+   "type": "formula",
+   "tex": "\\min CT = \\sum_{t=1}^{T} c_{p,t}\\, z_t + \\sum_{t=1}^{T} c_{s,t}\\, s_t",
+   "caption": "Función objetivo (Morán, ec. 3)"
+  },
+  {
+   "type": "formula",
+   "tex": "s_t = s_{t-1} + z_t - d_t \\qquad h_{a,j}\\, z_t \\leq P_{j,t}",
+   "caption": "Balance de stock y restricción de capacidad de cada recurso j"
+  },
+  {
+   "type": "paragraph",
+   "text": "Sobre esa base agrega: **pérdida de ventas** (§2.1), **entregas diferidas** con un costo por unidad pendiente «que debe ser mayor que el costo de producción» (§2.2), **costos lineales por tramos** como las horas extras (§2.3), **variación de la capacidad** contratando temporarios (§2.4), **instalaciones múltiples** (§2.5) y **familias** de productos con puestas a punto (§3). Resuelve los ejemplos con LINDO."
+  },
+  {
+   "type": "paragraph",
+   "text": "Un recurso que Morán recomienda para leer cualquier plan: los **gráficos de cantidades acumuladas** de capacidad, demanda y producción (§2.6). Donde la curva de demanda acumulada queda por encima de la de producción hay pendientes; donde la producción va por encima, hay stock. Chase hace lo mismo con sus cuatro planes (ilustración 16.6)."
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**En el final no se pide programación lineal.** Los dos planes agregados que cayeron (2003) se resuelven con la planilla período a período de la Clase 3. El modelo de Morán sirve para entender qué se está minimizando y por qué el costo de un pendiente tiene que ser mayor que el de producir."
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**La segunda pregunta del ejercicio de final:** «Como se genera la información precedente (indicar los subsistemas participantes)». La resolución manuscrita del EFR (p. 20) contesta: la demanda se obtiene del plan maestro con la información del **subsistema de pronósticos**; **gestión de stocks** provee el stock inicial y el costo de inventario; **datos de ingeniería** da la capacidad de producción y el costo en tiempo extra; y el plan «es generado a nivel de producción en el área de comercialización a partir de los datos provenientes de los pronósticos y los pedidos de clientes»."
+  }
+ ],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "Morán",
+   "title": "Qué es el plan agregado.",
+   "text": "«Una planificación global utilizada para determinar la capacidad de los recursos de producción que la empresa necesita para alcanzar sus expectativas de demanda.» En manufactura mira tasas de producción y existencias."
+  },
+  {
+   "type": "concepto",
+   "k": "El producto agregado",
+   "title": "Una unidad para medir todo.",
+   "text": "El automóvil sin particularizar, el hectolitro de cerveza, el pulóver, la tonelada de acero. Y su tiempo por unidad: h = P / Q, horas usadas sobre unidades hechas.",
+   "formula": "h_a = \\frac{P}{Q}",
+   "ejemplo": "Morán: 8 h × 250 días = 2.000 h; con 200 h de fallas, P = 1.800 h y la disponibilidad es 0,9."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Si cambia la mezcla de productos, ¿qué pasa con h?",
+   "options": [
+    "Nada, es una constante",
+    "Cambia: h vale para la mezcla habitual",
+    "Se vuelve cero"
+   ],
+   "correct": 1,
+   "feedback": "Morán: h se calcula con la mezcla habitual y con ineficiencias reales, así que debe revisarse periódicamente."
+  },
+  {
+   "type": "concepto",
+   "k": "Chase",
+   "title": "Cuatro estrategias.",
+   "text": "Ajuste: varía la fuerza de trabajo. Fuerza estable con horas variables. Nivel: tasa constante, absorben el stock y los pendientes. Subcontratación.",
+   "svg": "<svg viewBox=\"0 0 280 142\" width=\"100%\" height=\"142\" role=\"img\" aria-label=\"Qué absorbe la variación de la demanda\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Qué absorbe la variación de la demanda</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. Ajuste</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">contratar y despedir</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. Fuerza estable</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">horas extra / ocio</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. Nivel</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">stock y pendientes</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">4. Subcontratación</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">«alto riesgo»</text></svg>",
+   "chartLabel": "Chase 12a ed., cap. 16, p. 520"
+  },
+  {
+   "type": "concepto",
+   "k": "Ajuste vs. nivel",
+   "title": "Con los números de JC Company.",
+   "text": "Los requerimientos de producción van de 1.850 a 850 por mes. El ajuste los sigue; el nivel produce 8.000 / 6, unos 1.333 por mes, y deja que el stock suba y baje.",
+   "svg": "<svg viewBox=\"0 0 280 150\" width=\"100%\" height=\"150\" role=\"img\" aria-label=\"JC Company: ajuste vs. nivel\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">JC Company: ajuste vs. nivel</text><line x1=\"36\" y1=\"91.2\" x2=\"266\" y2=\"91.2\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"94.2\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">1000</text><line x1=\"36\" y1=\"62.3\" x2=\"266\" y2=\"62.3\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"65.3\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">1500</text><line x1=\"36\" y1=\"33.5\" x2=\"266\" y2=\"33.5\" stroke=\"#5a6570\" stroke-width=\".5\"/><text x=\"32.0\" y=\"36.5\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"end\">2000</text><polyline fill=\"none\" stroke=\"#8cb4d6\" stroke-width=\"1.8\" points=\"36.0,42.2 82.0,66.7 128.0,91.2 174.0,99.8 220.0,82.5 266.0,49.4\"/><circle cx=\"36.0\" cy=\"42.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"82.0\" cy=\"66.7\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"128.0\" cy=\"91.2\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"174.0\" cy=\"99.8\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"220.0\" cy=\"82.5\" r=\"2.3\" fill=\"#8cb4d6\"/><circle cx=\"266.0\" cy=\"49.4\" r=\"2.3\" fill=\"#8cb4d6\"/><polyline fill=\"none\" stroke=\"#e25b16\" stroke-width=\"1.8\" stroke-dasharray=\"4 3\" points=\"36.0,72.0 82.0,72.0 128.0,72.0 174.0,72.0 220.0,72.0 266.0,72.0\"/><circle cx=\"36.0\" cy=\"72.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"82.0\" cy=\"72.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"128.0\" cy=\"72.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"174.0\" cy=\"72.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"220.0\" cy=\"72.0\" r=\"2.3\" fill=\"#e25b16\"/><circle cx=\"266.0\" cy=\"72.0\" r=\"2.3\" fill=\"#e25b16\"/><text x=\"36.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Ene</text><text x=\"82.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Feb</text><text x=\"128.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Mar</text><text x=\"174.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Abr</text><text x=\"220.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">May</text><text x=\"266.0\" y=\"128.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Jun</text><line x1=\"8\" y1=\"141\" x2=\"20\" y2=\"141\" stroke=\"#8cb4d6\" stroke-width=\"2\"/><text x=\"23.0\" y=\"144.0\" font-size=\"7.5\" fill=\"#8cb4d6\" text-anchor=\"start\">requerimiento</text><line x1=\"89.8\" y1=\"141\" x2=\"101.8\" y2=\"141\" stroke=\"#e25b16\" stroke-width=\"2\" stroke-dasharray=\"3 2\"/><text x=\"104.8\" y=\"144.0\" font-size=\"7.5\" fill=\"#e25b16\" text-anchor=\"start\">nivel</text></svg>",
+   "chartLabel": "Chase, ilustración 16.3; la línea de nivel es cálculo propio"
+  },
+  {
+   "type": "concepto",
+   "k": "Pura o mixta",
+   "title": "En la industria se mezcla.",
+   "text": "Si una sola variable absorbe la fluctuación es una estrategia pura; si se combinan dos o más, mixta. La mixta es la más usada."
+  },
+  {
+   "type": "concepto",
+   "k": "Los costos",
+   "title": "Cuatro que entran en la planilla.",
+   "text": "Producción básica (hora normal y extra), cambio de ritmo (contratar, capacitar, despedir), mantener inventario y faltantes.",
+   "ejemplo": "Morán: con planta estable, la hora normal no es costo variable; las horas extra sí."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "¿Por qué Morán pide que el costo de un pedido pendiente sea mayor que el de producir?",
+   "options": [
+    "Para que el modelo no prefiera atrasar todo",
+    "Porque así lo dice la AFIP",
+    "No lo pide"
+   ],
+   "correct": 0,
+   "feedback": "Si atrasar fuera más barato que producir, el modelo dejaría todo pendiente. El costo del pendiente tiene que ser mayor."
+  },
+  {
+   "type": "concepto",
+   "k": "En el final",
+   "title": "No piden programación lineal.",
+   "text": "El modelo de Morán sirve para entender qué se minimiza. Los planes de final (2003) se resuelven con la planilla de la Clase 3, y piden además qué subsistemas generan los datos."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 2.",
+   "text": "Plan global de capacidad con un producto agregado. Ajuste, fuerza estable, nivel y subcontratación; casi siempre mixtas. Cuatro costos. Y en el final, planilla, no programación lineal."
+  }
+ ],
+ "block": "A",
+ "blockTitle": "Bloque A · Plan agregado y programa maestro"
+}

@@ -1,0 +1,501 @@
+{
+ "unitId": "u6",
+ "unitLabel": "Unidad 6",
+ "unitTitle": "Planificación y control",
+ "id": "u6int",
+ "title": "Integrador · Ejercicios tipo examen",
+ "name": "Integrador",
+ "lede": "Las cinco familias de práctica de la U6 con su molde de resolución, el chequeo rápido, ejercicios de final para practicar y la teoría que cayó.",
+ "visto": false,
+ "source": "patrones_examenes.md (conteos de finales); texto/examenes/SG!EVA.txt y bloques_eva/ (compilado de finales 2002–2006); texto/examenes/Ejercicios posibles.txt (Ejercicios posibles.docx del Drive); texto/ocr/efr_ppm/p-36.png — EjerciciosFinalesResueltos, resolución manuscrita (examen tipeado sin fecha); texto/examenes/examen_2018_transcripcion.md",
+ "laminas": [
+  "u6/img/u6_familias.svg"
+ ],
+ "next": null,
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Unidad 6 · Cierre · Integrador · Ejercicios tipo examen**"
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** los ejercicios de la U6 son de cinco familias y cada una tiene un molde fijo. Reconocé la familia por el enunciado, escribí datos y unidades, seguí el molde y **cerrá interpretando** (los criterios de corrección piden «interpretación de los resultados» y «fundamentación»)."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Familia",
+    "Cómo la reconocés",
+    "Molde",
+    "Clase"
+   ],
+   "rows": [
+    [
+     "**MRP**",
+     "tabla ítem / padre / cantidad / stock / LT / scrap / LEC y un programa de entregas",
+     "estructura y niveles → registro nivel por nivel → brutos (padres + independiente) → netos → lote → scrap → lanzamiento; informar atrasos",
+     "7, 8, 9"
+    ],
+    [
+     "**Balanceo**",
+     "unidades por turno, tareas con tiempos y predecesoras u operaciones en paralelo",
+     "C → N_t → asignar con regla → eficiencia → ocioso; si una tarea > C, paralelo",
+     "11"
+    ],
+    [
+     "**Plan agregado**",
+     "demanda por período, capacidad normal, costos de extra, inventario y pendientes, stock inicial",
+     "unidades extra inevitables → ubicarlas comparando costos → planilla → costo total → subsistemas",
+     "2, 3"
+    ],
+    [
+     "**MPS**",
+     "ventas confirmadas y pronóstico por mes",
+     "demanda = pedidos + pronóstico (cátedra) → discutir el pronóstico → restricciones de tiempo → revisión",
+     "4"
+    ],
+    [
+     "**Capacidad**",
+     "máquinas en serie con factor de actividad y scrap, o una estación con turnos y rendimientos",
+     "cantidades hacia atrás por scrap → tiempos efectivos → cuello de botella → acumulación y tiempo total; o CDT/CDR",
+     "5, 6"
+    ]
+   ]
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_familias.svg",
+   "caption": "Peso de cada familia de práctica de la U6 en los 19 finales fechados (conteos de patrones_examenes.md)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Chequeo rápido por familia"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "**MRP:** ¿sumaste la demanda independiente a los brutos? ¿El componente común se neteó una sola vez, en su nivel más bajo? ¿Agrandaste por scrap **antes** de explotar? ¿Escribiste la convención de LEC y scrap? ¿Hay órdenes que caen antes del período 1?",
+    "**Balanceo:** ¿C en las mismas unidades que las tareas? ¿Redondeaste N_t hacia arriba? ¿La eficiencia usa N reales? ¿El ocioso se pide por ciclo o por turno?",
+    "**Plan agregado:** ¿el plan cumple la condición de cierre (stock final nulo)? ¿Justificaste por qué cada unidad extra va en ese período?",
+    "**MPS:** ¿explicaste de dónde sale la demanda y qué hacés con un pronóstico viejo?",
+    "**Capacidad:** ¿dividiste por el factor de actividad (o el RGE) para pasar de tiempo estándar a tiempo real?"
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Ejercicios para practicar (enunciados del material)"
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — MRP de la mesa 30/04/2003",
+   "estado": "para resolver",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Producto A y sus componentes (semanas):"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Ítem",
+      "Padre",
+      "Cant.",
+      "Stock",
+      "Scrap",
+      "LT",
+      "Entregas"
+     ],
+     "rows": [
+      [
+       "A",
+       "—",
+       "—",
+       "90",
+       "2%",
+       "1",
+       "340 semana 1"
+      ],
+      [
+       "B",
+       "A",
+       "1",
+       "300",
+       "2%",
+       "2",
+       "—"
+      ],
+      [
+       "C",
+       "B",
+       "2",
+       "600",
+       "3%",
+       "2",
+       "—"
+      ],
+      [
+       "D",
+       "A y B",
+       "1 y 2",
+       "300",
+       "3%",
+       "2",
+       "450 semana 1"
+      ],
+      [
+       "E",
+       "A",
+       "2",
+       "600",
+       "2,5%",
+       "1",
+       "—"
+      ]
+     ],
+     "caption": "SG!EVA, Examen 30/4/03 (tal cual el compilado)"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Semana",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+     ],
+     "rows": [
+      [
+       "D (independiente)",
+       "",
+       "",
+       "100",
+       "",
+       "",
+       "100",
+       "",
+       ""
+      ],
+      [
+       "E (independiente)",
+       "",
+       "250",
+       "",
+       "550",
+       "",
+       "",
+       "500",
+       "750"
+      ]
+     ]
+    }
+   ],
+   "solucion": [
+    {
+     "type": "paragraph",
+     "text": "**Pistas (no hay resolución en el material):** las entregas de la semana 1 no se pueden fabricar a tiempo (LT ≥ 1): se cubren con stock y lo que falta se **informa como atraso**. D es común (A × 1, B × 2) y además tiene demanda independiente y una entrega propia de 450. Aplicá la convención de scrap de la Clase 8 y escribila."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — MRP mensual con «solo los primeros 400 B» (Ejercicios posibles)",
+   "estado": "para resolver",
+   "blocks": [
+    {
+     "type": "table",
+     "headers": [
+      "Ítem",
+      "Stock",
+      "LEC",
+      "Lead time",
+      "Scrap"
+     ],
+     "rows": [
+      [
+       "A",
+       "150",
+       "400",
+       "1 mes",
+       "3%"
+      ],
+      [
+       "B",
+       "200",
+       "600",
+       "2 meses",
+       "2,5%"
+      ],
+      [
+       "D",
+       "400",
+       "800",
+       "1 mes",
+       "3%"
+      ],
+      [
+       "E",
+       "80",
+       "—",
+       "—",
+       "1,5%"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "«Nota: Solo los primeros 400 B se armarán con la componente E. Se requiere producir 400 A en Octubre y 600 A para Diciembre. Además se requieren órdenes de 60 unidades de la componente D para Septiembre, 40 para Octubre y 50 para Noviembre. 2.1- Realizar el Plan de Requerimiento de Materiales, con stock de cierre.»"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "paragraph",
+     "text": "**Pistas:** el dibujo de la estructura no se conserva en el Drive (solo las marcas N=0, N=1, N=2 al costado de la tabla): escribí la estructura que suponés. «Solo los primeros 400 B» quiere decir que E tiene brutos **solo** por esos 400 (una efectividad o un cambio de ingeniería): después, B se arma sin E. Pedí siempre el **stock de cierre** de cada ítem."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — Examen tipeado sin fecha (EFR p. 36; 45 minutos)",
+   "estado": "para resolver",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Dada la siguiente estructura de producto y la información asociada confeccionar el MRP.» En el árbol escaneado: **A** y **B** arriba; debajo, **2C** y **1D**; debajo de C, **−1E** (cantidad negativa); debajo de D, **2F** y **1E**."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Ítem",
+      "Stock",
+      "Lead time",
+      "LEC",
+      "Scrap"
+     ],
+     "rows": [
+      [
+       "A",
+       "50",
+       "2",
+       "150",
+       "—"
+      ],
+      [
+       "B",
+       "100",
+       "1",
+       "200",
+       "2,5%"
+      ],
+      [
+       "C",
+       "100",
+       "2",
+       "150",
+       "1,5%"
+      ],
+      [
+       "D",
+       "100",
+       "1",
+       "100",
+       "—"
+      ],
+      [
+       "E",
+       "200",
+       "1",
+       "100",
+       "1,5%"
+      ],
+      [
+       "F*",
+       "100",
+       "2",
+       "200",
+       "4%"
+      ]
+     ],
+     "caption": "EFR p. 36 (lead time en semanas)"
+    },
+    {
+     "type": "paragraph",
+     "text": "«*Solo para los primeros 400 productos independientes.» Requerimientos: **150 A para la semana 7 y 300 para la 9; 200 B para la 8 y 200 para la 10**. Ingresos programados: **250 C para la semana 6**. Teoría del mismo examen: productos tangibles y no tangibles; factor α del suavizado exponencial; inventario periódico; potencialidad de un código alfanumérico; cómo se usa la BOM."
+    }
+   ],
+   "solucion": [
+    {
+     "type": "paragraph",
+     "text": "**Pistas:** las líneas del árbol escaneado no dejan claro si C cuelga solo de A o de A y B: escribí cuál suponés. El **−1E** es una cantidad negativa (C devuelve un E, como el «B × −2» de 2015): resta de los brutos de E. El ingreso de 250 C entra en el disponible de la semana 6. F se necesita solo para los primeros 400 productos finales: después deja de explotarse. No hay resolución en el material."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — Dos máquinas, 3000 ítems y una línea para 5000 u/día (09/03/2006)",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "M1 → depósito Q1-2 → M2. Factor combinado de actividad 0,80 y 0,80; tiempo estándar 19\" y 15\"; scrap 2,5% y 3,5%. «1- La cantidad máxima de semielaborados que se encontrarían en el depósito Q1-2, si se necesitan entregar 3000 ítems. […] 2- El tiempo de entrega para las 1000 unidades. 3- Cómo diseñaría la línea de producción para procesar 5000 unidades/día trabajando solo un turno de 8:00 hs.»"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "paragraph",
+     "text": "**Cálculo propio para arrancar:** M2 procesa 3000 / 0,965 = 3108,8 → **3109**; M1, 3109 / 0,975 = 3188,7 → **3189**. Tiempos efectivos 19/0,80 = **23,75 s** y 15/0,80 = **18,75 s**: M2 es más rápida, así que con transferencia unitaria el depósito casi no acumula; el máximo de diseño es el lote completo si M2 espera (3109). Para 5000 u/día en 8 h: C = 28.800/5000 = **5,76 s** → M1 necesita 23,75/5,76 = 4,1 → **5 máquinas en paralelo** y M2 18,75/5,76 = 3,3 → **4** (sin contar el scrap, que agrega 2,5% y 3,5% de carga)."
+    }
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Teoría de la U6 que cayó (para repasar en voz alta)"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Pregunta",
+    "Dónde está"
+   ],
+   "rows": [
+    [
+     "Definir mediante una fórmula la capacidad de una estación de trabajo (2011, 2014)",
+     "Clase 5"
+    ],
+    [
+     "Determinar la capacidad para una empresa (2012)",
+     "Clases 5 y 6"
+    ],
+    [
+     "Variables que definen la capacidad de producción tangible (2013, 2015)",
+     "Clase 5"
+    ],
+    [
+     "Hipótesis de listas de capacidad y perfiles de recursos (2018)",
+     "Clase 6"
+    ],
+    [
+     "¿Qué es una hoja de ruta? (2011)",
+     "Clase 12"
+    ],
+    [
+     "Sintetizar el algoritmo de MRP; módulos de un ERP (mesa de octubre)",
+     "Clases 7 y 10"
+    ],
+    [
+     "Qué es MRP, MCP, ERP (2012); información de la BOM en un ERP (2014)",
+     "Clases 7 y 10"
+    ],
+    [
+     "¿Cuándo una empresa JIT necesita MRP? (2018)",
+     "Clase 10"
+    ],
+    [
+     "Hipótesis del TBO; demanda del MPS; subsistema que construye el PRM (bancos)",
+     "Clases 9, 4 y 10"
+    ]
+   ]
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Para el día del examen:** el MRP es lo más probable (42% de los finales con fecha y vigente en 2013 y 2015). Practicá con tiempo: la consigna 2018 da 40 minutos para el ejercicio. Si te falta un dato o el enunciado es ambiguo (scrap, LEC, una cantidad negativa), **escribí el supuesto** y seguí."
+  }
+ ],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "Cinco familias",
+   "title": "Reconocé el ejercicio.",
+   "text": "MRP, balanceo, plan agregado, MPS y capacidad. Cada una tiene un molde fijo. Primero identificá cuál es por el enunciado.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Finales con fecha (de 19)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Finales con fecha (de 19)</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"21.7\" y=\"42.6\" width=\"31.7\" height=\"67.4\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"37.6\" y=\"38.6\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">8</text><text x=\"37.6\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">MRP</text><rect x=\"72.9\" y=\"76.3\" width=\"31.7\" height=\"33.7\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"88.8\" y=\"72.3\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">4</text><text x=\"88.8\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Balanceo</text><rect x=\"124.1\" y=\"93.2\" width=\"31.7\" height=\"16.8\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"140.0\" y=\"89.2\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">2</text><text x=\"140.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">PA</text><rect x=\"175.3\" y=\"101.6\" width=\"31.7\" height=\"8.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"191.2\" y=\"97.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">1</text><text x=\"191.2\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">MPS</text><rect x=\"226.5\" y=\"101.6\" width=\"31.7\" height=\"8.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"242.4\" y=\"97.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">1</text><text x=\"242.4\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Capac.</text></svg>",
+   "chartLabel": "Conteos de patrones_examenes.md"
+  },
+  {
+   "type": "concepto",
+   "k": "MRP",
+   "title": "El molde.",
+   "text": "Estructura y niveles → registro nivel por nivel → brutos (padres + independiente) → netos → lote → scrap → lanzamiento. Informá los atrasos.",
+   "svg": "<svg viewBox=\"0 0 280 172\" width=\"100%\" height=\"172\" role=\"img\" aria-label=\"Molde del MRP\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Molde del MRP</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. Estructura y niveles</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\"></text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. Brutos</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">padres + independiente</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. Netos</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">stock e ingresos</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">4. Lote y scrap</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">convención escrita</text><rect x=\"8\" y=\"140\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"155.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">5. Lanzamiento</text><text x=\"266.0\" y=\"155.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">menos el LT</text></svg>",
+   "chartLabel": "Síntesis propia de las Clases 7 a 9"
+  },
+  {
+   "type": "concepto",
+   "k": "Balanceo",
+   "title": "El molde.",
+   "text": "Ciclo → estaciones mínimas → asignar con una regla → eficiencia → ocioso. Si una tarea supera el ciclo, estaciones en paralelo."
+  },
+  {
+   "type": "concepto",
+   "k": "Plan agregado",
+   "title": "El molde.",
+   "text": "Unidades extra inevitables → dónde ubicarlas comparando costos → planilla → costo total → subsistemas que dan los datos."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "El enunciado da ítems con padre, cantidad, stock, lead time y scrap. ¿Qué familia es?",
+   "options": [
+    "Balanceo",
+    "MRP",
+    "Plan agregado"
+   ],
+   "correct": 1,
+   "feedback": "Padre, cantidad en el padre y lead time son la lista de materiales: es un MRP."
+  },
+  {
+   "type": "concepto",
+   "k": "Capacidad",
+   "title": "El molde.",
+   "text": "Cantidades hacia atrás por scrap, tiempo real = estándar / factor, cuello de botella, acumulación y tiempo total. O la fórmula CDT / CDR si es teoría."
+  },
+  {
+   "type": "concepto",
+   "k": "Para practicar",
+   "title": "Examen tipeado (EFR p. 36).",
+   "text": "A y B con 2C y 1D; C con −1E; D con 2F y 1E. 150 A en la semana 7 y 300 en la 9; 200 B en la 8 y 200 en la 10; ingreso de 250 C en la 6. F solo para los primeros 400.",
+   "ejemplo": "Está «para resolver»: no hay solución en el material."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "En ese examen aparece «−1E» debajo de C. ¿Qué hacés con eso?",
+   "options": [
+    "Lo ignoro",
+    "Lo trato como cantidad negativa: resta de los brutos de E",
+    "Lo cambio por 1E"
+   ],
+   "correct": 1,
+   "feedback": "Como el «B × −2» de 2015: el componente devuelve unidades. Escribí el supuesto y restalo de los brutos."
+  },
+  {
+   "type": "concepto",
+   "k": "Dos máquinas, 2006",
+   "title": "Para 5000 por día en un turno.",
+   "text": "C = 28.800 / 5000 = 5,76 s. M1 tarda 19 / 0,80 = 23,75 s y necesita 5 máquinas en paralelo; M2, 15 / 0,80 = 18,75 s, necesita 4.",
+   "ejemplo": "Cálculo propio sin contar el scrap, que suma carga."
+  },
+  {
+   "type": "concepto",
+   "k": "Chequeo final",
+   "title": "Antes de entregar.",
+   "text": "¿Sumaste la demanda independiente? ¿El común se neteó una vez? ¿Redondeaste las estaciones hacia arriba? ¿Escribiste los supuestos? ¿Interpretaste el resultado?"
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto del Integrador.",
+   "text": "Reconocé la familia, escribí datos y unidades, seguí el molde y cerrá interpretando. El MRP es lo más probable. Y si falta un dato, escribí el supuesto y seguí."
+  }
+ ],
+ "block": "E",
+ "blockTitle": "Cierre · Integrador"
+}

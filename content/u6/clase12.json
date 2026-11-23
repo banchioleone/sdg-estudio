@@ -1,0 +1,433 @@
+{
+ "unitId": "u6",
+ "unitLabel": "Unidad 6",
+ "unitTitle": "Planificación y control",
+ "id": "u6c12",
+ "title": "Clase 12 · Control de las actividades de producción",
+ "name": "Control de la producción (PAC)",
+ "lede": "Funciones del PAC, lanzamiento de órdenes y sus documentos, hoja de ruta, lista de despacho, reglas de prioridad de Chase, control del progreso y métodos de recolección de datos de planta.",
+ "visto": false,
+ "source": "drive_u6/PAC.pdf — Nota técnica «Control de las actividades de producción», R. Morán (© 2001); Chase, Jacobs y Aquilano 12a ed., cap. 19, p. 627–631 — reglas de prioridad, ejemplo 19.1 (drive_u6/txt/cap19_chase12.txt); texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — preguntas 8, 10, 16, 33, 34; texto/examenes/17_03_2011.txt (hoja de ruta)",
+ "laminas": [
+  "u6/img/u6_pac.svg",
+  "u6/img/u6_reglas.svg"
+ ],
+ "next": "Integrador · Ejercicios tipo examen",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Unidad 6 · Bloque D · Clase 12 · Control de las actividades de producción**"
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** el PAC es la parte que **ejecuta** el plan: libera las órdenes con su documentación, decide qué se hace primero en cada centro (prioridades y secuencia) y recoge datos de planta para saber cómo van las órdenes y la capacidad."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Qué es el PAC"
+  },
+  {
+   "type": "paragraph",
+   "text": "Morán: el objetivo del PAC «es realizar el lanzamiento, la programación y el control del progreso de las órdenes de producción, es decir administrar el trabajo en curso de ejecución». También se llama **control del taller** (SFC: Shop Floor Control). Sus entradas son las salidas del MPS, del MRP y del CRP, y los datos de ingeniería del producto y del proceso."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Función (Morán §1)",
+    "Qué hace"
+   ],
+   "rows": [
+    [
+     "**Asignación y control de prioridades**",
+     "adapta la ejecución a los cambios: adelantar una orden, atrasar otra; las prioridades se revisan semanal o diariamente; después viene la **carga de máquinas** y el **secuenciamiento**"
+    ],
+    [
+     "**Información sobre trabajos en curso**",
+     "compara cantidades y fechas reales con las del MRP y corrige discrepancias"
+    ],
+    [
+     "**Control del estado de las órdenes**",
+     "informe de estado de cada orden e informes de excepción"
+    ],
+    [
+     "**Datos para el control de la capacidad**",
+     "información de planta para ajustar mano de obra y equipos"
+    ]
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Ningún sistema es un control automático: «aún los sistemas más evolucionados cierran el bucle de control con un decisor humano»."
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_pac.svg",
+   "caption": "Las tres fases del PAC y sus documentos (esquema según Morán, figura 1)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Fase 1: liberación o lanzamiento de las órdenes"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Documento",
+    "Para qué (Morán)"
+   ],
+   "rows": [
+    [
+     "**Hoja de ruta**",
+     "secuencia de operaciones, equipos y herramental"
+    ],
+    [
+     "**Requisición de materiales**",
+     "vales para sacar materia prima o componentes del almacén"
+    ],
+    [
+     "**Vales de trabajo**",
+     "uno por operación de la ruta, para informar lo realizado"
+    ],
+    [
+     "**Vales de movimiento**",
+     "para mover e informar los traslados entre centros"
+    ],
+    [
+     "**Lista de piezas**",
+     "para armado o montaje"
+    ]
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Con más automatización estos papeles se reemplazan por información en línea. **La cátedra:** «Planeamiento y control lanza las OF **cada viernes para la semana siguiente** y reprograma las OF que tuvieron problema»; horizonte de planificación mensual, de programación semanal, períodos de días o turnos, revisión diaria (banco, pregunta 8). La programación puede ser centralizada o distribuida; para activar una orden atrasada el banco elige la distribuida «ya que sirve como colchón para la recuperación» (pregunta 10)."
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**«¿Qué es una hoja de ruta?»** (17/03/2011). Respuesta: el documento que define la **secuencia de operaciones** de cada ítem fabricado, con el centro o máquina, el herramental y los tiempos (Morán, PAC §2.1). En la cátedra sale del **análisis del proceso** («origina la hoja de ruta del proceso (secuencia de operaciones)», pregunta 33) y su archivo tiene `nro_componente + nro_ruta + lef + nro_operacion + scrap` (pregunta 16). La hoja de ruta tiene una ruta por cada ítem padre; la estructura de producto, los ítems que tienen padre (pregunta 34)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Fase 2: programación de las órdenes"
+  },
+  {
+   "type": "paragraph",
+   "text": "Asigna las órdenes liberadas a los centros y emite la **lista de despacho** (por día o por turno): qué trabajos hacer en cada centro, con orden, cantidad, centro anterior y posterior, fechas de comienzo y entrega, y horas remanentes. Objetivos de la programación de operaciones (Morán): cumplir las fechas de entrega, **minimizar el stock en proceso** reduciendo lead times y **maximizar la utilización** de equipos y personal. En un taller (job shop) se hace en dos fases: **carga de máquinas** y **secuenciamiento**."
+  },
+  {
+   "type": "paragraph",
+   "text": "Para modificar la capacidad en el corto plazo: horas extras, **rutas alternativas**, **superposición** (lote de transferencia), **división de operaciones** y **división del lote**. Con capacidad finita se usa simulación."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Reglas de prioridad (Chase cap. 19)"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Regla",
+    "Qué hace"
+   ],
+   "rows": [
+    [
+     "FCFS",
+     "primero en llegar, primero en atenderse"
+    ],
+    [
+     "SOT (SPT)",
+     "primero el tiempo de operación más breve"
+    ],
+    [
+     "EDD",
+     "primero el plazo más próximo"
+    ],
+    [
+     "STR",
+     "menor tiempo ocioso restante = tiempo hasta el vencimiento − procesamiento restante"
+    ],
+    [
+     "STR/OP",
+     "STR dividido por las operaciones restantes"
+    ],
+    [
+     "CR",
+     "proporción crítica: (fecha de vencimiento − fecha actual) / días hábiles que quedan; primero la menor"
+    ],
+    [
+     "LCFS",
+     "último en llegar, primero en atenderse"
+    ],
+    [
+     "Aleatorio",
+     "a criterio del supervisor u operador"
+    ]
+   ],
+   "caption": "Chase, ilustración 19.3"
+  },
+  {
+   "type": "ejemplo",
+   "title": "Chase, ejemplo 19.1: cinco trabajos en una fotocopiadora",
+   "blocks": [
+    {
+     "type": "table",
+     "headers": [
+      "Trabajo",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+     ],
+     "rows": [
+      [
+       "Procesamiento (días)",
+       "3",
+       "4",
+       "2",
+       "6",
+       "1"
+      ],
+      [
+       "Plazo (días)",
+       "5",
+       "6",
+       "7",
+       "9",
+       "2"
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Regla",
+      "Secuencia",
+      "Tránsito total",
+      "Tránsito promedio",
+      "Retardo promedio"
+     ],
+     "rows": [
+      [
+       "FCFS",
+       "A B C D E",
+       "50",
+       "10,0",
+       "4,6"
+      ],
+      [
+       "**SOT**",
+       "E C A B D",
+       "**36**",
+       "**7,2**",
+       "**2,4**"
+      ],
+      [
+       "EDD",
+       "E A B C D",
+       "39",
+       "7,8",
+       "2,4"
+      ],
+      [
+       "LCFS",
+       "E D C B A",
+       "46",
+       "9,2",
+       "4,0"
+      ],
+      [
+       "Aleatorio",
+       "D C A E B",
+       "53",
+       "10,6",
+       "5,4"
+      ],
+      [
+       "STR",
+       "E A B D C",
+       "43",
+       "8,6",
+       "3,2"
+      ]
+     ],
+     "caption": "Chase, ejemplo 19.1"
+    },
+    {
+     "type": "paragraph",
+     "text": "SOT da el menor tiempo de tránsito; FCFS es «justa» pero más lenta. Para varios trabajos en **dos máquinas en secuencia** se usa la **regla de Johnson**, que Chase desarrolla en el mismo capítulo."
+    }
+   ]
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_reglas.svg",
+   "caption": "Tiempo de tránsito promedio con cada regla (Chase, ejemplo 19.1; gráfico propio)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Fase 3: control del progreso"
+  },
+  {
+   "type": "paragraph",
+   "text": "Cada vez que se completa un proceso de la hoja de ruta se registran cantidad de piezas, rechazo, operador, operación, centro y tiempo; se mantiene el archivo de **órdenes abiertas**. Informes: **estado de las órdenes** (dónde está, cuánto falta, si está atrasada, prioridad), **progreso** (cuántas se completaron en el período y cuántas no), **excepción** (atrasos, cantidades insuficientes; pueden ser diarios) y **consultas en línea**. El **control de la capacidad** compara entradas y salidas en horas (8 h al 80% = 6,40 h de salida planificada; Clase 6)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. Recolección de datos de planta"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Método (Morán §3.2)",
+    "A favor",
+    "En contra"
+   ],
+   "rows": [
+    [
+     "a) Hoja de recorrido (job traveler)",
+     "el más simple; historia completa de la orden",
+     "datos al final; sin control de errores; «el menos conveniente»"
+    ],
+    [
+     "b) Tarjeta de tiempos del operario",
+     "simple; datos al fin de cada turno",
+     "hay que sumarizar por departamento; informes días después; errores de anotación"
+    ],
+    [
+     "c) Vales por operación (arrancables)",
+     "datos al terminar cada operación",
+     "se pierden; carga manual; demora hasta el ingreso"
+    ],
+    [
+     "d) Terminal por departamento o planta",
+     "muy usada en plantas por lotes; on-line u off-line",
+     "el operario pierde tiempo yendo (colas); requiere validación"
+    ],
+    [
+     "e) Terminal por centro de trabajo",
+     "estado frecuente; adaptada al centro",
+     "costo de instalación; solo se justifica on-line"
+    ],
+    [
+     "f) Ingreso oral (voz)",
+     "manos libres",
+     "secuencias rígidas, pocas voces, vocabulario chico"
+    ],
+    [
+     "g) Monitoreo por computadora",
+     "conexión directa con sensores; rastreo multinivel",
+     "solo seguimiento: la decisión sigue siendo humana"
+    ]
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "**Identificación automática:** códigos de barras, cintas magnéticas, reconocimiento óptico, visión artificial. El más usado es el **código de barras**: reduce los errores de ingreso «en el orden de 1/3.000.000 con respecto al ingreso manual» y acelera la carga. (Se conecta con la codificación de la U3: el dígito verificador.)"
+  }
+ ],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "Morán",
+   "title": "Qué hace el PAC.",
+   "text": "Lanzamiento, programación y control del progreso de las órdenes de producción: administrar el trabajo en curso. También se llama control del taller.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Las tres fases\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Las tres fases</text><rect x=\"8.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"50.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Lanzar</text><text x=\"50.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">documentos</text><path d=\"M93.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"98.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"140.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Programar</text><text x=\"140.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">despacho</text><path d=\"M183.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"188.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"230.0\" y=\"47.0\" font-size=\"8.5\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Controlar</text><text x=\"230.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">informes</text></svg>",
+   "chartLabel": "Morán, nota técnica PAC"
+  },
+  {
+   "type": "concepto",
+   "k": "Lanzamiento",
+   "title": "Los papeles de la orden.",
+   "text": "Hoja de ruta, requisición de materiales, vales de trabajo, vales de movimiento y lista de piezas. Con más automatización se reemplazan por información en línea."
+  },
+  {
+   "type": "concepto",
+   "k": "La cátedra",
+   "title": "Cada viernes, la semana siguiente.",
+   "text": "Planeamiento y control lanza las OF cada viernes para la semana siguiente y reprograma las que tuvieron problema. Horizonte mensual, programación semanal, revisión diaria."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Final 2011: «¿Qué es una hoja de ruta?»",
+   "options": [
+    "El listado de proveedores",
+    "La secuencia de operaciones de cada ítem, con centro, herramental y tiempos",
+    "El mapa de la planta"
+   ],
+   "correct": 1,
+   "feedback": "Sale del análisis del proceso y tiene una ruta por cada ítem padre. Su archivo lleva componente, ruta, operación y scrap."
+  },
+  {
+   "type": "concepto",
+   "k": "Programación",
+   "title": "La lista de despacho.",
+   "text": "Qué trabajos hacer en cada centro, en qué orden, por día o por turno. Objetivos: cumplir fechas, minimizar el stock en proceso y maximizar la utilización."
+  },
+  {
+   "type": "concepto",
+   "k": "Chase, cap. 19",
+   "title": "Reglas de prioridad.",
+   "text": "FCFS, SOT (el más corto primero), EDD (el plazo más próximo), STR, CR, LCFS y aleatorio. Para dos máquinas en serie, la regla de Johnson."
+  },
+  {
+   "type": "concepto",
+   "k": "Cinco trabajos, una fotocopiadora",
+   "title": "Qué regla conviene.",
+   "text": "Tránsito promedio: FCFS 10 días, SOT 7,2, EDD 7,8, LCFS 9,2, aleatorio 10,6, STR 8,6. SOT es la mejor en tránsito.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Tránsito promedio (días)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Tránsito promedio (días)</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"20.1\" y=\"43.3\" width=\"26.5\" height=\"66.7\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"33.3\" y=\"39.3\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">10,0</text><text x=\"33.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">FCFS</text><rect x=\"62.8\" y=\"62.0\" width=\"26.5\" height=\"48.0\" rx=\"3\" fill=\"#7cc49a\" opacity=\".9\"/><text x=\"76.0\" y=\"58.0\" font-size=\"8\" fill=\"#7cc49a\" text-anchor=\"middle\" font-weight=\"700\">7,2</text><text x=\"76.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">SOT</text><rect x=\"105.4\" y=\"58.0\" width=\"26.5\" height=\"52.0\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"118.7\" y=\"54.0\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">7,8</text><text x=\"118.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">EDD</text><rect x=\"148.1\" y=\"48.7\" width=\"26.5\" height=\"61.3\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"161.3\" y=\"44.7\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">9,2</text><text x=\"161.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">LCFS</text><rect x=\"190.8\" y=\"39.3\" width=\"26.5\" height=\"70.7\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"204.0\" y=\"35.3\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">10,6</text><text x=\"204.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Aleat.</text><rect x=\"233.4\" y=\"52.7\" width=\"26.5\" height=\"57.3\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"246.7\" y=\"48.7\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">8,6</text><text x=\"246.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">STR</text></svg>",
+   "chartLabel": "Chase, ejemplo 19.1"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Trabajos de 3, 4, 2, 6 y 1 días. Con SOT, ¿cuál va primero?",
+   "options": [
+    "El de 6 días",
+    "El de 1 día",
+    "El que llegó primero"
+   ],
+   "correct": 1,
+   "feedback": "SOT ordena por tiempo de operación más corto: 1, 2, 3, 4, 6. Así minimiza el tiempo de tránsito."
+  },
+  {
+   "type": "concepto",
+   "k": "Control del progreso",
+   "title": "Saber cómo va cada orden.",
+   "text": "Se registra cada operación: piezas, rechazo, operador, centro y tiempo. Informes de estado, de progreso y de excepción. Para la capacidad, control de entradas y salidas."
+  },
+  {
+   "type": "concepto",
+   "k": "Datos de planta",
+   "title": "De la hoja al código de barras.",
+   "text": "Hoja de recorrido, tarjetas de tiempo, vales, terminales, voz, monitoreo. El código de barras reduce los errores de ingreso al orden de 1 en 3.000.000 respecto del manual."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Para activar una orden atrasada, el banco elige programación…",
+   "options": [
+    "Centralizada",
+    "Distribuida",
+    "Ninguna"
+   ],
+   "correct": 1,
+   "feedback": "Respuesta del banco: la distribuida, porque sirve como colchón para la recuperación."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 12.",
+   "text": "Lanzar (con hoja de ruta y vales), programar (despacho y reglas de prioridad) y controlar (informes y datos de planta). SOT minimiza el tránsito. Y el decisor sigue siendo humano."
+  }
+ ],
+ "block": "D",
+ "blockTitle": "Bloque D · Balanceo y control de la producción"
+}

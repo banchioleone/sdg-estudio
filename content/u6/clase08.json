@@ -1,0 +1,696 @@
+{
+ "unitId": "u6",
+ "unitLabel": "Unidad 6",
+ "unitTitle": "Planificación y control",
+ "id": "u6c8",
+ "title": "Clase 8 · MRP de examen: scrap, repuestos y componentes comunes",
+ "name": "MRP con scrap y comunes",
+ "lede": "Componentes comunes, demanda independiente, scrap, lote económico, stock y tiempo de seguridad, y la actualización del registro; con los finales 03/12/2015 y 08/08/2013 resueltos.",
+ "visto": false,
+ "source": "drive_u6/12-Planificación de los Requerimientos de Materiales (MRP).pdf — Nota técnica de R. Morán (© 2000), apunte de la cátedra (mismo texto que «MRP- Planiificación de Requerimientos de Materiales.pdf») §2–§3; texto/examenes/final03-12-15.txt + final03-12.xlsx (planilla de alumno); texto/examenes/Final SG1 - 8 Agosto de 2013.txt + Final 1.xlsx; texto/examenes/SG!EVA.txt y bloques_eva/ (compilado de finales 2002–2006) — 30/04/2003, 06/05/2004; texto/examenes/Ejercicios posibles.txt (Ejercicios posibles.docx del Drive); texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — pregunta 15",
+ "laminas": [
+  "u6/img/u6_arbol_2013.svg"
+ ],
+ "next": "Clase 9 · Tamaño de lote en el MRP",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Unidad 6 · Bloque C · Clase 8 · MRP de examen: scrap, repuestos y componentes comunes**"
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** el MRP de final agrega cuatro complicaciones al registro básico: **lote económico** (LEC), **scrap** (hay que lanzar más de lo que se necesita), **demanda independiente** de un componente (repuestos) y **componentes comunes** a varios padres. Todo se resuelve en el mismo orden: nivel por nivel, sumando todos los brutos antes de netear."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Las cuatro complicaciones según Morán"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Caso",
+    "Qué dice Morán",
+    "Cómo se hace en la planilla"
+   ],
+   "rows": [
+    [
+     "**Componentes comunes**",
+     "los brutos de un ítem común salen de las órdenes de **todos** sus padres; con **códigos de nivel** se procesa cada nivel en todos los árboles antes de bajar",
+     "ubicá cada ítem en su nivel más bajo y sumá los brutos de todos sus padres"
+    ],
+    [
+     "**Repuestos**",
+     "son «una demanda independiente que se debe agregar» a la dependiente",
+     "brutos = (órdenes del padre × cantidad) + demanda independiente"
+    ],
+    [
+     "**Defectuosos (scrap)**",
+     "si r es la fracción de defectuosos, para obtener x hay que empezar con x′ = x / (1 − r)",
+     "se agranda la orden **antes** de explotar al nivel inferior"
+    ],
+    [
+     "**Lote económico**",
+     "con EOQ, la cantidad a pedir es la del MRP o la del EOQ, «la que sea mayor»; la cátedra agrupa en **múltiplos enteros del LEC**",
+     "redondeá el neto al múltiplo de LEC que lo cubre"
+    ]
+   ]
+  },
+  {
+   "type": "formula",
+   "tex": "x'_{i,j} = \\frac{x_{i,j}}{1 - r_{i,j}}",
+   "caption": "Corrección por defectuosos (Morán, §2.2)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Morán advierte que el scrap fijo en el sistema «también puede generar stocks en exceso», porque sigue cargado aunque el proceso haya mejorado, hasta que se lo revise."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Stock de seguridad y tiempo de seguridad"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "El **stock de seguridad** se usa normalmente en **productos finales**, que son los expuestos a la demanda independiente. En componentes de demanda dependiente «no es recomendable», salvo incertidumbre en cantidades (repuestos, rechazos) o en plazos de proveedores; lo que hay que hacer es mejorar el sistema productivo.",
+    "El **tiempo de seguridad** es un lead time adicional para liberar la orden: «comenzar antes y terminar antes». Sirve, por ejemplo, con proveedores poco confiables en las fechas, y es mejor que un stock de seguridad."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "En Chase (Juno, Clase 7) el stock de seguridad del casquillo se descuenta del disponible: la orden salta cuando el disponible bajaría de 20, no de 0."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Convención para el scrap y el LEC en esta página"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Hipótesis de trabajo (cálculo propio):** (1) el **neto** se cubre con un **lote en piezas buenas** que es múltiplo del LEC; (2) la **cantidad a lanzar** es lote / (1 − scrap), redondeada hacia arriba; (3) los componentes explotan desde la cantidad **lanzada**. La cátedra permite pasarse hasta 20% del lote («se permite un incremento del 20% del lote», banco de preguntas, 15); no lo usé para no cambiar los resultados. Si en el examen usás otra convención, **escribila**: es lo que se corrige."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Final 03/12/2015 (y Ejercicios posibles, 06/05/2004)"
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — Producto A con scrap, LEC y demanda independiente de E (final 03/12/2015)",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«La siguiente tabla muestra la información de un producto A y la de todos sus componentes. […] El ítem E tiene además una demanda independiente que se muestra a continuación, junto con los pedidos para el pto. A. 1.1- Graficar la estructura del pto. A. 1.2- Determinar el MRP.»"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Ítem",
+      "Padre",
+      "Cant. en el padre",
+      "Stock inicial",
+      "LT (mes)",
+      "Scrap",
+      "LEC"
+     ],
+     "rows": [
+      [
+       "A",
+       "—",
+       "—",
+       "90",
+       "1",
+       "1%",
+       "120"
+      ],
+      [
+       "B",
+       "A",
+       "1",
+       "300",
+       "2",
+       "—",
+       "200"
+      ],
+      [
+       "C",
+       "B",
+       "−2 (ver aviso)",
+       "600",
+       "2",
+       "—",
+       "—"
+      ],
+      [
+       "D",
+       "A y B",
+       "1 y 2",
+       "300",
+       "1",
+       "—",
+       "100"
+      ],
+      [
+       "E",
+       "A",
+       "2",
+       "600",
+       "1",
+       "1,5%",
+       "150"
+      ]
+     ],
+     "caption": "Datos de la planilla del alumno final03-12.xlsx: la foto del enunciado es ilegible en la tabla"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "",
+      "Sep",
+      "Oct",
+      "Nov"
+     ],
+     "rows": [
+      [
+       "Pedidos de A",
+       "180",
+       "310",
+       "250"
+      ],
+      [
+       "Demanda independiente de E",
+       "",
+       "500",
+       "150"
+      ]
+     ]
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Qué es del material y qué es propio.** Los datos salen de `final03-12.xlsx` (resolución de un alumno) porque la foto del 03/12/2015 no se lee. La planilla resuelve **sin scrap** y mi motor de cálculo coincide con ella en todas las filas. La versión con scrap es **cálculo propio** con la convención de la sección 3. La cantidad **−2** de C figura así en la planilla: C se comporta como un ítem que **aparece** con cada B (subproducto o recupero), y su saldo crece; no lo pude confirmar con el enunciado."
+    },
+    {
+     "type": "paragraph",
+     "text": "**1. Estructura:** nivel 0 A; nivel 1 B, D y E (hijos de A); nivel 2 C y D (hijos de B). **D es común** a A y a B: va a su nivel más bajo (2) y se netea una sola vez, después de tener las órdenes de A y de B."
+    },
+    {
+     "type": "paragraph",
+     "text": "**2. A** (LT 1, LEC 120, stock 90). Sin scrap:"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "A",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Sep",
+      "Oct",
+      "Nov"
+     ],
+     "rows": [
+      [
+       "Brutos",
+       "",
+       "",
+       "",
+       "180",
+       "310",
+       "250"
+      ],
+      [
+       "Disponible",
+       "90",
+       "90",
+       "90",
+       "30",
+       "80",
+       "70"
+      ],
+      [
+       "Netos",
+       "",
+       "",
+       "",
+       "90",
+       "280",
+       "170"
+      ],
+      [
+       "Recepción (múltiplo de 120)",
+       "",
+       "",
+       "",
+       "120",
+       "360",
+       "240"
+      ],
+      [
+       "**Lanzamiento**",
+       "",
+       "",
+       "**120**",
+       "**360**",
+       "**240**",
+       ""
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "**3. B** (LT 2, LEC 200, stock 300): brutos = lanzamientos de A × 1 → 120 (ago), 360 (sep), 240 (oct). Netos 180 (sep) y 220 (oct) → recepciones 200 y 400 → **lanza 200 en julio y 400 en agosto**."
+    },
+    {
+     "type": "paragraph",
+     "text": "**4. E** (LT 1, LEC 150, stock 600): brutos = A × 2 + independiente → 240 (ago), 720 (sep), 480 + 500 = 980 (oct), 150 (nov). Netos 360, 890, 140 → recepciones 450, 900, 150 → **lanza 450 (ago), 900 (sep), 150 (oct)**."
+    },
+    {
+     "type": "paragraph",
+     "text": "**5. D** (LT 1, LEC 100, stock 300): brutos = A × 1 + B × 2 → 400 (jul, de B 200), 120 + 800 = 920 (ago), 360 (sep), 240 (oct). Netos 100, 920, 280, 220 → **lanza 100 (jun), 1000 (jul), 300 (ago), 300 (sep)**."
+    },
+    {
+     "type": "paragraph",
+     "text": "**6. C:** con la cantidad −2 de la planilla, cada lanzamiento de B **suma** 2 C: 600 → 1.000 (jul) → 1.800 (ago). No genera órdenes."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Ítem",
+      "Lanzamientos sin scrap (planilla)",
+      "Lanzamientos con scrap (cálculo propio)"
+     ],
+     "rows": [
+      [
+       "A (1%)",
+       "ago 120 · sep 360 · oct 240",
+       "ago **122** · sep **364** · oct **243**"
+      ],
+      [
+       "B",
+       "jul 200 · ago 400",
+       "jul 200 · ago 400 (netos 186 y 229: siguen entrando en un lote)"
+      ],
+      [
+       "E (1,5%)",
+       "ago 450 · sep 900 · oct 150",
+       "ago **457** · sep **1.066** · oct **153** (el neto de oct pasa de 890 a 908 y ya no entra en 900: el lote sube a 1.050)"
+      ],
+      [
+       "D",
+       "jun 100 · jul 1000 · ago 300 · sep 300",
+       "igual: los netos (100, 922, 286, 229) entran en los mismos múltiplos de 100"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "Ejemplo del cálculo con scrap: A en septiembre necesita recibir 120 buenas → lanza 120 / 0,99 = 121,2 → **122**. E en septiembre: brutos 2 × 364 = 728; neto 728 − 356 = 372 → lote 450 → lanza 450 / 0,985 = 456,9 → **457**."
+    }
+   ],
+   "nota": "Sin scrap coincide con la planilla del alumno; con scrap es convención propia"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**La versión 06/05/2004 y la de Ejercicios posibles** usan el mismo esquema A/B/C/D/E (A 90, B 300, C 600, D 300, E 600; D común a A y B; E con demanda independiente) pero en **semanas**, con scrap en todos los ítems (A 2%, B 2%, C 3%, D 3%, E 2,5% en el 30/04/2003) y entregas de A en la semana 1. Con lead times de 2 semanas aparecen **órdenes vencidas** (habría que lanzar antes de la semana 1): en el examen se **informa el atraso**, no se borra."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Final 08/08/2013: dos productos y componentes comunes"
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_arbol_2013.svg",
+   "caption": "Estructura de A y S del final 08/08/2013 con los componentes comunes resaltados (dibujo propio)"
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — Entregar 70 A y 50 S en 12 semanas (final 08/08/2013)",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Una empresa tiene que cumplir una orden de entrega de 70 productos del tipo A y 50 productos del tipo S dentro de 12 semanas.»"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Ítem",
+      "Lead time",
+      "Predecesora",
+      "Cantidad",
+      "Disponible"
+     ],
+     "rows": [
+      [
+       "A",
+       "4",
+       "—",
+       "",
+       "0"
+      ],
+      [
+       "S",
+       "2",
+       "—",
+       "",
+       "0"
+      ],
+      [
+       "B",
+       "3",
+       "A",
+       "2",
+       "0"
+      ],
+      [
+       "C",
+       "4",
+       "A",
+       "2",
+       "150"
+      ],
+      [
+       "C",
+       "4",
+       "T",
+       "3",
+       "150"
+      ],
+      [
+       "D",
+       "2",
+       "B",
+       "3",
+       "0"
+      ],
+      [
+       "E",
+       "2",
+       "B",
+       "2",
+       "0"
+      ],
+      [
+       "E",
+       "2",
+       "S",
+       "1",
+       "0"
+      ],
+      [
+       "F",
+       "4",
+       "S",
+       "4",
+       "150"
+      ],
+      [
+       "F",
+       "4",
+       "B",
+       "1",
+       "150"
+      ],
+      [
+       "T",
+       "1",
+       "S",
+       "1",
+       "0"
+      ]
+     ],
+     "caption": "Enunciado transcripto por un alumno: «Los Lead Times y las cantidades pueden no ser exactamente los tomados en el examen»"
+    },
+    {
+     "type": "paragraph",
+     "text": "«1. Confeccionar la estructura de los productos A y S. 2. ¿De qué forma puede mejorarse el contenido de la tabla anterior? 3. Confeccionar el MRP. 4. Luego de programada la producción a la empresa se le solicitan 50 unidades más del producto S. Se desea saber si la empresa puede entregar la producción requerida 11 semanas o antes. La empresa es de ensamblado y las operaciones de ensamblado pueden hacerse de forma inmediata si están disponibles las piezas.»"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Resolución propia.** Hay una planilla de alumno (`Final 1.xlsx`) que encaja con este final, pero tiene errores: pone el stock de 150 en E en lugar de F y calcula el requerimiento de C desde T como 50 en lugar de 150 (T × 3). Lo de abajo es cálculo propio, verificado con el mismo motor de la sección 4."
+    },
+    {
+     "type": "paragraph",
+     "text": "**1. Estructura.** A (nivel 0) = 2 B + 2 C; B = 3 D + 2 E + 1 F. S (nivel 0) = 1 E + 4 F + 1 T; T = 3 C. Comunes: **C** (de A y de T), **E** (de B y de S), **F** (de B y de S)."
+    },
+    {
+     "type": "paragraph",
+     "text": "**2. Mejorar la tabla:** repite filas por cada padre (C, E y F aparecen dos veces con el mismo disponible), mezcla stock con estructura y no tiene LEC ni scrap ni nivel. Lo prolijo es separar el **maestro de ítems** (ítem, LT, stock, lote, nivel) del **maestro de estructura** (padre, componente, cantidad), como en los datos de ingeniería de la U3."
+    },
+    {
+     "type": "paragraph",
+     "text": "**3. MRP** (sin lotes ni scrap, recepción en la semana 12):"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Ítem",
+      "Brutos",
+      "Netos",
+      "Lanzamiento"
+     ],
+     "rows": [
+      [
+       "A (LT 4)",
+       "70 (sem 12)",
+       "70",
+       "**sem 8: 70**"
+      ],
+      [
+       "S (LT 2)",
+       "50 (sem 12)",
+       "50",
+       "**sem 10: 50**"
+      ],
+      [
+       "B (LT 3) = 2 × A",
+       "140 (sem 8)",
+       "140",
+       "**sem 5: 140**"
+      ],
+      [
+       "T (LT 1) = 1 × S",
+       "50 (sem 10)",
+       "50",
+       "**sem 9: 50**"
+      ],
+      [
+       "C (LT 4) = 2 × A + 3 × T",
+       "140 (sem 8) + 150 (sem 9)",
+       "stock 150 cubre la sem 8 → 140 en la sem 9",
+       "**sem 5: 140**"
+      ],
+      [
+       "D (LT 2) = 3 × B",
+       "420 (sem 5)",
+       "420",
+       "**sem 3: 420**"
+      ],
+      [
+       "E (LT 2) = 2 × B + 1 × S",
+       "280 (sem 5) + 50 (sem 10)",
+       "280 y 50",
+       "**sem 3: 280 · sem 8: 50**"
+      ],
+      [
+       "F (LT 4) = 1 × B + 4 × S",
+       "140 (sem 5) + 200 (sem 10)",
+       "stock 150 cubre la sem 5 → 190 en la sem 10",
+       "**sem 6: 190**"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "**4. ¿50 S más en 11 semanas o antes?** Para entregar 50 S adicionales en la semana k hay que lanzar S en k − 2, T en k − 3, E en k − 4 y **F en k − 6** (F es el camino más largo: 4 + 2). Con el stock de F ya usado, la orden de F tiene que liberarse **en la semana 1 o después**: k − 6 ≥ 1 → **k ≥ 7**. Probado con el motor: para k = 11, 10, 9, 8 y 7 todas las órdenes caen en la semana 1 o más; para k = 6, F tendría que lanzarse en la semana 0. **Respuesta: sí, se pueden entregar en la semana 11 y hasta en la semana 7**, si hay capacidad (el MRP no la mira: eso es CRP, Clase 6). La frase «el ensamblado puede hacerse de forma inmediata» invita a discutir si el LT de S (2) se puede acortar, lo que adelantaría todavía más."
+    }
+   ],
+   "nota": "La planilla del alumno tiene errores; esta resolución es propia"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "6. Actualización del registro (Morán)"
+  },
+  {
+   "type": "ejemplo",
+   "title": "Pieza X, lead time 2, lotes de 50",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "**Al comienzo del período 1:** stock 10, brutos 30, 20, 20, 0, 45; ingreso programado de 50 en el período 1. Disponible 30, 10, −10, −10, −55 → netos 10 (per. 3) y 45 (per. 5) → órdenes de 50 en los períodos 1 y 3."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Lo que pasó en el período 1:** se liberó la orden de 50 para el período 3; la salida real fue 20 (no 30); del ingreso programado entraron 45 netas (5 rechazadas); el bruto del período 5 se adelanta al 4; comercialización pide 5 para muestra en el período 2; aparece un bruto de 25 en el período 6."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Comienzo del período 2",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6"
+     ],
+     "rows": [
+      [
+       "Brutos",
+       "25",
+       "20",
+       "45",
+       "0",
+       "25"
+      ],
+      [
+       "Ingr. programados",
+       "",
+       "50",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Disponible (S₀ = 10 + 45 − 20 = 35)",
+       "10",
+       "40",
+       "−5",
+       "−5",
+       "−30"
+      ],
+      [
+       "Netos",
+       "",
+       "",
+       "5",
+       "",
+       "25"
+      ],
+      [
+       "Órd. planificadas",
+       "5 → lote 50",
+       "",
+       "25",
+       "",
+       ""
+      ]
+     ],
+     "caption": "Morán §3"
+    },
+    {
+     "type": "paragraph",
+     "text": "Un solo lote de 50 cubre los dos netos (5 + 25 = 30). Morán: las diferencias entre lo planificado y lo real «conducen a reprogramaciones permanentes» y el sistema emite **mensajes de excepción**."
+    }
+   ]
+  }
+ ],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "Lo que complica",
+   "title": "Cuatro cosas de examen.",
+   "text": "Componentes comunes, demanda independiente de un componente, scrap y lote económico. Más stock y tiempo de seguridad.",
+   "svg": "<svg viewBox=\"0 0 280 142\" width=\"100%\" height=\"142\" role=\"img\" aria-label=\"Las cuatro complicaciones\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Las cuatro complicaciones</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. Componente común</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">nivel más bajo</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. Demanda independiente</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">se suma a los brutos</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. Scrap</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">agranda la orden</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">4. Lote (LEC)</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">redondea la orden</text></svg>",
+   "chartLabel": "Síntesis propia de los finales"
+  },
+  {
+   "type": "concepto",
+   "k": "Componente común",
+   "title": "Se netea una sola vez.",
+   "text": "Si una pieza aparece en dos niveles, se planifica en el más bajo, sumando los brutos de todos sus padres. Así el stock se usa una sola vez."
+  },
+  {
+   "type": "concepto",
+   "k": "Scrap",
+   "title": "Pedís más para que salgan las buenas.",
+   "text": "Si se pierde un porcentaje, la orden es la cantidad neta dividida por uno menos el scrap, redondeada hacia arriba. Escribí la convención que usás.",
+   "formula": "\\text{orden} = \\frac{\\text{neto}}{1 - \\text{scrap}}"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Una pieza tiene demanda propia de 100 en la semana 3 y su padre genera 200 de brutos ese mismo período. ¿Brutos de la pieza?",
+   "options": [
+    "200",
+    "300",
+    "100"
+   ],
+   "correct": 1,
+   "feedback": "La demanda independiente se suma a la que generan los padres: 200 + 100 = 300."
+  },
+  {
+   "type": "concepto",
+   "k": "Final 03/12/2015",
+   "title": "Cinco ítems y tres meses.",
+   "text": "A sin scrap: disponible 90 y netos 90, 280 y 170; con LEC 120 las recepciones son 120, 360 y 240, lanzadas en agosto, septiembre y octubre. Con scrap: 122, 364 y 243.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Lanzamientos de A sin scrap\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Lanzamientos de A sin scrap</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"37.7\" y=\"87.1\" width=\"34.0\" height=\"22.9\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"54.7\" y=\"83.1\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">120</text><text x=\"54.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Ago</text><rect x=\"123.0\" y=\"41.4\" width=\"34.0\" height=\"68.6\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"140.0\" y=\"37.4\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">360</text><text x=\"140.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Sep</text><rect x=\"208.3\" y=\"64.3\" width=\"34.0\" height=\"45.7\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"225.3\" y=\"60.3\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">240</text><text x=\"225.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Oct</text></svg>",
+   "chartLabel": "Datos del final (planilla del alumno); cálculo propio"
+  },
+  {
+   "type": "concepto",
+   "k": "Final 08/08/2013",
+   "title": "Dos productos con comunes.",
+   "text": "A = 2B + 2C; B = 3D + 2E + F; S = E + 4F + T; T = 3C. C, E y F son comunes. Se piden 70 A y 50 S.",
+   "svg": "<svg viewBox=\"0 0 280 142\" width=\"100%\" height=\"142\" role=\"img\" aria-label=\"Lanzamientos (s = semana)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Lanzamientos (s = semana)</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. A s8 70 · S s10 50</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">nivel 0</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. B s5 140 · T s9 50</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">nivel 1</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. C s5 140 · D s3 420</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">nivel 2</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">4. E s3 280 y s8 50 · F s6 190</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">nivel 2</text></svg>",
+   "chartLabel": "Resolución propia del final 08/08/2013"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "En el 2013, C es hijo de A (nivel 1) y de T (nivel 2 de S). ¿Dónde se planifica?",
+   "options": [
+    "En el nivel 1",
+    "En el nivel 2, sumando los brutos de A y de T",
+    "Dos veces, una por cada padre"
+   ],
+   "correct": 1,
+   "feedback": "Un componente común va a su nivel más bajo y se netea una sola vez con todos sus brutos."
+  },
+  {
+   "type": "concepto",
+   "k": "Si falta tiempo",
+   "title": "Atrasos.",
+   "text": "Si una entrega cae en la semana 1 y el lead time no alcanza, se cubre con stock y el resto se informa como atraso. Las versiones de 2003 y 2004 lo piden."
+  },
+  {
+   "type": "concepto",
+   "k": "Actualizar el registro",
+   "title": "La próxima corrida.",
+   "text": "Morán: al pasar un período se corre el horizonte, el stock final pasa a inicial y las órdenes liberadas pasan a ingresos programados. Se replanifica solo lo nuevo."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "El enunciado no dice si el scrap se aplica antes o después del lote. ¿Qué hacés?",
+   "options": [
+    "Lo dejo sin resolver",
+    "Elijo una convención, la escribo y la aplico siempre igual",
+    "Ignoro el scrap"
+   ],
+   "correct": 1,
+   "feedback": "Los criterios de corrección piden fundamentación. Escribir el supuesto vale más que adivinar."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 8.",
+   "text": "Común: nivel más bajo, un solo neteo. Demanda independiente: se suma. Scrap: dividís por uno menos el porcentaje. LEC: redondeás. Atrasos: se informan. Y escribí tus supuestos."
+  }
+ ],
+ "block": "C",
+ "blockTitle": "Bloque C · MRP y MRP II"
+}

@@ -492,12 +492,161 @@
     {
       "id": "u6",
       "title": "U6 · Planificación y control",
-      "kind": "Práctica",
+      "kind": "Práctica + teoría",
       "classes": [
         {
-          "id": "u6-intro",
-          "title": "Plan agregado, MPS, MRP",
-          "soon": true
+          "id": "u6c0",
+          "title": "Clase 0 · Mapa de la unidad",
+          "file": "u6/clase00.json",
+          "soon": false,
+          "visto": false,
+          "name": "Mapa de la Unidad 6",
+          "short": "Mapa",
+          "emoji": "🗺️",
+          "block": "intro"
+        },
+        {
+          "id": "u6c1",
+          "title": "Clase 1 · Tipos de producción y jerarquía de planes",
+          "file": "u6/clase01.json",
+          "soon": false,
+          "visto": false,
+          "name": "Tipos de producción, flexibilidad y jerarquía",
+          "short": "Tipos",
+          "emoji": "1",
+          "block": "A"
+        },
+        {
+          "id": "u6c2",
+          "title": "Clase 2 · Plan agregado: estrategias y costos",
+          "file": "u6/clase02.json",
+          "soon": false,
+          "visto": false,
+          "name": "Plan agregado: estrategias y costos",
+          "short": "Plan agregado",
+          "emoji": "2",
+          "block": "A"
+        },
+        {
+          "id": "u6c3",
+          "title": "Clase 3 · Plan agregado: la planilla período a período",
+          "file": "u6/clase03.json",
+          "soon": false,
+          "visto": false,
+          "name": "Plan agregado: la planilla",
+          "short": "Planilla PA",
+          "emoji": "3",
+          "block": "A"
+        },
+        {
+          "id": "u6c4",
+          "title": "Clase 4 · Programa maestro y planificación desagregada",
+          "file": "u6/clase04.json",
+          "soon": false,
+          "visto": false,
+          "name": "Programa maestro (MPS)",
+          "short": "MPS",
+          "emoji": "4",
+          "block": "A"
+        },
+        {
+          "id": "u6c5",
+          "title": "Clase 5 · Capacidad: medida, disponibilidad y rendimiento global",
+          "file": "u6/clase05.json",
+          "soon": false,
+          "visto": false,
+          "name": "Capacidad: medida y rendimiento",
+          "short": "Capacidad",
+          "emoji": "5",
+          "block": "B"
+        },
+        {
+          "id": "u6c6",
+          "title": "Clase 6 · Planificación de la capacidad: de RRP a CRP",
+          "file": "u6/clase06.json",
+          "soon": false,
+          "visto": false,
+          "name": "Planificación de la capacidad",
+          "short": "RRP → CRP",
+          "emoji": "6",
+          "block": "B"
+        },
+        {
+          "id": "u6c7",
+          "title": "Clase 7 · MRP: la lógica del registro",
+          "file": "u6/clase07.json",
+          "soon": false,
+          "visto": false,
+          "name": "MRP básico",
+          "short": "MRP",
+          "emoji": "7",
+          "block": "C"
+        },
+        {
+          "id": "u6c8",
+          "title": "Clase 8 · MRP de examen: scrap, repuestos y componentes comunes",
+          "file": "u6/clase08.json",
+          "soon": false,
+          "visto": false,
+          "name": "MRP con scrap y comunes",
+          "short": "MRP examen",
+          "emoji": "8",
+          "block": "C"
+        },
+        {
+          "id": "u6c9",
+          "title": "Clase 9 · Tamaño de lote en el MRP",
+          "file": "u6/clase09.json",
+          "soon": false,
+          "visto": false,
+          "name": "Tamaño de lote",
+          "short": "Lotes",
+          "emoji": "9",
+          "block": "C"
+        },
+        {
+          "id": "u6c10",
+          "title": "Clase 10 · MRP de ciclo cerrado, MRP II, ERP y armado final",
+          "file": "u6/clase10.json",
+          "soon": false,
+          "visto": false,
+          "name": "MRP II y ERP",
+          "short": "MRP II / ERP",
+          "emoji": "10",
+          "block": "C"
+        },
+        {
+          "id": "u6c11",
+          "title": "Clase 11 · Balanceo de línea",
+          "file": "u6/clase11.json",
+          "soon": false,
+          "visto": false,
+          "name": "Balanceo de línea",
+          "short": "Balanceo",
+          "emoji": "11",
+          "block": "D"
+        },
+        {
+          "id": "u6c12",
+          "title": "Clase 12 · Control de las actividades de producción",
+          "file": "u6/clase12.json",
+          "soon": false,
+          "visto": false,
+          "name": "Control de la producción (PAC)",
+          "short": "PAC",
+          "emoji": "12",
+          "block": "D"
+        },
+        {
+          "id": "u6int",
+          "title": "Integrador · Ejercicios tipo examen",
+          "file": "u6/integrador.json",
+          "soon": false,
+          "visto": false,
+          "name": "Integrador",
+          "short": "Integrador",
+          "emoji": "🧩",
+          "block": "E"
         }
       ],
       "examen": [
@@ -506,7 +655,37 @@
         "Práctica · Plan agregado 2/19 (11%)",
         "Práctica · MPS 1/19 · Capacidad 1/19",
         "Teoría · Capacidad 5/7"
-      ]
+      ],
+      "lede": "Unidad 6 del programa: planificación y control de la producción. Arranca con la Clase 0 · Mapa de la unidad y sigue en cuatro bloques. Bloque A · Plan agregado y programa maestro: tipos de producción, estrategias y costos del plan agregado, la planilla período a período y el MPS. Bloque B · Capacidad: medida, RGE y capacidad de una estación; de RRP a CRP. Bloque C · MRP y MRP II: el registro MRP, los ejercicios de final, las reglas de lote y MRP II / ERP. Bloque D · Balanceo y control de la producción: balanceo de línea y PAC. Cierra con el Integrador de ejercicios tipo examen.",
+      "blocks": [
+        {
+          "id": "intro",
+          "title": "Introducción"
+        },
+        {
+          "id": "A",
+          "title": "Bloque A · Plan agregado y programa maestro"
+        },
+        {
+          "id": "B",
+          "title": "Bloque B · Capacidad"
+        },
+        {
+          "id": "C",
+          "title": "Bloque C · MRP y MRP II"
+        },
+        {
+          "id": "D",
+          "title": "Bloque D · Balanceo y control de la producción"
+        },
+        {
+          "id": "E",
+          "title": "Cierre · Integrador"
+        }
+      ],
+      "oldIds": {
+        "u6-intro": "u6c0"
+      }
     },
     {
       "id": "u7",

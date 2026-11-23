@@ -1,0 +1,365 @@
+{
+ "unitId": "u6",
+ "unitLabel": "Unidad 6",
+ "unitTitle": "Planificación y control",
+ "id": "u6c9",
+ "title": "Clase 9 · Tamaño de lote en el MRP",
+ "name": "Tamaño de lote",
+ "lede": "Lote por lote, EOQ, TBO/POQ, PPB, Silver-Meal, costo total mínimo y costo unitario mínimo, con los ejemplos de Morán (Y y Z) y de Chase; y las hipótesis del TBO.",
+ "visto": false,
+ "source": "drive_u6/12-Planificación de los Requerimientos de Materiales (MRP).pdf — Nota técnica de R. Morán (© 2000), apunte de la cátedra (mismo texto que «MRP- Planiificación de Requerimientos de Materiales.pdf») §2.1; Chase, Jacobs y Aquilano 12a ed., cap. 18, p. 607–611 — tamaño del lote, ilustraciones 18.19 a 18.22 (drive_u6/txt/cap18_chase12.txt); texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — hipótesis TBO",
+ "laminas": [
+  "u6/img/u6_loteo_moran.svg",
+  "u6/img/u6_loteo_chase.svg"
+ ],
+ "next": "Clase 10 · MRP de ciclo cerrado, MRP II, ERP y armado final",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Unidad 6 · Bloque C · Clase 9 · Tamaño de lote en el MRP**"
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** el neto de cada período puede ser una cantidad «antieconómica». Agrupar netos ahorra preparaciones pero genera stock. Todos los métodos buscan el equilibrio entre **costo de pedir o preparar** y **costo de mantener**, con distintas reglas."
+  },
+  {
+   "type": "paragraph",
+   "text": "Morán: la determinación del tamaño del lote «debe ser hecha nivel por nivel, dada la propagación de las cantidades a los niveles inferiores»."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Los métodos"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Método",
+    "Regla",
+    "Cuándo sirve"
+   ],
+   "rows": [
+    [
+     "**Lote por lote (L4L)**",
+     "pedir exactamente el neto de cada período",
+     "minimiza el stock; ignora las preparaciones (las tiene todas)"
+    ],
+    [
+     "**EOQ / LEC**",
+     "lote fijo del modelo clásico; se pide el mayor entre el neto y el EOQ",
+     "demanda «poco variable» período a período"
+    ],
+    [
+     "**TBO / POQ**",
+     "período fijo, cantidad variable: cada TBO períodos se pide lo que suman los netos",
+     "la demanda «no varía mucho»; genera menos stock que el EOQ"
+    ],
+    [
+     "**PPB** (balance cantidad–período)",
+     "agrupar netos minimizando el costo unitario total (producción + mantener, con medio período de stock)",
+     "demanda variable"
+    ],
+    [
+     "**Silver-Meal**",
+     "igual que PPB pero con costo fijo + mantener completo en los períodos en que no se usa",
+     "heurística simple con muy buenos resultados (Morán)"
+    ],
+    [
+     "**Costo total mínimo (CTM)**",
+     "agrupar hasta que mantener ≈ pedir (Chase)",
+     "costo de pedir constante"
+    ],
+    [
+     "**Costo unitario mínimo (CUM)**",
+     "agrupar hasta minimizar (pedir + mantener) / unidades (Chase)",
+     "cuando el costo de pedir cambia con el tamaño"
+    ],
+    [
+     "**Wagner-Whitin**",
+     "evalúa todas las combinaciones, como programación dinámica",
+     "óptimo, pero «muy engorroso» (Morán)"
+    ]
+   ]
+  },
+  {
+   "type": "formula",
+   "tex": "EOQ_j = \\sqrt{\\frac{2 D_j W_j}{H_j}} \\qquad TBO_j = \\left[\\frac{T}{D_j / EOQ_j}\\right] = \\left[\\frac{T \\cdot EOQ_j}{D_j}\\right]",
+   "caption": "D_j demanda media por período (EOQ) o total del horizonte T (TBO); W_j costo fijo de la orden; H_j costo de mantener por unidad y período; [ ] parte entera"
+  },
+  {
+   "type": "formula",
+   "tex": "CM_{t,j} = \\frac{S_{t-1,j} + S_{t,j}}{2}\\, H_j",
+   "caption": "Costo de mantenimiento de cada período con existencia media (convención de Morán para comparar)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Ejemplo de Morán: conjunto X y piezas Y y Z"
+  },
+  {
+   "type": "ejemplo",
+   "title": "Datos",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "X = 3 Y + 2 Z (ambas compradas). MPS de X para 12 semanas: 0, 60, 10, 90, 80, 0, 40, 80, 20, 70, 0, 90 (total 540); stock de X 90; LT 1; EOQ de X 90."
+    },
+    {
+     "type": "paragraph",
+     "text": "**Y:** sin stock, ingreso programado de 500 en la semana 1, LT 2, W = 100, H = 0,20 por unidad y semana. **Z:** sin stock, **demanda independiente de 300 por semana**, ingreso de 700 en la semana 1, LT 1, W = 150, H = 0,30."
+    },
+    {
+     "type": "paragraph",
+     "text": "Las órdenes de X (90 en las semanas 3, 4, 6, 8 y 11 con EOQ) generan brutos de Y = 3 × 90 = 270 y de Z = 2 × 90 = 180 más 300 de demanda propia."
+    }
+   ]
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Método",
+    "Y: órdenes",
+    "Y: costo OC + mant. = total",
+    "Z: costo total"
+   ],
+   "rows": [
+    [
+     "EOQ (Y 340, Z 610, redondeados a decenas)",
+     "3 × 340",
+     "300 + 489 = **789**",
+     "1.050 + 785 = **1.835**"
+    ],
+    [
+     "TBO/POQ (X 2, Y 3, Z 1)",
+     "370, 210, 270",
+     "300 + 382 = **682**",
+     "1.500 + 150 = **1.650**"
+    ],
+    [
+     "Silver-Meal",
+     "310, 270, 270",
+     "300 + 354 = **654**",
+     "900 + 672 = **1.572**"
+    ]
+   ],
+   "caption": "Morán §2.1; costo de mantener con existencia media"
+  },
+  {
+   "type": "paragraph",
+   "text": "Verificación propia de los EOQ: Y → D = 1.350/12 = 112,5 por semana, $\\sqrt{2 \\cdot 112{,}5 \\cdot 100/0{,}20} = 335{,}4$ → 340. Z → D = 4.500/12 = 375, $\\sqrt{2 \\cdot 375 \\cdot 150/0{,}30} = 612{,}4$ → 610. TBO de Y: [12 × 340 / 1.350] = [3,02] = 3; de Z: [12 × 610 / 4.500] = [1,63] = 1; de X: [12 × 90 / 540] = 2."
+  },
+  {
+   "type": "paragraph",
+   "text": "La lección de Morán: el EOQ «puede conducir a valores de existencias excesivamente altos en los niveles inferiores por la propagación de excesos», y «en general la aplicación del lote óptimo dinámico genera menos stocks que los otros modelos»."
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_loteo_moran.svg",
+   "caption": "Costo total de la pieza Z con cada método (datos de Morán; gráfico propio)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. PPB y Silver-Meal paso a paso (Morán)"
+  },
+  {
+   "type": "ejemplo",
+   "title": "Netos 40, 50, 60, 70; costo fijo 5; costo unitario 1; mantener 2% por período",
+   "blocks": [
+    {
+     "type": "table",
+     "headers": [
+      "Lote",
+      "Cubre",
+      "PPB: costo unitario",
+      "Silver-Meal: costo por unidad"
+     ],
+     "rows": [
+      [
+       "40",
+       "1 período",
+       "1,135",
+       "5/40 = 0,125"
+      ],
+      [
+       "90",
+       "2 períodos",
+       "1,077",
+       "(5 + 50 × 0,02)/90 = 0,067"
+      ],
+      [
+       "**150**",
+       "3 períodos",
+       "**1,066**",
+       "**(5 + 110 × 0,02 + 60 × 0,02)/150 = 0,055**"
+      ],
+      [
+       "220",
+       "4 períodos",
+       "1,067",
+       "0,057"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "PPB considera que lo que se usa en un período está «almacenado la mitad del tiempo» y todo el tiempo en los demás. Silver-Meal solo carga mantenimiento completo en los períodos en que la pieza no se usa. Aquí ambos eligen **150**, pero «en general los dos criterios conducen a lotes de distinto tamaño»."
+    }
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Ejemplo de Chase: cuatro métodos con los mismos netos"
+  },
+  {
+   "type": "ejemplo",
+   "title": "Netos 50, 60, 70, 60, 95, 75, 60, 55; preparación 47; pieza 10; mantener 0,5% por semana",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "EOQ: D = 525/8 × 52 = 3.412,5 por año; H = 0,5% × 10 × 52 = 2,60; $EOQ = \\sqrt{2 \\cdot 3412{,}5 \\cdot 47/2{,}60} \\approx 351$. Chase carga el mantenimiento sobre el **inventario final** de cada semana (no el promedio)."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Método",
+      "Pedidos",
+      "Costo total 8 semanas"
+     ],
+     "rows": [
+      [
+       "Lote por lote",
+       "8 pedidos",
+       "**376,00**"
+      ],
+      [
+       "EOQ 351",
+       "351 en la sem 1 y en la sem 6",
+       "**171,05**"
+      ],
+      [
+       "Costo total mínimo",
+       "335 (sem 1–5) y 190 (sem 6–8)",
+       "**140,50** (el más bajo)"
+      ],
+      [
+       "Costo unitario mínimo",
+       "410 (sem 1–6) y 115 (sem 7–8)",
+       "**153,50**"
+      ]
+     ],
+     "caption": "Chase, ilustraciones 18.19 a 18.22"
+    },
+    {
+     "type": "paragraph",
+     "text": "CTM elige 335 porque es donde mantener (38) y pedir (47) quedan más parecidos. CUM elige 410 porque ahí el costo por unidad es mínimo (0,2530). Chase: si el costo de pedir es constante, CTM «es más atractivo porque es más simple»; y la duración del horizonte influye en ambas técnicas."
+    }
+   ]
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_loteo_chase.svg",
+   "caption": "Costo total de 8 semanas con cada método (Chase, ilustraciones 18.19 a 18.22; gráfico propio)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Hipótesis del TBO (pregunta de los bancos)"
+  },
+  {
+   "type": "paragraph",
+   "text": "La cátedra pregunta: «¿Cuáles son las hipótesis implícitas del método TBO en el MRP?». Con Morán: (1) la demanda **no varía mucho** de un período a otro («si la demanda es muy despareja de un período a otro este procedimiento tampoco es bueno»); (2) el lote **se hace al comienzo** de los períodos que cubre el TBO; (3) el EOQ en el que se basa supone costos de pedir y mantener **constantes** y una demanda media representativa del horizonte T; (4) el TBO es un **número entero** de períodos (parte entera)."
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Una observación de Morán que se puede usar en teoría:** lo ideal es que el lote óptimo sea **menor** que los requerimientos por período. Si es mayor, se acumula stock, y entonces hay que revisar el proceso para **reducir el costo fijo** de la orden (el tiempo de puesta a punto). Es la puerta al JIT."
+  }
+ ],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "El problema",
+   "title": "Cuánto pedir de cada vez.",
+   "text": "El MRP da netos período por período. La regla de lote decide si se pide justo eso (lote por lote) o se juntan varios períodos para ahorrar preparaciones."
+  },
+  {
+   "type": "concepto",
+   "k": "Métodos",
+   "title": "Seis reglas del material.",
+   "text": "Lote por lote, EOQ, TBO (período fijo), PPB (costo unitario mínimo), Silver-Meal (costo por período mínimo) y costo total mínimo.",
+   "svg": "<svg viewBox=\"0 0 280 142\" width=\"100%\" height=\"142\" role=\"img\" aria-label=\"Reglas de lote\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Reglas de lote</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. Lote por lote</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">lo que se necesita</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. EOQ</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">lote fijo</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. TBO / POQ</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">períodos fijos</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">4. PPB · Silver-Meal · CTM</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">lote dinámico</text></svg>",
+   "chartLabel": "Morán y Chase cap. 18"
+  },
+  {
+   "type": "concepto",
+   "k": "Morán, pieza Z",
+   "title": "El dinámico gana.",
+   "text": "EOQ 1.835, TBO 1.650 y Silver-Meal 1.572. En la pieza Y pasa lo mismo: 789, 682 y 654.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Pieza Z: costo total\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Pieza Z: costo total</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"37.7\" y=\"36.6\" width=\"34.0\" height=\"73.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"54.7\" y=\"32.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">1835</text><text x=\"54.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">EOQ</text><rect x=\"123.0\" y=\"44.0\" width=\"34.0\" height=\"66.0\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"140.0\" y=\"40.0\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">1650</text><text x=\"140.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">TBO</text><rect x=\"208.3\" y=\"47.1\" width=\"34.0\" height=\"62.9\" rx=\"3\" fill=\"#7cc49a\" opacity=\".9\"/><text x=\"225.3\" y=\"43.1\" font-size=\"8\" fill=\"#7cc49a\" text-anchor=\"middle\" font-weight=\"700\">1572</text><text x=\"225.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Silver-</text><text x=\"225.3\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Meal</text></svg>",
+   "chartLabel": "Morán, MRP §2.1"
+  },
+  {
+   "type": "concepto",
+   "k": "Por qué",
+   "title": "El EOQ propaga excesos.",
+   "text": "Morán: el EOQ «puede conducir a valores de existencias excesivamente altos en los niveles inferiores por la propagación de excesos». El lote dinámico genera menos stock."
+  },
+  {
+   "type": "concepto",
+   "k": "PPB y Silver-Meal",
+   "title": "Paso a paso.",
+   "text": "Netos 40, 50, 60, 70; costo fijo 5; mantener 2%. Lote de 150 (tres períodos): PPB 1,066 por unidad y Silver-Meal 0,055. Los dos eligen 150.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Silver-Meal: costo por unidad según el lote\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Silver-Meal: costo por unidad según el lote</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"27.0\" y=\"38.6\" width=\"34.0\" height=\"71.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"44.0\" y=\"34.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">0,125</text><text x=\"44.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">40</text><rect x=\"91.0\" y=\"71.7\" width=\"34.0\" height=\"38.3\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"108.0\" y=\"67.7\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">0,067</text><text x=\"108.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">90</text><rect x=\"155.0\" y=\"78.6\" width=\"34.0\" height=\"31.4\" rx=\"3\" fill=\"#7cc49a\" opacity=\".9\"/><text x=\"172.0\" y=\"74.6\" font-size=\"8\" fill=\"#7cc49a\" text-anchor=\"middle\" font-weight=\"700\">0,055</text><text x=\"172.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">150</text><rect x=\"219.0\" y=\"77.4\" width=\"34.0\" height=\"32.6\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"236.0\" y=\"73.4\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">0,057</text><text x=\"236.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">220</text></svg>",
+   "chartLabel": "Morán, ejemplo de PPB y Silver-Meal"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Silver-Meal da 0,055 con 150 y 0,057 con 220. ¿Qué lote elegís?",
+   "options": [
+    "220, porque cubre más",
+    "150, porque ahí el costo deja de bajar",
+    "Cualquiera"
+   ],
+   "correct": 1,
+   "feedback": "Se agrega un período mientras el costo baje. Al pasar a 220 sube: te quedás con 150."
+  },
+  {
+   "type": "concepto",
+   "k": "Chase",
+   "title": "Cuatro métodos, mismos netos.",
+   "text": "Lote por lote 376; EOQ (351) 171,05; costo total mínimo 140,50; costo unitario mínimo 153,50. El más bajo es el costo total mínimo.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Costo de 8 semanas\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Costo de 8 semanas</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"27.0\" y=\"38.4\" width=\"34.0\" height=\"71.6\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"44.0\" y=\"34.4\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">376</text><text x=\"44.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Lote x</text><text x=\"44.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">lote</text><rect x=\"91.0\" y=\"77.4\" width=\"34.0\" height=\"32.6\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"108.0\" y=\"73.4\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">171</text><text x=\"108.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">EOQ</text><rect x=\"155.0\" y=\"83.2\" width=\"34.0\" height=\"26.8\" rx=\"3\" fill=\"#7cc49a\" opacity=\".9\"/><text x=\"172.0\" y=\"79.2\" font-size=\"8\" fill=\"#7cc49a\" text-anchor=\"middle\" font-weight=\"700\">140</text><text x=\"172.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">CTM</text><rect x=\"219.0\" y=\"80.8\" width=\"34.0\" height=\"29.2\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"236.0\" y=\"76.8\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">154</text><text x=\"236.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">CUM</text></svg>",
+   "chartLabel": "Chase, ilustraciones 18.19 a 18.22"
+  },
+  {
+   "type": "concepto",
+   "k": "Costo total mínimo",
+   "title": "Pedir ≈ mantener.",
+   "text": "CTM elige el lote donde el costo de mantener se parece más al de pedir: 335 unidades, con 38 de mantener contra 47 de pedir."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "¿Cuál es una hipótesis del TBO que pregunta la cátedra?",
+   "options": [
+    "Que la demanda no varía mucho de un período a otro",
+    "Que no hay costo de preparación",
+    "Que el lead time es cero"
+   ],
+   "correct": 0,
+   "feedback": "Morán: si la demanda es muy despareja, el TBO no es bueno. Además el lote se hace al comienzo de los períodos que cubre."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 9.",
+   "text": "Lote por lote, EOQ, TBO y los dinámicos. En los ejemplos de Morán y Chase el dinámico cuesta menos. El EOQ propaga excesos. Y el TBO supone demanda pareja."
+  }
+ ],
+ "block": "C",
+ "blockTitle": "Bloque C · MRP y MRP II"
+}

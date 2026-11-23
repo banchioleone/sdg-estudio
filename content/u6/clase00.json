@@ -1,0 +1,483 @@
+{
+ "unitId": "u6",
+ "unitLabel": "Unidad 6",
+ "unitTitle": "Planificación y control",
+ "id": "u6c0",
+ "title": "Clase 0 · Mapa de la unidad",
+ "name": "Mapa de la Unidad 6",
+ "lede": "Qué entra en la U6, en qué orden se estudia, qué se toma en el final y qué material hay en el Drive.",
+ "visto": false,
+ "source": "programa.md — Unidad 6 · Planificación y control (programa 2008); clases_previas/SG/SistemasDeGestion_DocumentoMaestro_v2.txt — Unidad 6 y Semanas 6, 8, 9 y 10; patrones_examenes.md (conteos de finales); drive_u6/Planificacion Agregada.pdf — «Planificación agregada de la producción», R. Morán (UNR, 2012); drive_u6/12-Planificación de los Requerimientos de Materiales (MRP).pdf — Nota técnica de R. Morán (© 2000), apunte de la cátedra (mismo texto que «MRP- Planiificación de Requerimientos de Materiales.pdf»); drive_u6/Planificacion de la Capacidad.pdf — Nota técnica «Planificación de la capacidad de producción», R. Morán (© 2001); drive_u6/PAC.pdf — Nota técnica «Control de las actividades de producción», R. Morán (© 2001)",
+ "laminas": [
+  "u6/img/u6_mapa.svg"
+ ],
+ "next": "Clase 1 · Tipos de producción y jerarquía de planes",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Sistemas de Gestión (UTN FRRo) · Unidad 6 · Introducción · Clase 0 · Mapa de la unidad**"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**De dónde sale esta clase.** El orden de los temas sale del **programa 2008** (Unidad 6), del **Documento Maestro v2** (qué es práctica [P] y qué es teoría [T], Semanas 6, 8, 9 y 10) y de lo que cayó en finales (`patrones_examenes.md`). La teoría viene de las **cuatro notas técnicas de R. Morán** que están en el Drive (Planificación agregada 2012, MRP 2000, Capacidad 2001 y PAC 2001), de **Chase, Jacobs y Aquilano, 12a ed.** (caps. 5, 7, 7A, 14, 16, 18 y 19), de las láminas de **Bigatti (UTN FRRo, 2015)** y del banco de preguntas de la cátedra («La gestión de producción»). Todo lo bajado del Drive está en la sección 4."
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** la U6 es una **cadena de planes que se van achicando**: el **plan agregado** decide cuánto producir por mes en unidades agregadas; el **programa maestro (MPS)** lo baja a productos concretos por semana; el **MRP** lo explota en piezas y fechas de orden; el **CRP** verifica que alcance la capacidad; y el **control de la producción (PAC)** lanza, programa y sigue las órdenes en el taller."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Qué dice el programa"
+  },
+  {
+   "type": "paragraph",
+   "text": "El **objetivo** de la unidad, tal cual el programa 2008: «Que los alumnos aprendan y alcancen a determinar las operaciones básicas de un sistema de gestión, planificación y control de los procesos de conversión.»"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los **temas** del programa, en el orden en que aparecen:"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "Caracterización de las actividades de producción repetitivas y por proyectos.",
+    "Flexibilidad y automatización de los procesos.",
+    "Planificación agregada de la producción.",
+    "Programa maestro.",
+    "Planificación desagregada.",
+    "Planificación de la capacidad; Disponibilidad, Medida y rendimiento global.",
+    "Programación; Sistemas con algoritmos tipo MRP, Lead Time de fabricación.",
+    "Sistemas MRPII (CRP).",
+    "Programación por armado final.",
+    "Balanceo de línea.",
+    "Control de las actividades de producción.",
+    "Emisión y lanzamiento de órdenes.",
+    "Control de piso de planta."
+   ]
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Horizonte",
+    "Plan",
+    "Unidad de medida",
+    "Plan de capacidad que lo acompaña"
+   ],
+   "rows": [
+    [
+     "Mediano plazo (6 a 18 meses; típico 1 año en meses)",
+     "Plan agregado (APP, «planeación de ventas y operaciones»)",
+     "producto agregado (u, hl, t, horas equivalentes)",
+     "RRP: requerimientos de recursos"
+    ],
+    [
+     "Mediano–corto (semanas o meses)",
+     "Programa maestro (MPS)",
+     "producto final o conjunto mayor",
+     "RCCP: CPOF, listas de capacidad, perfiles de recursos"
+    ],
+    [
+     "Corto (semanas)",
+     "MRP: órdenes planificadas de cada pieza",
+     "cada ítem de la lista de materiales",
+     "CRP: requerimientos de capacidad"
+    ],
+    [
+     "Muy corto (días, turnos)",
+     "PAC: lanzamiento, despacho, secuencia",
+     "orden de producción / operación",
+     "carga finita o infinita; control de entradas/salidas"
+    ]
+   ],
+   "caption": "Jerarquía de planes (síntesis propia de Morán, Planificación de la capacidad §2 y Planificación agregada §1; Chase cap. 16, ilustración 16.1)"
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_mapa.svg",
+   "caption": "Los cuatro niveles de la unidad y el cálculo de capacidad que valida cada uno (esquema propio)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Las clases de esta unidad"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Clase",
+    "Qué ves",
+    "Tema del programa"
+   ],
+   "rows": [
+    [
+     "**Bloque A · Plan agregado y programa maestro**",
+     "",
+     ""
+    ],
+    [
+     "1 · Tipos de producción y jerarquía de planes",
+     "proyecto, taller, celda, línea, continuo; matriz producto–proceso; flexibilidad y automatización; planificación jerárquica y horizonte deslizante",
+     "repetitivas y por proyectos; flexibilidad y automatización"
+    ],
+    [
+     "2 · Plan agregado: estrategias y costos",
+     "producto agregado, decisiones sobre demanda y oferta, estrategias de ajuste, nivel y mixta, los cuatro costos",
+     "planificación agregada"
+    ],
+    [
+     "3 · Plan agregado: la planilla período a período",
+     "JC Company (Chase) completo y el ejercicio de final «stock final nulo» (30/04/2003 y 18/12/2003)",
+     "planificación agregada"
+    ],
+    [
+     "4 · Programa maestro y planificación desagregada",
+     "del plan agregado al MPS, restricciones de tiempo, disponible para prometer, el PMP de la cátedra, el MPS del final 2018",
+     "programa maestro; planificación desagregada"
+    ],
+    [
+     "**Bloque B · Capacidad**",
+     "",
+     ""
+    ],
+    [
+     "5 · Capacidad: medida, disponibilidad y rendimiento global",
+     "unidad de medida, RGE = D × EP × TPA, capacidad de una estación (CDT, CDR), utilización, ejercicio de dos máquinas con scrap",
+     "capacidad; disponibilidad, medida y rendimiento global"
+    ],
+    [
+     "6 · Planificación de la capacidad: de RRP a CRP",
+     "RRP, factores globales, listas de capacidad, perfiles de recursos (y sus hipótesis), CRP, carga finita e infinita, control de entradas/salidas",
+     "planificación de la capacidad; MRPII (CRP)"
+    ],
+    [
+     "**Bloque C · MRP y MRP II**",
+     "",
+     ""
+    ],
+    [
+     "7 · MRP: la lógica del registro",
+     "BOM y niveles, brutos → netos → órdenes, ingresos programados, liberación de órdenes, el ejemplo de Morán y el de Chase",
+     "algoritmos tipo MRP; lead time de fabricación"
+    ],
+    [
+     "8 · MRP de examen: scrap, repuestos y componentes comunes",
+     "demanda independiente de componentes, scrap, LEC, código de nivel, stock y tiempo de seguridad; los finales 03/12/2015 y 08/08/2013",
+     "algoritmos tipo MRP"
+    ],
+    [
+     "9 · Tamaño de lote en el MRP",
+     "lote por lote, EOQ, TBO/POQ (y sus hipótesis), PPB y Silver-Meal, costo total mínimo y costo unitario mínimo",
+     "algoritmos tipo MRP"
+    ],
+    [
+     "10 · MRP de ciclo cerrado, MRP II, ERP y armado final",
+     "actualización, planificador, MRP de ciclo cerrado, MRP II, ERP, MRP según la cátedra (explosiones y nivelación), JIT y MRP, programación por armado final",
+     "MRPII; programación por armado final"
+    ],
+    [
+     "**Bloque D · Balanceo y control**",
+     "",
+     ""
+    ],
+    [
+     "11 · Balanceo de línea",
+     "ciclo, estaciones mínimas, eficiencia, reglas de asignación, estaciones en paralelo; ventanas, montaje y cédulas",
+     "balanceo de línea"
+    ],
+    [
+     "12 · Control de las actividades de producción",
+     "lanzamiento de órdenes, hoja de ruta, despacho, prioridades, control del progreso, recolección de datos en planta",
+     "control de actividades; emisión y lanzamiento; control de piso"
+    ],
+    [
+     "**Cierre**",
+     "",
+     ""
+    ],
+    [
+     "Integrador · Ejercicios tipo examen",
+     "todas las familias de ejercicios de la U6 que cayeron, con el camino de resolución",
+     "todo"
+    ]
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Cómo se toma en el final"
+  },
+  {
+   "type": "paragraph",
+   "text": "Según `patrones_examenes.md` (19 finales fechados 2002–2018 y 7 fechados 2011–2018), la U6 es **la unidad con más práctica**:"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Familia",
+    "2002–2018 (n = 19)",
+    "2011–2018 (n = 7)",
+    "Mesas"
+   ],
+   "rows": [
+    [
+     "**MRP**",
+     "8 (42%)",
+     "2 (29%)",
+     "01/08/2002, 26/09/2002, 28/11/2002, 30/04/2003, 24/07/2003, 06/05/2004, 08/08/2013, 03/12/2015; más el de Lu y EFR p.36 (sin fecha)"
+    ],
+    [
+     "**Balanceo de línea**",
+     "4 (21%)",
+     "1 (14%)",
+     "22/05/2003, 06/05/2004, 09/03/2006, 14/03/2013 (cédulas)"
+    ],
+    [
+     "Plan agregado",
+     "2 (11%)",
+     "0",
+     "30/04/2003, 18/12/2003"
+    ],
+    [
+     "MPS",
+     "1 (5%)",
+     "1 (14%)",
+     "2018"
+    ],
+    [
+     "Capacidad / CRP (cálculo)",
+     "1 (5%)",
+     "0",
+     "09/03/2006 (dos máquinas con scrap); mesa especial de octubre (tasa al 95%)"
+    ]
+   ],
+   "caption": "Práctica de la U6 en finales (conteos de patrones_examenes.md)"
+  },
+  {
+   "type": "paragraph",
+   "text": "En **teoría** (2011–2018) la U6 aparece así: **capacidad en 5 de 7 finales** (2011 «definir mediante una fórmula matemática la capacidad de una estación de trabajo»; 2012 «determine la capacidad para una empresa»; 2014 «cómo se calcula la capacidad de una estación de trabajo»; 2015 «variables que definen la capacidad de producción (tangible)»; 2018 «hipótesis implícitas en la planificación de la capacidad usando listas de capacidad y perfiles de recursos»), **MRP/MCP/ERP/JIT en 3 de 7** (2012 «qué es MRP, MCP, ERP»; 2014 «en ERP, qué información tiene la BOM»; 2018 «en qué caso una empresa JIT llega a necesitar MRP») y la **hoja de ruta** (2011). Los bancos repiten «hipótesis implícitas del método TBO en el MRP», «cómo se calcula la demanda para el MPS» y «qué subsistema construye el PRM»."
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Para priorizar:** MRP (Clases 7–9) es lo más tomado y sigue vigente (2013, 2015). Después, balanceo (Clase 11, vigente en 2013) y la teoría de capacidad (Clases 5 y 6, casi todos los finales recientes). El plan agregado solo apareció en 2003, pero el enunciado está en «Ejercicios posibles». El MPS es el ejercicio del final más reciente (2018)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Bibliografía de la unidad (lo que hay en el Drive)"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Material",
+    "Qué es",
+    "Clases"
+   ],
+   "rows": [
+    [
+     "R. Morán, «Planificación agregada de la producción» (UNR, 2012), `Planificacion Agregada.pdf`",
+     "Apunte largo: producto agregado, costos variables, modelos de programación lineal (con LINDO), entregas diferidas, horas extras, gráficos acumulados, familias, por pedido y servicios",
+     "1, 2, 3"
+    ],
+    [
+     "R. Morán, «Planificación de los requerimientos de materiales» (© 2000), `12-Planificación … (MRP).pdf`",
+     "Nota técnica completa del MRP: registro, algoritmo, lote económico (EOQ, TBO/POQ, PPB, Silver-Meal), scrap, SS, actualización, CRP",
+     "7, 8, 9, 10"
+    ],
+    [
+     "R. Morán, «Planificación de la capacidad de producción» (© 2001)",
+     "RGE, RRP, CPOF, listas de capacidad, perfiles de recursos, CRP, control de entradas/salidas, JIT",
+     "5, 6"
+    ],
+    [
+     "R. Morán, «Control de las actividades de producción» (© 2001), `PAC.pdf`",
+     "Funciones del PAC, lanzamiento, programación, control del progreso, recolección de datos",
+     "12"
+    ],
+    [
+     "Chase, Jacobs y Aquilano, 12a ed. (`administracionOperaciones.pdf`)",
+     "Cap. 5 capacidad, 7 y 7A procesos y balanceo, 14 ERP, 16 planeación agregada (p. 514–543), 18 MRP, 19 programación",
+     "todas"
+    ],
+    [
+     "Bigatti, «Planeación agregada» (UTN FRRo, 2015) y ejercicio JC Company (.docx)",
+     "Láminas de clase de la cátedra; usan el ejemplo de Chase",
+     "2, 3"
+    ],
+    [
+     "Planillas: `PlantillaPlaneaciónAgregada.xls`, `PlantillaMRP.xlsx`, `PrácticaMRP.xlsx`, `PrácticaCapacidadyCurvasAprendisaje.xlsx`",
+     "Plantillas de cálculo de la cátedra (problemas de Chase)",
+     "3, 5, 7–9"
+    ],
+    [
+     "WinQSB `Cap18-Ejercicio4` y `Ejercicio6`",
+     "Archivos de datos de MRP para WinQSB (BOM, MPS, inventario)",
+     "7"
+    ],
+    [
+     "TP N.º 7 MRP en Odoo y Tutoriales MRP Odoo 01–02 (UTN FRRo, 2015)",
+     "MRP dentro de un ERP: lista de materiales, rutas y centros de trabajo (MRP II)",
+     "10"
+    ],
+    [
+     "Finales: `SG!EVA` (2002–2006), `Ejercicios posibles`, `Final 1.xlsx` (08/08/2013), `final03-12.xlsx` (03/12/2015), examen 2018, EFR (resoluciones manuscritas)",
+     "Enunciados y resoluciones de alumnos",
+     "3, 4, 5, 8, 11, Integrador"
+    ]
+   ]
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Lo que no está en el Drive:** Monks (el programa lo cita y los alumnos dicen que el hombre–máquina sale de ahí), las notas técnicas de Sessa, APICS y Vollmann. Tampoco hay un apunte de la cátedra sobre **programación por armado final** ni sobre **automatización**: lo que se diga de eso en las Clases 1 y 10 se marca como complemento."
+  },
+  {
+   "type": "glosario",
+   "title": "Notación de la unidad",
+   "intro": "Las letras que vas a ver en las fórmulas de la U6.",
+   "entries": [
+    {
+     "simbolo": "APP",
+     "nombre": "plan agregado",
+     "significado": "Aggregate Production Planning (Morán) = planeación agregada de ventas y operaciones (Chase)"
+    },
+    {
+     "simbolo": "MPS / PMP",
+     "nombre": "programa maestro",
+     "significado": "Master Production Schedule; la cátedra lo llama Plan Maestro de Producción"
+    },
+    {
+     "simbolo": "BOM",
+     "nombre": "lista de materiales",
+     "significado": "estructura del producto por niveles"
+    },
+    {
+     "simbolo": "LT",
+     "nombre": "lead time",
+     "significado": "plazo de provisión o de fabricación, en períodos"
+    },
+    {
+     "simbolo": "LEC / EOQ",
+     "nombre": "lote económico",
+     "significado": "lote económico de compra; LEF si es de fabricación"
+    },
+    {
+     "simbolo": "TBO / POQ",
+     "nombre": "tiempo entre órdenes / cantidad periódica",
+     "significado": "lote de período fijo y cantidad variable"
+    },
+    {
+     "simbolo": "RGE",
+     "nombre": "rendimiento global del equipamiento",
+     "significado": "D × EP × TPA (Morán)"
+    },
+    {
+     "simbolo": "CRP",
+     "nombre": "planificación de requerimientos de capacidad",
+     "significado": "carga de los centros de trabajo que genera el MRP"
+    },
+    {
+     "simbolo": "PAC",
+     "nombre": "control de las actividades de producción",
+     "significado": "lanzamiento, programación y control de las órdenes (también SFC)"
+    },
+    {
+     "simbolo": "C",
+     "nombre": "tiempo de ciclo",
+     "significado": "tiempo entre unidades sucesivas que salen de una línea"
+    }
+   ]
+  }
+ ],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "La unidad en una frase",
+   "title": "Una cadena de planes que se achica.",
+   "text": "Plan agregado por mes y por familia; programa maestro por semana y por producto; MRP por pieza; y el control de planta por orden, día y turno. Cada nivel desagrega al anterior.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Del agregado al detalle\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Del agregado al detalle</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">PA</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">familias, meses</text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">MPS</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">productos</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">MRP</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">piezas</text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">PAC</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">órdenes</text></svg>",
+   "chartLabel": "Esquema propio con la jerarquía de Morán y Chase"
+  },
+  {
+   "type": "concepto",
+   "k": "Y la capacidad",
+   "title": "Cada plan tiene su control de capacidad.",
+   "text": "Al plan agregado lo acompaña el RRP; al MPS, el RCCP (CPOF, listas de capacidad, perfiles de recursos); al MRP, el CRP; y en planta, el control de entradas y salidas.",
+   "svg": "<svg viewBox=\"0 0 280 142\" width=\"100%\" height=\"142\" role=\"img\" aria-label=\"Plan y capacidad, nivel por nivel\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Plan y capacidad, nivel por nivel</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. PA → RRP</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">recursos</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. MPS → RCCP</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">CPOF / CB / RP</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. MRP → CRP</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">por centro</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">4. PAC → control E/S</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">horas</text></svg>",
+   "chartLabel": "Síntesis propia de Morán, Planificación de la capacidad"
+  },
+  {
+   "type": "concepto",
+   "k": "Cuatro bloques",
+   "title": "Cómo está armada la unidad.",
+   "text": "A: tipos de producción, plan agregado y MPS. B: capacidad. C: MRP, lotes y MRP II / ERP. D: balanceo de línea y control de la producción. Cierra con el integrador.",
+   "ejemplo": "Son 12 clases más el mapa y el integrador, en el orden del programa 2008."
+  },
+  {
+   "type": "concepto",
+   "k": "En los finales",
+   "title": "El MRP manda.",
+   "text": "De 19 finales con fecha, el MRP apareció como práctica en 8 (42%). Le siguen balanceo (4), plan agregado (2), MPS (1) y capacidad (1).",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Finales con fecha (de 19) con cada práctica\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Finales con fecha (de 19) con cada práctica</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"21.7\" y=\"42.6\" width=\"31.7\" height=\"67.4\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"37.6\" y=\"38.6\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">8</text><text x=\"37.6\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">MRP</text><rect x=\"72.9\" y=\"76.3\" width=\"31.7\" height=\"33.7\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"88.8\" y=\"72.3\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">4</text><text x=\"88.8\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Balanceo</text><rect x=\"124.1\" y=\"93.2\" width=\"31.7\" height=\"16.8\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"140.0\" y=\"89.2\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">2</text><text x=\"140.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Plan</text><text x=\"140.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">agregado</text><rect x=\"175.3\" y=\"101.6\" width=\"31.7\" height=\"8.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"191.2\" y=\"97.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">1</text><text x=\"191.2\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">MPS</text><rect x=\"226.5\" y=\"101.6\" width=\"31.7\" height=\"8.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"242.4\" y=\"97.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">1</text><text x=\"242.4\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Capacidad</text></svg>",
+   "chartLabel": "Conteos de patrones_examenes.md"
+  },
+  {
+   "type": "concepto",
+   "k": "Y en teoría",
+   "title": "La capacidad de una estación.",
+   "text": "En los 7 finales de 2011 a 2018, la pregunta de capacidad (definirla con una fórmula, o las variables que la definen) salió en 5. MRP, ERP o JIT salieron en 3.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Finales 2011–2018 (de 7) con esa teoría\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Finales 2011–2018 (de 7) con esa teoría</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"59.0\" y=\"43.3\" width=\"34.0\" height=\"66.7\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"76.0\" y=\"39.3\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">5</text><text x=\"76.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">Capacidad</text><rect x=\"187.0\" y=\"70.0\" width=\"34.0\" height=\"40.0\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"204.0\" y=\"66.0\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">3</text><text x=\"204.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">MRP / ERP / JIT</text></svg>",
+   "chartLabel": "Conteos de patrones_examenes.md"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Te queda una semana. ¿Qué priorizás de la U6?",
+   "options": [
+    "El modelo de programación lineal de Morán",
+    "El registro MRP con scrap y lote, y la fórmula de capacidad",
+    "La historia del ERP"
+   ],
+   "correct": 1,
+   "feedback": "MRP es la práctica más frecuente y la capacidad de una estación la teoría más repetida. La programación lineal no se pide en el final."
+  },
+  {
+   "type": "concepto",
+   "k": "Los libros",
+   "title": "Chase y las notas de Morán.",
+   "text": "El libro grande del Drive es Chase, Jacobs y Aquilano, 12a edición (caps. 7, 7A, 16, 18 y 19). La cátedra usa además las notas técnicas de Morán: plan agregado, capacidad, MRP y PAC.",
+   "ejemplo": "Monks, Vollmann y Sessa no están en el Drive. La unidad se arma sin ellos."
+  },
+  {
+   "type": "concepto",
+   "k": "Lo que falta",
+   "title": "Huecos del material.",
+   "text": "Casi no hay resoluciones oficiales: la mayoría de los ejercicios están sin resolver o con una hoja manuscrita parcial. La tabla del final de las cédulas de manejo no está. «MCP» no aparece definido.",
+   "ejemplo": "Por eso en la teoría cada resolución dice si es del material o cálculo propio."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "En una resolución de la teoría ves «cálculo propio». ¿Qué quiere decir?",
+   "options": [
+    "Que es la solución oficial de la cátedra",
+    "Que la armó el tutor con los datos del enunciado, sin resolución en el material",
+    "Que está mal"
+   ],
+   "correct": 1,
+   "feedback": "El material casi no trae resoluciones. Cuando el cálculo no está en el Drive, se marca así para que sepas qué es oficial y qué no."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 0.",
+   "text": "PA → MPS → MRP → PAC, cada uno con su control de capacidad. El MRP es la práctica más tomada y la capacidad de una estación, la teoría más repetida. Libros: Chase y Morán."
+  }
+ ],
+ "block": "intro",
+ "blockTitle": "Introducción"
+}

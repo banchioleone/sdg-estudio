@@ -1,0 +1,272 @@
+{
+ "unitId": "u6",
+ "unitLabel": "Unidad 6",
+ "unitTitle": "Planificación y control",
+ "id": "u6c10",
+ "title": "Clase 10 · MRP de ciclo cerrado, MRP II, ERP y armado final",
+ "name": "MRP II y ERP",
+ "lede": "El planificador, señalamiento y órdenes en firme; MRP de ciclo cerrado, MRP II y ERP; el subsistema MRP de la cátedra en cinco etapas; MRP y JIT; y la programación por armado final.",
+ "visto": false,
+ "source": "drive_u6/12-Planificación de los Requerimientos de Materiales (MRP).pdf — Nota técnica de R. Morán (© 2000), apunte de la cátedra (mismo texto que «MRP- Planiificación de Requerimientos de Materiales.pdf») §3–§5; drive_u6/Planificacion de la Capacidad.pdf — Nota técnica «Planificación de la capacidad de producción», R. Morán (© 2001) §4; Chase, Jacobs y Aquilano 12a ed., cap. 18, p. 604–607 — MRP de ciclo cerrado, MRP II, manufactura de flujo (drive_u6/txt/cap18_chase12.txt); texto/examenes/Preguntas de repaso.txt y preguntasdeteoria.txt (banco «La gestión de producción», respuestas de alumnos) — preguntas 1–4, 13, 15, 19, 28, 43; drive_u6/2015 - TP N 7 - MRP ODOO.pdf y Tutoriales MRP Odoo 01–02 (UTN FRRo, 2015); texto/examenes/examen_2018_transcripcion.md (teoría 2)",
+ "laminas": [
+  "u6/img/u6_ciclo_cerrado.svg"
+ ],
+ "next": "Clase 11 · Balanceo de línea",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Unidad 6 · Bloque C · Clase 10 · MRP de ciclo cerrado, MRP II, ERP y programación por armado final**"
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** el MRP solo no mira la capacidad. Cuando se le agrega el CRP con retroalimentación es **MRP de ciclo cerrado**; cuando se integran compras, finanzas, ventas e ingeniería es **MRP II**; y cuando abarca toda la empresa es **ERP**. La cátedra lo describe como un subsistema de cinco etapas."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. El planificador y el ciclo cerrado"
+  },
+  {
+   "type": "paragraph",
+   "text": "Morán: un MRP «requiere la permanente participación del Planificador MRP, de lo contrario sería un sistema muy rígido». Sus funciones: liberar OP y OC; analizar la capacidad adicional; **reprogramar** fechas de órdenes emitidas; decidir lotes, stocks de seguridad y lead times; corregir errores eliminando sus causas; resolver faltantes **dentro** de las reglas del MRP; sugerir mejoras."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Herramienta",
+    "Qué hace (Morán)"
+   ],
+   "rows": [
+    [
+     "**Señalamiento (pegging)**",
+     "relaciona cada bruto con las órdenes de los niveles inferiores; permite subir por la estructura y ver el impacto de un problema hasta el producto final"
+    ],
+    [
+     "**Replanificación hacia arriba**",
+     "con el señalamiento, verifica si se puede cumplir el producto final; si no, cambia fecha o cantidad, o acorta lead times"
+    ],
+    [
+     "**Órdenes planificadas en firme (FPO)**",
+     "cantidades y fechas fijadas por el planificador; no las cambia la actualización automática"
+    ],
+    [
+     "**Regeneración / cambio neto**",
+     "recalcular todos los registros o solo los que cambiaron (Chase: el cambio neto refleja el estado «en tiempo real»)"
+    ]
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "**MRP de ciclo cerrado** (Morán §4): «Cuando el MRP tiene retroalimentación del CRP se llama MRP de ciclo cerrado», y la información de capacidad insuficiente vuelve al sistema para reprogramar. Chase lo define como un sistema que incluye además la planeación de ventas y operaciones, el MPS y el CRP, y las funciones de ejecución (control de entradas/salidas, despacho, informes de demora), con retroalimentación «de modo que se pueda mantener válida la planeación en todo momento»."
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_ciclo_cerrado.svg",
+   "caption": "MRP de ciclo cerrado: plan → MPS → MRP → CRP → ¿es realista? → ejecución (esquema según Chase, ilustración 18.17)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. MRP II y ERP"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase: el sistema se expandió a compras y a la planta, y el nombre planeación de requerimiento de materiales «ya no era adecuado». **MRP II** (planeación de recursos de manufactura) refleja que participan cada vez más áreas. La «ecuación fundamental de manufactura» de Wight: **¿Qué vamos a hacer? ¿Qué se necesita para lograrlo? ¿Qué tenemos? ¿Qué debemos obtener?** La intención era planear y monitorear todos los recursos (manufactura, marketing, finanzas, ingeniería) en ciclo cerrado, generando cifras financieras, y simular el sistema de manufactura."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Sistema",
+    "Alcance"
+   ],
+   "rows": [
+    [
+     "MRP",
+     "materiales: qué, cuánto y cuándo pedir o fabricar"
+    ],
+    [
+     "MRP de ciclo cerrado",
+     "MRP + CRP + MPS + ejecución, con retroalimentación"
+    ],
+    [
+     "MRP II",
+     "ciclo cerrado + compras, finanzas, ingeniería, marketing; cifras financieras y simulación"
+    ],
+    [
+     "ERP",
+     "sistema integrado de toda la empresa con una base de datos común (Chase cap. 14)"
+    ]
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "En la práctica de la cátedra (**TP N.º 7 «MRP», Odoo, 2015**) el MRP se usa **dentro de un ERP**. El caso es **Muebles Ros** (Rosario), que fabrica sillas de caño en dos modelos que solo difieren en el color del asiento. Datos del TP: la estructura de caño se fabrica contra orden en **4 días** (cortado, plegado, soldado y pintura) y el armado lleva **1 día** más; los asientos se compran en packs de 6 con **5 días** de entrega; el caño, con 2 días de flete; regatones y pintura se gestionan con **punto de pedido y lote** (no por MRP); preparar la planta cuesta 150. La empresa planifica **cada semana**: carga los pedidos, arma el plan y, si el stock proyectado da negativo, emite órdenes de abastecimiento. Es el registro MRP de la Clase 7 corriendo en un sistema real, mezclado con gestión de stock de la U5."
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**«MCP» en el final 13/12/2012** («Qué es MRP, MCP, ERP»): no aparece definido en el material del Drive. No lo invento: si te lo toman, aclará que no lo encontraste en la bibliografía y respondé MRP y ERP."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. El subsistema MRP según la cátedra (banco «La gestión de producción»)"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Etapa",
+    "Qué hace",
+    "Entradas → salida"
+   ],
+   "rows": [
+    [
+     "**1. Primera explosión**",
+     "descompone el producto y calcula las cantidades mes a mes",
+     "PMP + estructura del producto + gestión de stocks → **PMCC** (componentes compradas) y **PMCF** (fabricadas), «agrupadas en función de un número entero de LEC o del LEF (se permite un incremento del 20% del lote), y desplazadas en el tiempo en función del LT»"
+    ],
+    [
+     "**2. Segunda explosión**",
+     "calcula la carga **a capacidad infinita**",
+     "PMCF + centros de máquinas + hoja de ruta + métodos y tiempos → horas máquina y horas hombre"
+    ],
+    [
+     "**3. Nivelación**",
+     "ajusta la carga a lo disponible en cada centro",
+     "CDT y CDR (Clase 5), sobre 4 meses"
+    ],
+    [
+     "**4. Emisión de órdenes de fabricación**",
+     "desde la fecha de terminación más tardía (FT+T) calcula la de comienzo más tardía (FC+T) de cada operación",
+     "registro de operaciones; si la nivelación adelantó, FC+t desde FT+t"
+    ],
+    [
+     "**5. Clasificación de las OF**",
+     "ordena por centro de trabajo y fecha de comienzo",
+     "lotes semanales a Planeamiento y Control; los avisos anticipados van a almacenes"
+    ]
+   ],
+   "caption": "Preguntas de repaso, 1, 3, 13 y 15 (respuestas de alumnos)"
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "El pedido de reposición de ítems directos se genera en la **primera explosión** (PMCC); revisión trimestral, horizonte de seis meses (pregunta 28).",
+    "Al subsistema de **compras** se transfiere el plan de componentes unitarias en la primera explosión y el de materias primas en la segunda (pregunta 4).",
+    "**Inventarios** aporta al MRP II los saldos, el LEF y el lead time de fabricación (pregunta 43).",
+    "Fechas: FT+T en la 2ª explosión; FT+t en la nivelación; FC+t y FC+T en la emisión de OF. Puede faltar FC+t si la nivelación no adelantó nada (pregunta 19)."
+   ]
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Pregunta típica:** «¿Qué subsistema construye el PRM?» o «¿En qué etapa ocurre la primera explosión, qué programa la genera, a qué archivos recurre y qué produce?». Contestá con la tabla de arriba: MRP, PMP + estructura + stocks, PMCC/PMCF agrupados por LEC y desplazados por LT."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. MRP y JIT"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase: MRP y JIT juntos forman un **sistema híbrido**; los proveedores de software llaman **manufactura de flujo** a los módulos que combinan su lógica. El MRP ayuda a crear el MPS y a planear materiales; el JIT ejecuta en la planta con kanban, sin órdenes de trabajo detalladas. Morán (Capacidad §4): en JIT «CRP es innecesaria (ni siquiera hay órdenes de producción)» y «sólo se justifica si se usa MRP»."
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Final 2018:** «Explique en qué caso una empresa que produce con metodología JIT llega a necesitar trabajar con MRP.» Respuesta armada con el material: cuando tiene **estructuras de producto complejas con muchos componentes comprados con lead times largos** o **demanda variable que no permite una tasa nivelada**, necesita el MRP para planificar materiales a mediano plazo y para el MPS; la ejecución diaria puede seguir siendo JIT (sistema híbrido, manufactura de flujo, Chase cap. 18). Chase también señala que el MRP «tiene más provecho» cuando varios productos se hacen en lotes con el mismo equipo (Clase 1)."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Programación por armado final"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Complemento (no está en el material):** el programa lo nombra, pero no hay apunte de la cátedra. Lo que sí está: Morán dice que el MPS fija los productos finales «o los conjuntos mayores en el caso de producción para armado sobre pedido», y Chase marca que el MRP da beneficios grandes en **ensamble a pedidos** (ilustración 18.3). La idea general (Vollmann, citado en la bibliografía de Morán, no está en el Drive): en el **armado sobre pedido** el MPS se hace a nivel de **módulos u opciones** (que se fabrican para stock con el MRP) y un **programa de armado final** (FAS) arma el producto específico cuando llega el pedido, con un horizonte corto. Usalo así, aclarando que es complemento."
+  }
+ ],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "El planificador",
+   "title": "El MRP propone; la persona decide.",
+   "text": "Morán: el MRP «requiere la permanente participación del Planificador MRP». Libera órdenes, reprograma fechas, decide lotes y stocks de seguridad, y usa el señalamiento (pegging) para ver qué padre generó cada necesidad."
+  },
+  {
+   "type": "concepto",
+   "k": "Órdenes en firme",
+   "title": "Que el sistema no toque.",
+   "text": "Una orden planificada en firme (FPO) queda fija: el MRP no la cambia en la próxima corrida. Sirve para estabilizar lo cercano."
+  },
+  {
+   "type": "concepto",
+   "k": "Ciclo cerrado",
+   "title": "MRP + capacidad + retroalimentación.",
+   "text": "Plan agregado, MPS, MRP, CRP y la pregunta: ¿es realista? Si no, se replanifica hasta el MPS; si sí, se ejecuta y la planta informa.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"MRP de ciclo cerrado\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">MRP de ciclo cerrado</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">MPS</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">MRP</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">CRP</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\"></text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"8.5\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">¿Realista?</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">sí → ejecutar</text></svg>",
+   "chartLabel": "Esquema según Chase, ilustración 18.17"
+  },
+  {
+   "type": "concepto",
+   "k": "MRP II",
+   "title": "Recursos de manufactura.",
+   "text": "Chase: cuando se suman compras, finanzas, marketing e ingeniería, el nombre cambia a planeación de recursos de manufactura. La ecuación de Wight: qué vamos a hacer, qué se necesita, qué tenemos, qué debemos obtener."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "¿Qué agrega el MRP de ciclo cerrado al MRP?",
+   "options": [
+    "El cálculo de capacidad con retroalimentación",
+    "La contabilidad",
+    "El pronóstico"
+   ],
+   "correct": 0,
+   "feedback": "El MRP solo no mira la capacidad. El ciclo cerrado agrega el CRP y vuelve a planificar si el plan no es realista."
+  },
+  {
+   "type": "concepto",
+   "k": "ERP",
+   "title": "Toda la empresa.",
+   "text": "Chase: los módulos están integrados y usan una base de datos común. Del MRP al MRP II y de ahí al ERP, cada vez abarca más áreas.",
+   "svg": "<svg viewBox=\"0 0 280 142\" width=\"100%\" height=\"142\" role=\"img\" aria-label=\"La evolución\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">La evolución</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. MRP</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">materiales</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. MRP de ciclo cerrado</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">+ capacidad</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. MRP II</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">+ finanzas, ventas</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">4. ERP</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">toda la empresa</text></svg>",
+   "chartLabel": "Chase cap. 18 y 14"
+  },
+  {
+   "type": "concepto",
+   "k": "En la cátedra",
+   "title": "TP 7: Odoo.",
+   "text": "Muebles Ros fabrica sillas de caño. Estructura en 4 días, armado en 1, asientos en packs de 6 con 5 días de entrega. Planifica cada semana y emite órdenes si el stock proyectado da negativo."
+  },
+  {
+   "type": "concepto",
+   "k": "Ojo",
+   "title": "«MCP» no está definido.",
+   "text": "El final 13/12/2012 pregunta «Qué es MRP, MCP, ERP». MCP no aparece en el material del Drive: si te lo toman, aclaralo y respondé MRP y ERP."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Final 2018: ¿cuándo una empresa JIT necesita MRP?",
+   "options": [
+    "Nunca",
+    "Con estructuras complejas y muchos comprados con lead times largos",
+    "Solo si no tiene computadoras"
+   ],
+   "correct": 1,
+   "feedback": "El MRP planifica materiales a mediano plazo; la ejecución diaria puede seguir JIT. Es el sistema híbrido de la teoría."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 10.",
+   "text": "Planificador, pegging y órdenes en firme. Ciclo cerrado = MRP + CRP + retroalimentación. MRP II suma áreas; ERP, toda la empresa con base común. JIT necesita MRP con estructuras complejas."
+  }
+ ],
+ "block": "C",
+ "blockTitle": "Bloque C · MRP y MRP II"
+}

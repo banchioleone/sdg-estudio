@@ -1,0 +1,282 @@
+{
+ "unitId": "u6",
+ "unitLabel": "Unidad 6",
+ "unitTitle": "Planificación y control",
+ "id": "u6c1",
+ "title": "Clase 1 · Tipos de producción y jerarquía de planes",
+ "name": "Tipos de producción, flexibilidad y jerarquía",
+ "lede": "Proyecto, taller, celda, línea y continuo; qué cambia en la planificación de cada uno; flexibilidad y automatización; y por qué se planifica por niveles con horizonte deslizante.",
+ "visto": false,
+ "source": "Chase, Jacobs y Aquilano 12a ed., cap. 7, p. 206–207 — estructuras de proceso y matriz (drive_u6/txt/cap7_chase12.txt); Chase, Jacobs y Aquilano 12a ed., cap. 18, p. 592–593 — dónde se aplica el MRP (drive_u6/txt/cap18_chase12.txt); Chase, Jacobs y Aquilano 12a ed., cap. 5, p. 127–128 — flexibilidad de la capacidad (drive_u6/txt/cap5_chase12.txt); drive_u6/Planificacion Agregada.pdf — «Planificación agregada de la producción», R. Morán (UNR, 2012) §1, §1.2 y §4.2; drive_u6/Planeacion agregada de vtas y operaciones.pptx — láminas «Planeación agregada», Ing. Cristian G. Bigatti (UTN FRRo, 2015), y su ejercicio JC Company (.docx)",
+ "laminas": [
+  "u6/img/u6_matriz.svg"
+ ],
+ "next": "Clase 2 · Plan agregado: estrategias y costos",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Unidad 6 · Bloque A · Clase 1 · Tipos de producción y jerarquía de planes**"
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** cómo se planifica depende de cómo se produce. Una obra (proyecto) se controla con redes; un taller por lotes necesita MRP y secuenciamiento; una línea repetitiva fija una **tasa** y se balancea. Y en todos los casos el plan se arma **por niveles**, del agregado al detalle."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Las cinco estructuras de proceso (Chase cap. 7)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase distingue cinco formatos según el flujo del trabajo («proyecto, centro de trabajo, celda de manufactura, línea de ensamble y proceso continuo»):"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Estructura",
+    "Qué dice Chase",
+    "Ejemplos del libro"
+   ],
+   "rows": [
+    [
+     "**Proyecto**",
+     "«el producto (en razón de su volumen o peso) permanece en un lugar fijo y el equipo de producción va hasta el producto»; se maneja con las técnicas de administración de proyectos",
+     "casas, caminos, escenarios de filmación"
+    ],
+    [
+     "**Centro de trabajo (taller)**",
+     "«se agrupan equipos o funciones similares»; la pieza pasa de un centro a otro según su secuencia de operaciones",
+     "todas las perforadoras en un área, las troqueladoras en otra"
+    ],
+    [
+     "**Celda de manufactura**",
+     "«área dedicada a la fabricación de productos que requieren procesamientos similares»; se programan «conforme se necesita»",
+     "familias de piezas"
+    ],
+    [
+     "**Línea de ensamble**",
+     "procesos ordenados según los pasos sucesivos; las piezas pasan de estación en estación «a un ritmo controlado»",
+     "juguetes, aparatos eléctricos, automóviles"
+    ],
+    [
+     "**Proceso continuo**",
+     "como la línea, pero el flujo es continuo; «suelen estar muy automatizadas» y funcionan las 24 horas",
+     "petróleo, químicos, fármacos"
+    ]
+   ],
+   "caption": "Chase 12a ed., cap. 7, p. 206"
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_matriz.svg",
+   "caption": "Las cinco estructuras ordenadas por volumen (esquema propio de la matriz producto–proceso)"
+  },
+  {
+   "type": "paragraph",
+   "text": "La **matriz de procesos y productos** (Hayes y Wheelwright, citada por Chase, ilustración 7.1) cruza el **volumen** con la **estandarización**: es aconsejable ubicarse sobre la diagonal. Bajo volumen y poca estandarización → proyecto o centros de trabajo; gran volumen de un producto muy estandarizado → línea o proceso continuo. Algunas estructuras «abarcan áreas relativamente grandes de la matriz»: las células de manufactura sirven para una amplia gama de aplicaciones, y por eso se volvieron tan populares."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Repetitiva vs. por proyectos: qué cambia en la planificación"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "",
+    "Producción repetitiva (línea, continuo)",
+    "Por lotes (taller, celdas)",
+    "Por proyecto / sobre pedido"
+   ],
+   "rows": [
+    [
+     "Qué fija el plan agregado",
+     "una **tasa** de producción (u/hora, u/día) o una cantidad anual",
+     "**cantidades por período** del producto agregado",
+     "carga de recursos; no se puede producir para stock"
+    ],
+    [
+     "Herramienta típica de programación",
+     "balanceo de línea, tasa constante, JIT",
+     "MRP + CRP + secuenciamiento (PAC)",
+     "programación en red (técnicas de proyectos, Chase cap. 3)"
+    ],
+    [
+     "Producto agregado",
+     "«relativamente sencillo» (el automóvil, el hectolitro)",
+     "unidad genérica si comparten recursos (el pulóver)",
+     "difícil de definir"
+    ]
+   ],
+   "caption": "Síntesis propia de Morán, Planificación agregada §1 y §4.2, y Chase cap. 18 «Dónde se aplica el MRP»"
+  },
+  {
+   "type": "paragraph",
+   "text": "Morán lo dice así: «En la producción continua y repetitiva la APP establece **tasas de producción** (por ejemplo, u/hora, u/día, etc.), que pueden cambiar de un período a otro, o simplemente una cantidad total anual. En la producción intermitente en lotes fija **cantidades por período**.» Y para la producción por pedido: «es todo un desafío porque no se puede almacenar la producción»."
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase, sobre dónde sirve el MRP: «MRP tiene más provecho en las industrias donde varios productos se hacen **en lotes con el mismo equipo** de producción» y «no funciona bien en compañías que producen pocas unidades al año» con productos caros y complejos: esas empresas «requieren las características de control que ofrecen las técnicas de programación en red» (cap. 18, p. 592)."
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Tipo de industria (Chase, ilustración 18.3)",
+    "Beneficio esperado del MRP"
+   ],
+   "rows": [
+    [
+     "Ensamble a existencias (relojes, herramientas, electrodomésticos)",
+     "Grandes"
+    ],
+    [
+     "Fabricación a existencias (anillos de pistón, alternadores)",
+     "Escasos"
+    ],
+    [
+     "Ensamble a pedidos (camiones, generadores, motores)",
+     "Grandes"
+    ],
+    [
+     "Fabricación a pedidos (cojinetes, engranes)",
+     "Escasos"
+    ],
+    [
+     "Manufactura a pedidos (turbinas, máquinas herramienta pesadas)",
+     "Grandes"
+    ],
+    [
+     "Proceso (fundiciones, plásticos, químicos, alimentos)",
+     "Regulares"
+    ]
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Flexibilidad y automatización"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase define la **flexibilidad de la capacidad** como «la capacidad para incrementar o disminuir los niveles de producción con rapidez, o de pasar la capacidad de producción de forma expedita de un producto o servicio a otro» (cap. 5). Se logra con plantas flexibles, procesos flexibles y trabajadores flexibles. Morán agrega dos formas de flexibilidad laboral con personal estable: la **anualización de la jornada** y las **cuentas de horas** (Planificación agregada §1.2)."
+  },
+  {
+   "type": "paragraph",
+   "text": "Sobre automatización, el material dice poco y en forma dispersa: los procesos continuos «suelen estar muy automatizadas» (Chase cap. 7); en capacidad, la automatización hace perder importancia relativa a la hora de mano de obra directa como unidad de medida (Morán, Capacidad §1.1); en el PAC, a mayor automatización los documentos en papel se reemplazan por información en línea y por identificación automática (código de barras)."
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Complemento (no está en el material):** la idea clásica es que la automatización **rígida** (dedicada) da costo unitario bajo con gran volumen pero poca flexibilidad, y la automatización **programable o flexible** (CNC, robots, sistemas flexibles de manufactura) sacrifica algo de costo para poder cambiar de producto. Usala solo como marco; no hay apunte de la cátedra sobre el tema."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Planificación jerárquica y horizonte deslizante (Morán)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Morán justifica la estructura multinivel con dos razones: «Cuanto más alto es el nivel de decisión en la organización, mayor es el horizonte de planificación requerido y menor el grado de detalle necesario» y «cuanto más bajo es el nivel de decisión mayor es el grado de detalle necesario», con lo que solo se pueden pronosticar horizontes cortos. Por eso es irreal «toda pretensión de un modelo único para la planificación»."
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "**Desagregación:** «las decisiones en un nivel constituyen los objetivos para el nivel inmediato inferior».",
+    "**Autonomía y flexibilidad:** cada nivel elige sus soluciones sin dejar de cumplir al superior, y cada decisión deja margen para las siguientes. Si se cumple, la estructura es **consistente**.",
+    "**Horizonte deslizante:** el horizonte se divide en períodos y «la planificación se revisa período a período, agregando un nuevo período al final».",
+    "**Barreras de tiempo:** en cada revisión se fijan zonas con distinto margen de cambio (ejemplo de Morán: el primer trimestre no se toca; en el segundo, cambios entre +10% y −20%; desde el tercero, todo)."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase ubica la planeación de ventas y operaciones en **mediano plazo (3 a 18 meses)**, entre la planeación de largo plazo (procesos, capacidad estratégica, red de suministro) y la de corto plazo (MRP, programación de pedidos, despacho), y las láminas de Bigatti (2015) repiten ese esquema: largo plazo más de un año; mediano 6 a 18 meses; corto de 1 día a 6 meses."
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Así se pregunta:** «Caracterizar la producción repetitiva y por proyectos» no apareció literal en los finales recopilados, pero sí «Clasificar la empresa de referencia» (MPS de repuestos agrícolas, Ejercicios posibles) y el multiple choice sobre JIT. Saber ubicar a una empresa en la matriz producto–proceso y decir qué herramienta de planificación le corresponde te sirve para justificar cualquier ejercicio."
+  }
+ ],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "La idea",
+   "title": "Cómo producís define cómo planificás.",
+   "text": "Una obra se controla con técnicas de proyectos; un taller por lotes necesita MRP y secuencia; una línea fija una tasa y se balancea."
+  },
+  {
+   "type": "concepto",
+   "k": "Chase, cap. 7",
+   "title": "Cinco estructuras de proceso.",
+   "text": "Proyecto, centro de trabajo (taller), celda de manufactura, línea de ensamble y proceso continuo. Van de poco volumen y mucha variedad a mucho volumen y producto estándar.",
+   "svg": "<svg viewBox=\"0 0 280 172\" width=\"100%\" height=\"172\" role=\"img\" aria-label=\"De menos a más volumen\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">De menos a más volumen</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. Proyecto</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">casas, caminos</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. Centro de trabajo</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">equipos similares juntos</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">3. Celda</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">familias de piezas</text><rect x=\"8\" y=\"110\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"125.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">4. Línea de ensamble</text><text x=\"266.0\" y=\"125.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">ritmo controlado</text><rect x=\"8\" y=\"140\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"155.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">5. Proceso continuo</text><text x=\"266.0\" y=\"155.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">petróleo, químicos</text></svg>",
+   "chartLabel": "Chase 12a ed., cap. 7, p. 206"
+  },
+  {
+   "type": "concepto",
+   "k": "Proyecto",
+   "title": "El producto no se mueve.",
+   "text": "Chase: el producto, por su volumen o peso, «permanece en un lugar fijo y el equipo de producción va hasta el producto». Se maneja con las técnicas de administración de proyectos."
+  },
+  {
+   "type": "concepto",
+   "k": "Taller",
+   "title": "La pieza viaja de centro en centro.",
+   "text": "Se agrupan equipos o funciones similares: todas las perforadoras en un área, las troqueladoras en otra. Cada pieza sigue su propia secuencia de operaciones: ahí entran el MRP y el secuenciamiento."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Una fábrica hace 300 tipos de piezas mecanizadas en lotes, con tornos y fresadoras agrupados por tipo. ¿Qué estructura es?",
+   "options": [
+    "Línea de ensamble",
+    "Centro de trabajo (taller)",
+    "Proceso continuo"
+   ],
+   "correct": 1,
+   "feedback": "Equipos similares agrupados y piezas que pasan de un centro a otro según su ruta: es un taller. Se planifica con MRP y secuencia."
+  },
+  {
+   "type": "concepto",
+   "k": "Línea",
+   "title": "Un ritmo controlado.",
+   "text": "En la línea de ensamble las piezas pasan de estación en estación a un ritmo controlado. Lo que se planifica es una tasa, y el problema técnico es el balanceo (Clase 11)."
+  },
+  {
+   "type": "concepto",
+   "k": "Morán",
+   "title": "Planificación jerárquica.",
+   "text": "El plan se arma por niveles: lo agregado a mediano plazo, lo detallado a corto. Y con horizonte deslizante: cada período se agrega uno al final y se replanifica.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Niveles de planificación\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Niveles de planificación</text><rect x=\"8.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"50.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Agregado</text><text x=\"50.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">meses</text><path d=\"M93.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"98.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"140.0\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Maestro</text><text x=\"140.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">semanas</text><path d=\"M183.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"188.0\" y=\"28\" width=\"84.0\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"230.0\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">Detalle</text><text x=\"230.0\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">días</text></svg>",
+   "chartLabel": "Esquema propio a partir de Morán"
+  },
+  {
+   "type": "concepto",
+   "k": "Flexibilidad",
+   "title": "Cambiar sin pagar demasiado.",
+   "text": "Chase: «la capacidad para incrementar o disminuir los niveles de producción con rapidez», o de pasar de un producto a otro. Se logra con plantas, procesos y trabajadores flexibles. La automatización no tiene apunte propio de la cátedra."
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "¿Qué tipo de producción usa el balanceo de línea como herramienta central?",
+   "options": [
+    "Proyecto",
+    "Taller por lotes",
+    "Línea repetitiva"
+   ],
+   "correct": 2,
+   "feedback": "El balanceo reparte tareas entre estaciones de una línea para cumplir un tiempo de ciclo: es la herramienta de la producción repetitiva."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 1.",
+   "text": "Cinco estructuras de Chase, de proyecto a proceso continuo. Proyecto → técnicas de proyectos; taller → MRP y secuencia; línea → tasa y balanceo. Y el plan siempre por niveles, con horizonte deslizante."
+  }
+ ],
+ "block": "A",
+ "blockTitle": "Bloque A · Plan agregado y programa maestro"
+}

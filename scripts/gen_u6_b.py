@@ -1,0 +1,145 @@
+from u6lib import *
+
+
+def c5():
+    t = [
+        P("**Unidad 6 · Bloque B · Clase 5 · Capacidad: medida, disponibilidad y rendimiento global**"),
+        IDEA("**Idea central:** la capacidad **disponible real** nunca es el reloj: es el tiempo de carga multiplicado por los rendimientos (disponibilidad, eficiencia, calidad, presentismo). Para planificar hay que elegir **una unidad de medida** basada en el recurso clave y llevar todo a esa unidad."),
+        H("1. Qué es la capacidad"),
+        P("Morán: «La capacidad es la cantidad de producto o servicio que puede ser obtenido por una determinada unidad productiva durante un cierto período de tiempo.» La **planificación de la capacidad** es «la determinación de las necesidades de capacidad para llevar a la práctica un plan de producción determinado». En el largo plazo es parte de la estrategia (inversiones, tecnología); en el mediano y corto, son ajustes dentro de la capacidad instalada: horas extras, personal temporario, subcontratación."),
+        AVISO("**Ojo:** «un plan de capacidad perfectamente balanceado con el de producción no deja flexibilidad para afrontar situaciones imprevistas, como pedidos extras. Hace falta una cierta capacidad extra» (Morán). Chase lo llama **colchón de capacidad** (sección 5)."),
+        H("2. Medida de la capacidad"),
+        T(["Desde la salida (productos)", "Desde la entrada (recursos)"], [
+            ["unidades de producto agregado por unidad de tiempo, para la mezcla habitual: toneladas de acero/mes, barriles de cerveza/semana, coches/mes, o un monto en unidades monetarias (unidad universal)", "tradicionalmente, la **hora de mano de obra directa (MOD)**; hoy, la hora del **recurso clave** (horas de centro de trabajo, horas máquina, horas hombre)"],
+        ], "Morán, Capacidad §1.1"),
+        P("Por qué la hora MOD perdió peso: automatización, más componentes comprados (outsourcing) y equipos cada vez más caros. Para elegir el **recurso clave**, Morán propone preguntar si el recurso implica gran inversión, alimenta a otros centros, forma **cuellos de botella**, tarda en ampliarse, requiere mano de obra especializada o estabilidad en el empleo. «Cuanto más afirmativas sean las respuestas a estas preguntas, más importante es que el recurso sea considerado en la planificación de la capacidad.»"),
+        H("3. Rendimiento global del equipamiento (RGE)"),
+        P("«Ningún equipo ni persona produce durante la totalidad del tiempo disponible.» La **capacidad disponible** es el **tiempo de carga** (TC, las horas teóricas disponibles, por ejemplo 8 h por turno) multiplicado por el RGE:"),
+        F(r"CD = TC \times RGE", "Capacidad disponible (Morán)"),
+        F(r"RGE = D \times EP \times TPA = \frac{TM}{TC} \times \frac{TTC \times P}{TM} \times \frac{P - R}{P} = \frac{TTC \times PN}{TC}", "D = disponibilidad; EP = eficiencia de performance; TPA = tasa de producción aceptada"),
+        T(["Factor", "Definición (Morán)", "Qué pérdidas mide"], [
+            ["**D** disponibilidad", "(tiempo de carga − tiempo de pérdidas por paradas) / tiempo de carga = TM / TC", "paradas: fallas, puestas a punto, faltas de material"],
+            ["**EP** eficiencia de performance", "tiempo teórico del ciclo × cantidad producida / tiempo de marcha", "marcha a menor velocidad, microparadas"],
+            ["**TPA** tasa de producción aceptada", "(cantidad producida − rechazada) / cantidad producida = PN / P", "calidad: piezas rechazadas"],
+        ]),
+        EJ("Ejemplo de Morán", [
+            P("Un equipo trabaja un turno de 8 horas con RGE = 0,45:"),
+            F(r"CD = 480 \text{ min/día} \times 0{,}45 = 216 \text{ min/día} = 3{,}6 \text{ h/día}"),
+            P("De 8 horas de reloj, el equipo rinde 3,6 horas de producción buena. Por eso «toda mejora de este rendimiento a través de la mejora de procesos (mejora continua, TQM, etc.) produce un aumento de la capacidad disponible sin necesidad de inversión en equipos nuevos»."),
+        ]),
+        P("En operaciones **puramente manuales** se usa la **eficiencia de la mano de obra directa**:"),
+        F(r"EMO = \frac{TE}{TR} \qquad TR = \frac{1}{N}\sum_{i=1}^{N} \frac{\text{tiempo real del lote } i}{\text{piezas buenas del lote } i}", "TE = tiempo estándar de la operación; TR = tiempo real promedio sobre N lotes"),
+        P("Para el mediano plazo, el RGE y la EMO se calculan **por período de planificación** (el mes, el año), sumando sobre productos y operaciones: RGE = Σ(tiempo teórico del ciclo × producción neta del mes) / tiempo de carga del mes."),
+        H("4. La capacidad de una estación de trabajo según la cátedra"),
+        P("El banco de preguntas de la cátedra (pregunta 17, nivelación de horas máquina) da estas dos fórmulas:"),
+        F(r"CDT = n \cdot h \cdot d", "Capacidad disponible teórica. n = máquinas de un grupo u operarios de una categoría; h = horas por día; d = días del período"),
+        F(r"CDR = CDT \cdot F_p \cdot F_r \cdot E", "Capacidad disponible real. F_p = presentismo = 1 − F_a (ausentismo); F_r = rendimiento de máquina = 1 − FMP; E = eficiencia de mano de obra = hs devengadas / hs reales"),
+        P("Las «horas devengadas» son «cantidad de piezas producidas × hs. std / 1000 piezas»: las horas estándar que vale lo que realmente se produjo."),
+        EJ("Ejemplo numérico (cálculo propio, datos supuestos)", [
+            P("Un grupo de **4 tornos**, 8 h/día, 22 días al mes. Ausentismo 5%, fuera de máquina por mantenimiento (FMP) 10%, eficiencia de la mano de obra 90%."),
+            F(r"CDT = 4 \cdot 8 \cdot 22 = 704 \text{ h/mes} \qquad CDR = 704 \cdot 0{,}95 \cdot 0{,}90 \cdot 0{,}90 \approx 541{,}7 \text{ h/mes}"),
+            P("Si el MRP pide 600 horas de torno ese mes, hay **sobrecarga de unas 58 h**: se pasa a las opciones de la Clase 6."),
+        ]),
+        EXAM("**Así se pregunta** (5 de 7 finales 2011–2018): «Definir mediante una fórmula matemática, la capacidad de una estación de trabajo» (17/03/2011); «Cómo se calcula la capacidad de una estación de trabajo» (17/02/2014); «Enuncie las variables que definen la capacidad de producción (tangible) de un sistema» (03/12/2015; también 08/08/2013). **Respuesta armada:** CDT = n·h·d y CDR = CDT·Fp·Fr·E (cátedra), y la versión de Morán CD = TC × RGE con RGE = D × EP × TPA. Las variables: cantidad de recursos (n), tiempo de carga (h, d, turnos), disponibilidad, eficiencia, calidad (rechazos) y presentismo. Un apunte de alumnos (Preguntas Frecuentes) contesta con TC y RGE y agrega que la capacidad total es la suma de las de las estaciones; ojo: en una línea manda el **cuello de botella**, no la suma."),
+        H("5. Utilización, mejor nivel de operación y colchón (Chase cap. 5)"),
+        P("El **mejor nivel de operación** es «el nivel de capacidad para el que se ha diseñado el proceso», donde se minimiza el costo promedio por unidad."),
+        F(r"\text{Índice de utilización} = \frac{\text{capacidad utilizada}}{\text{mejor nivel de operación}} = \frac{480}{500} = 0{,}96", "Ejemplo de Chase: planta diseñada para 500 autos/día que produce 480"),
+        P("El **colchón de capacidad** es «la cantidad de capacidad que excede a la demanda esperada»: demanda 10 millones, capacidad de diseño 12 millones → colchón de 20%, que equivale a una utilización de 83% (100%/120%). Si la capacidad es menor que la demanda, el colchón es **negativo**."),
+        H("6. Ejercicio de final: dos máquinas en serie con scrap"),
+        EX("EJERCICIO — Esquema M1 → depósito D1-2 → M2 (SG!EVA, sin fecha; Ejercicios posibles; EFR p. 20; 09/03/2006 con otros datos)", [
+            P("«Dado el siguiente esquema de producción de un item:» M1 → depósito D1-2 → M2. «Indicar con los datos adjuntos: 1- La cantidad máxima de semielaborados que se encontrarían en el depósito D1-2, si se necesitan entregar 1000 item´s. 2- La cantidad máxima de diseño prevista para el depósito. 3- El tiempo de entrega para las 1000 unidades.»"),
+            T(["Información", "Máquina 01", "Máquina 02"], [["Factor combinado de actividad", "0,80", "0,75"], ["Tiempo de fabricación standard", "23\"", "30\""], ["Scrap", "2,5%", "3,5%"]],
+              "Datos de la versión resuelta a mano en EFR p. 20. «Ejercicios posibles» trae 0,80 / 0,78 y 23\" / 21\"; el 09/03/2006 trae 0,80 / 0,80, 19\" / 15\", 3000 ítems y pide además diseñar la línea para 5000 u/día en un turno"),
+        ], [
+            AVISO("**Qué está en la hoja y qué es propio.** La resolución manuscrita (EFR p. 20) hace solo el primer paso: 1000 / (1 − 0,035) → **1037** que deben salir de M1, y 1037 / (1 − 0,025) → **1064** que deben entrar a M1; y calcula el tiempo efectivo dividiendo el estándar por el factor de actividad (x · 0,78 = 21\" → x ≈ 26,92\", con los datos de la otra versión). Lo demás es **cálculo propio** y supone que las piezas pasan de a una (lote de transferencia unitario)."),
+            P("**Paso 1. Cantidades (hacia atrás, por el scrap):** M2 debe procesar 1000 / 0,965 = 1036,3 → **1037**; M1 debe procesar 1037 / 0,975 = 1063,6 → **1064**."),
+            P("**Paso 2. Tiempos efectivos:** M1 = 23\" / 0,80 = **28,75 s**; M2 = 30\" / 0,75 = **40 s**. M2 es más lenta: el semielaborado se acumula en el depósito."),
+            P("**Paso 3. Máximo en el depósito.** M1 termina las 1064 en 1064 × 28,75 = 30.590 s y entrega 1037 buenas. En ese tiempo M2 consumió unas 30.590 / 40 ≈ 765. Quedan en el depósito ≈ 1037 − 765 ≈ **272 piezas** (≈ 273 según cómo redondees el arranque)."),
+            P("**Paso 4. Máximo de diseño.** Si M2 no arranca hasta que M1 termina el lote (lote de transferencia = lote completo), el depósito tiene que poder recibir las **1037** piezas. Ese es el máximo que conviene prever para el diseño; con transferencia unitaria alcanza con ≈ 273."),
+            P("**Paso 5. Tiempo de entrega:** M2 arranca con la primera pieza (≈ 29 s) y procesa 1037 × 40 = 41.480 s. Total ≈ 41.509 s ≈ **11 h 32 min** de máquina. Con un turno de 8 h son 1,44 turnos."),
+            AVISO("**Con los datos de «Ejercicios posibles»** (0,78 y 21\"): M2 = 26,92 s es **más rápida** que M1 (28,75 s), así que con transferencia unitaria el depósito casi no acumula (1 pieza) y el tiempo lo fija M1: 1064 × 28,75 ≈ 30.590 s ≈ 8 h 30 min, más la última pieza en M2. Lo importante es **identificar cuál máquina es el cuello de botella**."),
+        ], estado="cálculo propio", nota="Solo el paso 1 está en la hoja manuscrita"),
+        S("u6_maquinas.svg", "Resumen del ejercicio de dos máquinas en serie (datos de EFR p. 20; cálculo propio)"),
+    ]
+    return clase("u6c5", "Clase 5 · Capacidad: medida, disponibilidad y rendimiento global", "Capacidad: medida y rendimiento", "B",
+                 "Qué es la capacidad, cómo se mide, el RGE de Morán, las fórmulas CDT y CDR de la cátedra, utilización y colchón de Chase, y el ejercicio de dos máquinas con scrap.",
+                 "; ".join([CAPN + " §1", REPASO + " — pregunta 17", "texto/examenes/Preguntas Frecuentes (Juanje).txt — pregunta 13", CH(5, "124–131", "mejor nivel de operación, utilización, colchón"), EVA + " — esquema M1/M2 y 09/03/2006", EPOS, EFR(20, "máquinas con scrap, primer paso")]), t)
+
+
+def c6():
+    t = [
+        P("**Unidad 6 · Bloque B · Clase 6 · Planificación de la capacidad: de RRP a CRP**"),
+        IDEA("**Idea central:** la capacidad se planifica **en paralelo** con la producción y **por niveles**: RRP para el plan agregado, RCCP (factores globales, listas de capacidad, perfiles de recursos) para el MPS, CRP para el MRP y carga finita/infinita para el taller. Cada nivel agrega detalle y una hipótesis menos."),
+        T(["Plan de producción", "Plan de capacidad", "Qué usa", "Qué supone"], [
+            ["Plan agregado", "**RRP** (requerimientos de recursos)", "producto agregado y rendimientos globales", "la mezcla habitual de productos"],
+            ["MPS", "**CPOF** (factores globales)", "MPS + tiempo estándar global + % histórico por centro", "se mantienen las proporciones históricas de uso y la mezcla"],
+            ["MPS", "**CB** (listas de capacidad)", "MPS + BOM + rutas + tiempos estándar + lote promedio", "todas las operaciones se hacen dentro del período del MPS"],
+            ["MPS", "**RP** (perfiles de recursos)", "lo de CB + diagramas de operaciones en fase de tiempo", "una operación por período; lo planificado está listo al final del período"],
+            ["MRP", "**CRP** (requerimientos de capacidad)", "órdenes planificadas del MRP + órdenes liberadas (PAC) + rutas, tiempos y puestas a punto", "lead times fijos; carga infinita o finita"],
+            ["Programación del taller", "carga **finita / infinita**", "órdenes de trabajo y prioridades", "—"],
+        ], "Síntesis propia de Morán, Capacidad §2"),
+        H("1. RRP: requerimientos de recursos"),
+        P("Se vincula con el plan agregado: convierte productos agregados en **unidades de capacidad de recursos agregados** (horas máquina, horas de mano de obra, espacio de planta). Su horizonte debe ser «por lo menos tan largo como el tiempo que se tarda en hacer los cambios mayores»."),
+        EJ("Ejemplo de Morán: forja y mecanizado", [
+            P("Dos productos agregados X e Y pasan por forja y mecanizado. Plan anual: X = 4.700 u, Y = 6.700 u. La forja produce **57 kg/h** (10.000 kg por mes y por turno ÷ 176 h). Mecanizado tiene **RGE = 45%**. X pesa 6 kg y lleva 12 min de mecanizado; Y pesa 2 kg y lleva 9 min."),
+            T(["Período", "1", "2", "3", "…", "12", "Total"], [
+                ["X (u)", "200", "200", "200", "…", "250", "4.700"], ["Y (u)", "400", "700", "800", "…", "900", "6.700"],
+                ["Forja (kg) = 6X + 2Y", "2.000", "2.600", "2.800", "…", "3.300", "41.600"],
+                ["Forja (h) = kg / 57", "35", "46", "49", "…", "58", "730"],
+                ["Mecanizado (h std) = (12X + 9Y)/60", "100", "145", "160", "…", "185", "1.945"],
+                ["Mecanizado (h reales) = h std / 0,45", "222", "322", "356", "…", "411", "4.322"],
+            ], "Morán, Capacidad §2.1 (se muestran 4 de los 12 períodos)"),
+            P("El dato clave: **el RGE se usa dividiendo**. Si se necesitan 100 h estándar y el rendimiento es 45%, hay que tener 100 / 0,45 = 222 h de máquina."),
+        ]),
+        H("2. RCCP: planificación aproximada de la capacidad"),
+        P("Corresponde al MPS (horizonte típico un año, períodos mensuales). «El objetivo es determinar la carga que provoca el MPS en cada centro de trabajo en cada período.» Los tres métodos se usan con o sin MRP. El ejemplo de Morán es el mismo para los tres: productos A y B en tres centros (CT100, CT200, CT300)."),
+        T(["MPS", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "Total"], [
+            ["A", "30", "30", "35", "35", "35", "40", "40", "40", "37", "37", "33", "33", "425"],
+            ["B", "48", "50", "50", "53", "55", "57", "57", "60", "60", "55", "55", "55", "655"],
+        ]),
+        EJ("CPOF · factores globales", [
+            P("Datos: tiempo estándar global A = 1,7 h/u y B = 1,8 h/u (el cálculo usa 1,69 y 1,80); uso histórico de los centros: CT100 45%, CT200 47%, CT300 8%."),
+            P("Período 1: A = 30 × 1,69 = 50,6 h; B = 48 × 1,80 = 86,5 h; total 137,2 h. CT100 = 0,45 × 137,2 = **61,6 h**. Total anual: **1.897,9 h std** → CT100 853,1; CT200 892,3; CT300 152,6."),
+            P("«Los resultados son válidos en tanto se conserven las proporciones históricas de utilización de los factores de producción y la mezcla de productos. Esta técnica es fácil y requiere pocos datos.»"),
+        ]),
+        EJ("CB · listas de capacidad", [
+            P("Estructuras: **A = 2 C + 1 D**; **B = 1 D + 2 E**; **E = 2 F**. Rutas (horas por unidad, con la puesta a punto prorrateada en el lote): A en CT100 0,050; B en CT100 1,270; C en CT200 0,596 y en CT300 0,180; D en CT200 0,087; E en CT200 0,096; F en CT200 0,063."),
+            P("Lista de capacidad de A en CT200: 2 × 0,596 + 1 × 0,087 = **1,279 h**. De B en CT200 (cálculo propio de verificación): 1 × 0,087 + 2 × 0,096 + 4 × 0,063 = **0,531 h**."),
+            T(["Centro", "A (h/u)", "B (h/u)"], [["CT100", "0,050", "1,270"], ["CT200", "1,279", "0,531"], ["CT300", "0,360", "—"], ["**Total**", "**1,689**", "**1,801**"]], "Listas de capacidad (Morán)"),
+            P("Período 1, CT100: 30 × 0,050 + 48 × 1,270 = **62,46 h**. Total anual: CT100 853 h (44,96%), CT200 891 h (46,98%), CT300 153 h (8,06%). Ahora los porcentajes **salen del producto**, no de la historia: si cambia la mezcla, cambian."),
+        ]),
+        EJ("RP · perfiles de recursos (fase de tiempo)", [
+            P("CPOF y CB suponen «implícitamente que todas las operaciones necesarias para fabricar las cantidades fijadas en el MPS de cada producto final se realizan dentro del correspondiente período». RP supone **una operación por período**: para tener A en el período N, la operación 10 de C (CT200) va en N−2, la operación 20 de C (CT300) y la de D (CT200) en N−1, y el armado de A (CT100) en N."),
+            T(["Perfil de A", "N−2", "N−1", "N"], [["CT100", "", "", "0,050"], ["CT200", "1,192 (2 × 0,596)", "0,087", ""], ["CT300", "", "0,360 (2 × 0,180)", ""]]),
+            T(["Perfil de B", "N−2", "N−1", "N"], [["CT100", "", "", "1,270"], ["CT200", "0,252 (F: 4 × 0,063)", "0,279 (D 0,087 + E 2 × 0,096)", ""]]),
+            P("Al aplicar los perfiles a todo el MPS aparecen requerimientos **antes del período 1**: es trabajo que ya debería estar hecho. Morán lo llama **deuda** (CT200 112,2 h y CT300 10,8 h) y si hay atrasos «se deben agregar a los de los períodos siguientes». Total dentro del horizonte: 1.774,5 h."),
+        ]),
+        EXAM("**Pregunta del final 2018:** «Mencione las hipótesis implícitas en la Planificación de la Capacidad: usando Listas de Capacidad y Perfiles de Recursos.» Respuesta con Morán: **CB** supone que todas las operaciones del MPS de un producto se hacen **dentro del mismo período**, que se usan **tamaños de lote promedio** para prorratear la puesta a punto y que los tiempos estándar y rutas son los vigentes. **RP** supone **una operación por período** (así cubre esperas, puestas a punto y traslados, porque los recursos son compartidos) y que las cantidades planificadas deben estar listas **al final del período**. Si el período es largo, vale CB pero «enmascara» las variaciones dentro del período; si es corto, hay que usar RP."),
+        H("3. CRP: requerimientos de capacidad"),
+        P("Usa la salida del MRP: «a partir de las órdenes planificadas y liberadas en el MRP determina las cargas para los centros de trabajo tratando que estén balanceadas con sus capacidades». Es iterativo: planificar, revisar (puede llegar hasta el MPS) y replanificar. Solo carga lo que falta hacer, porque el MRP ya descontó la capacidad «almacenada» en stocks y el PAC lleva el trabajo en curso."),
+        EJ("Ejemplo de Morán: pieza Y", [
+            P("Y tiene OP10 en CT200 (puesta a punto 1,5 h + 0,15 h/u) y OP20 en CT300 (1,0 h + 0,20 h/u), lead time 2 períodos. El MRP da órdenes planificadas de 250 (período 1), 220 (2), 280 (4), 300 (6) y 270 (9)."),
+            F(r"250: \quad CT200 = 1{,}5 + 0{,}15 \cdot 250 = 39{,}0 \text{ h} \qquad CT300 = 1{,}0 + 0{,}20 \cdot 250 = 51{,}0 \text{ h}"),
+            P("Con el diagrama en fase de tiempo, la OP10 se carga en el período de la orden y la OP20 en el siguiente. Las demás órdenes dan 34,5 / 45,0 (220), 43,5 / 57,0 (280), 46,5 / 61,0 (300) y 42,0 / 55,0 (270). Sumadas a las otras piezas y a las órdenes liberadas, se comparan con la capacidad de **200 h por período** de cada centro."),
+        ]),
+        S("u6_perfil_carga.svg", "Horas que la pieza Y carga en CT200 y CT300 por período (datos de Morán; gráfico propio)"),
+        T(["", "Carga infinita", "Carga finita"], [
+            ["Qué hace", "determina la capacidad **requerida** para cumplir el programa, sin mirar la capacidad real", "asigna órdenes por prioridad y período **hasta cubrir la capacidad disponible**, y muestra lo que queda sin hacer"],
+            ["Para qué sirve", "perfil inicial de carga; decidir horas extras, rutas alternativas", "asignación final de trabajos; puede obligar a replanificar el MRP y el MPS"],
+        ], "Morán, Capacidad §2 y §2.3"),
+        P("Morán aclara que como el plan ya se validó en el CRP, la carga «infinita» en realidad es **capacidad flexible o variable**."),
+        H("4. Si la carga supera la capacidad: nivelación"),
+        P("Morán: aumentar la capacidad o «desplazar alguna orden para nivelar la carga», modificando los lead times. Tres formas: **lote de transferencia** distinto del lote de producción (pasar piezas a la segunda operación antes de terminar la primera), **división de operaciones** (dos máquinas haciendo la misma operación) y **división del lote** (adelantar o atrasar parte de la orden). Las dos primeras se usan en el CRP con capacidad finita; la tercera, en el PAC."),
+        P("**La cátedra** (pregunta 20 del banco) ordena con criterio económico las opciones cuando las horas máquina requeridas superan las disponibles:"),
+        L(["b. Adelantar la fabricación al período inmediato anterior, si se dispone del material.", "c. Derivar la fabricación a un grupo de máquinas alternativo.",
+           "a. Contratar la fabricación de los excedentes a un proveedor.", "e. Aumentar la cantidad de horas diarias.", "d. Habilitar un turno adicional de trabajo.",
+           "g. Habilitar los días sábados.", "f. Instalar más máquinas."], True),
+        AVISO("**El banco tiene otra versión de la misma pregunta (pregunta 12)** con las opciones numeradas 1 contratar, 2 adelantar, 3 derivar, 4 turno adicional, 5 más horas diarias, 6 instalar máquinas, 7 sábado y domingo, y la respuesta «6 – 1 – 2 – 4 – 3 – 7 – 5». Leída como **lista ordenada** no cierra con la pregunta 20 (empezaría por instalar máquinas, que en la 20 es la última). Leída como **el puesto de cada opción** (contratar 6.º, adelantar 1.º, derivar 2.º, turno 4.º, horas 3.º, instalar 7.º, fin de semana 5.º) da adelantar → derivar → horas → turno → fin de semana → contratar → instalar: coincide con la 20 en los extremos y difiere en dónde va **contratar**. Interpretación propia; en el examen fundamentá el orden con el costo y la reversibilidad de cada opción."),
+        P("Y la nivelación se hace sobre **4 meses**, «ya que se hace una revisión del PMP cada tres meses, por lo tanto se incluye un mes más por la posibilidad de que los faltantes de dicho mes se pudieran adelantar al tercero» (pregunta 18)."),
+        H("5. Control de entradas/salidas y JIT"),
+        P("El **control de entradas/salidas** «es el seguimiento del plan de capacidad», en horas. Entradas: horas de trabajo que llegan a un centro (planificadas y reales). Salidas: horas completadas; la salida planificada considera rendimientos: 8 h con 80% de rendimiento son **6,40 h**. Las diferencias miden problemas de operación (ausentismo, productividad, calidad, roturas) y de mala planificación."),
+        P("**Con JIT** (Morán §4): las técnicas globales sirven para estimar el impacto de un cambio del MPS; CB tiene ventaja sobre CPOF porque considera la mezcla. «En JIT no se justifica RP, la fase de tiempo la maneja JIT. CRP es innecesaria en JIT (ni siquiera hay órdenes de producción). CRP sólo se justifica si se usa MRP.» El control de entradas/salidas tampoco hace falta."),
+    ]
+    return clase("u6c6", "Clase 6 · Planificación de la capacidad: de RRP a CRP", "Planificación de la capacidad", "B",
+                 "RRP, factores globales, listas de capacidad y perfiles de recursos con el ejemplo de Morán; sus hipótesis (final 2018); CRP, carga finita e infinita, nivelación, control de entradas/salidas y JIT.",
+                 "; ".join([CAPN + " §2–§4", REPASO + " — preguntas 17, 18 y 20", "texto/examenes/examen_2018_transcripcion.md (teoría 1)"]), t)

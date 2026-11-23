@@ -1,0 +1,677 @@
+{
+ "unitId": "u6",
+ "unitLabel": "Unidad 6",
+ "unitTitle": "Planificación y control",
+ "id": "u6c7",
+ "title": "Clase 7 · MRP: la lógica del registro",
+ "name": "MRP básico",
+ "lede": "Qué es el MRP, la estructura del producto, el registro (brutos, ingresos, disponible, netos, órdenes), sus fórmulas y dos ejemplos resueltos: el producto X de Morán y los focos de Juno de Chase.",
+ "visto": false,
+ "source": "drive_u6/12-Planificación de los Requerimientos de Materiales (MRP).pdf — Nota técnica de R. Morán (© 2000), apunte de la cátedra (mismo texto que «MRP- Planiificación de Requerimientos de Materiales.pdf») §1–§2; Chase, Jacobs y Aquilano 12a ed., cap. 18, p. 593–603 — ejemplo 18.1 Juno Lighting (drive_u6/txt/cap18_chase12.txt); patrones_examenes.md (conteos de finales) (mesa especial de octubre, 2012, 2014, Lu, EFR p.36)",
+ "laminas": [
+  "u6/img/u6_bom_x.svg",
+  "u6/img/u6_registro_mrp.svg"
+ ],
+ "next": "Clase 8 · MRP de examen: scrap, repuestos y componentes comunes",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Unidad 6 · Bloque C · Clase 7 · MRP: la lógica del registro**"
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** el MRP toma el MPS, la estructura del producto, los lead times, el stock y las órdenes en curso, y calcula **para cada pieza y cada período**: necesidades brutas → stock proyectado → necesidades netas → órdenes planificadas adelantadas el lead time. Después baja un nivel y repite."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. Qué es y cuándo sirve"
+  },
+  {
+   "type": "paragraph",
+   "text": "Morán: el MRP «obtiene las necesidades de cada una de las partes (conjuntos, subconjuntos, piezas o materias primas), en cada período de planificación, para cumplir con las cantidades de los productos finales fijadas en el Plan Maestro de Producción». Es «un sistema de gestión de las existencias para la **demanda dependiente**»: las necesidades no se pronostican, se **calculan** a partir del MPS. Es útil cuando el producto es compuesto, y «tanto más importante cuanto más compleja sea la estructura» y más amplia la variedad. Es aplicable a la **producción por lotes**."
+  },
+  {
+   "type": "list",
+   "ordered": false,
+   "items": [
+    "El **período** (semana, día) es la unidad de los lead times.",
+    "El **horizonte** debe ser por lo menos igual al plazo acumulado de provisión y producción del artículo que más tarda.",
+    "Se actualiza **período a período con horizonte deslizante**. El primer período es el **período de acción**: solo se liberan las órdenes de ese período."
+   ]
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Entradas (Morán)",
+    "Salidas (Morán)"
+   ],
+   "rows": [
+    [
+     "Programa maestro de producción",
+     "órdenes de producción y compra del período de acción"
+    ],
+    [
+     "Estructura de los productos",
+     "órdenes para períodos futuros"
+    ],
+    [
+     "Lead times de provisión y fabricación, en períodos",
+     "reprogramaciones (cambios de fecha de órdenes emitidas)"
+    ],
+    [
+     "Existencias disponibles de cada parte",
+     "cancelaciones por cambios en el MPS"
+    ],
+    [
+     "Órdenes de producción y compra en curso, con fecha",
+     "informes de estado, de resultados y de excepción; existencias futuras"
+    ]
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. La estructura del producto (BOM)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Especifica, por niveles: **nivel 0** producto terminado; niveles 1 a n−2 subconjuntos; nivel n−1 piezas de producción propia; **nivel n** partes compradas, y la cantidad con que cada componente entra en su **padre** (el nivel inmediato superior). Se expresa con la **lista de materiales** (BOM: Bill of Materials), indentada o en forma padre–componente–cantidad, o como **árbol**."
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_bom_x.svg",
+   "caption": "Ejemplo de Morán: X = 1 A + 2 B; A = 1 C + 3 D (todas las piezas se compran). Dibujo propio con los datos de la nota técnica"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Ítem",
+    "Padre",
+    "Cantidad en el padre"
+   ],
+   "rows": [
+    [
+     "A",
+     "X",
+     "1"
+    ],
+    [
+     "B",
+     "X",
+     "2"
+    ],
+    [
+     "C",
+     "A",
+     "1"
+    ],
+    [
+     "D",
+     "A",
+     "3"
+    ]
+   ],
+   "caption": "Lista de materiales padre–componente (Morán)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. El registro MRP y sus fórmulas"
+  },
+  {
+   "type": "table",
+   "headers": [
+    "Fila",
+    "Definición (Morán)"
+   ],
+   "rows": [
+    [
+     "**Requerimientos brutos** $Q_{t,j}$",
+     "demanda del ítem j en el período t. Para productos finales salen del MPS; para los demás, de las órdenes planificadas de los padres"
+    ],
+    [
+     "**Ingresos programados** $P_{t,j}$",
+     "cantidad ya ordenada que ingresa al comienzo del período t (una orden ya liberada)"
+    ],
+    [
+     "**Disponible** $S_{t,j}$",
+     "existencia esperada al final del período t; si es negativa, hay faltante"
+    ],
+    [
+     "**Requerimientos netos** $N_{t,j}$",
+     "lo que hay que proveer al comienzo de t"
+    ],
+    [
+     "**Órdenes planificadas** $R_{t,j}$",
+     "los netos adelantados el lead time; se pueden agrandar a un lote"
+    ]
+   ]
+  },
+  {
+   "type": "formula",
+   "tex": "Q_{t,j} = R_{t,k} \\cdot q_{j,k} \\qquad S_{t,j} = S_{t-1,j} + P_{t,j} - Q_{t,j} \\qquad R_{t,j} = N_{t+L_j,\\,j}",
+   "caption": "q_{j,k} = cantidad del ítem j en una unidad del padre k; L_j = lead time de j"
+  },
+  {
+   "type": "paragraph",
+   "text": "Los **netos** se calculan acumulando: en cada período, si el disponible es negativo y lo ya pedido no alcanza, el neto es lo que falta: $N_t = -S_t - Nacum_{t-1}$. Así no se pide dos veces el mismo faltante. Cuando una orden planificada **se libera**, se convierte en ingreso programado en el período de la necesidad."
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "Determinar los requerimientos brutos de cada ítem en cada período.",
+    "Determinar los netos, con las existencias y los ingresos programados.",
+    "Con los lead times, determinar las órdenes planificadas.",
+    "Pasar al nivel inferior y repetir.",
+    "Liberar las órdenes del período de acción."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Esos son los cinco pasos de Morán. La mesa especial de octubre preguntó justamente «Sintetizar el algoritmo de cálculo de MRP»."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Ejemplo resuelto de Morán: producto X"
+  },
+  {
+   "type": "ejemplo",
+   "title": "Planificación al comienzo del período 1",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Lead times: X 1 semana; A, B, C y D 2 semanas. Stock inicial: X 20, A 10. Ingresos programados en la semana 1: X 50, C 30, D 100. El MPS pide X: 50 en la semana 1, 50 en la 4 y 60 en las semanas 6, 8, 10 y 12."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Producto X (LT 1)",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+     ],
+     "rows": [
+      [
+       "Brutos",
+       "50",
+       "",
+       "",
+       "50",
+       "",
+       "60",
+       "",
+       "60",
+       "",
+       "60",
+       "",
+       "60"
+      ],
+      [
+       "Ingr. programados",
+       "50",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Disponible (S₀ = 20)",
+       "20",
+       "20",
+       "20",
+       "−30",
+       "−30",
+       "−90",
+       "−90",
+       "−150",
+       "−150",
+       "−210",
+       "−210",
+       "−270"
+      ],
+      [
+       "Netos",
+       "",
+       "",
+       "",
+       "30",
+       "",
+       "60",
+       "",
+       "60",
+       "",
+       "60",
+       "",
+       "60"
+      ],
+      [
+       "**Órd. planificadas**",
+       "",
+       "",
+       "**30**",
+       "",
+       "**60**",
+       "",
+       "**60**",
+       "",
+       "**60**",
+       "",
+       "**60**",
+       ""
+      ]
+     ]
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Conjunto A (1 por X, LT 2)",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+     ],
+     "rows": [
+      [
+       "Brutos",
+       "",
+       "",
+       "30",
+       "",
+       "60",
+       "",
+       "60",
+       "",
+       "60",
+       "",
+       "60",
+       ""
+      ],
+      [
+       "Disponible (S₀ = 10)",
+       "10",
+       "10",
+       "−20",
+       "−20",
+       "−80",
+       "−80",
+       "−140",
+       "−140",
+       "−200",
+       "−200",
+       "−260",
+       "−260"
+      ],
+      [
+       "Netos",
+       "",
+       "",
+       "20",
+       "",
+       "60",
+       "",
+       "60",
+       "",
+       "60",
+       "",
+       "60",
+       ""
+      ],
+      [
+       "**Órd. planificadas**",
+       "**20**",
+       "",
+       "60",
+       "",
+       "60",
+       "",
+       "60",
+       "",
+       "60",
+       "",
+       "",
+       ""
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "Los brutos de A son las órdenes de X (× 1). Los de B son las órdenes de X × 2 (60, 120, 120, 120, 120 en las semanas 3, 5, 7, 9, 11) y, sin stock, B planifica **60 en la semana 1**. Los brutos de C son las órdenes de A × 1 (20 en la semana 1) y los de D, × 3 (60 en la semana 1)."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Pieza",
+      "Brutos sem. 1",
+      "Ingr. sem. 1",
+      "Disponible sem. 1",
+      "Primer neto",
+      "Orden a liberar en la sem. 1"
+     ],
+     "rows": [
+      [
+       "C (1 por A)",
+       "20",
+       "30",
+       "10",
+       "50 en la sem. 3 (60 − 10)",
+       "**50**"
+      ],
+      [
+       "D (3 por A)",
+       "60",
+       "100",
+       "40",
+       "140 en la sem. 3 (180 − 40)",
+       "**140**"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "**Órdenes del período de acción:** A 20, B 60, C 50 y D 140. Al liberarlas, pasan a ingresos programados (A 20 en la semana 3, B 60 en la 3, C 50 en la 3, D 140 en la 3) y el resto sigue como planificado hasta la próxima corrida."
+    }
+   ]
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_registro_mrp.svg",
+   "caption": "Cómo se lee el registro: brutos, disponible, netos y la orden adelantada el lead time (esquema con el producto X de Morán)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "5. Ejemplo resuelto de Chase: focos de Juno (ejemplo 18.1)"
+  },
+  {
+   "type": "ejemplo",
+   "title": "Dos focos y un casquillo común",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "VH1: stock 85, lote 200, LT 1. VH2: stock 358, lote 400, LT 1. Casquillo (1 por foco): stock 425, compra de 500, LT 3, stock de seguridad 20, ingreso programado de 500 en la semana 1."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+     ],
+     "rows": [
+      [
+       "VH1 brutos",
+       "34",
+       "37",
+       "41",
+       "45",
+       "48",
+       "48",
+       "48",
+       "48"
+      ],
+      [
+       "VH1 disponible",
+       "51",
+       "14",
+       "173",
+       "128",
+       "80",
+       "32",
+       "184",
+       "136"
+      ],
+      [
+       "VH1 expedición",
+       "",
+       "**200**",
+       "",
+       "",
+       "",
+       "**200**",
+       "",
+       ""
+      ],
+      [
+       "VH2 brutos",
+       "104",
+       "134",
+       "144",
+       "155",
+       "134",
+       "140",
+       "141",
+       "145"
+      ],
+      [
+       "VH2 disponible",
+       "254",
+       "120",
+       "376",
+       "221",
+       "87",
+       "347",
+       "206",
+       "61"
+      ],
+      [
+       "VH2 expedición",
+       "",
+       "**400**",
+       "",
+       "",
+       "**400**",
+       "",
+       "",
+       ""
+      ],
+      [
+       "Casquillo brutos",
+       "",
+       "600",
+       "",
+       "",
+       "400",
+       "200",
+       "",
+       ""
+      ],
+      [
+       "Casquillo disponible (− SS)",
+       "905",
+       "305",
+       "305",
+       "305",
+       "405",
+       "205",
+       "205",
+       "205"
+      ],
+      [
+       "Casquillo expedición",
+       "",
+       "**500**",
+       "",
+       "",
+       "",
+       "",
+       "",
+       ""
+      ]
+     ],
+     "caption": "Chase, ejemplo 18.1"
+    },
+    {
+     "type": "paragraph",
+     "text": "Fijate en el casquillo: sus brutos son las **expediciones** de VH1 y VH2 (600 = 200 + 400 en la semana 2). El disponible arranca en 425 + 500 − 20 = 905 porque Chase descuenta el stock de seguridad. En la semana 5 faltan 95 → se recibe un lote de 500 en la 5 y, con LT 3, se pide en la **semana 2**."
+    },
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Errata del libro:** la tabla de la solución dice «OH = 385» para VH2, pero el enunciado da **358** y el disponible de la semana 1 (358 − 104 = 254) confirma 358."
+    }
+   ]
+  },
+  {
+   "type": "glosario",
+   "title": "Vocabulario del registro",
+   "intro": "Cómo nombran lo mismo Morán, Chase y la cátedra.",
+   "entries": [
+    {
+     "simbolo": "Brutos",
+     "nombre": "requerimientos brutos",
+     "significado": "Chase: necesidades brutas"
+    },
+    {
+     "simbolo": "Ingr. prog.",
+     "nombre": "ingresos programados",
+     "significado": "Chase: entradas programadas; órdenes ya liberadas"
+    },
+    {
+     "simbolo": "Disponible",
+     "nombre": "existencia proyectada",
+     "significado": "Chase: saldo disponible proyectado"
+    },
+    {
+     "simbolo": "Netos",
+     "nombre": "requerimientos netos",
+     "significado": "Chase: necesidades netas"
+    },
+    {
+     "simbolo": "Órd. planif.",
+     "nombre": "órdenes planificadas",
+     "significado": "Chase: expedición de pedidos planeados (y la «entrada» es la recepción)"
+    },
+    {
+     "simbolo": "PMCC / PMCF",
+     "nombre": "plan maestro de componentes compradas / fabricadas",
+     "significado": "lo que la cátedra llama salida de la primera explosión (Clase 10)"
+    }
+   ]
+  },
+  {
+   "type": "callout",
+   "kind": "examen",
+   "text": "**Teoría que se toma con esto:** «Sintetizar el algoritmo de cálculo de MRP» (mesa especial de octubre); «Qué es y para qué se usa la Estructura del Producto» (13/12/2012); «En ERP, qué información tiene la BOM» (17/02/2014); «Cómo se utiliza la BOM» (EFR p. 36); «Explosión sumarizada vs. indentada» y «componentes alternativos vs. accesorios» (el final de Lu). La estructura del producto es U3 (datos de ingeniería): acá la usás."
+  }
+ ],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "Morán",
+   "title": "Qué calcula el MRP.",
+   "text": "Las necesidades de cada parte en cada período para cumplir el MPS. Entradas: MPS, estructura, lead times, stock y órdenes en curso. Salidas: órdenes a liberar, futuras, reprogramaciones.",
+   "svg": "<svg viewBox=\"0 0 280 96\" width=\"100%\" height=\"96\" role=\"img\" aria-label=\"Entradas → MRP\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Entradas → MRP</text><rect x=\"8.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"38.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">MPS</text><text x=\"38.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">qué y cuándo</text><path d=\"M70.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"75.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"106.2\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">BOM</text><text x=\"106.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">de qué</text><path d=\"M138.0 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"143.0\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#8cb4d622\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"173.8\" y=\"47.0\" font-size=\"10\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">Stock</text><text x=\"173.8\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">qué hay</text><path d=\"M205.5 50 l4 0 m-3 -3 l3 3 l-3 3\" fill=\"none\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><rect x=\"210.5\" y=\"28\" width=\"61.5\" height=\"44\" rx=\"7\" fill=\"#e25b1622\" stroke=\"#e25b16\" stroke-width=\"1.3\"/><text x=\"241.2\" y=\"47.0\" font-size=\"10\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">MRP</text><text x=\"241.2\" y=\"62.0\" font-size=\"6.8\" fill=\"#b7c0c8\" text-anchor=\"middle\">órdenes</text></svg>",
+   "chartLabel": "Morán, nota técnica MRP"
+  },
+  {
+   "type": "concepto",
+   "k": "La estructura",
+   "title": "El árbol del producto X.",
+   "text": "X lleva 1 A y 2 B; cada A lleva 1 C y 3 D. Nivel 0 el producto, niveles inferiores las piezas compradas.",
+   "svg": "<svg viewBox=\"0 0 280 112\" width=\"100%\" height=\"112\" role=\"img\" aria-label=\"Ejemplo X de Morán\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Ejemplo X de Morán</text><rect x=\"8\" y=\"20\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"35.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">1. X</text><text x=\"266.0\" y=\"35.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">nivel 0 · LT 1</text><rect x=\"8\" y=\"50\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#8cb4d61f\" stroke=\"#8cb4d6\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"65.5\" font-size=\"8.6\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">2. A (×1) · B (×2)</text><text x=\"266.0\" y=\"65.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">nivel 1 · LT 2</text><rect x=\"8\" y=\"80\" width=\"264\" height=\"24\" rx=\"6\" fill=\"#e25b161f\" stroke=\"#e25b16\" stroke-width=\"1.1\"/><text x=\"16.0\" y=\"95.5\" font-size=\"8.6\" fill=\"#e25b16\" text-anchor=\"start\" font-weight=\"700\">3. C (×1) · D (×3)</text><text x=\"266.0\" y=\"95.5\" font-size=\"7.2\" fill=\"#b7c0c8\" text-anchor=\"end\">nivel 2 · LT 2</text></svg>",
+   "chartLabel": "Morán, nota técnica MRP"
+  },
+  {
+   "type": "concepto",
+   "k": "El registro",
+   "title": "Cinco filas.",
+   "text": "Brutos, ingresos programados, disponible, netos y órdenes planificadas. Disponible = anterior + ingresos − brutos. Cuando da negativo, hay neto.",
+   "formula": "S_t = S_{t-1} + P_t - Q_t"
+  },
+  {
+   "type": "concepto",
+   "k": "Producto X",
+   "title": "Semanas 1 a 6.",
+   "text": "Stock 20, ingreso de 50 y brutos de 50 en la semana 1: quedan 20. En la 4 piden 50: faltan 30. Como el lead time de X es 1, la orden de 30 se planifica en la semana 3.",
+   "svg": "<svg viewBox=\"0 0 280 138\" width=\"100%\" height=\"138\" role=\"img\" aria-label=\"Registro MRP de X\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Registro MRP de X</text><rect x=\"8\" y=\"22\" width=\"264\" height=\"16\" fill=\"#8cb4d6\"/><text x=\"97.8\" y=\"33.5\" font-size=\"7.2\" fill=\"#fff\" text-anchor=\"middle\" font-weight=\"700\">1</text><text x=\"129.5\" y=\"33.5\" font-size=\"7.2\" fill=\"#fff\" text-anchor=\"middle\" font-weight=\"700\">2</text><text x=\"161.2\" y=\"33.5\" font-size=\"7.2\" fill=\"#fff\" text-anchor=\"middle\" font-weight=\"700\">3</text><text x=\"192.8\" y=\"33.5\" font-size=\"7.2\" fill=\"#fff\" text-anchor=\"middle\" font-weight=\"700\">4</text><text x=\"224.5\" y=\"33.5\" font-size=\"7.2\" fill=\"#fff\" text-anchor=\"middle\" font-weight=\"700\">5</text><text x=\"256.2\" y=\"33.5\" font-size=\"7.2\" fill=\"#fff\" text-anchor=\"middle\" font-weight=\"700\">6</text><rect x=\"8\" y=\"39\" width=\"264\" height=\"17\" fill=\"#fff\"/><text x=\"12.0\" y=\"51.0\" font-size=\"7\" fill=\"#222\" text-anchor=\"start\">Brutos</text><text x=\"97.8\" y=\"51.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">50</text><text x=\"129.5\" y=\"51.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\"></text><text x=\"161.2\" y=\"51.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\"></text><text x=\"192.8\" y=\"51.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">50</text><text x=\"224.5\" y=\"51.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\"></text><text x=\"256.2\" y=\"51.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">60</text><rect x=\"8\" y=\"56\" width=\"264\" height=\"17\" fill=\"#F4F6F8\"/><text x=\"12.0\" y=\"68.0\" font-size=\"7\" fill=\"#222\" text-anchor=\"start\">Ingresos</text><text x=\"97.8\" y=\"68.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">50</text><text x=\"129.5\" y=\"68.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\"></text><text x=\"161.2\" y=\"68.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\"></text><text x=\"192.8\" y=\"68.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\"></text><text x=\"224.5\" y=\"68.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\"></text><text x=\"256.2\" y=\"68.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\"></text><rect x=\"8\" y=\"73\" width=\"264\" height=\"17\" fill=\"#fff\"/><text x=\"12.0\" y=\"85.0\" font-size=\"7\" fill=\"#222\" text-anchor=\"start\">Disponible</text><text x=\"97.8\" y=\"85.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">20</text><text x=\"129.5\" y=\"85.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">20</text><text x=\"161.2\" y=\"85.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">20</text><text x=\"192.8\" y=\"85.0\" font-size=\"7.2\" fill=\"#B03A2E\" text-anchor=\"middle\">−30</text><text x=\"224.5\" y=\"85.0\" font-size=\"7.2\" fill=\"#B03A2E\" text-anchor=\"middle\">−30</text><text x=\"256.2\" y=\"85.0\" font-size=\"7.2\" fill=\"#B03A2E\" text-anchor=\"middle\">−90</text><rect x=\"8\" y=\"90\" width=\"264\" height=\"17\" fill=\"#F4F6F8\"/><text x=\"12.0\" y=\"102.0\" font-size=\"7\" fill=\"#222\" text-anchor=\"start\">Netos</text><text x=\"97.8\" y=\"102.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\"></text><text x=\"129.5\" y=\"102.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\"></text><text x=\"161.2\" y=\"102.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\"></text><text x=\"192.8\" y=\"102.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">30</text><text x=\"224.5\" y=\"102.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\"></text><text x=\"256.2\" y=\"102.0\" font-size=\"7.2\" fill=\"#222\" text-anchor=\"middle\">60</text><rect x=\"8\" y=\"107\" width=\"264\" height=\"17\" fill=\"#FFF3E8\"/><text x=\"12.0\" y=\"119.0\" font-size=\"7\" fill=\"#222\" text-anchor=\"start\" font-weight=\"700\">Órdenes</text><text x=\"97.8\" y=\"119.0\" font-size=\"7.2\" fill=\"#9a5b00\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"129.5\" y=\"119.0\" font-size=\"7.2\" fill=\"#9a5b00\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"161.2\" y=\"119.0\" font-size=\"7.2\" fill=\"#9a5b00\" text-anchor=\"middle\" font-weight=\"700\">30</text><text x=\"192.8\" y=\"119.0\" font-size=\"7.2\" fill=\"#9a5b00\" text-anchor=\"middle\" font-weight=\"700\"></text><text x=\"224.5\" y=\"119.0\" font-size=\"7.2\" fill=\"#9a5b00\" text-anchor=\"middle\" font-weight=\"700\">60</text><text x=\"256.2\" y=\"119.0\" font-size=\"7.2\" fill=\"#9a5b00\" text-anchor=\"middle\" font-weight=\"700\"></text></svg>",
+   "chartLabel": "Datos de Morán; registro redibujado"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "El neto de X es 60 en la semana 6 y el lead time es 1. ¿Cuándo se planifica la orden?",
+   "options": [
+    "Semana 6",
+    "Semana 5",
+    "Semana 7"
+   ],
+   "correct": 1,
+   "feedback": "Se adelanta un lead time: 6 − 1 = 5. Esa orden de 60 en la semana 5 es el bruto de A en la semana 5."
+  },
+  {
+   "type": "concepto",
+   "k": "Explotar",
+   "title": "Las órdenes del padre son los brutos del hijo.",
+   "text": "Brutos de A = órdenes de X × 1. Brutos de B = órdenes de X × 2: 60, 120, 120… Brutos de D = órdenes de A × 3.",
+   "formula": "Q_{t,j} = R_{t,k} \\cdot q_{j,k}"
+  },
+  {
+   "type": "concepto",
+   "k": "El período de acción",
+   "title": "Solo se libera lo de la semana 1.",
+   "text": "En el ejemplo se liberan A 20, B 60, C 50 y D 140. Al liberarlas pasan a ingresos programados; lo demás sigue planificado hasta la próxima corrida.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Órdenes a liberar en la semana 1\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Órdenes a liberar en la semana 1</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"27.0\" y=\"100.0\" width=\"34.0\" height=\"10.0\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"44.0\" y=\"96.0\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">20</text><text x=\"44.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">A</text><rect x=\"91.0\" y=\"80.0\" width=\"34.0\" height=\"30.0\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"108.0\" y=\"76.0\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">60</text><text x=\"108.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">B</text><rect x=\"155.0\" y=\"85.0\" width=\"34.0\" height=\"25.0\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"172.0\" y=\"81.0\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">50</text><text x=\"172.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">C</text><rect x=\"219.0\" y=\"40.0\" width=\"34.0\" height=\"70.0\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"236.0\" y=\"36.0\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">140</text><text x=\"236.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">D</text></svg>",
+   "chartLabel": "Morán, ejemplo X"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "C tiene brutos de 20 en la semana 1 y un ingreso de 30. ¿Cuánto queda disponible?",
+   "options": [
+    "10",
+    "50",
+    "−10"
+   ],
+   "correct": 0,
+   "feedback": "0 + 30 − 20 = 10. Ese 10 se descuenta del primer neto: 60 − 10 = 50, la orden de C."
+  },
+  {
+   "type": "concepto",
+   "k": "Horizonte",
+   "title": "Al menos el plazo acumulado.",
+   "text": "El horizonte del MRP tiene que cubrir por lo menos el lead time acumulado del artículo que más tarda. Y se actualiza con horizonte deslizante."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 7.",
+   "text": "Brutos → disponible → netos → orden adelantada un lead time. Las órdenes del padre, multiplicadas por la cantidad, son los brutos del hijo. Solo se libera el período de acción."
+  }
+ ],
+ "block": "C",
+ "blockTitle": "Bloque C · MRP y MRP II"
+}

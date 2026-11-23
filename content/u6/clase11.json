@@ -1,0 +1,589 @@
+{
+ "unitId": "u6",
+ "unitLabel": "Unidad 6",
+ "unitTitle": "Planificación y control",
+ "id": "u6c11",
+ "title": "Clase 11 · Balanceo de línea",
+ "name": "Balanceo de línea",
+ "lede": "Tiempo de ciclo, estaciones mínimas, eficiencia y reglas de asignación con la camioneta J de Chase; tareas más largas que el ciclo; y los ejercicios de final: montaje en paralelo, ventanas y cédulas.",
+ "visto": false,
+ "source": "Chase, Jacobs y Aquilano 12a ed., cap. 7A, p. 228–232 — balanceo de la línea de ensamble, ejemplo 7A.1 (drive_u6/txt/cap7A_chase12.txt); texto/examenes/Ejercicios posibles.txt (Ejercicios posibles.docx del Drive); texto/examenes/SG!EVA.txt y bloques_eva/ (compilado de finales 2002–2006) — 22/05/2003, 06/05/2004, 09/03/2006; texto/ocr/efr_ppm/p-19.png — EjerciciosFinalesResueltos, resolución manuscrita (ventanas: ciclo 90 s, 84,44%); texto/examenes/Preguntas de teoria del final de SG1.txt (14/03/2013, cédulas)",
+ "laminas": [
+  "u6/img/u6_precedencias_j.svg",
+  "u6/img/u6_ventanas.svg"
+ ],
+ "next": "Clase 12 · Control de las actividades de producción",
+ "teoria": [
+  {
+   "type": "paragraph",
+   "text": "**Unidad 6 · Bloque D · Clase 11 · Balanceo de línea**"
+  },
+  {
+   "type": "callout",
+   "kind": "idea",
+   "text": "**Idea central:** en una línea, la demanda fija el **tiempo de ciclo** (cada cuánto tiene que salir una unidad). Balancear es repartir las tareas en estaciones, respetando las precedencias, para que ninguna estación supere el ciclo y el tiempo ocioso total sea mínimo."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "1. El problema y las fórmulas (Chase cap. 7A)"
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase: el balanceo «consiste en asignar todas las tareas a una serie de estaciones de trabajo de modo que cada una de ellas no tenga más de lo que se puede hacer en el tiempo del ciclo de la estación de trabajo y que el tiempo no asignado (es decir, inactivo) de todas las estaciones de trabajo sea mínimo». Lo complica la **relación de precedencia**, que «especifica el orden en que se deben realizar las tareas»."
+  },
+  {
+   "type": "formula",
+   "tex": "C = \\frac{\\text{tiempo de producción por día}}{\\text{producción requerida por día}} \\qquad N_t = \\frac{T}{C} \\;(\\text{redondear hacia arriba}) \\qquad \\text{Eficiencia} = \\frac{T}{N_a \\cdot C}",
+   "caption": "C = tiempo de ciclo; T = suma de los tiempos de las tareas; N_t = estaciones mínimas teóricas; N_a = estaciones reales"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "Diagrama de precedencias (círculos = tareas, flechas = orden).",
+    "Tiempo de ciclo C.",
+    "Estaciones mínimas N_t.",
+    "Elegir una regla de asignación y otra para desempatar.",
+    "Asignar tareas de a una a la estación 1 hasta llenar C o quedarse sin tareas viables; seguir con la 2, etc.",
+    "Calcular la eficiencia.",
+    "Si no satisface, rebalancear con otra regla."
+   ]
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "2. Ejemplo resuelto de Chase: camioneta modelo J (ejemplo 7A.1)"
+  },
+  {
+   "type": "ejemplo",
+   "title": "500 camionetas por día en 420 minutos",
+   "blocks": [
+    {
+     "type": "table",
+     "headers": [
+      "Tarea",
+      "Tiempo (s)",
+      "Precede"
+     ],
+     "rows": [
+      [
+       "A",
+       "45",
+       "—"
+      ],
+      [
+       "B",
+       "11",
+       "A"
+      ],
+      [
+       "C",
+       "9",
+       "B"
+      ],
+      [
+       "D",
+       "50",
+       "—"
+      ],
+      [
+       "E",
+       "15",
+       "D"
+      ],
+      [
+       "F",
+       "12",
+       "C"
+      ],
+      [
+       "G",
+       "12",
+       "C"
+      ],
+      [
+       "H",
+       "12",
+       "E"
+      ],
+      [
+       "I",
+       "12",
+       "E"
+      ],
+      [
+       "J",
+       "8",
+       "F, G, H, I"
+      ],
+      [
+       "K",
+       "9",
+       "J"
+      ],
+      [
+       "**T**",
+       "**195**",
+       ""
+      ]
+     ],
+     "caption": "Chase, ilustración 7A.9"
+    },
+    {
+     "type": "formula",
+     "tex": "C = \\frac{60 \\cdot 420}{500} = 50{,}4 \\text{ s} \\qquad N_t = \\frac{195}{50{,}4} = 3{,}87 \\rightarrow 4"
+    },
+    {
+     "type": "paragraph",
+     "text": "**Reglas:** (a) primero la tarea con **más tareas subsiguientes** (A 6; B o D 5; C o E 4; F, G, H o I 2; J 1; K 0); (b) para desempatar, la de **mayor tiempo**."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Estación",
+      "Tareas",
+      "Tiempo",
+      "Ocioso"
+     ],
+     "rows": [
+      [
+       "1",
+       "A",
+       "45",
+       "5,4"
+      ],
+      [
+       "2",
+       "D",
+       "50",
+       "0,4"
+      ],
+      [
+       "3",
+       "B, E, C, F",
+       "47",
+       "3,4"
+      ],
+      [
+       "4",
+       "G, H, I, J",
+       "44",
+       "6,4"
+      ],
+      [
+       "5",
+       "K",
+       "9",
+       "41,4"
+      ]
+     ],
+     "caption": "Chase, ilustración 7A.11"
+    },
+    {
+     "type": "formula",
+     "tex": "\\text{Eficiencia} = \\frac{195}{5 \\cdot 50{,}4} = 0{,}77"
+    },
+    {
+     "type": "paragraph",
+     "text": "77% quiere decir 23% de inactividad: 57 segundos ociosos por ciclo, casi todos en la estación 5. Chase agrega que con la regla (b) primero y (a) para desempatar se consigue un balance viable de **cuatro** estaciones."
+    }
+   ]
+  },
+  {
+   "type": "svg",
+   "file": "u6/img/u6_precedencias_j.svg",
+   "caption": "Diagrama de precedencias de la camioneta J con las 5 estaciones de Chase (redibujo propio de la ilustración 7A.11B)"
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "3. Cuando una tarea es más larga que el ciclo"
+  },
+  {
+   "type": "paragraph",
+   "text": "Ejemplo de Chase: tareas de 40, 30, 15, 25, 20, 18 y 15 s; 7,5 h por día y 750 unidades → C = 27.000 / 750 = **36 s**, pero hay una tarea de 40 s. Opciones:"
+  },
+  {
+   "type": "list",
+   "ordered": true,
+   "items": [
+    "**Dividir la tarea** entre dos estaciones que procesen unidades completas.",
+    "**Compartir la tarea** con una estación contigua que ayuda.",
+    "**Estaciones en paralelo**: dos estaciones hacen la misma tarea.",
+    "**Trabajador más capacitado**: la tarea excede el ciclo solo 11%.",
+    "**Horas extra**: a 40 s por unidad salen 675 por día, 75 menos; producirlas lleva 75 × 40 / 60 = **50 minutos** extra.",
+    "**Rediseñar** el producto."
+   ]
+  },
+  {
+   "type": "paragraph",
+   "text": "Chase también trata las líneas de **modelo mixto** (varios modelos en la misma línea) y las líneas **flexibles en U**, donde los operarios pueden intercambiar elementos del trabajo y se pueden sumar o restar operarios según el ritmo."
+  },
+  {
+   "type": "heading",
+   "level": 2,
+   "text": "4. Ejercicios de final"
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — Montaje con estaciones en paralelo (Ejercicios posibles; 22/05/2003)",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Se necesita implementar una tarea de montaje que producirá **80 unidades en un turno de 8 horas**.» OP 01 montaje mecánico **12 minutos**; OP 02 montaje eléctrico **16 minutos**; OP 03 prueba **3 minutos**. «2.1- ¿Cuántas estaciones de trabajo en paralelo se requieren en cada OP? 2.2- Estimando que los trabajadores de cada estación no pueden ser utilizados para otras actividades en la planta, ¿cuál es el tiempo ocioso para esta tarea?»"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "paragraph",
+     "text": "**Cálculo propio** (no hay resolución en el material)."
+    },
+    {
+     "type": "formula",
+     "tex": "C = \\frac{480 \\text{ min}}{80} = 6 \\text{ min}"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Operación",
+      "Tiempo",
+      "Estaciones = tiempo / C",
+      "Capacidad por ciclo",
+      "Ocioso por ciclo"
+     ],
+     "rows": [
+      [
+       "OP 01",
+       "12",
+       "12 / 6 = **2**",
+       "2 × 6 = 12",
+       "0"
+      ],
+      [
+       "OP 02",
+       "16",
+       "16 / 6 = 2,67 → **3**",
+       "18",
+       "2"
+      ],
+      [
+       "OP 03",
+       "3",
+       "3 / 6 = 0,5 → **1**",
+       "6",
+       "3"
+      ],
+      [
+       "**Total**",
+       "31",
+       "**6 estaciones**",
+       "36",
+       "**5 min**"
+      ]
+     ]
+    },
+    {
+     "type": "paragraph",
+     "text": "**Tiempo ocioso:** 5 min por unidad × 80 unidades = **400 min por turno** (equivale a 6 × 480 − 80 × 31 = 2.880 − 2.480). Eficiencia = 31 / (6 × 6) = **86,1%**."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — Las otras dos versiones del montaje (06/05/2004 y 09/03/2006)",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "**06/05/2004:** 80 unidades en 8 horas con OP 01 = **72 min**, OP 02 = **48 min**, OP 03 = **6 min**. **09/03/2006:** **800 unidades** en 8 horas con 12, 16 y 3 minutos."
+    }
+   ],
+   "solucion": [
+    {
+     "type": "paragraph",
+     "text": "**Cálculo propio.** 06/05/2004: C = 6 min → 72/6 = **12**, 48/6 = **8**, 6/6 = **1** estaciones; las divisiones son exactas, así que **no hay tiempo ocioso** (eficiencia 100%)."
+    },
+    {
+     "type": "paragraph",
+     "text": "09/03/2006: C = 480/800 = **0,6 min** → 12/0,6 = **20**; 16/0,6 = 26,7 → **27**; 3/0,6 = **5** estaciones (52 en total). Ocioso: solo OP 02, 27 × 0,6 − 16 = 0,2 min por unidad → **160 min por turno**. Eficiencia 31 / (52 × 0,6) = 99,4%."
+    }
+   ]
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — Línea de ventanas de aluminio (Ejercicios posibles; 22/05/2003)",
+   "estado": "cálculo propio",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "«Un fabricante está diseñando una planta que producirá ventanas de aluminio reforzadas. La capacidad de producción mínima necesaria es de **640 u/día**. […] El fabricante desea saber todos los comentarios técnicos que se pueden realizar a este proyecto (buen diseño de planta, si se puede mejorar, capacidad ociosa, eficiencia, capacidad adecuada, etc.).» Diseño propuesto: estación 1 A; 2 B; 3 C y D; 4 E y F; 5 G; 6 H."
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Actividad",
+      "Descripción",
+      "Predecesoras",
+      "Tiempo (s)"
+     ],
+     "rows": [
+      [
+       "A",
+       "Ensamblado de marco",
+       "—",
+       "70"
+      ],
+      [
+       "B",
+       "Instalar molduras",
+       "A",
+       "80"
+      ],
+      [
+       "C",
+       "Introducir tornillos",
+       "A",
+       "40"
+      ],
+      [
+       "D",
+       "Instalar seguro en marco",
+       "A",
+       "20"
+      ],
+      [
+       "E",
+       "Instalar manija",
+       "A",
+       "40"
+      ],
+      [
+       "F",
+       "Colocar cristal",
+       "B, C",
+       "30"
+      ],
+      [
+       "G",
+       "Cubrir tornillos",
+       "C",
+       "50"
+      ],
+      [
+       "H",
+       "Embalar",
+       "D, E, F, G",
+       "50"
+      ],
+      [
+       "",
+       "**Total**",
+       "",
+       "**380**"
+      ]
+     ]
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Qué hay en el material.** La resolución manuscrita (EFR p. 19) trabaja con un ciclo de **90 s**, estaciones mínimas 380/90 = 4,22 → **5** y eficiencia **84,44%**; usa 320 u/día en un turno, que da el mismo ciclo que 640 u/día en **dos turnos** (57.600 s / 640 = 90 s). El análisis del diseño propuesto y el balance de 5 estaciones son **cálculo propio**."
+    },
+    {
+     "type": "paragraph",
+     "text": "**1. ¿Alcanza un turno?** Con 8 h: C = 28.800 / 640 = **45 s**, menor que la tarea más larga (B, 80 s). Imposible sin **estaciones en paralelo** o sin más turnos. Con dos turnos: C = **90 s**."
+    },
+    {
+     "type": "paragraph",
+     "text": "**2. El diseño propuesto** (6 estaciones): tiempos 70, 80, 60, 70, 50, 50. Respeta las precedencias. La estación más cargada (80 s) fija el ritmo: con 2 turnos salen 57.600 / 80 = 720 u/día ≥ 640. Eficiencia con C = 90: 380 / (6 × 90) = **70,4%**; aun midiéndola contra el cuello de botella, 380 / (6 × 80) = 79,2%. Sobra una estación."
+    },
+    {
+     "type": "paragraph",
+     "text": "**3. Mejor balance con C = 90 s** (5 estaciones = el mínimo):"
+    },
+    {
+     "type": "table",
+     "headers": [
+      "Estación",
+      "Tareas",
+      "Tiempo",
+      "Ocioso"
+     ],
+     "rows": [
+      [
+       "1",
+       "A, D",
+       "90",
+       "0"
+      ],
+      [
+       "2",
+       "B",
+       "80",
+       "10"
+      ],
+      [
+       "3",
+       "C, E",
+       "80",
+       "10"
+      ],
+      [
+       "4",
+       "F, G",
+       "80",
+       "10"
+      ],
+      [
+       "5",
+       "H",
+       "50",
+       "40"
+      ]
+     ]
+    },
+    {
+     "type": "svg",
+     "file": "u6/img/u6_ventanas.svg",
+     "caption": "Precedencias de la línea de ventanas y el balance de 5 estaciones con C = 90 s (cálculo propio)"
+    },
+    {
+     "type": "paragraph",
+     "text": "Precedencias: F necesita B (estación 2) y C (estación 3), G necesita C, H necesita D, E, F y G: todo se cumple. Eficiencia = 380 / (5 × 90) = **84,4%**, la de la hoja manuscrita. **Comentario técnico:** el diseño propuesto funciona pero tiene una estación de más (capacidad ociosa); con 5 estaciones se gana eficiencia y se sigue cumpliendo la demanda en dos turnos."
+    }
+   ],
+   "nota": "El ciclo de 90 s y el 84,44% están en la hoja; el balance concreto es propio"
+  },
+  {
+   "type": "ejercicio",
+   "title": "EJERCICIO — Turnos para cédulas de manejo (final 14/03/2013, transcripción de alumno)",
+   "estado": "para resolver",
+   "blocks": [
+    {
+     "type": "paragraph",
+     "text": "Según el alumno: «la dirección de tránsito desea implementar un sistema de turnos para tramitar cédulas de manejo en donde se entregan **50 números por día**, y trabajan de **8 a 16 hs**. Luego daba un cuadro en donde había **10 actividades** […] con su predecesora y su duración. Se pedía: a) dibujar el diagrama de red de la línea y calcular el tiempo de ciclo total (por número eran unos **36 min**); b) balancear la línea y calcular la eficiencia; c) ¿cuántas cédulas puede entregar la red balanceada?»"
+    }
+   ],
+   "solucion": [
+    {
+     "type": "callout",
+     "kind": "aviso",
+     "text": "**Falta la tabla de las 10 actividades**: no está en el Drive. Con lo que hay se puede plantear el arranque (cálculo propio)."
+    },
+    {
+     "type": "formula",
+     "tex": "C = \\frac{480 \\text{ min}}{50} = 9{,}6 \\text{ min} \\qquad N_t = \\frac{36}{9{,}6} = 3{,}75 \\rightarrow 4 \\text{ estaciones}"
+    },
+    {
+     "type": "paragraph",
+     "text": "Los «36 min por número» son la suma T de las tareas (el alumno lo llama «tiempo de ciclo total»; en Chase, el ciclo es C). Para la c): si el balance da una estación más cargada de, por ejemplo, 9 min, la red entrega 480 / 9 = 53 cédulas por día: **la capacidad la fija la estación más lenta**."
+    }
+   ],
+   "nota": "Falta la tabla de actividades"
+  },
+  {
+   "type": "callout",
+   "kind": "aviso",
+   "text": "**Hombre–máquina:** los finales del 01/08/2002 y del 13/12/2012 traen un ejercicio de gráfica hombre–máquina (ciclo, tiempo ocioso, eficiencia y costo horario). Según la transcripción del alumno es «la misma que está en la página 129 del Monks», y Monks no está en el Drive. No es tema de esta unidad en el material de la U6; acá solo lo dejamos anotado."
+  }
+ ],
+ "historias": [
+  {
+   "type": "concepto",
+   "k": "El problema",
+   "title": "Repartir tareas en estaciones.",
+   "text": "Chase: asignar todas las tareas de modo que ninguna estación tenga más de lo que se puede hacer en el tiempo de ciclo y el tiempo ocioso total sea mínimo. Respetando las precedencias."
+  },
+  {
+   "type": "concepto",
+   "k": "Las fórmulas",
+   "title": "Ciclo, mínimo y eficiencia.",
+   "text": "Ciclo = tiempo de producción por día / unidades por día. Estaciones mínimas = suma de tareas / ciclo, hacia arriba. Eficiencia = suma de tareas / (estaciones reales × ciclo).",
+   "formula": "C = \\frac{\\text{tiempo por día}}{\\text{unidades por día}} \\qquad N_t = \\frac{T}{C} \\qquad E = \\frac{T}{N_a \\cdot C}"
+  },
+  {
+   "type": "concepto",
+   "k": "Camioneta J",
+   "title": "500 por día en 420 minutos.",
+   "text": "C = 25.200 / 500 = 50,4 s. Las tareas suman 195 s, así que hacen falta al menos 3,87 → 4 estaciones.",
+   "svg": "<svg viewBox=\"0 0 280 160\" width=\"100%\" height=\"160\" role=\"img\" aria-label=\"Precedencias de la camioneta J (s)\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Precedencias de la camioneta J (s)</text><line x1=\"39.0\" y1=\"50.0\" x2=\"60.0\" y2=\"50.0\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M60.0 50.0 L56.5 51.9 L56.5 48.1 Z\" fill=\"#b7c0c8\"/><line x1=\"83.0\" y1=\"50.0\" x2=\"104.0\" y2=\"50.0\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M104.0 50.0 L100.5 51.9 L100.5 48.1 Z\" fill=\"#b7c0c8\"/><line x1=\"126.2\" y1=\"46.0\" x2=\"150.8\" y2=\"36.4\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M150.8 36.4 L148.3 39.4 L146.9 35.9 Z\" fill=\"#b7c0c8\"/><line x1=\"125.9\" y1=\"54.7\" x2=\"151.2\" y2=\"66.8\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M151.2 66.8 L147.2 67.0 L148.8 63.6 Z\" fill=\"#b7c0c8\"/><line x1=\"39.0\" y1=\"112.0\" x2=\"60.0\" y2=\"112.0\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M60.0 112.0 L56.5 113.9 L56.5 110.1 Z\" fill=\"#b7c0c8\"/><line x1=\"82.9\" y1=\"110.8\" x2=\"150.1\" y2=\"103.3\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M150.1 103.3 L146.8 105.6 L146.4 101.8 Z\" fill=\"#b7c0c8\"/><line x1=\"82.6\" y1=\"114.8\" x2=\"150.4\" y2=\"132.9\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M150.4 132.9 L146.5 133.9 L147.5 130.2 Z\" fill=\"#b7c0c8\"/><line x1=\"169.6\" y1=\"39.9\" x2=\"205.7\" y2=\"77.4\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M205.7 77.4 L201.9 76.2 L204.6 73.5 Z\" fill=\"#b7c0c8\"/><line x1=\"172.6\" y1=\"74.9\" x2=\"202.4\" y2=\"82.9\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M202.4 82.9 L198.5 83.8 L199.5 80.1 Z\" fill=\"#b7c0c8\"/><line x1=\"172.5\" y1=\"98.8\" x2=\"202.5\" y2=\"89.5\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M202.5 89.5 L199.7 92.4 L198.6 88.7 Z\" fill=\"#b7c0c8\"/><line x1=\"169.9\" y1=\"128.4\" x2=\"205.4\" y2=\"94.3\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M205.4 94.3 L204.1 98.1 L201.5 95.4 Z\" fill=\"#b7c0c8\"/><line x1=\"225.0\" y1=\"86.0\" x2=\"244.0\" y2=\"86.0\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M244.0 86.0 L240.5 87.9 L240.5 84.1 Z\" fill=\"#b7c0c8\"/><circle cx=\"28\" cy=\"50\" r=\"10.5\" fill=\"#8cb4d633\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"28.0\" y=\"53.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">A</text><text x=\"28.0\" y=\"69.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">45</text><circle cx=\"72\" cy=\"50\" r=\"10.5\" fill=\"#8cb4d633\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"72.0\" y=\"53.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">B</text><text x=\"72.0\" y=\"69.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">11</text><circle cx=\"116\" cy=\"50\" r=\"10.5\" fill=\"#8cb4d633\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"116.0\" y=\"53.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">C</text><text x=\"116.0\" y=\"69.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">9</text><circle cx=\"162\" cy=\"32\" r=\"10.5\" fill=\"#8cb4d633\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"162.0\" y=\"35.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">F</text><text x=\"162.0\" y=\"51.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">12</text><circle cx=\"162\" cy=\"72\" r=\"10.5\" fill=\"#8cb4d633\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"162.0\" y=\"75.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">G</text><text x=\"162.0\" y=\"91.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">12</text><circle cx=\"28\" cy=\"112\" r=\"10.5\" fill=\"#8cb4d633\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"28.0\" y=\"115.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">D</text><text x=\"28.0\" y=\"131.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">50</text><circle cx=\"72\" cy=\"112\" r=\"10.5\" fill=\"#8cb4d633\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"72.0\" y=\"115.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">E</text><text x=\"72.0\" y=\"131.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">15</text><circle cx=\"162\" cy=\"102\" r=\"10.5\" fill=\"#8cb4d633\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"162.0\" y=\"105.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">H</text><text x=\"162.0\" y=\"121.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">12</text><circle cx=\"162\" cy=\"136\" r=\"10.5\" fill=\"#8cb4d633\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"162.0\" y=\"139.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">I</text><text x=\"162.0\" y=\"155.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">12</text><circle cx=\"214\" cy=\"86\" r=\"10.5\" fill=\"#8cb4d633\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"214.0\" y=\"89.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">J</text><text x=\"214.0\" y=\"105.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">8</text><circle cx=\"256\" cy=\"86\" r=\"10.5\" fill=\"#8cb4d633\" stroke=\"#8cb4d6\" stroke-width=\"1.3\"/><text x=\"256.0\" y=\"89.0\" font-size=\"8.5\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">K</text><text x=\"256.0\" y=\"105.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">9</text></svg>",
+   "chartLabel": "Chase, ejemplo 7A.1"
+  },
+  {
+   "type": "concepto",
+   "k": "La regla",
+   "title": "Más tareas siguientes primero.",
+   "text": "Primero la que tiene más tareas detrás (A tiene 6); para desempatar, la más larga. Se llena cada estación hasta el ciclo."
+  },
+  {
+   "type": "concepto",
+   "k": "El resultado",
+   "title": "Cinco estaciones, 77%.",
+   "text": "A | D | B E C F | G H I J | K. La última solo tiene K (9 s) y 41,4 s de ocio. Eficiencia 195 / (5 × 50,4) = 77%.",
+   "svg": "<svg viewBox=\"0 0 280 192\" width=\"100%\" height=\"192\" role=\"img\" aria-label=\"Estaciones de Chase\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Estaciones de Chase</text><line x1=\"39.0\" y1=\"50.0\" x2=\"60.0\" y2=\"50.0\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M60.0 50.0 L56.5 51.9 L56.5 48.1 Z\" fill=\"#b7c0c8\"/><line x1=\"83.0\" y1=\"50.0\" x2=\"104.0\" y2=\"50.0\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M104.0 50.0 L100.5 51.9 L100.5 48.1 Z\" fill=\"#b7c0c8\"/><line x1=\"126.2\" y1=\"46.0\" x2=\"150.8\" y2=\"36.4\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M150.8 36.4 L148.3 39.4 L146.9 35.9 Z\" fill=\"#b7c0c8\"/><line x1=\"125.9\" y1=\"54.7\" x2=\"151.2\" y2=\"66.8\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M151.2 66.8 L147.2 67.0 L148.8 63.6 Z\" fill=\"#b7c0c8\"/><line x1=\"39.0\" y1=\"112.0\" x2=\"60.0\" y2=\"112.0\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M60.0 112.0 L56.5 113.9 L56.5 110.1 Z\" fill=\"#b7c0c8\"/><line x1=\"82.9\" y1=\"110.8\" x2=\"150.1\" y2=\"103.3\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M150.1 103.3 L146.8 105.6 L146.4 101.8 Z\" fill=\"#b7c0c8\"/><line x1=\"82.6\" y1=\"114.8\" x2=\"150.4\" y2=\"132.9\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M150.4 132.9 L146.5 133.9 L147.5 130.2 Z\" fill=\"#b7c0c8\"/><line x1=\"169.6\" y1=\"39.9\" x2=\"205.7\" y2=\"77.4\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M205.7 77.4 L201.9 76.2 L204.6 73.5 Z\" fill=\"#b7c0c8\"/><line x1=\"172.6\" y1=\"74.9\" x2=\"202.4\" y2=\"82.9\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M202.4 82.9 L198.5 83.8 L199.5 80.1 Z\" fill=\"#b7c0c8\"/><line x1=\"172.5\" y1=\"98.8\" x2=\"202.5\" y2=\"89.5\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M202.5 89.5 L199.7 92.4 L198.6 88.7 Z\" fill=\"#b7c0c8\"/><line x1=\"169.9\" y1=\"128.4\" x2=\"205.4\" y2=\"94.3\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M205.4 94.3 L204.1 98.1 L201.5 95.4 Z\" fill=\"#b7c0c8\"/><line x1=\"225.0\" y1=\"86.0\" x2=\"244.0\" y2=\"86.0\" stroke=\"#b7c0c8\" stroke-width=\"1\"/><path d=\"M244.0 86.0 L240.5 87.9 L240.5 84.1 Z\" fill=\"#b7c0c8\"/><circle cx=\"28\" cy=\"50\" r=\"10.5\" fill=\"#5B9BD533\" stroke=\"#5B9BD5\" stroke-width=\"1.3\"/><text x=\"28.0\" y=\"53.0\" font-size=\"8.5\" fill=\"#5B9BD5\" text-anchor=\"middle\" font-weight=\"700\">A</text><text x=\"28.0\" y=\"69.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">45</text><circle cx=\"72\" cy=\"50\" r=\"10.5\" fill=\"#E0A80033\" stroke=\"#E0A800\" stroke-width=\"1.3\"/><text x=\"72.0\" y=\"53.0\" font-size=\"8.5\" fill=\"#E0A800\" text-anchor=\"middle\" font-weight=\"700\">B</text><text x=\"72.0\" y=\"69.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">11</text><circle cx=\"116\" cy=\"50\" r=\"10.5\" fill=\"#E0A80033\" stroke=\"#E0A800\" stroke-width=\"1.3\"/><text x=\"116.0\" y=\"53.0\" font-size=\"8.5\" fill=\"#E0A800\" text-anchor=\"middle\" font-weight=\"700\">C</text><text x=\"116.0\" y=\"69.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">9</text><circle cx=\"162\" cy=\"32\" r=\"10.5\" fill=\"#E0A80033\" stroke=\"#E0A800\" stroke-width=\"1.3\"/><text x=\"162.0\" y=\"35.0\" font-size=\"8.5\" fill=\"#E0A800\" text-anchor=\"middle\" font-weight=\"700\">F</text><text x=\"162.0\" y=\"51.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">12</text><circle cx=\"162\" cy=\"72\" r=\"10.5\" fill=\"#ED7D3133\" stroke=\"#ED7D31\" stroke-width=\"1.3\"/><text x=\"162.0\" y=\"75.0\" font-size=\"8.5\" fill=\"#ED7D31\" text-anchor=\"middle\" font-weight=\"700\">G</text><text x=\"162.0\" y=\"91.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">12</text><circle cx=\"28\" cy=\"112\" r=\"10.5\" fill=\"#70AD4733\" stroke=\"#70AD47\" stroke-width=\"1.3\"/><text x=\"28.0\" y=\"115.0\" font-size=\"8.5\" fill=\"#70AD47\" text-anchor=\"middle\" font-weight=\"700\">D</text><text x=\"28.0\" y=\"131.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">50</text><circle cx=\"72\" cy=\"112\" r=\"10.5\" fill=\"#E0A80033\" stroke=\"#E0A800\" stroke-width=\"1.3\"/><text x=\"72.0\" y=\"115.0\" font-size=\"8.5\" fill=\"#E0A800\" text-anchor=\"middle\" font-weight=\"700\">E</text><text x=\"72.0\" y=\"131.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">15</text><circle cx=\"162\" cy=\"102\" r=\"10.5\" fill=\"#ED7D3133\" stroke=\"#ED7D31\" stroke-width=\"1.3\"/><text x=\"162.0\" y=\"105.0\" font-size=\"8.5\" fill=\"#ED7D31\" text-anchor=\"middle\" font-weight=\"700\">H</text><text x=\"162.0\" y=\"121.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">12</text><circle cx=\"162\" cy=\"136\" r=\"10.5\" fill=\"#ED7D3133\" stroke=\"#ED7D31\" stroke-width=\"1.3\"/><text x=\"162.0\" y=\"139.0\" font-size=\"8.5\" fill=\"#ED7D31\" text-anchor=\"middle\" font-weight=\"700\">I</text><text x=\"162.0\" y=\"155.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">12</text><circle cx=\"214\" cy=\"86\" r=\"10.5\" fill=\"#ED7D3133\" stroke=\"#ED7D31\" stroke-width=\"1.3\"/><text x=\"214.0\" y=\"89.0\" font-size=\"8.5\" fill=\"#ED7D31\" text-anchor=\"middle\" font-weight=\"700\">J</text><text x=\"214.0\" y=\"105.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">8</text><circle cx=\"256\" cy=\"86\" r=\"10.5\" fill=\"#8E7CC333\" stroke=\"#8E7CC3\" stroke-width=\"1.3\"/><text x=\"256.0\" y=\"89.0\" font-size=\"8.5\" fill=\"#8E7CC3\" text-anchor=\"middle\" font-weight=\"700\">K</text><text x=\"256.0\" y=\"105.0\" font-size=\"6.5\" fill=\"#b7c0c8\" text-anchor=\"middle\">9</text><rect x=\"8\" y=\"164\" width=\"7\" height=\"7\" fill=\"#5B9BD5\"/><text x=\"18.0\" y=\"170.0\" font-size=\"6.6\" fill=\"#b7c0c8\" text-anchor=\"start\">1: A</text><rect x=\"98\" y=\"164\" width=\"7\" height=\"7\" fill=\"#70AD47\"/><text x=\"108.0\" y=\"170.0\" font-size=\"6.6\" fill=\"#b7c0c8\" text-anchor=\"start\">2: D</text><rect x=\"188\" y=\"164\" width=\"7\" height=\"7\" fill=\"#E0A800\"/><text x=\"198.0\" y=\"170.0\" font-size=\"6.6\" fill=\"#b7c0c8\" text-anchor=\"start\">3: B E C F</text><rect x=\"8\" y=\"174\" width=\"7\" height=\"7\" fill=\"#ED7D31\"/><text x=\"18.0\" y=\"180.0\" font-size=\"6.6\" fill=\"#b7c0c8\" text-anchor=\"start\">4: G H I J</text><rect x=\"98\" y=\"174\" width=\"7\" height=\"7\" fill=\"#8E7CC3\"/><text x=\"108.0\" y=\"180.0\" font-size=\"6.6\" fill=\"#b7c0c8\" text-anchor=\"start\">5: K</text></svg>",
+   "chartLabel": "Chase, ilustración 7A.11"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "El mínimo teórico era 4 y salieron 5. ¿Qué dice Chase?",
+   "options": [
+    "Que es imposible mejorar",
+    "Que con otra regla (la más larga primero) se logra con 4",
+    "Que hay que sacar una tarea"
+   ],
+   "correct": 1,
+   "feedback": "Invirtiendo las reglas (tiempo más largo primero y desempate por tareas siguientes) se consigue un balance viable de cuatro estaciones."
+  },
+  {
+   "type": "concepto",
+   "k": "Tarea más larga que el ciclo",
+   "title": "Seis salidas.",
+   "text": "Dividir la tarea, compartirla, estaciones en paralelo, un trabajador más capacitado, horas extra o rediseñar. Con ciclo 36 s y una tarea de 40: horas extra de 50 minutos para las 75 que faltan."
+  },
+  {
+   "type": "concepto",
+   "k": "Montaje (22/05/2003)",
+   "title": "80 unidades en 8 horas.",
+   "text": "C = 480 / 80 = 6 min. OP 12 min → 2 estaciones; 16 → 3; 3 → 1. Ocioso 0 + 2 + 3 = 5 min por unidad: 400 min por turno. Eficiencia 31 / 36 = 86,1%.",
+   "svg": "<svg viewBox=\"0 0 280 140\" width=\"100%\" height=\"140\" role=\"img\" aria-label=\"Estaciones en paralelo con C = 6 min\"><text x=\"8.0\" y=\"13.0\" font-size=\"9\" fill=\"#8cb4d6\" text-anchor=\"start\" font-weight=\"700\">Estaciones en paralelo con C = 6 min</text><line x1=\"12\" y1=\"110\" x2=\"268\" y2=\"110\" stroke=\"#5a6570\"/><rect x=\"37.7\" y=\"65.6\" width=\"34.0\" height=\"44.4\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"54.7\" y=\"61.6\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">2</text><text x=\"54.7\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">OP 01</text><text x=\"54.7\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">12 min</text><rect x=\"123.0\" y=\"43.3\" width=\"34.0\" height=\"66.7\" rx=\"3\" fill=\"#e25b16\" opacity=\".9\"/><text x=\"140.0\" y=\"39.3\" font-size=\"8\" fill=\"#e25b16\" text-anchor=\"middle\" font-weight=\"700\">3</text><text x=\"140.0\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">OP 02</text><text x=\"140.0\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">16 min</text><rect x=\"208.3\" y=\"87.8\" width=\"34.0\" height=\"22.2\" rx=\"3\" fill=\"#8cb4d6\" opacity=\".9\"/><text x=\"225.3\" y=\"83.8\" font-size=\"8\" fill=\"#8cb4d6\" text-anchor=\"middle\" font-weight=\"700\">1</text><text x=\"225.3\" y=\"121.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">OP 03</text><text x=\"225.3\" y=\"130.0\" font-size=\"7\" fill=\"#b7c0c8\" text-anchor=\"middle\">3 min</text></svg>",
+   "chartLabel": "Cálculo propio con el enunciado del final"
+  },
+  {
+   "type": "pregunta",
+   "k": "A ver…",
+   "title": "Con C = 6 min, la OP 02 dura 16 min. ¿Cuántas estaciones en paralelo?",
+   "options": [
+    "2",
+    "3",
+    "16"
+   ],
+   "correct": 1,
+   "feedback": "16 / 6 = 2,67, y se redondea hacia arriba: 3 estaciones, con 18 − 16 = 2 min ociosos por ciclo."
+  },
+  {
+   "type": "concepto",
+   "k": "Ventanas (22/05/2003)",
+   "title": "640 por día y 380 s de tareas.",
+   "text": "En un turno el ciclo sería 45 s, menos que la tarea B (80 s). Con dos turnos, C = 90 s, mínimo 5 estaciones y 84,4%. El diseño propuesto de 6 estaciones tiene una de más.",
+   "ejemplo": "El 90 s y el 84,44% están en la hoja manuscrita; el balance de 5 estaciones es cálculo propio."
+  },
+  {
+   "type": "concepto",
+   "k": "Cédulas (14/03/2013)",
+   "title": "Solo el arranque.",
+   "text": "50 números por día de 8 a 16: C = 480 / 50 = 9,6 min. Con unos 36 min de tareas, al menos 4 estaciones. La tabla de las 10 actividades no está en el Drive."
+  },
+  {
+   "type": "cierre",
+   "k": "Para llevar",
+   "title": "Llevate esto de la Clase 11.",
+   "text": "C = tiempo / unidades; Nt = T / C hacia arriba; eficiencia = T / (N·C). Regla de asignación más desempate. Tarea más larga que C: paralelo. La estación más lenta fija la producción."
+  }
+ ],
+ "block": "D",
+ "blockTitle": "Bloque D · Balanceo y control de la producción"
+}
